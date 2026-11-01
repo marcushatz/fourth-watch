@@ -22,6 +22,13 @@
 4. **The soundtrack:** `VOICE=<voice wav> node song.js` with the approved voice. It writes the soundtrack and copies it to `out/music.wav`, which `clip` and `mux` read (fixed Oct 31).
 5. **Captions:** `out/<ep>.srt` comes from the VO text plus word times. Never retype it.
 
+## 1b. Before the full render (Story Director, `13` §4)
+
+1. **Stills at every read's start** → a contact sheet: is each read's subject where the eye lands, inside 22-60% of the height and clear of the caption band?
+2. **The muted test:** a fresh agent with vision gets only the contact sheet (no words) and writes what happens. A missed read fails its shot.
+3. **The motion clip of the window:** watch it as video.
+4. **Name the three most serious visual problems; revise only those shots.** Shots that passed keep their cache keys and aren't re-rendered.
+
 ## 2. The QA loop (after every render)
 
 1. **The checker:**

@@ -1,16 +1,16 @@
 {
- "key": "1d000dad0d398130",
+ "key": "a9a20988b09bd5d5",
  "sources": {
   "ep01-samson/episode.md": "965cf1991d857b4d",
   "ep01-samson/film27/vo.js": "762f70867e039942",
   "ep01-samson/film27/score.js": "18f5d493d8bf5539",
-  "creative/_proto/pack.py": "aa397e5f05848a22",
-  "ep01-samson/creative/demo_16-20/accuracy_16-19_21.md": "b0bd916aff1b603e",
+  "tools/creative/pack.py": "dbe621f4d9e803ee",
+  "ep01-samson/creative/demo_16-20/accuracy_16-19_21.md": "9714502fd2484d6c",
   "creative/digests/canon.md": "5cff797fd98f96d6",
   "creative/digests/engine_manifest.md": "c9cca8eed1f4d7f2",
   "creative/digests/reads_model.md": "1c197fcedcdfe39e",
   "creative/motifs.yaml": "ca871f2fb82fbcee"
  },
- "chars": 8570,
- "est_tokens": 2142
+ "chars": 8734,
+ "est_tokens": 2183
 }

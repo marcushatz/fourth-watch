@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Tests for the spec checker, written BEFORE the fixes they cover (Round 17 rule). Each case edits the demo spec or pack
-and states what the checker must say.  python3 creative/_proto/test_spec_check.py"""
+and states what the checker must say.  python3 tools/creative/test_spec_check.py"""
 import copy, subprocess, sys, tempfile
 from pathlib import Path
 import yaml
@@ -15,7 +15,7 @@ def run(spec, pack):
     with tempfile.TemporaryDirectory() as d:
         s, p = Path(d, "s.yaml"), Path(d, "p.md")
         s.write_text(yaml.safe_dump(spec, sort_keys=False)); p.write_text(pack)
-        r = subprocess.run([sys.executable, str(ROOT / "creative/_proto/spec_check.py"), str(s), str(p), str(EP)], capture_output=True, text=True)
+        r = subprocess.run([sys.executable, str(ROOT / "tools/creative/spec_check.py"), str(s), str(p), str(EP)], capture_output=True, text=True)
         return r.stdout + r.stderr
 
 def with_line(pack, line):  # set a line in the narration section of the pack (replacing one of the same kind)
@@ -48,6 +48,11 @@ case("missing approved verse card fails", strip_verse(copy.deepcopy(BASE)), with
 s = strip_verse(copy.deepcopy(BASE))
 s["scenes"][2]["text"] = {"kind": "verse", "words": "But he did not know that the LORD had left him.", "t": [53.51, 56.5]}
 case("present approved verse card passes", s, with_line(PACK, req), must_not=["approved verse card missing", "verse text isn't"])
+
+# 4. Gold light follows the passage's rule from the pack ("gold allowed: none" for 16:19-20; allowed where the text says God acted)
+s = copy.deepcopy(BASE); s["scenes"][1]["light"]["gold"] = 0.4
+case("gold where the pack says none fails", s, with_line(PACK, "- gold allowed: none (16:19-20: the LORD had left him)"), must=["gold 0.4"])
+case("gold where the pack allows it passes", s, with_line(PACK, "- gold allowed: yes (14:6: the Spirit of the LORD rushed upon him)"), must_not=["gold 0.4"])
 
 fails = 0
 for name, spec, pack, must, must_not in cases:

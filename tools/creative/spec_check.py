@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """PROTOTYPE (proposal step P4): validate a creative-director scene spec mechanically, so no model has to.
-    python3 creative/_proto/spec_check.py <spec.yaml> <pack.md> <episode.md> [--budget-new N]
+    python3 tools/creative/spec_check.py <spec.yaml> <pack.md> <episode.md> [--budget-new N]
 Checks: window coverage, locked narration, the read-timing model, one text element at a time, brand canon (gold, doors,
 faces), engine reuse against the manifest, transitions at every seam, verse refs, audio anchors. Prints a per-scene cache key
 (sha of the scene's YAML): a scene whose key is unchanged since its last PASS is never re-reviewed or re-rendered."""
@@ -30,6 +30,7 @@ FACE = re.compile(r"\b(smil\w*|frown\w*|grimac\w*|wince\w*|express\w*|brow\w*|ey
 # the locked narration window: words with times, from the pack
 words = [(w.rsplit("@", 1)[0], float(w.rsplit("@", 1)[1])) for ln in re.findall(r"words: (.*)", pack) for w in ln.split()]
 before_set = (re.findall(r"shot before the window: \S+ (\w+)/", pack) or [None])[0]
+gold_rule = (re.findall(r"gold allowed: (.*)", pack) or [None])[0]
 required_verses = re.findall(r'required verse card: "(.*?)"', pack)
 verse_cards = re.findall(r'^VERSE: "(.*?)" — (.*?) \(ESV\)', ep_p.read_text(), re.M)
 
@@ -75,7 +76,9 @@ for s in scenes:
     if re.search(r"\bdoors?\b|doorway", blob): add("FAIL", sid, "door imagery is ruled out (canon)")
     if re.search(r"\bscales?\b|\bbalanc(e|es|ed|ing)\b|\bweigh(s|ed|ing)?\b", blob): add("FAIL", sid, "balance/weighing imagery is ruled out (canon)")
     gold = float(s.get("light", {}).get("gold", 0) or 0)
-    if gold > 0: add("FAIL", sid, f"gold {gold} after 16:19 ('his strength left him'): gold is gone by this window")
+    if gold > 0:   # gold = what God does: only where the pack's passage rule allows it (canon; 07 §6)
+        if gold_rule is None: add("WARN", sid, f"gold {gold} but the pack has no 'gold allowed:' line for this passage; check the text says God acted here")
+        elif gold_rule.lower().startswith("none"): add("FAIL", sid, f"gold {gold}, but this passage allows none: {gold_rule}")
     # text: one element at a time, exact wording
     tx = s.get("text", {}) or {}
     if tx.get("kind") not in (None, "none"):

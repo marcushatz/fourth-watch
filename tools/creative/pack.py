@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """PROTOTYPE (proposal step P0): build a creative context pack for one sequence, content-hashed, so the creative director
 reads ~2k tokens instead of the research library. Re-running with unchanged sources is a cache hit (prints HIT, writes nothing).
-    python3 creative/_proto/pack.py <out_dir> <episode.md> <vo.js> <t0> <t1> <accuracy_notes.md>"""
+    python3 tools/creative/pack.py <out_dir> <episode.md> <vo.js> <t0> <t1> <accuracy_notes.md>"""
 import hashlib, json, re, subprocess, sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
@@ -27,7 +27,8 @@ md, req, last_vo = ep.read_text().splitlines(), [], None
 for ln in md:
     if ln.startswith("VO:"): last_vo = re.sub(r"\s*\[.*?\]\s*$", "", ln[3:]).strip().strip('"')
     if ln.startswith("VERSE:") and last_vo and any(last_vo == l["text"].strip().strip('"') for l in lines): req.append(ln[6:].strip())
-ctx = f"- shot before the window: {before[0]} {before[1]}/{before[2]} ({before[3]:.2f}-{before[4]:.2f})\n" + "".join(f"- required verse card: {v}\n" for v in req) + "".join(f"- before: {l['text']}\n" for l in prev) + "".join(f"- after: {l['text']}\n" for l in nxt)
+gold_lines = [l.strip().lstrip("- ") for l in acc.read_text().splitlines() if l.strip().lstrip("- ").startswith("gold allowed:")]
+ctx = "".join(f"- {g}\n" for g in gold_lines) + f"- shot before the window: {before[0]} {before[1]}/{before[2]} ({before[3]:.2f}-{before[4]:.2f})\n" + "".join(f"- required verse card: {v}\n" for v in req) + "".join(f"- before: {l['text']}\n" for l in prev) + "".join(f"- after: {l['text']}\n" for l in nxt)
 parts = [f"# Context pack · {ep.parent.name} · {t0:.2f}-{t1:.2f} s · key {key}",
          "## Approved narration in the window (locked: never change a word)\n" + win + "\n" + ctx,
          "## Accuracy notes for this window\n" + acc.read_text().strip()] + [p.read_text().strip() for p in srcs[5:]]

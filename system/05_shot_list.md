@@ -1,5 +1,7 @@
 # 05 · The shot list: from approved script to a plan Marcus can see
 
+**Since Nov 1:** the Story Director (`13_story_director.md`) comes first. It produces the analysis, the treatments, the storyboard with timed reads and the implementation spec. Then `tools/creative/compile_spec.py` turns that spec into the score, and this file's linting and checklist apply. The manual procedure below is the fallback for a single line or a quick fix.
+
 **Use this when** the script is approved. Nothing is animated until the shot list passes `tools/shotlist_check.js` **and Marcus has seen it** (Round 15: no overnight build without a shot list he has seen).
 
 Read first:
@@ -18,7 +20,7 @@ Read first:
 ## 2. The procedure
 
 1. **Time the words.** Marcus's Oct 28 order of work was script → video → voice last. Since the Ep 1 take, shots are timed to the recorded voice. Before a take exists, `make_vo.py` estimates word times from the script, so the shot list can be planned and checked first and re-timed when the take arrives. After the voice is recorded, `tools/make_vo.py` writes `vo.js` (word start and end times). Every cut lands within 0.15 s before the word it cuts on (`cue(line, 'word') - PRE`). Never hard-code a time.
-2. **One sentence → one picture** (a new subject entering a held set counts). Then split on clauses: three verbs = three beats.
+2. **The picture comes from the director's storyboard** (13 §3), not one illustration per sentence. Split on clauses: three verbs = three beats, each shown happening on its word.
 3. **For each clause write:**
    - `act`: the verb, performed on its word, using a pose the rig has (`lintel/PP2_API.md`).
    - `change`: whatever else visibly changes (a counter, an entrance, a light, a pill, a bubble, the camera arriving).
