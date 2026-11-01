@@ -3,14 +3,14 @@
   "verdict": "FAIL",
   "counts": {
     "FAIL": 5,
-    "WARN": 8,
+    "WARN": 11,
     "PASS": 12
   },
   "facts": {
     "title": "What is the unforgivable sin?",
     "series": "ASK THE TEXT",
-    "VO words": 265,
-    "estimated runtime": "93.5s at 170 wpm"
+    "VO words": 287,
+    "estimated runtime": "101.3s at 170 wpm"
   },
   "items": [
     {
@@ -26,12 +26,17 @@
     {
       "level": "PASS",
       "check": "runtime",
-      "msg": "estimated 94s"
+      "msg": "estimated 101s"
     },
     {
       "level": "WARN",
       "check": "sentence length",
       "msg": "29 words (max 25): 'Mark records the same charge and says why Jesus warned them: \"for they were sayi'"
+    },
+    {
+      "level": "WARN",
+      "check": "sentence length",
+      "msg": "28 words (max 25): 'Even Paul, who once dragged Christians off to prison, later called himself a \"bl'"
     },
     {
       "level": "WARN",
@@ -44,9 +49,14 @@
       "msg": "answer stated in the Turn/Landing: 'In the text, Jesus gave this warning to men who were calling the Holy Spirit's work the devil's (\"they were saying, 'He has an unclean spirit'\"). Most Christian explanations agree it isn't done by accident, and one common way to explain why it can't be forgiven is: it isn't a sin too big for God to forgive; it's forgiveness someone keeps refusing.'"
     },
     {
+      "level": "WARN",
+      "check": "value",
+      "msg": "this Value item is never spoken in the VO, so the viewer never learns it: 'Paul, who dragged Christians off to prison and called himself a \"blasphemer\", \"r'"
+    },
+    {
       "level": "PASS",
       "check": "value",
-      "msg": "5 things the viewer learns, each with a verse and each said in the VO"
+      "msg": "4 things the viewer learns, each with a verse and each said in the VO"
     },
     {
       "level": "PASS",
@@ -66,12 +76,12 @@
     {
       "level": "PASS",
       "check": "story share",
-      "msg": "the Story section is 14% of the words (Marcus's cap ~40%; the hits retell 0–5%, the top six spend 0–21% on any story). Count story lines in other sections by hand"
+      "msg": "the Story section is 13% of the words (Marcus's cap ~40%; the hits retell 0–5%, the top six spend 0–21% on any story). Count story lines in other sections by hand"
     },
     {
       "level": "WARN",
       "check": "answer timing",
-      "msg": "the core answer starts at about 69% of the runtime (top six 33–50%; the question-video lows 59–82%)"
+      "msg": "the core answer starts at about 72% of the runtime (top six 33–50%; the question-video lows 59–82%)"
     },
     {
       "level": "PASS",
@@ -126,7 +136,12 @@
     {
       "level": "WARN",
       "check": "fact-check",
-      "msg": "[1 Timothy 1:13; Galatians 1:13] is cited in the VO but not in the fact-check log"
+      "msg": "[Acts 8:3; 1 Timothy 1:13] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[1 Timothy 1:13; Matthew 12:31-32] is cited in the VO but not in the fact-check log"
     },
     {
       "level": "WARN",

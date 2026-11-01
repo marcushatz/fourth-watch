@@ -33,10 +33,11 @@ VO: Mark records the same charge and says why Jesus warned them: "for they were 
 VO: And his warning about the one sin that won't be forgiven starts with the ones that will: "every sin and blasphemy will be forgiven people." [Matthew 12:31]
 VERSE: "every sin and blasphemy will be forgiven people, but the blasphemy against the Spirit will not be forgiven." — Matthew 12:31 (ESV)
 VO: Even words against Jesus himself, he said, will be forgiven. [Matthew 12:32]
-VO: And Paul, who once persecuted Christians, called himself a former "blasphemer." He wrote that he "received mercy" because he had acted in ignorance. [1 Timothy 1:13; Galatians 1:13]
+VO: Even Paul, who once dragged Christians off to prison, later called himself a "blasphemer." He wrote that he "received mercy" because he didn't know what he was doing. [Acts 8:3; 1 Timothy 1:13]
+VO: Many Christians see the difference right there: speaking out of ignorance, versus knowingly calling God's clear work evil. [1 Timothy 1:13; Matthew 12:31-32]
 
 ## Landing
-VO: Can someone do it today? Some Christians say only those men could. Others say yes, but only as a deliberate, hardened refusal of God. [Matthew 12:31-32; Mark 3:28-30]
+VO: Can someone do it today? Some Christians say only people in Jesus' day could. Others say yes, but only as a deliberate, hardened refusal of God. [Matthew 12:31-32; Mark 3:28-30]
 VO: So what is the unforgivable sin? In the text, it's tied to calling the Holy Spirit's work the devil's. And one common way Christians put it: it isn't a sin too big for God to forgive. It's forgiveness someone keeps refusing. [Matthew 12:31-32; Mark 3:28-30]
 
 ## Question
@@ -46,7 +47,7 @@ VO: What surprised you more: that the warning starts with forgiveness, or Jesus 
 - Mark says why Jesus warned them: "they were saying, 'He has an unclean spirit'" [Mark 3:30]
 - The warning starts with forgiveness: "every sin and blasphemy will be forgiven people" [Matthew 12:31]
 - Even words against Jesus himself will be forgiven, he said [Matthew 12:32]
-- Paul, a former "blasphemer" who persecuted the church, "received mercy" because he had acted "ignorantly in unbelief" [1 Timothy 1:13; Galatians 1:13]
+- Paul, who dragged Christians off to prison and called himself a "blasphemer", "received mercy" because he had acted "ignorantly in unbelief" [Acts 8:3; 1 Timothy 1:13]
 - Why it can't be forgiven, in one common Christian explanation: it isn't a sin too big for God to forgive; it's forgiveness someone keeps refusing [Matthew 12:31-32; Mark 3:28-30]
 
 ## Caption
@@ -58,7 +59,7 @@ Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard 
 - Matthew 12:22-32
 - Mark 3:22-30
 - 1 Timothy 1:12-16
-- Galatians 1:13
+- Acts 8:3
 
 ## Fact-check log
 | Claim | Verse | Checked against | Status |
