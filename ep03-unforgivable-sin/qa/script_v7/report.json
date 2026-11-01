@@ -1,9 +1,9 @@
 {
   "kind": "script",
-  "verdict": "FAIL",
+  "verdict": "PASS WITH WARNINGS",
   "counts": {
-    "FAIL": 9,
-    "WARN": 8,
+    "FAIL": 0,
+    "WARN": 7,
     "PASS": 11
   },
   "facts": {
@@ -92,56 +92,6 @@
       "level": "PASS",
       "check": "nothing new",
       "msg": "every line adds at least one new key word or quote"
-    },
-    {
-      "level": "FAIL",
-      "check": "fact-check",
-      "msg": "claim not verified: '\"whoever speaks against the Holy Spirit will not be forgiven\" (quote n' (status: 'pending')"
-    },
-    {
-      "level": "FAIL",
-      "check": "fact-check",
-      "msg": "claim not verified: '\"Christians across traditions agree on one thing: it isn't something d' (status: 'pending')"
-    },
-    {
-      "level": "FAIL",
-      "check": "fact-check",
-      "msg": "claim not verified: 'Healed a blind, mute man \"by casting out a demon\"; the Pharisees said ' (status: 'pending')"
-    },
-    {
-      "level": "FAIL",
-      "check": "fact-check",
-      "msg": "claim not verified: '\"by the Spirit of God\"; giving the devil credit for the Holy Spirit's ' (status: 'pending')"
-    },
-    {
-      "level": "FAIL",
-      "check": "fact-check",
-      "msg": "claim not verified: 'The warning \"starts with the ones that will\" + \"every sin and blasphem' (status: 'pending')"
-    },
-    {
-      "level": "FAIL",
-      "check": "fact-check",
-      "msg": "claim not verified: '\"Even words against Jesus himself, he said, will be forgiven\" (paraphr' (status: 'pending')"
-    },
-    {
-      "level": "FAIL",
-      "check": "fact-check",
-      "msg": "claim not verified: 'Views: \"knowingly calling God's clear work evil, or refusing his mercy' (status: 'pending')"
-    },
-    {
-      "level": "FAIL",
-      "check": "fact-check",
-      "msg": "claim not verified: 'Paul \"who once persecuted Christians\", a former \"blasphemer\", \"But I r' (status: 'pending')"
-    },
-    {
-      "level": "FAIL",
-      "check": "fact-check",
-      "msg": "claim not verified: 'The answer: line' (status: 'pending')"
-    },
-    {
-      "level": "WARN",
-      "check": "fact-check",
-      "msg": "[Mark 3:28-30; Matthew 12:24-28] is cited in the VO but not in the fact-check log"
     },
     {
       "level": "WARN",

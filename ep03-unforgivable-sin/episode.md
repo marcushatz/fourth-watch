@@ -1,13 +1,18 @@
 # What is the unforgivable sin?
 series: ASK THE TEXT
-target_seconds: 100
-answer: In the text, Jesus gave the warning because of what those men were doing: calling the work he said he did by the Spirit of God the work of an unclean spirit.
+target_seconds: 95
+answer: In the text, Jesus warned men who said he cast out demons by "the prince of demons"; Mark says why: "they were saying, 'He has an unclean spirit.'" They were calling the Holy Spirit's work the devil's, and in the main Christian explanations the sin is deliberate, never an accident.
 
 <!--
-Ep 3, v5 DRAFT (Nov 1, 00:40) = v4 with the fixes all three blind judges named (qa/judge_run1/) and the fresh simulated viewer's (qa/round2/): Peter cut, the plain payoff after Mark 3:30, the re-ask without the repeated half, Paul's mercy last. See qa/round2/merge.md. Marcus picked card C ("What is the unforgivable sin?") from DECISIONS.md #17.
-Answer first, from Matthew 12:22-32 with Mark 3:30's reason. Care: this question frightens people (some fear they did it
-by accident). Nothing here may suggest a viewer has committed it; the hope is the text's own ("every sin and blasphemy
-will be forgiven people"; Paul, a former "blasphemer", "received mercy"). Contested: the main views get one line.
+Ep 3, v7 (Nov 1) = the candidate for Marcus. v6 + the scoped fact-checks of v6 and v7 (qa/round3/A_factcheck_v6.md, A_factcheck_v7.md) = v6 + the first-time viewer's read (qa/round3/B_viewer_v6.md, AI). It rated clarity 3/5, would
+swipe at the Mark line, and the fear in line 2 went unrelieved for ~60 s.
+- The relief comes first: what every tradition agrees on, and the pastors' line, now at ~12 s (v6: ~69 s).
+- "So what is it?" turns the story into the proof.
+- The scene and Mark's reason are merged into two lines (it heard the same point 4 times).
+- Jargon is cut: Beelzebul, "demon-oppressed", "Son of Man", "insolent", "acted ignorantly in unbelief". "The Spirit" is
+  named the Holy Spirit.
+- "like those men" is gone from the views line (the views differ on whether the Pharisees had fully committed it).
+Research: qa/v6_research.md. Care: this question frightens people. Nothing here may suggest a viewer has committed it.
 -->
 
 ## Hook
@@ -15,31 +20,33 @@ VO: What is the unforgivable sin?
 ON-SCREEN: WHAT IS THE UNFORGIVABLE SIN?
 
 ## Stakes
-VO: In Matthew 12, Jesus said one sin "will not be forgiven, either in this age or in the age to come." Many people fear they've done it by accident. [Matthew 12:32]
+VO: In Matthew 12, Jesus said "whoever speaks against the Holy Spirit will not be forgiven." Many people fear they've done it by accident. [Matthew 12:32]
+VO: Most Christian explanations agree on one thing: it isn't something done by accident. Some pastors and Bible teachers even say that if you're afraid you've done it, that fear is a sign you haven't. [Matthew 12:31-32; Mark 3:28-30]
 
 ## Story
-VO: But look at what had just happened. Jesus healed a demon-oppressed man who was blind and mute, and the Pharisees said he cast out demons only by "Beelzebul, the prince of demons." [Matthew 12:22-24]
+VO: So what is it? Look at what had just happened. Jesus had healed a man who was blind and mute and troubled by a demon. The Pharisees said he cast out demons by "the prince of demons." [Matthew 12:22-24]
 
 ## Turn
-VO: Then came the warning, and it starts with forgiveness: "every sin and blasphemy will be forgiven people." [Matthew 12:31]
+VO: In Mark's version of the same charge, Jesus asks, "How can Satan cast out Satan?" And Mark says why he warned them: "for they were saying, 'He has an unclean spirit.'" [Mark 3:23, 3:28-30]
+VO: In other words, they were calling the Holy Spirit's work the devil's. [Mark 3:28-30; Matthew 12:24-28]
+VO: And his warning about the one sin that won't be forgiven starts with the ones that will: "every sin and blasphemy will be forgiven people." [Matthew 12:31]
 VERSE: "every sin and blasphemy will be forgiven people, but the blasphemy against the Spirit will not be forgiven." — Matthew 12:31 (ESV)
-VO: Even words against Jesus himself: "whoever speaks a word against the Son of Man will be forgiven." [Matthew 12:32]
-VO: Mark tells the same scene and says why Jesus warned them: they were saying Jesus "has an unclean spirit." [Mark 3:22-30]
-VO: But Jesus said he cast out demons "by the Spirit of God." So they were giving the devil credit for the Spirit's work. [Matthew 12:24-28; Mark 3:22, 3:30]
+VO: Even words against Jesus himself, he said, will be forgiven. [Matthew 12:32]
 
 ## Landing
-VO: Christians read it two main ways: knowingly calling the Spirit's clear work evil, as those men were doing, or a final, lifelong refusal of the Spirit's call to repent. Either way, it isn't something done by accident. [Matthew 12:31-32; Mark 3:28-30]
-VO: So what is the unforgivable sin? In the text, it's tied to what those men were doing: calling the Spirit's work the devil's. [Matthew 12:31-32; Mark 3:28-30]
-VO: And even Paul, once "a blasphemer, persecutor, and insolent opponent," wrote, "But I received mercy because I had acted ignorantly in unbelief…" [1 Timothy 1:13]
+VO: Christians explain the sin in a few ways, such as knowingly calling God's clear work evil, or refusing his mercy to the very end. In each of these, it isn't something done by accident. [Matthew 12:31-32; Mark 3:28-30]
+VO: So what is the unforgivable sin? In the text, it's tied to what those men were doing: calling the Holy Spirit's work the devil's. [Matthew 12:31-32; Mark 3:28-30]
+VO: And Paul, who once persecuted Christians, called himself a former "blasphemer," and wrote, "But I received mercy…" [1 Timothy 1:13; Galatians 1:13]
 
 ## Question
 VO: What surprised you more: that the warning starts with forgiveness, or Jesus forgiving words against himself? [Matthew 12:31-32]
 
 ## Value
+- Mark says why Jesus warned them: "they were saying, 'He has an unclean spirit'" [Mark 3:30]
+- Jesus's answer to the charge: "How can Satan cast out Satan?" [Mark 3:23]
 - The warning starts with forgiveness: "every sin and blasphemy will be forgiven people" [Matthew 12:31]
-- Even "whoever speaks a word against the Son of Man will be forgiven" [Matthew 12:32]
-- Mark gives the reason Jesus warned them: they were saying Jesus "has an unclean spirit" [Mark 3:30]
-- Paul, once "a blasphemer, persecutor, and insolent opponent," wrote "But I received mercy because I had acted ignorantly in unbelief" [1 Timothy 1:13]
+- Even words against Jesus himself will be forgiven, he said [Matthew 12:32]
+- Paul, a former "blasphemer" who persecuted the church, wrote "But I received mercy" [1 Timothy 1:13; Galatians 1:13]
 
 ## Caption
 What is the unforgivable sin? Read it yourself: Matthew 12:22-32 and Mark 3:22-30, then 1 Timothy 1:12-16.
@@ -50,19 +57,22 @@ Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard 
 - Matthew 12:22-32
 - Mark 3:22-30
 - 1 Timothy 1:12-16
+- Galatians 1:13
 
 ## Fact-check log
 | Claim | Verse | Checked against | Status |
 | --- | --- | --- | --- |
 | Hook: a question | Matthew 12:31-32 | AI ESV fact-check pass 1 (qa/round1/A_factcheck.md), line 1 | verified |
-| "will not be forgiven, either in this age or in the age to come"; many fear it | Matthew 12:32 | pass 2 (qa/round1/A_factcheck_v3.md), line 2 | verified |
-| A demon-oppressed man, blind and mute, healed; the Pharisees: "only by Beelzebul, the prince of demons" | Matthew 12:22-24 | pass 2, line 3 | verified |
-| The warning starts "every sin and blasphemy will be forgiven people" (and the verse card) | Matthew 12:31 | passes 1 and 2, lines 4-5 | verified |
-| "whoever speaks a word against the Son of Man will be forgiven" | Matthew 12:32 | pass 2, line 5 | verified |
-| Mark, same scene, says why Jesus warned them: they were saying Jesus "has an unclean spirit" | Mark 3:22-30 | pass 3 (qa/round2/A_factcheck_v5.md), line 6 | verified |
-| Jesus said he cast out demons "by the Spirit of God"; so they were giving the devil credit for the Spirit's work | Matthew 12:24-28; Mark 3:22, 3:30 | pass 3, line 7 | verified |
-| The two main views; "Either way, it isn't something done by accident." | Matthew 12:31-32; Mark 3:28-30 | pass 2, line 8 (views verified; last sentence in its suggested wording) | verified |
-| Even Paul, once "a blasphemer, persecutor, and insolent opponent," wrote, "But I received mercy because I had acted ignorantly in unbelief…" | 1 Timothy 1:13 | pass 3, line 10 | verified |
-| Re-ask: "In the text, it's tied to what those men were doing: calling the Spirit's work the devil's" | Matthew 12:31-32; Mark 3:28-30 | pass 2, line 11 (its suggested wording; the second sentence was cut in v5) | verified |
-| Closing question: the warning starts with forgiveness / Jesus forgiving words against himself | Matthew 12:31-32 | pass 3, line 12 ("a fair shorthand") | verified |
-| The answer: line | Mark 3:30; Matthew 12:28, 12:31 | pass 2, line A | verified |
+| "whoever speaks against the Holy Spirit will not be forgiven"; many fear it | Matthew 12:32 | v7 check (qa/round3/A_factcheck_v7.md), L1 | verified |
+| "Most Christian explanations agree on one thing: it isn't something done by accident" | Matthew 12:31-32; Mark 3:28-30 | v7 check, L2 (its suggested wording) | verified |
+| "Some pastors and Bible teachers even say that if you're afraid you've done it, that fear is a sign you haven't" (attributed, not Scripture) | (none: pastoral teaching) | v7 check, L2: The Gospel Coalition essay "The Unpardonable Sin"; gotquestions.org/unpardonable-sin.html | verified |
+| A man blind and mute and "troubled by a demon"; the Pharisees said he cast out demons by "the prince of demons" | Matthew 12:22-24 | v7 check, L3 follow-up | verified |
+| In Mark's version of the same charge, Jesus asks, "How can Satan cast out Satan?"; Mark: "for they were saying, 'He has an unclean spirit.'" | Mark 3:22-23, 3:28-30 | v7 check, L4 (its suggested wording); 3:30 quote in the v6 check, item 1 | verified |
+| "In other words, they were calling the Holy Spirit's work the devil's" | Mark 3:28-30; Matthew 12:24-28 | v7 check, L5 (verified as a flagged paraphrase) | verified |
+| The warning "starts with the ones that will" + "every sin and blasphemy will be forgiven people" (and the verse card) | Matthew 12:31 | v6 check, item 2; quote and card: passes 1 and 2 | verified |
+| "Even words against Jesus himself, he said, will be forgiven" | Matthew 12:32 | v7 check, L6 | verified |
+| "Christians explain the sin in a few ways, such as knowingly calling God's clear work evil, or refusing his mercy to the very end. In each of these, it isn't something done by accident." | Matthew 12:31-32; Mark 3:28-30 | v6 check item 3 + v7 check L7 (their suggested wording) | verified |
+| Re-ask: "In the text, it's tied to what those men were doing: calling the Holy Spirit's work the devil's" | Matthew 12:31-32; Mark 3:28-30 | pass 2, line 11 ("Holy" added) | verified |
+| Paul "who once persecuted Christians", a former "blasphemer", "But I received mercy…" | 1 Timothy 1:13; Galatians 1:13 | v7 check, L8 (ellipsis restored) | verified |
+| Closing question A: the warning starts with forgiveness / Jesus forgiving words against himself | Matthew 12:31-32 | pass 3, line 12 ("a fair shorthand") | verified |
+| The answer: line | Mark 3:30; Matthew 12:24 | v7 check, answer (its suggested wording) | verified |

@@ -42,3 +42,8 @@
 - The quotes ("the prince of demons"; "they were saying, 'He has an unclean spirit'") are exact.
 
 No facts in this report came from memory.
+
+---
+**Follow-up on L3 in plain words** ("Jesus had healed a man who was blind and mute and troubled by a demon. The Pharisees said he cast out demons by 'the prince of demons.'"):
+
+VERIFIED. Matthew 12:22 says "a demon-oppressed man who was blind and mute was brought to him, and he healed him," so "troubled by a demon" is a fair plain-word rendering. It doesn't state a casting-out as fact. "the prince of demons" is exact from 12:24. Dropping "only" and "Beelzebul" doesn't change the accusation.

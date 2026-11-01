@@ -210,36 +210,44 @@ The engine (`ep01-samson/film27/`) and the voice takes exist only in this worksp
 - **What I do with it:** run it through the same pace, loudness and alignment checks, and put it next to the ElevenLabs take.
 - **How to decide:** if you like how you sound, switch. If not, keep the AI voice; the label is a small cost.
 
-### 17. Ep 3 "What is the unforgivable sin?": approve the script (you picked card C, Oct 31 23:34)
+### 17. Ep 3 "What is the unforgivable sin?": approve the script (you picked card C, Oct 31 23:34; v7 on Nov 1)
 
-**Where it stands:** the script is `ep03-unforgivable-sin/episode.md` (= `episode_v5_draft.md`). It went through every check:
-- **Two review rounds:** an AI fact-checker, a simulated viewer, an AI editor and an AI director; replies and merge logs in `qa/round1–2/`.
-- **Three AI fact-check passes**, every line VERIFIED.
-- **`fw_check.py`:** 0 FAIL.
+**Where it stands:** the script is `ep03-unforgivable-sin/episode.md` (= `episode_v7_draft.md`; v5 is kept as `episode_v5_draft.md`).
 
-**Judge panel:** 7, 7, 7, GOOD ENOUGH (`qa/judge_run2/`).
-- Question pull is 5/5, the first of our scripts to get it.
-- 251 words, about 88–101 s.
+**What changed from v5 (Round 20: tokens on the viewer):**
+- **A first-time viewer read** (AI, `qa/round3/B_viewer_v6.md`) rated v6's clarity 3/5. It would have swiped at the Mark line, and the fear in line 2 went unrelieved for about 60 s. v7:
+  - puts the relief at about 11 s: "it isn't something done by accident", plus the attributed pastors' line it said it would share;
+  - turns the story into the proof ("So what is it?");
+  - cuts Beelzebul, "demon-oppressed", "Son of Man" and "insolent".
+- **Research** on what the main Christian views actually say: `qa/v6_research.md` (The Gospel Coalition, the Catholic Catechism 1864, Got Questions, a survey of the traditions).
+- **Two scoped AI fact-checks** (`qa/round3/A_factcheck_v6.md`, `A_factcheck_v7.md`) of the new lines only. Every row is now VERIFIED. They caught:
+  - Mark's accusers are scribes, not Matthew's Pharisees;
+  - "like those men" overclaimed;
+  - "many pastors" was more than the sources support, so it's now "some pastors and Bible teachers";
+  - Matthew 12:28 is an "if", so the script now uses Mark 3:23 instead.
+- **`fw_check.py`:** 0 FAIL, 268 words, about 95-100 s.
+- **The judge panel was not re-run on v7** (Round 20: tokens on the viewer). It's available if you want it.
 
 **The full narration:**
 > What is the unforgivable sin?
-> In Matthew 12, Jesus said one sin "will not be forgiven, either in this age or in the age to come." Many people fear they've done it by accident.
-> But look at what had just happened. Jesus healed a demon-oppressed man who was blind and mute, and the Pharisees said he cast out demons only by "Beelzebul, the prince of demons."
-> Then came the warning, and it starts with forgiveness: "every sin and blasphemy will be forgiven people." *(verse card: Matthew 12:31)*
-> Even words against Jesus himself: "whoever speaks a word against the Son of Man will be forgiven."
-> Mark tells the same scene and says why Jesus warned them: they were saying Jesus "has an unclean spirit."
-> But Jesus said he cast out demons "by the Spirit of God." So they were giving the devil credit for the Spirit's work.
-> Christians read it two main ways: knowingly calling the Spirit's clear work evil, as those men were doing, or a final, lifelong refusal of the Spirit's call to repent. Either way, it isn't something done by accident.
-> So what is the unforgivable sin? In the text, it's tied to what those men were doing: calling the Spirit's work the devil's.
-> And even Paul, once "a blasphemer, persecutor, and insolent opponent," wrote, "But I received mercy because I had acted ignorantly in unbelief…"
+> In Matthew 12, Jesus said "whoever speaks against the Holy Spirit will not be forgiven." Many people fear they've done it by accident.
+> Most Christian explanations agree on one thing: it isn't something done by accident. Some pastors and Bible teachers even say that if you're afraid you've done it, that fear is a sign you haven't.
+> So what is it? Look at what had just happened. Jesus had healed a man who was blind and mute and troubled by a demon. The Pharisees said he cast out demons by "the prince of demons."
+> In Mark's version of the same charge, Jesus asks, "How can Satan cast out Satan?" And Mark says why he warned them: "for they were saying, 'He has an unclean spirit.'"
+> In other words, they were calling the Holy Spirit's work the devil's.
+> And his warning about the one sin that won't be forgiven starts with the ones that will: "every sin and blasphemy will be forgiven people." *(verse card: Matthew 12:31)*
+> Even words against Jesus himself, he said, will be forgiven.
+> Christians explain the sin in a few ways, such as knowingly calling God's clear work evil, or refusing his mercy to the very end. In each of these, it isn't something done by accident.
+> So what is the unforgivable sin? In the text, it's tied to what those men were doing: calling the Holy Spirit's work the devil's.
+> And Paul, who once persecuted Christians, called himself a former "blasphemer," and wrote, "But I received mercy…"
 > What surprised you more: that the warning starts with forgiveness, or Jesus forgiving words against himself?
 
-**One open choice: the closing question.** Two of the three judges wanted it aimed at the fear the hook raises, not at "which detail surprised you".
+**One open choice: the closing question.** Two of the three judges on v5 wanted it aimed at the fear the hook raises, not at "which detail surprised you". v7 now answers that fear early, so B lands better than before. **Recommended: B.**
 
 | | Exact words | Words | Status |
 |---|---|---|---|
-| **A** (in the script) | What surprised you more: that the warning starts with forgiveness, or Jesus forgiving words against himself? | 16 | Fact-checked and judged |
-| B | Did you ever worry you'd committed it, or is this the first you've heard of it? | 16 | Not judged; no Bible claim to check |
+| **A** (in the script) | What surprised you more: that the warning starts with forgiveness, or Jesus forgiving words against himself? | 16 | Fact-checked |
+| B | Did you ever worry you'd committed it, or is this the first you've heard of it? | 16 | No Bible claim to check |
 
 **After you approve:** the shot list. The AI director's 20-shot storyboard ("a ledger of sins being stamped FORGIVEN") is the starting point (`qa/round1/D_director.md`).
 

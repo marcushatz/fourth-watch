@@ -1,6 +1,6 @@
 # Fourth Watch QA — script
 
-**Verdict: FAIL** · 9 fail · 8 warn · 11 pass
+**Verdict: PASS WITH WARNINGS** · 0 fail · 7 warn · 11 pass
 
 | Fact | Value |
 | --- | --- |
@@ -11,21 +11,11 @@
 
 | Level | Check | Time | Finding |
 | --- | --- | --- | --- |
-| FAIL | fact-check |  | claim not verified: '"whoever speaks against the Holy Spirit will not be forgiven" (quote n' (status: 'pending') |
-| FAIL | fact-check |  | claim not verified: '"Christians across traditions agree on one thing: it isn't something d' (status: 'pending') |
-| FAIL | fact-check |  | claim not verified: 'Healed a blind, mute man "by casting out a demon"; the Pharisees said ' (status: 'pending') |
-| FAIL | fact-check |  | claim not verified: '"by the Spirit of God"; giving the devil credit for the Holy Spirit's ' (status: 'pending') |
-| FAIL | fact-check |  | claim not verified: 'The warning "starts with the ones that will" + "every sin and blasphem' (status: 'pending') |
-| FAIL | fact-check |  | claim not verified: '"Even words against Jesus himself, he said, will be forgiven" (paraphr' (status: 'pending') |
-| FAIL | fact-check |  | claim not verified: 'Views: "knowingly calling God's clear work evil, or refusing his mercy' (status: 'pending') |
-| FAIL | fact-check |  | claim not verified: 'Paul "who once persecuted Christians", a former "blasphemer", "But I r' (status: 'pending') |
-| FAIL | fact-check |  | claim not verified: 'The answer: line' (status: 'pending') |
 | WARN | sentence length |  | 31 words (max 25): 'In Mark's version of the same charge, Jesus asks, "How can Satan cast out Satan?' |
 | WARN | loop |  | the last VO line shares no key word with the hook; the loop line should echo it |
 | WARN | hook form |  | the hook names no Bible person, place or object; the hits name one in the question itself |
 | WARN | turn |  | the Turn starts about 35s in (Lintel's top six turn at 14–25 s, after at most ~14 s of story) |
 | WARN | answer timing |  | the core answer starts at about 23% of the runtime (top six 33–50%; the question-video lows 59–82%) |
-| WARN | fact-check |  | [Mark 3:28-30; Matthew 12:24-28] is cited in the VO but not in the fact-check log |
 | WARN | fact-check |  | [Mark 3:23, 3:28-30] is cited in the VO but not in the fact-check log |
 | WARN | judge |  | not judged: run the blind judge panel before Marcus sees it, then pass --judge <run folder> (tools/script_judge/rubric.md) |
 | PASS | series |  | ASK THE TEXT |
