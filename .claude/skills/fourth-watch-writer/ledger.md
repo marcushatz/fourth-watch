@@ -18,9 +18,9 @@ Keep it short: one entry per verdict, Marcus's words quoted. Add an entry the da
 | Nov 1 | Ep 3 drafts that defined the sin but not WHY it can't be forgiven | "i stilll dont know if it provides enough value… disappointed u missed all this" | List the viewer's next questions, and answer every one |
 | Nov 1 | Ep 4 Esau/Jacob v6: 7 books, 5 partial answers, patched from AI-viewer complaints | "it makes no sense, i dont understand what the clear message is" | One thread; fix the spine, not lines; AI scores aren't the bar |
 | Nov 1 | Leah outlines with archaic verse dumps and note fragments | "weird way of talking… wasteful and non intriguing" | Plain modern sentences; quote only short phrases; discoveries, not the famous beats |
-
 | Nov 1 17:33 | Bronze Serpent v1 at ~2 min: 15 s on one distinction, retelling the destruction the hook had revealed, a recap | "low insight density… cinematography cannot compensate for a script that has already finished making its point" | Something new every 10-15 s; 75-95 s; never re-explain the hook; the viewer must leave with a connection they'd never find reading the passages separately |
 | Nov 1 17:33 | Direction v1 (28 shots) built before the narration was strong | "Stop refining the storyboard until the narration is stronger" | Script first. No storyboard work on a script that isn't dense enough. And no picture claims the text doesn't make (prostration; 2 Kgs 18:4 says "offerings") |
+
 
 ## Lessons (standing)
 1. **Thread first.** One object, person, phrase or problem; every book on the thread.
