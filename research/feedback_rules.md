@@ -210,3 +210,9 @@
 - **Value means answering the viewer's next questions, not counting facts.** Before drafting, list the questions the hook raises in a viewer's head (for Ep 3: what is it, could I have done it, WHY can't it be forgiven, has anyone done something terrible and been forgiven). The script must answer every one of them. A script that passes the checker but leaves one of them open is not done.
 - **Every script needs one line people would repeat or screenshot** (the answer said plainly) and one concrete proof from the text, not only statements.
 - **Show Marcus the value verdict honestly before calling a script done.** Don't present "every row verified, 0 FAIL" as if it meant "good enough".
+
+## Round 22 — Marcus, Nov 1 10:32
+- His words: "fyi you removing the gold and teh idols was uncesary it was not the centerof attnetino almost nobody noticed them."
+- **Don't spend work fixing background details the viewer isn't watching.** Accuracy effort goes to what the viewer's attention is on (the action, the words, the cards). A minor set detail in the background isn't worth a re-render.
+- **Open question for Marcus:** the gold light at the pillars. His canon rule says gold only where the text says God acted, and v57 has gold on "pushed". Restore it or not? Asked, Nov 1.
+- He asked again whether "the script engine itself is better": he wants a straight verdict on the engine, not the process around it.
