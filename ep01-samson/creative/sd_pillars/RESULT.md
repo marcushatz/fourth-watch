@@ -44,7 +44,7 @@
 4. **The final render** with all of the above (`sd_window.mp4`).
 5. **The engine safety check:**
    - The reusable pieces were promoted into `film27`: `fw/direct.js`, the PP2 `pitch` option, and the dagon `sd` branch with its robust timeline. They change nothing in v57.
-   - Three master frames rendered before and after the change (104.5, 107.7, 112.0 s) are **pixel-identical**.
+   - Three master frames rendered before and after the change (104.5, 107.7, 112.0 s) are **pixel-identical**, checked again after the final dagon fixes.
 
 ## What's still weak (the next three to fix)
 
@@ -62,7 +62,7 @@ Also: the v57 soundtrack's shimmer on "pushed" belonged to the gold. It should g
 | Muted test (vision) + picture fact-check | 81,421 for the new agent (~75k of it start-up) + 4,905 for the resume = **86,326** | ~50 s |
 | Stills (5 passes, 46 stills on the dagon set) | none | 6-12 s each, about 8 min in all |
 | Full render 1 (378 frames, 1080×1920) | none | **2,064 s = 34.4 min (0.18 fps)** |
-| Final render | none | see `film/out/render_final.log` (same size: about 34 min) |
+| Final render (after the muted-test and fact-check fixes) | none | **2,382 s = 39.7 min** (378 frames) |
 | Engine safety check (6 stills) | none | ~1.5 min |
 
 **Per episode (estimate, 100-120 s, about 10 windows):**
