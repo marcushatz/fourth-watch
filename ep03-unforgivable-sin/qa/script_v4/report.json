@@ -3,8 +3,8 @@
   "verdict": "PASS WITH WARNINGS",
   "counts": {
     "FAIL": 0,
-    "WARN": 7,
-    "PASS": 14
+    "WARN": 6,
+    "PASS": 15
   },
   "facts": {
     "title": "What is the unforgivable sin?",
@@ -114,9 +114,9 @@
       "msg": "every line adds at least one new key word or quote"
     },
     {
-      "level": "WARN",
+      "level": "PASS",
       "check": "judge",
-      "msg": "not judged: run the blind judge panel before Marcus sees it, then pass --judge <run folder> (tools/script_judge/rubric.md)"
+      "msg": "GOOD ENOUGH (craft, blind AI judges): overall 7 vs the best reference reel's 7; hook 4, payoff 4, new value 4. Not a forecast of views"
     }
   ]
 }

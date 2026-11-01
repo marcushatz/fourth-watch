@@ -1,6 +1,6 @@
 # Fourth Watch QA — script
 
-**Verdict: PASS WITH WARNINGS** · 0 fail · 7 warn · 14 pass
+**Verdict: PASS WITH WARNINGS** · 0 fail · 6 warn · 15 pass
 
 | Fact | Value |
 | --- | --- |
@@ -17,7 +17,6 @@
 | WARN | sentence length |  | 29 words (max 25): 'Christians read it two main ways: knowingly calling the Spirit's clear work evil' |
 | WARN | sentence length |  | 27 words (max 25): 'The last time, he swore, "I do not know this man…" Later Jesus asked him three t' |
 | WARN | hook form |  | the hook names no Bible person, place or object; the hits name one in the question itself |
-| WARN | judge |  | not judged: run the blind judge panel before Marcus sees it, then pass --judge <run folder> (tools/script_judge/rubric.md) |
 | PASS | series |  | ASK THE TEXT |
 | PASS | hook |  | first VO line equals the title |
 | PASS | runtime |  | estimated 103s |
@@ -32,3 +31,4 @@
 | PASS | closing question |  | 15 words (the hits' closing questions run 16–17 words, about 5 s) |
 | PASS | repetition |  | no 3-word phrase is said 3 or more times |
 | PASS | nothing new |  | every line adds at least one new key word or quote |
+| PASS | judge |  | GOOD ENOUGH (craft, blind AI judges): overall 7 vs the best reference reel's 7; hook 4, payoff 4, new value 4. Not a forecast of views |
