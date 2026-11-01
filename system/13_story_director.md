@@ -113,8 +113,8 @@ The INDEX lists these by purpose, each with its code.
 1. **Stills at every read's start** (`node engine/render.js stills ...`) → a contact sheet. Look for:
    - Does each read's subject sit where the eye lands?
    - Is it inside 22-60% of the height and clear of the caption band?
-2. **The muted test:** a fresh agent with vision gets only the contact sheet (no words) and writes what happens. If its account misses a read, that shot fails.
-3. **The motion clip** of the window (`clip A B`): watch it as video. Stills can't judge motion.
+2. **The muted test:** a fresh agent with vision gets only the contact sheet (no words) and writes what happens. If its account misses a read, that shot fails. **Run it, and the picture fact-check, on stills, before any clip.** A 12 s clip on the dagon set takes ~34 min (0.18 fps on this machine). In the pillars demo, running the muted test on a full render cost about an hour of re-rendering that stills would have saved.
+3. **The motion clip** of the window (`clip A B`), **once**, after the stills pass: watch it as video. Stills can't judge motion.
 4. **The three most serious visual problems,** named concretely ("the push doesn't read: arms barely move").
 5. **Revise only the failing shots.** Passing shots keep their cache keys and aren't re-rendered.
 6. **Then** the full-render gates in 09 (`fw_check video`, the critic, ≥ 3 rounds).
