@@ -71,10 +71,21 @@ def main():
         t += dur
         prev = sec
     if real:  # replace estimates with recorded timings (same word order)
-        flat = [w for L in lines for w in L["words"]]
-        assert len(flat) == len(real), f"word count mismatch: script {len(flat)} vs voice {len(real)}"
-        for w, r in zip(flat, real):
-            w["s"], w["e"] = r["s"], r["e"]
+        R = [{"s": r.get("s", r.get("start")), "e": r.get("e", r.get("end")), "line": r.get("line")} for r in real]
+        if all(r["line"] is not None for r in R) and len({r["line"] for r in R}) == len(lines):
+            # per line, so a spoken number ("3:16" = "three sixteen") can take several recorded words
+            for L in lines:
+                rw = [r for r in R if r["line"] == L["i"]]; extra = len(rw) - len(L["words"]); j = 0
+                assert extra >= 0, f"line {L['i']}: script {len(L['words'])} words vs voice {len(rw)}"
+                for w in L["words"]:
+                    span = 1 + (extra if extra > 0 and re.search(r"\d", w["w"]) else 0)
+                    if span > 1: extra = 0
+                    seg = rw[j:j + span] or rw[-1:]; w["s"], w["e"] = seg[0]["s"], seg[-1]["e"]; j += span
+        else:
+            flat = [w for L in lines for w in L["words"]]
+            assert len(flat) == len(R), f"word count mismatch: script {len(flat)} vs voice {len(R)}"
+            for w, r in zip(flat, R):
+                w["s"], w["e"] = r["s"], r["e"]
         for L in lines:
             L["start"], L["end"] = L["words"][0]["s"], L["words"][-1]["e"]
     # caption chunks: 2-4 words, phrase-aware DP over each line: break at punctuation, never end a chunk on a

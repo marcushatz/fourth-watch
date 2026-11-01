@@ -145,8 +145,9 @@
       // a transition (fw/trans.js) draws the outgoing and incoming picture bodies itself; otherwise the body draws straight in
       const tr = globalThis.TRANS && globalThis.TRANS.active(t, shot);
       if (tr) globalThis.TRANS.draw(ctx, t, shot, S.SHOTS[shot.i - 1], body, W, H, tr); else body(ctx, t, shot);
-      TX.header(ctx, W, 1, { series: 'ASK THE TEXT', topic: 'SAMSON' });
-      if (shot.title) TX.title(ctx, W, [['IF', 'GOD', 'STILL', 'USES', 'YOU,'], ['IS', 'HE', 'OKAY*', 'WITH'], ['HOW', 'YOU', 'LIVE?']], 1, 318, 64);
+      const EP = globalThis.EPISODE || { series: 'ASK THE TEXT', topic: 'SAMSON', title: [['IF', 'GOD', 'STILL', 'USES', 'YOU,'], ['IS', 'HE', 'OKAY*', 'WITH'], ['HOW', 'YOU', 'LIVE?']], titleY: 318, titleSize: 64 };
+      TX.header(ctx, W, 1, { series: EP.series, topic: EP.topic });
+      if (shot.title) TX.title(ctx, W, EP.title, 1, EP.titleY ?? 318, EP.titleSize ?? 64);
       narration(ctx, t, shot);
       // cut-in transitions: a short dip from black at section changes, a gold flash where the scene asks for it
       const d = t - shot.t0;

@@ -17,8 +17,10 @@
 (function () {
   const S = globalThis.SCORE, FW = globalThis.FW, THREE = globalThis.THREE, LW = globalThis.LW, PP2 = globalThis.PP2, D = globalThis.DIRECT;
   const SCENES = (globalThis.SCENES = globalThis.SCENES || {});
-  const RECIPES = {};
-  globalThis.DIORAMA = { set: (name, r) => { RECIPES[name] = r; }, RECIPES };
+  const RECIPES = {}, KINDS = {};
+  // DIORAMA.prop(kind, (p, rng) => Object3D): an episode adds its own prop kinds (a calf, a serpent on a pole...).
+  // A prop may define o.userData.frame(t, evs, shot): it gets the fx events aimed at it (see shot.dio.fx below).
+  globalThis.DIORAMA = { set: (name, r) => { RECIPES[name] = r; }, prop: (kind, fn) => { KINDS[kind] = fn; }, RECIPES, KINDS };
   const W = S.W, H = S.H, { clamp, lerp, ease } = FW;
   const C = (h) => new THREE.Color(h);
   const q = (v, n = 60) => Math.round(v * n) / n;
@@ -57,7 +59,7 @@
       case 'crate': o = LW.crate(rng, p.s ?? 1); break;
       case 'pot': { o = new THREE.Group(); const b = new THREE.Mesh(new THREE.SphereGeometry(0.2, 9, 6, 0, 6.29, 0.5, 2.2), LW.M(p.col || '#6A4A36')); b.position.y = 0.24; o.add(b);
         const st = new THREE.Mesh(new THREE.CylinderGeometry(0.17, 0.17, 0.02, 9), LW.M('#8A3A1E')); st.position.y = 0.36; o.add(st); o.scale.setScalar(p.s ?? 1); LW.shadowy(o); break; }   // a cooking pot (stew showing)
-      default: throw new Error('diorama: unknown prop kind ' + p.kind);
+      default: if (KINDS[p.kind]) { o = KINDS[p.kind](p, rng); break; } throw new Error('diorama: unknown prop kind ' + p.kind);
     }
     if (p.rot != null) o.rotation.y = p.rot;
     return o;
@@ -74,7 +76,7 @@
     scene.add(LW.terrain({ size: r * 3.2, seg: 96, hFn: islandH(r, g.hills ?? 0.25, g.seed ?? 3), seed: g.seed ?? 3,
       colFn: (x, z, y, ny, rnd) => { const c = cols[Math.floor(rnd * cols.length)].clone(); if (y < -0.4) c.lerp(C('#6A5A48'), clamp(-y / 3)); return c.multiplyScalar(0.92 + ny * 0.1); } }));
     const props = {}, fires = [];
-    (R.props || []).forEach((p, i) => { const o = makeProp(p, rng); o.position.set(p.at[0], p.y ?? 0, p.at[1]); scene.add(o); props[p.id || 'p' + i] = o; if (p.kind === 'fire') fires.push(o); });
+    (R.props || []).forEach((p, i) => { const o = makeProp(p, rng); o.position.set(p.at[0], p.y ?? 0, p.at[1]); o.userData.rest = p; scene.add(o); props[p.id || 'p' + i] = o; if (p.kind === 'fire') fires.push(o); });
     // a fixed pool of warm lights for the fires (changing the light count recompiles shaders)
     const fireLights = fires.slice(0, 3).map((f) => { const L = new THREE.PointLight(C('#FF9A52'), 6, 7, 1.6); L.position.set(f.position.x, 0.6, f.position.z); scene.add(L); return L; });
     const actors = {};
@@ -91,11 +93,11 @@
   const tOf = (shot, v, fb) => (typeof v === 'number' ? v : v == null ? fb : D.beat(shot, v, fb));
   function actorState(B, id, shot, t) {
     const a = B.actors[id], rest = a.rest;
-    let pos = [rest.at[0], rest.at[1]], pose = rest.pose || 'stand', visible = rest.hidden ? false : true, item = rest.item, dist = 0, look = rest.look;
+    let pos = [rest.at[0], rest.at[1]], pose = rest.pose || 'stand', visible = rest.hidden ? false : true, item = rest.item, dist = 0, look = rest.look, strike = null, kk = rest.k;
     // continuity: every earlier shot on the same set still counts (one set per story run), in time order
     const acts = [];
     for (const sh of S.SHOTS) if (sh.scene === 'diorama' && sh.v === shot.v && sh.t0 <= shot.t0 && sh.dio && sh.dio.act)
-      for (const x of sh.dio.act) if (x.who === id) acts.push(Object.assign({ t0: tOf(sh, x.at, sh.t0) }, x));
+      for (const x of sh.dio.act) if (x.who === id) acts.push(Object.assign({ t0: tOf(sh, x.at, sh.t0), sh }, x));
     acts.sort((x, y) => x.t0 - y.t0);
     for (const x of acts) {
       if (t < x.t0) break;
@@ -113,8 +115,18 @@
       if (x.look) look = x.look;
       if (x.hide) visible = false;
       if (x.show) visible = true;
+      if (x.strike != null) strike = tOf(x.sh, x.strike, x.t0 + 0.4);   // a verb's key frame (e.g. the hammer lands) for poses with k
+      if (x.k != null) kk = x.k;
     }
-    return { pos, pose, visible, item, phase: dist * 4.2, look };
+    return { pos, pose, visible, item, phase: dist * 4.2, look, strike, k: kk };
+  }
+  // prop effects: shot.dio.fx = [{ on: propId, at, do: 'hide' | 'show' | any verb the prop understands, dur, ... }]
+  // Like actors, every earlier shot on the same set still counts (continuity), so a burnt calf stays burnt.
+  function propEvents(B, id, shot, t) {
+    const evs = [];
+    for (const sh of S.SHOTS) if (sh.scene === 'diorama' && sh.v === shot.v && sh.t0 <= shot.t0 && sh.dio && sh.dio.fx)
+      for (const x of sh.dio.fx) if (x.on === id) evs.push(Object.assign({ t0: tOf(sh, x.at, sh.t0) }, x));
+    return evs.sort((a, b) => a.t0 - b.t0).filter((e) => e.t0 <= t);
   }
   function subjectPoint(B, shot, on, t) {
     if (Array.isArray(on)) return on;
@@ -153,16 +165,32 @@
         const a = B.actors[id], st = actorState(B, id, shot, t);
         a.bb.visible = st.visible; if (!st.visible) continue;
         a.bb.position.set(st.pos[0], 0, st.pos[1]);
-        const draw = { pose: st.pose, phase: q(st.phase, 8), t: q(t, 12), item: st.item, look: st.look };
+        const kNow = st.strike != null ? q(Math.max(0, Math.min(1.08, D.act(t, st.strike, { pre: 0.45, dip: 0.18, rise: 0.12, over: 0.06, settle: 0.2 }).k)), 30) : st.k;
+        const draw = { pose: st.pose, phase: q(st.phase, 8), t: q(t, 12), item: st.item, look: st.look, k: kNow };
         a.bb.userData.update(JSON.stringify(draw), draw);
         a.bb.material.color.setRGB(...B.sk.tint);
         bill.push(a.bb); anchors[id] = [st.pos[0], st.pose === 'kneel' ? 1.3 : st.pose === 'sit' ? 1.15 : 2.0, st.pos[1]];   // the head, by pose
       }
       B.fires.forEach((f, i) => { const core = f.userData.core; if (core) core.scale.set(1, 0.85 + 0.15 * Math.sin(t * 13 + i), 1); });
       B.fireLights.forEach((L, i) => { L.intensity = 6 * (0.86 + 0.1 * Math.sin(t * 11 + i * 2) + 0.06 * Math.sin(t * 23 + i)); });
+      for (const [pid, o] of Object.entries(B.props)) {
+        const rest = o.userData.rest || {}, show = (shot.dio && shot.dio.show) || null, hide = (shot.dio && shot.dio.hide) || [];
+        if (!rest.hidden && !show && !hide.length && !o.userData.frame && !(shot.dio && shot.dio.fx)) continue;   // the common case: nothing to do
+        const evs = propEvents(B, pid, shot, t);
+        let vis = !rest.hidden; for (const e of evs) { if (e.do === 'hide') vis = false; if (e.do === 'show') vis = true; }
+        if (show && show.includes(pid)) vis = true; if (hide.includes(pid)) vis = false;
+        o.visible = vis;
+        if (vis && o.userData.frame) o.userData.frame(t, evs, shot);
+      }
       const c = camFor(B, shot, t);
-      for (const [pid, o] of Object.entries(B.props)) anchors[pid] = anchors[pid] || [o.position.x, 0.6, o.position.z];
-      return { scene: B.scene, sun: B.sun, bill, anchors, focus: c.focus, aperture: c.ap, maxR: 6, fgScale: 1.3, exposure: 1.06, sat: 1.04, bloom: 0.12 };
+      for (const [pid, o] of Object.entries(B.props)) anchors[pid] = anchors[pid] || [o.position.x, o.userData.anchorY ?? 0.6, o.position.z];
+      const out = { scene: B.scene, sun: B.sun, bill, anchors, focus: c.focus, aperture: c.ap, maxR: 6, fgScale: 1.3, exposure: 1.06, sat: 1.04, bloom: 0.12 };
+      // God's light (series canon: gold from the upper left, only where the text says God acts): shot.dio.rays = { on, from, dur, amt, y }
+      const RY = shot.dio && shot.dio.rays;
+      if (RY) { const k = clamp((t - tOf(shot, RY.from, shot.t0)) / (RY.dur ?? 0.8)); const p = subjectPoint(B, shot, RY.on, t); out.rays = { amt: (RY.amt ?? 1) * ease.inOut(k), target: [p[0], RY.y ?? 1.6, p[2]] }; }
+      if (shot.dio && shot.dio.look) Object.assign(out, shot.dio.look);   // per-shot grade overrides (exposure, sat, bloom)
+      if (shot.dio && typeof shot.dio.post === 'function') out.post = (ctx, t2, P) => shot.dio.post(ctx, t2, P, shot, W, H);   // a 2D overlay drawn over this shot's frame
+      return out;
     },
   };
 })();

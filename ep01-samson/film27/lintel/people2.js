@@ -847,6 +847,14 @@
 
   // ---- items held in a hand (drawn 'back' before the hand, 'front' after) ----
   const ITEMS = {
+    hammer(ctx, ph, W, ang, s) {   // a mallet: handle along the hand's direction, a stone/bronze head at the end
+      if (ph !== 'front') return;
+      const ux = Math.cos(ang), uy = Math.sin(ang), L = 150, hx = W[0] + ux * L, hy = W[1] + uy * L, b = [W[0] - ux * 30, W[1] - uy * 30];
+      ctx.lineCap = 'round'; ctx.strokeStyle = LINE; ctx.lineWidth = 13; ctx.beginPath(); ctx.moveTo(b[0], b[1]); ctx.lineTo(hx, hy); ctx.stroke();
+      ctx.strokeStyle = '#7A5A3E'; ctx.lineWidth = 8; ctx.stroke();
+      ctx.save(); ctx.translate(hx, hy); ctx.rotate(ang + Math.PI / 2); const hd = P2(); hd.roundRect(-44, -22, 88, 44, 8);
+      part(ctx, hd, '#6E6A64', { shade: '#45423E', sd: 6, rim: '#B8B2A8', rimA: 0.6, lw: 3 }); ctx.restore();
+    },
     staff(ctx, ph, W, ang, s) {
       if (ph !== 'back') return;
       const top = [W[0] + 4 * s, W[1] - 150], bot = [W[0] - 2 * s, W[1] + 230];
@@ -912,6 +920,15 @@
       const v = blob([[-38, 32], [-44, -6], [-38, -42], [0, -56], [38, -42], [44, -6], [38, 32], [52, 86], [26, 68], [33, 8], [25, -24 + fy * 0.4], [0, -31 + fy * 0.5], [-25, -24 + fy * 0.4], [-33, 8], [-26, 68], [-52, 86]], 0.42);
       part(ctx, v, col, { shade: sh, sd: 8, rim: o.rim, rimA: o.rimA || 0 });
       if (o.trim) { ctx.save(); ctx.clip(v); ctx.strokeStyle = o.trim; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(-34, 60); ctx.quadraticCurveTo(-36, 0, -26, -26 + fy * 0.4); ctx.quadraticCurveTo(0, -36 + fy * 0.5, 26, -26 + fy * 0.4); ctx.quadraticCurveTo(36, 0, 34, 60); ctx.stroke(); ctx.restore(); part(ctx, v, 'rgba(0,0,0,0)', { lw: 2.6 }); }
+    };
+  }
+  function royalCrown(base, gold) { // a king: his own hair, and a gold crown band with five points
+    return (ctx, layer, E, fx, fy, P) => {
+      base(ctx, layer, E, fx, fy, P);
+      if (layer !== 'front') return;
+      const c = P2(); c.moveTo(-34, -28); c.lineTo(-36, -50); c.lineTo(-24, -40); c.lineTo(-14, -60); c.lineTo(-4, -42); c.lineTo(0, -66); c.lineTo(4, -42); c.lineTo(14, -60); c.lineTo(24, -40); c.lineTo(36, -50); c.lineTo(34, -28); c.quadraticCurveTo(0, -22, -34, -28); c.closePath();
+      part(ctx, c, gold || '#E0B040', { shade: '#A87A20', sd: 4, rim: '#FFE7A0', rimA: 0.8, lw: 2.4 });
+      ctx.fillStyle = '#A8432C'; for (const x of [-18, 0, 18]) { ctx.beginPath(); ctx.arc(x, -33, 3, 0, TAU); ctx.fill(); }
     };
   }
   function featherCrown(trim, o = {}) { // as PP.soldier: a row of upright feathers in a band
@@ -1310,6 +1327,7 @@
     let hair;
     if (w) hair = veil(o.veil, { hair: o.hair, trim: o.phil ? (o.trim === '#E4D3B0' ? '#A8432C' : '#E4D3B0') : null });
     else if (o.feathers) hair = featherCrown(o.trim);
+    else if (o.crown) hair = royalCrown(hairCap(o.hairCol || '#2A1A12', mix(o.hairCol || '#2A1A12', '#000000', 0.5), mix(o.hairCol || '#2A1A12', '#B08060', 0.35)), o.crown);
     else if (o.cloth) hair = headCloth(o.cloth, o.band);
     else hair = hairCap(o.hairCol, mix(o.hairCol, '#000000', 0.5), mix(o.hairCol, '#B08060', 0.35), { band: o.hband, curls: o.young });
     return {
@@ -1350,6 +1368,12 @@
         P.kneel = 1; P.by = 150;
         P.arms = { '-1': { T: [-7, -372 * hy], pole: [-150, -260], hand: 'open', hdir: -84 }, '1': { T: [7, -372 * hy], pole: [150, -260], hand: 'open', hdir: -96 } };
         Object.assign(P.head, { pitch: -0.3, mouth: 'part', furrow: -0.4, look: [0, -0.8] }); break;
+      }
+      case 'swing': { // both hands on a hammer: k 0 = raised behind the head, 1 = struck down in front (drive it with DIRECT.act)
+        const k = clamp(st.k ?? 0), hx = lerp(30, 170, k), hyy = lerp(-700, -330, k) * hy, dir = lerp(-115, 35, k);
+        P.arms = { '1': { T: [hx, hyy], pole: [200, -420], hand: 'fist', hdir: dir, item: st.item || 'hammer' }, '-1': { T: [hx - 30, hyy + 40], pole: [-150, -400], hand: 'fist', hdir: dir } };
+        P.lean += lerp(-0.05, 0.1, k);
+        Object.assign(P.head, { pitch: lerp(-0.15, 0.25, k), mouth: k > 0.6 ? 'part' : 'neutral', furrow: 0.5, look: [0.6, lerp(-0.4, 0.6, k)] }); break;
       }
       case 'cheer': { // the Philistine crowd (16:23-25), arms up, shouting
         const b = Math.sin(ph) * 10;
