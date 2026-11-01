@@ -221,3 +221,12 @@
 - His words: "dont work on the samson video, keep owrkig on the engine, the end goal is for me to ask you, create a video for this topic ... and fo ryou to come up with a great script, great cinematography, great visuals everythign to be great ... lintel networks, visuals are not that improessive, ours are looking mroe visually improessive wiht the 3d renders, however every single time they have beaten us on, thei srcipting, their cmaera movements, and also what is shown on srcreen, with the story takinga birds eye view, and changin apce, setting" and "videos todya that perform contain much more visual like pop up stimulating hte audine ceiwht thing sgoing on often, keep that in mind we don twnt to overdo it fo coruse".
 - **Samson is paused. The work is the engine:** topic → script → cinematography → visuals, all great. Plan: `ENGINE_ROADMAP.md`.
 - **Pop-ups are part of the language:** frequent word-timed overlays (labels, icons, arrows, rings, numbers) that keep something happening. They are governed so they're never overdone: one at a time, about every 1.5-3 s at most, never over the subject's face, never two text elements at once.
+
+## Round 24 — Marcus, Nov 1 10:57
+- His words: "i dont beleiv eyou udnerstood wha ti said, in teh longrun i want thoruhg a prmopt to get the entire thing odne, for me, to post on soical media, 12seconds isnt it, thats a sample, the engine works well once i give you a topci you come up with the fulls ript for it, you do rsaecrh and find things people would not know about it and connect dots and are able to sorytell well and providng value for the audience".
+- **"The engine" means the whole topic → post-ready reel pipeline, run from ONE prompt**:
+  - research (what people don't know, connecting dots);
+  - the full script (storytelling + value);
+  - direction, visuals, voice, music, render and QA;
+  - the finished video, caption and cover.
+- Component demos are only means to that end. Report progress against the full pipeline, not samples.

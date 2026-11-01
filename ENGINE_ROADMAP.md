@@ -1,4 +1,25 @@
-# Engine roadmap: from "make a video about X" to a great reel (started Nov 1)
+# Engine roadmap: ONE prompt → a post-ready reel (Marcus, Nov 1 10:57)
+
+**The goal:** Marcus types one prompt ("make a video about why Esau is hated more than Jacob") and gets back a finished reel ready to post. The pieces below exist only to serve that.
+
+## The pipeline the prompt runs (status Nov 1)
+
+| # | Stage | What it does | Status |
+|---|---|---|---|
+| 1 | Research | Web + ESV: what people get wrong, what they don't know, the dots to connect; verified notes | Done by hand per episode (Ep 3 v6-v9); not yet one automatic step |
+| 2 | Script | The answer first, the viewer's next questions answered, value, a line people repeat; the checker, the fact-check, a test viewer | Works (Ep 3 v9: value 4/5, clarity 4/5); not yet one automatic step |
+| 3 | Direction | Story Director: treatments, storyboard, timed reads, pops | Spec + tools exist (`system/13`); used on one sequence |
+| 4 | Build | The storyboard → score → sets/cast/props/cards/pops from DATA, not code | Diorama kit, cast kit, walking, pops: v0. Missing: explainer cards, transitions, metaphor props, a storyboard→score compiler for the diorama |
+| 5 | Voice | The narration audio + word timings | **Blocked on a decision:** ElevenLabs (Marcus's account, paid) or a free offline voice |
+| 6 | Music + sound | The bed and the hits on the beats | `song.js` is Samson-specific; needs a generic version |
+| 7 | Render | The full reel | Works; ~1.5-2 h per 100 s on diorama sets, ~6 h on heavy sets (this machine) |
+| 8 | QA | `fw_check video`, the muted test, top-3 fixes | Works |
+| 9 | Deliver | The MP4, caption, captions file, cover | Partly (captions, mux); the cover/caption step isn't automatic yet |
+| 10 | One command | A single skill that runs 1-9 from a topic | Not built |
+
+**Next:** the first full run on "Why is Esau hated more than Jacob?", end to end, building each missing piece as the run needs it, then wrapping the run as the one command.
+
+---
 
 **Marcus's goal (Nov 1, 10:36):** he asks "create a video for this topic" (e.g. "why is Esau hated more than Jacob") and gets a great script, cinematography and visuals.
 
