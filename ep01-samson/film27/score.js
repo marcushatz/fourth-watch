@@ -1,0 +1,101 @@
+// THE SCORE: the single source of truth for timing. Every time comes from vo.js (the words, generated from
+// ../episode.md by tools/make_vo.py). When the real voice is recorded, vo.js is regenerated from its word
+// timings and every shot, beat, card, caption and music cue moves with it. Never hard-code a time in a scene:
+// use shot.t0 / shot.t1 / shot.beats.
+(function () {
+  const node = typeof require !== 'undefined';
+  const U = node ? require('./engine/util') : globalThis.U;
+  const MU = node ? require('./engine/music') : globalThis.MUSIC;
+  const VO = node ? require('./vo.js') : globalThis.VO;
+  const { m } = MU;
+  const FPS = 30;
+  const FORMAT = U.pickFormat('9:16');
+  const [W, H] = U.formatSize(FORMAT);
+  const SAFE = U.safeArea(W, H);
+  const STYLE = 'flat';
+
+  const norm = (s) => s.toLowerCase().replace(/[^a-z0-9']/g, '');
+  // cue(line, word, nth=0): start time of a word (by index or by its text) in a VO line
+  const cue = (li, w = 0, nth = 0) => {
+    const L = VO.lines[li];
+    if (!L) throw new Error(`cue: no line ${li}`);
+    if (typeof w === 'number') return L.words[Math.max(0, Math.min(L.words.length - 1, w))].s;
+    let k = -1;
+    for (let i = 0, n = 0; i < L.words.length; i++) if (norm(L.words[i].w) === norm(w)) { if (n === nth) { k = i; break; } n++; }
+    if (k < 0) for (let i = 0, n = 0; i < L.words.length; i++) if (norm(L.words[i].w).startsWith(norm(w))) { if (n === nth) { k = i; break; } n++; }
+    if (globalThis.CUE_LOG) globalThis.CUE_LOG.push([li, w, nth, k >= 0 ? L.words[k].w : null, k >= 0 ? +L.words[k].s.toFixed(2) : null]);
+    if (k < 0) throw new Error(`cue: word "${w}" not in line ${li}: ${L.text}`);
+    return L.words[k].s;
+  };
+  const cueEnd = (li, w, nth = 0) => { const L = VO.lines[li]; const s = cue(li, w, nth); return L.words.find((x) => x.s === s).e; };
+  const ln = (i) => VO.lines[i];
+  const st = (i) => VO.lines[i].start;
+  const voEnd = VO.voEnd;
+  const PRE = 0.08; // cuts land just before the word they cut on
+
+  // ---------------- the shot list (script v57, timed to the recorded take) ----------------
+  // scene: which SCENES module draws it ('card' = 2D only); v: the shot inside that scene;
+  // beats: absolute times of the words the action is cut to; card: 2D overlay; text: narration on/off.
+  const S = [];
+  const add = (id, scene, v, t0, o = {}) => S.push(Object.assign({ id, scene, v, t0, beats: {} }, o));
+  // 0 hook: the title over Gaza at night
+  add('S01', 'gaza', 'hook', 0, { title: true, text: false, beats: { strength: cue(0, 'using'), sinning: cue(0, 'living') } });
+  // 1 "Let's look at Samson ... His strength came from God." the lion at Timnah, the Spirit's gold (Judges 14:6)
+  add('S02', 'timnah', 'lion', st(1) - PRE, { beats: { again: cue(1, 'God') } });
+  // "Yet he slept with a prostitute in Gaza." / "That same night ... he pulled up the city gate, posts and all."
+  add('S03', 'gaza', 'door', cue(1, 'Yet') - PRE, { beats: { prostitute: cue(1, 'prostitute'), gaza: cue(1, 'Gaza') } });
+  add('S04', 'gaza', 'rip', cue(1, 'That') - PRE, { pill: 'SAME NIGHT. STILL STRONG.', pillBeat: 'night', beats: { night: cue(1, 'night'), carried: cue(1, 'pulled'), gates: cue(1, 'gate') } });
+  // 2 Delilah and the lords' silver
+  add('S05', 'sorek', 'delilah', st(2) - PRE, { beats: { delilah: cue(2, 'Delilah') } });
+  // 3 three calls, three escapes
+  add('S06', 'sorek', 'call', st(3) - PRE, { card: 'shout', shoutN: 3, beats: { shout: cue(3, '"The'), samson: cue(3, 'Samson') } });
+  add('S07', 'sorek', 'traps', cue(3, 'And') - PRE, { beats: { three: cue(3, 'three', 1), broke: cue(3, 'broke'), free: cue(3, 'free') } });
+  // 4 the secret and the shaving
+  add('S08', 'sorek', 'shave', st(4) - PRE, { pill: 'HIS SEVEN LOCKS · JUDGES 16:19', pillBeat: 'hair', beats: { told: cue(4, 'told'), heart: cue(4, 'secret'), hair: cue(4, 'hair'), sign: cue(4, 'sign'), shaved: cue(4, 'shave') } });
+  // 5 the fourth call: "I will go out as at other times"
+  add('S09', 'sorek', 'wake', st(5) - PRE, { pill: 'THE FOURTH CALL · JUDGES 16:20', pillBeat: 'fourth', beats: { fourth: cue(5, 'fourth'), woke: cue(5, 'woke'), said: cue(5, 'said'), free: cue(5, 'free') } });
+  // 6 the held line: "But he did not know that the LORD had left him."
+  add('S10', 'sorek', 'left', st(6) - PRE, { card: 'verse', verse: 0, verseAt: st(6), beats: { left: cue(6, 'left') } });
+  // 7 "Notice what he said: 'as at other times.'" the bonds that always broke before (Judges 15:14)
+  add('S11', 'lehi', 'ropes', st(7) - PRE, { card: 'label', label: '“as at other times”', ref: 'JUDGES 16:20', labelBeat: 'as', labelY: 0.665, beats: { as: cue(7, '"as'), rushed: cue(7, 'worked') } });
+  // 8 the answer: God using you is not God approving
+  add('S12', 'gaza', 'principle', st(8) - PRE, { card: 'neq', neq: ['GOD USING YOU', 'GOD APPROVING'], beats: { works: cue(8, 'But'), knowing: cue(8, 'approves') } });
+  // 9 Matthew 7: "I never knew you."
+  add('S13', 'day', 'crowd', st(9) - PRE, { scrim: 0.82, dip: true, beats: { lord: cue(9, 'many'), prophesy: cue(9, 'point'), demons: cue(9, 'mighty'), works: cue(9, 'works') } });
+  add('S14', 'day', 'door', cue(9, 'and') - PRE, { card: 'verse', verse: 1, verseAt: cue(9, '"I'), beats: { never: cue(9, 'never') } });
+  // 10 the mill, then the hall of Dagon and the prayer (the full verse on screen, with its revenge clause)
+  add('S15', 'prison', 'mill', st(10) - PRE, { dip: true });
+  add('S16', 'dagon', 'pillars', cue(10, 'brought') - PRE, { card: 'verse', verse: 2, verseAt: cue(10, '"O'), beats: { blind: cue(10, 'brought'), prayed: cue(10, 'prayed'), remember: cue(10, 'remember'), strengthen: cue(10, 'strengthen') } });
+  // 11 "His choices had cost him his eyes and his freedom. Earlier, he had assumed he would escape. Now, he asked God for strength."
+  add('S17', 'prison', 'mill', st(11) - PRE, {});
+  add('S18', 'sorek', 'wake', cue(11, 'Earlier') - PRE, { beats: { woke: cue(11, 'Earlier'), said: cue(11, 'assumed'), free: cue(11, 'escape') } });
+  // "Now, he asked God for strength." / 12 the push and the fall
+  add('S19', 'dagon', 'fall', cue(11, 'Now') - PRE, { beats: { called: cue(11, 'asked'), answered: cue(12, 'pushed'), house: cue(12, 'building'), fell: cue(12, 'fell') } });
+  // 13 "And the Bible adds:" Judges 16:30 on a verse card
+  add('S20', 'dagon', 'fall', st(13) - PRE, { card: 'verse', verse: 3, verseAt: cue(13, '"So'), beats: {} });
+  // 14 "Samson's last act began with a prayer." first light over Gaza; then Hebrews 11
+  add('S21', 'gaza', 'dawn', st(14) - PRE, {});
+  add('S22', 'card', 'heb11', cue(14, 'And') - PRE, { card: 'heb11', text: false, beats: { names: cue(14, 'names'), faith: cue(14, 'faith'), strong: cue(14, '"were') } });
+  // 15 the question for the comments
+  add('S23', 'card', 'cta', st(15) - PRE, { card: 'cta', text: false, beats: { strength: cue(15, 'strength'), failures: cue(15, 'failures'), prayer: cue(15, 'prayer'), why: cue(15, 'Why') } });
+  const END_T = +(voEnd + 1.3).toFixed(3); // the question holds a beat, then the outro (rendered separately) is appended
+  const DURATION = END_T;
+  S.forEach((s, i) => { s.t1 = i < S.length - 1 ? S[i + 1].t0 : DURATION; s.dur = s.t1 - s.t0; s.i = i; });
+  const shotAt = (t) => { for (let i = S.length - 1; i >= 0; i--) if (t >= S[i].t0) return S[i]; return S[0]; };
+
+  // verse cards: exact ESV text (fact-checked)
+  const VERSES = [
+    { text: 'But he did not know that the LORD had left him.', ref: 'JUDGES 16:20' },
+    { text: 'I never knew you.', ref: 'MATTHEW 7:23' },
+    { text: 'Then Samson called to the LORD and said, ‘O Lord GOD, please remember me and please strengthen me only this once, O God, that I may be avenged on the Philistines for my two eyes.’', ref: 'JUDGES 16:28', maxW: 780 },
+    { text: 'So the dead whom he killed at his death were more than those whom he had killed during his life.', ref: 'JUDGES 16:30' },
+  ];
+
+  const markers = {};
+  S.forEach((s) => { markers[s.id] = s.t0; });
+  Object.assign(markers, {
+    carried: { t: cue(1, 'pulled'), sync: 'av' }, left: cue(6, 'left'), fell: { t: cue(12, 'fell'), sync: 'av' },
+  });
+  const SCORE = { FPS, FORMAT, W, H, SAFE, STYLE, DURATION, END_T, VO, cue, cueEnd, ln, st, SHOTS: S, shotAt, VERSES, markers, m };
+  if (node) module.exports = SCORE; else globalThis.SCORE = SCORE;
+})();

@@ -1,0 +1,533 @@
+{
+ "calibration": {
+  "reference_reels": 9,
+  "judge_replies": 3,
+  "by_field": {
+   "hook": {
+    "spearman": 0.44,
+    "lowest_hit": 3,
+    "best_low": 4,
+    "separates": false
+   },
+   "payoff": {
+    "spearman": 0.72,
+    "lowest_hit": 3,
+    "best_low": 3,
+    "separates": false
+   },
+   "new_value": {
+    "spearman": 0.3,
+    "lowest_hit": 2,
+    "best_low": 3,
+    "separates": false
+   },
+   "proof": {
+    "spearman": 0.53,
+    "lowest_hit": 2,
+    "best_low": 3,
+    "separates": false
+   },
+   "momentum": {
+    "spearman": 0.18,
+    "lowest_hit": 2,
+    "best_low": 3,
+    "separates": false
+   },
+   "clarity": {
+    "spearman": 0.6,
+    "lowest_hit": 3,
+    "best_low": 4,
+    "separates": false
+   },
+   "takeaway": {
+    "spearman": 0.44,
+    "lowest_hit": 3,
+    "best_low": 4,
+    "separates": false
+   },
+   "ending": {
+    "spearman": 0.1,
+    "lowest_hit": 2,
+    "best_low": 3,
+    "separates": false
+   },
+   "question_pull": null,
+   "overall": {
+    "spearman": 0.64,
+    "lowest_hit": 4,
+    "best_low": 5,
+    "separates": false
+   }
+  },
+  "overall_predicts_views": false,
+  "craft_bar_best_reference_overall": 6
+ },
+ "scripts": [
+  {
+   "kind": "ours",
+   "name": "ep02-jonah/episode_v5_draft.md",
+   "views": null,
+   "n": 3,
+   "judges": [
+    "judge_run1/judge_A",
+    "judge_run1/judge_B",
+    "judge_run1/judge_C"
+   ],
+   "hook": 4,
+   "payoff": 5,
+   "new_value": 5,
+   "proof": 5,
+   "momentum": 4,
+   "clarity": 4,
+   "takeaway": 4,
+   "ending": 4,
+   "question_pull": null,
+   "overall": 8,
+   "overall_mean": 8,
+   "overall_each": [
+    8,
+    8,
+    8
+   ],
+   "dead_lines": 1,
+   "weakest": [
+    "Historically, Nineveh was one of Assyria's great cities.",
+    "Historically, Nineveh was one of Assyria's great cities.",
+    "Historically, Nineveh was one of Assyria's great cities."
+   ],
+   "fixes": [
+    "Replace the history line with why it matters (Nineveh was the capital of Assyria, Israel's most brutal enemy) so the viewer feels why Jonah would rather die than watch God spare it.",
+    "Say why Nineveh mattered (the capital-class city of Israel's brutal enemy Assyria) so the reveal that Jonah ran because God might spare them hits much harder.",
+    "Give the stakes up front: Assyria was Israel's brutal enemy and would later wipe out the northern kingdom. Then Jonah's 'I knew you are gracious' lands as a real shock instead of a mild surprise."
+   ],
+   "why": [],
+   "verdict": "GOOD ENOUGH"
+  },
+  {
+   "kind": "ours",
+   "name": "ep01-samson/episode_v61_candidate.md",
+   "views": null,
+   "n": 3,
+   "judges": [
+    "judge_run1/judge_A",
+    "judge_run1/judge_B",
+    "judge_run1/judge_C"
+   ],
+   "hook": 5,
+   "payoff": 4,
+   "new_value": 4,
+   "proof": 4,
+   "momentum": 4,
+   "clarity": 4,
+   "takeaway": 4,
+   "ending": 3,
+   "question_pull": null,
+   "overall": 7,
+   "overall_mean": 7,
+   "overall_each": [
+    7,
+    7,
+    7
+   ],
+   "dead_lines": 1,
+   "weakest": [
+    "But Judges tells us whose strength it was.",
+    "But Judges tells us whose strength it was.",
+    "But Judges tells us whose strength it was."
+   ],
+   "fixes": [
+    "Add one line of setup before the Delilah quote (she had his hair cut while he slept) so 'as at other times' lands on one listen, and soften 'every time' since the Gaza gate verse never mentions the Spirit.",
+    "Make the 'as at other times' moment explicit: say outright that Samson mistook his strength still working for God's approval, so the hook's answer lands as one clear 'oh' instead of being implied.",
+    "Fix the 'every time' overclaim. The Gaza gate verse (Judges 16:3), which is the hook's own example, has no 'Spirit rushed upon him' line, so either address that night directly or say 'again and again.' Also show the pillars collapse after the prison prayer so the prayer pays off on screen."
+   ],
+   "why": [],
+   "verdict": "GOOD ENOUGH"
+  },
+  {
+   "kind": "ref",
+   "name": "Where did Cain's wife come from?",
+   "views": 1800000,
+   "n": 3,
+   "judges": [
+    "judge_run1/judge_A",
+    "judge_run1/judge_B",
+    "judge_run1/judge_C"
+   ],
+   "hook": 5,
+   "payoff": 4,
+   "new_value": 3,
+   "proof": 4,
+   "momentum": 3,
+   "clarity": 4,
+   "takeaway": 3,
+   "ending": 2,
+   "question_pull": null,
+   "overall": 6,
+   "overall_mean": 6.33,
+   "overall_each": [
+    6,
+    7,
+    6
+   ],
+   "dead_lines": 2,
+   "weakest": [
+    "It's one of the most asked questions about the Bible and most Christians can't answer it.",
+    "So the next time someone asks you where Cain's wife came from, you'll know what to say.",
+    "It's one of the most asked questions about the Bible and most Christians can't answer it."
+   ],
+   "fixes": [
+    "Replace the 'you'll know what to say' close with a real question to the viewer built on the one-family idea, so the ending invites a response.",
+    "End on the 'one blood, every person is family' idea with a real question for the viewer instead of the flat 'you'll know what to say' line.",
+    "Replace the 'you'll know what to say' close with a real prompt that invites a response. Split the run-on Genesis 5 / 'mother of all living' sentence so the evidence lands one piece at a time."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "Was Judas a bad person?",
+   "views": 338000,
+   "n": 3,
+   "judges": [
+    "judge_run1/judge_A",
+    "judge_run1/judge_B",
+    "judge_run1/judge_C"
+   ],
+   "hook": 4,
+   "payoff": 3,
+   "new_value": 3,
+   "proof": 4,
+   "momentum": 3,
+   "clarity": 3,
+   "takeaway": 3,
+   "ending": 4,
+   "question_pull": null,
+   "overall": 6,
+   "overall_mean": 5.67,
+   "overall_each": [
+    5,
+    6,
+    6
+   ],
+   "dead_lines": 4,
+   "weakest": [
+    "Life works the same way.",
+    "Life works the same way.",
+    "Life works the same way."
+   ],
+   "fixes": [
+    "Cut the colleague-and-job analogy and spend that time on the Peter/Judas contrast: both failed Jesus that night, only one came back.",
+    "Cut the colleague-lies analogy and spend that time on the Judas/Peter contrast (both failed that night, only one came back), so the foreknowledge-vs-choice answer stays inside the text.",
+    "Cut the colleague and job analogy. Use the time for Judas throwing back the silver and saying 'I have sinned' (Matt 27:3-5) so the contrast with Peter's return is shown, not summarized. Fix the garbled 'While Judas felt remorse, but' line."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "Why doesn't God show Himself?",
+   "views": 75000,
+   "n": 3,
+   "judges": [
+    "judge_run1/judge_A",
+    "judge_run1/judge_B",
+    "judge_run1/judge_C"
+   ],
+   "hook": 3,
+   "payoff": 3,
+   "new_value": 3,
+   "proof": 3,
+   "momentum": 3,
+   "clarity": 3,
+   "takeaway": 4,
+   "ending": 3,
+   "question_pull": null,
+   "overall": 5,
+   "overall_mean": 5,
+   "overall_each": [
+    5,
+    5,
+    5
+   ],
+   "dead_lines": 2,
+   "weakest": [
+    "And if you're here to stand for God's word, welcome to the Valiant.",
+    "And if you're here to stand for God's word, welcome to the Valiant.",
+    "And if you're here to stand for God's word, welcome to the Valiant."
+   ],
+   "fixes": [
+    "Cut Schellenberg and Pascal and let the golden calf plus Kierkegaard's king carry it, so the answer lands in fewer voices and the video ends on the question.",
+    "Cut one or two of the stacked authorities (Schellenberg, Pascal, the final 'blessed are they' quote) so the golden calf and Kierkegaard's king carry the answer and can be followed on one listen.",
+    "Cut one of the three thinkers (Schellenberg, Kierkegaard, Pascal) and let the golden calf weeks after Sinai carry the proof. Drop the channel-identity sign-off, which assumes who the viewer is."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "Why didn't God remove the tree?",
+   "views": 7600000,
+   "n": 3,
+   "judges": [
+    "judge_run1/judge_A",
+    "judge_run1/judge_B",
+    "judge_run1/judge_C"
+   ],
+   "hook": 4,
+   "payoff": 3,
+   "new_value": 2,
+   "proof": 2,
+   "momentum": 3,
+   "clarity": 4,
+   "takeaway": 3,
+   "ending": 3,
+   "question_pull": null,
+   "overall": 5,
+   "overall_mean": 5,
+   "overall_each": [
+    5,
+    5,
+    5
+   ],
+   "dead_lines": 2,
+   "weakest": [
+    "So God gave us free will, and He tells us plainly which way to choose.",
+    "So God gave us free will, and He tells us plainly which way to choose.",
+    "So God gave us free will, and He tells us plainly which way to choose."
+   ],
+   "fixes": [
+    "Earn the answer from Genesis itself (every other tree, including the tree of life, was freely given and only one was off-limits) instead of a hypothetical about stealing and coveting.",
+    "Ground the answer in Genesis itself (for example, the tree of life stood in the garden too, and what the serpent actually challenged) instead of a general free-will argument with one borrowed Deuteronomy quote.",
+    "Ground the answer in Genesis 2 instead of hypothetical steal and covet analogies. God said 'of every tree of the garden thou mayest freely eat' with only one exception, so the text itself shows that one tree was the space for choice."
+   ]
+  },
+  {
+   "kind": "ours",
+   "name": "ep01-samson/episode_v60_draft.md",
+   "views": null,
+   "n": 3,
+   "judges": [
+    "judge_run1/judge_A",
+    "judge_run1/judge_B",
+    "judge_run1/judge_C"
+   ],
+   "hook": 2,
+   "payoff": 3,
+   "new_value": 3,
+   "proof": 3,
+   "momentum": 2,
+   "clarity": 4,
+   "takeaway": 3,
+   "ending": 3,
+   "question_pull": null,
+   "overall": 5,
+   "overall_mean": 4.67,
+   "overall_each": [
+    4,
+    5,
+    5
+   ],
+   "dead_lines": 4,
+   "weakest": [
+    "Let's look at Samson, known as the strongest man in the Bible.",
+    "Let's look at Samson, known as the strongest man in the Bible.",
+    "But God still using you doesn't mean He approves of how you're living."
+   ],
+   "fixes": [
+    "Open on the concrete puzzle (his strength still worked the night he slept with a prostitute in Gaza) instead of a 'you' question, and show the text's reason (the Spirit rushing on him for a job) rather than retelling the Delilah sequence and asserting the answer.",
+    "Open on the specific Samson puzzle (his strength still worked the night in Gaza) rather than a 'you' question, and cut the familiar three-times Delilah retelling.",
+    "Open on Samson's puzzle (his strength worked even the night in Gaza), not a sermon question aimed at 'you'. Prove the answer with the text's mechanism (the Spirit of the LORD came upon him for a mission, Judges 13:5) instead of asserting it after the 'as at other times' line."
+   ],
+   "why": [
+    "overall 5 is below the best reference reel (6)",
+    "hook, payoff or new value is below 4",
+    "a criterion is below 3"
+   ],
+   "verdict": "NOT YET"
+  },
+  {
+   "kind": "ref",
+   "name": "What if Adam and Eve never ate from the tree?",
+   "views": 35000,
+   "n": 3,
+   "judges": [
+    "judge_run1/judge_A",
+    "judge_run1/judge_B",
+    "judge_run1/judge_C"
+   ],
+   "hook": 3,
+   "payoff": 2,
+   "new_value": 3,
+   "proof": 2,
+   "momentum": 3,
+   "clarity": 3,
+   "takeaway": 3,
+   "ending": 3,
+   "question_pull": null,
+   "overall": 4,
+   "overall_mean": 4.33,
+   "overall_each": [
+    5,
+    4,
+    4
+   ],
+   "dead_lines": 2,
+   "weakest": [
+    "with the first consequence God named.",
+    "with the first consequence God named.",
+    "with the first consequence God named."
+   ],
+   "fixes": [
+    "Repair the broken second sentence (it starts mid-thought) and cut the 'welcome to The Valiant' tag so the comment question is the last thing heard.",
+    "Replace the open-ended 'what if' speculation with a concrete textual puzzle (e.g. God said they would die the day they ate, so why did Adam live 930 years?), and repair the broken fragment right after the hook.",
+    "Repair the broken second line, then anchor each 'what would change' point in a quoted Genesis 2-3 detail instead of speculation like great-grandparents at the dinner table. Cut the channel plug from the close."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "What happens to people who never heard of Jesus?",
+   "views": 1600000,
+   "n": 3,
+   "judges": [
+    "judge_run1/judge_A",
+    "judge_run1/judge_B",
+    "judge_run1/judge_C"
+   ],
+   "hook": 3,
+   "payoff": 3,
+   "new_value": 3,
+   "proof": 4,
+   "momentum": 2,
+   "clarity": 3,
+   "takeaway": 3,
+   "ending": 2,
+   "question_pull": null,
+   "overall": 4,
+   "overall_mean": 4.33,
+   "overall_each": [
+    4,
+    4,
+    5
+   ],
+   "dead_lines": 4,
+   "weakest": [
+    "So, let's allow the Bible to answer it.",
+    "People ask this in our comments all the time.",
+    "People ask this in our comments all the time."
+   ],
+   "fixes": [
+    "Build the whole video around Cornelius as the single case study and cut the numbered three-answer structure, the survey of views and the signposts to get it well under 90 seconds.",
+    "Cut the three-part list down to the single strongest answer (Cornelius: God sent the gospel to a man reaching with the light he had) so it fits a short Reel and resolves the hook instead of hedging.",
+    "Drop the three-answer lecture and the survey of views. Build the whole script on one case (Cornelius: what he knew, what God did) so there is one clear payoff. End on a real question instead of assuming the viewer had someone tell them about Jesus."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "Why do we hide from God after we sin?",
+   "views": 48000,
+   "n": 3,
+   "judges": [
+    "judge_run1/judge_A",
+    "judge_run1/judge_B",
+    "judge_run1/judge_C"
+   ],
+   "hook": 2,
+   "payoff": 3,
+   "new_value": 2,
+   "proof": 3,
+   "momentum": 3,
+   "clarity": 4,
+   "takeaway": 2,
+   "ending": 3,
+   "question_pull": null,
+   "overall": 4,
+   "overall_mean": 4.33,
+   "overall_each": [
+    4,
+    5,
+    4
+   ],
+   "dead_lines": 3,
+   "weakest": [
+    "Why do we hide away?",
+    "Why do we hide away?",
+    "Why do we hide away?"
+   ],
+   "fixes": [
+    "Open on the text's own puzzle (why would an all-knowing God ask Adam 'Where art thou?') instead of 'we', and drop the sermon about skipping church and the 'Stop sewing fig leaves' imperative close.",
+    "Open on the textual puzzle (why would an all-knowing God ask Adam 'Where art thou?') instead of a devotional question aimed at the viewer, and end with a question people can answer rather than a command.",
+    "Lead with the buried text puzzle: why would God ask Adam 'Where art thou?' if He already knew? Drop the devotional 'we/you' opener and the assumptions about the viewer skipping church."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "If God is love, why is there a hell?",
+   "views": 194000,
+   "n": 3,
+   "judges": [
+    "judge_run1/judge_A",
+    "judge_run1/judge_B",
+    "judge_run1/judge_C"
+   ],
+   "hook": 3,
+   "payoff": 2,
+   "new_value": 2,
+   "proof": 2,
+   "momentum": 2,
+   "clarity": 3,
+   "takeaway": 2,
+   "ending": 3,
+   "question_pull": null,
+   "overall": 3,
+   "overall_mean": 3,
+   "overall_each": [
+    3,
+    3,
+    3
+   ],
+   "dead_lines": 3,
+   "weakest": [
+    "Some Christians also wonder about this question sometimes.",
+    "Some Christians also wonder about this question sometimes.",
+    "Some Christians also wonder about this question sometimes."
+   ],
+   "fixes": [
+    "Build the whole video around one surprising textual answer (hell 'prepared for the devil and his angels') and actually address 'forever', instead of a four-point sermon of familiar verses (Revelation 3:20 is also not how the Bible ends).",
+    "Either answer the 'forever' half of the hook with actual text or drop it from the hook; right now the script raises it and never comes back to it.",
+    "Address the hard half of the hook ('forever') with specific text instead of stacking familiar verses. Stop using Revelation 3:20 (written to a church) and John 10:10 out of context, including the claim that this is 'how the Bible ends'."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "Why blood on a doorway? (Exodus 12)",
+   "views": 33000,
+   "n": 3,
+   "judges": [
+    "judge_run1/judge_A",
+    "judge_run1/judge_B",
+    "judge_run1/judge_C"
+   ],
+   "hook": 4,
+   "payoff": 1,
+   "new_value": 1,
+   "proof": 1,
+   "momentum": 2,
+   "clarity": 2,
+   "takeaway": 1,
+   "ending": 1,
+   "question_pull": null,
+   "overall": 2,
+   "overall_mean": 2,
+   "overall_each": [
+    2,
+    2,
+    2
+   ],
+   "dead_lines": 5,
+   "weakest": [
+    "Because it was the only thing standing between a family and death.",
+    "Because it was the only thing standing between a family and death.",
+    "Because it was the only thing standing between a family and death."
+   ],
+   "fixes": [
+    "Actually answer the hook from Exodus 12 (the blood is 'a sign for you', a lamb dying in place of the firstborn) and cut the Moses backstory that eats most of the runtime; also fix the garbled line that says the households marked with blood would die.",
+    "Cut the Exodus backstory recap and use the time to actually answer the hook from Exodus 12 (the lamb dying in the firstborn's place, 'the blood shall be to you for a token'), quoting the text.",
+    "Actually answer the hook from the text: a lamb died in the firstborn's place, and 'the blood shall be to you for a token' (Ex 12:13). Link it to 'Christ our passover' (1 Cor 5:7). Cut the Egypt backstory recap and fix the garbled lines ('At death struck', the missing 'except')."
+   ]
+  }
+ ]
+}

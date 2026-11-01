@@ -1,0 +1,21 @@
+[
+ {"key":"s1","name":"S1 Hook · wide, low angle","start":0.0,"end":3.0,"move":"crane down + push","hold":false},
+ {"key":"s2","name":"S2 Stakes · close, the hair","start":3.0,"end":6.5,"move":"push-in 4%","hold":false},
+ {"key":"s3a","name":"S3a Story · wide, the lion","start":6.5,"end":8.0,"move":"kick on the rush","hold":false},
+ {"key":"s3b","name":"S3b Story · wide side, Ashkelon","start":8.0,"end":9.5,"move":"truck right","hold":false},
+ {"key":"s3c","name":"S3c Story · insert, the ropes","start":9.5,"end":11.2,"move":"push-in 6%","hold":false},
+ {"key":"s4","name":"S4 Story · extreme close, eyes","start":11.2,"end":13.1,"move":"push-in 8%","hold":false},
+ {"key":"s5a","name":"S5a Story · over shoulder, Timnah","start":13.1,"end":15.4,"move":"push-in 6%","hold":false},
+ {"key":"s5b","name":"S5b Story · medium, home in Zorah","start":15.4,"end":20.6,"move":"push-in 6%","hold":false},
+ {"key":"s6","name":"S6 Story · over Delilah's shoulder","start":20.6,"end":25.3,"move":"rack + push","hold":false},
+ {"key":"s7a","name":"S7a Story · top-down, shaving","start":25.3,"end":27.1,"move":"slow drift","hold":false},
+ {"key":"s7b","name":"S7b Story · wide, high angle","start":27.1,"end":29.5,"move":"pull-out, rise","hold":false},
+ {"key":"s8a","name":"S8a Story · medium close, seized","start":29.5,"end":33.0,"move":"push into black","hold":false},
+ {"key":"s8b","name":"S8b Turn · wide, prison mill","start":33.4,"end":35.6,"move":"truck, then stop","hold":false},
+ {"key":"s9a","name":"S9a Turn · extreme wide, house","start":35.6,"end":37.7,"move":"crane down 35%","hold":false},
+ {"key":"s9b","name":"S9b Turn · close-up, prayer","start":37.7,"end":41.9,"move":"locked hold","hold":true},
+ {"key":"s10","name":"S10 Turn · wide, the fall","start":41.9,"end":43.6,"move":"pull-out + shake","hold":false},
+ {"key":"s11","name":"S11 Turn · extreme wide, dawn","start":43.6,"end":46.9,"move":"truck with family","hold":false},
+ {"key":"s12a","name":"S12a Landing · medium, the tomb","start":46.9,"end":49.6,"move":"slow push-in","hold":false},
+ {"key":"s12b","name":"S12b Landing · back to frame one","start":49.6,"end":55.0,"move":"drift onto S1","hold":false}
+]

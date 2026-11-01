@@ -1,0 +1,617 @@
+{
+ "message": "Samson's God-given strength kept working while he did what was right in his own eyes, so its working was no proof he was living the way God wanted. A gift from God is not a verdict from God.",
+ "factNote": "Is it factual that \"the LORD had left him\"? Yes. It is the exact ESV of Judges 16:20: \"But he did not know that the LORD had left him.\" The text records it after he \"told her all his heart\" and the shaving (16:17-19). It never says his eyes were the reason, so the script states the events in order and never as cause and effect.",
+ "rules": [
+  "Samson only. David and Saul are out.",
+  "ESV only, quoted word for word. State events in the text's order; never chain them into causes the text doesn't give.",
+  "Never use the Spirit-driven feats (lion, Ashkelon, Lehi) as examples of power while living wrongly.",
+  "Don't deny the hair-strength link: Samson states it (16:17) and the text records it (16:19). The hair was the sign; the strength was from the LORD.",
+  "Bold claim at the start, bold claim at the end. Visuals carry the famous story; narration carries value."
+ ],
+ "beats": [
+  {
+   "rank": 1,
+   "beat": "He wakes: \"I will go out as at other times\" ... \"But he did not know that the LORD had left him.\"",
+   "verse": "16:20",
+   "role": "The core: he expected the gift to work as always, and he didn't know the LORD had left",
+   "use": "Must"
+  },
+  {
+   "rank": 2,
+   "beat": "Gaza: he went in to a prostitute; that same night he pulled up the city gates",
+   "verse": "16:1-3",
+   "role": "His strength worked fully right after he went to a prostitute",
+   "use": "Must"
+  },
+  {
+   "rank": 3,
+   "beat": "\"The Spirit of the LORD rushed upon him\" three times, more than any other judge",
+   "verse": "14:6, 14:19, 15:14",
+   "role": "Shows the gift is God's and unusually strong",
+   "use": "Must"
+  },
+  {
+   "rank": 4,
+   "beat": "Delilah says the same line four times; three times he breaks free",
+   "verse": "16:9, 16:12, 16:14, 16:20",
+   "role": "The gift kept working even while he played along",
+   "use": "Strong"
+  },
+  {
+   "rank": 5,
+   "beat": "\"she is right in my eyes\" ... yet \"it was from the LORD\"",
+   "verse": "14:3-4",
+   "role": "He chose by his own eyes, and God was still at work in it",
+   "use": "Strong"
+  },
+  {
+   "rank": 6,
+   "beat": "Ashkelon: the Spirit rushed upon him in a wedding-bet feud that ended \"in hot anger\"",
+   "verse": "14:12-19",
+   "role": "God's power came in the middle of a wedding-bet feud that ended \"in hot anger\" (14:4: God was at work in it)",
+   "use": "Medium"
+  },
+  {
+   "rank": 7,
+   "beat": "Blind, his first recorded request for strength: \"strengthen me only this once\"",
+   "verse": "16:21, 16:28",
+   "role": "His first recorded request for strength",
+   "use": "Optional"
+  },
+  {
+   "rank": 8,
+   "beat": "Shaved: \"his strength left him\"",
+   "verse": "16:17-19",
+   "role": "The hair as the sign of his consecration; the strength from the LORD",
+   "use": "Optional"
+  },
+  {
+   "rank": 9,
+   "beat": "Honey from the carcass, not told to his parents",
+   "verse": "14:8-9",
+   "role": "A small secret; nothing follows from it",
+   "use": "Low"
+  },
+  {
+   "rank": 10,
+   "beat": "His last prayer; more died at his death than in his life",
+   "verse": "16:28-30",
+   "role": "A grace note",
+   "use": "Optional"
+  }
+ ],
+ "slots": [
+  {
+   "id": "opening",
+   "label": "Opening",
+   "sub": "Bold claim in the first 3 seconds",
+   "pick": "one",
+   "blocks": [
+    {
+     "id": "O2",
+     "text": "The scariest thing in Samson's story isn't Delilah. It's that his strength kept working, right up until it didn't.",
+     "ref": "16:3, 16:14, 16:20",
+     "fc": "fixed",
+     "critic": 9,
+     "rec": true,
+     "visual": "Delilah's silhouette in a lit doorway fades; Samson steps forward under the gold strength mark, which then flickers out on \"didn't\".",
+     "note": "Critic's top opening: names the villain everyone expects, then flips to the thesis. Fact-check softened \"most dangerous thing in his life\" to \"scariest thing in his story\" and added \"right up until it didn't.\""
+    },
+    {
+     "id": "O7",
+     "text": "Delilah isn't the scary part of Samson's story. The scary part is that his strength kept working right up until the LORD had left him, and he didn't even know.",
+     "ref": "16:19-20",
+     "fc": "new",
+     "critic": null,
+     "visual": "As O2: Delilah's silhouette fades, the gold mark lit, then dark.",
+     "note": "The fact-checker's bolder version of O2. Stronger claim, but it spends the turn's big line in the first 5 seconds."
+    },
+    {
+     "id": "O1",
+     "text": "What was Samson's real weakness? It wasn't his hair. It was assuming his strength would always be there.",
+     "ref": "16:20",
+     "fc": "fixed",
+     "critic": 5,
+     "visual": "Title card over Samson asleep on Delilah's knees, hair intact; the gold mark glows under the header.",
+     "note": "A question hook. The critic scored the old \"His strength\" answer as a worn sermon line; the fixed answer is new and leans on 16:20."
+    },
+    {
+     "id": "O3",
+     "text": "God's Spirit rushed upon Samson more than on any other judge. And his strength still worked the night he went to a prostitute in Gaza.",
+     "ref": "14:6, 14:19, 15:14; 16:1-3",
+     "fc": "fixed",
+     "critic": 7,
+     "visual": "Gold rush descends on Samson; hard cut to Gaza at midnight, the gate doors rising on his shoulders.",
+     "note": "Fact-led. It spends the setup's best stat early, so pair it with S2 or S3, not S1."
+    },
+    {
+     "id": "O4",
+     "text": "God's power worked through Samson right up until the day it didn't, and he didn't even notice when it stopped.",
+     "ref": "16:20",
+     "fc": "verified",
+     "critic": 6,
+     "visual": "The gold mark burns steady over a quick feat montage, then goes out while Samson sleeps.",
+     "note": "Gives away the turn's best line in second 3."
+    },
+    {
+     "id": "O5",
+     "text": "Samson's strength was a gift from God. He assumed it would always be there.",
+     "ref": "16:20",
+     "fc": "fixed",
+     "critic": 6,
+     "visual": "The gold mark lights on Samson's chest; he rolls his shoulders, confident.",
+     "note": "Clean, quieter."
+    },
+    {
+     "id": "O6",
+     "text": "Samson's story is one of the Bible's sharpest warnings about God-given gifts.",
+     "ref": "Judges 13-16",
+     "fc": "fixed",
+     "critic": 3,
+     "visual": "Title card with the gold mark.",
+     "note": "Reads like a sermon intro; no image, no tension."
+    }
+   ]
+  },
+  {
+   "id": "setup",
+   "label": "Setup",
+   "sub": "The gift (the montage shows the feats)",
+   "pick": "one",
+   "blocks": [
+    {
+     "id": "S1",
+     "text": "\"The Spirit of the LORD rushed upon him\" three times, more than on any other judge. A lion. Thirty men. A thousand.",
+     "ref": "14:6, 14:19, 15:14; cf. 3:10, 6:34, 11:29",
+     "fc": "verified",
+     "critic": 9,
+     "rec": true,
+     "visual": "Montage, one beat per line (about 2 s each so first-timers can read it): the lion torn barehanded; thirty Philistine figures topple in a row at Ashkelon and their garments drop (no gore); ropes melt at Lehi and the jawbone rises over a field of fallen shields. Gold rushes in each time; the gold mark appears and stays lit.",
+     "note": "Quote, stat and a three-beat rhythm built for the montage. The count holds because it is tied to the \"rushed upon\" quote (13:25 \"began to stir him\" is a fourth Spirit line)."
+    },
+    {
+     "id": "S2",
+     "text": "His strength came from God. Three times, \"the Spirit of the LORD rushed upon him.\" No other judge has the Spirit come on him that often.",
+     "ref": "14:6, 14:19, 15:14",
+     "fc": "verified",
+     "critic": 5,
+     "visual": "Same montage as S1.",
+     "note": "Same facts as S1, said less sharply."
+    },
+    {
+     "id": "S3",
+     "text": "Before he was born, an angel said he would \"begin to save Israel.\" And God's Spirit came on him like on no other judge.",
+     "ref": "13:5; 14:6, 14:19, 15:14",
+     "fc": "verified",
+     "critic": 5,
+     "visual": "The angel ascends in the altar flame (13:20), then the feat montage.",
+     "note": "\"Begin to save\" is a strong detail, but it belongs to a different reel."
+    }
+   ]
+  },
+  {
+   "id": "middle",
+   "label": "Middle",
+   "sub": "Value pieces; pick 2-3 and they play in story order",
+   "pick": "many",
+   "blocks": [
+    {
+     "id": "M1",
+     "text": "He picked a wife because \"she is right in my eyes.\" And the text says God still used it: \"it was from the LORD.\"",
+     "ref": "14:3-4",
+     "fc": "verified",
+     "critic": 8,
+     "order": 1,
+     "visual": "Timnah: Samson points at a Philistine woman while his parents shake their heads. On screen: RIGHT IN MY EYES · JUDGES 14:3. Gold light washes over the scene: IT WAS FROM THE LORD · 14:4.",
+     "note": "Most viewers don't know 14:4. It is the only block that plants \"his own eyes,\" which the message needs."
+    },
+    {
+     "id": "M8",
+     "text": "He picked a wife because \"she is right in my eyes.\" The text says \"it was from the LORD.\" God was at work in it. The text never says God approved of it.",
+     "ref": "14:3-4",
+     "fc": "new",
+     "critic": null,
+     "rec": true,
+     "order": 1,
+     "visual": "Timnah: Samson points at a Philistine woman while his parents shake their heads. One card only: RIGHT IN MY EYES · JUDGES 14:3. On \"it was from the LORD\" gold light washes over the town, with a small JUDGES 14:4 tag; the VO carries the distinction.",
+     "note": "M1 rewritten after the first-time viewer heard \"God still used it\" as God approving the marriage. Now 14:4 serves the message: God at work in it is not God approving it, the same way the gift is not a verdict."
+    },
+    {
+     "id": "M9",
+     "text": "The only reason he gives for his wife: \"she is right in my eyes.\"",
+     "ref": "14:2-3 (and 14:7)",
+     "fc": "new",
+     "critic": null,
+     "order": 1,
+     "visual": "Timnah: Samson points; RIGHT IN MY EYES · JUDGES 14:3 on screen.",
+     "note": "The lean version: no 14:4. Saves about 5 s, which can go to slowing the montage."
+    },
+    {
+     "id": "M7",
+     "text": "He wanted a wife because \"she is right in my eyes.\" His parents \"did not know that it was from the LORD.\" Hold onto those words: \"did not know.\" They come back.",
+     "ref": "14:3-4; pays off at 16:20",
+     "fc": "new",
+     "critic": null,
+     "order": 1,
+     "visual": "Same Timnah scene; the words DID NOT KNOW stay pinned in a corner until they return at the turn.",
+     "note": "New, from the critic. Opens a loop: at the start God was at work and nobody knew; at the end the LORD had left and Samson didn't know. Use instead of M1, not with it. Fact-check: same Hebrew verb both times (lo yada'), and it appears a third time at 13:16 (Manoah \"did not know\" it was the angel). Fair as a reading; don't claim the author planted it."
+    },
+    {
+     "id": "M5",
+     "text": "He scraped honey out of a lion's carcass and didn't tell his parents where it came from.",
+     "ref": "14:8-9",
+     "fc": "verified",
+     "critic": 2,
+     "order": 2,
+     "visual": "Samson scooping honey from the carcass, then handing it to his parents.",
+     "note": "Accurate, but nothing follows from it without explaining the Nazirite law."
+    },
+    {
+     "id": "M2",
+     "text": "The second time the Spirit rushed upon him was in the middle of a wedding-bet feud. He struck down thirty men to pay the bet and went home \"in hot anger.\" And the text says God was at work even there, \"seeking an opportunity against the Philistines.\"",
+     "ref": "14:4, 14:12-19",
+     "fc": "fixed",
+     "critic": 6,
+     "order": 3,
+     "visual": "The wedding feast at Timnah; thirty garments laid out; Samson walking home alone in ember light.",
+     "note": "It makes the same point as M3, less well, and repeats S1's \"thirty men.\" Never follow it with \"The strength kept working\" (X3) or \"Every time, it worked\" (X4)."
+    },
+    {
+     "id": "M3",
+     "text": "In Gaza, he saw a prostitute, and he went in to her. That same night, he pulled up the city gates, posts and all, and carried them up a hill. The strength didn't flinch.",
+     "ref": "16:1-3",
+     "fc": "new",
+     "critic": 9,
+     "rec": true,
+     "order": 4,
+     "visual": "Midnight in Gaza: a lit doorway (nothing shown inside), then Samson carrying the gate doors and posts up the hill toward Hebron; the gold mark holds steady.",
+     "note": "The most shocking juxtaposition in the story. Critic's edit: \"saw\" carries the eyes thread; the wording now follows the ESV \"he went in to her.\" A clearer option the fact-check also passed: \"he saw a prostitute and slept with her.\""
+    },
+    {
+     "id": "M4",
+     "text": "Three times Delilah set a trap and said, \"The Philistines are upon you, Samson!\" Three times, his strength bailed him out.",
+     "ref": "16:6-14",
+     "fc": "fixed",
+     "critic": 6,
+     "order": 5,
+     "visual": "Three quick traps: fresh bowstrings snap, new ropes snap, the loom pin is pulled free. The gold mark flares each time.",
+     "note": "Mostly a retelling of the famous part. Skip it if you take T4, which covers the same ground with a new angle."
+    },
+    {
+     "id": "M6",
+     "text": "The strength came from the LORD. The hair was the sign he was set apart to God from birth. When it was shaved, \"his strength left him.\"",
+     "ref": "13:5; 16:17, 16:19; Num 6:7",
+     "fc": "fixed",
+     "critic": 4,
+     "order": 6,
+     "visual": "Seven locks fall in slow motion; the gold mark goes out.",
+     "note": "A different reel (the hair myth). Fixed so it no longer denies the hair-strength link."
+    }
+   ]
+  },
+  {
+   "id": "turn",
+   "label": "Turn",
+   "sub": "The line most people miss",
+   "pick": "one",
+   "blocks": [
+    {
+     "id": "T6",
+     "text": "Four times Delilah said the exact same words: \"The Philistines are upon you, Samson!\" Three times, he broke free. Then \"he told her all his heart,\" and his uncut hair, the sign he was set apart to God from birth, was shaved. The fourth time, he woke up expecting to break free like every other time: \"I will go out as at other times and shake myself free.\" \"But he did not know that the LORD had left him.\"",
+     "ref": "13:5; 16:9, 16:12, 16:14, 16:17, 16:19-20; cf. Num 6:5, 6:7",
+     "fc": "new",
+     "critic": null,
+     "rec": true,
+     "visual": "THE PHILISTINES ARE UPON YOU, SAMSON! stamps on screen. 1-3: bonds snap and the gold mark flares. Then Samson leans in to tell Delilah; the seven locks fall (small tag: JUDGES 13:5). 4: the line stamps a fourth time; the gold mark is already dark; he rises easy, unaware, as soldiers fill the doorway. Locked hold on the verse card: \"But he did not know that the LORD had left him.\" Judges 16:20 (ESV).",
+     "note": "T5 plus what the text says the hair meant: the sign he was a Nazirite to God from the womb (13:5, 16:17; Num 6:7). Answers the second viewer's \"why did it stop at the haircut?\" with the Bible's own framing, without adding a cause."
+    },
+    {
+     "id": "T5",
+     "text": "Four times Delilah said the exact same words: \"The Philistines are upon you, Samson!\" Three times, he broke free. Then \"he told her all his heart,\" and his head was shaved. The fourth time, he woke up expecting to break free like every other time: \"I will go out as at other times and shake myself free.\" \"But he did not know that the LORD had left him.\"",
+     "ref": "16:9, 16:12, 16:14, 16:17, 16:19-20",
+     "fc": "new",
+     "critic": null,
+     "visual": "THE PHILISTINES ARE UPON YOU, SAMSON! stamps on screen. 1-3: bonds snap and the gold mark flares. Then Samson leans in to tell Delilah; the seven locks fall. 4: the line stamps a fourth time; the gold mark is already dark; he rises easy, unaware, as soldiers fill the doorway. Locked hold on the verse card: \"But he did not know that the LORD had left him.\" Judges 16:20 (ESV).",
+     "note": "Leaner than T6 (no line on what the hair meant). T4 plus the text's own step, \"he told her all his heart\" (16:17), so the haircut isn't magic, and \"like every other time\" ties his expectation back to the refrain. States the order only; never says one caused the other."
+    },
+    {
+     "id": "T4",
+     "text": "Four times Delilah said the exact same words: \"The Philistines are upon you, Samson!\" Three times, he broke free. The fourth time, his hair had been shaved. He woke up and said, \"I will go out as at other times and shake myself free.\" \"But he did not know that the LORD had left him.\"",
+     "ref": "16:9, 16:12, 16:14, 16:19-20",
+     "fc": "new",
+     "critic": null,
+     "visual": "THE PHILISTINES ARE UPON YOU, SAMSON! stamps on screen four times. 1-3: bonds snap and the gold mark flares. 4: locks on the floor, the gold mark already dark; he rises easy, unaware, as soldiers fill the doorway. Locked hold on the verse card: \"But he did not know that the LORD had left him.\" Judges 16:20 (ESV).",
+     "note": "New, from the critic: turns the famous retelling into a pattern almost nobody notices. Same line four times; the fourth time it breaks. Replaces M4 + T2. Leaner than T5 but skips \"he told her all his heart.\" Fact-check: the line is word for word the same all four times."
+    },
+    {
+     "id": "T2",
+     "text": "He woke up expecting it to work like always: \"I will go out as at other times.\" Every time before, it had. \"But he did not know that the LORD had left him.\"",
+     "ref": "16:20",
+     "fc": "verified",
+     "critic": 9,
+     "visual": "He wakes, rolls his shoulders, stands easy; the gold mark is already dark; soldiers fill the doorway. Verse card 16:20.",
+     "note": "The hinge: \"as at other times\" plus \"every time before\" turns the refrain into the turn. Best with M4 before it."
+    },
+    {
+     "id": "T3",
+     "text": "The scariest line in his story isn't the haircut. It's the next one: \"he did not know that the LORD had left him.\"",
+     "ref": "16:19-20",
+     "fc": "verified",
+     "critic": 7,
+     "visual": "Locks on the floor; hard cut to the verse card.",
+     "note": "The best re-hook, but it drops \"as at other times,\" so the turn loses its link to the refrain."
+    },
+    {
+     "id": "T1",
+     "text": "Then \"he told her all his heart.\" She had his head shaved. He woke up and said, \"I will go out as at other times...\" \"But he did not know that the LORD had left him.\"",
+     "ref": "16:17-20",
+     "fc": "verified",
+     "critic": 5,
+     "visual": "The shaving, the waking, the gold mark out; verse card 16:20.",
+     "note": "Its first half narrates what the visuals already show."
+    }
+   ]
+  },
+  {
+   "id": "aftermath",
+   "label": "Aftermath",
+   "sub": "Optional",
+   "pick": "optional",
+   "blocks": [
+    {
+     "id": "A1",
+     "text": "Blind and a prisoner, that's the first time we see him ask God for strength: \"strengthen me only this once.\"",
+     "ref": "16:21, 16:28",
+     "fc": "fixed",
+     "critic": 6,
+     "visual": "Blind Samson at the mill, then at the two pillars, praying. Tags 16:21 · 16:28.",
+     "note": "Real value, but it adds a second lesson (prayer) right before the close. \"For strength\" matters: in 15:18 he called on the LORD for water."
+    },
+    {
+     "id": "A2",
+     "text": "Blind, he finally asked: \"strengthen me only this once.\" And God answered.",
+     "ref": "16:28-30",
+     "fc": "verified",
+     "critic": 3,
+     "visual": "The pillars give way; the house falls in stone and dust (no bodies).",
+     "note": "Critic: never pair it with this message. If the strength returns on prayer, the gift starts to look like a verdict again."
+    }
+   ]
+  },
+  {
+   "id": "landing",
+   "label": "Landing",
+   "sub": "Bridge from Samson to the viewer (optional)",
+   "pick": "optional",
+   "blocks": [
+    {
+     "id": "N1",
+     "text": "Samson's strength kept working while he did what was right in his own eyes. Your gifts working isn't proof you're living the way God wants.",
+     "ref": "14:3; 16:1-3; 16:20",
+     "fc": "verified",
+     "critic": null,
+     "visual": "Back toward the opening frame; RIGHT IN MY EYES returns on screen beside the dark gold mark.",
+     "note": "From the fact-checker's safest closing; the fullest wording of your claim. The second viewer found it a bit preachy next to C1."
+    },
+    {
+     "id": "N4",
+     "text": "His strength working didn't mean he was living the way God wanted. Your gifts working doesn't either.",
+     "ref": "16:1-3; 16:20",
+     "fc": "new",
+     "critic": null,
+     "rec": true,
+     "visual": "Back toward the opening frame; RIGHT IN MY EYES returns on screen beside the dark gold mark.",
+     "note": "Your claim, said tighter, after the second viewer called N1 clunky. Fact-check: \"didn't mean\" (not \"never meant\", which can be heard as a verdict on his whole life). A punchier option it also passed: \"...Yours doesn't either.\""
+    },
+    {
+     "id": "N2",
+     "text": "Samson's strength kept working while he did what was right in his own eyes. Your gifts working isn't proof you're living the way God wants. Don't judge where you stand with God by how well your gifts still work.",
+     "ref": "14:3; 16:1-3; 16:20",
+     "fc": "new",
+     "critic": null,
+     "visual": "As N1.",
+     "note": "The fact-checker's full safest closing. If you pick it, end on C1 (not C7 or C8, which repeat its last line)."
+    },
+    {
+     "id": "N3",
+     "text": "Through all of it, his strength kept working, and it never warned him. Don't wait for your gifts to warn you.",
+     "ref": "16:19-20",
+     "fc": "new",
+     "critic": null,
+     "visual": "As N1.",
+     "note": "A repair of the dropped C5 (\"Your gifts won't either\" was an overclaim). This is the fact-checker's safest wording (\"never warned him\" is a figure of speech for 16:20)."
+    }
+   ]
+  },
+  {
+   "id": "final",
+   "label": "Final line",
+   "sub": "The bold claim people send to a friend",
+   "pick": "one",
+   "blocks": [
+    {
+     "id": "C1",
+     "text": "A gift from God is not a verdict from God.",
+     "ref": "message",
+     "fc": "verified",
+     "critic": 9,
+     "rec": true,
+     "visual": "Last frame matches the opening composition; the line holds as the end card.",
+     "note": "The line the reel exists to deliver. Needs a landing line before it (N1)."
+    },
+    {
+     "id": "C8",
+     "text": "Don't judge where you stand with God by how well your gifts still work. A gift from God is not a verdict from God.",
+     "ref": "message",
+     "fc": "new",
+     "critic": 9,
+     "visual": "As C1.",
+     "note": "C7 flipped so the verdict line lands last (critic: 9)."
+    },
+    {
+     "id": "C7",
+     "text": "A gift from God is not a verdict from God. Don't judge where you stand with Him by how well your gifts still work.",
+     "ref": "message",
+     "fc": "verified",
+     "critic": 8,
+     "visual": "As C1.",
+     "note": "The fact-checker's top-ranked closing for accuracy; ends on the softer instruction."
+    },
+    {
+     "id": "C4",
+     "text": "God's power on your life is not God's approval of your life.",
+     "ref": "message",
+     "fc": "verified",
+     "critic": 7,
+     "visual": "As C1.",
+     "note": "Clear and repeatable; less distinctive than C1."
+    },
+    {
+     "id": "C3",
+     "text": "Being used by God is not the same as walking with God.",
+     "ref": "message",
+     "fc": "verified",
+     "critic": 6,
+     "visual": "As C1.",
+     "note": "Memorable but a stock sermon line; drifts from the gift framing."
+    },
+    {
+     "id": "C2",
+     "text": "Don't judge where you stand with God by how well your gifts still work.",
+     "ref": "message",
+     "fc": "fixed",
+     "critic": 5,
+     "visual": "As C1.",
+     "note": "C2 cut to its accurate second sentence."
+    },
+    {
+     "id": "C6",
+     "text": "Check your heart, not your gift.",
+     "ref": "message",
+     "fc": "verified",
+     "critic": 3,
+     "visual": "As C1.",
+     "note": "Generic; never names the insight; weak link to the text."
+    }
+   ]
+  }
+ ],
+ "connectors": [
+  {
+   "id": "X3",
+   "text": "The strength kept working.",
+   "fc": "verified",
+   "critic": 9,
+   "kind": "refrain",
+   "note": "The refrain; echoes the opening. Only after a beat with no Spirit in it (not after S1-S3 or M2)."
+  },
+  {
+   "id": "B4",
+   "text": "But rewind to the first choice we see him make.",
+   "fc": "new",
+   "critic": null,
+   "kind": "bridge",
+   "note": "Plainer than B1 (the second viewer found \"went by his own eyes\" an awkward idiom). Exact to the record: the wife (14:2-3) is the first choice the text shows him stating."
+  },
+  {
+   "id": "B3",
+   "text": "But go back to how it started.",
+   "fc": "new",
+   "critic": null,
+   "kind": "bridge",
+   "note": "Covers the jump back from the feats (to 15:14) to the wife (14:3). The first-time viewer called it filler; B1 does the same job and adds meaning."
+  },
+  {
+   "id": "B2",
+   "text": "But rewind to the first thing he does in his story.",
+   "fc": "new",
+   "critic": null,
+   "kind": "bridge",
+   "note": "Same job as B3, more specific. 14:1 is the first act the text gives Samson himself."
+  },
+  {
+   "id": "B1",
+   "text": "But from the start, he went by his own eyes.",
+   "fc": "new",
+   "critic": null,
+   "kind": "bridge",
+   "note": "The critic's bridge. Fair: his first recorded choice is \"she is right in my eyes\" (14:3)."
+  },
+  {
+   "id": "L1",
+   "text": "The scariest line in his story comes right after the haircut.",
+   "fc": "new",
+   "critic": null,
+   "kind": "lead-in",
+   "note": "A re-hook before T2 (from T3's first half)."
+  },
+  {
+   "id": "X4",
+   "text": "Every time, it worked.",
+   "fc": "verified",
+   "critic": 6,
+   "kind": "refrain",
+   "note": "Same rule as X3. Redundant next to M4 or T2."
+  },
+  {
+   "id": "X2",
+   "text": "Here's what most people miss.",
+   "fc": "verified",
+   "critic": 5,
+   "kind": "re-hook",
+   "note": "Works, but it is the most overused line in faceless Reels."
+  },
+  {
+   "id": "X1",
+   "text": "But watch what he did with it.",
+   "fc": "verified",
+   "critic": 4,
+   "kind": "bridge",
+   "note": "Never before M2. \"It\" is vague before M1."
+  },
+  {
+   "id": "X5",
+   "text": "Then one day...",
+   "fc": "verified",
+   "critic": 3,
+   "kind": "filler",
+   "note": "Storybook filler."
+  },
+  {
+   "id": "X6",
+   "text": "So what's the lesson?",
+   "fc": "verified",
+   "critic": 2,
+   "kind": "filler",
+   "note": "Critic: announces the sermon, which makes people swipe. Avoid."
+  }
+ ],
+ "recommended": {
+  "opening": "O2",
+  "setup": "S1",
+  "middle": [
+   "M8",
+   "M3"
+  ],
+  "turn": "T6",
+  "aftermath": null,
+  "landing": "N4",
+  "final": "C1",
+  "connectors": {
+   "S1>M8": "B4",
+   "M8>M3": "X3"
+  }
+ },
+ "dropped": [
+  {
+   "id": "C5",
+   "text": "Samson's strength never told him the truth about where he stood with God. Your gifts won't either.",
+   "why": "Dropped by the fact-check: \"Your gifts won't either\" overclaims. N3 is the repair attempt."
+  },
+  {
+   "id": "David and Saul",
+   "text": "The \"rushed upon\" comparison with Saul and David",
+   "why": "Removed at your request; Samson only."
+  }
+ ]
+}

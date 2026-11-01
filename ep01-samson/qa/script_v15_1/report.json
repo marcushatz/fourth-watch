@@ -1,0 +1,87 @@
+{
+  "kind": "script",
+  "verdict": "PASS WITH WARNINGS",
+  "counts": {
+    "FAIL": 0,
+    "WARN": 9,
+    "PASS": 5
+  },
+  "facts": {
+    "title": "Why is Samson's story even in the Bible?",
+    "series": "ASK THE TEXT",
+    "VO words": 284,
+    "estimated runtime": "94.7s at 180 wpm"
+  },
+  "items": [
+    {
+      "level": "PASS",
+      "check": "series",
+      "msg": "ASK THE TEXT"
+    },
+    {
+      "level": "PASS",
+      "check": "hook",
+      "msg": "first VO line equals the title"
+    },
+    {
+      "level": "PASS",
+      "check": "runtime",
+      "msg": "estimated 95s"
+    },
+    {
+      "level": "WARN",
+      "check": "sentence length",
+      "msg": "29 words (max 25): 'Samson grew, and \"the LORD blessed him.\" But he chose by what was right in his o'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'secret' — make sure the text really says this: 'Delilah tried to hand him over three times, and he still told her his secret.'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'only' — make sure the text really says this: 'So why is Samson in the Bible? God raised him to \"begin to save Israel,\" and his'"
+    },
+    {
+      "level": "PASS",
+      "check": "answer",
+      "msg": "answer stated in the Turn/Landing: 'Even a man that strong could only begin to save. Jesus came to save his people from their sins, and on the cross he said, \"It is finished.\"'"
+    },
+    {
+      "level": "PASS",
+      "check": "value",
+      "msg": "6 things the viewer learns, each with a verse"
+    },
+    {
+      "level": "WARN",
+      "check": "loop",
+      "msg": "the last VO line shares no key word with the hook; the loop line should echo it"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 13:5, 16:30–31; 1 Samuel 7:13; 2 Samuel 3:18] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:4–17] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Matthew 26:47–54; Judges 16:21] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:28; Luke 23:34] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "title",
+      "msg": "the hook's ON-SCREEN line differs from the title"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# Samson v23 (fact-checked; clarity test on v22 = 7.5/10, fixes applied)
+MESSAGE: Your gift working doesn't mean God approves of how you're living.
+HOOK (0-5s): Your gift working doesn't mean God approves of how you're living. Samson shows it.
+STORY (5-29s): God gave Samson his strength: "the Spirit of the LORD rushed upon him," more than on any other judge. But from the start, he chose by what looked right to him. The only reason he gave for marrying a Philistine: "she is right in my eyes." Even the night he slept with a prostitute in Gaza, his strength still worked: he pulled up the city gates and carried them off. [14:6, 14:19, 15:14; 14:1-3; 16:1-3]
+TURN (29-41s): Then he told Delilah the secret of his strength. His hair was shaved. He woke up expecting it to work "as at other times." "But he did not know that the LORD had left him." [16:17, 16:19-20]
+LESSON (41-62s): He knew the secret of his strength, but not that the LORD had left him. That's the danger: a gift that still works can hide where you really stand. The text ties his strength to God's purpose, to "begin to save Israel," never to a reward for how he lived. A gift from God is not a verdict from God. [16:9, 16:17, 16:20; 13:5]
+APPLY (62-76s): So don't judge where you stand with God by how well your gift works. The song can still move the room. The business can still grow. Ask instead: is this right in God's eyes, or just in mine? [14:3; Deut 12:25]

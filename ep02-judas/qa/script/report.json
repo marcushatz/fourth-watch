@@ -1,0 +1,87 @@
+{
+  "kind": "script",
+  "verdict": "PASS WITH WARNINGS",
+  "counts": {
+    "FAIL": 0,
+    "WARN": 8,
+    "PASS": 6
+  },
+  "facts": {
+    "title": "Jesus knew Judas would betray Him. So why did He keep him close?",
+    "series": "ASK THE TEXT",
+    "VO words": 305,
+    "estimated runtime": "101.7s at 180 wpm"
+  },
+  "items": [
+    {
+      "level": "PASS",
+      "check": "series",
+      "msg": "ASK THE TEXT"
+    },
+    {
+      "level": "PASS",
+      "check": "hook",
+      "msg": "first VO line equals the title"
+    },
+    {
+      "level": "PASS",
+      "check": "runtime",
+      "msg": "estimated 102s"
+    },
+    {
+      "level": "WARN",
+      "check": "sentence length",
+      "msg": "33 words (max 25): 'Then He said it out loud: \"One of you will betray me.\" And here's what most peop'"
+    },
+    {
+      "level": "PASS",
+      "check": "answer",
+      "msg": "answer stated in the Turn/Landing: 'He gave the reason at that table, \"the Scripture will be fulfilled,\" and He walked into it with His eyes open, treating Judas like the rest so evenly that when He said \"one of you,\" they couldn't tell who it was. Love isn't blind: Jesus saw everything, and loved anyway. So when someone close turns on you: tell the truth plainly, let them go if they choose to go, and don't let it make you cold.'"
+    },
+    {
+      "level": "PASS",
+      "check": "value",
+      "msg": "6 things the viewer learns, each with a verse"
+    },
+    {
+      "level": "PASS",
+      "check": "loop",
+      "msg": "landing echoes the hook"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[John 13:18; John 17:12] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Luke 22:47-48; Matthew 26:49-50] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[John 6:64; Matthew 26:50] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[John 13:5, 13:11; Matthew 26:50] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[John 13:2-5, 13:11] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[John 13:22, 13:28; Matthew 26:50] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Luke 22:48; John 13:27-30; Matthew 26:50] is cited in the VO but not in the fact-check log"
+    }
+  ]
+}

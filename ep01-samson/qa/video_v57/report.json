@@ -1,0 +1,590 @@
+{
+  "kind": "video",
+  "verdict": "FAIL",
+  "counts": {
+    "FAIL": 1,
+    "WARN": 83,
+    "PASS": 12
+  },
+  "facts": {
+    "file": "fourth-watch-ep1-samson-v57.mp4",
+    "size": "1080x1920",
+    "fps": "30.00",
+    "duration": "151.32s",
+    "codec": "h264",
+    "audio": "aac",
+    "loudness": "-14.0 LUFS",
+    "true peak": "-1.4 dBTP",
+    "visual changes": 34,
+    "first/last frame match": "-0.04",
+    "caption chunks": 118,
+    "speech starts": "0.30s",
+    "words heard": 380,
+    "voice matches script": "99% of words heard as written",
+    "caption timing": "median +0.02s vs voice (118 chunks measured)"
+  },
+  "items": [
+    {
+      "level": "PASS",
+      "check": "format",
+      "msg": "frame 1080x1920 (want 1080x1920)"
+    },
+    {
+      "level": "PASS",
+      "check": "format",
+      "msg": "30.00 fps (want 30)"
+    },
+    {
+      "level": "FAIL",
+      "check": "runtime",
+      "msg": "151.3s (must be 45–150s)"
+    },
+    {
+      "level": "PASS",
+      "check": "loudness",
+      "msg": "-14.0 LUFS integrated (target -16 to -12)"
+    },
+    {
+      "level": "PASS",
+      "check": "loudness",
+      "msg": "true peak -1.4 dBTP (max -1.0)"
+    },
+    {
+      "level": "PASS",
+      "check": "motion",
+      "msg": "something moves in every stretch longer than 1.5s"
+    },
+    {
+      "level": "WARN",
+      "check": "pacing",
+      "msg": "no hard visual change for 8.6s (playbook: new scene every 4–6s; soft dissolves may not register)",
+      "t": 21.5
+    },
+    {
+      "level": "WARN",
+      "check": "pacing",
+      "msg": "no hard visual change for 11.9s (playbook: new scene every 4–6s; soft dissolves may not register)",
+      "t": 85.2
+    },
+    {
+      "level": "WARN",
+      "check": "pacing",
+      "msg": "no hard visual change for 13.2s (playbook: new scene every 4–6s; soft dissolves may not register)",
+      "t": 110.7
+    },
+    {
+      "level": "WARN",
+      "check": "pacing",
+      "msg": "no hard visual change for 8.6s (playbook: new scene every 4–6s; soft dissolves may not register)",
+      "t": 126.8
+    },
+    {
+      "level": "WARN",
+      "check": "pacing",
+      "msg": "no hard visual change for 9.5s (playbook: new scene every 4–6s; soft dissolves may not register)",
+      "t": 135.4
+    },
+    {
+      "level": "WARN",
+      "check": "loop",
+      "msg": "last frame vs first frame similarity -0.04 (want ≥ 0.75 so the replay loops)"
+    },
+    {
+      "level": "PASS",
+      "check": "captions = script",
+      "msg": "all 379 caption words match the script"
+    },
+    {
+      "level": "PASS",
+      "check": "voice = script",
+      "msg": "99% of script words heard as written"
+    },
+    {
+      "level": "PASS",
+      "check": "sync",
+      "msg": "captions within 0.25s of the voice"
+    },
+    {
+      "level": "PASS",
+      "check": "title",
+      "msg": "title readable in frame one (100% of its words read back)"
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'does that mean'",
+      "t": 2.52
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (33% read back): 'with how you're living?'",
+      "t": 4.17
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'Let's look at Samson,'",
+      "t": 5.82
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'known as the strongest'",
+      "t": 7.26
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'man in the Bible.'",
+      "t": 8.57
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'His strength came'",
+      "t": 9.84
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'from God.'",
+      "t": 10.98
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'in wait'",
+      "t": 16.88
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'Later, he fell'",
+      "t": 22.04
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'in love with Delilah,'",
+      "t": 23.24
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'and the Philistine lords,'",
+      "t": 24.66
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'Israel's enemies,'",
+      "t": 26.12
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'offered her silver'",
+      "t": 27.32
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'to find the secret'",
+      "t": 28.34
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'of his strength.'",
+      "t": 29.43
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'And three times'",
+      "t": 34.96
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'he broke free.'",
+      "t": 36.24
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'Then he told'",
+      "t": 37.6
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'her his secret.'",
+      "t": 38.71
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'While he slept,'",
+      "t": 39.92
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'she had a man'",
+      "t": 40.9
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'shave off'",
+      "t": 41.62
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'his uncut hair,'",
+      "t": 42.58
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'he was set apart'",
+      "t": 44.28
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'to God.'",
+      "t": 45.18
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'She called'",
+      "t": 46.04
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'He woke up'",
+      "t": 48.02
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'and said,'",
+      "t": 48.78
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): '\"I will go out'",
+      "t": 49.62
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'and shake myself free.\"'",
+      "t": 52.08
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'Notice what he said:'",
+      "t": 57.96
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): '\"as at other times.\"'",
+      "t": 59.6
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'It had always'",
+      "t": 60.92
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'so he assumed'",
+      "t": 62.74
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'it would work again.'",
+      "t": 63.85
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'You can be gifted,'",
+      "t": 65.4
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'lead, and help people.'",
+      "t": 67.09
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'you doesn't mean'",
+      "t": 69.98
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'He approves'",
+      "t": 70.78
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'of how you're living.'",
+      "t": 71.78
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'Jesus warned'",
+      "t": 73.16
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (33% read back): 'Blinded and brought out'",
+      "t": 85.04
+    },
+    {
+      "level": "WARN",
+      "check": "safe area",
+      "msg": "caption 'please remember me' intrudes on the right button column by 8px",
+      "t": 90.32
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'Earlier, he had assumed'",
+      "t": 101.76
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'he would escape.'",
+      "t": 103.18
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'against the pillars'",
+      "t": 108.4
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'with all his strength,'",
+      "t": 109.56
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'and the building fell'",
+      "t": 110.86
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'on the Philistine lords'",
+      "t": 112.1
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'and everyone inside.'",
+      "t": 113.59
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'Samson died with them.'",
+      "t": 115.44
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'And the Bible adds:'",
+      "t": 117.2
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (25% read back): 'Samson's last act began'",
+      "t": 124.84
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'And centuries later,'",
+      "t": 127.64
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'Hebrews 11 names him'",
+      "t": 129.22
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'in a list'",
+      "t": 130.28
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'of people who,'",
+      "t": 131.08
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'through faith,'",
+      "t": 132.18
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): '\"were made'",
+      "t": 133.02
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (33% read back): 'strong out of weakness.\"'",
+      "t": 134.3
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'his strength,'",
+      "t": 138.82
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'his failures,'",
+      "t": 139.94
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'at the end? Why?'",
+      "t": 142.44
+    },
+    {
+      "level": "WARN",
+      "check": "safe area",
+      "msg": "text 'you' in the right margin",
+      "t": 0.5
+    },
+    {
+      "level": "WARN",
+      "check": "safe area",
+      "msg": "text 'you' in the right margin",
+      "t": 1.5
+    },
+    {
+      "level": "WARN",
+      "check": "safe area",
+      "msg": "text 'you' in the right margin",
+      "t": 2.5
+    },
+    {
+      "level": "WARN",
+      "check": "safe area",
+      "msg": "text 'you' in the right margin",
+      "t": 3.5
+    },
+    {
+      "level": "WARN",
+      "check": "safe area",
+      "msg": "text 'you' in the right margin",
+      "t": 4.5
+    },
+    {
+      "level": "WARN",
+      "check": "safe area",
+      "msg": "text 'whe' in the right button column",
+      "t": 6.5
+    },
+    {
+      "level": "WARN",
+      "check": "safe area",
+      "msg": "text 'remember this' in the right button column",
+      "t": 89.5
+    },
+    {
+      "level": "WARN",
+      "check": "safe area",
+      "msg": "text 'remember this' in the right button column",
+      "t": 90.5
+    },
+    {
+      "level": "WARN",
+      "check": "safe area",
+      "msg": "text 'this' in the right button column",
+      "t": 91.5
+    },
+    {
+      "level": "WARN",
+      "check": "safe area",
+      "msg": "text 'remember this' in the right button column",
+      "t": 92.5
+    },
+    {
+      "level": "WARN",
+      "check": "safe area",
+      "msg": "text 'remember this' in the right button column",
+      "t": 93.5
+    },
+    {
+      "level": "WARN",
+      "check": "safe area",
+      "msg": "text 'remember this' in the right button column",
+      "t": 94.5
+    },
+    {
+      "level": "WARN",
+      "check": "safe area",
+      "msg": "text 'remember this' in the right button column",
+      "t": 95.5
+    },
+    {
+      "level": "WARN",
+      "check": "safe area",
+      "msg": "text 'remember this' in the right button column",
+      "t": 96.5
+    },
+    {
+      "level": "PASS",
+      "check": "verse card",
+      "msg": "verse found on screen (100% of words) at 54.0s"
+    },
+    {
+      "level": "PASS",
+      "check": "verse card",
+      "msg": "verse found on screen (100% of words) at 90.3s"
+    },
+    {
+      "level": "PASS",
+      "check": "verse card",
+      "msg": "verse found on screen (100% of words) at 119.1s"
+    }
+  ]
+}

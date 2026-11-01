@@ -1,0 +1,142 @@
+{
+  "kind": "script",
+  "verdict": "FAIL",
+  "counts": {
+    "FAIL": 1,
+    "WARN": 18,
+    "PASS": 6
+  },
+  "facts": {
+    "title": "Delilah tried to hand Samson over three times. So why did he tell her his secret?",
+    "series": "ASK THE TEXT",
+    "VO words": 287,
+    "estimated runtime": "95.7s at 180 wpm"
+  },
+  "items": [
+    {
+      "level": "PASS",
+      "check": "series",
+      "msg": "ASK THE TEXT"
+    },
+    {
+      "level": "PASS",
+      "check": "hook",
+      "msg": "first VO line equals the title"
+    },
+    {
+      "level": "PASS",
+      "check": "runtime",
+      "msg": "estimated 96s"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'secret' — make sure the text really says this: 'Delilah tried to hand Samson over three times. So why did he tell her his secret'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'all' — make sure the text really says this: 'Then \"he told her all his heart\": \"If my head is shaved, then my strength will l'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'all' — make sure the text really says this: '\"When Delilah saw that he had told her all his heart,\" she sent for the lords, a'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'secret' — make sure the text really says this: 'So why did Samson tell Delilah? She made guarding his secret feel like not lovin'"
+    },
+    {
+      "level": "PASS",
+      "check": "answer",
+      "msg": "answer stated in the Turn/Landing: 'She made guarding his secret feel like not loving her, and pressed him day after day until his soul was vexed to death. Ropes couldn't hold him; her words did.'"
+    },
+    {
+      "level": "PASS",
+      "check": "value",
+      "msg": "6 things the viewer learns, each with a verse"
+    },
+    {
+      "level": "PASS",
+      "check": "loop",
+      "msg": "landing echoes the hook"
+    },
+    {
+      "level": "FAIL",
+      "check": "fact-check",
+      "msg": "claim not verified: '(to be filled from the independent fact-check report)' (status: 'pending')"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:15] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:9, 16:12, 16:16–17] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:20] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:18, 16:20] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:5, 16:15] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:19–20] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:15–17] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:7–14] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:16] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:18] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:17] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:5, 16:15–17] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:5] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "title",
+      "msg": "the hook's ON-SCREEN line differs from the title"
+    }
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "kind": "video",
+  "verdict": "FAIL",
+  "counts": {
+    "FAIL": 39,
+    "WARN": 13,
+    "PASS": 10
+  },
+  "facts": {
+    "file": "samson-strength.mp4",
+    "size": "1080x1920",
+    "fps": "30.00",
+    "duration": "103.13s",
+    "codec": "h264",
+    "audio": "aac",
+    "loudness": "-16.0 LUFS",
+    "true peak": "-1.4 dBTP",
+    "visual changes": 26,
+    "first/last frame match": "1.00",
+    "caption chunks": 92,
+    "speech starts": "4.36s"
+  },
+  "items": [
+    {
+      "level": "PASS",
+      "check": "format",
+      "msg": "frame 1080x1920 (want 1080x1920)"
+    },
+    {
+      "level": "PASS",
+      "check": "format",
+      "msg": "30.00 fps (want 30)"
+    },
+    {
+      "level": "PASS",
+      "check": "runtime",
+      "msg": "103.1s"
+    },
+    {
+      "level": "PASS",
+      "check": "loudness",
+      "msg": "-16.0 LUFS integrated (target -16 to -12)"
+    },
+    {
+      "level": "PASS",
+      "check": "loudness",
+      "msg": "true peak -1.4 dBTP (max -1.0)"
+    },
+    {
+      "level": "PASS",
+      "check": "motion",
+      "msg": "something moves in every stretch longer than 1.5s"
+    },
+    {
+      "level": "WARN",
+      "check": "pacing",
+      "msg": "no hard visual change for 8.9s (playbook: new scene every 4–6s; soft dissolves may not register)",
+      "t": 22.7
+    },
+    {
+      "level": "WARN",
+      "check": "pacing",
+      "msg": "no hard visual change for 8.9s (playbook: new scene every 4–6s; soft dissolves may not register)",
+      "t": 31.6
+    },
+    {
+      "level": "WARN",
+      "check": "pacing",
+      "msg": "no hard visual change for 10.3s (playbook: new scene every 4–6s; soft dissolves may not register)",
+      "t": 40.5
+    },
+    {
+      "level": "PASS",
+      "check": "loop",
+      "msg": "last frame vs first frame similarity 1.00 (want ≥ 0.75 so the replay loops)"
+    },
+    {
+      "level": "PASS",
+      "check": "captions = script",
+      "msg": "all 284 caption words match the script"
+    },
+    {
+      "level": "WARN",
+      "check": "voice",
+      "msg": "the first word starts at 4.36s; the hook should start immediately",
+      "t": 4.36
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'If God knew'",
+      "t": 0.15
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'Samson would throw'",
+      "t": 1.06
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'it all away,'",
+      "t": 2.2
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'would chase'",
+      "t": 7.09
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'a Philistine wife'",
+      "t": 7.61
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'his parents didn't want.'",
+      "t": 8.8
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'He knew Samson'",
+      "t": 10.18
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'would tell Delilah'",
+      "t": 11.17
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'how to take'",
+      "t": 12.36
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'him the strength'",
+      "t": 15.45
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'before he was born.'",
+      "t": 25.31
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: '\"He shall begin'",
+      "t": 26.81
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'to save Israel'",
+      "t": 27.84
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'from the hand'",
+      "t": 28.88
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'it doesn't say'",
+      "t": 32.3
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'he'll save Israel.'",
+      "t": 33.14
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'It says'",
+      "t": 34.32
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'was to start'",
+      "t": 37.39
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'the fight.'",
+      "t": 38.23
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'Israel wasn't fighting back.'",
+      "t": 38.91
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'Even his own people'",
+      "t": 40.59
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'tied him up'",
+      "t": 41.96
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'to the Philistines.'",
+      "t": 43.89
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'And that wife?'",
+      "t": 45.33
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'It sounds wrong'",
+      "t": 46.39
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'but the marriage was'",
+      "t": 48.08
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'for he was seeking'",
+      "t": 52.3
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'against the Philistines.\"'",
+      "t": 54.69
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'Samson wanted a wife.'",
+      "t": 56.41
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'God wanted to free'",
+      "t": 57.93
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'because he deserved it.'",
+      "t": 61.74
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'He gave it'",
+      "t": 63.39
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'his eyes.'",
+      "t": 67.5
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'he prayed,'",
+      "t": 69.41
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'this once.\"'",
+      "t": 71.36
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'in his whole life.'",
+      "t": 77.48
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: '\"defeated the Philistines'",
+      "t": 81.12
+    },
+    {
+      "level": "FAIL",
+      "check": "sync",
+      "msg": "caption shown while nobody is speaking: 'It was about'",
+      "t": 91.24
+    },
+    {
+      "level": "WARN",
+      "check": "hearing",
+      "msg": "speech recognition unavailable: words and caption timing checked only against speech activity"
+    },
+    {
+      "level": "FAIL",
+      "check": "title",
+      "msg": "title not readable in frame one (only 0% of 'WHY GIVE SAMSON THAT STRENGTH?' read back)",
+      "t": 0.0
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'If God knew'",
+      "t": 0.59
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'Samson would throw'",
+      "t": 1.62
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'it all away,'",
+      "t": 2.82
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'why did He give'",
+      "t": 4.05
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'him so much strength?'",
+      "t": 5.37
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'from the hand'",
+      "t": 29.28
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (33% read back): '\"It was from'",
+      "t": 51.32
+    },
+    {
+      "level": "WARN",
+      "check": "captions on screen",
+      "msg": "caption hard to read or missing on screen (0% read back): 'for he was seeking'",
+      "t": 52.87
+    },
+    {
+      "level": "PASS",
+      "check": "verse card",
+      "msg": "verse found on screen (100% of words) at 30.5s"
+    },
+    {
+      "level": "PASS",
+      "check": "verse card",
+      "msg": "verse found on screen (100% of words) at 55.5s"
+    }
+  ]
+}

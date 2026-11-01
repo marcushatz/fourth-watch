@@ -1,0 +1,8 @@
+# Fourth Watch: pinned Python packages (the versions the system was built and tested with, Oct 31 2026).
+# Install: pip install --break-system-packages -r requirements.txt
+# Check:   python3 tools/check_env.py
+sherpa-onnx==2.0.1
+onnxruntime==1.29.0
+opencv-python-headless==5.0.0.93
+numpy==2.5.3
+pillow==12.3.0

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<defs>
+ <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#26324D"/><stop offset="1" stop-color="#131A2B"/></linearGradient>
+ <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101727"/><stop offset="1" stop-color="#070A12"/></linearGradient>
+ <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E3B25C" stop-opacity=".55"/><stop offset="1" stop-color="#FFE3A3"/></linearGradient>
+ <radialGradient id="glass" cx=".5" cy=".55" r=".6"><stop offset="0" stop-color="#FFF1C9"/><stop offset=".55" stop-color="#E3B25C"/><stop offset="1" stop-color="#B9741F"/></radialGradient>
+ <radialGradient id="halo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#E3B25C" stop-opacity=".55"/><stop offset="1" stop-color="#E3B25C" stop-opacity="0"/></radialGradient>
+ <filter id="blur8" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8"/></filter>
+ <filter id="blur3" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+</defs>
+  <rect width="512" height="512" fill="url(#sky)"/>
+  <circle cx="256" cy="262" r="170" fill="url(#halo)"/>
+  <circle cx="256" cy="92" r="20" stroke="#F2E6CF" stroke-width="9" fill="none"/>
+  <path d="M 214 140 L 226 112 L 286 112 L 298 140 Z" fill="#F2E6CF"/>
+  <rect x="200" y="140" width="112" height="214" rx="10" fill="url(#glass)"/>
+  <rect x="200" y="140" width="112" height="214" rx="10" stroke="#F2E6CF" stroke-width="10" fill="none"/>
+  <rect x="249" y="140" width="14" height="214" fill="#1A2034"/>
+  <rect x="200" y="200" width="112" height="14" fill="#1A2034"/>
+  <path d="M 186 354 L 326 354 L 316 382 L 196 382 Z" fill="#F2E6CF"/>
+  </svg>

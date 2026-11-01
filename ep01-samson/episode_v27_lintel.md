@@ -1,0 +1,13 @@
+# Samson v27: Lintel blueprint (v26 + hair vs. source fix; fact-checked)
+
+HOOK: Why did God let Samson keep his strength while he kept sinning? He slept with a prostitute in Gaza, and that same night he carried off the city gates. Was God fine with how he lived? Let's let the Bible answer it.
+
+STORY: Again and again, "the Spirit of the LORD rushed upon him," more than on any other judge. But he demanded a Philistine wife over his parents' objection, because "she is right in my eyes." Then came Delilah. Four times she said the exact same words: "The Philistines are upon you, Samson!" Three times, he broke free. Then he told her all his heart, and his hair, the sign he was set apart to God, was shaved. He woke up and said, "I will go out as at other times and shake myself free." "But he did not know that the LORD had left him."
+
+1. Ask what the strength was for. Before Samson was born, the angel said he would "begin to save Israel." Even when he chose by his own eyes, the text says "it was from the LORD, for he was seeking an opportunity against the Philistines." The strength was for God's plan, not a reward for Samson's life. So can a gift keep working while God isn't pleased?
+
+2. Listen to Jesus. He said many will say on that day, "Lord, Lord, did we not prophesy in your name, and cast out demons in your name, and do many mighty works in your name?" And He will declare, "I never knew you." Jesus isn't talking about Samson here, but the principle holds: mighty works and knowing God are not the same thing. So did God give up on Samson?
+
+3. No. Look at how his story ends. Two verses later, his hair "began to grow again." But he didn't pray to his hair. Blind and a prisoner, he prayed, "O Lord GOD, please remember me and please strengthen me only this once." The LORD had left him, but when Samson called, God still answered: the house of Dagon fell. Hebrews 11 doesn't credit his muscles. It names him among those who "through faith" "were made strong out of weakness." So why did God let Samson keep his strength? The text ties it to God's purpose, never to a verdict on his life. Was God fine with how he lived? The strength was never proof he was. A gift from God is not a verdict from God. Don't judge where you stand with God by how well your gifts work.
+
+CTA: Which hit you harder: that Hebrews 11 names him among the faithful, or that God still answered him at the end? Tell us in the comments.

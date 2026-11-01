@@ -1,0 +1,182 @@
+{
+  "kind": "script",
+  "verdict": "PASS WITH WARNINGS",
+  "counts": {
+    "FAIL": 0,
+    "WARN": 24,
+    "PASS": 9
+  },
+  "facts": {
+    "title": "If God is still using you, does that mean He's okay with how you're living?",
+    "series": "ASK THE TEXT",
+    "VO words": 317,
+    "estimated runtime": "111.9s at 170 wpm"
+  },
+  "items": [
+    {
+      "level": "PASS",
+      "check": "series",
+      "msg": "ASK THE TEXT"
+    },
+    {
+      "level": "PASS",
+      "check": "hook",
+      "msg": "first VO line equals the title"
+    },
+    {
+      "level": "PASS",
+      "check": "runtime",
+      "msg": "estimated 112s"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'all' — make sure the text really says this: 'Let's look at Samson, known as the strongest man in the Bible. His strength came'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'secret' — make sure the text really says this: 'Later, he fell in love with Delilah, and the Philistine lords, Israel's enemies,'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'secret' — make sure the text really says this: 'Then he told her his secret. While he slept, she had a man shave off his uncut h'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'always' — make sure the text really says this: 'Notice what he said: \"as at other times.\" It had always worked before, so he ass'"
+    },
+    {
+      "level": "WARN",
+      "check": "sentence length",
+      "msg": "29 words (max 25): 'Blinded and brought out to entertain his captors, Samson prayed, \"O Lord GOD, pl'"
+    },
+    {
+      "level": "WARN",
+      "check": "sentence length",
+      "msg": "27 words (max 25): 'Then he leaned his weight against the two middle pillars and bowed with all his '"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'everyone' — make sure the text really says this: 'Then he leaned his weight against the two middle pillars and bowed with all his '"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'all' — make sure the text really says this: 'Then he leaned his weight against the two middle pillars and bowed with all his '"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'never' — make sure the text really says this: 'So does God still using you mean He's okay with how you're living? Samson's stre'"
+    },
+    {
+      "level": "PASS",
+      "check": "answer",
+      "msg": "answer stated in the Turn/Landing: 'God still using you doesn't mean He approves of how you're living.'"
+    },
+    {
+      "level": "PASS",
+      "check": "value",
+      "msg": "5 things the viewer learns, each with a verse"
+    },
+    {
+      "level": "PASS",
+      "check": "loop",
+      "msg": "landing echoes the hook"
+    },
+    {
+      "level": "WARN",
+      "check": "budget",
+      "msg": "317 spoken words; the six best Lintel Shorts use 218–414 (median 275). About 230–300 words keeps it 90–120 s"
+    },
+    {
+      "level": "WARN",
+      "check": "hook form",
+      "msg": "the hook is about the viewer ('you'/'we'); all three Lintel hits ask about a named Bible person or object in the third person (\"Where did Cain's wife come from?\"), and every 'you'/'we' hook was a low"
+    },
+    {
+      "level": "WARN",
+      "check": "hook form",
+      "msg": "the hook names no Bible person, place or object; the hits name one in the question itself"
+    },
+    {
+      "level": "WARN",
+      "check": "turn",
+      "msg": "the Turn starts about 56s in (Lintel's top six turn at 14–25 s, after at most ~14 s of story)"
+    },
+    {
+      "level": "PASS",
+      "check": "story share",
+      "msg": "the Story section is 31% of the words (Marcus's cap ~40%; the hits retell 0–5%, the top six spend 0–21% on any story). Count story lines in other sections by hand"
+    },
+    {
+      "level": "WARN",
+      "check": "answer timing",
+      "msg": "the core answer starts at about 56% of the runtime (top six 33–50%; the question-video lows 59–82%)"
+    },
+    {
+      "level": "PASS",
+      "check": "echo",
+      "msg": "the hook comes back after 70% of the runtime (100% of its key words in one line). All three hits re-ask it in its own words at 82–89%, then answer it in one line"
+    },
+    {
+      "level": "WARN",
+      "check": "you lines",
+      "msg": "4 sentences speak to 'you' outside quotes (top six 1–3; the reels with 5–9 were all lows). Never describe the viewer's conduct"
+    },
+    {
+      "level": "PASS",
+      "check": "closing question",
+      "msg": "16 words (the hits' closing questions run 16–17 words, about 5 s)"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 13:5, 16:17-19; Numbers 6:5-7] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:20] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:21, 16:25, 16:28] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:29-30] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 15:14, 16:1-3, 16:9-14, 16:20] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:8-14] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 13:5, 14:6, 16:1-3, 16:21-28] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 14:6, 16:1-3, 16:17, 16:20] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "title",
+      "msg": "the hook's ON-SCREEN line differs from the title"
+    }
+  ]
+}

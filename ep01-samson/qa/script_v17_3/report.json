@@ -1,0 +1,87 @@
+{
+  "kind": "script",
+  "verdict": "PASS WITH WARNINGS",
+  "counts": {
+    "FAIL": 0,
+    "WARN": 8,
+    "PASS": 6
+  },
+  "facts": {
+    "title": "What's the lesson of Samson's story?",
+    "series": "ASK THE TEXT",
+    "VO words": 214,
+    "estimated runtime": "71.3s at 180 wpm"
+  },
+  "items": [
+    {
+      "level": "PASS",
+      "check": "series",
+      "msg": "ASK THE TEXT"
+    },
+    {
+      "level": "PASS",
+      "check": "hook",
+      "msg": "first VO line equals the title"
+    },
+    {
+      "level": "PASS",
+      "check": "runtime",
+      "msg": "estimated 71s"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'every' — make sure the text really says this: 'Every time before, the strength had come. So he assumed it would again.'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'only' — make sure the text really says this: 'Blind, in a Philistine prison, only then do we see him ask God for strength: \"st'"
+    },
+    {
+      "level": "PASS",
+      "check": "answer",
+      "msg": "answer stated in the Turn/Landing: 'Don't judge where you stand with God by how well your gifts still work.'"
+    },
+    {
+      "level": "PASS",
+      "check": "value",
+      "msg": "6 things the viewer learns, each with a verse"
+    },
+    {
+      "level": "PASS",
+      "check": "loop",
+      "msg": "landing echoes the hook"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 14:8–9; Leviticus 11:27] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:6–15] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:19–20] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:9–14, 16:20] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 13:5, 16:17] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "title",
+      "msg": "the hook's ON-SCREEN line differs from the title"
+    }
+  ]
+}

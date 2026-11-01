@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Samson Script Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5EEE1; --surface:#FFFCF6; --surface-2:#F0E6D4; --ink:#241A12; --muted:#6B5E50; --line:#E0D3BE;
+  --gold:#9A6B1E; --gold-strong:#B9862F; --gold-soft:#F4E4C1; --ember:#A8401F; --ember-soft:#F7DDD2;
+  --ok:#2F6B3C; --ok-soft:#DCEBDD; --info:#3C5A86; --info-soft:#DEE6F2; --warn:#8A5410; --warn-soft:#F6E5C8;
+  --focus:#B9862F; --shadow:0 1px 2px rgba(36,26,18,.06),0 4px 14px rgba(36,26,18,.05);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#14100D; --surface:#1D1712; --surface-2:#271F18; --ink:#F2E6CF; --muted:#A99B88; --line:#362B21;
+    --gold:#E3B25C; --gold-strong:#E3B25C; --gold-soft:#3A2C16; --ember:#E07A52; --ember-soft:#3A1F15;
+    --ok:#86BE90; --ok-soft:#1E3324; --info:#9DB7DD; --info-soft:#1D2A3D; --warn:#E6AE5E; --warn-soft:#3A2A12;
+    --focus:#E3B25C; --shadow:none; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14100D; --surface:#1D1712; --surface-2:#271F18; --ink:#F2E6CF; --muted:#A99B88; --line:#362B21;
+  --gold:#E3B25C; --gold-strong:#E3B25C; --gold-soft:#3A2C16; --ember:#E07A52; --ember-soft:#3A1F15;
+  --ok:#86BE90; --ok-soft:#1E3324; --info:#9DB7DD; --info-soft:#1D2A3D; --warn:#E6AE5E; --warn-soft:#3A2A12;
+  --focus:#E3B25C; --shadow:none; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:1240px;margin:0 auto;padding:28px max(16px,env(safe-area-inset-right)) 120px max(16px,env(safe-area-inset-left))}
+h1,h2,h3{margin:0}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
+h1{font-family:Cinzel,Georgia,serif;font-weight:700;font-size:clamp(28px,4.4vw,40px);line-height:1.15;margin:6px 0 8px;letter-spacing:.01em}
+.lede{color:var(--muted);max-width:68ch;margin:0}
+.toprow{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px;white-space:nowrap}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.status[data-s="saved"] .dot{background:var(--ok)}
+.status[data-s="saving"] .dot{background:var(--gold-strong)}
+.status[data-s="error"] .dot,.status[data-s="local"] .dot{background:var(--ember)}
+
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;align-items:start}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow)}
+.panel h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.message{font-size:19px;line-height:1.5;font-weight:500}
+.message strong{color:var(--gold);font-weight:700}
+.factnote{font-size:15px}
+.rules{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:14px}
+.rules li{margin:3px 0}
+
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 410px;gap:24px;align-items:start}
+.slot{margin:0 0 28px}
+.slothead{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:12px}
+.slothead h2{font-family:Cinzel,Georgia,serif;font-size:22px;font-weight:700;letter-spacing:.02em}
+.slothead .sub{color:var(--muted);font-size:14px}
+.num{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--gold-soft);color:var(--gold);font:600 13px Inter,sans-serif;margin-right:8px;vertical-align:3px}
+.approve{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;cursor:pointer;user-select:none;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface)}
+.approve input{width:17px;height:17px;accent-color:var(--ok);margin:0}
+.approve.on{background:var(--ok-soft);border-color:transparent;color:var(--ok)}
+
+.cards{display:grid;gap:10px}
+.card{position:relative;display:block;background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px 12px 46px;cursor:pointer;transition:border-color .15s,background .15s}
+.card:hover{border-color:var(--gold-strong)}
+.card input{position:absolute;left:16px;top:17px;width:18px;height:18px;margin:0;accent-color:var(--gold-strong)}
+.card.sel{border-color:var(--gold-strong);background:linear-gradient(0deg,var(--surface),var(--surface)) padding-box;box-shadow:0 0 0 3px var(--gold-soft)}
+.card .line1{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.bid{font:700 13px Inter,sans-serif;color:var(--gold);letter-spacing:.04em}
+.badge{font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.b-verified{background:var(--ok-soft);color:var(--ok)}
+.b-fixed{background:var(--info-soft);color:var(--info)}
+.b-new{background:var(--gold-soft);color:var(--gold)}
+.b-critic{background:var(--surface-2);color:var(--muted)}
+.b-rec{background:var(--gold-strong);color:#1D1712}
+.vo{font-size:16.5px;line-height:1.5}
+.ref{color:var(--muted);font-size:13px;margin-top:4px}
+.secs{color:var(--muted);font-size:12.5px}
+details.more{margin-top:8px;font-size:14px;color:var(--muted)}
+details.more summary{cursor:pointer;font-weight:600;font-size:13px;color:var(--muted);list-style:none;display:inline-flex;align-items:center;gap:6px}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::before{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(-45deg);transition:transform .15s}
+details.more[open] summary::before{transform:rotate(45deg)}
+.more p{margin:6px 0 0}
+.more b{color:var(--ink);font-weight:600}
+textarea{width:100%;min-height:44px;resize:vertical;margin-top:10px;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:14px/1.45 Inter,sans-serif}
+textarea::placeholder{color:var(--muted)}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+table.beats{width:100%;border-collapse:collapse;font-size:14px}
+.beats th{text-align:left;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:8px 8px;border-bottom:1px solid var(--line)}
+.beats td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.beats td:first-child{font-weight:700;color:var(--gold);width:34px}
+.use{font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--surface-2);color:var(--muted);white-space:nowrap}
+.use.Must{background:var(--gold-soft);color:var(--gold)}
+.use.Strong{background:var(--ok-soft);color:var(--ok)}
+.tablewrap{overflow-x:auto}
+
+.conn-lib{display:grid;gap:8px}
+.conn{display:flex;gap:10px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.conn .vo{font-size:15.5px}
+.conn .kind{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+
+main{min-width:0}
+aside.build{position:sticky;top:16px;max-height:calc(100vh - 32px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.build-head{padding:18px 18px 14px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--surface);z-index:1}
+.build-head h2{font-family:Cinzel,Georgia,serif;font-size:20px;font-weight:700}
+.meter{margin-top:10px}
+.meter-top{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+.meter-top b{color:var(--ink);font-size:15px}
+.bar{position:relative;height:8px;border-radius:999px;background:var(--surface-2);margin-top:6px;overflow:hidden}
+.bar .band{position:absolute;top:0;bottom:0;background:var(--ok-soft)}
+.bar .fill{position:absolute;left:0;top:0;bottom:0;background:var(--gold-strong);border-radius:999px}
+.meter-foot{font-size:12px;color:var(--muted);margin-top:6px}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+button{font:600 14px Inter,sans-serif;border-radius:10px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);padding:9px 14px;cursor:pointer;min-height:40px}
+button.primary{background:var(--gold-strong);border-color:transparent;color:#1D1712}
+button:hover{filter:brightness(1.04)}
+.warns{padding:12px 18px 0;display:grid;gap:8px}
+.warn{font-size:13.5px;line-height:1.45;padding:9px 12px;border-radius:10px;background:var(--warn-soft);color:var(--warn)}
+.warn.info{background:var(--info-soft);color:var(--info)}
+.script{padding:12px 18px 18px}
+.piece{padding:10px 0;border-bottom:1px dashed var(--line)}
+.piece:last-child{border-bottom:none}
+.piece .pid{font:700 12px Inter,sans-serif;color:var(--gold);letter-spacing:.04em;display:flex;justify-content:space-between}
+.piece .pid span{color:var(--muted);font-weight:500}
+.piece .ptext{font-size:15px;line-height:1.5;margin-top:2px}
+.joint{display:flex;align-items:center;gap:8px;padding:6px 0}
+.joint label{font-size:12px;color:var(--muted);white-space:nowrap}
+.joint select{flex:1;min-width:0;font:13.5px Inter,sans-serif;padding:7px 10px;border-radius:9px;border:1px dashed var(--gold-strong);background:var(--gold-soft);color:var(--ink)}
+.joint select.empty{background:transparent;border-color:var(--line);color:var(--muted)}
+.piece.connector .ptext{font-style:italic}
+.final-approve{margin:0 18px 18px;padding:14px;border-radius:12px;background:var(--surface-2);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.final-approve .count{font-size:13px;color:var(--muted)}
+.dropped{font-size:14px;color:var(--muted)}
+.dropped li{margin:4px 0}
+.mobilebar{display:none}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:10}
+.toast.show{opacity:1}
+
+@media (max-width:960px){
+  .layout{grid-template-columns:minmax(0,1fr)}
+  aside.build{position:static;max-height:none}
+  .build-head{position:static}
+  .intro{grid-template-columns:1fr}
+  .mobilebar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:5;gap:10px;align-items:center;justify-content:space-between;padding:10px max(16px,env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));background:var(--surface);border-top:1px solid var(--line);font-size:14px}
+  .mobilebar a{font-weight:600;color:var(--gold);text-decoration:none}
+}
+@media (max-width:640px){
+  .beats thead{display:none}
+  .beats tr{display:grid;grid-template-columns:34px 1fr;padding:10px 0;border-bottom:1px solid var(--line)}
+  .beats td{border:none;padding:2px 6px}
+  .beats td:first-child{grid-row:span 4}
+  .beats td:nth-child(3){color:var(--muted);font-size:13px}
+  .beats td:nth-child(4){font-size:13.5px;color:var(--muted)}
+}
+@media (max-width:520px){
+  .card{padding:12px 12px 10px 40px}
+  .card input{left:12px;top:15px}
+  .message{font-size:17px}
+  .slothead h2{font-size:20px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="toprow">
+    <div>
+      <div class="eyebrow">Fourth Watch · Ep 1 · Samson</div>
+      <h1>Script Builder</h1>
+      <p class="lede">Every piece below passed the ESV fact-check. Pick one in each slot (or several in the middle) and the script assembles on the right, in story order. Choose the lines that sit between pieces in the script itself. Approve each slot when it's right. Your picks save for you and for me.</p>
+    </div>
+    <div class="status" id="status" data-s="idle" role="status"><span class="dot"></span><span id="statusText">Loading…</span></div>
+  </div>
+
+  <div class="intro">
+    <section class="panel">
+      <h2><span>The message the whole reel proves</span><span id="ap-message"></span></h2>
+      <p class="message" id="message"></p>
+      <ul class="rules" id="rules"></ul>
+    </section>
+    <section class="panel">
+      <h2><span>Your question: "the LORD had left him"</span></h2>
+      <p class="factnote" id="factnote"></p>
+    </section>
+  </div>
+
+  <div class="layout">
+    <main>
+      <section class="slot" id="slot-beats">
+        <div class="slothead">
+          <div><h2><span class="num">1</span>Best story beats</h2><div class="sub">The moments of his life that prove the message, ranked</div></div>
+          <span id="ap-beats"></span>
+        </div>
+        <div class="panel tablewrap" style="padding:6px 12px">
+          <table class="beats"><thead><tr><th>#</th><th>Beat</th><th>Verse</th><th>Why it's in</th><th>Use</th></tr></thead><tbody id="beats"></tbody></table>
+        </div>
+        <textarea data-note="beats" placeholder="Notes on the beats (optional)" aria-label="Notes on the story beats"></textarea>
+      </section>
+      <div id="slots"></div>
+      <section class="slot" id="slot-connectors">
+        <div class="slothead">
+          <div><h2><span class="num" id="conn-num"></span>In-between lines</h2><div class="sub">Bridges, refrains and re-hooks. Place them between pieces in the build panel.</div></div>
+          <span id="ap-connectors"></span>
+        </div>
+        <div class="conn-lib" id="connlib"></div>
+        <textarea data-note="connectors" placeholder="Notes on the in-between lines (optional)" aria-label="Notes on in-between lines"></textarea>
+      </section>
+      <section class="slot">
+        <div class="slothead"><div><h2>Cut or dropped</h2></div></div>
+        <ul class="dropped" id="dropped"></ul>
+      </section>
+    </main>
+
+    <aside class="build" id="build" aria-label="Assembled script">
+      <div class="build-head">
+        <h2>Your build</h2>
+        <div class="meter">
+          <div class="meter-top"><span><b id="secs">0</b> s narration · <span id="words">0</span> words</span><span id="cutsecs"></span></div>
+          <div class="bar" aria-hidden="true"><div class="band" id="band"></div><div class="fill" id="fill"></div></div>
+          <div class="meter-foot">At 180 words a minute. The green band is the reel window, 60–90 s, once held beats are added.</div>
+        </div>
+        <div class="btns">
+          <button class="primary" id="copy">Copy script</button>
+          <button id="reset">Reset to recommended</button>
+        </div>
+      </div>
+      <div class="warns" id="warns"></div>
+      <div class="script" id="script"></div>
+      <div class="final-approve">
+        <span class="count" id="apcount"></span>
+        <span id="ap-build"></span>
+      </div>
+    </aside>
+  </div>
+</div>
+<div class="mobilebar"><span id="mb"></span><a href="#build">View build ↓</a></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script type="application/json" id="data">{"message": "Samson's God-given strength kept working while he did what was right in his own eyes, so its working was no proof he was living the way God wanted. A gift from God is not a verdict from God.", "factNote": "Is it factual that \"the LORD had left him\"? Yes. It is the exact ESV of Judges 16:20: \"But he did not know that the LORD had left him.\" The text records it after he \"told her all his heart\" and the shaving (16:17-19). It never says his eyes were the reason, so the script states the events in order and never as cause and effect.", "rules": ["Samson only. David and Saul are out.", "ESV only, quoted word for word. State events in the text's order; never chain them into causes the text doesn't give.", "Never use the Spirit-driven feats (lion, Ashkelon, Lehi) as examples of power while living wrongly.", "Don't deny the hair-strength link: Samson states it (16:17) and the text records it (16:19). The hair was the sign; the strength was from the LORD.", "Bold claim at the start, bold claim at the end. Visuals carry the famous story; narration carries value."], "beats": [{"rank": 1, "beat": "He wakes: \"I will go out as at other times\" ... \"But he did not know that the LORD had left him.\"", "verse": "16:20", "role": "The core: he expected the gift to work as always, and he didn't know the LORD had left", "use": "Must"}, {"rank": 2, "beat": "Gaza: he went in to a prostitute; that same night he pulled up the city gates", "verse": "16:1-3", "role": "His strength worked fully right after he went to a prostitute", "use": "Must"}, {"rank": 3, "beat": "\"The Spirit of the LORD rushed upon him\" three times, more than any other judge", "verse": "14:6, 14:19, 15:14", "role": "Shows the gift is God's and unusually strong", "use": "Must"}, {"rank": 4, "beat": "Delilah says the same line four times; three times he breaks free", "verse": "16:9, 16:12, 16:14, 16:20", "role": "The gift kept working even while he played along", "use": "Strong"}, {"rank": 5, "beat": "\"she is right in my eyes\" ... yet \"it was from the LORD\"", "verse": "14:3-4", "role": "He chose by his own eyes, and God was still at work in it", "use": "Strong"}, {"rank": 6, "beat": "Ashkelon: the Spirit rushed upon him in a wedding-bet feud that ended \"in hot anger\"", "verse": "14:12-19", "role": "God's power came in the middle of a wedding-bet feud that ended \"in hot anger\" (14:4: God was at work in it)", "use": "Medium"}, {"rank": 7, "beat": "Blind, his first recorded request for strength: \"strengthen me only this once\"", "verse": "16:21, 16:28", "role": "His first recorded request for strength", "use": "Optional"}, {"rank": 8, "beat": "Shaved: \"his strength left him\"", "verse": "16:17-19", "role": "The hair as the sign of his consecration; the strength from the LORD", "use": "Optional"}, {"rank": 9, "beat": "Honey from the carcass, not told to his parents", "verse": "14:8-9", "role": "A small secret; nothing follows from it", "use": "Low"}, {"rank": 10, "beat": "His last prayer; more died at his death than in his life", "verse": "16:28-30", "role": "A grace note", "use": "Optional"}], "slots": [{"id": "opening", "label": "Opening", "sub": "Bold claim in the first 3 seconds", "pick": "one", "blocks": [{"id": "O2", "text": "The scariest thing in Samson's story isn't Delilah. It's that his strength kept working, right up until it didn't.", "ref": "16:3, 16:14, 16:20", "fc": "fixed", "critic": 9, "rec": true, "visual": "Delilah's silhouette in a lit doorway fades; Samson steps forward under the gold strength mark, which then flickers out on \"didn't\".", "note": "Critic's top opening: names the villain everyone expects, then flips to the thesis. Fact-check softened \"most dangerous thing in his life\" to \"scariest thing in his story\" and added \"right up until it didn't.\""}, {"id": "O7", "text": "Delilah isn't the scary part of Samson's story. The scary part is that his strength kept working right up until the LORD had left him, and he didn't even know.", "ref": "16:19-20", "fc": "new", "critic": null, "visual": "As O2: Delilah's silhouette fades, the gold mark lit, then dark.", "note": "The fact-checker's bolder version of O2. Stronger claim, but it spends the turn's big line in the first 5 seconds."}, {"id": "O1", "text": "What was Samson's real weakness? It wasn't his hair. It was assuming his strength would always be there.", "ref": "16:20", "fc": "fixed", "critic": 5, "visual": "Title card over Samson asleep on Delilah's knees, hair intact; the gold mark glows under the header.", "note": "A question hook. The critic scored the old \"His strength\" answer as a worn sermon line; the fixed answer is new and leans on 16:20."}, {"id": "O3", "text": "God's Spirit rushed upon Samson more than on any other judge. And his strength still worked the night he went to a prostitute in Gaza.", "ref": "14:6, 14:19, 15:14; 16:1-3", "fc": "fixed", "critic": 7, "visual": "Gold rush descends on Samson; hard cut to Gaza at midnight, the gate doors rising on his shoulders.", "note": "Fact-led. It spends the setup's best stat early, so pair it with S2 or S3, not S1."}, {"id": "O4", "text": "God's power worked through Samson right up until the day it didn't, and he didn't even notice when it stopped.", "ref": "16:20", "fc": "verified", "critic": 6, "visual": "The gold mark burns steady over a quick feat montage, then goes out while Samson sleeps.", "note": "Gives away the turn's best line in second 3."}, {"id": "O5", "text": "Samson's strength was a gift from God. He assumed it would always be there.", "ref": "16:20", "fc": "fixed", "critic": 6, "visual": "The gold mark lights on Samson's chest; he rolls his shoulders, confident.", "note": "Clean, quieter."}, {"id": "O6", "text": "Samson's story is one of the Bible's sharpest warnings about God-given gifts.", "ref": "Judges 13-16", "fc": "fixed", "critic": 3, "visual": "Title card with the gold mark.", "note": "Reads like a sermon intro; no image, no tension."}]}, {"id": "setup", "label": "Setup", "sub": "The gift (the montage shows the feats)", "pick": "one", "blocks": [{"id": "S1", "text": "\"The Spirit of the LORD rushed upon him\" three times, more than on any other judge. A lion. Thirty men. A thousand.", "ref": "14:6, 14:19, 15:14; cf. 3:10, 6:34, 11:29", "fc": "verified", "critic": 9, "rec": true, "visual": "Montage, one beat per line (about 2 s each so first-timers can read it): the lion torn barehanded; thirty Philistine figures topple in a row at Ashkelon and their garments drop (no gore); ropes melt at Lehi and the jawbone rises over a field of fallen shields. Gold rushes in each time; the gold mark appears and stays lit.", "note": "Quote, stat and a three-beat rhythm built for the montage. The count holds because it is tied to the \"rushed upon\" quote (13:25 \"began to stir him\" is a fourth Spirit line)."}, {"id": "S2", "text": "His strength came from God. Three times, \"the Spirit of the LORD rushed upon him.\" No other judge has the Spirit come on him that often.", "ref": "14:6, 14:19, 15:14", "fc": "verified", "critic": 5, "visual": "Same montage as S1.", "note": "Same facts as S1, said less sharply."}, {"id": "S3", "text": "Before he was born, an angel said he would \"begin to save Israel.\" And God's Spirit came on him like on no other judge.", "ref": "13:5; 14:6, 14:19, 15:14", "fc": "verified", "critic": 5, "visual": "The angel ascends in the altar flame (13:20), then the feat montage.", "note": "\"Begin to save\" is a strong detail, but it belongs to a different reel."}]}, {"id": "middle", "label": "Middle", "sub": "Value pieces; pick 2-3 and they play in story order", "pick": "many", "blocks": [{"id": "M1", "text": "He picked a wife because \"she is right in my eyes.\" And the text says God still used it: \"it was from the LORD.\"", "ref": "14:3-4", "fc": "verified", "critic": 8, "order": 1, "visual": "Timnah: Samson points at a Philistine woman while his parents shake their heads. On screen: RIGHT IN MY EYES · JUDGES 14:3. Gold light washes over the scene: IT WAS FROM THE LORD · 14:4.", "note": "Most viewers don't know 14:4. It is the only block that plants \"his own eyes,\" which the message needs."}, {"id": "M8", "text": "He picked a wife because \"she is right in my eyes.\" The text says \"it was from the LORD.\" God was at work in it. The text never says God approved of it.", "ref": "14:3-4", "fc": "new", "critic": null, "rec": true, "order": 1, "visual": "Timnah: Samson points at a Philistine woman while his parents shake their heads. One card only: RIGHT IN MY EYES · JUDGES 14:3. On \"it was from the LORD\" gold light washes over the town, with a small JUDGES 14:4 tag; the VO carries the distinction.", "note": "M1 rewritten after the first-time viewer heard \"God still used it\" as God approving the marriage. Now 14:4 serves the message: God at work in it is not God approving it, the same way the gift is not a verdict."}, {"id": "M9", "text": "The only reason he gives for his wife: \"she is right in my eyes.\"", "ref": "14:2-3 (and 14:7)", "fc": "new", "critic": null, "order": 1, "visual": "Timnah: Samson points; RIGHT IN MY EYES · JUDGES 14:3 on screen.", "note": "The lean version: no 14:4. Saves about 5 s, which can go to slowing the montage."}, {"id": "M7", "text": "He wanted a wife because \"she is right in my eyes.\" His parents \"did not know that it was from the LORD.\" Hold onto those words: \"did not know.\" They come back.", "ref": "14:3-4; pays off at 16:20", "fc": "new", "critic": null, "order": 1, "visual": "Same Timnah scene; the words DID NOT KNOW stay pinned in a corner until they return at the turn.", "note": "New, from the critic. Opens a loop: at the start God was at work and nobody knew; at the end the LORD had left and Samson didn't know. Use instead of M1, not with it. Fact-check: same Hebrew verb both times (lo yada'), and it appears a third time at 13:16 (Manoah \"did not know\" it was the angel). Fair as a reading; don't claim the author planted it."}, {"id": "M5", "text": "He scraped honey out of a lion's carcass and didn't tell his parents where it came from.", "ref": "14:8-9", "fc": "verified", "critic": 2, "order": 2, "visual": "Samson scooping honey from the carcass, then handing it to his parents.", "note": "Accurate, but nothing follows from it without explaining the Nazirite law."}, {"id": "M2", "text": "The second time the Spirit rushed upon him was in the middle of a wedding-bet feud. He struck down thirty men to pay the bet and went home \"in hot anger.\" And the text says God was at work even there, \"seeking an opportunity against the Philistines.\"", "ref": "14:4, 14:12-19", "fc": "fixed", "critic": 6, "order": 3, "visual": "The wedding feast at Timnah; thirty garments laid out; Samson walking home alone in ember light.", "note": "It makes the same point as M3, less well, and repeats S1's \"thirty men.\" Never follow it with \"The strength kept working\" (X3) or \"Every time, it worked\" (X4)."}, {"id": "M3", "text": "In Gaza, he saw a prostitute, and he went in to her. That same night, he pulled up the city gates, posts and all, and carried them up a hill. The strength didn't flinch.", "ref": "16:1-3", "fc": "new", "critic": 9, "rec": true, "order": 4, "visual": "Midnight in Gaza: a lit doorway (nothing shown inside), then Samson carrying the gate doors and posts up the hill toward Hebron; the gold mark holds steady.", "note": "The most shocking juxtaposition in the story. Critic's edit: \"saw\" carries the eyes thread; the wording now follows the ESV \"he went in to her.\" A clearer option the fact-check also passed: \"he saw a prostitute and slept with her.\""}, {"id": "M4", "text": "Three times Delilah set a trap and said, \"The Philistines are upon you, Samson!\" Three times, his strength bailed him out.", "ref": "16:6-14", "fc": "fixed", "critic": 6, "order": 5, "visual": "Three quick traps: fresh bowstrings snap, new ropes snap, the loom pin is pulled free. The gold mark flares each time.", "note": "Mostly a retelling of the famous part. Skip it if you take T4, which covers the same ground with a new angle."}, {"id": "M6", "text": "The strength came from the LORD. The hair was the sign he was set apart to God from birth. When it was shaved, \"his strength left him.\"", "ref": "13:5; 16:17, 16:19; Num 6:7", "fc": "fixed", "critic": 4, "order": 6, "visual": "Seven locks fall in slow motion; the gold mark goes out.", "note": "A different reel (the hair myth). Fixed so it no longer denies the hair-strength link."}]}, {"id": "turn", "label": "Turn", "sub": "The line most people miss", "pick": "one", "blocks": [{"id": "T6", "text": "Four times Delilah said the exact same words: \"The Philistines are upon you, Samson!\" Three times, he broke free. Then \"he told her all his heart,\" and his uncut hair, the sign he was set apart to God from birth, was shaved. The fourth time, he woke up expecting to break free like every other time: \"I will go out as at other times and shake myself free.\" \"But he did not know that the LORD had left him.\"", "ref": "13:5; 16:9, 16:12, 16:14, 16:17, 16:19-20; cf. Num 6:5, 6:7", "fc": "new", "critic": null, "rec": true, "visual": "THE PHILISTINES ARE UPON YOU, SAMSON! stamps on screen. 1-3: bonds snap and the gold mark flares. Then Samson leans in to tell Delilah; the seven locks fall (small tag: JUDGES 13:5). 4: the line stamps a fourth time; the gold mark is already dark; he rises easy, unaware, as soldiers fill the doorway. Locked hold on the verse card: \"But he did not know that the LORD had left him.\" Judges 16:20 (ESV).", "note": "T5 plus what the text says the hair meant: the sign he was a Nazirite to God from the womb (13:5, 16:17; Num 6:7). Answers the second viewer's \"why did it stop at the haircut?\" with the Bible's own framing, without adding a cause."}, {"id": "T5", "text": "Four times Delilah said the exact same words: \"The Philistines are upon you, Samson!\" Three times, he broke free. Then \"he told her all his heart,\" and his head was shaved. The fourth time, he woke up expecting to break free like every other time: \"I will go out as at other times and shake myself free.\" \"But he did not know that the LORD had left him.\"", "ref": "16:9, 16:12, 16:14, 16:17, 16:19-20", "fc": "new", "critic": null, "visual": "THE PHILISTINES ARE UPON YOU, SAMSON! stamps on screen. 1-3: bonds snap and the gold mark flares. Then Samson leans in to tell Delilah; the seven locks fall. 4: the line stamps a fourth time; the gold mark is already dark; he rises easy, unaware, as soldiers fill the doorway. Locked hold on the verse card: \"But he did not know that the LORD had left him.\" Judges 16:20 (ESV).", "note": "Leaner than T6 (no line on what the hair meant). T4 plus the text's own step, \"he told her all his heart\" (16:17), so the haircut isn't magic, and \"like every other time\" ties his expectation back to the refrain. States the order only; never says one caused the other."}, {"id": "T4", "text": "Four times Delilah said the exact same words: \"The Philistines are upon you, Samson!\" Three times, he broke free. The fourth time, his hair had been shaved. He woke up and said, \"I will go out as at other times and shake myself free.\" \"But he did not know that the LORD had left him.\"", "ref": "16:9, 16:12, 16:14, 16:19-20", "fc": "new", "critic": null, "visual": "THE PHILISTINES ARE UPON YOU, SAMSON! stamps on screen four times. 1-3: bonds snap and the gold mark flares. 4: locks on the floor, the gold mark already dark; he rises easy, unaware, as soldiers fill the doorway. Locked hold on the verse card: \"But he did not know that the LORD had left him.\" Judges 16:20 (ESV).", "note": "New, from the critic: turns the famous retelling into a pattern almost nobody notices. Same line four times; the fourth time it breaks. Replaces M4 + T2. Leaner than T5 but skips \"he told her all his heart.\" Fact-check: the line is word for word the same all four times."}, {"id": "T2", "text": "He woke up expecting it to work like always: \"I will go out as at other times.\" Every time before, it had. \"But he did not know that the LORD had left him.\"", "ref": "16:20", "fc": "verified", "critic": 9, "visual": "He wakes, rolls his shoulders, stands easy; the gold mark is already dark; soldiers fill the doorway. Verse card 16:20.", "note": "The hinge: \"as at other times\" plus \"every time before\" turns the refrain into the turn. Best with M4 before it."}, {"id": "T3", "text": "The scariest line in his story isn't the haircut. It's the next one: \"he did not know that the LORD had left him.\"", "ref": "16:19-20", "fc": "verified", "critic": 7, "visual": "Locks on the floor; hard cut to the verse card.", "note": "The best re-hook, but it drops \"as at other times,\" so the turn loses its link to the refrain."}, {"id": "T1", "text": "Then \"he told her all his heart.\" She had his head shaved. He woke up and said, \"I will go out as at other times...\" \"But he did not know that the LORD had left him.\"", "ref": "16:17-20", "fc": "verified", "critic": 5, "visual": "The shaving, the waking, the gold mark out; verse card 16:20.", "note": "Its first half narrates what the visuals already show."}]}, {"id": "aftermath", "label": "Aftermath", "sub": "Optional", "pick": "optional", "blocks": [{"id": "A1", "text": "Blind and a prisoner, that's the first time we see him ask God for strength: \"strengthen me only this once.\"", "ref": "16:21, 16:28", "fc": "fixed", "critic": 6, "visual": "Blind Samson at the mill, then at the two pillars, praying. Tags 16:21 · 16:28.", "note": "Real value, but it adds a second lesson (prayer) right before the close. \"For strength\" matters: in 15:18 he called on the LORD for water."}, {"id": "A2", "text": "Blind, he finally asked: \"strengthen me only this once.\" And God answered.", "ref": "16:28-30", "fc": "verified", "critic": 3, "visual": "The pillars give way; the house falls in stone and dust (no bodies).", "note": "Critic: never pair it with this message. If the strength returns on prayer, the gift starts to look like a verdict again."}]}, {"id": "landing", "label": "Landing", "sub": "Bridge from Samson to the viewer (optional)", "pick": "optional", "blocks": [{"id": "N1", "text": "Samson's strength kept working while he did what was right in his own eyes. Your gifts working isn't proof you're living the way God wants.", "ref": "14:3; 16:1-3; 16:20", "fc": "verified", "critic": null, "visual": "Back toward the opening frame; RIGHT IN MY EYES returns on screen beside the dark gold mark.", "note": "From the fact-checker's safest closing; the fullest wording of your claim. The second viewer found it a bit preachy next to C1."}, {"id": "N4", "text": "His strength working didn't mean he was living the way God wanted. Your gifts working doesn't either.", "ref": "16:1-3; 16:20", "fc": "new", "critic": null, "rec": true, "visual": "Back toward the opening frame; RIGHT IN MY EYES returns on screen beside the dark gold mark.", "note": "Your claim, said tighter, after the second viewer called N1 clunky. Fact-check: \"didn't mean\" (not \"never meant\", which can be heard as a verdict on his whole life). A punchier option it also passed: \"...Yours doesn't either.\""}, {"id": "N2", "text": "Samson's strength kept working while he did what was right in his own eyes. Your gifts working isn't proof you're living the way God wants. Don't judge where you stand with God by how well your gifts still work.", "ref": "14:3; 16:1-3; 16:20", "fc": "new", "critic": null, "visual": "As N1.", "note": "The fact-checker's full safest closing. If you pick it, end on C1 (not C7 or C8, which repeat its last line)."}, {"id": "N3", "text": "Through all of it, his strength kept working, and it never warned him. Don't wait for your gifts to warn you.", "ref": "16:19-20", "fc": "new", "critic": null, "visual": "As N1.", "note": "A repair of the dropped C5 (\"Your gifts won't either\" was an overclaim). This is the fact-checker's safest wording (\"never warned him\" is a figure of speech for 16:20)."}]}, {"id": "final", "label": "Final line", "sub": "The bold claim people send to a friend", "pick": "one", "blocks": [{"id": "C1", "text": "A gift from God is not a verdict from God.", "ref": "message", "fc": "verified", "critic": 9, "rec": true, "visual": "Last frame matches the opening composition; the line holds as the end card.", "note": "The line the reel exists to deliver. Needs a landing line before it (N1)."}, {"id": "C8", "text": "Don't judge where you stand with God by how well your gifts still work. A gift from God is not a verdict from God.", "ref": "message", "fc": "new", "critic": 9, "visual": "As C1.", "note": "C7 flipped so the verdict line lands last (critic: 9)."}, {"id": "C7", "text": "A gift from God is not a verdict from God. Don't judge where you stand with Him by how well your gifts still work.", "ref": "message", "fc": "verified", "critic": 8, "visual": "As C1.", "note": "The fact-checker's top-ranked closing for accuracy; ends on the softer instruction."}, {"id": "C4", "text": "God's power on your life is not God's approval of your life.", "ref": "message", "fc": "verified", "critic": 7, "visual": "As C1.", "note": "Clear and repeatable; less distinctive than C1."}, {"id": "C3", "text": "Being used by God is not the same as walking with God.", "ref": "message", "fc": "verified", "critic": 6, "visual": "As C1.", "note": "Memorable but a stock sermon line; drifts from the gift framing."}, {"id": "C2", "text": "Don't judge where you stand with God by how well your gifts still work.", "ref": "message", "fc": "fixed", "critic": 5, "visual": "As C1.", "note": "C2 cut to its accurate second sentence."}, {"id": "C6", "text": "Check your heart, not your gift.", "ref": "message", "fc": "verified", "critic": 3, "visual": "As C1.", "note": "Generic; never names the insight; weak link to the text."}]}], "connectors": [{"id": "X3", "text": "The strength kept working.", "fc": "verified", "critic": 9, "kind": "refrain", "note": "The refrain; echoes the opening. Only after a beat with no Spirit in it (not after S1-S3 or M2)."}, {"id": "B4", "text": "But rewind to the first choice we see him make.", "fc": "new", "critic": null, "kind": "bridge", "note": "Plainer than B1 (the second viewer found \"went by his own eyes\" an awkward idiom). Exact to the record: the wife (14:2-3) is the first choice the text shows him stating."}, {"id": "B3", "text": "But go back to how it started.", "fc": "new", "critic": null, "kind": "bridge", "note": "Covers the jump back from the feats (to 15:14) to the wife (14:3). The first-time viewer called it filler; B1 does the same job and adds meaning."}, {"id": "B2", "text": "But rewind to the first thing he does in his story.", "fc": "new", "critic": null, "kind": "bridge", "note": "Same job as B3, more specific. 14:1 is the first act the text gives Samson himself."}, {"id": "B1", "text": "But from the start, he went by his own eyes.", "fc": "new", "critic": null, "kind": "bridge", "note": "The critic's bridge. Fair: his first recorded choice is \"she is right in my eyes\" (14:3)."}, {"id": "L1", "text": "The scariest line in his story comes right after the haircut.", "fc": "new", "critic": null, "kind": "lead-in", "note": "A re-hook before T2 (from T3's first half)."}, {"id": "X4", "text": "Every time, it worked.", "fc": "verified", "critic": 6, "kind": "refrain", "note": "Same rule as X3. Redundant next to M4 or T2."}, {"id": "X2", "text": "Here's what most people miss.", "fc": "verified", "critic": 5, "kind": "re-hook", "note": "Works, but it is the most overused line in faceless Reels."}, {"id": "X1", "text": "But watch what he did with it.", "fc": "verified", "critic": 4, "kind": "bridge", "note": "Never before M2. \"It\" is vague before M1."}, {"id": "X5", "text": "Then one day...", "fc": "verified", "critic": 3, "kind": "filler", "note": "Storybook filler."}, {"id": "X6", "text": "So what's the lesson?", "fc": "verified", "critic": 2, "kind": "filler", "note": "Critic: announces the sermon, which makes people swipe. Avoid."}], "recommended": {"opening": "O2", "setup": "S1", "middle": ["M8", "M3"], "turn": "T6", "aftermath": null, "landing": "N4", "final": "C1", "connectors": {"S1>M8": "B4", "M8>M3": "X3"}}, "dropped": [{"id": "C5", "text": "Samson's strength never told him the truth about where he stood with God. Your gifts won't either.", "why": "Dropped by the fact-check: \"Your gifts won't either\" overclaims. N3 is the repair attempt."}, {"id": "David and Saul", "text": "The \"rushed upon\" comparison with Saul and David", "why": "Removed at your request; Samson only."}]}</script>
+<script>
+(function(){
+"use strict";
+var D = JSON.parse(document.getElementById("data").textContent);
+var SLOTS = D.slots;
+var BLOCKS = {}; SLOTS.forEach(function(s){ s.blocks.forEach(function(b){ b.slot = s.id; BLOCKS[b.id] = b; }); });
+var CONN = {}; D.connectors.forEach(function(c){ CONN[c.id] = c; });
+var APPROVE_KEYS = ["message","beats"].concat(SLOTS.map(function(s){return s.id;})).concat(["connectors"]);
+var APPROVE_LABEL = {message:"Message", beats:"Story beats", connectors:"In-between lines"};
+SLOTS.forEach(function(s){ APPROVE_LABEL[s.id] = s.label; });
+var FC = {verified:["b-verified","Verified"], fixed:["b-fixed","Fixed by fact-check"], "new":["b-new","New · verified"]};
+
+function clone(o){ return JSON.parse(JSON.stringify(o)); }
+function defaults(){
+  var r = clone(D.recommended);
+  return {picks:{opening:r.opening,setup:r.setup,middle:r.middle,turn:r.turn,aftermath:r.aftermath,landing:r.landing,final:r.final},
+          connectors:r.connectors, approved:{}, notes:{}, buildApproved:false};
+}
+var state = defaults();
+
+function words(t){ var m = t.match(/[A-Za-z0-9']+/g); return m ? m.length : 0; }
+function secs(t){ return words(t)/3; }
+function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
+function el(tag, cls, html){ var e = document.createElement(tag); if(cls) e.className = cls; if(html != null) e.innerHTML = html; return e; }
+
+/* ---------- static parts ---------- */
+document.getElementById("message").innerHTML = esc(D.message).replace("A gift from God is not a verdict from God.","<strong>A gift from God is not a verdict from God.</strong>");
+document.getElementById("factnote").textContent = D.factNote;
+var rl = document.getElementById("rules"); D.rules.forEach(function(r){ rl.appendChild(el("li",null,esc(r))); });
+var bt = document.getElementById("beats");
+D.beats.forEach(function(b){
+  var tr = el("tr"); tr.innerHTML = "<td>"+b.rank+"</td><td>"+esc(b.beat)+"</td><td style='white-space:nowrap'>"+esc(b.verse)+"</td><td>"+esc(b.role)+"</td><td><span class='use "+esc(b.use)+"'>"+esc(b.use)+"</span></td>";
+  bt.appendChild(tr);
+});
+var dl = document.getElementById("dropped");
+D.dropped.forEach(function(d){ dl.appendChild(el("li",null,"<b>"+esc(d.id)+":</b> "+esc(d.text)+" <i>("+esc(d.why)+")</i>")); });
+
+function approveToggle(key){
+  var lab = el("label","approve");
+  lab.innerHTML = "<input type='checkbox' data-approve='"+key+"'><span>Approve</span>";
+  return lab;
+}
+["message","beats","connectors"].forEach(function(k){ document.getElementById("ap-"+k).appendChild(approveToggle(k)); });
+document.getElementById("ap-build").appendChild((function(){
+  var lab = el("label","approve"); lab.innerHTML = "<input type='checkbox' id='buildApproved'><span>Approve this whole build</span>"; return lab; })());
+
+function badgeHTML(b){
+  var h = "";
+  if (FC[b.fc]) h += "<span class='badge "+FC[b.fc][0]+"'>"+FC[b.fc][1]+"</span>";
+  if (b.critic != null) h += "<span class='badge b-critic'>Critic "+b.critic+"/10</span>";
+  else h += "<span class='badge b-critic'>Not yet scored</span>";
+  if (b.rec) h += "<span class='badge b-rec'>Recommended</span>";
+  return h;
+}
+
+var slotsEl = document.getElementById("slots");
+SLOTS.forEach(function(s, i){
+  var sec = el("section","slot"); sec.id = "slot-"+s.id;
+  var rule = s.pick === "many" ? "Pick 2–3" : s.pick === "optional" ? "Pick one or none" : "Pick one";
+  var head = el("div","slothead");
+  head.innerHTML = "<div><h2><span class='num'>"+(i+2)+"</span>"+esc(s.label)+"</h2><div class='sub'>"+esc(s.sub)+" · "+rule+"</div></div>";
+  head.appendChild(approveToggle(s.id));
+  sec.appendChild(head);
+  var cards = el("div","cards");
+  if (s.pick === "optional") {
+    var none = el("label","card none");
+    none.innerHTML = "<input type='radio' name='pick-"+s.id+"' value=''><div class='line1'><span class='bid'>NONE</span></div><div class='vo' style='color:var(--muted)'>Leave this slot out.</div>";
+    cards.appendChild(none);
+  }
+  s.blocks.forEach(function(b){
+    var c = el("label","card"); c.dataset.id = b.id;
+    var type = s.pick === "many" ? "checkbox" : "radio";
+    c.innerHTML = "<input type='"+type+"' name='pick-"+s.id+"' value='"+b.id+"'>"+
+      "<div class='line1'><span class='bid'>"+b.id+"</span>"+badgeHTML(b)+"<span class='secs'>≈ "+secs(b.text).toFixed(1)+" s</span></div>"+
+      "<div class='vo'>"+esc(b.text)+"</div><div class='ref'>Judges "+esc(b.ref)+"</div>"+
+      "<details class='more'><summary>On screen &amp; notes</summary><p><b>On screen:</b> "+esc(b.visual)+"</p><p><b>Why:</b> "+esc(b.note)+"</p></details>";
+    cards.appendChild(c);
+  });
+  sec.appendChild(cards);
+  var ta = el("textarea"); ta.dataset.note = s.id; ta.placeholder = "Notes on "+s.label.toLowerCase()+" (optional)"; ta.setAttribute("aria-label","Notes on "+s.label);
+  sec.appendChild(ta);
+  slotsEl.appendChild(sec);
+});
+document.getElementById("conn-num").textContent = String(SLOTS.length + 2);
+var cl = document.getElementById("connlib");
+D.connectors.forEach(function(c){
+  var d = el("div","conn");
+  d.innerHTML = "<div style='flex:1'><div class='line1' style='display:flex;gap:8px;flex-wrap:wrap;align-items:center'><span class='bid'>"+c.id+"</span><span class='kind'>"+esc(c.kind)+"</span>"+badgeHTML(c)+"</div><div class='vo'>"+esc(c.text)+"</div><div class='ref'>"+esc(c.note)+"</div></div>";
+  cl.appendChild(d);
+});
+/* Fix the "Judges" prefix for refs that aren't verse lists */
+Array.prototype.forEach.call(document.querySelectorAll(".card .ref"), function(r){
+  if (/Judges (message|Judges)/.test(r.textContent)) r.textContent = r.textContent.replace(/^Judges message$/,"The episode's message").replace(/^Judges Judges/,"Judges");
+});
+
+/* ---------- sequence + rules ---------- */
+function sequence(){
+  var p = state.picks, seq = [];
+  if (p.opening) seq.push(p.opening);
+  if (p.setup) seq.push(p.setup);
+  (p.middle||[]).filter(function(id){return BLOCKS[id];}).slice().sort(function(a,b){return BLOCKS[a].order-BLOCKS[b].order;}).forEach(function(id){ seq.push(id); });
+  ["turn","aftermath","landing","final"].forEach(function(k){ if (p[k] && BLOCKS[p[k]]) seq.push(p[k]); });
+  return seq;
+}
+function assembled(){
+  var seq = sequence(), out = [];
+  seq.forEach(function(id, i){
+    if (i) {
+      var key = seq[i-1]+">"+id, cid = state.connectors[key];
+      if (cid && CONN[cid]) out.push({id:cid, text:CONN[cid].text, connector:true, key:key, prev:seq[i-1], next:id});
+    }
+    out.push({id:id, text:BLOCKS[id].text, prevKey: i ? seq[i-1]+">"+id : null});
+  });
+  return {seq:seq, lines:out};
+}
+var SPIRIT = {S1:1,S2:1,S3:1,M2:1};
+function warnings(a){
+  var w = [], p = state.picks, m = p.middle || [], has = function(id){ return a.seq.indexOf(id) >= 0; };
+  if (!m.length) w.push(["warn","Pick at least one middle piece."]);
+  if (m.length > 3) w.push(["info","More than three middle pieces makes the story section long. Marcus's rule: keep the famous story short."]);
+  var wife = ["M1","M7","M8","M9"].filter(has); if (wife.length > 1) w.push(["warn", wife.join(", ")+" are the same beat (14:3–4). Keep one."]);
+  if (has("M4") && (has("T4") || has("T5") || has("T6"))) w.push(["warn","This turn already walks through Delilah's four lines; M4 repeats them."]);
+  if (has("T2") && !has("M4")) w.push(["info","T2's \"every time before\" lands best with M4 before it."]);
+  if (has("O3") && has("S1")) w.push(["info","O3 and S1 both say \"more than any other judge.\" Pair O3 with S2 or S3, or drop the count from one."]);
+  if ((has("O4") || has("O7")) && (has("T2") || has("T3") || has("T4"))) w.push(["info","This opening already uses the turn's line (\"he didn't even know\"), so the turn loses its surprise."]);
+  if (has("A2")) w.push(["warn","Critic: A2 (\"And God answered\") reopens the question the close shuts. Not recommended with this message."]);
+  if (has("A1")) w.push(["info","A1 adds a second lesson (prayer) right before the close."]);
+  if (has("N2") && (has("C7") || has("C8") || has("C2"))) w.push(["warn","N2 and this final line both say \"Don't judge where you stand…\". End on C1 instead."]);
+  if (p.final === "C1" && !p.landing) w.push(["info","C1 is short and abstract by itself. Critic: give it a landing line (N4 or N1) first."]);
+  if (!p.opening || !p.setup || !p.turn || !p.final) w.push(["warn","Opening, setup, turn and final line each need a pick."]);
+  a.lines.forEach(function(l){
+    if (!l.connector) return;
+    if ((l.id === "X3" || l.id === "X4") && SPIRIT[l.prev]) w.push(["warn", l.id+" after "+l.prev+": fact-check rule. \"Kept working\" lines go only after beats where the Spirit isn't named, so the Spirit-driven feats never read as power while living wrongly."]);
+    if (l.id === "X1" && l.next === "M2") w.push(["warn","X1 before M2: fact-check rule (M2 is a Spirit-driven act)."]);
+    if (l.id === "X6") w.push(["warn","X6 announces the lesson, which the critic flags as a swipe trigger."]);
+    if (l.id === "L1" && !(l.next === "T2" || l.next === "T1")) w.push(["info","L1 is written as a lead-in to T2."]);
+    if ((l.id === "B1" || l.id === "B2" || l.id === "B3" || l.id === "B4") && !(l.next === "M1" || l.next === "M7" || l.next === "M8" || l.next === "M9")) w.push(["info", l.id+" jumps back in time; it's written for the move from the feats back to the wife (M1, M7, M8 or M9)."]);
+  });
+  var s = 0; a.lines.forEach(function(l){ s += secs(l.text) + .3; });
+  if (s < 45) w.push(["info","Under 45 s of narration: short for this format."]);
+  if (s > 85) w.push(["warn","Over 85 s of narration: the cut will run past 90 s."]);
+  return w;
+}
+
+/* ---------- render ---------- */
+function syncSlots(){
+  SLOTS.forEach(function(s){
+    var inputs = document.querySelectorAll("input[name='pick-"+s.id+"']");
+    Array.prototype.forEach.call(inputs, function(inp){
+      var on = s.pick === "many" ? (state.picks.middle||[]).indexOf(inp.value) >= 0 : (state.picks[s.id] || "") === inp.value;
+      inp.checked = on;
+      var card = inp.closest(".card"); card.classList.toggle("sel", on);
+      var det = card.querySelector("details"); if (det && on && !det.dataset.touched) det.open = true;
+      if (det && !on && !det.dataset.touched) det.open = false;
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll("input[data-approve]"), function(inp){
+    var k = inp.dataset.approve; inp.checked = !!state.approved[k]; inp.closest(".approve").classList.toggle("on", inp.checked);
+  });
+  var ba = document.getElementById("buildApproved"); ba.checked = !!state.buildApproved; ba.closest(".approve").classList.toggle("on", ba.checked);
+  Array.prototype.forEach.call(document.querySelectorAll("textarea[data-note]"), function(t){
+    if (document.activeElement !== t) t.value = state.notes[t.dataset.note] || "";
+  });
+}
+function connectorSelect(key, prev, next){
+  var cur = state.connectors[key] || "";
+  var opts = "<option value=''>— nothing between —</option>";
+  D.connectors.forEach(function(c){ opts += "<option value='"+c.id+"'"+(cur===c.id?" selected":"")+">"+c.id+" · "+esc(c.text)+"</option>"; });
+  return "<div class='joint'><label for='j-"+key+"'>between</label><select id='j-"+key+"' data-joint='"+key+"' class='"+(cur?"":"empty")+"' aria-label='Line between "+prev+" and "+next+"'>"+opts+"</select></div>";
+}
+function renderBuild(){
+  var a = assembled(), html = "", total = 0, wc = 0;
+  a.lines.forEach(function(l){ total += secs(l.text) + .3; wc += words(l.text); });
+  a.seq.forEach(function(id, i){
+    if (i) {
+      var key = a.seq[i-1]+">"+id, cid = state.connectors[key];
+      html += connectorSelect(key, a.seq[i-1], id);
+      if (cid && CONN[cid]) html += "<div class='piece connector'><div class='pid'>"+cid+"<span>≈ "+secs(CONN[cid].text).toFixed(1)+" s</span></div><div class='ptext'>"+esc(CONN[cid].text)+"</div></div>";
+    }
+    var b = BLOCKS[id];
+    html += "<div class='piece'><div class='pid'>"+id+" · "+esc(APPROVE_LABEL[b.slot])+"<span>≈ "+secs(b.text).toFixed(1)+" s</span></div><div class='ptext'>"+esc(b.text)+"</div></div>";
+  });
+  var scr = document.getElementById("script");
+  var focused = document.activeElement && document.activeElement.dataset ? document.activeElement.dataset.joint : null;
+  scr.innerHTML = html || "<p style='color:var(--muted)'>Pick pieces on the left.</p>";
+  if (focused) { var f = scr.querySelector("[data-joint='"+focused+"']"); if (f) f.focus(); }
+  document.getElementById("secs").textContent = Math.round(total);
+  document.getElementById("words").textContent = wc;
+  document.getElementById("cutsecs").textContent = "cut ≈ "+Math.round(total+6)+"–"+Math.round(total+10)+" s";
+  var max = 110;
+  document.getElementById("band").style.cssText = "left:"+(60/max*100)+"%;width:"+(30/max*100)+"%";
+  document.getElementById("fill").style.width = Math.min(100, (total+8)/max*100) + "%";
+  var w = warnings(a), we = document.getElementById("warns");
+  we.innerHTML = w.map(function(x){ return "<div class='warn "+(x[0]==="info"?"info":"")+"'>"+esc(x[1])+"</div>"; }).join("");
+  var n = APPROVE_KEYS.filter(function(k){ return state.approved[k]; }).length;
+  document.getElementById("apcount").textContent = n+" of "+APPROVE_KEYS.length+" slots approved";
+  document.getElementById("mb").textContent = "≈ "+Math.round(total)+" s · "+a.seq.length+" pieces · "+n+"/"+APPROVE_KEYS.length+" approved";
+}
+function render(){ syncSlots(); renderBuild(); }
+
+/* ---------- events ---------- */
+document.addEventListener("change", function(e){
+  var t = e.target;
+  if (t.name && t.name.indexOf("pick-") === 0) {
+    var slot = t.name.slice(5);
+    if (slot === "middle") {
+      var m = (state.picks.middle||[]).filter(function(x){ return x !== t.value; });
+      if (t.checked) m.push(t.value);
+      state.picks.middle = m;
+    } else state.picks[slot] = t.value || null;
+    render(); save();
+  } else if (t.dataset && t.dataset.approve) {
+    state.approved[t.dataset.approve] = t.checked; render(); save();
+  } else if (t.id === "buildApproved") {
+    state.buildApproved = t.checked; render(); save();
+  } else if (t.dataset && t.dataset.joint) {
+    if (t.value) state.connectors[t.dataset.joint] = t.value; else delete state.connectors[t.dataset.joint];
+    renderBuild(); save();
+  }
+});
+document.addEventListener("input", function(e){
+  var t = e.target; if (t.dataset && t.dataset.note != null) { state.notes[t.dataset.note] = t.value; save(); }
+});
+document.addEventListener("toggle", function(e){ if (e.target.tagName === "DETAILS") e.target.dataset.touched = "1"; }, true);
+Array.prototype.forEach.call(document.querySelectorAll("details.more summary"), function(s){
+  s.addEventListener("click", function(ev){ ev.stopPropagation(); });
+});
+document.getElementById("reset").addEventListener("click", function(){
+  var keep = {approved:state.approved, notes:state.notes};
+  state = defaults(); state.approved = keep.approved; state.notes = keep.notes;
+  render(); save(); toast("Picks reset to the recommended build");
+});
+document.getElementById("copy").addEventListener("click", function(){
+  var a = assembled(), total = 0;
+  a.lines.forEach(function(l){ total += secs(l.text) + .3; });
+  var txt = "Fourth Watch Ep 1: Samson (Script Builder pick)\n\n" + a.lines.map(function(l){ return "["+l.id+"] "+l.text; }).join("\n") + "\n\n≈ "+Math.round(total)+" s of narration at 180 wpm";
+  var done = function(){ toast("Script copied"); };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, function(){ fallbackCopy(txt); });
+  else fallbackCopy(txt);
+});
+function fallbackCopy(txt){
+  var ta = document.createElement("textarea"); ta.value = txt; ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.appendChild(ta); ta.select();
+  try { document.execCommand("copy"); toast("Script copied"); } catch(e) { toast("Couldn't copy. Select the script and copy it by hand."); }
+  document.body.removeChild(ta);
+}
+var tt; function toast(m){ var t = document.getElementById("toast"); t.textContent = m; t.classList.add("show"); clearTimeout(tt); tt = setTimeout(function(){ t.classList.remove("show"); }, 2200); }
+
+/* ---------- persistence ---------- */
+var docRef = null, mode = "loading", timer = null, inFlight = false, dirty = false, lastSaved = "";
+function setStatus(s, text){ var e = document.getElementById("status"); e.dataset.s = s; document.getElementById("statusText").textContent = text; }
+function payload(){ return {picks:state.picks, connectors:state.connectors, approved:state.approved, notes:state.notes, buildApproved:state.buildApproved, updatedAt:new Date().toISOString()}; }
+function save(){
+  if (mode === "local") { try { localStorage.setItem("fw-samson-build", JSON.stringify(payload())); } catch(e){} return; }
+  if (mode !== "db") return;
+  clearTimeout(timer); setStatus("saving","Saving…");
+  timer = setTimeout(flush, 700);
+}
+function flush(){
+  timer = null;
+  if (inFlight) { dirty = true; return; }
+  inFlight = true;
+  var body = payload();
+  docRef.set(body).then(function(){
+    inFlight = false; lastSaved = JSON.stringify(strip(body));
+    if (dirty) { dirty = false; flush(); } else if (!timer) setStatus("saved","Saved · Claude can read your picks");
+  }, function(err){
+    inFlight = false; dirty = false;
+    var code = err && err.code ? err.code : "error";
+    setStatus("error", code === "permission_denied" || code === "not_granted" ? "View only: your picks won't save" : "Couldn't save. Copy the script to keep it.");
+  });
+}
+function strip(o){ var c = clone(o); delete c.updatedAt; return c; }
+function apply(data){
+  if (!data) return;
+  var d = defaults();
+  state = {picks:Object.assign(d.picks, data.picks||{}), connectors:data.connectors||{}, approved:data.approved||{}, notes:data.notes||{}, buildApproved:!!data.buildApproved};
+  if (!Array.isArray(state.picks.middle)) state.picks.middle = [];
+  render();
+}
+function startLocal(msg){
+  mode = "local"; setStatus("local", msg);
+  try { var raw = localStorage.getItem("fw-samson-build"); if (raw) apply(JSON.parse(raw)); } catch(e){}
+}
+render();
+var c = window.claude;
+if (!c || typeof c.use !== "function") { startLocal("Not saving to the shared build in this view"); }
+else {
+  c.use("db").then(function(db){
+    if (!db) { startLocal("Not saving to the shared build in this view"); return; }
+    try { docRef = db.doc("builds/samson"); } catch(e) { startLocal("Not saving in this view"); return; }
+    mode = "db"; setStatus("saved","Recommended build loaded");
+    docRef.onSnapshot(function(snap){
+      if (snap.metadata && snap.metadata.hasPendingWrites) return;
+      if (timer || inFlight || dirty) return;
+      if (!snap.exists) { setStatus("saved","Recommended build · your picks save as you go"); return; }
+      var data = snap.data(); var s = JSON.stringify(strip(data));
+      if (s === JSON.stringify(strip(payload()))) { setStatus("saved","Saved · Claude can read your picks"); return; }
+      lastSaved = s; apply(data); setStatus("saved","Saved · Claude can read your picks");
+    }, function(err){
+      setStatus("error","Live sync stopped. Reload the page.");
+    });
+  }, function(){ startLocal("Not saving to the shared build in this view"); });
+}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,572 @@
+{
+ "round": "0",
+ "video": "out/fourth-watch-ep1-samson-v57-final.mp4",
+ "size": "1080x1920",
+ "fps": 30.0,
+ "duration": 149.92,
+ "files": [
+  "contact_1.jpg",
+  "contact_2.jpg",
+  "contact_3.jpg",
+  "contact_4.jpg",
+  "contact_5.jpg",
+  "contact_6.jpg",
+  "contact_7.jpg",
+  "contact_8.jpg",
+  "contact_9.jpg",
+  "contact_10.jpg",
+  "strip_fast.jpg",
+  "strip_fast2.jpg",
+  "phone_1.jpg",
+  "phone_2.jpg",
+  "phone_3.jpg",
+  "phone_4.jpg",
+  "phone_5.jpg",
+  "phone_6.jpg",
+  "phone_7.jpg",
+  "phone_8.jpg",
+  "phone_9.jpg",
+  "phone_10.jpg",
+  "phone_11.jpg",
+  "phone_12.jpg",
+  "phone_13.jpg",
+  "phone_14.jpg",
+  "phone_15.jpg",
+  "safe_1.jpg",
+  "safe_2.jpg",
+  "safe_3.jpg",
+  "safe_4.jpg",
+  "safe_5.jpg",
+  "swaps_1.jpg",
+  "swaps_2.jpg",
+  "swaps_3.jpg",
+  "swaps_4.jpg",
+  "swaps_5.jpg",
+  "swaps_6.jpg",
+  "swaps_7.jpg",
+  "swaps_8.jpg",
+  "swaps_9.jpg",
+  "swaps_10.jpg",
+  "swaps_11.jpg",
+  "swaps_12.jpg",
+  "loop_seam.jpg",
+  "shots_1.jpg",
+  "shots_2.jpg",
+  "shots_3.jpg",
+  "shots_4.jpg",
+  "shots_5.jpg"
+ ],
+ "motion_peaks_s": [
+  34.97,
+  35.7,
+  34.23,
+  57.73,
+  110.8
+ ],
+ "longest_still": {
+  "seconds": 0.8,
+  "from_s": 133.6,
+  "rule": "nothing static except the held turn; fw_check warns over 1.5 s"
+ },
+ "max_gap_between_visual_changes": {
+  "seconds": 8.63,
+  "from_s": 21.4,
+  "rule": "a new scene every 4-6 s; story shots every 2-5 s"
+ },
+ "near_blank_frames": [
+  {
+   "from_s": 144.333,
+   "frames": 14,
+   "mean_luma": 16
+  }
+ ],
+ "caption_swaps": {
+  "count": 116,
+  "skipped_hidden": 22,
+  "detail": [
+   {
+    "t": 0.69,
+    "into": "is still using you,",
+    "text_line_clusters_at_swap": 3
+   },
+   {
+    "t": 2.13,
+    "into": "does that mean",
+    "text_line_clusters_at_swap": 3
+   },
+   {
+    "t": 2.93,
+    "into": "He's okay",
+    "text_line_clusters_at_swap": 3
+   },
+   {
+    "t": 3.57,
+    "into": "with how you're living?",
+    "text_line_clusters_at_swap": 3
+   },
+   {
+    "t": 5.09,
+    "into": "Let's look at Samson,",
+    "text_line_clusters_at_swap": 2
+   },
+   {
+    "t": 6.57,
+    "into": "known as the strongest",
+    "text_line_clusters_at_swap": 3
+   },
+   {
+    "t": 7.97,
+    "into": "man in the Bible.",
+    "text_line_clusters_at_swap": 6
+   },
+   {
+    "t": 9.25,
+    "into": "His strength came",
+    "text_line_clusters_at_swap": 5
+   },
+   {
+    "t": 10.45,
+    "into": "from God.",
+    "text_line_clusters_at_swap": 4
+   },
+   {
+    "t": 11.53,
+    "into": "Yet he slept",
+    "text_line_clusters_at_swap": 3
+   },
+   {
+    "t": 12.77,
+    "into": "with a prostitute",
+    "text_line_clusters_at_swap": 3
+   },
+   {
+    "t": 13.65,
+    "into": "in Gaza.",
+    "text_line_clusters_at_swap": 3
+   },
+   {
+    "t": 14.77,
+    "into": "That same night,",
+    "text_line_clusters_at_swap": 4
+   },
+   {
+    "t": 15.93,
+    "into": "while men lay",
+    "text_line_clusters_at_swap": 4
+   },
+   {
+    "t": 16.69,
+    "into": "in wait",
+    "text_line_clusters_at_swap": 5
+   },
+   {
+    "t": 17.09,
+    "into": "to kill him,",
+    "text_line_clusters_at_swap": 7
+   },
+   {
+    "t": 17.93,
+    "into": "he pulled up",
+    "text_line_clusters_at_swap": 7
+   },
+   {
+    "t": 18.65,
+    "into": "the city gate,",
+    "text_line_clusters_at_swap": 6
+   },
+   {
+    "t": 19.65,
+    "into": "posts and all.",
+    "text_line_clusters_at_swap": 6
+   },
+   {
+    "t": 22.61,
+    "into": "in love with Delilah,",
+    "text_line_clusters_at_swap": 2
+   },
+   {
+    "t": 23.89,
+    "into": "and the Philistine lords,",
+    "text_line_clusters_at_swap": 3
+   },
+   {
+    "t": 25.45,
+    "into": "Israel's enemies,",
+    "text_line_clusters_at_swap": 4
+   },
+   {
+    "t": 26.81,
+    "into": "offered her silver",
+    "text_line_clusters_at_swap": 5
+   },
+   {
+    "t": 27.85,
+    "into": "to find the secret",
+    "text_line_clusters_at_swap": 6
+   },
+   {
+    "t": 28.85,
+    "into": "of his strength.",
+    "text_line_clusters_at_swap": 5
+   },
+   {
+    "t": 30.13,
+    "into": "Three times she said,",
+    "text_line_clusters_at_swap": 0
+   },
+   {
+    "t": 31.73,
+    "into": "\"The Philistines are",
+    "text_line_clusters_at_swap": 1
+   },
+   {
+    "t": 32.81,
+    "into": "upon you, Samson!\"",
+    "text_line_clusters_at_swap": 1
+   },
+   {
+    "t": 34.33,
+    "into": "And three times",
+    "text_line_clusters_at_swap": 4
+   },
+   {
+    "t": 35.61,
+    "into": "he broke free.",
+    "text_line_clusters_at_swap": 4
+   },
+   {
+    "t": 37.09,
+    "into": "Then he told",
+    "text_line_clusters_at_swap": 0
+   },
+   {
+    "t": 38.13,
+    "into": "her his secret.",
+    "text_line_clusters_at_swap": 2
+   },
+   {
+    "t": 39.37,
+    "into": "While he slept,",
+    "text_line_clusters_at_swap": 1
+   },
+   {
+    "t": 40.49,
+    "into": "she had a man",
+    "text_line_clusters_at_swap": 2
+   },
+   {
+    "t": 41.33,
+    "into": "shave off",
+    "text_line_clusters_at_swap": 2
+   },
+   {
+    "t": 41.93,
+    "into": "his uncut hair,",
+    "text_line_clusters_at_swap": 4
+   },
+   {
+    "t": 43.25,
+    "into": "the sign",
+    "text_line_clusters_at_swap": 3
+   },
+   {
+    "t": 43.85,
+    "into": "he was set apart",
+    "text_line_clusters_at_swap": 2
+   },
+   {
+    "t": 44.73,
+    "into": "to God.",
+    "text_line_clusters_at_swap": 2
+   },
+   {
+    "t": 46.37,
+    "into": "a fourth time.",
+    "text_line_clusters_at_swap": 3
+   },
+   {
+    "t": 47.65,
+    "into": "He woke up",
+    "text_line_clusters_at_swap": 2
+   },
+   {
+    "t": 48.41,
+    "into": "and said,",
+    "text_line_clusters_at_swap": 2
+   },
+   {
+    "t": 49.17,
+    "into": "\"I will go out",
+    "text_line_clusters_at_swap": 2
+   },
+   {
+    "t": 50.09,
+    "into": "as at other times",
+    "text_line_clusters_at_swap": 4
+   },
+   {
+    "t": 51.17,
+    "into": "and shake myself free.\"",
+    "text_line_clusters_at_swap": 4
+   },
+   {
+    "t": 58.71,
+    "into": "\"as at other times.\"",
+    "text_line_clusters_at_swap": 2
+   },
+   {
+    "t": 60.51,
+    "into": "It had always",
+    "text_line_clusters_at_swap": 6
+   },
+   {
+    "t": 61.35,
+    "into": "worked before,",
+    "text_line_clusters_at_swap": 6
+   },
+   {
+    "t": 62.27,
+    "into": "so he assumed",
+    "text_line_clusters_at_swap": 7
+   },
+   {
+    "t": 63.23,
+    "into": "it would work again.",
+    "text_line_clusters_at_swap": 9
+   },
+   {
+    "t": 64.67,
+    "into": "You can be gifted,",
+    "text_line_clusters_at_swap": 0
+   },
+   {
+    "t": 66.15,
+    "into": "lead, and help people.",
+    "text_line_clusters_at_swap": 0
+   },
+   {
+    "t": 68.07,
+    "into": "But God still using",
+    "text_line_clusters_at_swap": 1
+   },
+   {
+    "t": 69.55,
+    "into": "you doesn't mean",
+    "text_line_clusters_at_swap": 2
+   },
+   {
+    "t": 70.43,
+    "into": "He approves",
+    "text_line_clusters_at_swap": 2
+   },
+   {
+    "t": 71.15,
+    "into": "of how you're living.",
+    "text_line_clusters_at_swap": 4
+   },
+   {
+    "t": 72.67,
+    "into": "Jesus warned",
+    "text_line_clusters_at_swap": 0
+   },
+   {
+    "t": 73.67,
+    "into": "that on judgment day,",
+    "text_line_clusters_at_swap": 3
+   },
+   {
+    "t": 75.15,
+    "into": "many will point",
+    "text_line_clusters_at_swap": 2
+   },
+   {
+    "t": 76.03,
+    "into": "to the mighty",
+    "text_line_clusters_at_swap": 2
+   },
+   {
+    "t": 76.71,
+    "into": "works they did",
+    "text_line_clusters_at_swap": 6
+   },
+   {
+    "t": 77.43,
+    "into": "in His name,",
+    "text_line_clusters_at_swap": 7
+   },
+   {
+    "t": 78.27,
+    "into": "and He will declare,",
+    "text_line_clusters_at_swap": 3
+   },
+   {
+    "t": 79.75,
+    "into": "\"I never knew you.\"",
+    "text_line_clusters_at_swap": 1
+   },
+   {
+    "t": 82.95,
+    "into": "doesn't end there.",
+    "text_line_clusters_at_swap": 1
+   },
+   {
+    "t": 84.43,
+    "into": "Blinded and brought out",
+    "text_line_clusters_at_swap": 3
+   },
+   {
+    "t": 85.67,
+    "into": "to entertain his captors,",
+    "text_line_clusters_at_swap": 1
+   },
+   {
+    "t": 87.23,
+    "into": "he prayed,",
+    "text_line_clusters_at_swap": 2
+   },
+   {
+    "t": 88.31,
+    "into": "\"O Lord GOD,",
+    "text_line_clusters_at_swap": 0
+   },
+   {
+    "t": 98.23,
+    "into": "cost him his eyes",
+    "text_line_clusters_at_swap": 2
+   },
+   {
+    "t": 99.35,
+    "into": "and his freedom.",
+    "text_line_clusters_at_swap": 2
+   },
+   {
+    "t": 100.95,
+    "into": "Earlier, he had assumed",
+    "text_line_clusters_at_swap": 2
+   },
+   {
+    "t": 102.59,
+    "into": "he would escape.",
+    "text_line_clusters_at_swap": 4
+   },
+   {
+    "t": 103.83,
+    "into": "Now, he asked",
+    "text_line_clusters_at_swap": 3
+   },
+   {
+    "t": 105.15,
+    "into": "God for strength.",
+    "text_line_clusters_at_swap": 3
+   },
+   {
+    "t": 106.79,
+    "into": "Then he pushed",
+    "text_line_clusters_at_swap": 0
+   },
+   {
+    "t": 107.95,
+    "into": "against the pillars",
+    "text_line_clusters_at_swap": 1
+   },
+   {
+    "t": 108.87,
+    "into": "with all his strength,",
+    "text_line_clusters_at_swap": 1
+   },
+   {
+    "t": 110.27,
+    "into": "and the building fell",
+    "text_line_clusters_at_swap": 3
+   },
+   {
+    "t": 111.47,
+    "into": "on the Philistine lords",
+    "text_line_clusters_at_swap": 4
+   },
+   {
+    "t": 112.75,
+    "into": "and everyone inside.",
+    "text_line_clusters_at_swap": 6
+   },
+   {
+    "t": 114.51,
+    "into": "Samson died with them.",
+    "text_line_clusters_at_swap": 7
+   },
+   {
+    "t": 116.43,
+    "into": "And the Bible adds:",
+    "text_line_clusters_at_swap": 1
+   },
+   {
+    "t": 117.99,
+    "into": "\"So the dead",
+    "text_line_clusters_at_swap": 1
+   },
+   {
+    "t": 118.79,
+    "into": "whom he killed",
+    "text_line_clusters_at_swap": 1
+   },
+   {
+    "t": 119.51,
+    "into": "at his death",
+    "text_line_clusters_at_swap": 1
+   },
+   {
+    "t": 120.35,
+    "into": "were more than those",
+    "text_line_clusters_at_swap": 1
+   },
+   {
+    "t": 121.43,
+    "into": "whom he had",
+    "text_line_clusters_at_swap": 0
+   },
+   {
+    "t": 123.91,
+    "into": "Samson's last act began",
+    "text_line_clusters_at_swap": 0
+   },
+   {
+    "t": 136.75,
+    "into": "to you about Samson:",
+    "text_line_clusters_at_swap": 1
+   },
+   {
+    "t": 138.27,
+    "into": "his strength,",
+    "text_line_clusters_at_swap": 1
+   },
+   {
+    "t": 139.39,
+    "into": "his failures,",
+    "text_line_clusters_at_swap": 1
+   },
+   {
+    "t": 140.51,
+    "into": "or his prayer",
+    "text_line_clusters_at_swap": 1
+   },
+   {
+    "t": 141.35,
+    "into": "at the end? Why?",
+    "text_line_clusters_at_swap": 1
+   }
+  ],
+  "note": "2 clusters at a swap = a push (outgoing above, incoming below), fine; text drawn ON TOP of other text = a double exposure, look at swaps_*.jpg"
+ },
+ "loop_seam_jump": {
+  "value": 47.0,
+  "note": "mean pixel jump last->first frame; a hard cut is 40-80, under 10 reads as continuous"
+ },
+ "shots": {
+  "count": 28,
+  "note": "each row pair = one shot; the three frames should differ by more than the caption: a verb acted, an object changing, a pill landing, or the camera arriving"
+ },
+ "loudness": {
+  "I": "-14.0 LUFS",
+  "Peak": "-1.3 dBFS"
+ }
+}

@@ -1,0 +1,9 @@
+FOURTH WATCH · EP 1 SAMSON · v59 PICK-UP LINES
+Voice: the same ElevenLabs voice and settings as the v57 take (voice_lab/take1). Stability ~50%, similarity ~75%, speed 1.0.
+Generate 3 takes of each and keep the best. Spell "Lord" (not LORD) so it doesn't shout.
+
+1) (splices onto the start of the original prayer quote)
+Blinded and brought out to entertain his captors, Samson prayed,
+
+2) (new line, right before the closing question)
+So does God still using you mean He's okay with how you're living? ... Samson's strength never proved that. ... But even at his lowest, he could still call on God.

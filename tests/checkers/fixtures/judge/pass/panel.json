@@ -1,0 +1,19 @@
+{
+ "calibration": {
+  "craft_bar_best_reference_overall": 7,
+  "overall_predicts_views": false
+ },
+ "scripts": [
+  {
+   "kind": "ours",
+   "name": "tests/checkers/fixtures/script/good.md",
+   "sha": "034acec16894d9b0",
+   "verdict": "GOOD ENOUGH",
+   "why": [],
+   "overall": 7,
+   "hook": 4,
+   "payoff": 4,
+   "new_value": 4
+  }
+ ]
+}

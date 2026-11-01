@@ -1,0 +1,36 @@
+# Fourth Watch repo: the system, the engine and the scripts. Renders and media that can be rebuilt stay out.
+# rebuilt on every render
+**/out/
+**/build/
+*.mp4
+*.mov
+*.m4a
+*.mp3
+*.wav
+*.log
+# keep the recorded Ep 1 voice take (the engine re-times everything to it)
+!ep01-samson/voice_lab/take1/voice_edit.wav
+# other creators' media and frames: never copied into the repo (the written study notes stay)
+research/lintel_ref/*.jpg
+research/lintel_ref/*.png
+research/lintel_ref/f1/
+research/lintel_ref/g1/
+research/other_ref/**/*.jpg
+research/other_ref/**/*.png
+tools/script_judge/**/packet_*.txt
+ep01-samson/qa/judge_run*/**/packet_*.txt
+# downloaded models and caches
+engine/models/
+**/__pycache__/
+*.pyc
+# secrets and credentials never go in
+**/keys.json
+.env
+*.key
+# image iterations and QA contact sheets (rebuilt by the renderers and checkers); keep the finals
+*.png
+*.jpg
+!brand/logo/fw_final_*.png
+!brand/outro_mark/final_frame_A.png
+!brand/outro_mark/mark_A.png
+!research/beat_clock_compare.png

@@ -1,0 +1,66 @@
+# If God is still using you, does that mean He's okay with how you're living?
+series: ASK THE TEXT
+target_seconds: 100
+answer: God still using you doesn't mean He approves of how you're living.
+
+## Hook
+VO: If God is still using you, does that mean He's okay with how you're living?
+ON-SCREEN: IF GOD STILL USES YOU, IS HE OKAY WITH HOW YOU LIVE?
+
+## Stakes
+VO: Let's look at Samson, known as the strongest man in the Bible. His strength came from God. Yet he slept with a prostitute in Gaza, and that same night he pulled the city gates out of the ground. [Judges 14:6, 16:1-3, 16:17, 16:20]
+
+## Story
+VO: Later, he fell in love with Delilah, and the Philistine lords, Israel's enemies, each offered her eleven hundred pieces of silver to find the secret of his strength. [Judges 16:4-5, 16:18]
+VO: Three times she said, "The Philistines are upon you, Samson!" And three times he broke free. [Judges 16:8-14]
+VO: Then he told her his secret. While he slept, she had a man shave off his uncut hair, the sign he was set apart to God. [Judges 13:5, 16:17-19; Numbers 6:5-7]
+VO: She called a fourth time. He woke up and said, "I will go out as at other times and shake myself free." [Judges 16:20]
+VO: "But he did not know that the LORD had left him." [Judges 16:20]
+VERSE: "But he did not know that the LORD had left him." — Judges 16:20 (ESV)
+
+## Turn
+VO: His strength kept working, right up until the day it didn't. God still using you doesn't mean He approves of how you're living. [Judges 16:1-3, 16:9-14, 16:20]
+
+## Landing
+VO: Later on, blinded and a prisoner, he prayed, "O Lord GOD, please remember me and please strengthen me only this once..." Even then, he asked for revenge. [Judges 16:21, 16:25, 16:28]
+VO: Then he pushed against the pillars with all his strength, and the building fell on the Philistine lords and everyone inside. Samson died with them. [Judges 16:29-30]
+VO: Yet centuries later, Hebrews 11 still names Samson among its examples of faith. [Hebrews 11:32]
+VO: His failures weren't the last word on his life, and yours don't have to be either. [Judges 16:28-30; Hebrews 11:32]
+
+## Value
+- His strength was the LORD's, and it still worked the same night he slept with a prostitute in Gaza [Judges 14:6, 16:1-3, 16:20]
+- Delilah was paid by the Philistine leaders, and she used the exact same words every time [Judges 16:5, 16:9, 16:12, 16:14, 16:18, 16:20]
+- His uncut hair was the sign he was set apart to God [Judges 13:5, 16:17; Numbers 6:5-7]
+- "He did not know that the LORD had left him" [Judges 16:20]
+- At his lowest he prayed "remember me," and Hebrews 11 still names him among its examples of faith [Judges 16:28; Hebrews 11:32]
+
+## Caption
+If God is still using you, is He okay with how you're living? Samson's story answers it. Have you ever called on God at your lowest? Tell us in the comments. Read it yourself: Judges 16, Hebrews 11:32.
+
+## References
+- Judges 13-16
+- Numbers 6:5-7
+- Hebrews 11:32
+
+## Fact-check log
+| Claim | Verse | Checked against | Status |
+| --- | --- | --- | --- |
+| v48 independent review (esv.org, every line): "said" not "cried" (16:9-14); prayer after he was brought out of the prison (16:25, 16:28) with the revenge motive named (16:28); lords offered 1,100 pieces of silver each (16:5) and brought the money (16:18); a man shaved the locks while he slept (16:19) | Judges 16; Hebrews 11:32 | esv.org | verified |
+| Full v27 script (independent agent, rounds v20-v27) | Judges 13-16; Matthew 7:22-23; Hebrews 11:32-34 | esv.org, biblegateway | verified |
+| v28 points (independent agent): "not because we earned them"; "even at your lowest, you can still call on God" | Judges 13:5; Judges 16:21-30 | biblehub ESV, biblegateway | verified |
+| v29: he "pulled them up, bar and all" (doors and two posts) | Judges 16:3 | esv.org | verified |
+| v29: four Spirit moments ("began to stir him"; "rushed upon him" x3) | Judges 13:25, 14:6, 14:19, 15:14 | esv.org | verified |
+| v29: the fourth call is 16:20, where "the LORD had left him" | Judges 16:9, 16:12, 16:14, 16:20 | esv.org (16:20); earlier rounds (16:9-14) | verified |
+| v32: "the secret of his strength" is Delilah's question ("Please tell me where your great strength lies") | Judges 16:6 | esv.org | verified |
+| v32: she had his hair shaved ("had him shave off the seven locks of his head") | Judges 16:19 | esv.org | verified |
+| v32: gifts for God's glory and for others ("use it to serve one another"; "in everything God may be glorified through Jesus Christ") | 1 Peter 4:10-11 | esv.org | verified |
+| v39: the Philistine lords offered Delilah silver to "see where his great strength lies"; they "brought the money in their hands" | Judges 16:4-5, 16:18 | esv.org, biblegateway ESV | verified |
+| v39: "Lord, Lord, did we not prophesy in your name, and cast out demons in your name, and do many mighty works in your name?" | Matthew 7:22 | biblehub ESV | verified |
+| v39: "I never knew you; depart from me, you workers of lawlessness." | Matthew 7:23 | esv.org | verified |
+| v40: Philistines seized him, blinded him, bound him, he ground at the mill in the prison; later the lords gathered "to offer a great sacrifice to Dagon their god and to rejoice" | Judges 16:21-23 | esv.org | verified |
+| v40: "on that day" in Matthew 7:22 is the day of judgment (cf. "day of judgment" Matthew 12:36) | Matthew 7:22 | context | verified |
+| v42 independent fact-check (esv.org, every line): 14:6/14:19/15:14 "the Spirit of the LORD rushed upon him" (13:25 is "began to stir him", so the four-times count was dropped); bound three times and broke free (16:8-14); angel to his mother (13:3-5); "bowed with all his strength, and the house fell" (16:30); "last prayer" replaced; Matthew 7:22-23 and Hebrews 11:32-34 exact | Judges 13-16; Matthew 7; Hebrews 11 | esv.org | verified |
+| v44 independent fact-check (esv.org, every line): three bindings = two "bound" + hair woven into the web (16:8-14) -> "tried to trap him"; "the angel of the LORD" (13:3); God's salvation "by the hand of your servant" (15:18); he "leaned his weight" on the two middle pillars and "bowed with all his strength", the house fell "upon the lords and upon all the people", he died (16:29-30); quote marked as cut before his revenge motive (16:28); CTA no longer assumes God "answered" | Judges 13-16; Numbers 6:5-7 | esv.org | verified |
+| v33: the house fell after his prayer ("he bowed with all his strength, and the house fell") | Judges 16:28-30 | earlier rounds | verified |
+
+Note (v34): "known as the strongest man in the Bible" is worded as his reputation on purpose; the text never ranks him.

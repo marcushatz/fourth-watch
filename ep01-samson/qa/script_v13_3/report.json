@@ -1,0 +1,72 @@
+{
+  "kind": "script",
+  "verdict": "PASS WITH WARNINGS",
+  "counts": {
+    "FAIL": 0,
+    "WARN": 5,
+    "PASS": 6
+  },
+  "facts": {
+    "title": "Delilah tried to hand Samson over three times. Why did he still tell her his secret?",
+    "series": "ASK THE TEXT",
+    "VO words": 245,
+    "estimated runtime": "81.7s at 180 wpm"
+  },
+  "items": [
+    {
+      "level": "PASS",
+      "check": "series",
+      "msg": "ASK THE TEXT"
+    },
+    {
+      "level": "PASS",
+      "check": "hook",
+      "msg": "first VO line equals the title"
+    },
+    {
+      "level": "PASS",
+      "check": "runtime",
+      "msg": "estimated 82s"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'secret' — make sure the text really says this: 'Delilah tried to hand Samson over three times. Why did he still tell her his sec'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'all' — make sure the text really says this: 'Then \"he told her all his heart\": \"If my head is shaved, then my strength will l'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'all' — make sure the text really says this: 'She knew at once that he had told her all his heart. But he \"did not know that t'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'secret' — make sure the text really says this: 'So why did Samson tell Delilah? She framed guarding his secret as not loving her'"
+    },
+    {
+      "level": "PASS",
+      "check": "answer",
+      "msg": "answer stated in the Turn/Landing: 'She framed guarding his secret as not loving her and pressed him day after day, and three times before playing along had cost him nothing, so he woke expecting to go out as at other times. Three free escapes don't promise a fourth.'"
+    },
+    {
+      "level": "PASS",
+      "check": "value",
+      "msg": "6 things the viewer learns, each with a verse"
+    },
+    {
+      "level": "PASS",
+      "check": "loop",
+      "msg": "landing echoes the hook"
+    },
+    {
+      "level": "WARN",
+      "check": "title",
+      "msg": "the hook's ON-SCREEN line differs from the title"
+    }
+  ]
+}

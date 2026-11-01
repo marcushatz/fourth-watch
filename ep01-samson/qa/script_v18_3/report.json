@@ -1,0 +1,92 @@
+{
+  "kind": "script",
+  "verdict": "PASS WITH WARNINGS",
+  "counts": {
+    "FAIL": 0,
+    "WARN": 9,
+    "PASS": 6
+  },
+  "facts": {
+    "title": "What was Samson's real weakness?",
+    "series": "ASK THE TEXT",
+    "VO words": 273,
+    "estimated runtime": "91.0s at 180 wpm"
+  },
+  "items": [
+    {
+      "level": "PASS",
+      "check": "series",
+      "msg": "ASK THE TEXT"
+    },
+    {
+      "level": "PASS",
+      "check": "hook",
+      "msg": "first VO line equals the title"
+    },
+    {
+      "level": "PASS",
+      "check": "runtime",
+      "msg": "estimated 91s"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'only' — make sure the text really says this: 'Only three men in the Bible had the Spirit of the LORD \"rush upon\" them: Samson,'"
+    },
+    {
+      "level": "WARN",
+      "check": "sentence length",
+      "msg": "33 words (max 25): 'He woke up and said, \"I will go out as at other times…\" \"But he did not know tha'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'only' — make sure the text really says this: 'Saul lost it. Samson didn't even notice. Only David is heard begging God not to '"
+    },
+    {
+      "level": "PASS",
+      "check": "answer",
+      "msg": "answer stated in the Turn/Landing: 'He let his eyes lead, and he expected his strength to work as at other times, even after the LORD had left him. Don't judge where you stand with God by how well your gifts still work.'"
+    },
+    {
+      "level": "PASS",
+      "check": "value",
+      "msg": "7 things the viewer learns, each with a verse"
+    },
+    {
+      "level": "PASS",
+      "check": "loop",
+      "msg": "landing echoes the hook"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 14:3, 16:1–3, 16:20] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Psalm 51 title, 51:11] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 14:6, 14:19, 15:14; cf. 3:10, 6:34, 11:29] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 13:5; Numbers 6:7; Judges 16:19–21] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 14:6; 1 Samuel 10:6, 10:10, 16:13; Judges 16:20] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 14:4] is cited in the VO but not in the fact-check log"
+    }
+  ]
+}

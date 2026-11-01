@@ -1,0 +1,62 @@
+{
+  "kind": "script",
+  "verdict": "PASS WITH WARNINGS",
+  "counts": {
+    "FAIL": 0,
+    "WARN": 3,
+    "PASS": 6
+  },
+  "facts": {
+    "title": "If God knew Samson would throw it all away, why did He give him so much strength?",
+    "series": "ASK THE TEXT",
+    "VO words": 284,
+    "estimated runtime": "94.7s at 180 wpm"
+  },
+  "items": [
+    {
+      "level": "PASS",
+      "check": "series",
+      "msg": "ASK THE TEXT"
+    },
+    {
+      "level": "PASS",
+      "check": "hook",
+      "msg": "first VO line equals the title"
+    },
+    {
+      "level": "PASS",
+      "check": "runtime",
+      "msg": "estimated 95s"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'all' — make sure the text really says this: 'If God knew Samson would throw it all away, why did He give him so much strength'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'only' — make sure the text really says this: 'Samson's choices cost him his eyes. But at the end, he prayed, \"strengthen me on'"
+    },
+    {
+      "level": "PASS",
+      "check": "answer",
+      "msg": "answer stated in the Turn/Landing: 'God didn't give Samson strength because he deserved it. He gave it because Israel needed saving.'"
+    },
+    {
+      "level": "PASS",
+      "check": "value",
+      "msg": "6 things the viewer learns, each with a verse"
+    },
+    {
+      "level": "PASS",
+      "check": "loop",
+      "msg": "landing echoes the hook"
+    },
+    {
+      "level": "WARN",
+      "check": "title",
+      "msg": "the hook's ON-SCREEN line differs from the title"
+    }
+  ]
+}

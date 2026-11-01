@@ -1,0 +1,15 @@
+<!doctype html><html><head><meta charset="utf-8"></head><body>
+<script src="lib/three.min.js"></script><script src="fw/core.js"></script><script src="lintel/lw.js"></script>
+<script src="lintel/people.js"></script><script src="lintel/people2.js"></script>
+<script>
+window.test = () => {
+  const out = [];
+  for (const name of Object.keys(PP2.SIZES)) {
+    const bb = PP2.bill(name, { pose: name === 'samsonSleep' ? 'sleep' : undefined });
+    bb.userData.update('k1', { t: 0.5 });
+    const S = PP2.SIZES[name];
+    out.push(name + ' worldH=' + S.worldH + ' planeH=' + bb.geometry.parameters.height.toFixed(3));
+  }
+  return out;
+};
+</script></body></html>

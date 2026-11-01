@@ -1,0 +1,465 @@
+{
+ "calibration": {
+  "reference_reels": 9,
+  "judge_replies": 3,
+  "by_field": {
+   "hook": {
+    "spearman": 0.44,
+    "lowest_hit": 3,
+    "best_low": 4,
+    "separates": false
+   },
+   "payoff": {
+    "spearman": 0.29,
+    "lowest_hit": 3,
+    "best_low": 4,
+    "separates": false
+   },
+   "new_value": {
+    "spearman": 0.44,
+    "lowest_hit": 2,
+    "best_low": 4,
+    "separates": false
+   },
+   "proof": {
+    "spearman": 0.38,
+    "lowest_hit": 2,
+    "best_low": 4,
+    "separates": false
+   },
+   "momentum": {
+    "spearman": 0.12,
+    "lowest_hit": 2,
+    "best_low": 4,
+    "separates": false
+   },
+   "clarity": {
+    "spearman": 0.52,
+    "lowest_hit": 3,
+    "best_low": 4,
+    "separates": false
+   },
+   "takeaway": {
+    "spearman": 0.44,
+    "lowest_hit": 3,
+    "best_low": 4,
+    "separates": false
+   },
+   "ending": {
+    "spearman": 0.25,
+    "lowest_hit": 2,
+    "best_low": 3,
+    "separates": false
+   },
+   "question_pull": {
+    "spearman": 0.61,
+    "lowest_hit": 4,
+    "best_low": 5,
+    "separates": false
+   },
+   "overall": {
+    "spearman": 0.52,
+    "lowest_hit": 5,
+    "best_low": 6,
+    "separates": false
+   }
+  },
+  "overall_predicts_views": false,
+  "craft_bar_best_reference_overall": 6
+ },
+ "scripts": [
+  {
+   "kind": "ours",
+   "name": "ep01-samson/episode_v64_candidate.md",
+   "views": null,
+   "sha": "d70a7a42ec71f5d1",
+   "n": 3,
+   "judges": [
+    "judge_run4/judge_A",
+    "judge_run4/judge_B",
+    "judge_run4/judge_C"
+   ],
+   "hook": 5,
+   "payoff": 4,
+   "new_value": 5,
+   "proof": 5,
+   "momentum": 4,
+   "clarity": 4,
+   "takeaway": 4,
+   "ending": 4,
+   "question_pull": 3,
+   "overall": 7,
+   "overall_mean": 7.33,
+   "overall_each": [
+    7,
+    7,
+    8
+   ],
+   "dead_lines": 1,
+   "weakest": [
+    "Even when he demanded a Philistine wife, his parents \"did not know that it was from the LORD, for he was seeking an opportunity against the Philistines.\"",
+    "So why did Samson's strength keep working?",
+    "And even at his lowest, he could still call on God."
+   ],
+   "fixes": [
+    "Cut the Philistine-wife detour and state the 'oh' plainly: his strength was equipment for a job, not a grade on his life. Then build the reveal around 'he did not know the LORD had left him.'",
+    "Land the final answer on the single sharpest idea, that power still working is not proof of God's approval, tied to 'he did not know that the LORD had left him', instead of the generic 'it came from God, for God's purpose' plus a second idea.",
+    "Land the answer in one sharp line (his strength proved God's purpose, not God's approval) and drop the second tacked-on moral so there is a single takeaway."
+   ],
+   "why": [],
+   "verdict": "GOOD ENOUGH",
+   "note": "question pull 3 is below every Lintel hit's (4)"
+  },
+  {
+   "kind": "ref",
+   "name": "Why doesn't God show Himself?",
+   "views": 75000,
+   "sha": "65d04414ff1cbb19",
+   "n": 3,
+   "judges": [
+    "judge_run4/judge_A",
+    "judge_run4/judge_B",
+    "judge_run4/judge_C"
+   ],
+   "hook": 3,
+   "payoff": 4,
+   "new_value": 4,
+   "proof": 4,
+   "momentum": 3,
+   "clarity": 3,
+   "takeaway": 4,
+   "ending": 3,
+   "question_pull": 5,
+   "overall": 6,
+   "overall_mean": 6.33,
+   "overall_each": [
+    6,
+    6,
+    7
+   ],
+   "dead_lines": 2,
+   "weakest": [
+    "And if you're here to stand for God's word, welcome to the Valiant.",
+    "And if you're here to stand for God's word, welcome to the Valiant.",
+    "And if you're here to stand for God's word, welcome to the Valiant."
+   ],
+   "fixes": [
+    "Open on the golden-calf paradox (they saw the sea split and still made an idol within weeks) and trim the stack of philosopher names so it plays on one listen.",
+    "Cut one of the stacked closing quotations (Pascal or John 20:29) so the Kierkegaard parable and golden-calf evidence carry the answer, and end directly on the comment question without the channel welcome.",
+    "Cut one of the three thinkers (Schellenberg or Pascal) so the Exodus evidence and Kierkegaard's king-and-maiden parable have room to land, and drop the channel tag."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "Was Judas a bad person?",
+   "views": 338000,
+   "sha": "df967def02fb0dd8",
+   "n": 3,
+   "judges": [
+    "judge_run4/judge_A",
+    "judge_run4/judge_B",
+    "judge_run4/judge_C"
+   ],
+   "hook": 4,
+   "payoff": 4,
+   "new_value": 4,
+   "proof": 4,
+   "momentum": 3,
+   "clarity": 4,
+   "takeaway": 3,
+   "ending": 4,
+   "question_pull": 4,
+   "overall": 6,
+   "overall_mean": 6.33,
+   "overall_each": [
+    6,
+    6,
+    7
+   ],
+   "dead_lines": 3,
+   "weakest": [
+    "Life works the same way.",
+    "Life works the same way.",
+    "Life works the same way."
+   ],
+   "fixes": [
+    "Cut the colleague-lies-about-you analogy and go straight from 'knowing is not causing' to the Peter and Judas contrast.",
+    "Cut the colleague/job analogy and use that time on the Peter-versus-Judas contrast, which is the stronger and more original landing.",
+    "Cut the colleague-and-job analogy and spend that time on the Peter-versus-Judas contrast, which is the real payoff."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "Where did Cain's wife come from?",
+   "views": 1800000,
+   "sha": "11db0ce5967ec686",
+   "n": 3,
+   "judges": [
+    "judge_run4/judge_A",
+    "judge_run4/judge_B",
+    "judge_run4/judge_C"
+   ],
+   "hook": 5,
+   "payoff": 3,
+   "new_value": 3,
+   "proof": 4,
+   "momentum": 4,
+   "clarity": 4,
+   "takeaway": 3,
+   "ending": 2,
+   "question_pull": 5,
+   "overall": 6,
+   "overall_mean": 6,
+   "overall_each": [
+    6,
+    6,
+    6
+   ],
+   "dead_lines": 2,
+   "weakest": [
+    "It's one of the most asked questions about the Bible and most Christians can't answer it.",
+    "So the next time someone asks you where Cain's wife came from, you'll know what to say.",
+    "So the next time someone asks you where Cain's wife came from, you'll know what to say."
+   ],
+   "fixes": [
+    "Replace the flat 'you'll know what to say' close with a real prompt for responses, and lead the payoff with the less-known clue (Genesis 5:4 'sons and daughters' plus Abraham and Sarah) before the familiar 'he married a sister' answer.",
+    "Replace the 'you'll know what to say' close with the obvious follow-up objection (why close-relative marriage wasn't harmful or forbidden then) and end on a real question that invites comments.",
+    "Replace the 'you'll know what to say' close with a real question that invites a response (e.g., why God allowed close-relative marriage then but forbade it under Moses), and cut the 'most asked question' signpost."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "Why didn't God remove the tree?",
+   "views": 7600000,
+   "sha": "8b6c5392a652d5cb",
+   "n": 3,
+   "judges": [
+    "judge_run4/judge_A",
+    "judge_run4/judge_B",
+    "judge_run4/judge_C"
+   ],
+   "hook": 4,
+   "payoff": 3,
+   "new_value": 2,
+   "proof": 2,
+   "momentum": 3,
+   "clarity": 4,
+   "takeaway": 3,
+   "ending": 3,
+   "question_pull": 4,
+   "overall": 5,
+   "overall_mean": 5,
+   "overall_each": [
+    5,
+    5,
+    5
+   ],
+   "dead_lines": 2,
+   "weakest": [
+    "So God gave us free will, and He tells us plainly which way to choose.",
+    "So God gave us free will, and He tells us plainly which way to choose.",
+    "So God gave us free will, and He tells us plainly which way to choose."
+   ],
+   "fixes": [
+    "Ground the answer in Genesis 2-3 itself (for example, the tree of life also stood in the garden and was freely given) rather than a hypothetical about removing every temptation.",
+    "Ground the answer in Genesis itself (e.g., Gen 2:16, 'of every tree of the garden thou mayest freely eat': one boundary in a garden of yes) instead of hypothetical analogies built on commandments given centuries later.",
+    "Ground the answer in the Genesis text itself (what the tree was, the tree of life beside it) rather than a generic free-will argument, so a church-raised viewer learns something new."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "What if Adam and Eve never ate from the tree?",
+   "views": 35000,
+   "sha": "10dcac76d23598b7",
+   "n": 3,
+   "judges": [
+    "judge_run4/judge_A",
+    "judge_run4/judge_B",
+    "judge_run4/judge_C"
+   ],
+   "hook": 3,
+   "payoff": 3,
+   "new_value": 2,
+   "proof": 3,
+   "momentum": 4,
+   "clarity": 3,
+   "takeaway": 3,
+   "ending": 3,
+   "question_pull": 3,
+   "overall": 5,
+   "overall_mean": 5,
+   "overall_each": [
+    5,
+    5,
+    5
+   ],
+   "dead_lines": 2,
+   "weakest": [
+    "Work in that world would feel like tending something you love.",
+    "Work in that world would feel like tending something you love.",
+    "Work in that world would feel like tending something you love."
+   ],
+   "fixes": [
+    "Tie each speculative 'world without the fall' claim to a specific verse, and drop the assumption that every viewer prays.",
+    "Anchor the speculation in one surprising textual detail (e.g., the tree of life and why access to it was cut off) so it delivers something new rather than a familiar list of what sin broke.",
+    "Build the payoff around one surprising textual fact (work existed before the fall; the curse turned the ground, not labor itself) instead of a list of speculations, and cut the C. S. Lewis detour."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "What happens to people who never heard of Jesus?",
+   "views": 1600000,
+   "sha": "20977421391b44f7",
+   "n": 3,
+   "judges": [
+    "judge_run4/judge_A",
+    "judge_run4/judge_B",
+    "judge_run4/judge_C"
+   ],
+   "hook": 3,
+   "payoff": 3,
+   "new_value": 3,
+   "proof": 4,
+   "momentum": 2,
+   "clarity": 3,
+   "takeaway": 3,
+   "ending": 2,
+   "question_pull": 5,
+   "overall": 5,
+   "overall_mean": 5,
+   "overall_each": [
+    5,
+    5,
+    5
+   ],
+   "dead_lines": 3,
+   "weakest": [
+    "So, let's allow the Bible to answer it.",
+    "So, let's allow the Bible to answer it.",
+    "So, let's allow the Bible to answer it."
+   ],
+   "fixes": [
+    "Collapse the three-answer structure into one strong through-line built on Cornelius, cut the signposting, and end with a question for viewers rather than assuming someone told them about Jesus.",
+    "Build the whole video on one central answer (Cornelius: God sent the gospel to a man reaching for Him with the light he had), and drop the third answer and the survey of views so it fits the format.",
+    "Cut to the strongest thread (Cornelius) plus the honest 'Christians disagree' admission, drop the Sodom detour and signposts, and end with a real question instead of telling the viewer to thank someone."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "Why do we hide from God after we sin?",
+   "views": 48000,
+   "sha": "cf666b26d2a222af",
+   "n": 3,
+   "judges": [
+    "judge_run4/judge_A",
+    "judge_run4/judge_B",
+    "judge_run4/judge_C"
+   ],
+   "hook": 2,
+   "payoff": 3,
+   "new_value": 2,
+   "proof": 3,
+   "momentum": 3,
+   "clarity": 4,
+   "takeaway": 2,
+   "ending": 2,
+   "question_pull": 2,
+   "overall": 4,
+   "overall_mean": 4.33,
+   "overall_each": [
+    4,
+    4,
+    5
+   ],
+   "dead_lines": 3,
+   "weakest": [
+    "Why do we hide away?",
+    "Why do we hide away?",
+    "Why do we hide away?"
+   ],
+   "fixes": [
+    "Open on the concrete puzzle, 'If God knew where Adam was, why did He ask \"Where art thou?\"', instead of a sermon aimed at 'you', and end with a question for viewers in place of the exhortation.",
+    "Open on the specific puzzle in the text, 'Why would an all-knowing God ask Adam where he was?', instead of a devotional question aimed at the viewer, and cut the 'you skip church' sermon lines.",
+    "Open on the concrete puzzle (why would an all-knowing God ask Adam 'Where art thou?') instead of the devotional 'why do we hide', and replace the preachy close with a question."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "If God is love, why is there a hell?",
+   "views": 194000,
+   "sha": "1051c206f864fc61",
+   "n": 3,
+   "judges": [
+    "judge_run4/judge_A",
+    "judge_run4/judge_B",
+    "judge_run4/judge_C"
+   ],
+   "hook": 3,
+   "payoff": 2,
+   "new_value": 2,
+   "proof": 3,
+   "momentum": 2,
+   "clarity": 3,
+   "takeaway": 2,
+   "ending": 3,
+   "question_pull": 5,
+   "overall": 4,
+   "overall_mean": 4,
+   "overall_each": [
+    4,
+    4,
+    4
+   ],
+   "dead_lines": 3,
+   "weakest": [
+    "Some Christians also wonder about this question sometimes.",
+    "Some Christians also wonder about this question sometimes.",
+    "Some Christians also wonder about this question sometimes."
+   ],
+   "fixes": [
+    "Answer the 'forever' half of the hook head-on with one strong text instead of four signposted points made of familiar verses, and cut the 'enemy wants you lost' preaching.",
+    "Actually answer the 'forever' half of the hook with a specific text, instead of stacking familiar invitation verses (and don't present Revelation 3:20 as 'how the Bible ends').",
+    "Actually answer the 'forever' half of the hook with specific text, instead of a sermon-style run of familiar proof-texts under a muddled first/second/then/third structure."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "Why blood on a doorway? (Exodus 12)",
+   "views": 33000,
+   "sha": "2689e2d26b4993d0",
+   "n": 3,
+   "judges": [
+    "judge_run4/judge_A",
+    "judge_run4/judge_B",
+    "judge_run4/judge_C"
+   ],
+   "hook": 4,
+   "payoff": 1,
+   "new_value": 1,
+   "proof": 1,
+   "momentum": 2,
+   "clarity": 3,
+   "takeaway": 1,
+   "ending": 1,
+   "question_pull": 2,
+   "overall": 2,
+   "overall_mean": 2,
+   "overall_each": [
+    2,
+    2,
+    2
+   ],
+   "dead_lines": 4,
+   "weakest": [
+    "Because it was the only thing standing between a family and death.",
+    "Because it was the only thing standing between a family and death.",
+    "Because it was the only thing standing between a family and death."
+   ],
+   "fixes": [
+    "Actually answer 'why blood' from Exodus 12 (the lamb dies in the firstborn's place; 'when I see the blood, I will pass over you') in place of the Exodus recap and the circular answer.",
+    "Cut the Exodus backstory and spend the time actually answering 'why blood': quote Exodus 12:13 ('when I see the blood, I will pass over you'), explain the lamb dying in the firstborn's place, and why the lintel and doorposts.",
+    "Actually answer why blood (Exodus 12:13, 'when I see the blood, I will pass over you'; the lamb dying in the firstborn's place) and cut the Exodus recap that eats most of the runtime."
+   ]
+  }
+ ]
+}

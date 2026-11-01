@@ -1,0 +1,132 @@
+{
+  "kind": "script",
+  "verdict": "FAIL",
+  "counts": {
+    "FAIL": 1,
+    "WARN": 17,
+    "PASS": 5
+  },
+  "facts": {
+    "title": "Why is Samson's story even in the Bible?",
+    "series": "ASK THE TEXT",
+    "VO words": 244,
+    "estimated runtime": "81.3s at 180 wpm"
+  },
+  "items": [
+    {
+      "level": "PASS",
+      "check": "series",
+      "msg": "ASK THE TEXT"
+    },
+    {
+      "level": "PASS",
+      "check": "hook",
+      "msg": "first VO line equals the title"
+    },
+    {
+      "level": "PASS",
+      "check": "runtime",
+      "msg": "estimated 81s"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'secret' — make sure the text really says this: 'Delilah tried to hand him over three times, and he still told her his secret.'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'only' — make sure the text really says this: 'So why is Samson in the Bible? He shows that even the strongest man could only b'"
+    },
+    {
+      "level": "PASS",
+      "check": "answer",
+      "msg": "answer stated in the Turn/Landing: 'Even the strongest man could only begin to save. Jesus came to finish it, and on the cross he said, \"It is finished.\"'"
+    },
+    {
+      "level": "PASS",
+      "check": "value",
+      "msg": "6 things the viewer learns, each with a verse"
+    },
+    {
+      "level": "WARN",
+      "check": "loop",
+      "msg": "the last VO line shares no key word with the hook; the loop line should echo it"
+    },
+    {
+      "level": "FAIL",
+      "check": "fact-check",
+      "msg": "claim not verified: '(to be filled from the independent fact-check report)' (status: 'pending')"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:4–17] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 13:5, 16:30–31] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Matthew 1:20–21] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:28; Luke 23:34] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Matthew 27:1–2; Luke 22:63–64] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Matthew 1:21; John 19:30] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 15:11–13] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 13:3–5] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:21; Matthew 26:53] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:21–30] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 13:5, 16:30] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:19–20] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 13:24, 14:3] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "title",
+      "msg": "the hook's ON-SCREEN line differs from the title"
+    }
+  ]
+}

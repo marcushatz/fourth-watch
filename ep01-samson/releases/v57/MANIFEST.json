@@ -1,0 +1,366 @@
+{
+ "release": "v57",
+ "episode": "ep01-samson",
+ "created": "2026-10-31T20:41:06",
+ "releasable": true,
+ "checks": [
+  {
+   "level": "PASS",
+   "check": "script = vo.js",
+   "msg": "16 VO lines, word for word"
+  },
+  {
+   "level": "PASS",
+   "check": "voice timings",
+   "msg": "vo.js times come from the recorded take (voEnd 143.02 s)"
+  },
+  {
+   "level": "PASS",
+   "check": "score",
+   "msg": "23 shots, END_T 144.32 s, DURATION 144.32 s, OUTRO None"
+  },
+  {
+   "level": "PASS",
+   "check": "music.wav",
+   "msg": "out/music.wav is the declared soundtrack"
+  },
+  {
+   "level": "PASS",
+   "check": "song.js",
+   "msg": "song.js is the declared soundtrack script"
+  },
+  {
+   "level": "PASS",
+   "check": "script checker",
+   "msg": "0 FAIL"
+  },
+  {
+   "level": "PASS",
+   "check": "environment",
+   "msg": "matches ENVIRONMENT.md pins"
+  },
+  {
+   "level": "PASS",
+   "check": "checker tests",
+   "msg": "11 fixtures checked, 0 problem(s)"
+  }
+ ],
+ "files": {
+  "script": {
+   "path": "ep01-samson/episode.md",
+   "sha256": "965cf1991d857b4d762f8009e61c5b42988284df1bffc814934ba630aff16f26",
+   "bytes": 10878,
+   "modified": "2026-10-30T21:44:26"
+  },
+  "vo": {
+   "path": "ep01-samson/film27/vo.js",
+   "sha256": "762f70867e0399422e351524a06b837a323a191c9f67509007a895a3cbf73f8e",
+   "bytes": 33129,
+   "modified": "2026-10-30T23:43:14"
+  },
+  "score": {
+   "path": "ep01-samson/film27/score.js",
+   "sha256": "18f5d493d8bf5539f65b718f5973a8925be24b6cad57a78618b835b9c24f1d09",
+   "bytes": 8324,
+   "modified": "2026-10-31T10:11:04"
+  },
+  "film": {
+   "path": "ep01-samson/film27/film.js",
+   "sha256": "d9195e69ab841833f06504f6643907482f1dffd10e7bac04beae3c93a2002f3d",
+   "bytes": 10663,
+   "modified": "2026-10-31T10:10:32"
+  },
+  "soundtrack_script": {
+   "path": "ep01-samson/film27/song_v57.js",
+   "sha256": "67e06fcb83bfba2f36a0e9828e894e3c18947804afe5e4e099d283074efd7656",
+   "bytes": 19467,
+   "modified": "2026-10-31T20:30:29"
+  },
+  "song_js": {
+   "path": "ep01-samson/film27/song.js",
+   "sha256": "67e06fcb83bfba2f36a0e9828e894e3c18947804afe5e4e099d283074efd7656",
+   "bytes": 19467,
+   "modified": "2026-10-31T20:30:30"
+  },
+  "soundtrack_wav": {
+   "path": "ep01-samson/film27/out/soundtrack_v57.wav",
+   "sha256": "37dd636cb90ef7f47da9e3522d3febcdf6f598423c27315cde88c78866aec5fb",
+   "bytes": 57569324,
+   "modified": "2026-10-31T06:32:44"
+  },
+  "music_wav": {
+   "path": "ep01-samson/film27/out/music.wav",
+   "sha256": "37dd636cb90ef7f47da9e3522d3febcdf6f598423c27315cde88c78866aec5fb",
+   "bytes": 57569324,
+   "modified": "2026-10-31T20:30:30"
+  },
+  "voice_take": {
+   "path": "ep01-samson/voice_lab/take1/voice_edit.wav",
+   "sha256": "0ffd30cf710acae9b2aab47f08403983ea8293dccb0574401e37733956ecfe4a",
+   "bytes": 12632138,
+   "modified": "2026-10-30T23:43:13"
+  },
+  "outro": {
+   "path": "brand/logo/fw_final_outro_v3.mp4",
+   "sha256": "09b2aceb1f34e753a063bde253f895b13b1c16e5a0121d264de4232dc3ec620c",
+   "bytes": 14728504,
+   "modified": "2026-10-31T01:42:41"
+  },
+  "captions": {
+   "path": "ep01-samson/film27/out/captions.srt",
+   "sha256": "9f07bd4e4647e23e0805dae773e034ec3d5ba81393b8433349ded1f0774d6e37",
+   "bytes": 6035,
+   "modified": "2026-10-30T23:43:14"
+  },
+  "final_video": {
+   "path": "ep01-samson/film27/out/fourth-watch-ep1-samson-v57-final.mp4",
+   "sha256": "8f4daa23c62f0e93fe4bd557112fb8fdaa48ec93890d7ab379fb7cd978fa69fb",
+   "bytes": 96343793,
+   "modified": "2026-10-31T07:23:41"
+  }
+ },
+ "supporting_files": [
+  {
+   "path": "ep01-samson/film27/scenes/dagon.js",
+   "sha256": "fb434f32c3419f55b53e3152475cce83f444f296bd859c4c416e4ac56e05b130",
+   "bytes": 62725,
+   "modified": "2026-10-29T18:06:31"
+  },
+  {
+   "path": "ep01-samson/film27/scenes/day.js",
+   "sha256": "150c7566bbacd6e17e693d02019c11bdefc71c74d35ccc46eb9366a8608fe2ca",
+   "bytes": 31711,
+   "modified": "2026-10-29T18:28:03"
+  },
+  {
+   "path": "ep01-samson/film27/scenes/gaza.js",
+   "sha256": "af850c5f3ae7affbe044046aae65e3b44aba3d38023a3afb409f11a2633cbd24",
+   "bytes": 55201,
+   "modified": "2026-10-29T18:22:48"
+  },
+  {
+   "path": "ep01-samson/film27/scenes/lehi.js",
+   "sha256": "2555d30c336178257674e7b96efd1e1a41d318343e66a8c44d6f4035ba715547",
+   "bytes": 18405,
+   "modified": "2026-10-29T17:03:54"
+  },
+  {
+   "path": "ep01-samson/film27/scenes/prison.js",
+   "sha256": "f57e1eeafe2b73a110f104440bc33704a78b4886e8a96421e000f6e5635e6f6b",
+   "bytes": 23658,
+   "modified": "2026-10-29T18:22:48"
+  },
+  {
+   "path": "ep01-samson/film27/scenes/sorek.js",
+   "sha256": "e6867e70a8bdd7ebac0c9b96e3fff032d62efe17c433cd3be00cd622b69d1229",
+   "bytes": 58428,
+   "modified": "2026-10-30T23:52:08"
+  },
+  {
+   "path": "ep01-samson/film27/scenes/timnah.js",
+   "sha256": "2e10761ae7a5682b39a89ef870b043127325313ae01e5eed50a5c285dfc2000b",
+   "bytes": 64126,
+   "modified": "2026-10-29T18:14:06"
+  },
+  {
+   "path": "ep01-samson/film27/scenes/zorah.js",
+   "sha256": "b4546c386da8f80a0e57a922a5463a959c05e076252beced19789286280da2e6",
+   "bytes": 21560,
+   "modified": "2026-10-29T18:14:06"
+  },
+  {
+   "path": "ep01-samson/film27/lintel/cards.js",
+   "sha256": "da1d001e8f3dc5758abba22871d8e574bb9bff8ce7a4becb700c3ed12a87b321",
+   "bytes": 54597,
+   "modified": "2026-10-31T17:42:27"
+  },
+  {
+   "path": "ep01-samson/film27/lintel/cards_v46.js",
+   "sha256": "eb51e1fa5df5032e696d9d134e5d7dc0834424ba4486b55646375bc3f8b37410",
+   "bytes": 42951,
+   "modified": "2026-10-30T23:46:31"
+  },
+  {
+   "path": "ep01-samson/film27/lintel/cards_v57a.js",
+   "sha256": "f1cd35af17338e6a49f453e21dbd85194e94f16a9c7dd56c9b1e267742e01449",
+   "bytes": 45829,
+   "modified": "2026-10-31T06:28:13"
+  },
+  {
+   "path": "ep01-samson/film27/lintel/cards_v57b.js",
+   "sha256": "2bab69317079b7830edff1954d0140702f01b760451cb716dbb2eb528960faa9",
+   "bytes": 45839,
+   "modified": "2026-10-31T09:07:16"
+  },
+  {
+   "path": "ep01-samson/film27/lintel/cards_v57c_pre_marks.js",
+   "sha256": "9c67b4f2a381365e75822051e87b8e07d6c7b4a1b67721bf4b8cecbadccfa5e4",
+   "bytes": 50477,
+   "modified": "2026-10-31T10:09:16"
+  },
+  {
+   "path": "ep01-samson/film27/lintel/lw.js",
+   "sha256": "47dae07d499b430c12a92afcf8fa85f0eef98f4fed5d5378e91ad320b556ce3e",
+   "bytes": 21996,
+   "modified": "2026-10-29T18:28:59"
+  },
+  {
+   "path": "ep01-samson/film27/lintel/people.js",
+   "sha256": "317c4277612ed71924873d208de45a8750faf17a6e836d8ad77ad4429e339aed",
+   "bytes": 30050,
+   "modified": "2026-10-29T16:59:40"
+  },
+  {
+   "path": "ep01-samson/film27/lintel/people2.js",
+   "sha256": "ebe94790faf2562a53e0025be6e6204a79612957aed01af35a3df7fcc8171e6f",
+   "bytes": 119378,
+   "modified": "2026-10-29T21:25:40"
+  },
+  {
+   "path": "ep01-samson/film27/lintel/text.js",
+   "sha256": "8d96bbdc395033d20314886b98619d05175dc3ad326f638bfbc56dc1b2a66804",
+   "bytes": 6848,
+   "modified": "2026-10-29T16:59:40"
+  },
+  {
+   "path": "ep01-samson/film27/fw/core.js",
+   "sha256": "729a10a5d005d7dd1b19e2e404170e9c851aff613fc2d9290da1684a3da5bc8e",
+   "bytes": 5611,
+   "modified": "2026-10-29T16:59:40"
+  },
+  {
+   "path": "ep01-samson/film27/index.html",
+   "sha256": "4a92b8bf006499ce79e36269bc3ce96429f280ce69b4dacd3939c5951486c613",
+   "bytes": 1539,
+   "modified": "2026-10-29T17:03:41"
+  },
+  {
+   "path": "ep01-samson/film27/engine/render.js",
+   "sha256": "96f073facff379c1a0aa9861c5d2b56121298a4d13cf1a7043a3aaf3e0c9e443",
+   "bytes": 45404,
+   "modified": "2026-10-29T16:59:40"
+  },
+  {
+   "path": "ep01-samson/film27/tools/assemble57b.py",
+   "sha256": "db50a1f33d2289be6a5b7d8379a70681238e259599a917410dc5a2aa1d54d344",
+   "bytes": 3117,
+   "modified": "2026-10-31T07:11:50"
+  }
+ ],
+ "tools": {
+  "fw_check.py": {
+   "path": "fw_check.py",
+   "sha256": "9db74d360c3f1d2ad7c4e6f59577e009a2ed66f1606f1426be701f8356b22d85",
+   "bytes": 58166,
+   "modified": "2026-10-31T10:27:17"
+  },
+  "tools/shotlist_check.js": {
+   "path": "tools/shotlist_check.js",
+   "sha256": "67d3a266653176974dad29aa9694e8bfd3bd9730519c339935f18c3beb3b34d5",
+   "bytes": 14985,
+   "modified": "2026-10-31T20:34:58"
+  },
+  "toolkit_page/fw_review.py": {
+   "path": "toolkit_page/fw_review.py",
+   "sha256": "14393751650ba340fac40ea787fd9b0fc83170af7ff031333d0c793db032e476",
+   "bytes": 14904,
+   "modified": "2026-10-31T09:22:09"
+  },
+  "toolkit_page/fw_critic.md": {
+   "path": "toolkit_page/fw_critic.md",
+   "sha256": "1e6ca7fc860e499aaf93c640fe4ca2cc1795e03737b74bbe8f1004af3320ec19",
+   "bytes": 9638,
+   "modified": "2026-10-31T10:26:54"
+  }
+ },
+ "environment": {
+  "ok": true,
+  "items": [
+   {
+    "item": "python",
+    "pinned": "3.13",
+    "found": "3.13.18",
+    "ok": true
+   },
+   {
+    "item": "node",
+    "pinned": "v22.23",
+    "found": "v22.23.4",
+    "ok": true
+   },
+   {
+    "item": "ffmpeg",
+    "pinned": "6.1.1",
+    "found": "6.1.1-3ubuntu5",
+    "ok": true
+   },
+   {
+    "item": "tesseract",
+    "pinned": "5.3.4",
+    "found": "5.3.4",
+    "ok": true
+   },
+   {
+    "item": "chrome",
+    "pinned": "153.0.8010.12",
+    "found": "153.0.8010.12",
+    "ok": true
+   },
+   {
+    "item": "pkg:sherpa_onnx",
+    "pinned": "2.0.1",
+    "found": "2.0.1",
+    "ok": true
+   },
+   {
+    "item": "pkg:onnxruntime",
+    "pinned": "1.29.0",
+    "found": "1.29.0",
+    "ok": true
+   },
+   {
+    "item": "pkg:cv2",
+    "pinned": "5.0.0",
+    "found": "5.0.0",
+    "ok": true
+   },
+   {
+    "item": "pkg:numpy",
+    "pinned": "2.5.3",
+    "found": "2.5.3",
+    "ok": true
+   },
+   {
+    "item": "pkg:PIL",
+    "pinned": "12.3.0",
+    "found": "12.3.0",
+    "ok": true
+   },
+   {
+    "item": "ep01-samson/film27/lib/three.min.js",
+    "pinned": "3b3a1c97de3ce65e",
+    "found": "3b3a1c97de3ce65e",
+    "ok": true
+   },
+   {
+    "item": "fw_check.py",
+    "pinned": "9db74d360c3f1d2a",
+    "found": "9db74d360c3f1d2a",
+    "ok": true
+   },
+   {
+    "item": "tools/shotlist_check.js",
+    "pinned": "67d3a26665317697",
+    "found": "67d3a26665317697",
+    "ok": true
+   },
+   {
+    "item": "asr model (sherpa-onnx-zipformer-small-en-2023-06-26)",
+    "pinned": "present",
+    "found": "present",
+    "ok": true
+   }
+  ]
+ },
+ "spec": "ep01-samson/release_v57.json"
+}

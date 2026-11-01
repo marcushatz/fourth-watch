@@ -1,0 +1,56 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Cinz;font-weight:600;src:url(cinzel-latin-600-normal.woff2)}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#15110E}
+#bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 42%,#1d1712 0%,#15110E 55%,#0f0c0a 100%)}
+svg{position:absolute;inset:0}
+#word{position:absolute;left:0;right:0;top:1010px;text-align:center;font:600 74px Cinz;letter-spacing:.16em;padding-left:.16em;color:#F2E6CF;opacity:0}
+#sub{position:absolute;left:0;right:0;top:1102px;text-align:center;font:600 22px Cinz;letter-spacing:.5em;padding-left:.5em;color:#cdbb9a;opacity:0}
+</style></head><body><div id="bg"></div><svg style="position:absolute;inset:0;opacity:.07;mix-blend-mode:overlay" width="1080" height="1920"><filter id="gr"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="11"/><feColorMatrix type="saturate" values="0"/></filter><rect width="1080" height="1920" filter="url(#gr)"/></svg>
+<svg viewBox="0 0 1080 1920" width="1080" height="1920">
+<defs>
+ <filter id="brush" x="-20%" y="-20%" width="140%" height="140%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="n"/>
+  <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G" result="d"/>
+  <feTurbulence type="fractalNoise" baseFrequency="0.05 1.4" numOctaves="1" seed="3" result="g"/>
+  <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -0.9 1.15" result="ga"/>
+  <feComposite in="d" in2="ga" operator="in"/>
+ </filter>
+ <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
+</defs>
+<g id="mark"></g>
+</svg>
+<div id="word">FOURTH WATCH</div><div id="sub"></div>
+<script>
+const C='#E3B25C';
+// Each stroke: [path d, width, start s, dur s]
+const MARKS={
+ A:[ // cross over the waves
+  ['M540 540 L540 860',36,0.00,0.45],
+  ['M452 632 L628 632',32,0.40,0.35],
+  ['M404 902 C 446 868, 494 868, 540 900 S 634 934, 676 900',24,0.70,0.45],
+  ['M452 958 C 482 936, 516 936, 540 956 S 598 978, 628 956',17,0.95,0.40],
+ ],
+ B:[ // figure walking on the wave
+  ['M398 900 C 446 866, 494 866, 540 898 S 636 932, 682 898',24,0.00,0.45],
+  ['M540 650 C 528 720, 516 800, 508 884',40,0.35,0.40],
+  ['M552 670 C 584 690, 610 708, 632 728',16,0.65,0.30],
+ ],
+};
+const which=new URLSearchParams(location.search).get('m')||'A';
+const g=document.getElementById('mark'); const ns='http://www.w3.org/2000/svg';
+const glow=document.createElementNS(ns,'g'); glow.setAttribute('filter','url(#glow)'); glow.setAttribute('opacity','0'); g.appendChild(glow);
+const ink=document.createElementNS(ns,'g'); ink.setAttribute('filter','url(#brush)'); g.appendChild(ink);
+const paths=MARKS[which].map(([d,w,s,du])=>{
+  const mk=(parent)=>{const p=document.createElementNS(ns,'path');p.setAttribute('d',d);p.setAttribute('stroke',C);p.setAttribute('stroke-width',w);p.setAttribute('fill','none');p.setAttribute('stroke-linecap','round');parent.appendChild(p);return p;};
+  const p=mk(ink), q=mk(glow); const L=p.getTotalLength(); [p,q].forEach(x=>{x.style.strokeDasharray=L;x.style.strokeDashoffset=L;}); return {p,q,L,s,du};
+});
+if(which==='B'){const h=document.createElementNS(ns,'circle');h.setAttribute('cx',548);h.setAttribute('cy',606);h.setAttribute('r',24);h.setAttribute('fill',C);h.setAttribute('opacity',0);ink.appendChild(h);paths.head=h;}
+const ease=x=>x<=0?0:x>=1?1:1-Math.pow(1-x,3); const lin=(t,a,b)=>Math.min(1,Math.max(0,(t-a)/(b-a)));
+window.renderAt=t=>{ const T=t-0.35; // short beat of empty dark first
+  paths.forEach(o=>{const k=ease(lin(T,o.s,o.s+o.du)); o.p.style.strokeDashoffset=o.L*(1-k); o.q.style.strokeDashoffset=o.L*(1-k);});
+  if(paths.head) paths.head.setAttribute('opacity',ease(lin(T,0.30,0.50)));
+  glow.setAttribute('opacity',(0.35*ease(lin(T,1.0,1.8))).toFixed(3));
+  const w=ease(lin(T,1.25,2.05)); const el=document.getElementById('word'); el.style.opacity=w; el.style.transform=`translateY(${(1-w)*14}px)`;
+};
+window.ready=document.fonts.ready;
+</script></body></html>

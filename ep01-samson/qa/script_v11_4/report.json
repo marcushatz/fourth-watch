@@ -1,0 +1,77 @@
+{
+  "kind": "script",
+  "verdict": "PASS WITH WARNINGS",
+  "counts": {
+    "FAIL": 0,
+    "WARN": 7,
+    "PASS": 5
+  },
+  "facts": {
+    "title": "What's the real lesson of Samson? It isn't \"don't cut your hair.\"",
+    "series": "ASK THE TEXT",
+    "VO words": 193,
+    "estimated runtime": "64.3s at 180 wpm"
+  },
+  "items": [
+    {
+      "level": "PASS",
+      "check": "series",
+      "msg": "ASK THE TEXT"
+    },
+    {
+      "level": "PASS",
+      "check": "hook",
+      "msg": "first VO line equals the title"
+    },
+    {
+      "level": "WARN",
+      "check": "runtime",
+      "msg": "estimated 64s; target 70–115s for ASK THE TEXT"
+    },
+    {
+      "level": "WARN",
+      "check": "dialogue",
+      "msg": "quoted words with no reference (invented dialogue?): 'What's the real lesson of Samson? It isn't \"don't cut your hair.\"'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'secret' — make sure the text really says this: 'Delilah tried three times to learn his secret. Each time, \"The Philistines are u'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'always' — make sure the text really says this: 'The hair was the sign he was set apart to God. The strength had always been God''"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'every' — make sure the text really says this: 'He had broken free every time before, so he assumed he would again.'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'never' — make sure the text really says this: 'The Philistines took his eyes. And blind, he did something we never see him do b'"
+    },
+    {
+      "level": "PASS",
+      "check": "answer",
+      "msg": "answer stated in the Turn/Landing: 'The strength was God's, and when God left, Samson didn't even notice. Say it before the fight.'"
+    },
+    {
+      "level": "PASS",
+      "check": "value",
+      "msg": "6 things the viewer learns, each with a verse"
+    },
+    {
+      "level": "PASS",
+      "check": "loop",
+      "msg": "landing echoes the hook"
+    },
+    {
+      "level": "WARN",
+      "check": "title",
+      "msg": "the hook's ON-SCREEN line differs from the title"
+    }
+  ]
+}

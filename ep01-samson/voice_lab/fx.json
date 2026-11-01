@@ -1,0 +1,18 @@
+{
+ "am_michael": {
+  "low": -0.9,
+  "warm": 6.3,
+  "body": 2.4,
+  "upper": 5.0,
+  "pres": 2.5,
+  "air": 2.6
+ },
+ "am_puck": {
+  "low": 0.8,
+  "warm": 2.8,
+  "body": 1.9,
+  "upper": 1.6,
+  "pres": 6.3,
+  "air": 1.0
+ }
+}

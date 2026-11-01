@@ -1,0 +1,127 @@
+{
+  "kind": "script",
+  "verdict": "FAIL",
+  "counts": {
+    "FAIL": 1,
+    "WARN": 16,
+    "PASS": 5
+  },
+  "facts": {
+    "title": "Why did Samson tell Delilah his secret, after she tried to hand him over three times?",
+    "series": "ASK THE TEXT",
+    "VO words": 226,
+    "estimated runtime": "75.3s at 180 wpm"
+  },
+  "items": [
+    {
+      "level": "PASS",
+      "check": "series",
+      "msg": "ASK THE TEXT"
+    },
+    {
+      "level": "PASS",
+      "check": "hook",
+      "msg": "first VO line equals the title"
+    },
+    {
+      "level": "PASS",
+      "check": "runtime",
+      "msg": "estimated 75s"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'secret' — make sure the text really says this: 'Why did Samson tell Delilah his secret, after she tried to hand him over three t'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'every' — make sure the text really says this: 'Every time, nothing happened. He just broke free.'"
+    },
+    {
+      "level": "PASS",
+      "check": "answer",
+      "msg": "answer stated in the Turn/Landing: 'She wore him down, and three times nothing had happened, so he expected to go out as at other times. Nothing happens, until it does.'"
+    },
+    {
+      "level": "PASS",
+      "check": "value",
+      "msg": "7 things the viewer learns, each with a verse"
+    },
+    {
+      "level": "WARN",
+      "check": "loop",
+      "msg": "the last VO line shares no key word with the hook; the loop line should echo it"
+    },
+    {
+      "level": "FAIL",
+      "check": "fact-check",
+      "msg": "claim not verified: '(to be filled from the independent fact-check report)' (status: 'pending')"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:9, 16:12, 16:14] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:13] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:15] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:17] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:16] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:5] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:19–20] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:21] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:20] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:7–14] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:18] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:9–17, 16:20] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "title",
+      "msg": "the hook's ON-SCREEN line differs from the title"
+    }
+  ]
+}

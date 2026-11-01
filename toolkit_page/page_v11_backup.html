@@ -1,0 +1,323 @@
+<title>Fourth Watch Toolkit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+  /* Layout: one narrow reading column. The tool files as cards in the order a session uses them, then the commands,
+     then the whole system (rules, evidence, study tools, engine notes, episode plans) as a path list a fresh session
+     restores from, then the full source of whichever file is picked. Single dark look on purpose: the series' night palette. */
+  :root {
+    --night: #14100D;
+    --umber: #2A1E16;
+    --clay: #6B4A33;
+    --gold: #E3B25C;
+    --parchment: #F2E6CF;
+    --ash: #8C8174;
+    --rule: #3A2C21;
+    --code-bg: #1B1511;
+    --font-display: "Cinzel", "Trajan Pro", Georgia, serif;
+    --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+    color-scheme: dark;
+  }
+  body {
+    background: var(--night);
+    color: var(--parchment);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding-block: 40px 64px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+  .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin: 0 0 6px; }
+  h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(28px, 6vw, 40px); letter-spacing: 0.04em; line-height: 1.15; margin: 0; text-wrap: balance; }
+  .lead { margin: 10px 0 0; max-width: 62ch; }
+  .verse { margin: 6px 0 0; color: var(--ash); font-style: italic; max-width: 62ch; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: 18px; letter-spacing: 0.06em; margin: 0 0 12px; text-wrap: balance; }
+  .files { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .file { border: 1px solid var(--rule); border-radius: 6px; background: var(--umber); padding: 18px 20px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; min-width: 0; }
+  .file-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 14px; }
+  .file-name { font-family: var(--font-mono); font-weight: 600; font-size: 17px; color: var(--gold); margin: 0; }
+  .role { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ash); }
+  .file p { margin: 0; max-width: 64ch; }
+  dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 0; font-size: 14px; }
+  dt { color: var(--ash); }
+  dd { margin: 0; min-width: 0; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+  dd code { font-family: var(--font-mono); font-size: 12.5px; }
+  .new { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--night); background: var(--gold); border-radius: 3px; padding: 1px 6px; margin-left: 8px; vertical-align: 2px; }
+  pre { margin: 0; background: var(--code-bg); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; overflow-x: auto; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.5; color: var(--parchment); }
+  .steps { margin: 0; padding-left: 22px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .steps li { padding-left: 4px; min-width: 0; }
+  .steps li > span { display: block; margin-bottom: 6px; }
+  .bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+  .bar h2 { margin: 0; }
+  .picker { display: flex; flex-wrap: wrap; gap: 6px; }
+  button { font-family: var(--font-body); font-weight: 600; font-size: 14px; border-radius: 4px; padding: 7px 12px; cursor: pointer; }
+  .pick { color: var(--parchment); background: transparent; border: 1px solid var(--rule); font-family: var(--font-mono); font-size: 13px; }
+  .pick[aria-pressed="true"] { border-color: var(--gold); color: var(--gold); }
+  .copy { color: var(--night); background: var(--gold); border: 0; }
+  button:focus-visible { outline: 2px solid var(--parchment); outline-offset: 2px; }
+  .status { font-size: 13px; color: var(--ash); min-height: 1.2em; margin: 0 0 8px; }
+  #source { max-height: 70vh; }
+  .note { font-size: 14px; color: var(--ash); margin: 0; max-width: 62ch; }
+  .sys { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .sys h3 { font-family: var(--font-display); font-weight: 600; font-size: 15px; letter-spacing: 0.06em; color: var(--gold); margin: 0 0 6px; }
+  .sys ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+  .sys li { display: grid; grid-template-columns: minmax(0, 15em) minmax(0, 1fr); gap: 4px 16px; font-size: 14px; border-top: 1px solid var(--rule); padding-top: 6px; }
+  .sys li code { font-family: var(--font-mono); font-size: 12.5px; color: var(--parchment); overflow-wrap: anywhere; }
+  .sys li span { color: var(--ash); }
+  @media (max-width: 560px) { .sys li { grid-template-columns: minmax(0, 1fr); } }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<main class="wrap">
+  <header>
+    <p class="eyebrow">Fourth Watch · production tools</p>
+    <h1>Fourth Watch Toolkit</h1>
+    <p class="lead">The files every Fourth Watch episode is built and checked with, kept here so each working session fetches the exact same copy and checks its fingerprint. Since Oct 31 it also holds the whole system: the direction and script rules measured from 24 Shorts on three channels (the Lintel Network, Bible Animations, BibleProject), Marcus's standing feedback, the study tools and the episode plans.</p>
+    <p class="verse">"And in the fourth watch of the night he came to them, walking on the sea." Matthew 14:25 (ESV)</p>
+  </header>
+
+  <section aria-labelledby="files-h">
+    <h2 id="files-h">The files</h2>
+    <div class="files">
+      <article class="file">
+        <div class="file-head"><p class="file-name">fw_motion.js</p><span class="role">Text motion</span></div>
+        <p>Spring motion for the title, verse cards and captions. Words rise through a mask and lift out with weight. Captions read on the spoken word and swap by a push, so two lines never overlap. Nothing fades in or out.</p>
+        <dl>
+          <dt>Version</dt><dd>2026-10-29</dd>
+          <dt>Size</dt><dd>325 lines · 17,729 bytes</dd>
+          <dt>SHA-256</dt><dd><code>af39bbee14642806fabd63eec58c936943a1baf429fd67deed5a1c609f37bdf7</code></dd>
+          <dt>Needs</dt><dd>Nothing extra. Loads as a script in the film, or with require() in song.js</dd>
+        </dl>
+      </article>
+      <article class="file">
+        <div class="file-head"><p class="file-name">fw_check.py</p><span class="role">Checker</span></div>
+        <p>Lints the script, then checks the rendered cut: format, runtime, loudness, captions word for word and in sync with the voice, the title in frame one, verse cards, Instagram&#x27;s covered zones, frozen frames, and since Oct 31 the direction: shot rhythm, shots per sentence, the visual beat clock (how much of the reel sits still), the hook and the time after the last spoken word. The script lint also checks the hit structure: word budget, hook form, turn time, story share, answer timing, the hook echo and the "you" lines.</p>
+        <dl>
+          <dt>Version</dt><dd>2026-10-31c (beat clock; tail after the last word; script structure from the hits; audited figures)</dd>
+          <dt>Size</dt><dd>974 lines · 58,166 bytes</dd>
+          <dt>SHA-256</dt><dd><code>9db74d360c3f1d2ad7c4e6f59577e009a2ed66f1606f1426be701f8356b22d85</code></dd>
+          <dt>Needs</dt><dd>Python 3, numpy, Pillow, opencv-python, ffmpeg, tesseract; sherpa-onnx for hearing the voice</dd>
+        </dl>
+      </article>
+      <article class="file">
+        <div class="file-head"><p class="file-name">shotlist_check.js<span class="new">New</span></p><span class="role">Shot-list gate</span></div>
+        <p>Reads an episode&#x27;s score.js and checks the shot list before anything renders: one picture per sentence, 3–5 s shots, the planned beat clock (a change every ~2 s, no gap over 6 s), the angle pass (variety of sizes and angles, jump cuts), what happens in every shot, pills, camera jobs, the hook, verse-card holds (longer when acted on) and the time after the last word.</p>
+        <dl>
+          <dt>Version</dt><dd>2026-10-31e (the angle pass; speech bubbles count as beats; passes the 15 checker test clips)</dd>
+          <dt>Size</dt><dd>157 lines · 14,985 bytes</dd>
+          <dt>SHA-256</dt><dd><code>67d3a266653176974dad29aa9694e8bfd3bd9730519c339935f18c3beb3b34d5</code></dd>
+          <dt>Needs</dt><dd>Node, and the episode&#x27;s score.js with the direction fields (scenes/_API.md)</dd>
+        </dl>
+      </article>
+      <article class="file">
+        <div class="file-head"><p class="file-name">fw_review.py</p><span class="role">Review pack</span></div>
+        <p>Builds what the critic looks at from the rendered MP4: 2 fps contact sheets, frame-by-frame strips of the two fastest moments, a phone test at 360 px, the covered zones shaded, every caption swap, chosen moments, the loop seam, metrics, and since Oct 31 every shot as three frames with the words spoken over it.</p>
+        <dl>
+          <dt>Version</dt><dd>2026-10-31 (shot strips; fits 150 s reels in memory; captions at the top)</dd>
+          <dt>Size</dt><dd>236 lines · 14,904 bytes</dd>
+          <dt>SHA-256</dt><dd><code>14393751650ba340fac40ea787fd9b0fc83170af7ff031333d0c793db032e476</code></dd>
+          <dt>Needs</dt><dd>Python 3, numpy, Pillow, ffmpeg</dd>
+        </dl>
+      </article>
+      <article class="file">
+        <div class="file-head"><p class="file-name">fw_critic.md</p><span class="role">Critic</span></div>
+        <p>Instructions for a fresh critic every round: 9 scores out of 10 with automatic caps (Storytelling added Oct 31; the bar is now the hits on three channels), 23 known failure modes, the 3 worst problems with fixes, and the rule for when a cut is ready to post.</p>
+        <dl>
+          <dt>Version</dt><dd>2026-10-31c</dd>
+          <dt>Size</dt><dd>78 lines · 9,638 bytes</dd>
+          <dt>SHA-256</dt><dd><code>1e6ca7fc860e499aaf93c640fe4ca2cc1795e03737b74bbe8f1004af3320ec19</code></dd>
+          <dt>Needs</dt><dd>A separate agent that has not seen the film code</dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="use-h">
+    <h2 id="use-h">Run them</h2>
+    <ol class="steps">
+      <li><span>Load the motion file in the film, after the engine's <code>boot.js</code> and before the film's own scripts.</span>
+<pre><code>&lt;script src="fw_motion.js"&gt;&lt;/script&gt;
+&lt;script src="film.js"&gt;&lt;/script&gt;</code></pre></li>
+      <li><span>Lint the script before approval.</span>
+<pre><code>python3 fw_check.py script episode.md --out qa/script</code></pre></li>
+      <li><span>Write the shot list in score.js with the direction fields, then gate it before any render. Show Marcus the shot list and a half-resolution motion draft before the full render.</span>
+<pre><code>node tools/shotlist_check.js ep01-samson/film27 --outro 3 --out qa/shotlist.md
+node engine/render.js clip 0 30 2 --draft</code></pre></li>
+      <li><span>After every render: the checker, then the review pack for round N.</span>
+<pre><code>python3 fw_check.py video --video out/ep.mp4 --script episode.md \
+  --subs out/ep.srt [--vo-audio out/voice.wav] --out qa/video
+
+python3 fw_review.py --video out/ep.mp4 --round N --subs out/ep.srt \
+  --shots qa/video/shots.json \
+  --moments &lt;title exit&gt;,&lt;card in&gt;,&lt;card out&gt;,&lt;turn&gt; --out qa/review</code></pre></li>
+      <li><span>Hand <code>fw_critic.md</code>, the episode folder and N to a fresh critic that has not seen the code. Fix its 3 worst problems and every checker FAIL, then render again. Done at checker 0 FAIL and every critic score 8 or higher, after at least 3 rounds.</span></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="sys-h">
+    <h2 id="sys-h">The whole system</h2>
+    <p class="note">Every file below is published here at the same path it has in the working folder (<code>/home/claude/fourth-watch/</code>). A fresh session restores one with the Artifact tool&#x27;s read action and this page&#x27;s link, giving the path below.</p>
+    <div class="sys">
+      <div>
+        <h3>Start here</h3>
+        <ul>
+          <li><code>README.md</code><span>The production system: the order of work, the gate at each stage, and every file with when to use it.</span></li>
+          <li><code>DECISIONS.md</code><span>Everything waiting for Marcus, with the evidence and a recommendation for each.</span></li>
+          <li><code>system/glossary.md</code><span>Every term the system uses, and where it&#x27;s defined.</span></li>
+          <li><code>ENVIRONMENT.md</code> · <code>requirements.txt</code> · <code>tools/check_env.py</code><span>The pinned tool versions (Chrome, three.js, Node, ffmpeg, tesseract, Python packages) and a check of this machine against them.</span></li>
+          <li><code>tools/make_manifest.py</code><span>The release manifest: every file in a release with its hash, plus consistency checks (script = vo.js, the score loads, the right soundtrack).</span></li>
+          <li><code>tests/checkers/</code><span>Checker test clips with planted faults (scripts, shot lists, videos) and the runner that must pass before any checker change ships.</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Production guides (one per stage)</h3>
+        <ul>
+          <li><code>system/00_series_canon.md</code><span>What every reel is: series, words, look, logo and outro.</span></li>
+          <li><code>system/01_topic_selection.md</code><span>Five tests for a question that can win, the demand check, how the bank scores, and a first slate with the Christmas and Easter 2027 slots.</span></li>
+          <li><code>system/02_story_and_script.md</code><span>The beat sheet with timings, the drag list (why reels feel slow), line craft, hooks, endings, and the Ep 1 case study.</span></li>
+          <li><code>system/03_script_review.md</code><span>The review loop: checker, four fresh reviewers, the merge rules.</span></li>
+          <li><code>system/04_voice.md</code><span>ElevenLabs paste files, pace, delivery, pronunciations, word timing.</span></li>
+          <li><code>system/05_shot_list.md</code><span>From script to shot list: fields, device menu, checklist.</span></li>
+          <li><code>system/06_camera_and_angles.md</code><span>Sizes, angles and what they mean, rhymes, moves, cutting one set, transitions, 9:16, the angle pass.</span></li>
+          <li><code>system/06b_frames_light_and_sets.md</code><span>The phone test, depth layers, light, the colour script, sets.</span></li>
+          <li><code>system/06c_shot_recipes.md</code><span>Eighteen recipes for the beats every Bible reel has: the hook, God speaking, a journey, a number, the famous part in one line, a quote, a verse card, the turn, the answer, a crowd, a prayer, a death, a contested point, the re-ask, the closing question, the outro.</span></li>
+          <li><code>system/07_motion_and_acting.md</code><span>Acting without faces, timing, the beat menu, light as acting, the motion draft.</span></li>
+          <li><code>system/08_sound.md</code><span>The low bed, a sound for every beat, silence, mix targets.</span></li>
+          <li><code>system/09_render_and_qa.md</code><span>Draft, render in parts, the QA loop, target numbers, engine pitfalls.</span></li>
+          <li><code>system/10_publish_and_growth.md</code><span>Posting, captions, covers, comments, cross-posting, disclosure, and the post log.</span></li>
+          <li><code>system/11_lessons_log.md</code><span>Hypotheses to test once posting starts, then what went wrong, what changed and where the change lives, newest first.</span></li>
+          <li><code>system/12_engine_guide.md</code><span>How the animation engine makes a frame, how to start a new episode in it, the score API, scenes, rig, devices and rendering.</span></li>
+          <li><code>system/publish_log.csv</code><span>The post log: one row per episode per platform (the header only until the first post).</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Reviewer briefs and templates</h3>
+        <ul>
+          <li><code>prompts/README.md</code> · <code>A_esv_factcheck.md</code> … <code>G_evidence_audit.md</code><span>The exact briefs for the fresh reviewers: ESV check, first-time viewer, cold editor, director, shot-plan review, variant test, evidence audit.</span></li>
+          <li><code>templates/episode_template.md</code> · <code>templates/shotlist_template.md</code><span>Start every new episode from these.</span></li>
+          <li><code>templates/episode_runsheet.md</code> · <code>templates/postmortem_template.md</code><span>The gates per episode, with commands and Marcus&#x27;s yes for each; and the 7-day review that turns the numbers into one thing to keep and one to change.</span></li>
+          <li><code>research/episode_bank.md</code><span>20 researched questions (plus 3 reserves), scored for demand, answer, pictures and surprise, with ESV quotes, hook and final images, and accuracy traps.</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Rules (binding)</h3>
+        <ul>
+          <li><code>research/direction_rules.md</code><span>How a script becomes shots: every clause shown happening, something changing about every 2 s. Each rule tagged [ALL] (held on three channels), [2 CH], [THIN] or [HOUSE] (our style), audited against the evidence.</span></li>
+          <li><code>research/script_rules_from_hits.md</code><span>How the words of a hit are built: 14 checkable script rules from 13 Lintel Shorts (turn by 25 s, answer by the midpoint, the hook re-asked at 75–90%, at most 3 "you" lines).</span></li>
+          <li><code>research/feedback_rules.md</code><span>Marcus&#x27;s standing corrections, round by round. Read the latest rounds before any draft.</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Evidence</h3>
+        <ul>
+          <li><code>research/lintel_ref/yt/_patterns.md</code><span>Cross-video patterns from 12 Lintel Shorts, with what separates their hits (7.6M, 1.8M, 1.6M views) from the lows.</span></li>
+          <li><code>research/lintel_ref/yt/&lt;videoId&gt;.md</code><span>One shot table per Short: what happens on screen during every spoken line. Twelve files, listed in the study notes.</span></li>
+          <li><code>research/other_ref/_crosscheck.md</code><span>The cross-check on Bible Animations (810K subs) and BibleProject (5.5M): 6 hits and 4 lows, rule by rule, plus 12 techniques Lintel doesn't use.</span></li>
+          <li><code>research/lintel_study_10.md</code><span>The Oct 30 script study of 10 Lintel videos: hooks, formats, endings.</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Study tools</h3>
+        <ul>
+          <li><code>tools/reference_study/README.md</code><span>How to measure any channel shot by shot, from a video file or straight from a YouTube Short in the browser.</span></li>
+          <li><code>tools/reference_study/fw_shot_probe.js</code><span>The in-browser probe: cuts, camera and on-screen motion, contact sheets.</span></li>
+          <li><code>tools/reference_study/shotstats.py</code> · <code>strips.py</code> · <code>audiostudy.py</code><span>The same study for a video file, plus a mix comparison against the voice.</span></li>
+          <li><code>tools/reference_study/beatclock.py</code><span>The beat clock for any video: how often something visibly changes below the captions, and every still stretch over 4 s.</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Engine notes</h3>
+        <ul>
+          <li><code>ep01-samson/film27/scenes/_API.md</code><span>The scene contract, the direction fields every shot carries (with the beat clock), the overlay devices (counter, tally, stamp, flash, speech bubble, verse marks) and the devices still to build.</span></li>
+          <li><code>ep01-samson/film27/lintel/PP2_API.md</code><span>The character rig and every pose it can act.</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Episode 1: Samson</h3>
+        <ul>
+          <li><code>ep01-samson/episode.md</code><span>The locked v57 script with its fact-check log.</span></li>
+          <li><code>ep01-samson/v59_plan.md</code> · <code>episode_v59_draft.md</code> · <code>shotlist_v59.md</code> · <code>v59_recording.txt</code><span>The Oct 31 proposal after the review round: four cuts, one new answer line, the picture fixes and the angle pass.</span></li>
+          <li><code>ep01-samson/shotlist_v58.md</code><span>The rebuilt shot list, waiting for Marcus&#x27;s approval, with its four open decisions (length and pace, the ending, the answer image, K1).</span></li>
+          <li><code>ep01-samson/film27/score_v58.js</code><span>The same shot list as the score the engine reads, with the direction fields and beats filled in.</span></li>
+          <li><code>ep01-samson/options/tempo/README.md</code><span>Option D: the recorded take sped up 7% with the pitch kept (not used: Marcus chose no speed-up).</span></li>
+          <li><code>ep01-samson/v60_plan.md</code> · <code>episode_v60_draft.md</code> · <code>shotlist_v60.md</code> · <code>v60_recording.txt</code><span>v60: Marcus&#x27;s picks and the accuracy fixes, with the exact wording to approve and the five pick-up lines to record.</span></li>
+          <li><code>ep01-samson/releases/v57/MANIFEST.md</code><span>The release manifest of the last rendered cut: every file&#x27;s hash and the consistency checks.</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Episode 2: Jonah</h3>
+        <ul>
+          <li><code>ep02-jonah/README.md</code> · <code>episode_v5_draft.md</code><span>Ep 2 (Marcus&#x27;s pick): the v5 script with Nineveh explained by a sourced historical line, every round&#x27;s AI fact-checks and simulated-viewer reads saved word for word, and what each round changed.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="src-h">
+    <div class="bar">
+      <h2 id="src-h">Full source</h2>
+      <button type="button" class="copy" id="copy">Copy the code</button>
+    </div>
+    <div class="picker" role="group" aria-label="File">
+      <button type="button" class="pick" data-file="fw_motion.js" aria-pressed="false">fw_motion.js</button>
+      <button type="button" class="pick" data-file="fw_check.py" aria-pressed="false">fw_check.py</button>
+      <button type="button" class="pick" data-file="tools/shotlist_check.js" aria-pressed="false">shotlist_check.js</button>
+      <button type="button" class="pick" data-file="fw_review.py" aria-pressed="false">fw_review.py</button>
+      <button type="button" class="pick" data-file="fw_critic.md" aria-pressed="false">fw_critic.md</button>
+      <button type="button" class="pick" data-file="research/direction_rules.md" aria-pressed="false">direction_rules.md</button>
+      <button type="button" class="pick" data-file="research/script_rules_from_hits.md" aria-pressed="false">script_rules_from_hits.md</button>
+    </div>
+    <p class="status" id="status" role="status"></p>
+    <pre id="source"><code id="code">Loading…</code></pre>
+  </section>
+
+  <p class="note">When a file changes, it is republished here with its new SHA-256, and the showrunner skill is updated to the new fingerprint.</p>
+</main>
+
+<script>
+  (function () {
+    var codeEl = document.getElementById("code");
+    var statusEl = document.getElementById("status");
+    var picks = Array.prototype.slice.call(document.querySelectorAll(".pick"));
+    var cache = {};
+    var current = "";
+    function show(name) {
+      current = name;
+      picks.forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.file === name ? "true" : "false"); });
+      statusEl.textContent = "";
+      if (cache[name] != null) { codeEl.textContent = cache[name]; return; }
+      codeEl.textContent = "Loading " + name + "…";
+      fetch(name)
+        .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.text(); })
+        .then(function (t) { cache[name] = t; if (current === name) codeEl.textContent = t; })
+        .catch(function () { if (current === name) codeEl.textContent = name + " could not be loaded here. Ask Claude to fetch it from this page."; });
+    }
+    picks.forEach(function (b) { b.addEventListener("click", function () { show(b.dataset.file); }); });
+    document.getElementById("copy").addEventListener("click", function () {
+      var text = cache[current];
+      if (!text) { statusEl.textContent = "The code hasn't loaded yet."; return; }
+      var done = function () { statusEl.textContent = "Copied. Save it as " + current + "."; };
+      var fallback = function () {
+        var range = document.createRange();
+        range.selectNodeContents(codeEl);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        statusEl.textContent = "Copying isn't allowed here, so the code is selected. Copy it with your keyboard.";
+      };
+      try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+    });
+    show(picks[0].dataset.file);
+  })();
+</script>

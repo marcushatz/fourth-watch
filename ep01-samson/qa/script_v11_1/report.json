@@ -1,0 +1,117 @@
+{
+  "kind": "script",
+  "verdict": "FAIL",
+  "counts": {
+    "FAIL": 1,
+    "WARN": 14,
+    "PASS": 5
+  },
+  "facts": {
+    "title": "What's the real lesson of Samson? It isn't \"don't cut your hair.\"",
+    "series": "ASK THE TEXT",
+    "VO words": 173,
+    "estimated runtime": "57.7s at 180 wpm"
+  },
+  "items": [
+    {
+      "level": "PASS",
+      "check": "series",
+      "msg": "ASK THE TEXT"
+    },
+    {
+      "level": "PASS",
+      "check": "hook",
+      "msg": "first VO line equals the title"
+    },
+    {
+      "level": "WARN",
+      "check": "runtime",
+      "msg": "estimated 58s; target 70–115s for ASK THE TEXT"
+    },
+    {
+      "level": "WARN",
+      "check": "dialogue",
+      "msg": "quoted words with no reference (invented dialogue?): 'What's the real lesson of Samson? It isn't \"don't cut your hair.\"'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'never' — make sure the text really says this: 'His strength had never been his own. It was God's.'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'always' — make sure the text really says this: 'He had broken free so many times, he assumed he always would.'"
+    },
+    {
+      "level": "PASS",
+      "check": "answer",
+      "msg": "answer stated in the Turn/Landing: 'His strength was God's, and when God left, Samson didn't even notice.'"
+    },
+    {
+      "level": "PASS",
+      "check": "value",
+      "msg": "6 things the viewer learns, each with a verse"
+    },
+    {
+      "level": "PASS",
+      "check": "loop",
+      "msg": "landing echoes the hook"
+    },
+    {
+      "level": "FAIL",
+      "check": "fact-check",
+      "msg": "claim not verified: '(to be filled from the independent fact-check report)' (status: 'pending')"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 14:6, 14:19, 15:14, 16:19–20] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:9–14, 16:20] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[1 Samuel 17:45–47] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:6–14] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:20] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:19] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:21, 16:28] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:21, 16:25, 16:28–30] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:19–20] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "title",
+      "msg": "the hook's ON-SCREEN line differs from the title"
+    }
+  ]
+}

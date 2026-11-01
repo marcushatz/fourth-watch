@@ -1,0 +1,21 @@
+{
+  "name": "v57",
+  "episode": "ep01-samson",
+  "film": "ep01-samson/film27",
+  "_about": "The v57 cut Marcus reviewed on Oct 31 (rejected as 'not good enough'): the last fully rendered release. Kept as the baseline.",
+  "files": {
+    "script": "ep01-samson/episode.md",
+    "vo": "ep01-samson/film27/vo.js",
+    "score": "ep01-samson/film27/score.js",
+    "film": "ep01-samson/film27/film.js",
+    "soundtrack_script": "ep01-samson/film27/song_v57.js",
+    "song_js": "ep01-samson/film27/song.js",
+    "soundtrack_wav": "ep01-samson/film27/out/soundtrack_v57.wav",
+    "music_wav": "ep01-samson/film27/out/music.wav",
+    "voice_take": "ep01-samson/voice_lab/take1/voice_edit.wav",
+    "outro": "brand/logo/fw_final_outro_v3.mp4",
+    "captions": "ep01-samson/film27/out/captions.srt",
+    "final_video": "ep01-samson/film27/out/fourth-watch-ep1-samson-v57-final.mp4"
+  },
+  "also": ["ep01-samson/film27/scenes/*.js", "ep01-samson/film27/lintel/*.js", "ep01-samson/film27/fw/core.js", "ep01-samson/film27/index.html", "ep01-samson/film27/engine/render.js", "ep01-samson/film27/tools/assemble57b.py"]
+}

@@ -1,0 +1,147 @@
+{
+  "kind": "script",
+  "verdict": "PASS WITH WARNINGS",
+  "counts": {
+    "FAIL": 0,
+    "WARN": 20,
+    "PASS": 6
+  },
+  "facts": {
+    "title": "If God is still using you, does that mean He's okay with how you're living?",
+    "series": "ASK THE TEXT",
+    "VO words": 331,
+    "estimated runtime": "110.3s at 180 wpm"
+  },
+  "items": [
+    {
+      "level": "PASS",
+      "check": "series",
+      "msg": "ASK THE TEXT"
+    },
+    {
+      "level": "PASS",
+      "check": "hook",
+      "msg": "first VO line equals the title"
+    },
+    {
+      "level": "PASS",
+      "check": "runtime",
+      "msg": "estimated 110s"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'all' — make sure the text really says this: 'Let's look at Samson, known as the strongest man in the Bible. His strength came'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'secret' — make sure the text really says this: 'Later, he fell in love with Delilah, and the Philistine lords, Israel's enemies,'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'secret' — make sure the text really says this: 'Then he told her his secret. While he slept, she had a man shave off his uncut h'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'always' — make sure the text really says this: 'Notice what he said: \"as at other times.\" It had always worked before, so he ass'"
+    },
+    {
+      "level": "WARN",
+      "check": "sentence length",
+      "msg": "26 words (max 25): 'Jesus warned that on judgment day, many will point to the mighty works they did '"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'never' — make sure the text really says this: 'Jesus warned that on judgment day, many will point to the mighty works they did '"
+    },
+    {
+      "level": "WARN",
+      "check": "sentence length",
+      "msg": "29 words (max 25): 'Blinded and brought out to entertain his captors, he prayed, \"O Lord GOD, please'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'everyone' — make sure the text really says this: 'Then he pushed against the pillars with all his strength, and the building fell '"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'all' — make sure the text really says this: 'Then he pushed against the pillars with all his strength, and the building fell '"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'only' — make sure the text really says this: 'What would you ask God for, only this once?'"
+    },
+    {
+      "level": "PASS",
+      "check": "answer",
+      "msg": "answer stated in the Turn/Landing: 'God still using you doesn't mean He approves of how you're living.'"
+    },
+    {
+      "level": "PASS",
+      "check": "value",
+      "msg": "5 things the viewer learns, each with a verse"
+    },
+    {
+      "level": "PASS",
+      "check": "loop",
+      "msg": "landing echoes the hook"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 13:5, 16:17-19; Numbers 6:5-7] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:29-30] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:17-21, 16:20, 16:28] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 14:6, 16:1-3, 16:17, 16:20] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:21, 16:25, 16:28] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:20] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 13:5, 14:4, 15:20, 16:1-3, 16:20; Matthew 7:22-23] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 15:14, 16:1-3, 16:9-14, 16:20] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Judges 16:8-14] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "title",
+      "msg": "the hook's ON-SCREEN line differs from the title"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "_about": "What each checker must report on each fixture. must_fail / must_not_fail are check names in the report's FAIL rows; exit is the process exit code; contains are substrings the report must include. Fixtures are built by make_fixtures.py.",
+  "script": {
+    "good":                  {"exit": 0, "must_not_fail": ["hook", "call to action", "fact-check", "reference", "verse", "answer", "value"]},
+    "bad_hook_mismatch":     {"exit": 1, "must_fail": ["hook"]},
+    "bad_cta_in_vo":         {"exit": 1, "must_fail": ["call to action"]},
+    "bad_pending_factcheck": {"exit": 1, "must_fail": ["fact-check"]},
+    "bad_no_reference":      {"exit": 1, "must_fail": ["reference"]},
+    "bad_no_verse_card":     {"exit": 1, "must_fail": ["verse"]}
+  },
+  "shotlist": {
+    "good":             {"exit": 0, "must_not_fail": ["long shot", "length"], "contains": ["57 planned beats"], "not_contains": ["a jump cut"]},
+    "bad_long_shot":    {"exit": 1, "must_fail": ["long shot"]},
+    "bad_jump_cuts":    {"exit": 0, "contains": ["a jump cut"]},
+    "no_bubble_beat":   {"exit": 0, "contains": ["56 planned beats"]},
+    "bubble_only_beat": {"exit": 0, "contains": ["57 planned beats"]}
+  },
+  "video": {
+    "_note": "8 s clips with no voice or captions, run with --no-asr, so runtime, captions and voice always FAIL; only the planted fault is asserted.",
+    "v_good":       {"must_not_fail": ["format", "motion", "loudness"]},
+    "v_wrong_size": {"must_fail": ["format"], "must_not_fail": ["motion", "loudness"]},
+    "v_frozen":     {"must_fail": ["motion"], "must_not_fail": ["format", "loudness"]},
+    "v_too_loud":   {"must_fail": ["loudness"], "must_not_fail": ["format", "motion"]}
+  }
+}

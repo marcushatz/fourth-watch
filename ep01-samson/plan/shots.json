@@ -1,0 +1,154 @@
+[
+{
+"key": "s1",
+"name": "S1 Hook · wide, low angle",
+"start": 0.0,
+"end": 3.0,
+"move": "crane down + push",
+"hold": false
+},
+{
+"key": "s2",
+"name": "S2 Stakes · close, the hair",
+"start": 3.0,
+"end": 6.5,
+"move": "push-in 4%",
+"hold": false
+},
+{
+"key": "s3a",
+"name": "S3a Story · wide, the lion",
+"start": 6.5,
+"end": 8.0,
+"move": "kick on the rush",
+"hold": false
+},
+{
+"key": "s3b",
+"name": "S3b Story · wide side, Ashkelon",
+"start": 8.0,
+"end": 9.5,
+"move": "truck right",
+"hold": false
+},
+{
+"key": "s3c",
+"name": "S3c Story · insert, the ropes",
+"start": 9.5,
+"end": 11.2,
+"move": "push-in 6%",
+"hold": false
+},
+{
+"key": "s4",
+"name": "S4 Story · extreme close, eyes",
+"start": 11.2,
+"end": 13.1,
+"move": "push-in 8%",
+"hold": false
+},
+{
+"key": "s5a",
+"name": "S5a Story · over shoulder, Timnah",
+"start": 13.1,
+"end": 15.9,
+"move": "push-in 6%",
+"hold": false
+},
+{
+"key": "s5b",
+"name": "S5b Story · medium, home in Zorah",
+"start": 15.9,
+"end": 20.6,
+"move": "push-in 6%",
+"hold": false
+},
+{
+"key": "s6",
+"name": "S6 Story · over Delilah's shoulder",
+"start": 20.6,
+"end": 24.8,
+"move": "rack + push",
+"hold": false
+},
+{
+"key": "s7a",
+"name": "S7a Story · top-down, shaving",
+"start": 24.8,
+"end": 27.2,
+"move": "slow drift",
+"hold": false
+},
+{
+"key": "s7b",
+"name": "S7b Story · wide, high angle",
+"start": 27.2,
+"end": 29.3,
+"move": "pull-out 12%",
+"hold": false
+},
+{
+"key": "s8a",
+"name": "S8a Story · medium close, seized",
+"start": 29.3,
+"end": 32.8,
+"move": "push into black",
+"hold": false
+},
+{
+"key": "s8b",
+"name": "S8b Story · crane down, the house",
+"start": 33.2,
+"end": 36.2,
+"move": "crane down 35%",
+"hold": false
+},
+{
+"key": "s9",
+"name": "S9 Turn · close-up, prayer",
+"start": 36.2,
+"end": 41.6,
+"move": "locked hold",
+"hold": true
+},
+{
+"key": "s10",
+"name": "S10 Turn · wide, the fall",
+"start": 41.6,
+"end": 43.4,
+"move": "pull-out + shake",
+"hold": false
+},
+{
+"key": "s11a",
+"name": "S11a Turn · extreme wide, dawn",
+"start": 43.4,
+"end": 47.3,
+"move": "crane up 15%",
+"hold": false
+},
+{
+"key": "s11b",
+"name": "S11b Turn · insert, broken pillar",
+"start": 47.3,
+"end": 50.1,
+"move": "push-in 4%",
+"hold": false
+},
+{
+"key": "s12a",
+"name": "S12a Landing · medium, the tomb",
+"start": 50.1,
+"end": 53.4,
+"move": "slow push-in",
+"hold": false
+},
+{
+"key": "s12b",
+"name": "S12b Landing · back to frame one",
+"start": 53.4,
+"end": 57.6,
+"move": "drift onto S1",
+"hold": false
+}
+]

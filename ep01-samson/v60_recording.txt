@@ -1,0 +1,17 @@
+Fourth Watch Ep 1 Samson · v60 pick-ups (Oct 31). Same ElevenLabs voice and settings as the v57 take (voice_lab/take1).
+Generate 3 takes of each line and keep the closest in pitch and pace to the v57 take. One line per block; paste the text only.
+
+1) Splice onto the original take's "O Lord GOD, please remember me..." (the pitch should rise into the quote)
+Blinded and brought out to entertain his captors, Samson prayed,
+
+2) Replaces "Then he pushed against the pillars..." (ESV verbs, 16:29-30)
+Then he leaned his weight against the two middle pillars and bowed with all his strength, and the building fell on the Philistine lords and everyone inside. Samson died with them.
+
+3) New: the re-ask and its answer (question rises; "never proved that" falls; "call on God" soft)
+So does God still using you mean He's okay with how you're living? ... Samson's strength never proved that. ... But even at his lowest, he could still call on God.
+
+4) New closing question (option A in v60_plan.md; replace with B or C if Marcus picks another)
+What stands out more to you about Samson: his failures, or his prayer at the end?
+
+5) The spoken ESV credit Crossway requires for video (wording and placement in v60_plan.md, decision 11), read lower and quieter under the outro hold
+Scripture quotations are from the ESV.
