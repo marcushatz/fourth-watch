@@ -17,6 +17,7 @@ description: Research, argue and write an original Fourth Watch Bible investigat
 **The bar** is the approved Bronze Serpent script (`reference/gold_bronze_serpent.md`). Read it first, every time. It is the only positive model here. The Lintel Network is studied for *structure only*: never reuse, paraphrase or adapt a Lintel script or one of its topics (`reference/lintel_lessons.md` lists them).
 
 **Files in this folder.** They are in the Fourth Watch repo at `.claude/skills/fourth-watch-writer/`. If you are running from an account copy of this skill, read them there; clone `marcushatz/fourth-watch` first if needed.
+
 | File | Read it when |
 |---|---|
 | `reference/gold_bronze_serpent.md` | Always, before Stage 1. The model, annotated line by line. |
