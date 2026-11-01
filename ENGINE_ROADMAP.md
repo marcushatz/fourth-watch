@@ -47,4 +47,5 @@ Measured in `research/direction_rules.md` and `research/lintel_study_10.md`:
 |---|---|
 | 1 Diorama kit | v0 works (`scenes/diorama.js`; lab: `engine_lab/`). A set from a recipe; shots staged from `dio` (camera presets + moves, walk/enter/exit/pose, continuity across shots) |
 | 2 People walk | done (PP2 `person` `walk`) |
-| 3-8 | not started |
+| 5 Pop-up layer | v0 works (`fw/pops.js`, hooked in `film.js`): label, number, ring, arrow, icons (bow, tent, bowl, scroll, crown, x, check, ?). The governor enforces one at a time, ≥ 1.4 s apart, ≤ 5 per 10 s, the y band 30-78%, and keeps each pop inside the frame |
+| 3, 4, 6-8 | not started |

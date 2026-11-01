@@ -148,7 +148,7 @@
     frame(t, shot, camera) {
       cam = camera;
       const B = built[shot.v]; if (!B) throw new Error('diorama: set not built ' + shot.v);
-      const bill = [];
+      const bill = [], anchors = {};
       for (const id of Object.keys(B.actors)) {
         const a = B.actors[id], st = actorState(B, id, shot, t);
         a.bb.visible = st.visible; if (!st.visible) continue;
@@ -156,12 +156,13 @@
         const draw = { pose: st.pose, phase: q(st.phase, 8), t: q(t, 12), item: st.item, look: st.look };
         a.bb.userData.update(JSON.stringify(draw), draw);
         a.bb.material.color.setRGB(...B.sk.tint);
-        bill.push(a.bb);
+        bill.push(a.bb); anchors[id] = [st.pos[0], st.pose === 'kneel' ? 1.3 : st.pose === 'sit' ? 1.15 : 2.0, st.pos[1]];   // the head, by pose
       }
       B.fires.forEach((f, i) => { const core = f.userData.core; if (core) core.scale.set(1, 0.85 + 0.15 * Math.sin(t * 13 + i), 1); });
       B.fireLights.forEach((L, i) => { L.intensity = 6 * (0.86 + 0.1 * Math.sin(t * 11 + i * 2) + 0.06 * Math.sin(t * 23 + i)); });
       const c = camFor(B, shot, t);
-      return { scene: B.scene, sun: B.sun, bill, focus: c.focus, aperture: c.ap, maxR: 6, fgScale: 1.3, exposure: 1.06, sat: 1.04, bloom: 0.12 };
+      for (const [pid, o] of Object.entries(B.props)) anchors[pid] = anchors[pid] || [o.position.x, 0.6, o.position.z];
+      return { scene: B.scene, sun: B.sun, bill, anchors, focus: c.focus, aperture: c.ap, maxR: 6, fgScale: 1.3, exposure: 1.06, sat: 1.04, bloom: 0.12 };
     },
   };
 })();

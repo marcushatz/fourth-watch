@@ -98,6 +98,7 @@
     bloom(ctx, r.bloom ?? 0.15);
     if (r.post) r.post(ctx, t, P);
     (r.tags || []).forEach((tg) => { const p = P(tg.p); TX.tag(ctx, tg.text, p[0], p[1], tg.k, { dy: tg.dy ?? -110, dx: tg.dx ?? 0, sub: tg.sub, a: tg.a ?? 1 }); });
+    if (shot.pops && globalThis.POPS) globalThis.POPS.draw(ctx, t, shot, r, P, W, H);   // the pop-up layer (fw/pops.js); inert without shot.pops
     return r;
   }
 
