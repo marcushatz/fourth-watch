@@ -2,7 +2,7 @@
 import subprocess, sys
 from PIL import Image, ImageDraw
 V57 = "../../film27/out/fourth-watch-ep1-samson-v57-final.mp4"
-SD = sys.argv[1]; T0 = 103.75
+SD = sys.argv[1]; T0 = 103.766667
 times = [104.2, 105.8, 107.0, 107.9, 109.1, 110.0, 110.5, 111.3, 112.6, 113.8, 114.9, 116.1]
 def grab(src, t, off=0.0):
     out = f"/tmp/claude-0/-home-claude/704396e5-86ac-5e4b-9e33-55e23daaa2f5/scratchpad/g_{abs(hash((src,t)))}.png"

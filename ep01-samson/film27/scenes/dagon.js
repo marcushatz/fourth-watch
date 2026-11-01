@@ -217,7 +217,7 @@
     const tH = b.house, tF = b.fell;
     return {
       s29, s30, t0: s29.t0, blind: s29.beats.blind, prayed: s29.beats.prayed, remember: s29.beats.remember, strengthen: s29.beats.strengthen,
-      called: b.called, answered: b.answered, tH, tF, end: sdEnd || s30.t1, grip: b.grip ?? b.answered - 0.75,
+      called: b.called, answered: b.answered, tH, tF, end: sdEnd || s30.t1, grip: b.grip ?? b.answered - 0.75, lean0: sdEnd ? b.answered : null,
       push: b.answered + 0.22,                     // he bows with all his strength
       creak: b.answered + 0.55,                    // the pillars begin to creak (dust trickles)
       give: tH - 0.02,                             // the middle pillars give on "house"
@@ -516,12 +516,12 @@
   // a drum's centre at time t (before its release it stands in its pillar, leaning with the strain)
   function strainLean(d, t) {
     if (d.outer) return 0;
-    const k = prog(t, T.creak, T.give, ease.in);
-    return d.s * (0.022 * k + 0.006 * Math.sin(t * 31 + d.s) * k);
+    const k = prog(t, T.lean0 ?? T.creak, T.give, ease.in), amp = T.lean0 != null ? 0.06 : 0.022;   // sd: his push visibly drives the lean
+    return d.s * (amp * k + 0.006 * Math.sin(t * 31 + d.s) * k);
   }
   function drumPos(d, t) {
     const lean = strainLean(d, Math.min(t, d.rel));
-    const shove = d.outer ? 0 : d.s * 0.03 * prog(Math.min(t, d.rel), T.creak, T.give, ease.in) * (1 - Math.abs(d.k - 3) / 4);
+    const shove = d.outer ? 0 : d.s * (T.lean0 != null ? 0.07 : 0.03) * prog(Math.min(t, d.rel), T.lean0 ?? T.creak, T.give, ease.in) * (1 - Math.abs(d.k - 3) / 4);
     const bx = d.x + Math.sin(lean) * (d.y0 - H_BASE) + shove, by = H_BASE + (d.y0 - H_BASE) * Math.cos(lean);
     const u = t - d.rel; if (u <= 0) return [bx, by, PZ];
     const ul = Math.min(u, d.land), slide = Math.max(0, u - d.land);
@@ -722,7 +722,11 @@
   // ---- Story Director variants: the set publishes named camera marks; each sd shot is a path through them (fw/direct.js) ----
   const MARKS = {
     samHigh:  { p: [0.15, 3.1, 4.6],  l: [0.05, 1.25, -0.3], f: 36, sh: 0.06 },   // MS, high: small between the two middle pillars
-    hands:    { p: [0.0, 1.05, 2.05], l: [0.0, 1.6, -0.3],   f: 64, sh: 0.0 },   // MCU, low: two hands, two posts (the hook's rhyme)
+    hands:    { p: [0.0, 1.05, 2.05], l: [0.0, 1.6, -0.3],   f: 64, sh: 0.0 },
+    twoPosts: { p: [0.0, 0.75, 3.7],  l: [0.0, 1.75, -0.3],  f: 50, sh: 0.0 },     // low MS: his whole body and both pillars (muted test fix 1)
+    underLow: { p: [-0.55, 0.42, 3.0], l: [0.05, 1.6, -0.3], f: 50, sh: 0.0 },     // low, him in frame ... 
+    underUp:  { p: [-0.55, 0.42, 3.0], l: [0.25, 3.3, -0.3], f: 50, sh: 0.0 },     // ... craned to the capitals and the roof crowd (fix 3)
+    hallWS:   { p: [-0.3, 2.0, 9.6],  l: [0.1, 2.4, -0.4],   f: 38, sh: 0.06 },    // WS: he stays a third of the frame as the house goes (fix 2)   // MCU, low: two hands, two posts (the hook's rhyme)
     pillarLo: { p: [0.3, 0.3, 1.15], l: [0.72, 1.5, -0.3],  f: 52, sh: 0 },      // low, in front of the right pillar at his hand
     pillarUp: { p: [0.3, 0.3, 1.15], l: [0.8, 3.95, -0.3],  f: 52, sh: 0 },      // ... craned up to the capital and the roof edge
     hallWide: { p: [-0.45, 2.0, 16.6], l: [0.2, 2.75, -0.5], f: 38, sh: 0.11 },   // XWS: the whole house, the roof crowd
@@ -731,10 +735,10 @@
   function sdCam(t, shot) {
     const M = (n, m) => DIRECT.mark(MARKS, n, m);
     let keys, focusP = [0, 1.3, 0], ap = 4.6, shake = [0, 0];
-    if (shot.v === 'sdA') keys = [{ t: shot.t0, ...M('samHigh') }, { t: shot.t1, ...M('samHigh', { push: 0.04 }), ease: 'inOut' }];
-    else if (shot.v === 'sdB') { keys = [{ t: shot.t0, ...M('hands') }]; focusP = [0, 1.5, -0.3]; ap = 5; }
-    else if (shot.v === 'sdC') { const c0 = shot.t0 + 0.15; keys = [{ t: c0, ...M('pillarLo') }, { t: c0 + 1.2, ...M('pillarUp'), ease: 'inOut' }]; focusP = [0.8, 2.5, -0.3]; ap = 4; }
-    else if (shot.v === 'sdD') { keys = [{ t: T.give, ...M('hallWide') }, { t: T.land + 2.2, ...M('hallWide', { push: -0.08 }), ease: 'out' }]; shake = DIRECT.shake(t, T.land, 12, 0.45); focusP = [0, 1.4, 0]; ap = 4; }
+    if (shot.v === 'sdA') keys = [{ t: shot.t0, ...M('samHigh') }, { t: T.called, ...M('samHigh', { push: 0.02 }), ease: 'linear' }, { t: shot.t1, ...M('samHigh', { push: 0.11 }), ease: 'inOut' }];   // story push on "asked"
+    else if (shot.v === 'sdB') { keys = [{ t: shot.t0, ...M('twoPosts') }]; focusP = [0, 1.4, -0.3]; ap = 4.5; }
+    else if (shot.v === 'sdC') { const c0 = shot.t0 + 0.12; keys = [{ t: c0, ...M('underLow') }, { t: c0 + 1.1, ...M('underUp'), ease: 'inOut' }]; focusP = [0.2, 2.2, -0.3]; ap = 3.6; }
+    else if (shot.v === 'sdD') { keys = [{ t: T.give, ...M('hallWS') }, { t: T.land + 2.2, ...M('hallWS', { push: -0.12 }), ease: 'out' }]; shake = DIRECT.shake(t, T.land, 12, 0.45); focusP = [0, 1.4, 0]; ap = 4; }
     else { keys = [{ t: shot.t0, ...M('stumps') }, { t: shot.t1 + 1.5, ...M('stumps', { push: 0.03 }), ease: 'linear' }]; focusP = [0, 0.8, -0.3]; ap = 3.5; }
     DIRECT.applyCam(cam, DIRECT.path(t, keys), W, H, shake);
     const focus = new THREE.Vector3(...focusP).applyMatrix4(cam.matrixWorldInverse).z * -1;
