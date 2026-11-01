@@ -1,16 +1,16 @@
 {
   "kind": "script",
-  "verdict": "FAIL",
+  "verdict": "PASS WITH WARNINGS",
   "counts": {
-    "FAIL": 1,
-    "WARN": 18,
-    "PASS": 12
+    "FAIL": 0,
+    "WARN": 12,
+    "PASS": 11
   },
   "facts": {
     "title": "Why did God \"hate\" Esau and love Jacob, the liar?",
     "series": "ASK THE TEXT",
-    "VO words": 223,
-    "estimated runtime": "78.7s at 170 wpm"
+    "VO words": 240,
+    "estimated runtime": "84.7s at 170 wpm"
   },
   "items": [
     {
@@ -26,12 +26,17 @@
     {
       "level": "WARN",
       "check": "runtime",
-      "msg": "estimated 79s; target 85–135s for ASK THE TEXT"
+      "msg": "estimated 85s; target 85–135s for ASK THE TEXT"
     },
     {
       "level": "WARN",
       "check": "dialogue",
       "msg": "quoted words with no reference (invented dialogue?): 'Why did God \"hate\" Esau and love Jacob, the liar?'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'always' — make sure the text really says this: 'So does God hate Esau? His nation did face judgment. But in the Bible, \"hated\" d'"
     },
     {
       "level": "WARN",
@@ -44,14 +49,9 @@
       "msg": "answer stated in the Turn/Landing: '\"Hated\" here means \"not chosen\": God chose Jacob, the brother who didn't deserve it, to carry his promise, and Esau was not thrown away.'"
     },
     {
-      "level": "WARN",
-      "check": "value",
-      "msg": "this Value item is never spoken in the VO, so the viewer never learns it: '\"Hated\" can mean \"loved less\": Jacob \"loved Rachel more than Leah,\" and the next'"
-    },
-    {
       "level": "PASS",
       "check": "value",
-      "msg": "3 things the viewer learns, each with a verse and each said in the VO"
+      "msg": "4 things the viewer learns, each with a verse and each said in the VO"
     },
     {
       "level": "PASS",
@@ -59,19 +59,19 @@
       "msg": "landing echoes the hook"
     },
     {
-      "level": "PASS",
+      "level": "WARN",
       "check": "turn",
-      "msg": "the Turn starts about 22s in (Lintel's top six turn at 14–25 s, after at most ~14 s of story)"
+      "msg": "the Turn starts about 26s in (Lintel's top six turn at 14–25 s, after at most ~14 s of story)"
     },
     {
       "level": "PASS",
       "check": "story share",
-      "msg": "the Story section is 11% of the words (Marcus's cap ~40%; the hits retell 0–5%, the top six spend 0–21% on any story). Count story lines in other sections by hand"
+      "msg": "the Story section is 15% of the words (Marcus's cap ~40%; the hits retell 0–5%, the top six spend 0–21% on any story). Count story lines in other sections by hand"
     },
     {
       "level": "PASS",
       "check": "answer timing",
-      "msg": "the core answer starts at about 28% of the runtime (top six 33–50%; the question-video lows 59–82%)"
+      "msg": "the core answer starts at about 31% of the runtime (top six 33–50%; the question-video lows 59–82%)"
     },
     {
       "level": "PASS",
@@ -94,29 +94,14 @@
       "msg": "every line adds at least one new key word or quote"
     },
     {
-      "level": "FAIL",
+      "level": "WARN",
       "check": "fact-check",
-      "msg": "claim not verified: '(v7 rebuild: pending the fact-check)' (status: 'pending')"
+      "msg": "[Malachi 1:2-4] is cited in the VO but not in the fact-check log"
     },
     {
       "level": "WARN",
       "check": "fact-check",
-      "msg": "[Genesis 25:22-23] is cited in the VO but not in the fact-check log"
-    },
-    {
-      "level": "WARN",
-      "check": "fact-check",
-      "msg": "[Romans 9:10-13] is cited in the VO but not in the fact-check log"
-    },
-    {
-      "level": "WARN",
-      "check": "fact-check",
-      "msg": "[Malachi 1:2-3; Genesis 29:30-31] is cited in the VO but not in the fact-check log"
-    },
-    {
-      "level": "WARN",
-      "check": "fact-check",
-      "msg": "[Genesis 27:19, 27:35-36] is cited in the VO but not in the fact-check log"
+      "msg": "[Malachi 1:2-4; Genesis 29:30-31] is cited in the VO but not in the fact-check log"
     },
     {
       "level": "WARN",
@@ -126,42 +111,17 @@
     {
       "level": "WARN",
       "check": "fact-check",
-      "msg": "[Genesis 28:13-14; Matthew 1:2] is cited in the VO but not in the fact-check log"
-    },
-    {
-      "level": "WARN",
-      "check": "fact-check",
       "msg": "[Genesis 27:1, 27:18-29, 27:35] is cited in the VO but not in the fact-check log"
     },
     {
       "level": "WARN",
       "check": "fact-check",
-      "msg": "[Genesis 31:41; 32:7; 33:4] is cited in the VO but not in the fact-check log"
+      "msg": "[Genesis 28:4, 28:13-14; Matthew 1:2, 1:16] is cited in the VO but not in the fact-check log"
     },
     {
       "level": "WARN",
       "check": "fact-check",
-      "msg": "[Genesis 33:10] is cited in the VO but not in the fact-check log"
-    },
-    {
-      "level": "WARN",
-      "check": "fact-check",
-      "msg": "[Romans 9:11-16] is cited in the VO but not in the fact-check log"
-    },
-    {
-      "level": "WARN",
-      "check": "fact-check",
-      "msg": "[Malachi 1:2-3; Romans 9:11-16; Genesis 28:14; 33:10] is cited in the VO but not in the fact-check log"
-    },
-    {
-      "level": "WARN",
-      "check": "fact-check",
-      "msg": "[Genesis 29:30-31] is cited in the VO but not in the fact-check log"
-    },
-    {
-      "level": "WARN",
-      "check": "fact-check",
-      "msg": "[Malachi 1:2-4] is cited in the VO but not in the fact-check log"
+      "msg": "[Genesis 25:22-23] is cited in the VO but not in the fact-check log"
     },
     {
       "level": "WARN",
