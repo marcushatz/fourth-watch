@@ -210,31 +210,38 @@ The engine (`ep01-samson/film27/`) and the voice takes exist only in this worksp
 - **What I do with it:** run it through the same pace, loudness and alignment checks, and put it next to the ElevenLabs take.
 - **How to decide:** if you like how you sound, switch. If not, keep the AI voice; the label is a small cost.
 
-### 17. A question most people have about Christianity (you asked, Oct 31)
+### 17. Ep 3 "What is the unforgivable sin?": approve the script (you picked card C, Oct 31 23:34)
 
-**Is it worth it?** Yes. All three Lintel hits answer a broad question people already have:
-- "Why didn't God remove the tree?" (7.6M);
-- "Where did Cain's wife come from?" (1.8M);
-- "What happens to people who never heard of Jesus?" (1.6M).
+**Where it stands:** the script is `ep03-unforgivable-sin/episode.md` (= `episode_v5_draft.md`). It went through every check:
+- **Two review rounds:** an AI fact-checker, a simulated viewer, an AI editor and an AI director; replies and merge logs in `qa/round1–2/`.
+- **Three AI fact-check passes**, every line VERIFIED.
+- **`fw_check.py`:** 0 FAIL.
 
-**The caveat:** two of the lows are broad questions too (hell, 194K; "show Himself", 75K). So the question opens the door; the text's answer still has to land.
+**Judge panel:** 7, 7, 7, GOOD ENOUGH (`qa/judge_run2/`).
+- Question pull is 5/5, the first of our scripts to get it.
+- 251 words, about 88–101 s.
 
-**Pick one** (Stage 1). The quotes below are the ESV as I know it, and get fact-checked when the script is written.
+**The full narration:**
+> What is the unforgivable sin?
+> In Matthew 12, Jesus said one sin "will not be forgiven, either in this age or in the age to come." Many people fear they've done it by accident.
+> But look at what had just happened. Jesus healed a demon-oppressed man who was blind and mute, and the Pharisees said he cast out demons only by "Beelzebul, the prince of demons."
+> Then came the warning, and it starts with forgiveness: "every sin and blasphemy will be forgiven people." *(verse card: Matthew 12:31)*
+> Even words against Jesus himself: "whoever speaks a word against the Son of Man will be forgiven."
+> Mark tells the same scene and says why Jesus warned them: they were saying Jesus "has an unclean spirit."
+> But Jesus said he cast out demons "by the Spirit of God." So they were giving the devil credit for the Spirit's work.
+> Christians read it two main ways: knowingly calling the Spirit's clear work evil, as those men were doing, or a final, lifelong refusal of the Spirit's call to repent. Either way, it isn't something done by accident.
+> So what is the unforgivable sin? In the text, it's tied to what those men were doing: calling the Spirit's work the devil's.
+> And even Paul, once "a blasphemer, persecutor, and insolent opponent," wrote, "But I received mercy because I had acted ignorantly in unbelief…"
+> What surprised you more: that the warning starts with forgiveness, or Jesus forgiving words against himself?
 
-**A. "Why doesn't God answer every prayer?"** (recommended for Ep 3: evergreen, and everyone has the question)
-- **The text's answer:** even Jesus asked, "My Father, if it be possible, let this cup pass from me; nevertheless, not as I will, but as you will" (Matt 26:39). Hours later he said, "shall I not drink the cup that the Father has given me?" (John 18:11).
-- **Paul too:** "Three times I pleaded with the Lord about this", and the reply he records is "My grace is sufficient for you, for my power is made perfect in weakness" (2 Cor 12:8–9).
-- **The turn:** the two people in the New Testament who prayed hardest for something to be taken away both had it stay. In Paul's case the text gives the reason.
+**One open choice: the closing question.** Two of the three judges wanted it aimed at the fear the hook raises, not at "which detail surprised you".
 
-**B. "Why did Jesus have to die?"** (the biggest question; best saved for Easter week 2027)
-- **His own words:** "to give his life as a ransom for many" (Mark 10:45).
-- **Not a surprise to him:** he said it was coming three times (Mark 8:31, 9:31, 10:33–34).
-- **The turn:** "No one takes it from me, but I lay it down of my own accord" (John 10:18). He wasn't caught; he walked toward it.
+| | Exact words | Words | Status |
+|---|---|---|---|
+| **A** (in the script) | What surprised you more: that the warning starts with forgiveness, or Jesus forgiving words against himself? | 16 | Fact-checked and judged |
+| B | Did you ever worry you'd committed it, or is this the first you've heard of it? | 16 | Not judged; no Bible claim to check |
 
-**C. "What is the unforgivable sin?"** (heavily searched and frightening; needs the most care)
-- **The setup:** the passage starts with "all sins will be forgiven the children of man" (Mark 3:28).
-- **The turn:** Mark gives the reason Jesus said it: "for they were saying, 'He has an unclean spirit'" (Mark 3:30). They had called the Spirit's work Satan's.
-- **The care it needs:** name the main views in one line, and never frighten a viewer who fears they've done it.
+**After you approve:** the shot list. The AI director's 20-shot storyboard ("a ledger of sins being stamped FORGIVEN") is the starting point (`qa/round1/D_director.md`).
 
 ### 15. The script check now judges value (Round 18): nothing to decide, but read the limit
 

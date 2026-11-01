@@ -1,0 +1,464 @@
+{
+ "calibration": {
+  "reference_reels": 9,
+  "judge_replies": 3,
+  "by_field": {
+   "hook": {
+    "spearman": 0.58,
+    "lowest_hit": 4,
+    "best_low": 4,
+    "separates": false
+   },
+   "payoff": {
+    "spearman": 0.6,
+    "lowest_hit": 3,
+    "best_low": 3,
+    "separates": false
+   },
+   "new_value": {
+    "spearman": 0.42,
+    "lowest_hit": 2,
+    "best_low": 3,
+    "separates": false
+   },
+   "proof": {
+    "spearman": 0.32,
+    "lowest_hit": 2,
+    "best_low": 4,
+    "separates": false
+   },
+   "momentum": {
+    "spearman": 0.32,
+    "lowest_hit": 2,
+    "best_low": 3,
+    "separates": false
+   },
+   "clarity": {
+    "spearman": 0.26,
+    "lowest_hit": 3,
+    "best_low": 4,
+    "separates": false
+   },
+   "takeaway": {
+    "spearman": 0.52,
+    "lowest_hit": 3,
+    "best_low": 4,
+    "separates": false
+   },
+   "ending": {
+    "spearman": 0.1,
+    "lowest_hit": 2,
+    "best_low": 3,
+    "separates": false
+   },
+   "question_pull": {
+    "spearman": 0.58,
+    "lowest_hit": 4,
+    "best_low": 5,
+    "separates": false
+   },
+   "overall": {
+    "spearman": 0.31,
+    "lowest_hit": 4,
+    "best_low": 6,
+    "separates": false
+   }
+  },
+  "overall_predicts_views": false,
+  "craft_bar_best_reference_overall": 7
+ },
+ "scripts": [
+  {
+   "kind": "ours",
+   "name": "ep03-unforgivable-sin/episode_v5_draft.md",
+   "views": null,
+   "sha": "b393f3f094d0b378",
+   "n": 3,
+   "judges": [
+    "judge_run2/judge_A",
+    "judge_run2/judge_B",
+    "judge_run2/judge_C"
+   ],
+   "hook": 4,
+   "payoff": 4,
+   "new_value": 4,
+   "proof": 5,
+   "momentum": 4,
+   "clarity": 3,
+   "takeaway": 4,
+   "ending": 3,
+   "question_pull": 5,
+   "overall": 7,
+   "overall_mean": 7,
+   "overall_each": [
+    7,
+    7,
+    7
+   ],
+   "dead_lines": 2,
+   "weakest": [
+    "In the text, it's tied to what those men were doing: calling the Spirit's work the devil's.",
+    "In the text, it's tied to what those men were doing: calling the Spirit's work the devil's.",
+    "So what is the unforgivable sin?"
+   ],
+   "fixes": [
+    "Cut the recap before the Paul quote, and end on a question about the viewer's real fear (whether they could have done it by accident), not a quiz about which detail surprised them.",
+    "Replace the quiz-style closing question with one aimed at the fear raised in the hook, and let Paul's mercy line be the final beat with its point stated plainly.",
+    "Sharpen the hook into a specific puzzle (Jesus said one sin will never be forgiven, and he said it to men who had just watched him heal a blind, mute man). Simplify the dense middle so the Mark 3 'unclean spirit' explanation lands as the clear payoff."
+   ],
+   "why": [],
+   "verdict": "GOOD ENOUGH"
+  },
+  {
+   "kind": "ref",
+   "name": "Was Judas a bad person?",
+   "views": 338000,
+   "sha": "df967def02fb0dd8",
+   "n": 3,
+   "judges": [
+    "judge_run2/judge_A",
+    "judge_run2/judge_B",
+    "judge_run2/judge_C"
+   ],
+   "hook": 4,
+   "payoff": 4,
+   "new_value": 4,
+   "proof": 4,
+   "momentum": 3,
+   "clarity": 4,
+   "takeaway": 3,
+   "ending": 4,
+   "question_pull": 4,
+   "overall": 7,
+   "overall_mean": 6.67,
+   "overall_each": [
+    7,
+    7,
+    6
+   ],
+   "dead_lines": 3,
+   "weakest": [
+    "Life works the same way.",
+    "Life works the same way.",
+    "Life works the same way."
+   ],
+   "fixes": [
+    "Cut the colleague-and-job analogy and use that time to sharpen the Peter-versus-Judas contrast, which is the real payoff.",
+    "Cut the colleague-and-job analogy and spend that time on Judas returning the silver (Matthew 27:3-5) to sharpen the contrast with Peter.",
+    "Drop the colleague-lies analogy and use that time on the Peter vs Judas contrast (both failed that night, only one came back). That is the real payoff and it sets up the closing question."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "Where did Cain's wife come from?",
+   "views": 1800000,
+   "sha": "11db0ce5967ec686",
+   "n": 3,
+   "judges": [
+    "judge_run2/judge_A",
+    "judge_run2/judge_B",
+    "judge_run2/judge_C"
+   ],
+   "hook": 5,
+   "payoff": 4,
+   "new_value": 4,
+   "proof": 4,
+   "momentum": 4,
+   "clarity": 4,
+   "takeaway": 4,
+   "ending": 2,
+   "question_pull": 5,
+   "overall": 7,
+   "overall_mean": 6.67,
+   "overall_each": [
+    7,
+    6,
+    7
+   ],
+   "dead_lines": 2,
+   "weakest": [
+    "So the next time someone asks you where Cain's wife came from, you'll know what to say.",
+    "So the next time someone asks you where Cain's wife came from, you'll know what to say.",
+    "So the next time someone asks you where Cain's wife came from, you'll know what to say."
+   ],
+   "fixes": [
+    "Replace the 'you'll know what to say' close with a real question that invites a response, and briefly address the obvious genetics objection.",
+    "Replace the closing line with a real question that invites viewers to respond, instead of a 'now you know' wrap-up.",
+    "Replace the flat closing line with an ending that lands on the 'one blood, one family' idea and invites a real response, such as a question about the discomfort viewers feel with the answer."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "Why doesn't God show Himself?",
+   "views": 75000,
+   "sha": "65d04414ff1cbb19",
+   "n": 3,
+   "judges": [
+    "judge_run2/judge_A",
+    "judge_run2/judge_B",
+    "judge_run2/judge_C"
+   ],
+   "hook": 3,
+   "payoff": 3,
+   "new_value": 3,
+   "proof": 3,
+   "momentum": 3,
+   "clarity": 3,
+   "takeaway": 4,
+   "ending": 3,
+   "question_pull": 5,
+   "overall": 6,
+   "overall_mean": 5.67,
+   "overall_each": [
+    6,
+    6,
+    5
+   ],
+   "dead_lines": 2,
+   "weakest": [
+    "And if you're here to stand for God's word, welcome to the Valiant.",
+    "And if you're here to stand for God's word, welcome to the Valiant.",
+    "And if you're here to stand for God's word, welcome to the Valiant."
+   ],
+   "fixes": [
+    "Cut the stack of quotes down to the golden calf plus one line from Jesus, and drop the channel tag so the closing question lands last.",
+    "Drop one of the borrowed authorities (Kierkegaard or Pascal) and let the golden calf at the foot of Sinai carry the answer, with the text quoted.",
+    "Open on the concrete puzzle instead of the abstract question: Israel watched the sea split and heard God at Sinai, then built a golden calf within weeks. Then trim the philosopher name-drops so the Exodus evidence carries the answer."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "Why do we hide from God after we sin?",
+   "views": 48000,
+   "sha": "cf666b26d2a222af",
+   "n": 3,
+   "judges": [
+    "judge_run2/judge_A",
+    "judge_run2/judge_B",
+    "judge_run2/judge_C"
+   ],
+   "hook": 2,
+   "payoff": 3,
+   "new_value": 2,
+   "proof": 4,
+   "momentum": 3,
+   "clarity": 4,
+   "takeaway": 2,
+   "ending": 3,
+   "question_pull": 2,
+   "overall": 5,
+   "overall_mean": 5,
+   "overall_each": [
+    5,
+    5,
+    5
+   ],
+   "dead_lines": 2,
+   "weakest": [
+    "Why do we hide away?",
+    "Why do we hide away?",
+    "Why do we hide away?"
+   ],
+   "fixes": [
+    "Open on the specific puzzle (why God asked Adam 'Where art thou?' when He already knew) instead of a vague sermon question aimed at the viewer's own failings.",
+    "Open on the puzzle in the text ('Why did God ask Adam where he was if He already knew?') instead of a devotional 'why do we hide' aimed at the viewer.",
+    "Lead with the textual puzzle instead of a sermon to 'we': why would an all-knowing God ask Adam 'Where art thou?' Then drop the assumptions about the viewer skipping church and avoiding their Bible."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "What if Adam and Eve never ate from the tree?",
+   "views": 35000,
+   "sha": "10dcac76d23598b7",
+   "n": 3,
+   "judges": [
+    "judge_run2/judge_A",
+    "judge_run2/judge_B",
+    "judge_run2/judge_C"
+   ],
+   "hook": 3,
+   "payoff": 3,
+   "new_value": 3,
+   "proof": 3,
+   "momentum": 3,
+   "clarity": 4,
+   "takeaway": 3,
+   "ending": 3,
+   "question_pull": 3,
+   "overall": 5,
+   "overall_mean": 5,
+   "overall_each": [
+    6,
+    5,
+    4
+   ],
+   "dead_lines": 2,
+   "weakest": [
+    "Work in that world would feel like tending something you love.",
+    "But death was only the first thing to change.",
+    "Work in that world would feel like tending something you love."
+   ],
+   "fixes": [
+    "Ground each speculative claim in a specific Genesis detail, drop the lines that assume the viewer prays, and cut the channel sign-off.",
+    "Anchor the answer in the tree of life (Genesis 3:22) so the text itself says what they would have had, turning speculation into an earned 'oh'.",
+    "Replace speculation with text: anchor each change in a Genesis detail viewers miss (for example the tree of life and why access to it was cut off), so the answer is earned rather than imagined."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "What happens to people who never heard of Jesus?",
+   "views": 1600000,
+   "sha": "20977421391b44f7",
+   "n": 3,
+   "judges": [
+    "judge_run2/judge_A",
+    "judge_run2/judge_B",
+    "judge_run2/judge_C"
+   ],
+   "hook": 4,
+   "payoff": 3,
+   "new_value": 3,
+   "proof": 4,
+   "momentum": 2,
+   "clarity": 3,
+   "takeaway": 3,
+   "ending": 2,
+   "question_pull": 5,
+   "overall": 5,
+   "overall_mean": 5,
+   "overall_each": [
+    6,
+    5,
+    4
+   ],
+   "dead_lines": 4,
+   "weakest": [
+    "People ask this in our comments all the time.",
+    "So, let's allow the Bible to answer it.",
+    "So, let's allow the Bible to answer it."
+   ],
+   "fixes": [
+    "Build the whole video around Cornelius as the single strongest answer and drop the three-part signposting so it fits short-form.",
+    "Build one answer around Cornelius (Acts 10) and drop the Sodom detour and the survey of Christian views so a single clear payoff lands.",
+    "Cut the three-answer list down to Cornelius as the single proof (a man who never heard, and God sent the gospel to his door). End on a question a non-believer could answer too, instead of assuming the viewer was told about Jesus by someone."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "Why didn't God remove the tree?",
+   "views": 7600000,
+   "sha": "8b6c5392a652d5cb",
+   "n": 3,
+   "judges": [
+    "judge_run2/judge_A",
+    "judge_run2/judge_B",
+    "judge_run2/judge_C"
+   ],
+   "hook": 4,
+   "payoff": 3,
+   "new_value": 2,
+   "proof": 2,
+   "momentum": 3,
+   "clarity": 4,
+   "takeaway": 3,
+   "ending": 3,
+   "question_pull": 4,
+   "overall": 4,
+   "overall_mean": 4.33,
+   "overall_each": [
+    5,
+    4,
+    4
+   ],
+   "dead_lines": 3,
+   "weakest": [
+    "So God gave us free will, and He tells us plainly which way to choose.",
+    "So God gave us free will, and He tells us plainly which way to choose.",
+    "So God gave us free will, and He tells us plainly which way to choose."
+   ],
+   "fixes": [
+    "Replace the generic free-will argument with evidence from Genesis itself (what the text says about the tree and the command) so the answer is earned, not asserted.",
+    "Prove it from Genesis 2: God freely gave 'every tree of the garden' and forbade only one, a real choice inside abundance, instead of the hypothetical steal/covet argument.",
+    "Ground the answer in Genesis instead of hypotheticals. For example, show that the tree of life stood in the garden too and that God gave a clear command and warning, so the free-choice point is shown from the text rather than argued."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "If God is love, why is there a hell?",
+   "views": 194000,
+   "sha": "1051c206f864fc61",
+   "n": 3,
+   "judges": [
+    "judge_run2/judge_A",
+    "judge_run2/judge_B",
+    "judge_run2/judge_C"
+   ],
+   "hook": 3,
+   "payoff": 3,
+   "new_value": 2,
+   "proof": 3,
+   "momentum": 2,
+   "clarity": 3,
+   "takeaway": 3,
+   "ending": 3,
+   "question_pull": 5,
+   "overall": 4,
+   "overall_mean": 4,
+   "overall_each": [
+    5,
+    4,
+    3
+   ],
+   "dead_lines": 3,
+   "weakest": [
+    "Some Christians also wonder about this question sometimes.",
+    "Some Christians also wonder about this question sometimes.",
+    "Some Christians also wonder about this question sometimes."
+   ],
+   "fixes": [
+    "Answer the 'forever' half of the hook directly instead of only explaining why hell exists, and fix the muddled first/second/then/third structure.",
+    "Build the whole video on Matthew 25:41 ('prepared for the devil and his angels') as the surprising answer and drop the First/Second/Then/Third list.",
+    "Drop the muddled First/Second/Then/Third list and deal directly with the hardest part of the hook (why 'forever'), using one specific text, rather than stringing familiar invitation verses together."
+   ]
+  },
+  {
+   "kind": "ref",
+   "name": "Why blood on a doorway? (Exodus 12)",
+   "views": 33000,
+   "sha": "2689e2d26b4993d0",
+   "n": 3,
+   "judges": [
+    "judge_run2/judge_A",
+    "judge_run2/judge_B",
+    "judge_run2/judge_C"
+   ],
+   "hook": 4,
+   "payoff": 1,
+   "new_value": 1,
+   "proof": 1,
+   "momentum": 2,
+   "clarity": 3,
+   "takeaway": 2,
+   "ending": 1,
+   "question_pull": 3,
+   "overall": 2,
+   "overall_mean": 2.33,
+   "overall_each": [
+    2,
+    3,
+    2
+   ],
+   "dead_lines": 5,
+   "weakest": [
+    "Because it was the only thing standing between a family and death.",
+    "Because it was the only thing standing between a family and death.",
+    "Because it was the only thing standing between a family and death."
+   ],
+   "fixes": [
+    "Actually answer the hook (what the lamb's blood meant and why a doorway) instead of spending most of the runtime retelling the Exodus backstory.",
+    "Actually answer the hook: show the lamb died in the firstborn's place (Exodus 12:13, 'when I see the blood, I will pass over you') and cut the Moses backstory recap.",
+    "Actually answer the hook: cut the Moses backstory and show from Exodus 12 why blood (a lamb dying in the firstborn's place, 'when I see the blood, I will pass over you') instead of a circular answer and a channel plug."
+   ]
+  }
+ ]
+}
