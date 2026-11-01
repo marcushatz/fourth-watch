@@ -1,0 +1,107 @@
+{
+  "kind": "script",
+  "verdict": "PASS WITH WARNINGS",
+  "counts": {
+    "FAIL": 0,
+    "WARN": 6,
+    "PASS": 12
+  },
+  "facts": {
+    "title": "Why did God \"hate\" Esau and love Jacob, the liar?",
+    "series": "ASK THE TEXT",
+    "VO words": 238,
+    "estimated runtime": "84.0s at 170 wpm"
+  },
+  "items": [
+    {
+      "level": "PASS",
+      "check": "series",
+      "msg": "ASK THE TEXT"
+    },
+    {
+      "level": "PASS",
+      "check": "hook",
+      "msg": "first VO line equals the title"
+    },
+    {
+      "level": "WARN",
+      "check": "runtime",
+      "msg": "estimated 84s; target 85–135s for ASK THE TEXT"
+    },
+    {
+      "level": "WARN",
+      "check": "dialogue",
+      "msg": "quoted words with no reference (invented dialogue?): 'Why did God \"hate\" Esau and love Jacob, the liar?'"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'all' — make sure the text really says this: 'Chosen for what? In Genesis, to carry the promise God gave his grandfather Abrah'"
+    },
+    {
+      "level": "PASS",
+      "check": "answer",
+      "msg": "answer stated in the Turn/Landing: '\"Esau I hated\" means God chose Jacob to carry the promise, not that Jacob was better.'"
+    },
+    {
+      "level": "PASS",
+      "check": "value",
+      "msg": "6 things the viewer learns, each with a verse and each said in the VO"
+    },
+    {
+      "level": "PASS",
+      "check": "loop",
+      "msg": "landing echoes the hook"
+    },
+    {
+      "level": "PASS",
+      "check": "turn",
+      "msg": "the Turn starts about 18s in (Lintel's top six turn at 14–25 s, after at most ~14 s of story)"
+    },
+    {
+      "level": "PASS",
+      "check": "story share",
+      "msg": "the Story section is 7% of the words (Marcus's cap ~40%; the hits retell 0–5%, the top six spend 0–21% on any story). Count story lines in other sections by hand"
+    },
+    {
+      "level": "PASS",
+      "check": "answer timing",
+      "msg": "the core answer starts at about 50% of the runtime (top six 33–50%; the question-video lows 59–82%)"
+    },
+    {
+      "level": "PASS",
+      "check": "echo",
+      "msg": "the hook comes back after 70% of the runtime (62% of its key words in one line). All three hits re-ask it in its own words at 82–89%, then answer it in one line"
+    },
+    {
+      "level": "PASS",
+      "check": "you lines",
+      "msg": "0 sentences speak to 'you' outside quotes (top six 1–3; the reels with 5–9 were all lows). Never describe the viewer's conduct"
+    },
+    {
+      "level": "PASS",
+      "check": "repetition",
+      "msg": "no 3-word phrase is said 3 or more times"
+    },
+    {
+      "level": "PASS",
+      "check": "nothing new",
+      "msg": "every line adds at least one new key word or quote"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Genesis 12:3; 28:4, 28:13-14] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Genesis 29:31] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "judge",
+      "msg": "not judged: run the blind judge panel before Marcus sees it, then pass --judge <run folder> (tools/script_judge/rubric.md)"
+    }
+  ]
+}

@@ -4,7 +4,10 @@ target_seconds: 105
 answer: "Esau I hated" means God chose Jacob to carry the promise, not that Jacob was better.
 
 <!--
-Ep 4, v5 (Nov 1) = v4 + the final ESV fixes + a third fresh viewer (qa/B_viewer_v4.md: clarity 3/5, value 3/5).
+Ep 4, v6 (Nov 1) = v5 + a fourth fresh viewer (qa/B_viewer_v5.md: value 4/5, clarity 4/5 on "hated isn't hate").
+v6: "twin brother" set up in line 2; the unattributed 29:25 quote cut; Paul quotes "Esau I hated" (not "the same line"); Abraham named as Jacob's grandfather;
+the Deuteronomy/Obadiah pair moved up next to Leah (the "hated" evidence), so the run from the promise to the reunion has no new facts in it; the birthright clause cut (two viewers said it broke the build).
+v5 = v4 + the final ESV fixes + a third fresh viewer (qa/B_viewer_v4.md: clarity 3/5, value 3/5).
 All three viewers asked the same question at the end: "chosen for WHAT?" v5 answers it from Genesis 28:14 (the promise for "all the families of the earth"),
 answers "didn't God still judge Edom?" with Obadiah 10 (for "the violence done to your brother Jacob", next to Deut 23:7's "he is your brother"),
 names Laban, cuts the opening to one sentence (the Malachi reveal by ~8 s), folds "Esau wasn't innocent" into the run to the reunion, and puts Deut 23:7 on a verse card.
@@ -31,34 +34,34 @@ VO: Why did God "hate" Esau and love Jacob, the liar?
 ON-SCREEN: WHY DID GOD "HATE" ESAU AND LOVE JACOB, THE LIAR?
 
 ## Stakes
-VO: Jacob lied to his father, who could not see, and took Esau's blessing. [Genesis 27:1, 27:18-29, 27:35]
+VO: Jacob lied to his father, who could not see, and took his twin brother's blessing. [Genesis 25:24-26; 27:1, 27:18-29, 27:35]
 VO: But "Esau I have hated" isn't in Genesis. [Malachi 1:2-3]
 
 ## Story
 VO: It's from the prophet Malachi, centuries later, about two nations: Israel, from Jacob, and Edom, from Esau. [Malachi 1:1-4]
 
 ## Turn
-VO: In the Bible, "hated" can mean "loved less." Look at Jacob. The deceiver got deceived: his uncle Laban gave him Leah instead of Rachel. "Why then have you deceived me?" [Genesis 28:2; 29:16-25]
-VO: He "loved Rachel more than Leah." The next verse says Leah "was hated." [Genesis 29:30-31]
+VO: In the Bible, "hated" can mean "loved less." The deceiver got deceived: his uncle Laban tricked him into marrying Leah. And Jacob "loved Rachel more than Leah." [Genesis 28:2; 29:16-30]
+VO: The next verse says Leah "was hated." [Genesis 29:31]
 VERSE: "he loved Rachel more than Leah" — Genesis 29:30 (ESV)
-VO: Paul quotes the same line while writing about the twins. The choice came when they "were not yet born and had done nothing either good or bad." [Romans 9:10-13]
-VO: So God chose Jacob, but not because he was better. [Romans 9:11-12]
-VO: Chosen for what? To carry God's promise to Abraham. God told Jacob, "in you and your offspring shall all the families of the earth be blessed." [Genesis 12:3; 28:13-14]
-
-## Landing
 VO: And Esau's people? God told Israel, "You shall not abhor an Edomite, for he is your brother." [Deuteronomy 23:7]
 VERSE: "You shall not abhor an Edomite, for he is your brother." — Deuteronomy 23:7 (ESV)
-VO: When Edom later turned on Jacob's people, God judged it "because of the violence done to your brother Jacob." [Obadiah 10-14]
-VO: Esau had "sold his birthright for a single meal." But twenty years after the trick, Jacob headed home, terrified of Esau. [Hebrews 12:16; Genesis 27:43; 31:41; 32:7, 32:11]
+VO: When Edom later turned on Jacob's people, God condemned it "because of the violence done to your brother Jacob." [Obadiah 1:8-14]
+VO: Paul quotes "Esau I hated" while writing about the twins. The choice came when they "were not yet born and had done nothing either good or bad." [Romans 9:10-13]
+VO: So God chose Jacob, but not because he was better. [Romans 9:11-12]
+VO: Chosen for what? In Genesis, to carry the promise God gave his grandfather Abraham: "in you and your offspring shall all the families of the earth be blessed." [Genesis 12:3; 28:4, 28:13-14]
+
+## Landing
+VO: Twenty years after the trick, Jacob headed home, terrified of Esau. [Genesis 27:43; 31:41; 32:7, 32:11]
 VO: Esau ran to meet him, embraced him, kissed him, and they wept. [Genesis 33:4]
-VO: So why "Esau I hated"? Because God chose Jacob to carry the promise, not because Jacob was better. And the "hated" brother is the one who ran to embrace the liar. [Malachi 1:2-3; Romans 9:10-13; Genesis 28:14; 33:4]
+VO: So why "Esau I hated"? God chose Jacob to carry the promise, not because he was better. And the "hated" brother is the one who ran to embrace the liar. [Malachi 1:2-3; Romans 9:10-13; Genesis 28:14; 33:4]
 
 ## Value
 - "Esau I have hated" isn't in Genesis; it's the prophet Malachi, centuries later, about the nations Israel and Edom [Malachi 1:2-4]
-- The deceiver got deceived: Laban gave Jacob Leah instead of Rachel, and Jacob asked, "Why then have you deceived me?" [Genesis 29:23-25]
+- The deceiver got deceived: his uncle Laban tricked him into marrying Leah [Genesis 29:23-25]
 - The Bible uses "hated" for "loved less": Jacob "loved Rachel more than Leah," and the next verse says Leah "was hated" [Genesis 29:30-31]
 - Jacob was chosen before the twins "had done nothing either good or bad," and chosen to carry a promise for "all the families of the earth" [Romans 9:11-12; Genesis 28:14]
-- Moses' law told Israel, "You shall not abhor an Edomite, for he is your brother"; Edom was later judged for "the violence done to your brother Jacob" [Deuteronomy 23:7; Obadiah 10]
+- Moses' law told Israel, "You shall not abhor an Edomite, for he is your brother"; Edom was later condemned for "the violence done to your brother Jacob" [Deuteronomy 23:7; Obadiah 1:10]
 - Twenty years after the trick, Esau ran to meet the brother who cheated him, embraced him, and they wept [Genesis 31:41; 33:4]
 
 ## Caption
@@ -75,20 +78,21 @@ Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard 
 - Deuteronomy 2:4-5; 23:7
 
 ## Fact-check log
-Every row comes from the AI fact-checker's reports (a fresh agent checking biblehub ESV pages): pass 1 = qa/A_factcheck_v1.md; re-check = the v3 lines; final = the v4 lines (both summarized in qa/A_factcheck_v3_v4.md). "its wording" = its fix used as written.
+Every row comes from the AI fact-checker's reports (a fresh agent checking biblehub ESV pages, resumed for each revision): pass 1 = qa/A_factcheck_v1.md; v3, v4 and v5 checks = qa/A_factcheck_v3_v4.md and qa/A_factcheck_v5.md. "its wording" means its fix was used as written.
 | Claim | Verse | Checked against | Status |
 | --- | --- | --- | --- |
 | Hook: Jacob called "the liar" | Genesis 27:19, 27:24 | pass 1, line 1 | verified |
-| Jacob tricked his father, "who could not see"; Esau "cried out with an exceedingly great and bitter cry" | Genesis 27:1, 27:34 | final, line 1 | verified |
-| "Esau I have hated" isn't in Genesis (Malachi's verb) | Malachi 1:3; Romans 9:13 | pass 1, line 3 (its wording); re-check B | verified |
-| From the prophet Malachi, centuries later, about Israel and Edom, "which God judged" | Malachi 1:1-4 | pass 1, line 4; re-check C; final, line 2 | verified |
-| "Hated" can mean "loved less"; the deceiver got deceived, tricked into marrying Leah: "Why then have you deceived me?" | Genesis 29:16-25 | pass 1, line 5; final, line 3 (its wording) | verified |
-| He "loved Rachel more than Leah"; the next verse says Leah "was hated" (and the verse card) | Genesis 29:30-31 | pass 1, lines 5-6; final, line 4 | verified |
-| Paul quotes the line while writing about the twins; "were not yet born and had done nothing either good or bad" | Romans 9:10-13 | final, line 5 (its wording) | verified |
-| God chose Jacob, but not because he was better; it wasn't a reward | Romans 9:11-12 | final, line 6 | verified |
-| In Moses' law: "You shall not abhor an Edomite, for he is your brother" | Deuteronomy 23:7 | re-check I; final, line 7 | verified |
-| Esau wasn't innocent; he "sold his birthright for a single meal" | Hebrews 12:16; Genesis 25:33-34 | re-check H | verified |
-| Twenty years after the trick, Jacob headed home, terrified of Esau | Genesis 27:43; 31:41; 32:7, 32:11 | re-check J; final, line 8 (its wording) | verified |
-| Esau ran to meet him, embraced him, kissed him, and they wept | Genesis 33:4 | re-check J | verified |
-| Answer: God chose Jacob, not because Jacob was better; "the 'hated' brother" ran to embrace the liar | Malachi 1:2-3; Romans 9:10-13; Genesis 33:4 | re-check K (the "hated brother" ruling); final, line 9 | verified |
-| Caption: Christians differ on salvation vs Jacob's family line | Romans 9:6-13 | pass 1, line 8; re-check G | verified |
+| Jacob lied to his father, "who could not see," and took his twin brother's blessing | Genesis 25:24-26; 27:1, 27:18-29, 27:35 | v5 check, line 1 (twins: v4/v5 checks of Romans 9:10-11; Gen 25:24) | verified |
+| "Esau I have hated" isn't in Genesis (Malachi's verb) | Malachi 1:2-3 | pass 1, line 3 (its wording); v3 check B | verified |
+| From the prophet Malachi, centuries later, about two nations: Israel and Edom | Malachi 1:1-4 | pass 1, line 4; v3 check C | verified |
+| "Hated" can mean "loved less"; the deceiver got deceived (his uncle Laban tricked him into marrying Leah); Jacob "loved Rachel more than Leah" | Genesis 28:2; 29:16-30 | pass 1, line 5; v4 check, line 3 (its wording); v5 check, line 2 | verified |
+| The next verse says Leah "was hated" (and the Genesis 29:30 card) | Genesis 29:30-31 | pass 1, lines 5-6; v4 check, line 4 | verified |
+| "You shall not abhor an Edomite, for he is your brother" (VO and card) | Deuteronomy 23:7 | v3 check I; v4 check, line 7; v5 check, line 6 | verified |
+| When Edom later turned on Jacob's people, God condemned it "because of the violence done to your brother Jacob" | Obadiah 1:8-14 | v5 check, line 7 (its wording: "condemned", since Obadiah announces the judgment as future) | verified |
+| Paul quotes "Esau I hated" while writing about the twins; "were not yet born and had done nothing either good or bad" | Romans 9:10-13 | v4 check, line 5 (its wording); v5 check, line 3 | verified |
+| God chose Jacob, but not because he was better | Romans 9:11-12 | v4 check, line 6; v5 check, line 4 | verified |
+| Chosen for what? In Genesis, to carry the promise God gave Abraham; "in you and your offspring shall all the families of the earth be blessed" | Genesis 28:4, 28:13-14 | v5 check, line 5 (its wording "In Genesis"; ruled neutral on Romans 9) | verified |
+| Twenty years after the trick, Jacob headed home, terrified of Esau | Genesis 27:43; 31:41; 32:7, 32:11 | v3 check J; v4 check, line 8 (its wording) | verified |
+| Esau ran to meet him, embraced him, kissed him, and they wept | Genesis 33:4 | v3 check J | verified |
+| Answer: God chose Jacob to carry the promise, not because he was better; "the 'hated' brother" ran to embrace the liar | Malachi 1:2-3; Romans 9:10-13; Genesis 28:14; 33:4 | v3 check K ruling; v5 check, line 9 (fair under both readings of Romans 9) | verified |
+| Caption: Christians differ on salvation vs Jacob's family line | Romans 9:6-13 | pass 1, line 8; v3 check G | verified |
