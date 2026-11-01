@@ -243,3 +243,16 @@ Rules:
 - **Few books.** At most ~3 books plus one passing fact. v6 hopped across 7 (Genesis, Malachi, Deuteronomy, Obadiah, Romans, Genesis again), which read as a study guide.
 - **Don't patch line by line from AI-viewer complaints.** Adding a verse to answer each complaint is what turned the script into a list. Fix the spine instead.
 - **AI viewer scores are not the bar.** A 4/5 from an AI viewer didn't mean the script was clear. Don't present an AI score as the value verdict; say what the message is and whether every line serves it.
+
+## Round 27 (Nov 1, 11:36) — options tree
+Marcus: "i chose the story of jacob, i need you to give me multiple options to talk about, then further options, like a growing tree of options ill choose whats best, but only give me options once you yourself have concluded they are all great"
+Rules:
+- **Topic → angle → (hook, spine, ending) as a tree.** Marcus picks at each level, and the script is built only from his picks.
+- **Vet every option before showing it.** An option is shown only if it has:
+  - a question people actually wonder about;
+  - a one-sentence message the text itself supports;
+  - three or more things most viewers don't know;
+  - a story spine (a bird's-eye journey, not a list of verses);
+  - a line people would screenshot;
+  - strong visuals for the engine.
+- **Show only what passes.** Never show a weak option to pad the list.
