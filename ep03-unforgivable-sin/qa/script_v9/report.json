@@ -1,16 +1,16 @@
 {
   "kind": "script",
-  "verdict": "FAIL",
+  "verdict": "PASS WITH WARNINGS",
   "counts": {
-    "FAIL": 5,
-    "WARN": 11,
+    "FAIL": 0,
+    "WARN": 7,
     "PASS": 12
   },
   "facts": {
     "title": "What is the unforgivable sin?",
     "series": "ASK THE TEXT",
-    "VO words": 287,
-    "estimated runtime": "101.3s at 170 wpm"
+    "VO words": 288,
+    "estimated runtime": "101.6s at 170 wpm"
   },
   "items": [
     {
@@ -26,7 +26,7 @@
     {
       "level": "PASS",
       "check": "runtime",
-      "msg": "estimated 101s"
+      "msg": "estimated 102s"
     },
     {
       "level": "WARN",
@@ -41,7 +41,7 @@
     {
       "level": "WARN",
       "check": "overclaim",
-      "msg": "'only' — make sure the text really says this: 'Can someone do it today? Some Christians say only those men could. Others say ye'"
+      "msg": "'only' — make sure the text really says this: 'Can someone do it today? Some Christians say only people in Jesus' day could. Ot'"
     },
     {
       "level": "PASS",
@@ -49,14 +49,9 @@
       "msg": "answer stated in the Turn/Landing: 'In the text, Jesus gave this warning to men who were calling the Holy Spirit's work the devil's (\"they were saying, 'He has an unclean spirit'\"). Most Christian explanations agree it isn't done by accident, and one common way to explain why it can't be forgiven is: it isn't a sin too big for God to forgive; it's forgiveness someone keeps refusing.'"
     },
     {
-      "level": "WARN",
-      "check": "value",
-      "msg": "this Value item is never spoken in the VO, so the viewer never learns it: 'Paul, who dragged Christians off to prison and called himself a \"blasphemer\", \"r'"
-    },
-    {
       "level": "PASS",
       "check": "value",
-      "msg": "4 things the viewer learns, each with a verse and each said in the VO"
+      "msg": "5 things the viewer learns, each with a verse and each said in the VO"
     },
     {
       "level": "PASS",
@@ -81,7 +76,7 @@
     {
       "level": "WARN",
       "check": "answer timing",
-      "msg": "the core answer starts at about 72% of the runtime (top six 33–50%; the question-video lows 59–82%)"
+      "msg": "the core answer starts at about 71% of the runtime (top six 33–50%; the question-video lows 59–82%)"
     },
     {
       "level": "PASS",
@@ -107,46 +102,6 @@
       "level": "PASS",
       "check": "nothing new",
       "msg": "every line adds at least one new key word or quote"
-    },
-    {
-      "level": "FAIL",
-      "check": "fact-check",
-      "msg": "claim not verified: '\"So Jesus gave this warning to men who were calling the Holy Spirit's ' (status: 'pending')"
-    },
-    {
-      "level": "FAIL",
-      "check": "fact-check",
-      "msg": "claim not verified: 'Peter denied him three times, the last time \"calling down a curse on h' (status: 'pending')"
-    },
-    {
-      "level": "FAIL",
-      "check": "fact-check",
-      "msg": "claim not verified: 'After Jesus rose, he asked Peter three times, \"Do you love me?\" and to' (status: 'pending')"
-    },
-    {
-      "level": "FAIL",
-      "check": "fact-check",
-      "msg": "claim not verified: 'Why line: \"Christians explain it in a few ways, but many put it like t' (status: 'pending')"
-    },
-    {
-      "level": "FAIL",
-      "check": "fact-check",
-      "msg": "claim not verified: 'The answer: In the text, Jesus gave this warning to men who were calli' (status: 'The answer: In the text, Jesus gave this warning to men who were calling the Holy Spirit's work the devil's (\"they were saying, 'He has an unclean spirit'\"). Most Christian explanations agree it isn't done by accident, and one common way to explain why it can't be forgiven is: it isn't a sin too big for God to forgive; it's forgiveness someone keeps refusing.')"
-    },
-    {
-      "level": "WARN",
-      "check": "fact-check",
-      "msg": "[Acts 8:3; 1 Timothy 1:13] is cited in the VO but not in the fact-check log"
-    },
-    {
-      "level": "WARN",
-      "check": "fact-check",
-      "msg": "[1 Timothy 1:13; Matthew 12:31-32] is cited in the VO but not in the fact-check log"
-    },
-    {
-      "level": "WARN",
-      "check": "fact-check",
-      "msg": "[Mark 3:22, 3:28-30; Matthew 12:24-28] is cited in the VO but not in the fact-check log"
     },
     {
       "level": "WARN",

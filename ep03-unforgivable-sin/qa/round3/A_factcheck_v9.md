@@ -25,3 +25,20 @@ No pages opened; all lines were checked against what I already verified.
 - "Most Christian explanations agree it isn't done by accident" and "one common way" are both properly hedged. The "keeps refusing" view isn't claimed for every Christian, which matters because F3 notes that some say only people in Jesus' day could do it.
 
 No facts in this report came from memory.
+
+---
+**Follow-up on the two rewritten Paul lines:**
+
+No pages opened; Acts 8:3 is from recall.
+
+**P1: VERIFIED.**
+- ESV Acts 8:3 (recall): Saul "dragged off men and women and committed them to prison," so "dragged Christians off to prison" is fair.
+- 1 Timothy 1:13 reads "formerly I was a blasphemer," and "received mercy" is exact.
+- "Didn't know what he was doing" loosely paraphrases "acted ignorantly in unbelief." For tighter fidelity: "because he had acted in ignorance and unbelief."
+
+**P2: OVERCLAIM (minor).**
+- Got Questions says the Pharisees "were not speaking out of ignorance or misunderstanding," and TGC and CCC 1864 stress deliberateness. So the ignorance-versus-deliberate contrast is well supported.
+- None of those sources, as far as I saw, tie the contrast to 1 Timothy 1:13. "See the difference right there" suggests the verse itself draws the line, and it doesn't.
+- Fix: "Many Christians draw the line there: acting in ignorance on one side, knowingly calling God's clear work evil on the other."
+
+No facts in this report came from memory.

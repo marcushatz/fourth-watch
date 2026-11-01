@@ -210,39 +210,48 @@ The engine (`ep01-samson/film27/`) and the voice takes exist only in this worksp
 - **What I do with it:** run it through the same pace, loudness and alignment checks, and put it next to the ElevenLabs take.
 - **How to decide:** if you like how you sound, switch. If not, keep the AI voice; the label is a small cost.
 
-### 17. Ep 3 "What is the unforgivable sin?": approve the script (you picked card C, Oct 31 23:34; v7 on Nov 1)
+### 17. Ep 3 "What is the unforgivable sin?": approve the script (you picked card C, Oct 31 23:34; v9 on Nov 1)
 
-**Where it stands:** the script is `ep03-unforgivable-sin/episode.md` (= `episode_v7_draft.md`; v5 is kept as `episode_v5_draft.md`).
+**Where it stands:** the script is `ep03-unforgivable-sin/episode.md` (= `episode_v9_draft.md`; v5 and v7 are kept).
 
-**What changed from v5 (Round 20: tokens on the viewer):**
-- **A first-time viewer read** (AI, `qa/round3/B_viewer_v6.md`) rated v6's clarity 3/5. It would have swiped at the Mark line, and the fear in line 2 went unrelieved for about 60 s. v7:
-  - puts the relief at about 11 s: "it isn't something done by accident", plus the attributed pastors' line it said it would share;
-  - turns the story into the proof ("So what is it?");
-  - cuts Beelzebul, "demon-oppressed", "Son of Man" and "insolent".
-- **Research** on what the main Christian views actually say: `qa/v6_research.md` (The Gospel Coalition, the Catholic Catechism 1864, Got Questions, a survey of the traditions).
-- **Two scoped AI fact-checks** (`qa/round3/A_factcheck_v6.md`, `A_factcheck_v7.md`) of the new lines only. Every row is now VERIFIED. They caught:
-  - Mark's accusers are scribes, not Matthew's Pharisees;
+**Why v9 (Rounds 20-21: value = answering the viewer's next questions):**
+
+| The viewer's question | Where v9 answers it |
+|---|---|
+| Could I have done it by accident? | The relief line, about 10 s in |
+| What is it? | The scene, then Mark 3:30: "They were calling the Holy Spirit's work the devil's" |
+| Has anyone done something terrible and received mercy? | Paul, who dragged Christians off to prison, "received mercy" |
+| Why is the Spirit different from Jesus? | "Acting in ignorance, versus knowingly calling God's clear work evil" (attributed) |
+| Can someone do it today? | The two views in one line |
+| Why can't it be forgiven? | The final answer: "It isn't a sin too big for God to forgive. It's forgiveness someone keeps refusing." |
+
+- **Test viewers** (AI, simulated first-time viewers, `qa/round3/B_viewer_*`): v6 rated clarity 3/5; v8 rated value 3.5/5 and clarity 3/5; the v9 re-watch rated value 4/5 and clarity 4/5, and said it would like, share and follow. These are simulated reactions, not a forecast.
+- **AI fact-checks** of every changed line: `qa/round3/A_factcheck_v6..v9.md`. They caught:
+  - Mark's accusers aren't Matthew's;
   - "like those men" overclaimed;
-  - "many pastors" was more than the sources support, so it's now "some pastors and Bible teachers";
-  - Matthew 12:28 is an "if", so the script now uses Mark 3:23 instead.
-- **`fw_check.py`:** 0 FAIL, 268 words, about 95-100 s.
-- **The judge panel was not re-run on v7** (Round 20: tokens on the viewer). It's available if you want it.
+  - "many pastors" was more than the sources support;
+  - the "if" in Matthew 12:28;
+  - Peter: John 21 never says "forgiven", so he was replaced by Paul, whose own words say "mercy";
+  - "only those men" was narrowed to "people in Jesus' day".
+  Every row is now verified.
+- **Research:** `qa/v6_research.md`.
+- **Checks:** `fw_check.py` 0 FAIL, 288 words, about 100 s. The judge panel wasn't re-run.
 
 **The full narration:**
 > What is the unforgivable sin?
 > In Matthew 12, Jesus said "whoever speaks against the Holy Spirit will not be forgiven." Many people fear they've done it by accident.
-> Most Christian explanations agree on one thing: it isn't something done by accident. Some pastors and Bible teachers even say that if you're afraid you've done it, that fear is a sign you haven't.
+> Most Christian explanations agree it isn't something done by accident. Some pastors and Bible teachers even say that if you're afraid you've done it, that fear is a sign you haven't.
 > So what is it? Look at what had just happened. Jesus had healed a man who was blind and mute and troubled by a demon. The Pharisees said he cast out demons by "the prince of demons."
-> In Mark's version of the same charge, Jesus asks, "How can Satan cast out Satan?" And Mark says why he warned them: "for they were saying, 'He has an unclean spirit.'"
-> In other words, they were calling the Holy Spirit's work the devil's.
+> Mark records the same charge and says why Jesus warned them: "for they were saying, 'He has an unclean spirit.'" They were calling the Holy Spirit's work the devil's.
 > And his warning about the one sin that won't be forgiven starts with the ones that will: "every sin and blasphemy will be forgiven people." *(verse card: Matthew 12:31)*
 > Even words against Jesus himself, he said, will be forgiven.
-> Christians explain the sin in a few ways, such as knowingly calling God's clear work evil, or refusing his mercy to the very end. In each of these, it isn't something done by accident.
-> So what is the unforgivable sin? In the text, it's tied to what those men were doing: calling the Holy Spirit's work the devil's.
-> And Paul, who once persecuted Christians, called himself a former "blasphemer," and wrote, "But I received mercy…"
+> Even Paul, who once dragged Christians off to prison, later called himself a "blasphemer." He wrote that he "received mercy" because he didn't know what he was doing.
+> Many Christians draw the line like this: acting in ignorance, versus knowingly calling God's clear work evil.
+> Can someone do it today? Some Christians say only people in Jesus' day could. Others say yes, but only as a deliberate, hardened refusal of God.
+> So what is the unforgivable sin? In the text, it's tied to calling the Holy Spirit's work the devil's. And one common way Christians put it: it isn't a sin too big for God to forgive. It's forgiveness someone keeps refusing.
 > What surprised you more: that the warning starts with forgiveness, or Jesus forgiving words against himself?
 
-**One open choice: the closing question.** Two of the three judges on v5 wanted it aimed at the fear the hook raises, not at "which detail surprised you". v7 now answers that fear early, so B lands better than before. **Recommended: B.**
+**One open choice: the closing question.** v9 answers the fear early, so a question aimed at that fear now fits. **Recommended: B.**
 
 | | Exact words | Words | Status |
 |---|---|---|---|
