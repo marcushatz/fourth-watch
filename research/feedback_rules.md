@@ -204,3 +204,9 @@
 - **The token budget goes to the viewer.** That means watch-through to the end, value worth acting on, and a reason to like, comment, share and follow. It also means checking whether each topic is worth making before polishing it, and whether the story intrigues.
 - **Accuracy stays, at the cheap end.** It uses the verified-ESV notes already on file, the deterministic checks, and ONE independent fact-check on the final candidate, covering changed lines only. No repeated full fact-check agents every round. (This narrows Round 18's layer 2. It still runs, just once and scoped.)
 - **No new helper agents for work I can do in the main thread.** Each new agent costs ~75k tokens before it reads anything.
+
+## Round 21 — Marcus, Nov 1 08:35-08:41
+- His words: "i stilll dont know if it provides enoug hvalue" and, after I listed what Ep 3 v7 was missing, "im just disappointed u missed all his".
+- **Value means answering the viewer's next questions, not counting facts.** Before drafting, list the questions the hook raises in a viewer's head (for Ep 3: what is it, could I have done it, WHY can't it be forgiven, has anyone done something terrible and been forgiven). The script must answer every one of them. A script that passes the checker but leaves one of them open is not done.
+- **Every script needs one line people would repeat or screenshot** (the answer said plainly) and one concrete proof from the text, not only statements.
+- **Show Marcus the value verdict honestly before calling a script done.** Don't present "every row verified, 0 FAIL" as if it meant "good enough".

@@ -1,0 +1,132 @@
+{
+  "kind": "script",
+  "verdict": "FAIL",
+  "counts": {
+    "FAIL": 5,
+    "WARN": 6,
+    "PASS": 12
+  },
+  "facts": {
+    "title": "What is the unforgivable sin?",
+    "series": "ASK THE TEXT",
+    "VO words": 299,
+    "estimated runtime": "105.5s at 170 wpm"
+  },
+  "items": [
+    {
+      "level": "PASS",
+      "check": "series",
+      "msg": "ASK THE TEXT"
+    },
+    {
+      "level": "PASS",
+      "check": "hook",
+      "msg": "first VO line equals the title"
+    },
+    {
+      "level": "PASS",
+      "check": "runtime",
+      "msg": "estimated 106s"
+    },
+    {
+      "level": "WARN",
+      "check": "sentence length",
+      "msg": "31 words (max 25): 'In Mark's version of the same charge, Jesus asks, \"How can Satan cast out Satan?'"
+    },
+    {
+      "level": "PASS",
+      "check": "answer",
+      "msg": "answer stated in the Turn/Landing: 'In the text, Jesus gave this warning to men who were calling the Holy Spirit's work the devil's (\"they were saying, 'He has an unclean spirit'\"). It isn't done by accident, and many Christians explain why it can't be forgiven like this: it isn't a sin too big for God to forgive; it's forgiveness someone keeps refusing.'"
+    },
+    {
+      "level": "PASS",
+      "check": "value",
+      "msg": "4 things the viewer learns, each with a verse and each said in the VO"
+    },
+    {
+      "level": "PASS",
+      "check": "loop",
+      "msg": "landing echoes the hook"
+    },
+    {
+      "level": "WARN",
+      "check": "hook form",
+      "msg": "the hook names no Bible person, place or object; the hits name one in the question itself"
+    },
+    {
+      "level": "WARN",
+      "check": "turn",
+      "msg": "the Turn starts about 34s in (Lintel's top six turn at 14–25 s, after at most ~14 s of story)"
+    },
+    {
+      "level": "PASS",
+      "check": "story share",
+      "msg": "the Story section is 12% of the words (Marcus's cap ~40%; the hits retell 0–5%, the top six spend 0–21% on any story). Count story lines in other sections by hand"
+    },
+    {
+      "level": "WARN",
+      "check": "answer timing",
+      "msg": "the core answer starts at about 75% of the runtime (top six 33–50%; the question-video lows 59–82%)"
+    },
+    {
+      "level": "PASS",
+      "check": "echo",
+      "msg": "the hook comes back after 70% of the runtime (100% of its key words in one line). All three hits re-ask it in its own words at 82–89%, then answer it in one line"
+    },
+    {
+      "level": "PASS",
+      "check": "you lines",
+      "msg": "2 sentences speak to 'you' outside quotes (top six 1–3; the reels with 5–9 were all lows). Never describe the viewer's conduct"
+    },
+    {
+      "level": "PASS",
+      "check": "closing question",
+      "msg": "16 words (the hits' closing questions run 16–17 words, about 5 s)"
+    },
+    {
+      "level": "PASS",
+      "check": "repetition",
+      "msg": "no 3-word phrase is said 3 or more times"
+    },
+    {
+      "level": "PASS",
+      "check": "nothing new",
+      "msg": "every line adds at least one new key word or quote"
+    },
+    {
+      "level": "FAIL",
+      "check": "fact-check",
+      "msg": "claim not verified: '\"So Jesus gave this warning to men who were calling the Holy Spirit's ' (status: 'pending')"
+    },
+    {
+      "level": "FAIL",
+      "check": "fact-check",
+      "msg": "claim not verified: 'Peter denied him three times, the last time \"calling down a curse on h' (status: 'pending')"
+    },
+    {
+      "level": "FAIL",
+      "check": "fact-check",
+      "msg": "claim not verified: 'After Jesus rose, he asked Peter three times, \"Do you love me?\" and to' (status: 'pending')"
+    },
+    {
+      "level": "FAIL",
+      "check": "fact-check",
+      "msg": "claim not verified: 'Why line: \"Christians explain it in a few ways, but many put it like t' (status: 'pending')"
+    },
+    {
+      "level": "FAIL",
+      "check": "fact-check",
+      "msg": "claim not verified: 'The answer: line (v8 wording)' (status: 'pending')"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Mark 3:23, 3:28-30] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "judge",
+      "msg": "not judged: run the blind judge panel before Marcus sees it, then pass --judge <run folder> (tools/script_judge/rubric.md)"
+    }
+  ]
+}
