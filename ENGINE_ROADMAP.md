@@ -69,4 +69,7 @@ Measured in `research/direction_rules.md` and `research/lintel_study_10.md`:
 | 1 Diorama kit | v0 works (`scenes/diorama.js`; lab: `engine_lab/`). A set from a recipe; shots staged from `dio` (camera presets + moves, walk/enter/exit/pose, continuity across shots) |
 | 2 People walk | done (PP2 `person` `walk`) |
 | 5 Pop-up layer | v0 works (`fw/pops.js`, hooked in `film.js`): label, number, ring, arrow, icons (bow, tent, bowl, scroll, crown, x, check, ?). The governor enforces one at a time, ≥ 1.4 s apart, ≤ 5 per 10 s, the y band 30-78%, and keeps each pop inside the frame |
-| 3, 4, 6-8 | not started |
+| 3 Transitions | v0 works (`fw/trans.js`, Nov 1): `shot.xin = { kind: 'fade' | 'whip' | 'push', dir, dur }`. The outgoing shot keeps moving under it; the whip is motion-blurred; the header, title and captions stay fixed on top. Lab: `engine_lab/trans_lab.jpg`, `trans_whip.jpg` |
+| 4 Explainer cards | v0 works (`fw/explain.js`, Nov 1): `shot.explain = [{ kind: 'tree' | 'timeline' | 'versus' }]`, built on beats, with gold/dim marks, a backing band, kept inside the frame. Lab: `engine_lab/explain_lab.jpg`. Still to add: a map with a route, a numbered list |
+| Known gap | The diorama's `top` preset lays the 2D people flat; use `top` only for sets without people in frame, or cards over it |
+| 6-8 | not started |

@@ -120,6 +120,7 @@
       if (shot.tally) globalThis.CARDS.tally(ctx, t, shot);
       if (shot.stamp) globalThis.CARDS.stamp(ctx, t, shot);
       if (shot.bubble || shot.bubbles) globalThis.CARDS.bubble(ctx, t, shot);
+      if (shot.explain && globalThis.EXPLAIN) globalThis.EXPLAIN.draw(ctx, t, shot, W, H);   // explainer cards (fw/explain.js); inert without shot.explain
   }
 
   Studio.film({
