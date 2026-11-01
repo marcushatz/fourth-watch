@@ -30,9 +30,10 @@ Measured in `research/direction_rules.md` and `research/lintel_study_10.md`:
 2. **Generic people walk:** PP2 `person` gets a `walk` pose. Enter and exit come from step 1.
 3. **Transitions in `film.js`:** a 0.2-0.3 s crossfade, a whoosh, a match-dissolve, all chosen by a shot field.
 4. **Explainer cards:** timeline, family tree, two groups, a numbered list that builds, a map with a route. All are driven by beats.
-5. **A metaphor-prop library:** objects that ideas become (birthright = a scroll or a crown; a bowl of stew; a blessing as light on a head only where the text says it), each with simple state changes (pass, break, fade).
-6. **Proof on a new topic, end to end:** Esau and Jacob. Story Director → shots in the diorama kit → stills → the muted test → one render. Judge against a Lintel reel.
-7. **Speed:** a GPU render path (Marcus's computer) or lighter draft shading.
+5. **A pop-up layer** (Marcus, Nov 1): word-timed overlays that keep the screen alive: a label, an icon, an arrow, a highlight ring, a number, a small map pin, each popping on its word with overshoot. A governor enforces one at a time, a minimum spacing of ~1.5 s, never over a face or the caption band, and a density cap per 10 s, so it never feels overdone.
+6. **A metaphor-prop library:** objects that ideas become (birthright = a scroll or a crown; a bowl of stew; a blessing as light on a head only where the text says it), each with simple state changes (pass, break, fade).
+7. **Proof on a new topic, end to end:** Esau and Jacob. Story Director → shots in the diorama kit → stills → the muted test → one render. Judge against a Lintel reel.
+8. **Speed:** a GPU render path (Marcus's computer) or lighter draft shading.
 
 **Rules carried over:**
 - Every frame is a pure function of t.
@@ -44,6 +45,6 @@ Measured in `research/direction_rules.md` and `research/lintel_study_10.md`:
 
 | Step | State |
 |---|---|
-| 1 Diorama kit | in progress |
-| 2 People walk | in progress |
-| 3-7 | not started |
+| 1 Diorama kit | v0 works (`scenes/diorama.js`; lab: `engine_lab/`). A set from a recipe; shots staged from `dio` (camera presets + moves, walk/enter/exit/pose, continuity across shots) |
+| 2 People walk | done (PP2 `person` `walk`) |
+| 3-8 | not started |

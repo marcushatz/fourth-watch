@@ -1298,8 +1298,9 @@
     { sex: 'f', phil: 1, skin: '#C08458', robe: '#A8432C', trim: '#E4D3B0', veil: '#E4D3B0', hair: '#24160F' },
     { sex: 'm', phil: 1, skin: '#C68A5E', robe: '#E4D3B0', trim: '#8E3A26', hairCol: '#3A2418', hband: '#A8432C' },
   ];
-  const personC = (v) => {
-    const o = PV[((v % 12) + 12) % 12], w = o.sex === 'f', sh = mix(o.skin, '#4A2A1A', 0.35);
+  // cast kit: st.cast = { sex, skin, robe, stripe, cloth, band, beard, hairCol, short, old, young, veil, hair } overrides a variant
+  const personC = (v, cast) => {
+    const o = cast ? Object.assign({}, PV[((v % 12) + 12) % 12], cast) : PV[((v % 12) + 12) % 12], w = o.sex === 'f', sh = mix(o.skin, '#4A2A1A', 0.35);
     const rsh = mix(o.robe, '#2A1E16', 0.35);
     const g = w
       ? { long: 1, col: o.robe, sh: rsh, nw: 17, neckY: -380, sw: 49, shY: -366, cw: 48, ww: 42, waistY: -258, hipw: 52, hipY: -198, hw: 66, hemY: -12, folds: [-28, 0, 26], belt: { y: -258, h: 10, col: o.trim || mix(o.robe, '#24160F', 0.4), tails: 36, tx: 10 }, band: o.trim ? { col: o.trim, h: 9, off: 12 } : null }
@@ -1320,12 +1321,21 @@
   };
   PP2.PERSON_VARIANTS = PV.length;
   PP2.person = (ctx, st = {}) => {
-    const v = st.v || 0, pose = st.pose || 'stand', t = st.t || 0, C = personC(v), w = C.shX < 55;
+    const v = st.v || 0, pose = st.pose || 'stand', t = st.t || 0, C = personC(v, st.cast), w = C.shX < 55;
     const ph = t * 6 + v * 1.7, P = { t, arms: {}, head: { look: st.look || [0, 0], mouth: 'neutral', turn: ((v * 37) % 7 - 3) * 0.04, tilt: (hash(v * 3.1) - 0.5) * 0.08 } };
     const jit = (n) => hash(v * 13.7 + n) - 0.5;   // stable per-variant variation
     P.lean = jit(9) * 0.03;
     const hy = w ? 0.93 : 1;
     switch (pose) {
+      case 'walk': { // ENGINE_ROADMAP step 2: anyone can walk (st.phase = distance-driven cycle; legs, bob, arm swing)
+        const s1 = Math.sin(st.phase ?? t * 5.5), fx = C.footX || 22;
+        P.feet = {}; P.knee = {};
+        for (const s of [-1, 1]) { const lift = Math.max(0, -s * s1) * 24; P.feet[s] = [s * fx, -lift]; P.knee[s] = s * lift * 0.42; }
+        P.by = -Math.abs(s1) * 3 + 2; P.lean += s1 * 0.012;
+        P.arms = { '-1': { A: 7 - s1 * 12, B: -14 - Math.max(0, -s1) * 22, hand: 'open', hdir: 96 }, '1': { A: 7 + s1 * 12, B: -14 - Math.max(0, s1) * 22, hand: 'open', hdir: 84 } };
+        if (st.item) P.arms['1'] = { T: [96, -420 * hy], pole: [220, -330], hand: 'fist', hdir: -90, item: st.item };
+        break;
+      }
       case 'raise': { // both hands raised, pleading (Matt 7:22)
         const b = Math.sin(ph) * 6;
         P.arms = { '-1': { T: [-118 + jit(1) * 30, -566 * hy + b + jit(2) * 40], pole: [-240, -420], hand: 'open', hdir: -100 }, '1': { T: [118 + jit(3) * 30, -566 * hy - b + jit(4) * 40], pole: [240, -420], hand: 'open', hdir: -80 } };

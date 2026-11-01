@@ -216,3 +216,8 @@
 - **Don't spend work fixing background details the viewer isn't watching.** Accuracy effort goes to what the viewer's attention is on (the action, the words, the cards). A minor set detail in the background isn't worth a re-render.
 - **Open question for Marcus:** the gold light at the pillars. His canon rule says gold only where the text says God acted, and v57 has gold on "pushed". Restore it or not? Asked, Nov 1.
 - He asked again whether "the script engine itself is better": he wants a straight verdict on the engine, not the process around it.
+
+## Round 23 — Marcus, Nov 1 10:36-10:40
+- His words: "dont work on the samson video, keep owrkig on the engine, the end goal is for me to ask you, create a video for this topic ... and fo ryou to come up with a great script, great cinematography, great visuals everythign to be great ... lintel networks, visuals are not that improessive, ours are looking mroe visually improessive wiht the 3d renders, however every single time they have beaten us on, thei srcipting, their cmaera movements, and also what is shown on srcreen, with the story takinga birds eye view, and changin apce, setting" and "videos todya that perform contain much more visual like pop up stimulating hte audine ceiwht thing sgoing on often, keep that in mind we don twnt to overdo it fo coruse".
+- **Samson is paused. The work is the engine:** topic → script → cinematography → visuals, all great. Plan: `ENGINE_ROADMAP.md`.
+- **Pop-ups are part of the language:** frequent word-timed overlays (labels, icons, arrows, rings, numbers) that keep something happening. They are governed so they're never overdone: one at a time, about every 1.5-3 s at most, never over the subject's face, never two text elements at once.
