@@ -25,7 +25,7 @@ VO: Then came the warning, and it starts with forgiveness: "every sin and blasph
 VERSE: "every sin and blasphemy will be forgiven people, but the blasphemy against the Spirit will not be forgiven." — Matthew 12:31 (ESV)
 VO: Even words against Jesus himself: "whoever speaks a word against the Son of Man will be forgiven." [Matthew 12:32]
 VO: Mark tells the same scene and says why Jesus warned them: they were saying Jesus "has an unclean spirit." [Mark 3:22-30]
-VO: But Jesus said he cast out demons "by the Spirit of God." So they were giving the devil credit for the Spirit's work. [Matthew 12:28; Mark 3:29-30]
+VO: But Jesus said he cast out demons "by the Spirit of God." So they were giving the devil credit for the Spirit's work. [Matthew 12:24-28; Mark 3:22, 3:30]
 
 ## Landing
 VO: Christians read it two main ways: knowingly calling the Spirit's clear work evil, as those men were doing, or a final, lifelong refusal of the Spirit's call to repent. Either way, it isn't something done by accident. [Matthew 12:31-32; Mark 3:28-30]
@@ -49,8 +49,6 @@ Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard 
 ## References
 - Matthew 12:22-32
 - Mark 3:22-30
-- Mark 14:66-72
-- John 21:15-17
 - 1 Timothy 1:12-16
 
 ## Fact-check log
@@ -61,11 +59,10 @@ Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard 
 | A demon-oppressed man, blind and mute, healed; the Pharisees: "only by Beelzebul, the prince of demons" | Matthew 12:22-24 | pass 2, line 3 | verified |
 | The warning starts "every sin and blasphemy will be forgiven people" (and the verse card) | Matthew 12:31 | passes 1 and 2, lines 4-5 | verified |
 | "whoever speaks a word against the Son of Man will be forgiven" | Matthew 12:32 | pass 2, line 5 | verified |
-| Mark, same scene: "for they were saying, 'He has an unclean spirit.'" | Mark 3:22-30 | pass 2, line 6 | verified |
-| Jesus said he cast out demons "by the Spirit of God"; that's what he was warning them about | Matthew 12:28; Mark 3:29-30 | pass 2, line 7 (its suggested wording, first sentence already in line 6) | verified |
+| Mark, same scene, says why Jesus warned them: they were saying Jesus "has an unclean spirit" | Mark 3:22-30 | pass 3 (qa/round2/A_factcheck_v5.md), line 6 | verified |
+| Jesus said he cast out demons "by the Spirit of God"; so they were giving the devil credit for the Spirit's work | Matthew 12:24-28; Mark 3:22, 3:30 | pass 3, line 7 | verified |
 | The two main views; "Either way, it isn't something done by accident." | Matthew 12:31-32; Mark 3:28-30 | pass 2, line 8 (views verified; last sentence in its suggested wording) | verified |
-| Paul: "a blasphemer, persecutor, and insolent opponent. But I received mercy because I had acted ignorantly in unbelief…" | 1 Timothy 1:13 | pass 2, line 9 (with its ellipsis fix) | verified |
-| Peter's three denials; the last: "I do not know this man…"; "Do you love me?" three times; "Feed my sheep" | Mark 14:66-72; John 21:15-17 | pass 2, line 10 | verified |
-| Re-ask: "In the text, it's tied to what those men were doing"; forgiveness for everything else, even words against himself | Matthew 12:31-32; Mark 3:28-30 | pass 2, line 11 (its suggested wording) | verified |
-| Closing question: the warning starts with forgiveness / why Jesus gave it | Matthew 12:31; Mark 3:30 | pass 2, line 12 | verified |
+| Even Paul, once "a blasphemer, persecutor, and insolent opponent," wrote, "But I received mercy because I had acted ignorantly in unbelief…" | 1 Timothy 1:13 | pass 3, line 10 | verified |
+| Re-ask: "In the text, it's tied to what those men were doing: calling the Spirit's work the devil's" | Matthew 12:31-32; Mark 3:28-30 | pass 2, line 11 (its suggested wording; the second sentence was cut in v5) | verified |
+| Closing question: the warning starts with forgiveness / Jesus forgiving words against himself | Matthew 12:31-32 | pass 3, line 12 ("a fair shorthand") | verified |
 | The answer: line | Mark 3:30; Matthew 12:28, 12:31 | pass 2, line A | verified |
