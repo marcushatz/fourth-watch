@@ -14,7 +14,7 @@ description: Research, argue and write an original Fourth Watch Bible investigat
 
 **Where it sits.** This skill writes. `fw-script-review` and `fw_check.py script` then review. `fourth-watch-showrunner` takes an approved script on to the shot list, motion, voice and render.
 
-**The bar** is the approved Bronze Serpent script (`reference/gold_bronze_serpent.md`). Read it first, every time. It is the only positive model here. The Lintel Network is studied for *structure only*: never reuse, paraphrase or adapt a Lintel script or one of its topics (`reference/lintel_lessons.md` lists them).
+**The bar** is the Bronze Serpent, read with Marcus's own critique (`reference/gold_bronze_serpent.md`). v1 got the structure right; v2 fixed its insight density. Read the file first, every time. The Lintel Network is studied for *structure only*: never reuse, paraphrase or adapt a Lintel script or one of its topics (`reference/lintel_lessons.md` lists them).
 
 **Files in this folder.** They are in the Fourth Watch repo at `.claude/skills/fourth-watch-writer/`. If you are running from an account copy of this skill, read them there; clone `marcushatz/fourth-watch` first if needed.
 
@@ -48,7 +48,13 @@ Marcus's standing rules live in `research/feedback_rules.md` (the Rounds). They 
    - predictable conclusions;
    - lines that only *sound* profound.
 8. **Competing angles.** Write at least 5 angles, score them, kill the weak ones, and develop only the strongest.
-9. **Efficiency.** Aim for 230-270 words, and say why if it runs longer. Every sentence earns its seconds.
+9. **Insight density and efficiency (Marcus, Nov 1 17:33).**
+   - Something new every 10-15 seconds: a new discovery, a surprising comparison, or a change in how the viewer understands the text. Never just another event from the story.
+   - Never re-explain what the hook already revealed.
+   - Never spend 15 s on a distinction that takes 5.
+   - No recap that repeats an earlier explanation.
+   - Aim for **75-95 s (about 190-245 words)**; go longer only if the research turns up enough real material.
+   - **The standard:** the viewer finishes having understood a biblical connection they would probably never have found by reading the passages separately.
 10. **Learn from feedback.** After every verdict from Marcus, update `ledger.md`, and add his words to `research/feedback_rules.md`.
 
 ---
@@ -108,7 +114,7 @@ Each is scored 1-5, with a one-line reason per score. Kill any angle with a 1 or
 Before writing a single line of narration, build the argument map (template in `templates.md`):
 1. **The question** (the hook, word for word).
 2. **The answer in one sentence.** It must be stateable by the 50% mark.
-3. **The chain.** Each step pairs a discovery with the question it raises next: "Discovery 1 → so the viewer asks Q2 → Discovery 2 answers it and raises Q3 → …". The Bronze Serpent chain: *God commanded it* → *it was destroyed: why?* → *the snakes weren't removed; God gave a way to live* → *but wasn't that an image?* → *made, not worshiped* → *later it was worshiped* → *so it was destroyed* → *yet Jesus used it* → *the object didn't change; their use of it did* → the principle.
+3. **The chain.** Each step pairs a discovery with the question it raises next: "Discovery 1 → so the viewer asks Q2 → Discovery 2 answers it and raises Q3 → …". The Bronze Serpent v2 chain: *the calf (not commanded) and the serpent (commanded) were both worshiped and destroyed* → *how can God's command become an idol?* → *2 Kings files Moses' serpent with the idols: offerings* → *opposite beginnings, same ending* → *yet Jesus brought it back* → *"lifted up" = his death (John 12:33)* → *John 3:16 begins "For": it explains the serpent* → *Hezekiah destroyed the object; Jesus kept the meaning*.
 4. **The viewer's next questions** (Round 21). List every question the hook raises in a viewer's head, and the line that answers each. An unanswered one is a defect.
 5. **The principle.** One sentence, derived from the chain, true for every viewer, not accusing (Rounds 12-14).
 6. **The screenshot line** (the one people would repeat).
@@ -125,11 +131,13 @@ Write the narration in the series format (`templates.md`; `fw_check.py` reads it
 - **Ask the viewer's questions out loud** at the hinges ("Now here's the problem." / "Why?"). This is what makes a chain feel like an investigation.
 - **Each quote** is short, exact ESV, and followed by a plain line saying what it shows.
 - **Timing:** the turn by about 25% of the runtime; the core answer by 35-50%; the second half adds evidence or a transformation, not more story; re-ask or echo the hook near the end; land the principle.
-- **Words:** 230-270. Count them, and say why if it runs over.
+- **Words:** 190-245 (75-95 s). Count them, and say why if it runs over.
+- **The insight timeline** (Gate 5): split the draft into 15-second windows (about 39 words each). Name the new discovery or understanding in each window. A window with none fails, and so does any line that restates what the hook already revealed.
 - **Plain register:** modern spoken sentences of 8-20 words. No note fragments, no arrows, no "Look at Jacob." stage directions, no archaic quotes longer than about 15 words (Marcus: "weird way of talking").
 
 **Gate 5 (Form):** `python3 fw_check.py script <file> --out <dir>` has 0 FAIL, and every WARN is fixed or justified in one line. Also measure:
 - [ ] Familiar-retelling words are ≤ 15%. Count them and record the count.
+- [ ] The insight timeline has something new in every 15-second window, with no restatements of the hook and no recaps.
 - [ ] ≤ 3 you-lines, and none describes the viewer's conduct.
 - [ ] Every book cited sits on the thread (no side trips; Ep 4 v6 hopped across 7 books).
 

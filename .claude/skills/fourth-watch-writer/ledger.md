@@ -5,7 +5,7 @@ Keep it short: one entry per verdict, Marcus's words quoted. Add an entry the da
 ## Approved
 | Date | Episode | Why it was approved | Where |
 |---|---|---|---|
-| Nov 1 2026 | **The Bronze Serpent**: "Why Did God Command Something That Later Had to Be Destroyed?" | **The gold standard.** One object across three eras, a contradiction raised and resolved, a link the text itself makes (John 3:14), and a principle that follows from the evidence. 263 words. | `ep02-bronze-serpent/script_approved.md`; annotated in `reference/gold_bronze_serpent.md` |
+| Nov 1 2026 (16:32; critiqued 17:33) | **The Bronze Serpent** v1: "Why Did God Command Something That Later Had to Be Destroyed?" | **The structural model.** Marcus then judged it low on insight density (see Rejected). v2 rebuilt it around the calf reversal and John 3:16. One object across three eras, a contradiction raised and resolved, a link the text itself makes (John 3:14), and a principle that follows from the evidence. 263 words. | `ep02-bronze-serpent/script_approved.md`; annotated in `reference/gold_bronze_serpent.md` |
 | Oct 31 2026 | Jonah v5 | "solid story lets keep it" (Round 19) | `ep02-jonah/episode.md` |
 | Oct 30-31 2026 | Samson v57 (locked) | Approved as a script, but the finished cut was "not good enough" (Round 15). Later measured at 49% retelling, so treat it as a weak example (`reference/weak_vs_strong.md`). | `ep01-samson/episode.md` |
 
@@ -19,10 +19,14 @@ Keep it short: one entry per verdict, Marcus's words quoted. Add an entry the da
 | Nov 1 | Ep 4 Esau/Jacob v6: 7 books, 5 partial answers, patched from AI-viewer complaints | "it makes no sense, i dont understand what the clear message is" | One thread; fix the spine, not lines; AI scores aren't the bar |
 | Nov 1 | Leah outlines with archaic verse dumps and note fragments | "weird way of talking… wasteful and non intriguing" | Plain modern sentences; quote only short phrases; discoveries, not the famous beats |
 
+| Nov 1 17:33 | Bronze Serpent v1 at ~2 min: 15 s on one distinction, retelling the destruction the hook had revealed, a recap | "low insight density… cinematography cannot compensate for a script that has already finished making its point" | Something new every 10-15 s; 75-95 s; never re-explain the hook; the viewer must leave with a connection they'd never find reading the passages separately |
+| Nov 1 17:33 | Direction v1 (28 shots) built before the narration was strong | "Stop refining the storyboard until the narration is stronger" | Script first. No storyboard work on a script that isn't dense enough. And no picture claims the text doesn't make (prostration; 2 Kgs 18:4 says "offerings") |
+
 ## Lessons (standing)
 1. **Thread first.** One object, person, phrase or problem; every book on the thread.
 2. **Each discovery must change the meaning of the last.** If two could swap places, the script is a list.
 3. **Voice the viewer's objection** before they think it ("Now here's the problem.").
 4. **Re-read an earlier fact in the light of a later one.** This is the most powerful move in the gold standard.
 5. **The principle is a question or a sentence that fits every viewer,** derived from the evidence.
-6. **Approved scripts are not rewritten.** Precision notes come with evidence and a minimal edit.
+6. **Approved scripts are not rewritten** unless Marcus reopens them. Precision notes come with evidence and a minimal edit.
+7. **Insight density is the bar:** something new every 10-15 s, measured with the insight timeline at Gate 5.

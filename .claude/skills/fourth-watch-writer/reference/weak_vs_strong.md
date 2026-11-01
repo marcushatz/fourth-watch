@@ -73,7 +73,16 @@ The early drafts of "What is the unforgivable sin?" defined it, but never said *
 
 ---
 
-## The success: the Bronze Serpent (approved)
+## Failure 5: the right structure with a low density of insight (Bronze Serpent v1)
+v1 had the structure: one object, three eras, a voiced objection. But it spent whole windows explaining what had happened: 15 s on "looking isn't worshipping", 19 s re-telling the destruction the hook had already revealed, and 9 s recapping. Marcus (17:33): "cinematography cannot compensate for a script that has already finished making its point."
+
+**Lesson:** every 10-15 s must change the viewer's understanding. v2 replaced those windows with:
+- the golden calf reversal;
+- 2 Kings filing the serpent with the idols;
+- John 12:33's "lifted up";
+- John 3:16's "For".
+
+## The structural success: the Bronze Serpent
 | Test | Samson v57 | Esau v6 | Leah options | Bronze Serpent |
 |---|---|---|---|---|
 | Familiar retelling | 49% | ~15%, but scattered | ~70% | ~15%, in one place |

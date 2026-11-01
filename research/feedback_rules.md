@@ -256,3 +256,16 @@ Rules:
   - a line people would screenshot;
   - strong visuals for the engine.
 - **Show only what passes.** Never show a weak option to pad the list.
+
+## Round 28 (Nov 1, 17:33): the Bronze Serpent's insight density
+His words: "the script doesn't deliver enough intellectual value for its nearly two-minute runtime. The problem is low insight density… Stop refining the storyboard until the narration is stronger… target 75–95 seconds… Every 10–15 seconds should ideally deliver a new discovery, a surprising comparison, or a meaningful change in the viewer's understanding… The standard for Fourth Watch should be this: viewers finish the video having understood a biblical connection they would probably never have discovered by simply reading the passages separately."
+
+Rules:
+- **Measure insight density.** Something new in every 15 s window (the writer skill's insight timeline at Gate 5). Never re-explain what the hook revealed; no recaps.
+- **75-95 s by default.** Go longer only if the research earns it.
+- **Script before storyboard.** No direction work on narration that isn't dense enough yet.
+- **Textual fidelity in pictures too.** Num 21:8 says God commanded a "fiery serpent" and Moses made it of bronze. 2 Kgs 18:4 says "offerings", not prostration.
+- **The connections to use here:**
+  - the golden calf reversal (Ex 32:8 vs Num 21:8);
+  - Hezekiah destroyed the object, Jesus kept its meaning;
+  - John 3:14 → 3:16, two verses apart.

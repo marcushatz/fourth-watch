@@ -1,4 +1,4 @@
-# The gold standard: "Why Did God Command Something That Later Had to Be Destroyed?" (approved by Marcus, Nov 1 2026)
+# The gold standard (structure) and its critique (insight density): "Why Did God Command Something That Later Had to Be Destroyed?" (approved by Marcus, Nov 1 2026)
 
 This is the positive model. The source text is `ep02-bronze-serpent/script_approved.md`. **Do not edit it.** It is reproduced here with annotations. It runs 263 words, about 100 s.
 
@@ -56,3 +56,22 @@ Checked against esv.org on Nov 1:
 - 2 Kgs 18:4 (ESV): "the people of Israel had made offerings to it (it was called Nehushtan)". "Burning incense" is the NIV/KJV sense of the Hebrew verb. The ESV word is "made offerings", and the ESV says "it was called", not "they called it". The ESV footnote: Nehushtan "sounds like the Hebrew words for both 'bronze' and 'serpent'".
 
 These are the kind of notes the writer skill raises on an approved script: evidence plus a minimal edit, never a rewrite.
+
+---
+
+## Marcus's critique of v1 (Nov 1, 17:33): the real bar
+His words: "visually ambitious, but the script doesn't deliver enough intellectual value for its nearly two-minute runtime… low insight density: too much time explaining what happened, not enough time revealing surprising connections, resolving deeper mysteries, or changing how the viewer understands Scripture… cinematography cannot compensate for a script that has already finished making its point."
+
+**Where v1 lost density:**
+| Window | v1 spends it on | Why it's weak |
+|---|---|---|
+| 33-48 s | "looking isn't worshipping" | A useful distinction, but it takes 15 s |
+| 50-69 s | They worshipped it; Hezekiah destroyed it | The hook had already revealed the destruction |
+| 94-103 s | "He wasn't destroying God's miracle…" | It repeats the previous explanation |
+
+**The connections that make it compelling** (all checked on esv.org):
+1. **The golden calf reversal.** God never commanded the calf: "turned aside… out of the way that I commanded them" (Ex 32:8). He did command the serpent (Num 21:8). Both ended in offerings to an object (Ex 32:8 "sacrificed to it"; 2 Kgs 18:4 "made offerings to it"), and both were destroyed.
+2. **Hezekiah destroyed the object; Jesus kept its meaning.** He used the story centuries after the metal was gone (John 3:14).
+3. **John 3:16 sits two verses after the serpent.** It begins with "For", and the ESV notes it can read "For this is how God loved the world". The world's best-known verse explains the serpent comparison.
+
+**The standard:** viewers finish having understood a biblical connection they would probably never have found by reading the passages separately. The v2 narration is in `ep02-bronze-serpent/writer/drafts/v2.md`.
