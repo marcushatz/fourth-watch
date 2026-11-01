@@ -198,3 +198,9 @@
 - **The GitHub repo: yes** ("definitely need that github repo"). A private repo for the engine and the system, so the work survives this workspace. This is his OK to create the repo and push to it.
 - He asked whether the AI voiceover is worth replacing, now that Instagram requires an AI label on "a reel narrated with a realistic AI-generated voiceover". That's open; see `DECISIONS.md`.
 - He asked about an episode that answers a question most people have about Christianity, not only a story question. That's open; see `DECISIONS.md`.
+
+## Round 20 — Marcus, Nov 1 08:11
+- His words: "i only want the tokens spent, making the script better for the viewer to stay thoruhg th eentirety of the video, for the story thevalue thats being rpesented to the viewer to actually be good enouhg for them to like, comment, share, follow ... dont spend lal tokens on fact checking, i rather you spend otekns ensuring that the script is amazing, that what we have chosen in teh first palce is even worth, and that the audience will be intrigued by the story."
+- **The token budget goes to the viewer.** That means watch-through to the end, value worth acting on, and a reason to like, comment, share and follow. It also means checking whether each topic is worth making before polishing it, and whether the story intrigues.
+- **Accuracy stays, at the cheap end.** It uses the verified-ESV notes already on file, the deterministic checks, and ONE independent fact-check on the final candidate, covering changed lines only. No repeated full fact-check agents every round. (This narrows Round 18's layer 2. It still runs, just once and scoped.)
+- **No new helper agents for work I can do in the main thread.** Each new agent costs ~75k tokens before it reads anything.
