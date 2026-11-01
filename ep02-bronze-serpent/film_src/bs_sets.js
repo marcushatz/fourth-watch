@@ -20,15 +20,15 @@
     ],
   });
   D.set('court', {          // 2 Kings 18:4: a stone court (the place isn't named in the text); offerings at the serpent's base
-    sky: 'day', seed: 18,
-    ground: { radius: 8, cols: ['#B8A88A', '#AE9E80', '#C2B294'], hills: 0.04, seed: 4 },
+    sky: 'dusk', seed: 18,
+    ground: { radius: 8, cols: ['#A8946E', '#9E8A66', '#B29E78'], hills: 0.04, seed: 4 },
     props: [
       { id: 'plinth', kind: 'plinth', at: [0, 0] },
-      { id: 'serpent', kind: 'serpentPole', at: [0, 0], h: 1.5 },
+      { id: 'serpent', kind: 'serpentPole', at: [0, 0], h: 1.5, hv: 0.45, floorY: 0.74 },
       { id: 'smoke', kind: 'incense', at: [0.62, 0.55], n: 10, op: 0.18, h: 1.8 },
       { kind: 'bowl', at: [0.35, 0.85] }, { kind: 'bowl', at: [0.85, 1.05], fill: '#C9A060' }, { kind: 'bowl', at: [-0.2, 0.9], fill: '#E8E0C8' },
       { kind: 'pillar', at: [-2.6, -1.8] }, { kind: 'pillar', at: [2.6, -1.8] }, { kind: 'pillar', at: [-2.9, 1.2] }, { kind: 'pillar', at: [3.0, 1.0] },
-      { kind: 'wall', at: [0, -3.4], w: 7.5 },
+      { kind: 'wall', at: [0, -3.4], w: 7.5, col: '#8C7A60' },
     ],
     people: [
       { id: 'o1', at: [1.25, 1.45], pose: 'kneel', ...ISRAELITE(4) }, { id: 'o2', at: [1.95, 0.75], pose: 'kneel', ...ISRAELITE(5) },

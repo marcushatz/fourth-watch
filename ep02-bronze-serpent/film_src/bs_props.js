@@ -81,7 +81,7 @@
     head.position.copy(hc); g.add(head); pieces.push({ m: head, home: hc.clone() });
     // a deterministic spray for the shatter
     const rng = FW.rng(p.seed ?? 41);
-    pieces.forEach((pc, i) => { const a = (i / pieces.length) * 6.283 + rng() * 0.8; pc.v = new THREE.Vector3(Math.cos(a) * (0.5 + rng() * 0.8) * hv, 0.6 + rng() * 1.2, Math.sin(a) * (0.4 + rng() * 0.6) * hv); pc.spin = new THREE.Vector3(rng() * 9 - 4.5, rng() * 9 - 4.5, rng() * 9 - 4.5); pc.floor = 0.06 + rng() * 0.04; });
+    pieces.forEach((pc, i) => { const a = (i / pieces.length) * 6.283 + rng() * 0.8; pc.v = new THREE.Vector3(Math.cos(a) * (0.5 + rng() * 0.8) * hv, 0.6 + rng() * 1.2, Math.sin(a) * (0.4 + rng() * 0.6) * hv); pc.spin = new THREE.Vector3(rng() * 9 - 4.5, rng() * 9 - 4.5, rng() * 9 - 4.5); pc.floor = (p.floorY ?? 0.06) + rng() * 0.04; });
     const flash = new THREE.Sprite(new THREE.SpriteMaterial({ map: softTex('255,236,190'), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0 })); flash.position.y = top - 0.4; flash.scale.set(2.6, 2.6, 1); g.add(flash);
     g.userData.anchorY = top + 0.2;
     g.userData.frame = (t, evs) => {
