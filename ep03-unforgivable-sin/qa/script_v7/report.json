@@ -3,14 +3,14 @@
   "verdict": "FAIL",
   "counts": {
     "FAIL": 9,
-    "WARN": 7,
-    "PASS": 12
+    "WARN": 8,
+    "PASS": 11
   },
   "facts": {
     "title": "What is the unforgivable sin?",
     "series": "ASK THE TEXT",
-    "VO words": 257,
-    "estimated runtime": "90.7s at 170 wpm"
+    "VO words": 268,
+    "estimated runtime": "94.6s at 170 wpm"
   },
   "items": [
     {
@@ -26,17 +26,17 @@
     {
       "level": "PASS",
       "check": "runtime",
-      "msg": "estimated 91s"
+      "msg": "estimated 95s"
     },
     {
       "level": "WARN",
-      "check": "overclaim",
-      "msg": "'every' — make sure the text really says this: 'Christians explain the sin in a few ways, such as knowingly calling God's clear '"
+      "check": "sentence length",
+      "msg": "31 words (max 25): 'In Mark's version of the same charge, Jesus asks, \"How can Satan cast out Satan?'"
     },
     {
       "level": "PASS",
       "check": "answer",
-      "msg": "answer stated in the Turn/Landing: 'In the text, Jesus warned men who said he cast out demons by \"the prince of demons\"; Mark says why: \"they were saying, 'He has an unclean spirit.'\" They were calling the Holy Spirit's work the devil's, and in every Christian view the sin is deliberate, never an accident.'"
+      "msg": "answer stated in the Turn/Landing: 'In the text, Jesus warned men who said he cast out demons by \"the prince of demons\"; Mark says why: \"they were saying, 'He has an unclean spirit.'\" They were calling the Holy Spirit's work the devil's, and in the main Christian explanations the sin is deliberate, never an accident.'"
     },
     {
       "level": "PASS",
@@ -56,17 +56,17 @@
     {
       "level": "WARN",
       "check": "turn",
-      "msg": "the Turn starts about 34s in (Lintel's top six turn at 14–25 s, after at most ~14 s of story)"
+      "msg": "the Turn starts about 35s in (Lintel's top six turn at 14–25 s, after at most ~14 s of story)"
     },
     {
       "level": "PASS",
       "check": "story share",
-      "msg": "the Story section is 13% of the words (Marcus's cap ~40%; the hits retell 0–5%, the top six spend 0–21% on any story). Count story lines in other sections by hand"
+      "msg": "the Story section is 14% of the words (Marcus's cap ~40%; the hits retell 0–5%, the top six spend 0–21% on any story). Count story lines in other sections by hand"
     },
     {
-      "level": "PASS",
+      "level": "WARN",
       "check": "answer timing",
-      "msg": "the core answer starts at about 37% of the runtime (top six 33–50%; the question-video lows 59–82%)"
+      "msg": "the core answer starts at about 23% of the runtime (top six 33–50%; the question-video lows 59–82%)"
     },
     {
       "level": "PASS",
@@ -141,12 +141,12 @@
     {
       "level": "WARN",
       "check": "fact-check",
-      "msg": "[Mark 3:23, 3:28-30] is cited in the VO but not in the fact-check log"
+      "msg": "[Mark 3:28-30; Matthew 12:24-28] is cited in the VO but not in the fact-check log"
     },
     {
       "level": "WARN",
       "check": "fact-check",
-      "msg": "[Mark 3:28-30; Matthew 12:24-28] is cited in the VO but not in the fact-check log"
+      "msg": "[Mark 3:23, 3:28-30] is cited in the VO but not in the fact-check log"
     },
     {
       "level": "WARN",
