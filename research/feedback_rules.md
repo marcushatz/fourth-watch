@@ -269,3 +269,26 @@ Rules:
   - the golden calf reversal (Ex 32:8 vs Num 21:8);
   - Hezekiah destroyed the object, Jesus kept its meaning;
   - John 3:14 → 3:16, two verses apart.
+
+## Round 29 (Nov 1, 17:58): Bronze Serpent v4 approved; production instructions
+**Approved:** "cut version plus the 3 16 line" (`ep02-bronze-serpent/script_approved_v4.md`). His own v4 was 351 words; the approved cut is 258 words, about 108 s with the offline narrator.
+
+**Production rules (binding for this episode and as defaults):**
+- **Intellectual value first.** Every major sequence must advance one of the three revelations:
+  - God commanded the serpent, unlike the calf.
+  - Israel preserved the object but corrupted its purpose.
+  - Hezekiah destroyed it, yet Jesus revealed its significance in John 3.
+- **Visuals explain, never decorate.** Use comparisons, match cuts, spatial relationships, purposeful camera moves and symbolic transitions, so viewers SEE how the calf, the serpent, Hezekiah's smash and the cross relate.
+- **No** repetitive character movement, unnecessary establishing shots, long static scenes, or generic illustrations of the narration.
+- **Density:** something new every 10-15 s. Never stretch the runtime.
+- **Progression:** mystery → understanding → reversal → the strongest payoff near the end. The final sequence must show why Jesus' reference transforms the story.
+- **Accuracy:** distinguish what the text states from visual interpretation; invent nothing.
+- **Process:** reuse proven components, but don't let technical limits compromise the direction. Before rendering:
+  - analyze the script beat by beat;
+  - place each discovery;
+  - design the strongest visual for each;
+  - critique each sequence;
+  - revise the storyboard;
+  - name the hardest shots;
+  - render a short opening proof.
+- **The standard:** every visual deepens understanding, raises curiosity, clarifies a connection, or heightens the emotional impact of a revelation.

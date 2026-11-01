@@ -6,6 +6,7 @@ Keep it short: one entry per verdict, Marcus's words quoted. Add an entry the da
 | Date | Episode | Why it was approved | Where |
 |---|---|---|---|
 | Nov 1 2026 (16:32; critiqued 17:33) | **The Bronze Serpent** v1: "Why Did God Command Something That Later Had to Be Destroyed?" | **The structural model.** Marcus then judged it low on insight density (see Rejected). v2 rebuilt it around the calf reversal and John 3:16. One object across three eras, a contradiction raised and resolved, a link the text itself makes (John 3:14), and a principle that follows from the evidence. 263 words. | `ep02-bronze-serpent/script_approved.md`; annotated in `reference/gold_bronze_serpent.md` |
+| Nov 1 2026 17:58 | **The Bronze Serpent v4** (Marcus's own rewrite, cut to about 100 s, plus the 3:16 line) | **The current gold standard for insight.** Three revelations: (1) God commanded the serpent, unlike the calf; (2) Israel kept the object and corrupted its purpose; (3) Hezekiah destroyed it, but Jesus revealed its meaning in John 3, and 3:16 can be read "For this is how God loved the world". | `ep02-bronze-serpent/script_approved_v4.md` |
 | Oct 31 2026 | Jonah v5 | "solid story lets keep it" (Round 19) | `ep02-jonah/episode.md` |
 | Oct 30-31 2026 | Samson v57 (locked) | Approved as a script, but the finished cut was "not good enough" (Round 15). Later measured at 49% retelling, so treat it as a weak example (`reference/weak_vs_strong.md`). | `ep01-samson/episode.md` |
 
