@@ -3,14 +3,14 @@
   "verdict": "FAIL",
   "counts": {
     "FAIL": 9,
-    "WARN": 5,
-    "PASS": 11
+    "WARN": 7,
+    "PASS": 12
   },
   "facts": {
     "title": "What is the unforgivable sin?",
     "series": "ASK THE TEXT",
-    "VO words": 242,
-    "estimated runtime": "85.4s at 170 wpm"
+    "VO words": 257,
+    "estimated runtime": "90.7s at 170 wpm"
   },
   "items": [
     {
@@ -26,17 +26,22 @@
     {
       "level": "PASS",
       "check": "runtime",
-      "msg": "estimated 85s"
+      "msg": "estimated 91s"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'every' — make sure the text really says this: 'Christians explain the sin in a few ways, such as knowingly calling God's clear '"
     },
     {
       "level": "PASS",
       "check": "answer",
-      "msg": "answer stated in the Turn/Landing: 'In the text, Jesus warned them because they were giving the devil credit for the Spirit's work: he said he cast out demons \"by the Spirit of God\", and they were saying he \"has an unclean spirit.\"'"
+      "msg": "answer stated in the Turn/Landing: 'In the text, Jesus warned men who said he cast out demons by \"the prince of demons\"; Mark says why: \"they were saying, 'He has an unclean spirit.'\" They were calling the Holy Spirit's work the devil's, and in every Christian view the sin is deliberate, never an accident.'"
     },
     {
       "level": "PASS",
       "check": "value",
-      "msg": "4 things the viewer learns, each with a verse and each said in the VO"
+      "msg": "5 things the viewer learns, each with a verse and each said in the VO"
     },
     {
       "level": "WARN",
@@ -51,17 +56,17 @@
     {
       "level": "WARN",
       "check": "turn",
-      "msg": "the Turn starts about 33s in (Lintel's top six turn at 14–25 s, after at most ~14 s of story)"
+      "msg": "the Turn starts about 34s in (Lintel's top six turn at 14–25 s, after at most ~14 s of story)"
     },
     {
       "level": "PASS",
       "check": "story share",
-      "msg": "the Story section is 14% of the words (Marcus's cap ~40%; the hits retell 0–5%, the top six spend 0–21% on any story). Count story lines in other sections by hand"
+      "msg": "the Story section is 13% of the words (Marcus's cap ~40%; the hits retell 0–5%, the top six spend 0–21% on any story). Count story lines in other sections by hand"
     },
     {
-      "level": "WARN",
+      "level": "PASS",
       "check": "answer timing",
-      "msg": "the core answer starts at about 24% of the runtime (top six 33–50%; the question-video lows 59–82%)"
+      "msg": "the core answer starts at about 37% of the runtime (top six 33–50%; the question-video lows 59–82%)"
     },
     {
       "level": "PASS",
@@ -132,6 +137,16 @@
       "level": "FAIL",
       "check": "fact-check",
       "msg": "claim not verified: 'The answer: line' (status: 'pending')"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Mark 3:23, 3:28-30] is cited in the VO but not in the fact-check log"
+    },
+    {
+      "level": "WARN",
+      "check": "fact-check",
+      "msg": "[Mark 3:28-30; Matthew 12:24-28] is cited in the VO but not in the fact-check log"
     },
     {
       "level": "WARN",
