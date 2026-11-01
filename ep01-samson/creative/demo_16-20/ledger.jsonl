@@ -1,0 +1,5 @@
+{"at": "2026-11-01T01:02:19", "phase": "cd_pass1", "model": "opus", "tokens": 90785, "usd": 0.0, "note": "treatments+concept+spec in one call; 3 turns (2 Reads); first turn wrote 74,557 tokens of fixed agent context; output 8,139"}
+{"at": "2026-11-01T01:02:19", "phase": "spec_pass", "model": "sonnet", "tokens": 0, "usd": 0.0, "note": "mechanical spec_check pass 1: no model"}
+{"at": "2026-11-01T01:02:19", "phase": "fact_check", "model": "sonnet", "tokens": 88034, "usd": 0.0, "note": "picture claims only, inline, no tools; ~74.5k of it is fixed agent context"}
+{"at": "2026-11-01T01:04:54", "phase": "spec_pass", "model": "opus", "tokens": 7779, "usd": 0.0, "note": "pass 2 by RESUMING the same agent: 98,564 cumulative - 90,785 = 7,779 new tokens (context was cached)"}
+{"at": "2026-11-01T01:06:27", "phase": "fact_check", "model": "sonnet", "tokens": 10761, "usd": 0.0, "note": "recheck of pass 2 + current v57/v60 rows by RESUMING the fact-checker: 98,795 - 88,034"}

@@ -1,0 +1,58 @@
+#!/usr/bin/env python3
+"""Tests for the spec checker, written BEFORE the fixes they cover (Round 17 rule). Each case edits the demo spec or pack
+and states what the checker must say.  python3 creative/_proto/test_spec_check.py"""
+import copy, subprocess, sys, tempfile
+from pathlib import Path
+import yaml
+
+ROOT = Path(__file__).resolve().parents[2]
+DEMO = ROOT / "ep01-samson/creative/demo_16-20"
+BASE = yaml.safe_load((DEMO / "spec.pass1.yaml" if (DEMO / "spec.pass1.yaml").exists() else DEMO / "spec.yaml").read_text())
+PACK = (DEMO / "pack.md").read_text()
+EP = ROOT / "ep01-samson/episode.md"
+
+def run(spec, pack):
+    with tempfile.TemporaryDirectory() as d:
+        s, p = Path(d, "s.yaml"), Path(d, "p.md")
+        s.write_text(yaml.safe_dump(spec, sort_keys=False)); p.write_text(pack)
+        r = subprocess.run([sys.executable, str(ROOT / "creative/_proto/spec_check.py"), str(s), str(p), str(EP)], capture_output=True, text=True)
+        return r.stdout + r.stderr
+
+def with_line(pack, line):  # set a line in the narration section of the pack (replacing one of the same kind)
+    kind = line.split(":")[0]
+    pack = "\n".join(l for l in pack.splitlines() if not l.startswith(kind + ":")) + "\n"
+    return pack.replace("## Accuracy notes", line + "\n\n## Accuracy notes", 1)
+
+def strip_verse(spec):
+    for s in spec["scenes"]: s["text"] = {"kind": "none"} if s["id"] == "C" else s["text"]
+    return spec
+
+cases = []
+def case(name, spec, pack, must=(), must_not=()):
+    cases.append((name, spec, pack, must, must_not))
+
+# 1. "weight forward" is body language, not balance imagery; "scales weighing" is.
+s = copy.deepcopy(BASE); s["scenes"][0]["action"][0]["does"] = "rises off the couch, weight forward"
+case("weight is not weighing", s, PACK, must_not=["balance/weighing"])
+s = copy.deepcopy(BASE); s["scenes"][0]["action"][0]["does"] = "a pair of scales weighing his deeds hangs above him"
+case("scales weighing fails", s, PACK, must=["balance/weighing"])
+
+# 2. The first scene's place read: 0.5 s is enough when the shot before the window is on the same set.
+s = copy.deepcopy(BASE); s["scenes"][0]["reads"][0]["t"] = [48.50, 49.10]
+case("same set before window: 0.5 s rule", s, with_line(PACK, "- shot before the window: S09 sorek/wake"), must_not=["place read"])
+case("other set before window: 0.8 s rule", s, with_line(PACK, "- shot before the window: S04 gaza/rip"), must=["place read"])
+
+# 3. An approved VERSE card that belongs to a line in the window must appear, word for word.
+req = '- required verse card: "But he did not know that the LORD had left him." — Judges 16:20 (ESV)'
+case("missing approved verse card fails", strip_verse(copy.deepcopy(BASE)), with_line(PACK, req), must=["approved verse card missing"])
+s = strip_verse(copy.deepcopy(BASE))
+s["scenes"][2]["text"] = {"kind": "verse", "words": "But he did not know that the LORD had left him.", "t": [53.51, 56.5]}
+case("present approved verse card passes", s, with_line(PACK, req), must_not=["approved verse card missing", "verse text isn't"])
+
+fails = 0
+for name, spec, pack, must, must_not in cases:
+    out = run(spec, pack)
+    bad = [m for m in must if m not in out] + [f"NOT {m}" for m in must_not if m in out]
+    print(("FAIL " if bad else "ok   ") + name + (f"  -> expected {bad}" if bad else ""))
+    fails += bool(bad)
+print(f"\n{len(cases) - fails}/{len(cases)} passed"); sys.exit(1 if fails else 0)
