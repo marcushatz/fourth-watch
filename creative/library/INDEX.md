@@ -11,6 +11,7 @@ Code paths are in `ep*/film*/`.
 |---|---|---|---|---|
 | Make a verb land on its word | Anticipation dip → drive → overshoot → settle | `recipes/verb_on_word.md` | `fw/direct.js` `DIRECT.act` | prototype (pillars sdB) |
 | Show effort that doesn't stop | Sustained tremor + bowed head + weight forward | `recipes/verb_on_word.md` | `DIRECT.tremor`; PP2 `push` `k` | prototype |
+| Show that the character caused it | Cause and first effect in one frame, then the wide | `recipes/cause_and_effect.md` | dagon `lean0`, `twoPosts` | prototype (sdB, sdC) |
 | Show how big something is | Cut from MCU to XWS on the noun; a small figure inside a huge set | `recipes/scale_reveal.md` | named marks + `DIRECT.path` | prototype (pillars sdD) |
 | Follow a force through a structure | A crane up the object from the point of contact | `recipes/crane_up_force.md` | `DIRECT.path` between two marks | prototype (sdC) |
 | Show irony (they don't know) | Keep the oblivious party moving in soft focus behind the subject | `recipes/irony_background.md` | the scene's background figures keep their loop | prototype (sdA) |

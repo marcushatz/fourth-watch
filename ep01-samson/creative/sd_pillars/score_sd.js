@@ -74,9 +74,9 @@
   const SDB = { called: cue(11, 'asked'), answered: cue(12, 'pushed'), house: cue(12, 'building'), fell: cue(12, 'fell'), grip: cue(12, 'Then'), all: cue(12, 'all'), strength: cue(12, 'strength'), lords: cue(12, 'lords'), inside: cue(12, 'everyone'), died: cue(12, 'died') };
   add('S19A', 'dagon', 'sdA', cue(11, 'Now') - PRE, { beats: SDB, size: 'ms', angle: 'high', cam: { move: 'push', amt: 4 }, act: 'head bowed, then lifted toward the upper left on "asked" (prayer); the lords still laughing behind', change: 'no gold: the text does not say God answered' });
   add('S19B', 'dagon', 'sdB', cue(12, 'Then') - PRE, { beats: SDB, size: 'mcu', angle: 'low', cam: { move: 'still', amt: 0 }, act: 'grips and leans on "Then"; anticipation, then bows with all his weight on "pushed", tremor' });
-  add('S19C', 'dagon', 'sdC', cue(12, 'with') - PRE, { beats: SDB, size: 'ms', angle: 'low', cam: { move: 'crane', amt: 30, job: 'reveal' }, change: 'crane up the pillar; sand trickles from the capital; the drums shear on "strength"' });
+  add('S19C', 'dagon', 'sdC', cue(12, 'with') - PRE, { beats: SDB, list: true, size: 'ms', angle: 'low', cam: { move: 'crane', amt: 30, job: 'reveal' }, change: 'crane up the pillar; sand trickles from the capital; the drums shear on "strength"' });
   add('S19D', 'dagon', 'sdD', cue(12, 'and') - PRE, { beats: SDB, size: 'xws', angle: 'eye', cam: { move: 'pull', amt: 8 }, act: 'the middle pillars give on "building"; the roof lands on "fell"; the lords topple into the dust', change: 'the dust rolls over the hall' });
-  add('S19E', 'dagon', 'sdE', cue(12, 'Samson') - PRE, { beats: SDB, size: 'ws', angle: 'top', cam: { move: 'still', amt: 0 }, callback: true, change: 'top-down: two broken stumps and the empty gap where he stood; the dust settles' });
+  add('S19E', 'dagon', 'sdE', cue(12, 'Samson') - PRE, { beats: SDB, list: true, size: 'ws', angle: 'top', cam: { move: 'still', amt: 0 }, callback: true, change: 'top-down: two broken stumps and the empty gap where he stood; the dust settles' });
   // 13 "And the Bible adds:" Judges 16:30 on a verse card
   add('S20', 'dagon', 'fall', st(13) - PRE, { card: 'verse', verse: 3, verseAt: cue(13, '"So'), beats: {} });
   // 14 "Samson's last act began with a prayer." first light over Gaza; then Hebrews 11

@@ -477,7 +477,7 @@
     motes = LW.particles(80, '#FFE3B0', 0.035); scene.add(motes);
     embers = LW.particles(60, '#FFB24C', 0.03); scene.add(embers);
     // sand streams: from the capitals as they creak, then from the opening seam
-    for (const [x, y, z, t0, t1] of [[-PX, H_CAP + 0.02, PZ + 0.32, T.creak, T.give + 0.15], [PX, H_CAP + 0.02, PZ + 0.32, T.creak + 0.15, T.give + 0.15], [0.05, H_LIN - 0.05, 0.4, T.tH - 0.35, T.land - 0.25], [-0.35, H_LIN - 0.05, -0.6, T.tH - 0.25, T.land - 0.3], [-1.5, H_LIN, 0.5, T.tH - 0.1, T.land - 0.3], [1.7, H_LIN, 0.2, T.tH - 0.15, T.land - 0.3], [0.4, H_LIN, -1.8, T.tH - 0.2, T.land - 0.3]]) streams.push({ x, y, z, t0, t1 });
+    for (const [x, y, z, t0, t1] of [[-PX, H_CAP + 0.02, PZ + 0.32, T.creak, T.give + 0.15], [PX, H_CAP + 0.02, PZ + 0.32, T.creak + 0.15, T.give + 0.15], [0.05, H_LIN - 0.05, 0.4, T.tH - 0.35, T.land - 0.25], [-0.35, H_LIN - 0.05, -0.6, T.tH - 0.25, T.land - 0.3], [-1.5, H_LIN, 0.5, T.tH - 0.1, T.land - 0.3], [1.7, H_LIN, 0.2, T.tH - 0.15, T.land - 0.3], [0.4, H_LIN, -1.8, T.tH - 0.2, T.land - 0.3]]) streams.push({ x, y, z, t0: T.lean0 != null ? Math.max(t0, T.give) : t0, t1 });   // sd: no sand before the house gives (fact-check: an invented intermediate beat)
 
     // ---- people ----
     makeCrowdTextures();
@@ -633,7 +633,7 @@
       m.visible = kf < 0.97;
     });
     // ---- the god goes over, face down, into the dust ----
-    { const u = Math.max(0, t - (T.give + 0.5)); statue.rotation.x = Math.min(1.45, 0.5 * 3.2 * u * u); }
+    { const u = Math.max(0, t - (T.give + 0.5)); statue.rotation.x = T.lean0 != null ? 0 : Math.min(1.45, 0.5 * 3.2 * u * u); }   // sd: the idol is not shown falling (16:23-30 never says so; that is 1 Samuel 5)
     // ---- the roof pieces ----
     pieces.forEach((p) => { const ps = pieceState(p, t); p.mesh.position.set(...ps.pos); p.mesh.rotation.set(ps.rx, 0, ps.rz); });
     // ---- the breaking pillars ----
