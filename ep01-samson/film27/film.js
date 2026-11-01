@@ -102,6 +102,26 @@
     return r;
   }
 
+  // the picture body of one shot: the 3D frame (or card background), its light, the top scrim and its cards
+  function body(ctx, t, shot) {
+      cam.setViewOffset(W, H, 0, 0, W, H); cam.fov = 38; cam.updateProjectionMatrix();
+      let r = null;
+      if (shot.scene === 'card') globalThis.CARDS.background(ctx, t, shot);
+      else r = draw3D(ctx, t, shot);
+      if (r && r.flash > 0) { ctx.save(); ctx.globalCompositeOperation = 'lighter'; ctx.fillStyle = `rgba(255,214,150,${(0.3 * r.flash).toFixed(3)})`; ctx.fillRect(0, 0, W, H); ctx.restore(); }
+      if (r && r.dark > 0) { ctx.fillStyle = `rgba(6,6,10,${Math.min(1, r.dark).toFixed(3)})`; ctx.fillRect(0, 0, W, H); }
+      // a soft night scrim behind the top text block
+      { const g = ctx.createLinearGradient(0, 0, 0, shot.title ? 760 : 560); const sa = shot.scrim ?? 0.5; g.addColorStop(0, `rgba(10,12,30,${sa})`); g.addColorStop(0.65, `rgba(10,12,30,${(sa * 0.4).toFixed(2)})`); g.addColorStop(1, 'rgba(10,12,30,0)'); ctx.fillStyle = g; ctx.fillRect(0, 0, W, shot.title ? 760 : 560); }
+      if (shot.card) globalThis.CARDS.draw(ctx, t, shot, r);
+      if (shot.pill) globalThis.CARDS.pill(ctx, t, shot);
+      if (shot.chapter) globalThis.CARDS.chapter(ctx, t, shot);
+      if (shot.intro) globalThis.CARDS.introStamp(ctx, t, shot);
+      if (shot.counter) globalThis.CARDS.counter(ctx, t, shot);
+      if (shot.tally) globalThis.CARDS.tally(ctx, t, shot);
+      if (shot.stamp) globalThis.CARDS.stamp(ctx, t, shot);
+      if (shot.bubble || shot.bubbles) globalThis.CARDS.bubble(ctx, t, shot);
+  }
+
   Studio.film({
     post: { paper: 0, grain: 0.03, vignette: 0.24, bloom: 0 },
     fadeOut: 0,
@@ -121,22 +141,9 @@
     draw(ctx, t) {
       if (t >= S.END_T) return globalThis.CARDS.endCard(ctx, t); // hard cut to the end card
       const shot = S.shotAt(t);
-      cam.setViewOffset(W, H, 0, 0, W, H); cam.fov = 38; cam.updateProjectionMatrix();
-      let r = null;
-      if (shot.scene === 'card') globalThis.CARDS.background(ctx, t, shot);
-      else r = draw3D(ctx, t, shot);
-      if (r && r.flash > 0) { ctx.save(); ctx.globalCompositeOperation = 'lighter'; ctx.fillStyle = `rgba(255,214,150,${(0.3 * r.flash).toFixed(3)})`; ctx.fillRect(0, 0, W, H); ctx.restore(); }
-      if (r && r.dark > 0) { ctx.fillStyle = `rgba(6,6,10,${Math.min(1, r.dark).toFixed(3)})`; ctx.fillRect(0, 0, W, H); }
-      // a soft night scrim behind the top text block
-      { const g = ctx.createLinearGradient(0, 0, 0, shot.title ? 760 : 560); const sa = shot.scrim ?? 0.5; g.addColorStop(0, `rgba(10,12,30,${sa})`); g.addColorStop(0.65, `rgba(10,12,30,${(sa * 0.4).toFixed(2)})`); g.addColorStop(1, 'rgba(10,12,30,0)'); ctx.fillStyle = g; ctx.fillRect(0, 0, W, shot.title ? 760 : 560); }
-      if (shot.card) globalThis.CARDS.draw(ctx, t, shot, r);
-      if (shot.pill) globalThis.CARDS.pill(ctx, t, shot);
-      if (shot.chapter) globalThis.CARDS.chapter(ctx, t, shot);
-      if (shot.intro) globalThis.CARDS.introStamp(ctx, t, shot);
-      if (shot.counter) globalThis.CARDS.counter(ctx, t, shot);
-      if (shot.tally) globalThis.CARDS.tally(ctx, t, shot);
-      if (shot.stamp) globalThis.CARDS.stamp(ctx, t, shot);
-      if (shot.bubble || shot.bubbles) globalThis.CARDS.bubble(ctx, t, shot);
+      // a transition (fw/trans.js) draws the outgoing and incoming picture bodies itself; otherwise the body draws straight in
+      const tr = globalThis.TRANS && globalThis.TRANS.active(t, shot);
+      if (tr) globalThis.TRANS.draw(ctx, t, shot, S.SHOTS[shot.i - 1], body, W, H, tr); else body(ctx, t, shot);
       TX.header(ctx, W, 1, { series: 'ASK THE TEXT', topic: 'SAMSON' });
       if (shot.title) TX.title(ctx, W, [['IF', 'GOD', 'STILL', 'USES', 'YOU,'], ['IS', 'HE', 'OKAY*', 'WITH'], ['HOW', 'YOU', 'LIVE?']], 1, 318, 64);
       narration(ctx, t, shot);
