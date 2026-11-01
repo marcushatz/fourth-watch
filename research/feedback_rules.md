@@ -234,3 +234,12 @@
 ## Round 25 — Marcus, Nov 1 (answers to two questions)
 - **Voice:** "No preference". The pipeline uses a free offline voice, so no paid credits are spent without his decision. ElevenLabs stays an option for finals.
 - **Checkpoint:** "Stop once, after the script". The one-prompt run stops for his OK on the script, then goes all the way to the finished video.
+
+## Round 26 (Nov 1, 11:32) — Ep 4 v6 rejected
+Marcus: "this script is an actual piece of dogshit, it makes no sense, i dont understand what the clear message is, there is so much that you left unanswered, you have convinced me the engine is still crap"
+Rules:
+- **Message first.** Write the ONE-sentence message before any line, and show it to Marcus with the script. Every line must serve it.
+- **Build a question chain, not a fact list.** Each line answers the question the line before it raises, and the questions are asked out loud ("Chosen for what?", "But why Jacob?", "And Esau?").
+- **Few books.** At most ~3 books plus one passing fact. v6 hopped across 7 (Genesis, Malachi, Deuteronomy, Obadiah, Romans, Genesis again), which read as a study guide.
+- **Don't patch line by line from AI-viewer complaints.** Adding a verse to answer each complaint is what turned the script into a list. Fix the spine instead.
+- **AI viewer scores are not the bar.** A 4/5 from an AI viewer didn't mean the script was clear. Don't present an AI score as the value verdict; say what the message is and whether every line serves it.
