@@ -1,16 +1,16 @@
 {
   "kind": "script",
-  "verdict": "FAIL",
+  "verdict": "PASS WITH WARNINGS",
   "counts": {
-    "FAIL": 1,
-    "WARN": 16,
+    "FAIL": 0,
+    "WARN": 8,
     "PASS": 11
   },
   "facts": {
     "title": "Why did God \"hate\" Esau and love Jacob, the liar?",
     "series": "ASK THE TEXT",
-    "VO words": 217,
-    "estimated runtime": "76.6s at 170 wpm"
+    "VO words": 218,
+    "estimated runtime": "76.9s at 170 wpm"
   },
   "items": [
     {
@@ -84,54 +84,9 @@
       "msg": "every line adds at least one new key word or quote"
     },
     {
-      "level": "FAIL",
-      "check": "fact-check",
-      "msg": "claim not verified: '(pending the v1 fact-check)' (status: 'pending')"
-    },
-    {
-      "level": "WARN",
-      "check": "fact-check",
-      "msg": "[Malachi 1:2-3; Romans 9:13] is cited in the VO but not in the fact-check log"
-    },
-    {
       "level": "WARN",
       "check": "fact-check",
       "msg": "[Genesis 29:28-31] is cited in the VO but not in the fact-check log"
-    },
-    {
-      "level": "WARN",
-      "check": "fact-check",
-      "msg": "[Deuteronomy 23:7] is cited in the VO but not in the fact-check log"
-    },
-    {
-      "level": "WARN",
-      "check": "fact-check",
-      "msg": "[Genesis 33:4] is cited in the VO but not in the fact-check log"
-    },
-    {
-      "level": "WARN",
-      "check": "fact-check",
-      "msg": "[Malachi 1:2-3; Romans 9:10-13; Genesis 33:4] is cited in the VO but not in the fact-check log"
-    },
-    {
-      "level": "WARN",
-      "check": "fact-check",
-      "msg": "[Malachi 1:1-4] is cited in the VO but not in the fact-check log"
-    },
-    {
-      "level": "WARN",
-      "check": "fact-check",
-      "msg": "[Genesis 31:41; 32:7, 32:9-11] is cited in the VO but not in the fact-check log"
-    },
-    {
-      "level": "WARN",
-      "check": "fact-check",
-      "msg": "[Genesis 29:16-25] is cited in the VO but not in the fact-check log"
-    },
-    {
-      "level": "WARN",
-      "check": "fact-check",
-      "msg": "[Romans 9:11-12] is cited in the VO but not in the fact-check log"
     },
     {
       "level": "WARN",
@@ -141,12 +96,12 @@
     {
       "level": "WARN",
       "check": "fact-check",
-      "msg": "[Romans 9:10-13] is cited in the VO but not in the fact-check log"
+      "msg": "[Malachi 1:2-3; Romans 9:13] is cited in the VO but not in the fact-check log"
     },
     {
       "level": "WARN",
       "check": "fact-check",
-      "msg": "[Hebrews 12:16; Genesis 25:33-34] is cited in the VO but not in the fact-check log"
+      "msg": "[Genesis 31:41; 32:7, 32:9-11] is cited in the VO but not in the fact-check log"
     },
     {
       "level": "WARN",

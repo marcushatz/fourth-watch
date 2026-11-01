@@ -1,32 +1,23 @@
 # Fourth Watch QA — script
 
-**Verdict: FAIL** · 1 fail · 16 warn · 11 pass
+**Verdict: PASS WITH WARNINGS** · 0 fail · 8 warn · 11 pass
 
 | Fact | Value |
 | --- | --- |
 | title | Why did God "hate" Esau and love Jacob, the liar? |
 | series | ASK THE TEXT |
-| VO words | 217 |
-| estimated runtime | 76.6s at 170 wpm |
+| VO words | 218 |
+| estimated runtime | 76.9s at 170 wpm |
 
 | Level | Check | Time | Finding |
 | --- | --- | --- | --- |
-| FAIL | fact-check |  | claim not verified: '(pending the v1 fact-check)' (status: 'pending') |
 | WARN | runtime |  | estimated 77s; target 85–135s for ASK THE TEXT |
 | WARN | dialogue |  | quoted words with no reference (invented dialogue?): 'Why did God "hate" Esau and love Jacob, the liar?' |
 | WARN | answer timing |  | the core answer starts at about 57% of the runtime (top six 33–50%; the question-video lows 59–82%) |
-| WARN | fact-check |  | [Malachi 1:2-3; Romans 9:13] is cited in the VO but not in the fact-check log |
 | WARN | fact-check |  | [Genesis 29:28-31] is cited in the VO but not in the fact-check log |
-| WARN | fact-check |  | [Deuteronomy 23:7] is cited in the VO but not in the fact-check log |
-| WARN | fact-check |  | [Genesis 33:4] is cited in the VO but not in the fact-check log |
-| WARN | fact-check |  | [Malachi 1:2-3; Romans 9:10-13; Genesis 33:4] is cited in the VO but not in the fact-check log |
-| WARN | fact-check |  | [Malachi 1:1-4] is cited in the VO but not in the fact-check log |
-| WARN | fact-check |  | [Genesis 31:41; 32:7, 32:9-11] is cited in the VO but not in the fact-check log |
-| WARN | fact-check |  | [Genesis 29:16-25] is cited in the VO but not in the fact-check log |
-| WARN | fact-check |  | [Romans 9:11-12] is cited in the VO but not in the fact-check log |
 | WARN | fact-check |  | [Genesis 27:1, 27:18-29, 27:34] is cited in the VO but not in the fact-check log |
-| WARN | fact-check |  | [Romans 9:10-13] is cited in the VO but not in the fact-check log |
-| WARN | fact-check |  | [Hebrews 12:16; Genesis 25:33-34] is cited in the VO but not in the fact-check log |
+| WARN | fact-check |  | [Malachi 1:2-3; Romans 9:13] is cited in the VO but not in the fact-check log |
+| WARN | fact-check |  | [Genesis 31:41; 32:7, 32:9-11] is cited in the VO but not in the fact-check log |
 | WARN | judge |  | not judged: run the blind judge panel before Marcus sees it, then pass --judge <run folder> (tools/script_judge/rubric.md) |
 | PASS | series |  | ASK THE TEXT |
 | PASS | hook |  | first VO line equals the title |
