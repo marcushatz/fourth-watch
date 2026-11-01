@@ -230,3 +230,7 @@
   - direction, visuals, voice, music, render and QA;
   - the finished video, caption and cover.
 - Component demos are only means to that end. Report progress against the full pipeline, not samples.
+
+## Round 25 — Marcus, Nov 1 (answers to two questions)
+- **Voice:** "No preference". The pipeline uses a free offline voice, so no paid credits are spent without his decision. ElevenLabs stays an option for finals.
+- **Checkpoint:** "Stop once, after the script". The one-prompt run stops for his OK on the script, then goes all the way to the finished video.
