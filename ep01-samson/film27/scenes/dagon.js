@@ -211,12 +211,13 @@
 
   // ---------------- the timeline: every time comes from the two shots' beats ----------------
   function timeline() {
-    const s29 = S.SHOTS.find((s) => s.scene === 'dagon' && s.v === 'pillars'), s30 = S.SHOTS.find((s) => s.scene === 'dagon' && s.v === 'fall');
+    const s29 = S.SHOTS.find((s) => s.scene === 'dagon' && s.v === 'pillars'), s30 = S.SHOTS.find((s) => s.scene === 'dagon' && s.beats && s.beats.house != null) || S.SHOTS.find((s) => s.scene === 'dagon' && s.v === 'fall');
+    const sdEnd = S.SHOTS.filter((s) => s.scene === 'dagon' && /^sd/.test(s.v)).reduce((m, s) => Math.max(m, s.t1), 0);
     const b = s30.beats;
     const tH = b.house, tF = b.fell;
     return {
       s29, s30, t0: s29.t0, blind: s29.beats.blind, prayed: s29.beats.prayed, remember: s29.beats.remember, strengthen: s29.beats.strengthen,
-      called: b.called, answered: b.answered, tH, tF, end: s30.t1,
+      called: b.called, answered: b.answered, tH, tF, end: sdEnd || s30.t1, grip: b.grip ?? b.answered - 0.75,
       push: b.answered + 0.22,                     // he bows with all his strength
       creak: b.answered + 0.55,                    // the pillars begin to creak (dust trickles)
       give: tH - 0.02,                             // the middle pillars give on "house"
@@ -551,23 +552,28 @@
 
   // ---------------- the action, as a function of t ----------------
   function stage(t, shot) {
-    const fall = shot.v === 'fall';
+    const sd = /^sd/.test(shot.v);                // Story Director variants (creative/sd_pillars): no gold, no hush, the verb on its word
+    const fall = shot.v === 'fall' || sd;
     // ---- Samson: led in, hands on the pillars, prays face up; then bows with all his strength ----
     const arrive = T.prayed - 0.3, walk0 = T.blind + 0.05;
     const kw = prog(t, walk0, arrive, ease.inOut);
     const sx = lerp(-1.95, 0, kw), sz = lerp(0.62, 0, kw);
     let pose = t < arrive ? 'walk' : 'pray';
-    if (t >= T.push) pose = 'push';
-    const gold = fall ? prog(t, T.answered - 0.05, T.answered + 0.35, ease.out) : 0.0;
+    if (t >= (sd ? T.grip : T.push)) pose = 'push';
+    const gold = sd ? 0 : fall ? prog(t, T.answered - 0.05, T.answered + 0.35, ease.out) : 0.0;
     const hint = !fall ? prog(t, T.strengthen - 0.1, T.strengthen + 0.6, ease.inOut) * 0.22 : 0;
-    const surge = t >= T.answered ? Math.exp(-(t - T.answered) * 2.4) : 0;
+    const surge = sd ? 0 : t >= T.answered ? Math.exp(-(t - T.answered) * 2.4) : 0;
     const phase = q(kw * 2.5 * Math.PI * 2, 8);
     const look = pose === 'walk' ? [0.3, -0.1] : pose === 'pray' ? [-0.35, -0.85] : [0, 0.4];
-    const kp = pose === 'push' ? q(prog(t, T.push, T.push + 0.45, ease.out), 20) : 0;
-    const st = usingPP2 ? { pose, blind: true, shackles: true, hair: 0.25, gold: q(Math.max(gold, hint * 0.6), 30), phase, k: kp, t: q(t, 15) } : { pose, blind: true, shackles: true, hair: 0.25, gold: q(Math.max(gold, hint * 0.6), 30), look, phase, t: q(t, 15) };
+    let kp = pose === 'push' ? q(prog(t, T.push, T.push + 0.45, ease.out), 20) : 0;
+    let pitch;   // sd: head bowed until "asked", then lifted toward the upper left (prayer), no answer shown
+    if (sd && pose === 'pray') pitch = q(lerp(0.38, -0.72, prog(t, T.called - 0.05, T.called + 0.5, ease.inOut)), 30);
+    if (sd && pose === 'push') { const lean = ease.out(clamp((t - T.grip) / 0.4)), A = DIRECT.act(t, T.answered, { pre: 0.25, dip: 0.18, rise: 0.22, over: 0.1, settle: 0.25 }); kp = q(clamp(0.32 * lean + 0.68 * A.k, 0.12, 1.1), 30); }
+    const st = usingPP2 ? { pose, blind: true, shackles: true, hair: 0.25, gold: q(Math.max(gold, hint * 0.6), 30), phase, k: kp, pitch, t: q(t, 15) } : { pose, blind: true, shackles: true, hair: 0.25, gold: q(Math.max(gold, hint * 0.6), 30), look, phase, t: q(t, 15) };
     sam.userData.update(JSON.stringify(st), st);
-    const pushLean = pose === 'push' ? 0.012 * Math.sin(t * 40) * prog(t, T.push, T.push + 0.3) : 0;
-    sam.position.set(sx, 0, sz); sam.userData.tilt = pushLean; sam.userData.square = pose !== 'walk';
+    const pushLean = pose === 'push' ? (sd ? DIRECT.tremor(t, T.answered, 0.014) : 0.012 * Math.sin(t * 40) * prog(t, T.push, T.push + 0.3)) : 0;
+    const drive = sd && pose === 'push' ? DIRECT.act(t, T.answered, { pre: 0.25, dip: 0.18, rise: 0.22, over: 0.1, settle: 0.25 }).k : 0;   // he drives his weight into the pillars
+    sam.position.set(sx, -0.03 * Math.max(0, drive), sz - 0.07 * drive); sam.userData.tilt = pushLean; sam.userData.square = pose !== 'walk';
     // he is lost in the dust before the roof comes down: no one is shown under the stones
     const swallowed = prog(t, T.give + 0.25, T.land - 0.12);
     sam.visible = !(fall && t > T.give + 0.42);
@@ -585,7 +591,7 @@
     // ---- the lords laugh, fall silent when the light breaks in, and topple into the dust ----
     lords.forEach((L, i) => {
       const tf = T.give + 0.25 + hsh(i, 1) * 0.3, kf = prog(t, tf, tf + 0.55, ease.in);
-      const p = !fall || t < T.answered + 0.25 ? 'laugh' : t < tf ? 'stand' : 'fall';
+      const p = sd ? (t < tf ? 'laugh' : 'fall') : !fall || t < T.answered + 0.25 ? 'laugh' : t < tf ? 'stand' : 'fall';   // sd: still laughing until the house goes (16:25-30 never says they stopped)
       const lst = { pose: p, t: q(t, 10), dir: p === 'fall' ? 1 : -1, k: p === 'fall' ? 0.35 : 0.4 };
       L.userData.update(JSON.stringify(lst), lst);
       const r = L.userData.rest; L.position.set(r[0] + kf * 0.3, -kf * 0.9, r[2]);
@@ -599,7 +605,7 @@
       g.material.color.setRGB(0.74, 0.76, 0.88);
     });
     // ---- the crowd: cheering on the roof and in the hall, silent on "called", toppling into the dust ----
-    const hush = fall ? prog(t, T.called + 0.1, T.called + 0.35) : 0;
+    const hush = fall && !sd ? prog(t, T.called + 0.1, T.called + 0.35) : 0;
     roofCrowd.forEach((m) => {
       const i = m.userData.i, p = pieces[m.userData.piece];
       const cheerOn = ((t * (0.7 + hsh(i, 2) * 0.6) + hsh(i, 3)) % 1) < 0.62;
@@ -648,13 +654,14 @@
       m4.compose(v3, q4, s3); rubble.setMatrixAt(i, m4);
     });
     rubble.instanceMatrix.needsUpdate = true;
+    const settle = sd ? prog(t, T.land + 2.3, T.land + 3.6, ease.inOut) : 0;   // sd: the dust settles so the empty place can be read
     // ---- dust puffs ----
     puffList.forEach((p, i) => {
       const a = t - p.tb;
       if (a < 0) { m4.makeScale(0, 0, 0); puffs.setMatrixAt(i, m4); return; }
       const dr = (1 - Math.exp(-p.drag * a)) / p.drag;
       v3.set(p.o[0] + p.v[0] * dr, Math.max(0.25, p.o[1] + p.v[1] * dr + p.rise * a), p.o[2] + p.v[2] * dr);
-      const sc = p.s1 * (0.3 + 0.7 * (1 - Math.exp(-a * p.grow)));
+      const sc = p.s1 * (0.3 + 0.7 * (1 - Math.exp(-a * p.grow))) * (1 - settle);
       e3.set(p.n * 0.7, p.n * 1.3 + a * 0.4, 0); q4.setFromEuler(e3); s3.set(sc, sc * 0.86, sc);
       m4.compose(v3, q4, s3); puffs.setMatrixAt(i, m4);
     });
@@ -667,7 +674,7 @@
       const dr = (1 - Math.exp(-p.drag * a)) / p.drag;
       v.set(p.o[0] + p.v[0] * dr * 1.1, Math.max(0.4, p.o[1] + p.v[1] * dr + p.rise * a + 0.2), p.o[2] + p.v[2] * dr * 1.1 + 0.2);
       col.setRGB(lerp(0.42, 0.74, gold), lerp(0.44, 0.64, gold), lerp(0.52, 0.5, gold));
-      return { alpha: 0.3 * Math.min(1, a * 5), size: p.s1 * 3.4 * (0.45 + 0.55 * (1 - Math.exp(-a * 2.5))) };
+      return { alpha: 0.3 * Math.min(1, a * 5) * (1 - 0.7 * settle), size: p.s1 * 3.4 * (0.45 + 0.55 * (1 - Math.exp(-a * 2.5))) };
     });
     // falling sand
     const per = 150;
@@ -712,7 +719,29 @@
   // ---------------- camera ----------------
   const K = (p, l, f, sh = 0) => ({ p, l, f, sh });
   const lerpK = (A, B, k) => { const r = FW.camLerpK(A, B, k); r.sh = lerp(A.sh, B.sh, k); return r; };
+  // ---- Story Director variants: the set publishes named camera marks; each sd shot is a path through them (fw/direct.js) ----
+  const MARKS = {
+    samHigh:  { p: [0.15, 3.1, 4.6],  l: [0.05, 1.25, -0.3], f: 36, sh: 0.06 },   // MS, high: small between the two middle pillars
+    hands:    { p: [0.0, 1.05, 2.05], l: [0.0, 1.6, -0.3],   f: 64, sh: 0.0 },   // MCU, low: two hands, two posts (the hook's rhyme)
+    pillarLo: { p: [0.3, 0.3, 1.15], l: [0.72, 1.5, -0.3],  f: 52, sh: 0 },      // low, in front of the right pillar at his hand
+    pillarUp: { p: [0.3, 0.3, 1.15], l: [0.8, 3.95, -0.3],  f: 52, sh: 0 },      // ... craned up to the capital and the roof edge
+    hallWide: { p: [-0.45, 2.0, 16.6], l: [0.2, 2.75, -0.5], f: 38, sh: 0.11 },   // XWS: the whole house, the roof crowd
+    stumps:   { p: [-0.25, 1.25, 9.2], l: [0.0, 1.0, -0.5],  f: 38, sh: 0.04 },   // the end: D's place, emptied: the broken posts where he stood
+  };
+  function sdCam(t, shot) {
+    const M = (n, m) => DIRECT.mark(MARKS, n, m);
+    let keys, focusP = [0, 1.3, 0], ap = 4.6, shake = [0, 0];
+    if (shot.v === 'sdA') keys = [{ t: shot.t0, ...M('samHigh') }, { t: shot.t1, ...M('samHigh', { push: 0.04 }), ease: 'inOut' }];
+    else if (shot.v === 'sdB') { keys = [{ t: shot.t0, ...M('hands') }]; focusP = [0, 1.5, -0.3]; ap = 5; }
+    else if (shot.v === 'sdC') { const c0 = shot.t0 + 0.15; keys = [{ t: c0, ...M('pillarLo') }, { t: c0 + 1.2, ...M('pillarUp'), ease: 'inOut' }]; focusP = [0.8, 2.5, -0.3]; ap = 4; }
+    else if (shot.v === 'sdD') { keys = [{ t: T.give, ...M('hallWide') }, { t: T.land + 2.2, ...M('hallWide', { push: -0.08 }), ease: 'out' }]; shake = DIRECT.shake(t, T.land, 12, 0.45); focusP = [0, 1.4, 0]; ap = 4; }
+    else { keys = [{ t: shot.t0, ...M('stumps') }, { t: shot.t1 + 1.5, ...M('stumps', { push: 0.03 }), ease: 'linear' }]; focusP = [0, 0.8, -0.3]; ap = 3.5; }
+    DIRECT.applyCam(cam, DIRECT.path(t, keys), W, H, shake);
+    const focus = new THREE.Vector3(...focusP).applyMatrix4(cam.matrixWorldInverse).z * -1;
+    return { focus, ap };
+  }
   function camAt(t, shot) {
+    if (/^sd/.test(shot.v)) return sdCam(t, shot);
     let k, focusP = [0, 1.3, 0], ap = 4.6;
     const d = shot.dur;
     if (shot.v === 'pillars') { // wide on the hall -> medium on him at the pillars, one slow push from "Blind"
@@ -745,7 +774,7 @@
       contact.forEach(([m, o]) => { m.position.set(o.position.x, Math.max(0, o.position.y) + 0.015, o.position.z); m.visible = o.visible && o.position.y > -0.2; });
       haze.material.uniforms.scale.value = H / (2 * Math.tan((cam.fov * Math.PI) / 360));
       trickle.material.uniforms.scale.value = haze.material.uniforms.scale.value;
-      const fall = shot.v === 'fall';
+      const fall = shot.v === 'fall' || /^sd/.test(shot.v);
       const impact = fall ? (() => { const u = t - T.land; return u >= 0 && u < 0.2 ? Math.pow(1 - u / 0.2, 2) : 0; })() : 0;
       const g = act.gold;
       return {

@@ -284,7 +284,7 @@
       case 'pray': {
         P.feet = { '-1': [-30, 0], '1': [30, 0] };
         for (const s of [-1, 1]) P.arms[s] = { T: [s * 176, -408], pole: [s * 120, -250], hand: 'open', hdir: -90 + s * 4 };
-        Object.assign(H, { pitch: -0.5, turn: -0.12, tilt: -0.06, mouth: 'part', furrow: -0.6, lift: 2 }); break;
+        Object.assign(H, { pitch: st.pitch ?? -0.5, turn: -0.12, tilt: -0.06, mouth: 'part', furrow: -0.6, lift: 2 }); break;
       }
       case 'push': {
         const e = st.k ?? 1;

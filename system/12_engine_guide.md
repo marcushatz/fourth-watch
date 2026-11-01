@@ -134,6 +134,14 @@ L('M3', 'dagon', 'pray', cue(10, 'he') - PRE, { card: 'verse', verse: 0, verseAt
 
 **Camera:** `FW.setCam(cam, pos, look, fov, roll)`, then `cam.setViewOffset(W, H, dx, dy, W, H)` to shift the frame. `FW.camLerpK(A, B, k)` blends keys `{ p, l, f }`. Focus distance = `-point.applyMatrix4(cam.matrixWorldInverse).z`. `sorek.js` `setCam(k, focusP, ap, sy, roll, sx)` puts the look point at screen fraction (sx, sy). Angles: 06 §7.
 
+**Directing primitives (`fw/direct.js`, Nov 1; loaded after `fw/core.js`):**
+- `DIRECT.path(t, keys)` and `DIRECT.mark(MARKS, name, { push, crane, truck })`: a set publishes named camera marks; a shot's camera is a path through them.
+- `DIRECT.act(t, beat, { pre, dip, rise, over, settle })`: the acting envelope for a verb on its word.
+- `DIRECT.shake(t, at)` (impacts only) and `DIRECT.tremor(t, t0)`.
+- `DIRECT.applyCam(cam, key, W, H, shake)`.
+- First user: `dagon.js` `sdA`-`sdE` (`13_story_director.md` §5).
+- PP2 `pray` takes an optional `st.pitch` (default -0.5, unchanged).
+
 **Sets and props:** `LW.sky`, `LW.terrain({ size, seg ≤ 128, hFn, colFn, seed })`, `LW.olive`/`bush`/`rock`/`grassTuft`/`tent`/`banner`/`crate`/`fire` `(rng, scale)`, `LW.particles`, `LW.shaft` (set `uniforms.amt` and `time` every frame), `LW.pool`, `FW.mat`. `prison.js` `Merger()` bakes repeated boxes into one mesh.
 
 **People:**
@@ -287,7 +295,7 @@ Run from the film folder with `CHROME_PATH` set. Times can be seconds or `@marke
 
 From the code:
 1. **Beat names are a contract.** Scenes, cards and the song read beats by name. A missing name gives `NaN` in a card and a silent `??` fallback in a scene. The linter counts every `beats` value, acted or not.
-2. **Scenes read the score at build time.** `dagon.js` builds its timeline from the first 'pillars' and 'fall' shots. `score_v58.js` has no 'pillars' shot, so dagon would fail to build **(inferred)**.
+2. **Scenes read the score at build time.** `dagon.js` builds its timeline from the first 'pillars' shot and the shot that carries the collapse beats (`house`; before Nov 1: the first 'fall' shot). `score_v58.js` has no 'pillars' shot, so dagon would fail to build **(inferred)**.
 3. **An unknown `v` falls back silently** to the module's default shot; an unknown `scene` shows "scene not built yet".
 4. **The song reads shot IDs** (`S('S02')`). Renaming a shot makes it throw.
 5. **`FW.mat` caches materials:** recolouring one mesh recolours all that share it. Use `{ unique: true }`.
