@@ -95,7 +95,8 @@
     (R.people || []).forEach((p) => {
       const kind = p.kind || 'person', base = Object.assign({ v: p.v ?? 0 }, p.cast ? { cast: p.cast } : {}, p.base || {});
       const tall = RECIPES[name].style === 'paint';   // paint sets: a taller card, so raised tools and hands are never cut off (same pixels per metre)
-      const over = kind === 'person' ? (tall ? { cw: 1100, ch: 2000, footPx: 60, scale: 2.4, worldH: +(PP2.SIZES.person.worldH * 2000 / 1500).toFixed(4) } : { cw: 1000, ch: 1500, footPx: 60, scale: 2.4 }) : {};
+      const hk = p.hires ? 2 : 1;   // hires: a figure the camera goes close to (twice the card resolution, same size in the world)
+      const over = kind === 'person' ? (tall ? { cw: 1100 * hk, ch: 2000 * hk, footPx: 60 * hk, scale: 2.4 * hk, worldH: +(PP2.SIZES.person.worldH * 2000 / 1500).toFixed(4) } : { cw: 1000, ch: 1500, footPx: 60, scale: 2.4 }) : {};
       const bb = PP2.bill(kind, base, over); bb.position.set(p.at[0], 0, p.at[1]);
       scene.add(bb, bb.userData.caster); actors[p.id] = { bb, rest: p, kind };
     });
@@ -200,10 +201,10 @@
       const B = built[shot.v]; if (!B) throw new Error('diorama: set not built ' + shot.v);
       const bill = [], anchors = {};
       if (globalThis.PP) globalThis.PP.simpEyes = shot.dio && shot.dio.faces === 'medium' ? 2 : null;   // the face rule by shot size (visual spec v1)
-      const KY = shot.dio && shot.dio.key;
+      const KY = shot.dio && shot.dio.key;   // the focal pool; shot.dio.keyFrom: the light arrives on a beat
       if (B.key) {
         if (KY) { const sp = subjectPoint(B, shot, KY.on, t), y = KY.y ?? 1.2, fr = KY.from || [-2.5, 7, 3]; B.key.position.set(sp[0] + fr[0], fr[1], sp[2] + fr[2]); B.key.target.position.set(sp[0], y, sp[2]); B.key.target.updateMatrixWorld();
-          B.key.intensity = KY.i ?? 40; B.key.angle = KY.angle ?? 0.32; B.key.color.set(KY.col || '#FFE2B0'); }
+          B.key.intensity = (KY.i ?? 40) * (shot.dio.keyFrom != null ? ease.inOut(clamp((t - shot.dio.keyFrom) / 0.6)) : 1); B.key.angle = KY.angle ?? 0.32; B.key.color.set(KY.col || '#FFE2B0'); }
         else B.key.intensity = 0;
       }
       for (const id of Object.keys(B.actors)) {

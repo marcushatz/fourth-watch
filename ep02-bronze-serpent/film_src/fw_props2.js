@@ -8,6 +8,7 @@
   const M = (c, o = {}) => new THREE.MeshStandardMaterial(Object.assign({ color: new THREE.Color(c), roughness: 0.9, metalness: 0, flatShading: false }, o));
   const BRONZE = () => M('#B87A3C', { metalness: 0.62, roughness: 0.34, emissive: new THREE.Color('#4A2A0C'), emissiveIntensity: 0.45 });
   const GOLD = () => M('#E8B840', { metalness: 0.4, roughness: 0.6, emissive: new THREE.Color('#7A5008'), emissiveIntensity: 0.62 });
+  const softTex = (col) => { const c = document.createElement('canvas'); c.width = c.height = 64; const x = c.getContext('2d'); const r = x.createRadialGradient(32, 32, 0, 32, 32, 32); r.addColorStop(0, `rgba(${col},1)`); r.addColorStop(0.45, `rgba(${col},0.5)`); r.addColorStop(1, `rgba(${col},0)`); x.fillStyle = r; x.fillRect(0, 0, 64, 64); return new THREE.CanvasTexture(c); };
   const shadowy = (o) => { o.traverse((c) => { if (c.isMesh) { c.castShadow = true; c.receiveShadow = true; } }); return o; };
 
   // a tube whose radius follows r(u) along a curve (TubeGeometry is constant-radius): bodies, tails, necks
@@ -36,15 +37,41 @@
     pts.push(V(ex * 0.08 + fx * 0.04, top + 0.06, ez * 0.08 + fz * 0.04), V(fx * 0.02, top + 0.22, fz * 0.02), V(-fx * 0.04, top + 0.36, -fz * 0.04), V(fx * 0.06, top + 0.47, fz * 0.06));
     const curve = new THREE.CatmullRomCurve3(pts, false, 'catmullrom', 0.5);
     const rFn = (u) => 0.012 + 0.05 * sm(0, 0.35, u) - 0.012 * sm(0.75, 1, u);
-    const body = new THREE.Mesh(taperTube(curve, rFn, 140, 14), mat); g.add(body);
+    const N = p.pieces ?? 1, pieces = [];
+    if (N <= 1) g.add(new THREE.Mesh(taperTube(curve, rFn, 140, 14), mat));
+    else for (let i = 0; i < N; i++) {   // the body in N pieces that sit flush until it is struck
+      const u0 = i / N, u1 = (i + 1) / N, sp = []; for (let k = 0; k <= 16; k++) sp.push(curve.getPointAt(lerp(u0, u1, k / 16)));
+      const c = sp.reduce((a, b) => a.add(b), V(0, 0, 0)).multiplyScalar(1 / sp.length);
+      const m = new THREE.Mesh(taperTube(new THREE.CatmullRomCurve3(sp.map((q) => q.clone().sub(c))), (v) => rFn(lerp(u0, u1, v)), 28, 14), mat);
+      m.position.copy(c); g.add(m); pieces.push({ m, home: c.clone() });
+    }
     // the head: a wedge (wide jaw, flat crown, a snout), turned to look out along `face`, tipped down a little
     const head = new THREE.Group(); const hp = curve.getPointAt(1);
     const skull = new THREE.Mesh(new THREE.SphereGeometry(1, 20, 14), mat); skull.scale.set(0.11, 0.05, 0.075); head.add(skull);
     const snout = new THREE.Mesh(new THREE.SphereGeometry(1, 16, 12), mat); snout.scale.set(0.07, 0.035, 0.05); snout.position.set(0.085, -0.008, 0); head.add(snout);
-    for (const z of [0.045, -0.045]) { const brow = new THREE.Mesh(new THREE.SphereGeometry(1, 10, 8), mat); brow.scale.set(0.03, 0.016, 0.022); brow.position.set(0.03, 0.03, z); head.add(brow);
+    for (const z of [0.045, -0.045]) { const brow = new THREE.Mesh(new THREE.SphereGeometry(1, 10, 8), mat); brow.scale.set(0.034, 0.009, 0.02); brow.position.set(0.035, 0.034, z); head.add(brow);
       const eye = new THREE.Mesh(new THREE.SphereGeometry(0.013, 10, 8), M('#1A0E08', { roughness: 0.3 })); eye.position.set(0.045, 0.024, z * 1.12); head.add(eye); }
     head.position.copy(hp).add(V(fx * 0.05, 0.0, fz * 0.05)); head.rotation.y = -face; head.rotation.z = -0.25; head.scale.setScalar(p.headK ?? 1.35); g.add(head);
     g.userData.anchorY = top + 0.4; g.scale.setScalar(s);
+    const lie = p.lie ?? 1.42, raiseOf = (t, evs) => { let e = null; for (const x of evs) if (x.do === 'raise') e = x; if (!e) return p.lying ? 0 : 1; const k = clamp((t - e.t0) / (e.dur ?? 1.2)); return k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; };
+    g.userData.frame = (t, evs) => { g.rotation.z = (1 - raiseOf(t, evs)) * lie; };
+    if (N > 1) {
+      pieces.push({ m: head, home: head.position.clone(), rot0: head.rotation.clone() });
+      const rng = FW.rng(p.seed ?? 18), hit = V(...(p.hitDir || [1, 0.25, 0.2])).normalize(), hp0 = V(0, lerp(y0, y1, p.hitAt ?? 0.55), 0);
+      pieces.forEach((pc) => { const d = pc.home.clone().sub(hp0); d.y *= 0.6; const v = hit.clone().multiplyScalar(2.2 + rng() * 2.4).add(d.normalize().multiplyScalar(1.4 + rng() * 1.6)); v.y += 0.8 + rng() * 1.8; pc.v = v; pc.spin = V(rng() * 14 - 7, rng() * 14 - 7, rng() * 14 - 7); });
+      const glow = (c) => new THREE.SpriteMaterial({ map: softTex(c), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0, toneMapped: false });
+      const flash = new THREE.Sprite(glow('255,236,190')); flash.position.copy(hp0); flash.scale.set(1.6, 1.6, 1); g.add(flash);
+      const sparks = []; for (let i = 0; i < 16; i++) { const sp = new THREE.Sprite(glow('255,190,90')); sp.scale.set(0.07, 0.07, 1); const a = rng() * 6.283, e = (rng() - 0.3) * 1.6; sp.userData.v = V(Math.cos(a) * Math.cos(e) + hit.x, Math.sin(e) + 0.4, Math.sin(a) * Math.cos(e)).multiplyScalar(2.5 + rng() * 3); g.add(sp); sparks.push(sp); }
+      g.userData.frame = (t, evs) => {
+        g.rotation.z = (1 - raiseOf(t, evs)) * lie;
+        let e = null; for (const x of evs) if (x.do === 'shatter') e = x;
+        const dt = e ? Math.max(0, t - e.t0) : 0, G = 9.8;
+        pieces.forEach((pc) => { pc.m.position.set(pc.home.x + pc.v.x * dt, pc.home.y + pc.v.y * dt - 0.5 * G * dt * dt, pc.home.z + pc.v.z * dt);
+          const r0 = pc.rot0 || { x: 0, y: 0, z: 0 }; pc.m.rotation.set(r0.x + pc.spin.x * dt, r0.y + pc.spin.y * dt, r0.z + pc.spin.z * dt); });
+        flash.material.opacity = e ? Math.max(0, 1 - dt / 0.3) : 0;
+        sparks.forEach((sp) => { const v = sp.userData.v; sp.position.set(hp0.x + v.x * dt, hp0.y + v.y * dt - 0.5 * G * dt * dt, hp0.z + v.z * dt); sp.material.opacity = e ? Math.max(0, 1 - dt / 0.45) : 0; });
+      };
+    }
     return shadowy(g);
   });
 
@@ -181,6 +208,48 @@
     const hole = new THREE.Mesh(new THREE.PlaneGeometry(w, h), p.col ? new THREE.MeshBasicMaterial({ color: new THREE.Color(p.col) }) : M('#2A2018')); hole.position.set(0, h / 2, 0.21); g.add(hole);
     const lin = new THREE.Mesh(new THREE.BoxGeometry(w + 0.5, 0.26, 0.5), M('#8A7860')); lin.position.set(0, h + 0.13, 0.12); g.add(lin);
     for (const x of [-1, 1]) { const j = new THREE.Mesh(new THREE.BoxGeometry(0.2, h, 0.46), M('#94826A')); j.position.set(x * (w / 2 + 0.1), h / 2, 0.12); g.add(j); }
+    return shadowy(g);
+  });
+  // ---- the golden calf as a crafted idol (Ex 32:4 "he fashioned it with a graving tool and made a golden calf"):
+  //      a cast silhouette (a drawn side profile, extruded and bevelled) on its own gold base; reads in one glance ----
+  DIO.prop('calf3', (p) => {
+    const g = new THREE.Group(), mat = GOLD(), s = p.s ?? 1, lift = p.lift ?? 0;
+    const prof = [[-0.47, 0.66], [-0.3, 0.68], [-0.08, 0.68], [0.12, 0.72], [0.24, 0.76], [0.33, 0.74], [0.42, 0.76], [0.49, 0.8], [0.55, 0.79], [0.6, 0.72],
+      [0.67, 0.6], [0.68, 0.55], [0.62, 0.53], [0.54, 0.56], [0.45, 0.55], [0.38, 0.47], [0.36, 0.0], [0.29, 0.0], [0.29, 0.22], [0.26, 0.22], [0.25, 0.0], [0.18, 0.0],
+      [0.19, 0.36], [-0.21, 0.36], [-0.24, 0.0], [-0.31, 0.0], [-0.32, 0.2], [-0.35, 0.2], [-0.36, 0.0], [-0.43, 0.0], [-0.42, 0.3], [-0.47, 0.46]];
+    const sh = new THREE.Shape(); prof.forEach(([x, y], i) => (i ? sh.lineTo(x, y) : sh.moveTo(x, y))); sh.closePath();
+    const geo = new THREE.ExtrudeGeometry(sh, { depth: 0.2, bevelEnabled: true, bevelThickness: 0.035, bevelSize: 0.03, bevelSegments: 3, curveSegments: 4 }); geo.translate(0, 0, -0.1);
+    const body = new THREE.Group(); body.add(new THREE.Mesh(geo, mat));
+    for (const z of [0.1, -0.1]) {   // horns: two crescents rising from the poll
+      const h = new THREE.Shape(); h.moveTo(0.47, 0.8); h.quadraticCurveTo(0.4, 0.92, 0.47, 1.0); h.quadraticCurveTo(0.45, 0.9, 0.53, 0.82); h.closePath();
+      const hg = new THREE.ExtrudeGeometry(h, { depth: 0.03, bevelEnabled: true, bevelThickness: 0.01, bevelSize: 0.01, bevelSegments: 2 }); hg.translate(0, 0, z - 0.015); body.add(new THREE.Mesh(hg, mat));
+    }
+    const tail = new THREE.Mesh(taperTube(new THREE.CatmullRomCurve3([V(-0.48, 0.62, 0), V(-0.53, 0.46, 0), V(-0.51, 0.3, 0)]), () => 0.016, 16, 6), mat); body.add(tail);
+    const tuft = new THREE.Mesh(new THREE.SphereGeometry(1, 10, 8), mat); tuft.scale.set(0.03, 0.06, 0.03); tuft.position.set(-0.51, 0.27, 0); body.add(tuft);
+    const eye = new THREE.Mesh(new THREE.SphereGeometry(0.016, 8, 6), M('#4A2E08', { roughness: 0.4 })); eye.position.set(0.56, 0.72, 0.14); body.add(eye);
+    const base = new THREE.Mesh(new THREE.BoxGeometry(1.12, 0.07, 0.42), mat); base.position.set(-0.04, -0.035, 0); body.add(base);   // its own cast base
+    body.position.y = lift + 0.07; body.rotation.y = p.face ?? 0;
+    const holder = new THREE.Group(); holder.add(body); g.add(holder); g.userData.anchorY = lift + 1.0; g.scale.setScalar(s);
+    return shadowy(g);
+  });
+
+  // ---- a designed court wall: base course, block courses, engaged pilasters, a cornice; optional lamp niches ----
+  DIO.prop('wall2', (p) => {
+    const g = new THREE.Group(), w = p.w ?? 10, h = p.h ?? 3.4, c = p.col || '#9C8A70', dark = p.dark || '#7E6E58', light = p.light || '#AE9C80';
+    const add = (geo, col, x, y, z) => { const m = new THREE.Mesh(geo, M(col)); m.position.set(x, y, z); g.add(m); return m; };
+    add(new THREE.BoxGeometry(w, h, 0.4), c, 0, h / 2, 0);
+    add(new THREE.BoxGeometry(w + 0.1, 0.32, 0.56), dark, 0, 0.16, 0.04);                    // base course
+    add(new THREE.BoxGeometry(w + 0.3, 0.2, 0.62), light, 0, h - 0.1, 0.06);                 // cornice
+    add(new THREE.BoxGeometry(w + 0.2, 0.08, 0.5), dark, 0, h - 0.26, 0.02);
+    for (let y = 0.75; y < h - 0.4; y += 0.48) add(new THREE.BoxGeometry(w, 0.025, 0.42), dark, 0, y, 0.002);   // block courses
+    const n = p.pilasters ?? 4;
+    for (let i = 0; i < n; i++) { const x = lerp(-w / 2 + 0.6, w / 2 - 0.6, n > 1 ? i / (n - 1) : 0.5); if (p.skip && p.skip.includes(i)) continue;
+      add(new THREE.BoxGeometry(0.36, h - 0.3, 0.16), light, x, (h - 0.3) / 2, 0.26); add(new THREE.BoxGeometry(0.5, 0.14, 0.24), light, x, h - 0.37, 0.28); add(new THREE.BoxGeometry(0.5, 0.18, 0.24), dark, x, 0.4, 0.28); }
+    for (const x of p.niches || []) {   // a lamp niche: a dark recess with a small drawn flame
+      add(new THREE.BoxGeometry(0.4, 0.55, 0.05), '#3A2C22', x, 1.7, 0.21); add(new THREE.BoxGeometry(0.5, 0.06, 0.16), light, x, 1.42, 0.26);
+      const f = DIO.KINDS.flames({ s: 0.32 }); f.position.set(x, 1.46, 0.26); g.add(f);
+      const pr = g.userData.frame; g.userData.frame = (t) => { pr && pr(t); f.userData.frame(t); };
+    }
     return shadowy(g);
   });
 })();
