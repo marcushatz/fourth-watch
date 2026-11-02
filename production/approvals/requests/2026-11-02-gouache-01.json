@@ -1,0 +1,26 @@
+{
+  "request_id": "2026-11-02-gouache-01",
+  "project": "fourth-watch",
+  "purpose": "First AI illustration test: can Cinematic Gouache reach the art direction Marcus wants?",
+  "items": [
+    {
+      "kind": "job",
+      "tool": "generate_image",
+      "input": {
+        "params": {
+          "model": "gpt_image_2_5",
+          "prompt": "A hand-painted gouache production painting for a prestige 2D animated feature film. Big simple shapes, restrained palette of night umber, clay, ash and warm lamp gold, with one ember accent. Low camera close to the ground, looking up. A low sun behind haze at the upper left gives one controlled key light, with long shadows. Dry-brush texture, soft atmospheric perspective, painted depth. Designed characters with long elegant lines and expressive silhouettes that keep real form and light inside them. Not a cartoon. Late afternoon in a rocky wilderness. A bronze serpent is fixed to the top of one straight wooden pole with no crossbar, set in a low mound of stones, standing above a camp of low black goat-hair tents. In the near foreground a weakened man in a plain wool robe lies propped on one arm and lifts his head to look up at the bronze serpent. Behind him a few people help one another and turn their faces toward the pole. Small dark snakes still move between the stones in the near foreground. No blood, no wounds, no bodies. Vertical 9:16. The top quarter of the frame is calm empty sky for typography. The man's line of sight forms one strong diagonal from lower left up to the serpent at upper right. Five clear depth layers: foreground stones, the man, the camp, far ridges, sky. Adult proportions, about seven heads tall, small heads, restrained faces shaped by light. No text, no letters, no logos, no halos, no cartoon proportions, no big eyes, no dot eyes, no photorealism, no 3D render, no vector gradients, no doorways, no medical symbol.",
+          "aspect_ratio": "9:16",
+          "resolution": "2k",
+          "quality": "high",
+          "variant": "flare",
+          "count": 1
+        }
+      },
+      "intended_output": "One Cinematic Gouache still of the 'look and live' frame, 9:16",
+      "quoted_credits": 2.75,
+      "quoted_at": "2026-11-02T22:14:00+00:00",
+      "quote_source": "get_cost check, Nov 2, same model at 9:16, 2k, high, default variant"
+    }
+  ]
+}

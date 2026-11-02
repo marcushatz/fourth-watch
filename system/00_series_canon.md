@@ -7,7 +7,7 @@ The fixed identity of the channel. Change it only when Marcus says so. The sourc
 - **Name:** Fourth Watch. It comes from Matthew 14:25 (ESV): "And in the fourth watch of the night he came to them, walking on the sea."
 - **Handles:** @fourthwatchgospel on Instagram (secured Oct 30, 2026). The same handle is to be claimed on TikTok, YouTube and Facebook. Display name: "Fourth Watch | Bible Stories". The bios are in `brand/handles.md`.
 - **The promise:** Bible stories and questions answered exactly as the text says, ESV only.
-- **Form:** faceless, code-animated (every frame drawn in code; every sound synthesized), 9:16, 1080×1920, 30 fps. No photoreal images.
+- **Form:** faceless, 9:16, 1080×1920, 30 fps. No photoreal images. **Under review (Round 30):** the code-animated look is no longer accepted, and the replacement art direction isn't approved yet. See `production/README.md`.
 - **Model:** The Lintel Network's structure, never its topics, labels or door imagery (we copy the structure, not the identity).
 
 ## 2. Series

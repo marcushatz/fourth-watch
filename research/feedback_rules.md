@@ -292,3 +292,48 @@ Rules:
   - name the hardest shots;
   - render a short opening proof.
 - **The standard:** every visual deepens understanding, raises curiosity, clarifies a connection, or heightens the emotional impact of a revelation.
+
+## Round 30 (Nov 2): a permanent production system, art direction first
+His words: "Build a permanent Fourth Watch production system that works with our connected Higgsfield account. This must be a reusable system, not a one-time prompt."
+
+His words on the test: "The current Fourth Watch animation quality is not acceptable yet. The characters look childish, the compositions are simplistic, and the visual storytelling is too literal."
+
+Rules:
+- **Brand:** a faceless Christian educational channel of cinematic biblical explanations that reveal surprising, textually supported connections. No generic devotional content, shallow retellings, invented biblical details or exaggerated theological claims.
+- **Pipeline:** Research → Script → Approval → Voiceover → Storyboard → Visual references → Short generation tests → Review → Final assembly → Quality control. This replaces the "voice last" order.
+- **An approved script is locked.** If Content Factory can't preserve it, use a more controllable Higgsfield workflow.
+- **Reuse** approved assets and characters wherever possible.
+- **Each scene advances the viewer's understanding,** rather than merely decorating narration.
+- **Professional art direction comes before automatic video generation.** Sophisticated stylized 2D illustration, cinematic compositions, controlled lighting, subtle textures, expressive silhouettes, layered environments and intentional visual metaphors.
+- **Study references for quality,** never copy their artwork.
+- **Before animating another sequence:** three art directions, one excellent still for each, his approval, a consistent storyboard, then animation only after he approves the storyboard.
+- **Cost control:** before every paid generation, report the model, intended output, credit cost and remaining balance. Wait for explicit approval. No expensive batches and no automatic regeneration.
+- **Quality control** covers biblical fidelity, information density, visual coherence, character consistency, pacing, audio and typography.
+- **Keep a record** of approved techniques and rejected patterns, and reuse what works.
+- **Do not automatically publish.**
+- Full system: `production/README.md`.
+
+## Round 31 (Nov 2, 17:17): usage audit
+His words: "I can see repeated generate_image and generate_video calls despite my instruction not to begin paid generation."
+
+The audit found one charged generation (Eleven v4, 2.76 credits) and 22 free cost checks that ran after his stop. They created nothing but looked like generation.
+
+Rules:
+- **Stop all paid generations until he explicitly approves them.**
+- **Cost checks are announced and approved first,** because they use the same tool names as real jobs.
+- **Keep the finished Bronze Serpent video and voiceover as reference material.**
+- **The production system lives in the GitHub repository,** with persistent instructions and a generation approval process.
+
+## Round 32 (Nov 2, 17:34): a stricter gate, Gouache first, testimonies kept apart
+His words: "make the generation gate more robust: Prevent approval for a model from authorizing different prompts, resolutions, durations, or higher-cost jobs. Clarify that the approval file cannot substitute for my explicit authorization."
+
+His words: "I want to evaluate Cinematic Gouache first, rather than spend 12.75 credits comparing all three directions."
+
+His words: "ensure we can maintain a separate cinematic production preset for personalized Christian testimonies without mixing those creative rules into Fourth Watch's educational videos."
+
+Rules:
+- **An approval covers one exact job, once.** A different prompt, model, resolution, quality, duration, count or reference needs a new approval, and so does a higher price.
+- **The approval file can never substitute for his explicit authorization.**
+- **The biblical accuracy and visual quality rules stay as they are.**
+- **Test order:** Cinematic Gouache first. Gold Leaf Fresco and Annotated Engraving wait unless he asks for them. This narrows Round 30's three-still step for this test.
+- **Testimonies are a separate preset** (`presets/christian-testimonies/`). Their creative rules never mix with Fourth Watch's.

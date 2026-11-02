@@ -1,6 +1,6 @@
 # Fourth Watch: the repository
 
-The private backup of the whole project: the production system, the scripts, the checkers and the animation engine.
+The backup of the whole project (GitHub reported it as **public** on Nov 2, 2026, though it was meant to be private; see `DECISIONS.md`): the production system, the scripts, the checkers and the animation engine.
 
 **What's in it:**
 - `README.md`, `DECISIONS.md`, `system/`, `prompts/`, `templates/`, `research/` (study notes only);
