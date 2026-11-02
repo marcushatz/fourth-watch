@@ -138,3 +138,12 @@
     return LW.shadowy(g);
   });
 })();
+// ---- a background mountain (Sinai), hazed by the set's fog ----
+(function () {
+  const THREE = globalThis.THREE, LW = globalThis.LW, DIO = globalThis.DIORAMA;
+  DIO.prop('mountain', (p) => {
+    const s = p.s ?? 1, geo = new THREE.ConeGeometry(6 * s, (p.h ?? 5) * s, 7, 3);
+    const m = new THREE.Mesh(LW.jitter ? LW.jitter(geo, 0.6 * s, globalThis.FW.rng(p.seed ?? 3)) : geo, LW.M(p.col || '#8E6E58')); m.position.y = ((p.h ?? 5) * s) / 2 - 0.3;
+    const g = new THREE.Group(); g.add(m); return g;
+  });
+})();

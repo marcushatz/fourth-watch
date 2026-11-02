@@ -134,8 +134,24 @@
     if (on && B.props[on]) { const p = B.props[on].position; return [p.x, 0, p.z]; }
     return [0, 0, 0];
   }
+  // a point in the set: [x, y, z], or { of: actorId | propId, off: [dx, dy, dz] } (relative to where that actor is at time t)
+  function setPoint(B, shot, v, t) {
+    if (Array.isArray(v)) return v;
+    const b = subjectPoint(B, shot, v.of, t), o = v.off || [0, 0, 0];
+    return [b[0] + o[0], b[1] + o[1], b[2] + o[2]];
+  }
+  // a camera path: shot.dio.cam.path = [{ at, p, l, f, sh, ease }] (DIRECT.path keys; p and l are set points; at = beat or seconds)
+  function camPath(B, shot, t, c) {
+    const keys = c.path.map((k) => ({ t: tOf(shot, k.at, shot.t0), p: setPoint(B, shot, k.p, t), l: setPoint(B, shot, k.l, t), f: k.f ?? c.f ?? 32, sh: k.sh ?? c.sh ?? 0.04, ease: k.ease }));
+    const K = D.path(t, keys);
+    D.applyCam(cam, K, W, H, c.shakeAt != null ? D.shake(t, tOf(shot, c.shakeAt, 0), c.shakeAmp ?? 10) : [0, 0]);
+    const d = Math.hypot(K.p[0] - K.l[0], K.p[1] - K.l[1], K.p[2] - K.l[2]);
+    return { focus: c.focus ?? d, ap: c.ap ?? (d < 5 ? 3.4 : d < 9 ? 2.2 : 1.4) };
+  }
   function camFor(B, shot, t) {
-    const c = (shot.dio && shot.dio.cam) || {}, P = Object.assign({}, PRESET[c.preset || 'iso'], c);
+    const c = (shot.dio && shot.dio.cam) || {};
+    if (c.path) return camPath(B, shot, t, c);
+    const P = Object.assign({}, PRESET[c.preset || 'iso'], c);
     const t0 = tOf(shot, c.from, shot.t0), k = clamp((t - t0) / (c.dur ?? 1.6)), e = (D.ease[c.ease || 'inOut'] || D.ease.inOut)(k);
     let el = P.el, dist = P.dist, az = P.az;
     const amt = c.amt ?? 0.12;

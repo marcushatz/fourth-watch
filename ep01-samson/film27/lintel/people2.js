@@ -847,6 +847,12 @@
 
   // ---- items held in a hand (drawn 'back' before the hand, 'front' after) ----
   const ITEMS = {
+    bowl(ctx, ph, W, ang, s) {   // an offering bowl held in the hands
+      if (ph !== 'front') return;
+      ctx.save(); ctx.translate(W[0] + 18 * s, W[1] - 6);
+      const b = P2(); b.moveTo(-38, -6); b.quadraticCurveTo(0, 40, 38, -6); b.closePath(); part(ctx, b, '#9A6A3E', { shade: '#6E4A2A', sd: 5, rim: '#C8946A', rimA: 0.5, lw: 2.4 });
+      part(ctx, ell(0, -6, 38, 8), '#E6D2A0', { lw: 2 }); ctx.restore();
+    },
     hammer(ctx, ph, W, ang, s) {   // a mallet: handle along the hand's direction, a stone/bronze head at the end
       if (ph !== 'front') return;
       const ux = Math.cos(ang), uy = Math.sin(ang), L = 150, hx = W[0] + ux * L, hy = W[1] + uy * L, b = [W[0] - ux * 30, W[1] - uy * 30];
@@ -1368,6 +1374,11 @@
         P.kneel = 1; P.by = 150;
         P.arms = { '-1': { T: [-7, -372 * hy], pole: [-150, -260], hand: 'open', hdir: -84 }, '1': { T: [7, -372 * hy], pole: [150, -260], hand: 'open', hdir: -96 } };
         Object.assign(P.head, { pitch: -0.3, mouth: 'part', furrow: -0.4, look: [0, -0.8] }); break;
+      }
+      case 'offer': { // kneeling, an offering held out in both hands toward the object (2 Kgs 18:4 "made offerings to it")
+        P.kneel = 1; P.by = 150; const b = Math.sin(ph * 0.5) * 4;
+        P.arms = { '1': { T: [110, -430 * hy + b], pole: [200, -300], hand: 'fist', hdir: -10, item: st.item || 'bowl' }, '-1': { T: [70, -420 * hy + b], pole: [-120, -300], hand: 'open', hdir: 10 } };
+        Object.assign(P.head, { pitch: 0.1, mouth: 'neutral', furrow: -0.2, look: [0.7, -0.3] }); break;
       }
       case 'swing': { // both hands on a hammer: k 0 = raised behind the head, 1 = struck down in front (drive it with DIRECT.act)
         const k = clamp(st.k ?? 0), hx = lerp(30, 170, k), hyy = lerp(-700, -330, k) * hy, dir = lerp(-115, 35, k);
