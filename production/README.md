@@ -2,6 +2,8 @@
 
 **What this is:** the reusable system for making every Fourth Watch episode with art direction first and Higgsfield under tight control. It was set up on Nov 2, 2026 after the Bronze Serpent test.
 
+**Scope:** Fourth Watch only. Other kinds of video use `presets/`.
+
 **What it replaces:** the visual and animation stages of the older system. The `system/` guides still govern topic, script, review, publishing and growth. Where they disagree on visuals or order of work, this folder wins. `research/feedback_rules.md` wins over everything.
 
 ## The brand in one line
@@ -28,15 +30,16 @@ Fourth Watch is a faceless Christian educational channel that makes cinematic bi
 Before a new look is used, this runs between stages 3 and 5:
 
 1. Write three different art directions for one key scene.
-2. Quote the cost of one still for each. Wait for approval.
-3. Generate the three stills, one at a time.
-4. Marcus picks one, or sends them back.
-5. Write the approved look into `01_brand_and_references.md`.
-6. Build the storyboard in that look. Animate only after he approves it.
+2. Marcus chooses which to test first, and how many.
+3. Quote the cost of each still. Wait for approval.
+4. Generate only the approved stills, one at a time.
+5. Marcus approves one, asks for another test, or sends them back.
+6. Write the approved look into `01_brand_and_references.md`.
+7. Build the storyboard in that look. Animate only after he approves it.
 
 Once a look is approved, later episodes reuse it and skip this gate.
 
-**Current state:** no look is approved. The Bronze Serpent proposals are in `ep02-bronze-serpent/art_direction/directions_v1.md`.
+**Current state:** no look is approved. Cinematic Gouache is first in line, and its test is prepared in `ep02-bronze-serpent/art_direction/test_01_cinematic_gouache.md`. It runs only with Marcus's approval.
 
 ## Files
 
@@ -53,7 +56,7 @@ Once a look is approved, later episodes reuse it and skip this gate.
 | `08_costs_and_assets.md` | Budgets, ledgers and reusable assets |
 | `09_approved_and_rejected.md` | What has worked and what has failed |
 | `ledger/` | The generation log and the asset register |
-| `approvals/` | The approval file the hook reads |
+| `approvals/` | Exact job requests, and the temporary record the hook reads |
 
 ## How this system stays current
 

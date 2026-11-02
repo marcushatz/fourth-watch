@@ -323,3 +323,17 @@ Rules:
 - **Cost checks are announced and approved first,** because they use the same tool names as real jobs.
 - **Keep the finished Bronze Serpent video and voiceover as reference material.**
 - **The production system lives in the GitHub repository,** with persistent instructions and a generation approval process.
+
+## Round 32 (Nov 2, 17:34): a stricter gate, Gouache first, testimonies kept apart
+His words: "make the generation gate more robust: Prevent approval for a model from authorizing different prompts, resolutions, durations, or higher-cost jobs. Clarify that the approval file cannot substitute for my explicit authorization."
+
+His words: "I want to evaluate Cinematic Gouache first, rather than spend 12.75 credits comparing all three directions."
+
+His words: "ensure we can maintain a separate cinematic production preset for personalized Christian testimonies without mixing those creative rules into Fourth Watch's educational videos."
+
+Rules:
+- **An approval covers one exact job, once.** A different prompt, model, resolution, quality, duration, count or reference needs a new approval, and so does a higher price.
+- **The approval file can never substitute for his explicit authorization.**
+- **The biblical accuracy and visual quality rules stay as they are.**
+- **Test order:** Cinematic Gouache first. Gold Leaf Fresco and Annotated Engraving wait unless he asks for them. This narrows Round 30's three-still step for this test.
+- **Testimonies are a separate preset** (`presets/christian-testimonies/`). Their creative rules never mix with Fourth Watch's.

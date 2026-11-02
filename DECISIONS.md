@@ -14,12 +14,13 @@ Last updated: Oct 31, 23:15 local (after Round 19).
 ## Waiting on Marcus (Nov 2, 2026)
 
 1. **Which script?** This system assumes `ep02-bronze-serpent/script_approved_v4.md` is the locked Bronze Serpent script. The 86-word test script was never meant to replace it.
-2. **Three still frames:** 12.75 credits in total, leaving 84.49 of 97.24. Quote and prompts: `ep02-bronze-serpent/art_direction/directions_v1.md`. **Nothing runs without his approval.**
-3. **Repo visibility:** GitHub reports this repo as public, but Round 19 asked for a private one. It holds the Ep 1 voice take and all scripts. Only Marcus can decide this.
+2. **First illustration test:** one Cinematic Gouache still, 2.75 credits, leaving 94.49 of 97.24. Exact job: `production/approvals/requests/2026-11-02-gouache-01.json`. Test plan: `ep02-bronze-serpent/art_direction/test_01_cinematic_gouache.md`. **Nothing runs without his approval.**
+3. **Repo visibility:** GitHub reports this repo as public, but Round 19 asked for a private one. It holds the Ep 1 voice take and all scripts. Personal testimonies can't go in it while it's public. Only Marcus can decide this.
 4. **Possible plan renewal:** the 100 credits granted on Nov 2 match Higgsfield's 3-day Plus trial, which renews at $49/mo unless cancelled. If that's the plan he took, the charge falls around Nov 5.
 5. **Series narrator:** Gideon on Eleven v4 was only a test. Decisions 9 and 16 below are still open. Check the terms for voices made through Higgsfield before release.
 6. **Caption disclosure:** "Animation drawn in code" must change if AI art is used.
-7. **Assembly tool:** the Nov 2 plan named Remotion, but no Remotion build is in this repo. Higgsedit rendered the test for free in about 3 minutes. Recommendation: use Higgsedit unless a test shows it can't do something needed.
+7. **Testimony preset:** the structure exists, but its creative rules are blank until Marcus sets them. Its safeguards are proposals (`presets/christian-testimonies/PRESET.md`).
+8. **Assembly tool:** the Nov 2 plan named Remotion, but no Remotion build is in this repo. Higgsedit rendered the test for free in about 3 minutes. Recommendation: use Higgsedit unless a test shows it can't do something needed.
 
 ---
 

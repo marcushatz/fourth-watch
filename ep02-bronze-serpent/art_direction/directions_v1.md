@@ -2,6 +2,8 @@
 
 **Status: NOT generated and NOT approved.** These are written proposals. No still exists yet. Nothing here runs without Marcus's explicit approval (`production/GENERATION_APPROVAL.md`).
 
+**Test order (Marcus, Nov 2):** Cinematic Gouache first, rather than spending 12.75 credits on all three. A and B wait unless he asks for them. See `test_01_cinematic_gouache.md`.
+
 **The test frame:** "Anyone who had been bitten could look at it and live." It tests character, setting, prop, light and metaphor in one image. Script: `../script_approved_v4.md`.
 
 **Added in the edit, not generated:** the fine gold line of sight, all type.
@@ -58,16 +60,11 @@ Used in all three prompts:
 
 Prices come from Nov 2 cost checks. Re-confirm before running.
 
-| # | Model | Intended output | Credits |
+| Direction | Model | Credits | Status |
 |---|---|---|---|
-| 1 | Nano Banana Pro, 2K | Direction A still, 9:16 | 2.00 |
-| 2 | Recraft V4.1, standard, 2K | Direction B still, 9:16 | 8.00 |
-| 3 | GPT Image 2.5, Flare, high, 2K | Direction C still, 9:16 | 2.75 |
-| | **Total** | | **12.75** |
-
-Balance now: 97.24. Balance after: 84.49. Run one at a time. No retries.
-
-**What this test can't prove:** model and direction are mixed, so a weak still could mean a weak direction or a poor model fit. If a promising direction misses, Marcus can approve a second still of it on another model.
+| C. Cinematic Gouache | GPT Image 2.5, Flare, high, 2K | 2.75 | **First test, waiting for approval** |
+| A. Gold Leaf Fresco | Nano Banana Pro, 2K | 2.00 | On hold |
+| B. Annotated Engraving | Recraft V4.1, standard, 2K | 8.00 | On hold |
 
 ## After Marcus picks
 
