@@ -91,7 +91,7 @@
       if (r.sun && m.userData.castFrom) m.userData.castFrom(r.sun);
     });
     if (r.beforeRender) r.beforeRender();
-    const gl = LW.render(r.scene, cam, { focus: r.focus ?? 8, aperture: r.aperture ?? 5, maxR: r.maxR ?? 7, fgScale: r.fgScale ?? 1.5, exposure: r.exposure ?? 1.1, sat: r.sat ?? 1.1, lift: r.lift, gain: r.gain });
+    const gl = LW.render(r.scene, cam, { focus: r.focus ?? 8, aperture: r.aperture ?? 5, maxR: r.maxR ?? 7, fgScale: r.fgScale ?? 1.5, exposure: r.exposure ?? 1.1, sat: r.sat ?? 1.1, lift: r.lift, gain: r.gain, ink: r.ink, focus2: r.focus2 });
     ctx.drawImage(gl, 0, 0, W, H);
     const P = (p) => LW.project(cam, p);
     if (r.rays) rays(ctx, t, r.rays.amt, r.rays.screen || P(r.rays.target));

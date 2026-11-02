@@ -39,6 +39,7 @@
   const hash = (n) => { const x = Math.sin(n * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); };
   const tp = (M, p) => { const q = M.transformPoint(new DOMPoint(p[0], p[1])); return [q.x, q.y]; };
   const withM = (ctx, M, fn) => { ctx.save(); ctx.transform(M.a, M.b, M.c, M.d, M.e, M.f); fn(); ctx.restore(); };
+  const SIMP = () => PP.simp || 0;   // character simplification level (visual spec v1): 0 full detail .. 3 minimal
   const U_M = 1.86 / 560;                     // metres per design unit (PP.samson: 1400 px at scale 2.5 = 1.86 m)
   PP2.U = U_M;
 
@@ -106,6 +107,7 @@
     return { paths: ps, m, kind, s };
   }
   function handDetail(ctx, h) {
+    if (SIMP() >= 1) return;
     const kx = (u, v) => tp(h.m, [u, v]);
     ctx.strokeStyle = 'rgba(36,22,15,0.55)'; ctx.lineWidth = 1.6; ctx.lineCap = 'round';
     const seg = (a, b) => { const p = kx(a[0], a[1]), q = kx(b[0], b[1]); ctx.beginPath(); ctx.moveTo(p[0], p[1]); ctx.lineTo(q[0], q[1]); ctx.stroke(); };
@@ -119,6 +121,13 @@
   // arcs), lid 0..1 (upper lid lowered), lash (outer flick), kohl (heavier upper line), side
   function eye1(ctx, x, y, rx, ry, o = {}) {
     ctx.strokeStyle = LINE; ctx.lineCap = 'round';
+    if (SIMP() >= 2) {   // a dark dot that looks where the figure looks; closed = a short arc
+      const look = o.look || [0, 0], r = SIMP() >= 3 ? 2.9 : 3.6, ix = x + look[0] * 2.4, iy = y + look[1] * 1.6 + 0.5;
+      if (o.closed) { ctx.lineWidth = 2.2; ctx.beginPath(); ctx.moveTo(x - 4, y); ctx.quadraticCurveTo(x, y + 3, x + 4, y); ctx.stroke(); return; }
+      ctx.fillStyle = '#1E120B'; ctx.beginPath(); ctx.ellipse(ix, iy, r * 0.9, r * 1.15, 0, 0, TAU); ctx.fill();
+      if (SIMP() === 2) { ctx.fillStyle = 'rgba(255,255,255,0.85)'; ctx.beginPath(); ctx.arc(ix - 0.9, iy - 1.2, 0.95, 0, TAU); ctx.fill(); }
+      return;
+    }
     if (o.closed) {
       ctx.lineWidth = 2.5; ctx.beginPath();
       if (o.closed === 'happy') { ctx.moveTo(x - rx, y + 1.5); ctx.quadraticCurveTo(x, y - ry * 1.4, x + rx, y + 1.5); }
@@ -147,6 +156,8 @@
   }
   // one brow (as PP.brows); k narrows it for the far side of a turned head; furrow < 0 lifts the inner end (pleading)
   function brow1(ctx, cx, cy, s, o = {}) {
+    if (SIMP() >= 3 || (SIMP() >= 2 && Math.abs(o.furrow || 0) < 0.5)) return;   // simplified: a brow only when it carries the expression
+    if (SIMP() >= 2) o = Object.assign({}, o, { th: (o.th ?? 5) * 0.6 });
     const f = o.furrow || 0, lift = o.lift || 0, th = o.th ?? 5, sp = o.sp ?? 15, k = o.k ?? 1;
     const ix = cx + s * (sp - 9 + f * 2) * k, ox = cx + s * (sp + 11) * k;
     const iy = cy + f * 3.5 - lift, oy = cy - 3 - lift * 0.6 - f * 0.5 - (o.arch || 0);
@@ -155,6 +166,11 @@
   }
   // mouths: kind 'neutral' | 'flat' | 'smile' | 'half' | 'grin' | 'open' | 'laugh' | 'o' | 'part' | 'frown' | 'grit' | 'whisper'
   function mouthG(ctx, x, y, kind, o = {}) {
+    if (SIMP() >= 3) return;
+    if (SIMP() >= 2) {   // a mouth only when it is open (a cry, a shout, a gasp): a small dark shape, no lips or teeth
+      if (['open', 'laugh', 'grin', 'o', 'part', 'whisper'].includes(kind)) { const w = (o.w ?? 9) * (kind === 'o' || kind === 'part' ? 0.45 : 0.6); ctx.fillStyle = '#4A2016'; ctx.beginPath(); ctx.ellipse(x, y + 2, w, kind === 'part' || kind === 'whisper' ? 2.2 : 4, 0, 0, TAU); ctx.fill(); }
+      return;
+    }
     const w = o.w ?? 9; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = LINE;
     const lips = o.lip;
     if (kind === 'open' || kind === 'laugh' || kind === 'grin') {
@@ -661,13 +677,13 @@
     const ro = H.rimA ? { rim: H.rim, rimA: H.rimA, rd: 3 } : {};
     if (H.hair) H.hair(ctx, 'back', E, fx, fy);
     part(ctx, poly([[-15 * k, 26], [15 * k, 26], [18 * k, 74], [-18 * k, 74]]), sk, { shade: sh, sd: 8 });
-    if (H.ears !== false) for (const s of [-1, 1]) if (s * tn > -0.5) part(ctx, ell(s * (fw + 1) - tn * 4, -1 + fy * 0.4, 6, 10), sk, { shade: sh, sd: 3, lw: 2 });
+    if (H.ears !== false && SIMP() < 2) for (const s of [-1, 1]) if (s * tn > -0.5) part(ctx, ell(s * (fw + 1) - tn * 4, -1 + fy * 0.4, 6, 10), sk, { shade: sh, sd: 3, lw: 2 });
     const pts = FACES[H.shape || 'man'].map(([x, y]) => [x * k + (y > 25 ? fx * 0.22 : 0), y * (H.fh ?? 1)]);
     const face = blob(pts, 0.5);
     part(ctx, face, sk, Object.assign({ shade: sh, sd: 7 }, ro));
     ctx.save(); ctx.clip(face);
-    ctx.fillStyle = H.blush || 'rgba(200,90,60,0.15)'; ctx.beginPath(); for (const s of [-1, 1]) { ctx.moveTo(fx + s * 19 * k + 8, 12 + fy); ctx.ellipse(fx + s * 19 * k, 12 + fy, 8, 5.5, 0, 0, TAU); } ctx.fill();
-    if (H.wrinkles) {
+    if (SIMP() < 1) ctx.fillStyle = H.blush || 'rgba(200,90,60,0.15)'; else ctx.fillStyle = 'rgba(0,0,0,0)'; ctx.beginPath(); for (const s of [-1, 1]) { ctx.moveTo(fx + s * 19 * k + 8, 12 + fy); ctx.ellipse(fx + s * 19 * k, 12 + fy, 8, 5.5, 0, 0, TAU); } ctx.fill();
+    if (H.wrinkles && SIMP() < 1) {
       ctx.strokeStyle = 'rgba(70,40,24,0.5)'; ctx.lineWidth = 1.3; ctx.lineCap = 'round';
       for (const y of [-28, -22]) { ctx.beginPath(); ctx.moveTo(fx - 12, y + fy * 0.5); ctx.quadraticCurveTo(fx, y - 2 + fy * 0.5, fx + 12, y + fy * 0.5); ctx.stroke(); }
       for (const s of [-1, 1]) { const ex = fx + s * (fw * 0.4 + 11); ctx.beginPath(); ctx.moveTo(ex, -6 + fy); ctx.lineTo(ex + s * 4, -8 + fy); ctx.moveTo(ex, -2 + fy); ctx.lineTo(ex + s * 4, -1 + fy); ctx.stroke(); }
@@ -680,23 +696,23 @@
       const bp = [[-33, 0], [-30, 30], [-14, 56 + 8 * bl], [0, 62 + 10 * bl], [14, 56 + 8 * bl], [30, 30], [33, 0], [22, 22], [0, 26], [-22, 22]].map(([x, y], i) => [x * k + (i >= 7 ? fx * 0.9 : fx * 0.35 * clamp(y / 60)), y + (i >= 7 ? fy : 0)]);
       const beard = blob(bp, 0.45);
       part(ctx, beard, H.beard.col, { shade: H.beard.sh || mix(H.beard.col, '#140B07', 0.5), sd: 4, rim: H.beard.hi, rimA: H.beard.hi ? 0.8 : 0, rd: 2.5 });
-      ctx.save(); ctx.clip(beard); ctx.strokeStyle = H.beard.line || mix(H.beard.col, '#140B07', 0.35); ctx.lineWidth = 1.3; ctx.globalAlpha = 0.7;
+      if (SIMP() < 1) { ctx.save(); ctx.clip(beard); ctx.strokeStyle = H.beard.line || mix(H.beard.col, '#140B07', 0.35); ctx.lineWidth = 1.3; ctx.globalAlpha = 0.7;
       for (let i = -3; i <= 3; i++) { ctx.beginPath(); ctx.moveTo(i * 7 + fx * 0.6, 34 + fy); ctx.quadraticCurveTo(i * 8 + fx * 0.4, 50, i * 6 + fx * 0.3, 64 + 8 * bl); ctx.stroke(); }
-      ctx.restore();
+      ctx.restore(); }
     }
     // nose
     const nk = H.noseK ?? 1, nx = fx * 1.1, ny = fy * 0.8, tip = tn * 4;
     const nose = P2(); nose.moveTo(nx - 1 * nk, -4 + ny); nose.quadraticCurveTo(nx - 3 * nk, 6 + ny, nx + (-6 * nk) + tip, 12 * nk + ny); nose.quadraticCurveTo(nx + tip, 16 * nk + ny, nx + 7 * nk + tip, 13 * nk + ny); nose.quadraticCurveTo(nx + 4 * nk, 4 + ny, nx + 2.5 * nk, -4 + ny); nose.closePath();
-    ctx.fillStyle = sh; ctx.globalAlpha = 0.5; ctx.fill(nose); ctx.globalAlpha = 1;
-    ctx.strokeStyle = LINE; ctx.lineWidth = 2; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(nx + 3 * nk, -1 + ny); ctx.quadraticCurveTo(nx + 6 * nk + tip, 9 * nk + ny, nx + 7 * nk + tip, 13 * nk + ny); ctx.quadraticCurveTo(nx + 2 * nk + tip, 17 * nk + ny, nx - 4 * nk + tip, 14 * nk + ny); ctx.stroke();
+    if (SIMP() < 3) { ctx.fillStyle = sh; ctx.globalAlpha = SIMP() >= 2 ? 0.35 : 0.5; ctx.fill(nose); ctx.globalAlpha = 1; }
+    if (SIMP() < 2) { ctx.strokeStyle = LINE; ctx.lineWidth = 2 * (PP.inkK ?? 1); ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(nx + 3 * nk, -1 + ny); ctx.quadraticCurveTo(nx + 6 * nk + tip, 9 * nk + ny, nx + 7 * nk + tip, 13 * nk + ny); ctx.quadraticCurveTo(nx + 2 * nk + tip, 17 * nk + ny, nx - 4 * nk + tip, 14 * nk + ny); ctx.stroke(); }
     // mouth (+ mustache)
     const my = (H.my ?? 30) + fy;
-    if (H.beard && H.beard.mus !== false) {
+    if (H.beard && H.beard.mus !== false && SIMP() < 2) {
       const mus = P2(); const mx = fx;
       mus.moveTo(-2 + mx, my - 10); mus.quadraticCurveTo(-13 + mx, my - 12, -19 + mx, my + 1); mus.quadraticCurveTo(-11 + mx, my - 3, -2 + mx, my - 4); mus.moveTo(2 + mx, my - 10); mus.quadraticCurveTo(13 + mx, my - 12, 19 + mx, my + 1); mus.quadraticCurveTo(11 + mx, my - 3, 2 + mx, my - 4);
       mouthG(ctx, fx, my + 2, E.mouth || 'neutral', { w: H.mw ?? 8, lip: H.lip });
       part(ctx, mus, H.beard.col, { lw: 1.5 });
-    } else mouthG(ctx, fx, my, E.mouth || 'neutral', { w: H.mw ?? 8, lip: H.lip });
+    } else mouthG(ctx, fx, my + (H.beard && SIMP() >= 2 ? 4 : 0), E.mouth || 'neutral', { w: H.mw ?? 8, lip: H.lip });
     // eyes + brows
     const ey = (H.ey ?? -4) + fy, sp = H.sp ?? fw * 0.4;
     for (const s of [-1, 1]) {
@@ -792,21 +808,21 @@
     ctx.save(); ctx.clip(body);
     const yTop = g.shY - 40, yBot = hemY + 20;
     const vline = (x, col, w, y0 = yTop, y1 = yBot) => { const pts = []; for (let y = y0; y <= y1 + 0.1; y += (y1 - y0) / 8) pts.push([x + (y > g.hipY ? (x < 0 ? fl[-1] : fl[1]) * clamp((y - g.hipY) / (hemY - g.hipY)) : 0), y]); strokeF(ctx, f, pts, col, w); };
-    if (g.stripes) for (const sd of g.stripes) vline(sd.x, sd.col, sd.w);
+    if (g.stripes && SIMP() < 3) for (const sd of g.stripes) vline(sd.x, sd.col, sd.w);
     if (g.panel) vline(0, g.panel.col, g.panel.w, g.panel.y0 ?? g.waistY, yBot);
-    if (g.folds) for (const x of g.folds) vline(x, g.foldCol || g.sh, 2.2, g.waistY + 20, hemY);
+    if (g.folds && SIMP() < 1) for (const x of g.folds) vline(x, g.foldCol || g.sh, 2.2, g.waistY + 20, hemY);
     if (g.band) { // patterned band above the hem
       const by = hemY - (g.band.off ?? 10), W2 = hw + 30;
       strokeF(ctx, f, [[-W2 + fl[-1], by], [0, by + 4], [W2 + fl[1], by]], g.band.col, g.band.h);
-      if (g.band.pat) { ctx.fillStyle = g.band.pat; for (let x = -W2; x < W2; x += 14) { const xx = x + (x < 0 ? fl[-1] : fl[1]) * 0.9, yy = by + 4 * (1 - Math.abs(x) / W2); ctx.fill(pathF(f, [['M', xx, yy], ['L', xx + 5, yy - g.band.h * 0.36], ['L', xx + 10, yy], ['L', xx + 5, yy + g.band.h * 0.36], ['Z']])); } }
+      if (g.band.pat && SIMP() < 2) { ctx.fillStyle = g.band.pat; for (let x = -W2; x < W2; x += 14) { const xx = x + (x < 0 ? fl[-1] : fl[1]) * 0.9, yy = by + 4 * (1 - Math.abs(x) / W2); ctx.fill(pathF(f, [['M', xx, yy], ['L', xx + 5, yy - g.band.h * 0.36], ['L', xx + 10, yy], ['L', xx + 5, yy + g.band.h * 0.36], ['Z']])); } }
     }
-    if (g.yoke) strokeF(ctx, f, [[-g.sw, g.shY + 30], [0, g.shY + 44], [g.sw, g.shY + 30]], g.yoke.col, g.yoke.w);
+    if (g.yoke && SIMP() < 2) strokeF(ctx, f, [[-g.sw, g.shY + 30], [0, g.shY + 44], [g.sw, g.shY + 30]], g.yoke.col, g.yoke.w);
     ctx.restore();
-    if (g.neckTrim) { const nk = pathF(f, [['M', -g.nw, g.neckY], ['Q', 0, g.neckY + 24, g.nw, g.neckY]]); ctx.strokeStyle = g.neckTrim; ctx.lineWidth = 6; ctx.stroke(nk); ctx.strokeStyle = LINE; ctx.lineWidth = 2; ctx.stroke(nk); }
+    if (g.neckTrim && SIMP() < 2) { const nk = pathF(f, [['M', -g.nw, g.neckY], ['Q', 0, g.neckY + 24, g.nw, g.neckY]]); ctx.strokeStyle = g.neckTrim; ctx.lineWidth = 6; ctx.stroke(nk); ctx.strokeStyle = LINE; ctx.lineWidth = 2; ctx.stroke(nk); }
     if (g.belt) {
       const b = g.belt, y = b.y, w = g.ww + 5;
       part(ctx, pathF(f, [['M', -w, y - b.h / 2], ['Q', 0, y - b.h / 2 + 8, w, y - b.h / 2], ['L', w - 1, y + b.h / 2], ['Q', 0, y + b.h / 2 + 8, -w + 1, y + b.h / 2], ['Z']]), b.col, { shade: b.sh || mix(b.col, '#24160F', 0.35), sd: 4, lw: 2.2 });
-      if (b.tails) { part(ctx, pathF(f, [['M', b.tx - 6, y + 2], ['L', b.tx + 4, y + 2], ['L', b.tx + 8, y + b.tails], ['L', b.tx - 4, y + b.tails + 3], ['Z']]), b.col, { shade: b.sh || mix(b.col, '#24160F', 0.35), sd: 3, lw: 2 }); const kn = f(b.tx, y + 4); part(ctx, ell(kn[0], kn[1], 7, 6), b.knot || b.col, { lw: 2 }); }
+      if (b.tails && SIMP() < 2) { part(ctx, pathF(f, [['M', b.tx - 6, y + 2], ['L', b.tx + 4, y + 2], ['L', b.tx + 8, y + b.tails], ['L', b.tx - 4, y + b.tails + 3], ['Z']]), b.col, { shade: b.sh || mix(b.col, '#24160F', 0.35), sd: 3, lw: 2 }); const kn = f(b.tx, y + 4); part(ctx, ell(kn[0], kn[1], 7, 6), b.knot || b.col, { lw: 2 }); }
     }
   }
 
@@ -826,7 +842,8 @@
     const skin = { shade: C.skinSh, sd: 7, rim: C.skinRim, rimA: C.skinRim ? (C.rimA ?? 0.5) : 0, rd: 3 };
     const arms = solveArms(C, P, U);
     const E = P.head || {};
-    const HM = U.translate(E.dx || 0, C.headY - (P.shUp || 0) * 0.6 + (E.dy || 0)).rotate((E.tilt || 0) / D);
+    const hk = SIMP() >= 3 ? 0.84 : SIMP() >= 2 ? 0.92 : 1;   // simplified figures: smaller heads, longer bodies
+    const HM = U.translate(E.dx || 0, C.headY + (1 - hk) * 40 - (P.shUp || 0) * 0.6 + (E.dy || 0)).rotate((E.tilt || 0) / D).scale(hk, hk);
     ctx.save();
     if (P.rot) { const o = P.rotO || [0, 0]; ctx.translate(o[0], o[1]); ctx.rotate(P.rot); ctx.translate(-o[0], -o[1]); }
     if (C.aura) C.aura(ctx, P);
@@ -860,6 +877,14 @@
       ctx.strokeStyle = '#7A5A3E'; ctx.lineWidth = 8; ctx.stroke();
       ctx.save(); ctx.translate(hx, hy); ctx.rotate(ang + Math.PI / 2); const hd = P2(); hd.roundRect(-44, -22, 88, 44, 8);
       part(ctx, hd, '#6E6A64', { shade: '#45423E', sd: 6, rim: '#B8B2A8', rimA: 0.6, lw: 3 }); ctx.restore();
+    },
+    tablets(ctx, ph, W, ang, s) {   // two stone tablets with rounded tops, held up between both hands (drawn from the right hand, centred)
+      if (ph !== 'front') return;
+      ctx.save(); ctx.translate(W[0] - 58, W[1] - 70);
+      for (const dx of [-40, 40]) { const t = P2(); t.moveTo(dx - 36, 60); t.lineTo(dx - 36, -30); t.quadraticCurveTo(dx - 36, -66, dx, -66); t.quadraticCurveTo(dx + 36, -66, dx + 36, -30); t.lineTo(dx + 36, 60); t.closePath();
+        part(ctx, t, '#B9AE98', { shade: '#8E846E', sd: 7, rim: '#E4DCC8', rimA: 0.6, lw: 3 });
+        ctx.strokeStyle = 'rgba(70,56,40,0.55)'; ctx.lineWidth = 2.2; for (let y = -34; y <= 44; y += 13) { ctx.beginPath(); ctx.moveTo(dx - 24, y); ctx.lineTo(dx + 24, y); ctx.stroke(); } }
+      ctx.restore();
     },
     rod(ctx, ph, W, ang, s) {   // a staff gripped near one end and swung (the 'swing' pose): it follows the hand's direction
       if (ph !== 'front') return;
@@ -1387,6 +1412,17 @@
         P.kneel = 1; P.by = 150; const b = Math.sin(ph * 0.5) * 4;
         P.arms = { '1': { T: [110, -430 * hy + b], pole: [200, -300], hand: 'fist', hdir: -10, item: st.item || 'bowl' }, '-1': { T: [70, -420 * hy + b], pole: [-120, -300], hand: 'open', hdir: 10 } };
         Object.assign(P.head, { pitch: 0.1, mouth: st.look ? 'part' : 'neutral', furrow: st.look ? -0.7 : -0.2, look: st.look || [0.7, -0.3], turn: st.look ? st.look[0] * 0.25 : P.head.turn }); break;
+      }
+      case 'beseech': { // kneeling, face lifted toward something high (st.dir: -1 = up to screen left), one hand reaching to it, one on the chest
+        const d = st.dir ?? -1;
+        P.kneel = 1; P.by = 150; P.lean = d * 0.08;
+        P.arms = { [d]: { T: [d * 150, -560 * hy], pole: [d * 230, -420], hand: 'open', hdir: -90 + d * 35 }, [-d]: { T: [d * 18, -360 * hy], pole: [-d * 150, -260], hand: 'open', hdir: -90 - d * 30, front: 1 } };
+        Object.assign(P.head, { pitch: -0.75, tilt: d * 0.12, turn: d * 0.35, mouth: 'part', furrow: -0.5, look: [d * 0.7, -1], lift: 3 }); break;
+      }
+      case 'tablets': { // both hands lift the two stone tablets overhead (Ex 32:19: about to throw them down)
+        P.lean = -0.04;
+        P.arms = { '-1': { T: [-58, -640 * hy], pole: [-190, -470], hand: 'open', hdir: -70 }, '1': { T: [58, -640 * hy], pole: [190, -470], hand: 'open', hdir: -110, item: 'tablets' } };
+        Object.assign(P.head, { pitch: -0.05, mouth: 'part', furrow: 0.9, look: st.look || [0.8, 0], turn: (st.look ? st.look[0] : 0.8) * 0.3 }); break;
       }
       case 'bow': { // kneeling, bent low, hands forward and down (Ex 32:8 "worshiped it"; never used for 2 Kgs 18:4)
         P.kneel = 1; P.by = 175; P.lean = (v % 2 ? 1 : -1) * 0.1; P.shUp = -10;

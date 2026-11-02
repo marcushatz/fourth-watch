@@ -64,13 +64,25 @@
     if (p.rot != null) o.rotation.y = p.rot;
     return o;
   }
+  const RAMP = (() => { const d = new Uint8Array([120, 120, 120, 255, 190, 190, 190, 255, 255, 255, 255, 255]); const t = new THREE.DataTexture(d, 3, 1, THREE.RGBAFormat); t.minFilter = t.magFilter = THREE.NearestFilter; t.needsUpdate = true; return t; })();
+  function paintify(scene) {
+    const cache = new Map();
+    scene.traverse((o) => {
+      if (!o.isMesh || !o.material || !o.material.isMeshStandardMaterial) return;
+      const m = o.material;
+      if (m.metalness > 0.3 || m.userData.keep) { m.flatShading = false; m.needsUpdate = true; return; }   // gold and bronze keep a specular sheen
+      if (!cache.has(m)) cache.set(m, new THREE.MeshToonMaterial({ color: m.color, map: m.map, vertexColors: m.vertexColors, emissive: m.emissive, emissiveIntensity: m.emissiveIntensity, gradientMap: RAMP, transparent: m.transparent, opacity: m.opacity, side: m.side }));
+      o.material = cache.get(m);
+    });
+  }
   function buildSet(name) {
     const R = RECIPES[name]; if (!R) throw new Error('diorama: no recipe ' + name);
-    const sk = SKY[R.sky || 'day'], rng = FW.rng(R.seed ?? 7);
-    const scene = new THREE.Scene(); scene.fog = new THREE.Fog(C(sk.fog), 30, 90);
+    const sk = Object.assign({}, SKY[R.sky || 'day'], R.skyOver || {}), rng = FW.rng(R.seed ?? 7);   // skyOver: a set's own sky, key and fog colours
+    const scene = new THREE.Scene(); scene.fog = new THREE.Fog(C(sk.fog), ...(R.fog || [30, 90]));
+    LW.paintTerrain = R.style === 'paint';
     scene.add(LW.sky({ top: sk.top, mid: sk.mid, hor: sk.hor, low: sk.fog, sunDir: sk.sunDir }));
     const hemi = new THREE.HemisphereLight(C(sk.hemi[0]), C(sk.hemi[1]), sk.hemi[2]); scene.add(hemi);
-    const sun = new THREE.DirectionalLight(C(sk.key), sk.keyI); sun.position.set(-9, 11, 6); sun.castShadow = true;   // key from the upper left
+    const sun = new THREE.DirectionalLight(C(sk.key), sk.keyI); sun.position.set(...(R.sunPos || [-9, 11, 6])); sun.castShadow = true;   // key from the upper left
     sun.shadow.mapSize.set(2048, 2048); const sc = sun.shadow.camera; sc.left = sc.bottom = -12; sc.right = sc.top = 12; sc.near = 1; sc.far = 40; scene.add(sun, sun.target);
     const g = R.ground || {}, r = g.radius ?? 7, cols = (g.cols || ['#B9A36A', '#A8935E', '#C2AE78']).map(C);
     scene.add(LW.terrain({ size: r * 3.2, seg: 96, hFn: islandH(r, g.hills ?? 0.25, g.seed ?? 3), seed: g.seed ?? 3,
@@ -86,7 +98,15 @@
       const bb = PP2.bill(kind, base, over); bb.position.set(p.at[0], 0, p.at[1]);
       scene.add(bb, bb.userData.caster); actors[p.id] = { bb, rest: p, kind };
     });
-    built[name] = { R, sk, scene, sun, hemi, props, fires, fireLights, actors };
+    // the 'paint' style (Fourth Watch visual spec v1): the world is shaded like the characters are drawn: flat tones in
+    // three steps (lit / half / shadow), smooth surfaces, metal keeps its sheen, ink lines come from the post pass
+    let key = null;
+    if (R.style === 'paint') {
+      paintify(scene);
+      key = new THREE.SpotLight(C('#FFE2B0'), 0, 30, 0.5, 0.75, 1.2); key.castShadow = false; scene.add(key, key.target);   // the focal pool (shot.dio.key)
+    }
+    LW.paintTerrain = false;
+    built[name] = { R, sk, scene, sun, hemi, props, fires, fireLights, actors, key };
   }
 
   // ---- staging: every actor's state at time t, from the shot's act list (pure function of t) ----
@@ -178,6 +198,12 @@
       cam = camera;
       const B = built[shot.v]; if (!B) throw new Error('diorama: set not built ' + shot.v);
       const bill = [], anchors = {};
+      const KY = shot.dio && shot.dio.key;
+      if (B.key) {
+        if (KY) { const sp = subjectPoint(B, shot, KY.on, t), y = KY.y ?? 1.2, fr = KY.from || [-2.5, 7, 3]; B.key.position.set(sp[0] + fr[0], fr[1], sp[2] + fr[2]); B.key.target.position.set(sp[0], y, sp[2]); B.key.target.updateMatrixWorld();
+          B.key.intensity = KY.i ?? 40; B.key.angle = KY.angle ?? 0.32; B.key.color.set(KY.col || '#FFE2B0'); }
+        else B.key.intensity = 0;
+      }
       for (const id of Object.keys(B.actors)) {
         const a = B.actors[id], st = actorState(B, id, shot, t);
         a.bb.visible = st.visible; if (!st.visible) continue;
@@ -186,6 +212,11 @@
         const draw = { pose: st.pose, phase: q(st.phase, 8), t: q(t, 12), item: st.item, look: st.look, k: kNow, dir: st.dir };
         a.bb.userData.update(JSON.stringify(draw), draw);
         a.bb.material.color.setRGB(...B.sk.tint);
+        if (B.key) {   // paint style: a flat figure takes the light of where it stands (fires nearby, the focal pool, the set's ambient)
+          const amb = (B.R.actorAmb ?? 1) * (a.rest.shade ?? 1), col = a.bb.material.color; col.multiplyScalar(amb);   // rest.shade: a figure standing in shadow
+          for (const L of B.fireLights) { const d2 = (L.position.x - st.pos[0]) ** 2 + (L.position.z - st.pos[1]) ** 2, w = (L.intensity / 6) * 0.55 / (1 + d2 * 0.9); col.r += w; col.g += w * 0.55; col.b += w * 0.22; }
+          if (KY && B.key.intensity > 0) { const tp = B.key.target.position, d = Math.hypot(tp.x - st.pos[0], tp.z - st.pos[1]), w = (KY.actor ?? 0.35) * (1 - Math.min(1, d / (KY.r ?? 2.2))); col.r += w; col.g += w * 0.88; col.b += w * 0.65; }
+        }
         bill.push(a.bb); anchors[id] = [st.pos[0], st.pose === 'kneel' ? 1.3 : st.pose === 'sit' ? 1.15 : 2.0, st.pos[1]];   // the head, by pose
       }
       B.fires.forEach((f, i) => { const core = f.userData.core; if (core) core.scale.set(1, 0.85 + 0.15 * Math.sin(t * 13 + i), 1); });
@@ -205,6 +236,9 @@
       // God's light (series canon: gold from the upper left, only where the text says God acts): shot.dio.rays = { on, from, dur, amt, y }
       const RY = shot.dio && shot.dio.rays;
       if (RY) { const k = clamp((t - tOf(shot, RY.from, shot.t0)) / (RY.dur ?? 0.8)); const p = subjectPoint(B, shot, RY.on, t); out.rays = { amt: (RY.amt ?? 1) * ease.inOut(k), target: [p[0], RY.y ?? 1.6, p[2]] }; }
+      if (B.R.ink) out.ink = B.R.ink;   // { amt, w, thr, col }: ink lines on depth breaks (post pass)
+      const FO = shot.dio && shot.dio.focus;   // { on, y, r0, r1, dark }: the frame falls off around the focal subject
+      if (FO) { cam.updateMatrixWorld(); const sp = subjectPoint(B, shot, FO.on, t), pp = LW.project(cam, [sp[0], FO.y ?? 1.2, sp[2]]); out.focus2 = { uv: [pp[0] / W, 1 - pp[1] / H], r0: FO.r0 ?? 0.25, r1: FO.r1 ?? 0.75, dark: FO.dark ?? 0.45 }; }
       if (shot.dio && shot.dio.look) Object.assign(out, shot.dio.look);   // per-shot grade overrides (exposure, sat, bloom)
       if (shot.dio && typeof shot.dio.post === 'function') out.post = (ctx, t2, P) => shot.dio.post(ctx, t2, P, shot, W, H);   // a 2D overlay drawn over this shot's frame
       return out;

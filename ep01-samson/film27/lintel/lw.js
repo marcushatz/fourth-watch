@@ -35,16 +35,32 @@
     precision highp float;
     uniform sampler2D tColor; uniform sampler2D tDepth; uniform sampler2D tBlur; uniform float cnear, cfar, focus, aperture, maxR, fgScale, halfScale;
     uniform float exposure, sat; uniform vec3 lift, gain;
+    uniform float inkAmt, inkW, inkThr; uniform vec3 inkCol; uniform vec2 pxFull;
+    uniform vec2 fUV; uniform float fR0, fR1, fDark, fAspect;
     varying vec2 vUv;
     float linZ(float d){ return cnear * cfar / (cfar - d * (cfar - cnear)); }
     float cocAt(float z){ float c = aperture * abs(z - focus) / z; if (z < focus) c *= fgScale; return clamp(c, 0.0, maxR); }
     vec3 tone(vec3 x){ x = max(x, 0.0); vec3 s = 0.78 + 0.22 * (1.0 - exp(-(x - 0.78) / 0.22)); return mix(x, s, step(0.78, x)); }
     void main(){
       vec3 sharp = texture2D(tColor, vUv).rgb;
-      float c0 = cocAt(linZ(texture2D(tDepth, vUv).x)) * halfScale;
+      float z0 = linZ(texture2D(tDepth, vUv).x);
+      float c0 = cocAt(z0) * halfScale;
       vec4 b = texture2D(tBlur, vUv);
       float k = smoothstep(0.35, 1.6, max(c0, b.a * halfScale));
+      // ink: a warm line on the near side of every depth break (silhouettes), the same line the 2D characters are drawn with
+      if (inkAmt > 0.0) {
+        float e = 0.0;
+        for (int i = 0; i < 8; i++) {
+          float a = float(i) * 0.785398;
+          float zn = linZ(texture2D(tDepth, vUv + vec2(cos(a), sin(a)) * pxFull * inkW).x);
+          e = max(e, (zn - z0) / z0);
+        }
+        float ink = smoothstep(inkThr, inkThr * 2.2, e) * inkAmt * (1.0 - k);
+        sharp = mix(sharp, inkCol, ink);
+      }
       vec3 col = mix(sharp, b.rgb, k) * exposure;
+      // focal emphasis: everything outside the subject's pool of light falls off (Lintel's spotlight read)
+      if (fDark > 0.0) { float dd = length((vUv - fUV) * vec2(fAspect, 1.0)); col *= 1.0 - fDark * smoothstep(fR0, fR1, dd); }
       col = tone(col);
       float l = dot(col, vec3(0.2126, 0.7152, 0.0722));
       col = mix(vec3(l), col, sat);
@@ -68,7 +84,9 @@
     const U = { cnear: { value: 0.1 }, cfar: { value: 400 }, focus: { value: 10 }, aperture: { value: 6 }, maxR: { value: 7 }, fgScale: { value: 1.6 } };
     const dof = new THREE.ShaderMaterial({ uniforms: Object.assign({ tColor: { value: rt.texture }, tDepth: { value: dt }, px: { value: new THREE.Vector2(1 / hw, 1 / hh) } }, U), vertexShader: POST_VS, fragmentShader: DOF_FS, depthTest: false, depthWrite: false, toneMapped: false });
     const comp = new THREE.ShaderMaterial({ uniforms: Object.assign({ tColor: { value: rt.texture }, tDepth: { value: dt }, tBlur: { value: rtHalf.texture }, halfScale: { value: 2 },
-      exposure: { value: 1 }, sat: { value: 1.06 }, lift: { value: new THREE.Vector3(0.012, 0.016, 0.04) }, gain: { value: new THREE.Vector3(1, 1, 1) } }, U),
+      exposure: { value: 1 }, sat: { value: 1.06 }, lift: { value: new THREE.Vector3(0.012, 0.016, 0.04) }, gain: { value: new THREE.Vector3(1, 1, 1) },
+      inkAmt: { value: 0 }, inkW: { value: 1.5 }, inkThr: { value: 0.035 }, inkCol: { value: new THREE.Vector3(0.16, 0.1, 0.07) }, pxFull: { value: new THREE.Vector2(1 / W, 1 / H) },
+      fUV: { value: new THREE.Vector2(0.5, 0.5) }, fR0: { value: 0.3 }, fR1: { value: 0.8 }, fDark: { value: 0 }, fAspect: { value: W / H } }, U),
       vertexShader: POST_VS, fragmentShader: COMP_FS, depthTest: false, depthWrite: false, toneMapped: false });
     const quad = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), dof); quad.frustumCulled = false;
     const pscene = new THREE.Scene(); pscene.add(quad);
@@ -80,6 +98,9 @@
       U.focus.value = o.focus ?? 10; U.aperture.value = o.aperture ?? 6; U.maxR.value = o.maxR ?? 7; U.fgScale.value = o.fgScale ?? 1.6;
       comp.uniforms.exposure.value = o.exposure ?? 1; comp.uniforms.sat.value = o.sat ?? 1.06;
       comp.uniforms.lift.value.set(...(o.lift || [0.012, 0.016, 0.04])); comp.uniforms.gain.value.set(...(o.gain || [1, 1, 1]));
+      const cu = comp.uniforms, ink = o.ink || {}, fo = o.focus2 || {};   // ink lines + focal falloff (both off unless asked for)
+      cu.inkAmt.value = ink.amt ?? 0; cu.inkW.value = ink.w ?? 1.5; cu.inkThr.value = ink.thr ?? 0.035; if (ink.col) cu.inkCol.value.set(...ink.col);
+      cu.fDark.value = fo.dark ?? 0; if (fo.uv) cu.fUV.value.set(fo.uv[0], fo.uv[1]); cu.fR0.value = fo.r0 ?? 0.3; cu.fR1.value = fo.r1 ?? 0.8;
       r.setRenderTarget(rt); r.setClearColor(0x000000, 1); r.clear(); r.render(scene, cam);
       quad.material = dof; r.setRenderTarget(rtHalf); r.render(pscene, pcam);
       quad.material = comp; r.setRenderTarget(null); r.render(pscene, pcam);
@@ -118,6 +139,13 @@
       const x = pos0.getX(i), z = pos0.getZ(i), cell = size / seg;
       const jx = (FW.noise2(x * 3.1, z * 3.1, 11) - 0.5) * cell * 0.5, jz = (FW.noise2(x * 2.7, z * 2.9, 23) - 0.5) * cell * 0.5;
       pos0.setX(i, x + jx); pos0.setZ(i, z + jz); pos0.setY(i, hFn(x + jx, z + jz));
+    }
+    if (LW.paintTerrain) {   // painted ground: smooth shading, colour varies in broad soft patches (no per-face noise)
+      g0.computeVertexNormals(); const p = g0.attributes.position, cols = new Float32Array(p.count * 3);
+      for (let i = 0; i < p.count; i++) { const col = colFn(p.getX(i), p.getZ(i), p.getY(i), g0.attributes.normal.getY(i), FW.noise2(p.getX(i) * 0.35, p.getZ(i) * 0.35, seed)); cols[i * 3] = col.r; cols[i * 3 + 1] = col.g; cols[i * 3 + 2] = col.b; }
+      g0.setAttribute('color', new THREE.BufferAttribute(cols, 3));
+      const m = new THREE.Mesh(g0, new THREE.MeshStandardMaterial({ vertexColors: true, flatShading: false, roughness: 1, metalness: 0 }));
+      m.receiveShadow = true; m.castShadow = true; return m;
     }
     const g = g0.toNonIndexed(); g.computeVertexNormals();
     const pos = g.attributes.position, colors = new Float32Array(pos.count * 3);

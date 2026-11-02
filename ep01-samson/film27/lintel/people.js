@@ -18,18 +18,18 @@
       const p = P2(); p.rect(-3000, -3000, 6000, 6000); p.addPath(path, mt([1, 0, 0, 1, -d, -d * 0.45]));
       ctx.fillStyle = o.shade; ctx.fill(p, 'evenodd'); ctx.restore();
     }
-    if (o.rim && o.rimA > 0.01) {
+    if (o.rim && o.rimA > 0.01 && !((PP.simp || 0) >= 2)) {   // simplified figures: no rim highlight (the world has none)
       const d = o.rd ?? 3.5; ctx.save(); ctx.clip(path); ctx.globalAlpha = Math.min(1, o.rimA);
       const p = P2(); p.rect(-3000, -3000, 6000, 6000); p.addPath(path, mt([1, 0, 0, 1, d, d * 0.5]));
       ctx.fillStyle = o.rim; ctx.fill(p, 'evenodd'); ctx.restore();
     }
-    if (o.line !== false) { ctx.lineWidth = o.lw ?? 2.6; ctx.strokeStyle = o.lineCol || LINE; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.stroke(path); }
+    if (o.line !== false && (PP.inkK ?? 1) > 0.01) { ctx.lineWidth = (o.lw ?? 2.6) * (PP.inkK ?? 1); ctx.strokeStyle = o.lineCol || LINE; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.stroke(path); }
   }
   PP.part = part;
   // several parts that read as one shape: outline the union first (double width), then fill each part on top
   function group(ctx, parts, lw = 2.6) {
-    ctx.save(); ctx.lineWidth = lw * 2; ctx.strokeStyle = LINE; ctx.lineJoin = 'round';
-    for (const [path] of parts) ctx.stroke(path);
+    ctx.save(); ctx.lineWidth = lw * 2 * (PP.inkK ?? 1); ctx.strokeStyle = LINE; ctx.lineJoin = 'round';
+    if ((PP.inkK ?? 1) > 0.01) for (const [path] of parts) ctx.stroke(path);
     ctx.restore();
     for (const [path, base, o] of parts) part(ctx, path, base, Object.assign({}, o, { line: false }));
   }
