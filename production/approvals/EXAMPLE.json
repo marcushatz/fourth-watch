@@ -1,0 +1,10 @@
+{
+  "approved_by": "Marcus",
+  "approved_at": "2026-11-02T22:30:00Z",
+  "approved_message": "The exact words of his approval",
+  "expires_at": "2026-11-02T23:30:00Z",
+  "cost_checks_ok": false,
+  "items": [
+    { "model": "nano_banana_pro", "intended_output": "Art direction A still", "credits": 2, "remaining": 1 }
+  ]
+}

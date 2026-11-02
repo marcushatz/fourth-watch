@@ -20,6 +20,16 @@ Each one comes from the reference channels, not from our own numbers. Test one a
 
 ---
 
+### Nov 2: the Bronze Serpent Content Factory test and the usage audit
+- **What happened:** a `/content-factory` run wrote a new 86-word script instead of using the approved v4, because the tool takes a prompt and the session didn't read the repo first. The render was clean, and Marcus rejected the animation. Later, 22 free cost checks ran after his stop.
+- **Evidence:** `ep02-bronze-serpent/reference_test_2026-11-02/EVALUATION.md`, `production/ledger/generation_log.csv`.
+- **Changes:** `CLAUDE.md`, `production/`, `tools/generation_gate.py`, Rounds 30 and 31.
+- **Lessons:**
+  - Read the episode folder before anything else.
+  - A preset's input format can silently replace an approved script.
+  - A clean render doesn't mean good art.
+  - Anything that looks like spending needs saying out loud first.
+
 ### Oct 31 (night): "is the script itself good enough?" (Round 18), and the blind judge panel
 - **What happened:** Marcus said the checker only checks form and he wasn't convinced Samson was good enough. We built a judged layer (`tools/script_judge/`): blind AI judges score our script beside 9 Lintel reels whose views we know. Five runs, 15 judge replies, all saved in `ep01-samson/qa/judge_run1–5/`.
 - **Evidence:**

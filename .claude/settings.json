@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__Higgsfield__(generate_.*|execute_preset|upscale_.*|outpaint_image|reframe|remove_background|motion_control|voice_change|dubbing|shorts_studio_create|ads_studio_generate|ai_influencer_generate|build_ai_influencer|create_voice.*|apps_invoke|scene_builder_3d_generate_.*|virality_predictor|video_analysis_create)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/tools/generation_gate.py\""
+          }
+        ]
+      }
+    ]
+  }
+}

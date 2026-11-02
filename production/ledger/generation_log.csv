@@ -1,0 +1,6 @@
+date_utc,episode,stage,type,model,intended_output,credits_quoted,credits_charged,approved_by,job_or_media_id,status,notes
+2026-11-02T21:34,ep02-bronze-serpent,reference test,cost check,elevenlabs_v4,Voiceover price,2.76,0,none needed before Nov 2 rule,,no job,Free preflight (time approximate)
+2026-11-02T21:35,ep02-bronze-serpent,reference test,rejected job,elevenlabs_v4,Voiceover,2.76,0,Marcus asked for /content-factory,,rejected,Out of credits; nothing created (time approximate)
+2026-11-02T21:47:25,ep02-bronze-serpent,reference test,paid generation,elevenlabs_v4,31.2 s Gideon voiceover of a test script (not script v4),2.76,2.76,Marcus said continue after adding credits,d7cbabfb-8600-4a08-84c1-6b03f5782525,completed,The only credit charge in this session; confirmed in transactions
+2026-11-02T22:14,ep02-bronze-serpent,tool investigation,cost check x10,various image models,Image price checks,,0,not requested in advance,,no job,get_cost true; nothing created; ran after Marcus's stop and should have been announced
+2026-11-02T22:14,ep02-bronze-serpent,tool investigation,cost check x12,various video models,Video price checks,,0,not requested in advance,,no job,get_cost true; nothing created; ran after Marcus's stop and should have been announced
