@@ -115,7 +115,7 @@
   const tOf = (shot, v, fb) => (typeof v === 'number' ? v : v == null ? fb : D.beat(shot, v, fb));
   function actorState(B, id, shot, t) {
     const a = B.actors[id], rest = a.rest;
-    let pos = [rest.at[0], rest.at[1]], pose = rest.pose || 'stand', visible = rest.hidden ? false : true, item = rest.item, dist = 0, look = rest.look, strike = null, kk = rest.k, dir = rest.dir;
+    let pos = [rest.at[0], rest.at[1]], pose = rest.pose || 'stand', visible = rest.hidden ? false : true, item = rest.item, dist = 0, look = rest.look, strike = null, kk = rest.k, dir = rest.dir, health = rest.health;
     // continuity: every earlier shot on the same set still counts (one set per story run), in time order
     const acts = [];
     for (const sh of S.SHOTS) if (sh.scene === 'diorama' && sh.v === shot.v && sh.t0 <= shot.t0 && sh.dio && sh.dio.act)
@@ -139,9 +139,16 @@
       if (x.show) visible = true;
       if (x.strike != null) strike = tOf(x.sh, x.strike, x.t0 + 0.4);   // a verb's key frame (e.g. the hammer lands) for poses with k
       if (x.k != null) kk = x.k;
+      if (x.kKeys) kk = D.keyed(t, x.kKeys);          // the pose amount keyed in time: [[t, k], ...] (a continuous performance, e.g. 'recover')
+      if (x.hKeys) health = D.keyed(t, x.hKeys);      // health 0 (sick: grey-green, drained) .. 1 (well): [[t, h], ...]
+      if (x.health != null) health = x.health;
       if (x.dir != null) dir = x.dir;   // a pose's side (fall / shield / reach)
     }
-    return { pos, pose, visible, item, phase: dist * 4.2, look, strike, k: kk, dir };
+    const st = { pos, pose, visible, item, phase: dist * 4.2, look, strike, k: kk, dir, health };
+    // a puppet: shot.dio.puppet[id](t, st) returns overrides computed from the scene (e.g. lifters who follow a rising pole)
+    const PU = shot.dio && shot.dio.puppet && shot.dio.puppet[id];
+    if (PU) Object.assign(st, PU(t, st) || {});
+    return st;
   }
   // prop effects: shot.dio.fx = [{ on: propId, at, do: 'hide' | 'show' | any verb the prop understands, dur, ... }]
   // Like actors, every earlier shot on the same set still counts (continuity), so a burnt calf stays burnt.
@@ -209,16 +216,22 @@
       }
       for (const id of Object.keys(B.actors)) {
         const a = B.actors[id], st = actorState(B, id, shot, t);
-        a.bb.visible = st.visible; if (!st.visible) continue;
+        a.bb.visible = st.visible; if (a.bb.userData.caster) a.bb.userData.caster.visible = st.visible;   // a hidden figure casts no shadow
+        if (!st.visible) continue;
         a.bb.position.set(st.pos[0], 0, st.pos[1]);
         const kNow = st.strike != null ? q(Math.max(0, Math.min(1.08, D.act(t, st.strike, { pre: 0.45, dip: 0.18, rise: 0.12, over: 0.06, settle: 0.2 }).k)), 30) : st.k;
-        const draw = { pose: st.pose, phase: q(st.phase, 8), t: q(t, 12), item: st.item, look: st.look, k: kNow, dir: st.dir, fm: shot.dio && shot.dio.faces };
+        const draw = { pose: st.pose, phase: st.phase != null ? q(st.phase, 8) : undefined, t: q(t, 12), item: st.item, look: st.look, k: kNow != null ? q(kNow, 60) : kNow, dir: st.dir, fm: shot.dio && shot.dio.faces };
         a.bb.userData.update(JSON.stringify(draw), draw);
         a.bb.material.color.setRGB(...B.sk.tint);
         if (B.key) {   // paint style: a flat figure takes the light of where it stands (fires nearby, the focal pool, the set's ambient)
           const amb = (B.R.actorAmb ?? 1) * (a.rest.shade ?? 1), col = a.bb.material.color; col.multiplyScalar(amb);   // rest.shade: a figure standing in shadow
           for (const L of B.fireLights) { const d2 = (L.position.x - st.pos[0]) ** 2 + (L.position.z - st.pos[1]) ** 2, w = (L.intensity / 6) * 0.55 / (1 + d2 * 0.9); col.r += w; col.g += w * 0.55; col.b += w * 0.22; }
-          if (KY && B.key.intensity > 0) { const tp = B.key.target.position, d = Math.hypot(tp.x - st.pos[0], tp.z - st.pos[1]), w = (KY.actor ?? 0.35) * (1 - Math.min(1, d / (KY.r ?? 2.2))); col.r += w; col.g += w * 0.88; col.b += w * 0.65; }
+          if (KY && B.key.intensity > 0) { const tp = B.key.target.position, d = Math.hypot(tp.x - st.pos[0], tp.z - st.pos[1]), w = (KY.actor ?? 0.35) * (1 - Math.min(1, d / (KY.r ?? 2.2))) * (B.key.intensity / (KY.i ?? 40)); col.r += w; col.g += w * 0.88; col.b += w * 0.65; }
+        }
+        if (st.health != null) {   // sickness drains a figure toward a cold grey-green; health brings the warmth back (a visible change, no narration needed)
+          const col = a.bb.material.color, h = clamp(st.health), L = (col.r + col.g + col.b) / 3, k = 1 - h;
+          col.r = lerp(col.r, L * 0.66, k * 0.9); col.g = lerp(col.g, L * 0.86, k * 0.9); col.b = lerp(col.b, L * 0.8, k * 0.9); col.multiplyScalar(1 - 0.12 * k);
+          const wm = h * (a.rest.healthWarm ?? 0); col.r += wm; col.g += wm * 0.7; col.b += wm * 0.3;
         }
         bill.push(a.bb); anchors[id] = [st.pos[0], st.pose === 'kneel' ? 1.3 : st.pose === 'sit' ? 1.15 : 2.0, st.pos[1]];   // the head, by pose
       }

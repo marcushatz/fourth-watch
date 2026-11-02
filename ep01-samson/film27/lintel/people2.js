@@ -1455,6 +1455,65 @@
         P.arms = { [d]: { T: [d * 150, -560 * hy], pole: [d * 230, -420], hand: 'open', hdir: -90 + d * 35 }, [-d]: { T: [d * 18, -360 * hy], pole: [-d * 150, -260], hand: 'open', hdir: -90 - d * 30, front: 1 } };
         Object.assign(P.head, { pitch: -0.75, tilt: d * 0.12, turn: d * 0.35, mouth: 'part', furrow: -0.5, look: [d * 0.7, -1], lift: 3 }); break;
       }
+      case 'pray': { // kneeling in prayer for the people (Num 21:7): hands lifted beside the head, palms up, head bowed, eyes closed.
+        // st.k 0..1 lifts the face (he hears the answer); the hands stay low and close, so it never reads as cheering
+        const k = sm(st.k ?? 0);
+        P.kneel = 1; P.by = 150; P.lean = 0.02;
+        // the hands: palms pressed together under the chin, elbows out and down (the sign of prayer anyone reads at a glance);
+        // they stay together when he looks up, so the gesture never changes meaning
+        P.arms = { '-1': { T: [-7, lerp(-404, -414, k) * hy], pole: [-190, -250], hand: 'open', hdir: -92, front: 1 }, '1': { T: [7, lerp(-404, -414, k) * hy], pole: [190, -250], hand: 'open', hdir: -88, front: 1 } };
+        Object.assign(P.head, { pitch: lerp(0.5, -0.5, k), turn: lerp(0, -0.12, k), tilt: 0, mouth: 'neutral', furrow: lerp(-0.25, -0.45, k), closed: k < 0.4, look: [lerp(0, -0.3, k), lerp(0.8, -1, k)], lift: lerp(0, 2, k) });
+        break;
+      }
+      case 'heave': { // lifting a heavy pole (Num 21:9): st.k = hand height in metres (0.45 crouched .. 1.85 arms locked overhead),
+        // st.dir = the way he pushes (toward the pole's foot); st.phase (if set) steps. Low hands crouch him; high hands straighten him.
+        const d = st.dir ?? 1, h = clamp(st.k ?? 0.5, 0.4, 2.0), c = clamp((1.2 - h) / 0.7), up = clamp((h - 1.25) / 0.6);
+        P.kneel = c > 0.12 ? 1 : 0; P.by = c * 150;
+        P.lean = d * (0.1 + 0.18 * c + 0.07 * up);
+        const fx = C.footX || 22;
+        if (!P.kneel) { P.feet = { [-d]: [-d * (fx + 30), 0], [d]: [d * (fx + 16), 0] }; if (st.phase != null) P.feet[d][1] = -Math.max(0, Math.sin(st.phase)) * 18; }
+        const yh = -h / U_M;   // the hands, in figure units above his feet
+        const hd = st.open ? 'open' : 'fist';   // open: pushing a pole that has left their grip (never a raised fist)
+        P.arms = { [d]: { Tw: [d * (36 - 14 * up), yh], pole: [d * 200, -300], hand: hd, hdir: -90 + d * 25 }, [-d]: { Tw: [d * (-12 - 8 * up), yh + 30], pole: [-d * 170, -300], hand: hd, hdir: -90 + d * 25 } };
+        P.shUp = up * 10;
+        Object.assign(P.head, { pitch: lerp(-0.05, -0.45, up) + c * 0.12, turn: d * 0.25, mouth: 'grit', furrow: 0.7, look: [d * 0.5, lerp(-0.3, -1, up)] });
+        if (st.look) Object.assign(P.head, { pitch: -0.5, look: st.look, turn: st.look[0] * 0.3, furrow: 0.2, mouth: 'part' });   // done: looking up at what they raised
+        break;
+      }
+      case 'brace': { // footing a pole as it is raised: kneeling at its foot, leaning into it (st.dir), both hands low on it, eyes up the pole
+        const d = st.dir ?? -1, k = sm(st.k ?? 0);
+        P.kneel = 1; P.by = 140; P.lean = d * 0.2;
+        P.arms = { [d]: { Tw: [d * 120, -0.42 / U_M], pole: [d * 200, -260], hand: 'fist', hdir: -90 + d * 10 }, [-d]: { Tw: [d * 96, -0.62 / U_M], pole: [-d * 120, -260], hand: 'fist', hdir: -90 + d * 10 } };
+        Object.assign(P.head, { pitch: lerp(-0.2, -0.6, k), turn: d * 0.3, mouth: 'grit', furrow: 0.6, look: [d * 0.5, lerp(-0.4, -1, k)] });
+        break;
+      }
+      case 'recover': { // the bitten man who looks and lives (21:8-9). st.k: 0 slumped, head hanging .. 0.3 face lifted to the serpent ..
+        // 0.5 kneeling upright, a hand lifted toward it .. 0.8 standing .. 1 standing tall, arms open. st.dir: the side the serpent is on.
+        const d = st.dir ?? -1, k = clamp(st.k ?? 0);
+        const KF = [
+          [0, { by: 185, lean: -d * 0.36, rot: -d * 0.08, shUp: -14, a1: [-d * 190, -110], p1: [-d * 240, -260], a2: [d * 6, -232], p2: [d * 140, -240], y1: -5, y2: -10, pitch: 0.62, tilt: -d * 0.3, turn: 0, lx: 0, ly: 1, lid: 0.6, furrow: -0.6 }],
+          [0.3, { by: 176, lean: -d * 0.22, rot: -d * 0.05, shUp: -10, a1: [-d * 186, -116], p1: [-d * 240, -260], a2: [d * 6, -236], p2: [d * 140, -240], y1: -5, y2: -10, pitch: -0.55, tilt: d * 0.06, turn: d * 0.3, lx: d * 0.6, ly: -1, lid: 0.15, furrow: -0.5 }],
+          [0.5, { by: 150, lean: d * 0.03, rot: 0, shUp: 0, a1: [-d * 70, -330], p1: [-d * 170, -250], a2: [d * 120, -440], p2: [d * 200, -300], y1: -60, y2: -145, pitch: -0.6, tilt: d * 0.05, turn: d * 0.3, lx: d * 0.6, ly: -1, lid: 0, furrow: -0.2 }],
+          [0.8, { by: 0, lean: 0, rot: 0, shUp: 0, a1: [-d * 66, -228], p1: [-d * 140, -300], a2: [d * 118, -318], p2: [d * 180, -240], y1: -2, y2: -140, pitch: -0.5, tilt: 0, turn: d * 0.25, lx: d * 0.5, ly: -1, lid: 0, furrow: 0 }],
+          [1, { by: 0, lean: -0.03, rot: 0, shUp: -4, a1: [-d * 14, -352], p1: [-d * 150, -240], a2: [d * 138, -330], p2: [d * 165, -230], y1: -150, y2: -130, pitch: -0.45, tilt: 0, turn: d * 0.22, lx: d * 0.45, ly: -1, lid: 0, furrow: 0.1 }],   // a hand on his chest, the other open toward it
+        ];
+        let i = 0; while (i < KF.length - 2 && k > KF[i + 1][0]) i++;
+        const [k0, A] = KF[i], [k1, B] = KF[i + 1], u = sm((k - k0) / (k1 - k0));
+        const Q = {}; for (const key of Object.keys(A)) Q[key] = Array.isArray(A[key]) ? A[key].map((x, j) => lerp(x, B[key][j], u)) : lerp(A[key], B[key], u);
+        P.kneel = Q.by > 14 ? 1 : 0; P.by = Q.by; P.lean = Q.lean; P.rot = Q.rot; P.rotO = [0, 0]; P.shUp = Q.shUp;
+        P.arms = { [-d]: { T: [Q.a1[0], Q.a1[1] * hy], pole: Q.p1, hand: 'open', hdir: 90 + -d * Q.y1 }, [d]: { T: [Q.a2[0], Q.a2[1] * hy], pole: Q.p2, hand: 'open', hdir: 90 + d * Q.y2 } };
+        Object.assign(P.head, { pitch: Q.pitch, tilt: Q.tilt, turn: Q.turn, mouth: 'part', furrow: Q.furrow, look: [Q.lx, Q.ly], lid: Q.lid, lift: k > 0.25 ? 2 : 0 });
+        break;
+      }
+      case 'tend': { // kneeling beside a sick person (st.dir: the side they are on), a hand on their shoulder, the other on their arm;
+        // st.k 0..1: they get up and she sits back, both hands to her chest, face lifted (she sees it happen)
+        const d = st.dir ?? -1, k = sm(st.k ?? 0);
+        P.kneel = 1; P.by = lerp(160, 140, k); P.lean = d * lerp(0.2, -0.04, k);
+        P.arms = { [d]: { T: [lerp(d * 175, d * 26, k), lerp(-300, -360, k) * hy], pole: [d * 220, lerp(-260, -230, k)], hand: 'open', hdir: lerp(90 - d * 70, -90 - d * 30 + (d < 0 ? 360 : 0), k) },
+          [-d]: { T: [lerp(d * 120, -d * 22, k), lerp(-240, -350, k) * hy], pole: [-d * 120, -230], hand: 'open', hdir: lerp(90 - d * 40, -90 + d * 30 + (d < 0 ? 360 : 0), k), front: 1 } };
+        Object.assign(P.head, { pitch: lerp(0.3, -0.55, k), turn: d * 0.4, mouth: k > 0.5 ? 'o' : 'neutral', furrow: lerp(-0.7, -0.3, k), look: [d * lerp(0.8, 0.5, k), lerp(0.6, -1, k)], lift: k > 0.5 ? 3 : 0 });
+        break;
+      }
       case 'tablets': { // both hands lift the two stone tablets overhead (Ex 32:19: about to throw them down)
         P.lean = -0.04;
         P.arms = { '-1': { T: [-58, -640 * hy], pole: [-190, -470], hand: 'open', hdir: -70 }, '1': { T: [58, -640 * hy], pole: [190, -470], hand: 'open', hdir: -110, item: 'tablets' } };

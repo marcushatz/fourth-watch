@@ -30,11 +30,27 @@
     for (let i = 0; i < keys.length - 1; i++) {
       const A = keys[i], B = keys[i + 1];
       if (t <= B.t) {
-        const k = (E[B.ease || 'inOut'] || E.inOut)(clamp((t - A.t) / Math.max(1e-6, B.t - A.t)));
+        const x = clamp((t - A.t) / Math.max(1e-6, B.t - A.t));
+        // 'cr' segments: one continuous curve through the keys (Catmull-Rom, no stop at the key): 'cr' constant speed,
+        // 'crIn' starts from rest, 'crOut' settles into the next key, 'crInOut' both (a single eased move through many keys)
+        if (B.ease && B.ease.startsWith('cr')) {
+          const k = B.ease === 'crIn' ? x * x * (2 - x) : B.ease === 'crOut' ? x + x * x - x * x * x : B.ease === 'crInOut' ? x * x * (3 - 2 * x) : x; // in/out end at unit speed, so neighbouring 'cr' segments join without a jolt
+          const P0 = keys[Math.max(0, i - 1)], P3 = keys[Math.min(keys.length - 1, i + 2)];
+          const cr = (a, b, c, d) => [0, 1, 2].map((j) => 0.5 * ((2 * b[j]) + (-a[j] + c[j]) * k + (2 * a[j] - 5 * b[j] + 4 * c[j] - d[j]) * k * k + (-a[j] + 3 * b[j] - 3 * c[j] + d[j]) * k * k * k));
+          return { p: cr(P0.p, A.p, B.p, P3.p), l: cr(P0.l, A.l, B.l, P3.l), f: lerp(A.f ?? 38, B.f ?? 38, k), sh: lerp(A.sh ?? 0, B.sh ?? 0, k) };
+        }
+        const k = (E[B.ease || 'inOut'] || E.inOut)(x);
         return { p: lerp3(A.p, B.p, k), l: lerp3(A.l, B.l, k), f: lerp(A.f ?? 38, B.f ?? 38, k), sh: lerp(A.sh ?? 0, B.sh ?? 0, k) };
       }
     }
     return Object.assign({ sh: 0 }, keys[keys.length - 1]);
+  };
+  // a value keyed in time: keys = [[t, v], ...] (t ascending), eased between keys (smoothstep); held before the first and after the last
+  D.keyed = (t, keys) => {
+    if (!keys || !keys.length) return undefined;
+    if (t <= keys[0][0]) return keys[0][1];
+    for (let i = 0; i < keys.length - 1; i++) { const [t0, a] = keys[i], [t1, b] = keys[i + 1]; if (t <= t1) { const x = clamp((t - t0) / Math.max(1e-6, t1 - t0)); return a + (b - a) * x * x * (3 - 2 * x); } }
+    return keys[keys.length - 1][1];
   };
   // a named mark, moved: push (0.08 = 8% closer along the view line), crane (metres up, look follows half), truck (metres sideways)
   D.mark = (marks, name, m = {}) => {

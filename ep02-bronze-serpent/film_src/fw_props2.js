@@ -6,7 +6,7 @@
   const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x)), lerp = (a, b, k) => a + (b - a) * k;
   const sm = (a, b, x) => { const k = clamp((x - a) / (b - a)); return k * k * (3 - 2 * k); };
   const M = (c, o = {}) => new THREE.MeshStandardMaterial(Object.assign({ color: new THREE.Color(c), roughness: 0.9, metalness: 0, flatShading: false }, o));
-  const BRONZE = () => M('#B87A3C', { metalness: 0.62, roughness: 0.34, emissive: new THREE.Color('#4A2A0C'), emissiveIntensity: 0.45 });
+  const BRONZE = () => M('#B87A3C', { metalness: 0.62, roughness: 0.46, emissive: new THREE.Color('#4A2A0C'), emissiveIntensity: 0.45 });   // a broad sheen, not a hot spot (it read as a glowing eye)
   const GOLD = () => M('#E8B840', { metalness: 0.4, roughness: 0.6, emissive: new THREE.Color('#7A5008'), emissiveIntensity: 0.62 });
   const softTex = (col) => { const c = document.createElement('canvas'); c.width = c.height = 64; const x = c.getContext('2d'); const r = x.createRadialGradient(32, 32, 0, 32, 32, 32); r.addColorStop(0, `rgba(${col},1)`); r.addColorStop(0.45, `rgba(${col},0.5)`); r.addColorStop(1, `rgba(${col},0)`); x.fillStyle = r; x.fillRect(0, 0, 64, 64); return new THREE.CanvasTexture(c); };
   const shadowy = (o) => { o.traverse((c) => { if (c.isMesh) { c.castShadow = true; c.receiveShadow = true; } }); return o; };
@@ -47,13 +47,17 @@
     }
     // the head: a wedge (wide jaw, flat crown, a snout), turned to look out along `face`, tipped down a little
     const head = new THREE.Group(); const hp = curve.getPointAt(1);
-    const skull = new THREE.Mesh(new THREE.SphereGeometry(1, 20, 14), mat); skull.scale.set(0.11, 0.05, 0.075); head.add(skull);
-    const snout = new THREE.Mesh(new THREE.SphereGeometry(1, 16, 12), mat); snout.scale.set(0.07, 0.035, 0.05); snout.position.set(0.085, -0.008, 0); head.add(snout);
-    for (const z of [0.045, -0.045]) { const brow = new THREE.Mesh(new THREE.SphereGeometry(1, 10, 8), mat); brow.scale.set(0.034, 0.009, 0.02); brow.position.set(0.035, 0.034, z); head.add(brow);
-      const eye = new THREE.Mesh(new THREE.SphereGeometry(0.013, 10, 8), M('#1A0E08', { roughness: 0.3 })); eye.position.set(0.045, 0.024, z * 1.12); head.add(eye); }
+    // p.longHead: a longer wedge with no brow ridges (from above or behind, brow bumps read as ears: "a teddy bear")
+    const LH = p.longHead ? 1 : 0;
+    const skull = new THREE.Mesh(new THREE.SphereGeometry(1, 20, 14), mat); skull.scale.set(LH ? 0.13 : 0.11, LH ? 0.045 : 0.05, LH ? 0.068 : 0.075); head.add(skull);
+    const snout = new THREE.Mesh(new THREE.SphereGeometry(1, 16, 12), mat); snout.scale.set(LH ? 0.095 : 0.07, LH ? 0.03 : 0.035, LH ? 0.042 : 0.05); snout.position.set(LH ? 0.115 : 0.085, -0.008, 0); head.add(snout);
+    for (const z of [0.045, -0.045]) { if (!LH) { const brow = new THREE.Mesh(new THREE.SphereGeometry(1, 10, 8), mat); brow.scale.set(0.034, 0.009, 0.02); brow.position.set(0.035, 0.034, z); head.add(brow); }
+      const eye = new THREE.Mesh(new THREE.SphereGeometry(0.013, 10, 8), M('#1A0E08', { roughness: 0.3 })); eye.position.set(LH ? 0.06 : 0.045, LH ? 0.02 : 0.024, z * (LH ? 0.98 : 1.12)); head.add(eye); }
     head.position.copy(hp).add(V(fx * 0.05, 0.0, fz * 0.05)); head.rotation.y = -face; head.rotation.z = -0.25; head.scale.setScalar(p.headK ?? 1.35); g.add(head);
     g.userData.anchorY = top + 0.4; g.scale.setScalar(s);
-    const lie = p.lie ?? 1.42, raiseOf = (t, evs) => { let e = null; for (const x of evs) if (x.do === 'raise') e = x; if (!e) return p.lying ? 0 : 1; const k = clamp((t - e.t0) / (e.dur ?? 1.2)); return k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; };
+    const lie = p.lie ?? 1.42, raiseOf = (t, evs) => { let e = null; for (const x of evs) if (x.do === 'raise') e = x; if (!e) return p.lying ? 0 : 1;
+      if (e.keys) return globalThis.DIRECT.keyed(t, e.keys);   // a performed raise: [[t, r], ...] (heave, hitch, push), shared with the lifters' puppets
+      const k = clamp((t - e.t0) / (e.dur ?? 1.2)); return k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; };
     g.userData.frame = (t, evs) => { g.rotation.z = (1 - raiseOf(t, evs)) * lie; };
     if (N > 1) {
       pieces.push({ m: head, home: head.position.clone(), rot0: head.rotation.clone() });

@@ -23,4 +23,9 @@ txt = re.sub(r"Object\.assign\(markers, \{[\s\S]*?\}\);", "Object.assign(markers
 Path(f"{D}/score.js").write_text(txt)
 PY
 (cd $D && python3 tools/make_vo.py --words ../build/voice/words.json >/dev/null)
+# NOCAP=1: the silent review build (no captions): can the animation alone carry the story?
+if [ "${NOCAP:-0}" = "1" ]; then
+  python3 -c "from pathlib import Path; p=Path('$D/index.html'); t=p.read_text(); i=t.index('<script'); p.write_text(t[:i]+'<script>globalThis.FW_NOCAP = true;</script>\n'+t[i:])"
+  echo "NOCAP review build"
+fi
 echo "$D/ ready"

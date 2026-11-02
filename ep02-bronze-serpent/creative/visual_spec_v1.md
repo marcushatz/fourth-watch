@@ -66,6 +66,19 @@
 - **Figure cards** in paint sets are taller, so raised tools and hands are never cut off (the hammer, the tablets).
 - **Fire is drawn,** as 2D flame tongues on camera-facing cards (the same language as the people).
 
+## Added for the camera test, revision 2 (Nov 2, 07:48 notes)
+- **Story poses that change over time** (st.k driven by `kKeys: [[t, k], ...]` on an act):
+  - `pray`: kneeling, head bowed, eyes closed, palms together under the chin; k lifts the face.
+  - `heave`: k is the hand height in metres. Low hands make him crouch and lean in; high hands put his arms overhead. `open` gives open palms for a pole that has left his grip.
+  - `brace`: kneeling at a pole's foot, holding it.
+  - `recover`: slumped → face lifted → kneeling upright → standing → a hand on the chest and the other open toward what healed him.
+  - `tend`: kneeling beside someone, holding them → sitting back with hands to the chest.
+- **Health:** `health` / `hKeys` drain a figure toward grey-green and bring the warmth back, so a healing shows without narration.
+- **Puppets:** `shot.dio.puppet[id](t)` lets a figure follow the scene. The lifters follow the pole's angle, so their hands stay on it.
+- **Spline camera moves:** `ease: 'cr' | 'crIn' | 'crOut'` passes through camera keys without stopping, so one move can follow an object and then rise over it.
+- **The serpent:** `longHead` gives a long wedge head with no brow bumps (from above they read as ears). `raise` takes performed keys, which are shared with the lifters.
+- **Hidden figures cast no shadow.** Silent review builds (`NOCAP=1`) now drop the captions as well.
+
 ## Next
 1. You pick A, B or C (or a mix).
 2. The same look gets applied to the other two style frames: Moses and the golden calf, and Hezekiah destroying the serpent.
