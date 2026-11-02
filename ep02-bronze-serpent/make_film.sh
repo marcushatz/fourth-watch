@@ -24,6 +24,19 @@ mv = Path("film/tools/make_vo.py"); m = mv.read_text()
 m = re.sub(r'KEY = \[[\s\S]*?\]\n', 'KEY = ["calf", "serpent", "command", "commanded", "idol", "hezekiah", "offerings", "look", "live", "lifted", "cross", "eternal", "loved", "christ", "god"]\n', m, count=1)
 mv.write_text(m)
 PY
-(cd film && python3 tools/make_vo.py --words ../build/voice/words.json >/dev/null && echo "vo.js from the recorded voice")
-cp build/voice/voice.wav film/out/voice.wav
+# OFF: seconds of picture before the voice starts (the cold open). The words are not changed, only shifted.
+OFF="${OFF:-0.9}"
+python3 - "$OFF" <<'PY2'
+import json, sys
+off = float(sys.argv[1]); w = json.load(open("build/voice/words.json"))
+for x in w: x["start"] = round(x["start"] + off, 3); x["end"] = round(x["end"] + off, 3)
+json.dump(w, open("build/voice/words_off.json", "w"))
+PY2
+(cd film && python3 tools/make_vo.py --words ../build/voice/words_off.json >/dev/null && echo "vo.js from the recorded voice (+${OFF}s)")
+ffmpeg -loglevel error -y -i build/voice/voice.wav -af "adelay=$(python3 -c "print(int(float('$OFF')*1000))"):all=1" film/out/voice.wav
+# NOCAP=1: a review build with no title, captions or header text (does the picture tell the story on its own?)
+if [ "${NOCAP:-0}" = "1" ]; then
+  python3 -c "from pathlib import Path; p=Path('film/index.html'); t=p.read_text(); i=t.index('<script'); p.write_text(t[:i]+'<script>globalThis.FW_NOCAP = true;</script>\n'+t[i:])"
+  echo "NOCAP review build"
+fi
 echo "film/ ready"

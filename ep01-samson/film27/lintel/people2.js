@@ -861,6 +861,12 @@
       ctx.save(); ctx.translate(hx, hy); ctx.rotate(ang + Math.PI / 2); const hd = P2(); hd.roundRect(-44, -22, 88, 44, 8);
       part(ctx, hd, '#6E6A64', { shade: '#45423E', sd: 6, rim: '#B8B2A8', rimA: 0.6, lw: 3 }); ctx.restore();
     },
+    rod(ctx, ph, W, ang, s) {   // a staff gripped near one end and swung (the 'swing' pose): it follows the hand's direction
+      if (ph !== 'front') return;
+      const ux = Math.cos(ang), uy = Math.sin(ang), a = [W[0] - ux * 40, W[1] - uy * 40], b = [W[0] + ux * 330, W[1] + uy * 330];
+      ctx.lineCap = 'round'; ctx.strokeStyle = LINE; ctx.lineWidth = 12; ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+      ctx.strokeStyle = '#7A5A3E'; ctx.lineWidth = 7; ctx.stroke();
+    },
     staff(ctx, ph, W, ang, s) {
       if (ph !== 'back') return;
       const top = [W[0] + 4 * s, W[1] - 150], bot = [W[0] - 2 * s, W[1] + 230];
@@ -1368,17 +1374,36 @@
       case 'hold': { // holding up a scroll / broken chains / a staff
         const item = st.item || 'scroll';
         P.arms = { '1': { T: [96, item === 'staff' ? -500 * hy : -580 * hy], pole: [220, -420], hand: 'fist', hdir: -90, item }, '-1': { T: [-26, -330 * hy], pole: [-160, -250], hand: 'open', hdir: -40 } };
-        Object.assign(P.head, { pitch: -0.3, mouth: 'open', furrow: -0.4, lift: 2, look: [0.3, -1] }); break;
+        if (st.look) Object.assign(P.head, { pitch: 0.05, mouth: 'neutral', furrow: st.furrow ?? 0.7, look: st.look, turn: st.look[0] * 0.3 });   // a hard stare (Ex 32:19)
+        else Object.assign(P.head, { pitch: -0.3, mouth: 'open', furrow: -0.4, lift: 2, look: [0.3, -1] });
+        break;
       }
       case 'kneel': {
         P.kneel = 1; P.by = 150;
         P.arms = { '-1': { T: [-7, -372 * hy], pole: [-150, -260], hand: 'open', hdir: -84 }, '1': { T: [7, -372 * hy], pole: [150, -260], hand: 'open', hdir: -96 } };
-        Object.assign(P.head, { pitch: -0.3, mouth: 'part', furrow: -0.4, look: [0, -0.8] }); break;
+        Object.assign(P.head, { pitch: -0.3, mouth: 'part', furrow: -0.4, look: st.look || [0, -0.8] }); break;
       }
       case 'offer': { // kneeling, an offering held out in both hands toward the object (2 Kgs 18:4 "made offerings to it")
         P.kneel = 1; P.by = 150; const b = Math.sin(ph * 0.5) * 4;
         P.arms = { '1': { T: [110, -430 * hy + b], pole: [200, -300], hand: 'fist', hdir: -10, item: st.item || 'bowl' }, '-1': { T: [70, -420 * hy + b], pole: [-120, -300], hand: 'open', hdir: 10 } };
-        Object.assign(P.head, { pitch: 0.1, mouth: 'neutral', furrow: -0.2, look: [0.7, -0.3] }); break;
+        Object.assign(P.head, { pitch: 0.1, mouth: st.look ? 'part' : 'neutral', furrow: st.look ? -0.7 : -0.2, look: st.look || [0.7, -0.3], turn: st.look ? st.look[0] * 0.25 : P.head.turn }); break;
+      }
+      case 'bow': { // kneeling, bent low, hands forward and down (Ex 32:8 "worshiped it"; never used for 2 Kgs 18:4)
+        P.kneel = 1; P.by = 175; P.lean = (v % 2 ? 1 : -1) * 0.1; P.shUp = -10;
+        P.arms = { '-1': { T: [-46, -250 * hy], pole: [-170, -330], hand: 'open', hdir: 100 }, '1': { T: [46, -250 * hy], pole: [170, -330], hand: 'open', hdir: 80 } };
+        Object.assign(P.head, { pitch: 0.5, mouth: 'neutral', furrow: -0.3, look: [0, 1], lid: 0.5 }); break;
+      }
+      case 'shield': { // a flinch: one forearm thrown up across the face, leaning away (st.dir: -1 leans screen left)
+        const d = st.dir ?? -1;
+        P.lean = d * 0.12;
+        P.arms = { [-d]: { T: [-d * 20, -520 * hy], pole: [-d * 190, -330], hand: 'open', hdir: -90 - d * 40, front: 1 }, [d]: { T: [d * 150, -300 * hy], pole: [d * 230, -340], hand: 'open', hdir: 90 - d * 60 } };
+        Object.assign(P.head, { turn: d * 0.45, pitch: 0.12, mouth: 'o', furrow: -0.7, look: [-d * 1, -0.2], lift: 3 }); break;
+      }
+      case 'reach': { // kneeling, one hand stretched out and down toward something on the ground (st.dir: 1 = screen right)
+        const d = st.dir ?? 1;
+        P.kneel = 1; P.by = 150; P.lean = d * 0.14;
+        P.arms = { [d]: { T: [d * 200, -250 * hy], pole: [d * 210, -400], hand: 'open', hdir: 90 - d * 55 }, [-d]: { T: [-d * 10, -350 * hy], pole: [-d * 150, -260], hand: 'open', hdir: -90 + d * 10 } };
+        Object.assign(P.head, { turn: d * 0.2, pitch: 0.3, mouth: 'part', furrow: -0.8, look: [d * 0.7, 0.9] }); break;
       }
       case 'swing': { // both hands on a hammer: k 0 = raised behind the head, 1 = struck down in front (drive it with DIRECT.act)
         const k = clamp(st.k ?? 0), hx = lerp(30, 170, k), hyy = lerp(-700, -330, k) * hy, dir = lerp(-115, 35, k);

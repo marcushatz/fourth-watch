@@ -5,7 +5,7 @@
   const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x)), lerp = (a, b, k) => a + (b - a) * k;
   const eio = (k) => (k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2);
   const M = LW.M;
-  const GOLD = () => M('#E9BC4C', { metalness: 0.55, roughness: 0.32, emissive: new THREE.Color('#5A3A08'), emissiveIntensity: 0.35, flatShading: false });
+  const GOLD = () => M('#E9BC4C', { metalness: 0.5, roughness: 0.3, emissive: new THREE.Color('#7A5208'), emissiveIntensity: 0.55, flatShading: false });
   const BRONZE = () => M('#B9783A', { metalness: 0.5, roughness: 0.36, emissive: new THREE.Color('#3A1E08'), emissiveIntensity: 0.3, flatShading: false });
   const STONE = (c = '#A39278') => M(c, { roughness: 0.95 });
   const last = (evs, verb) => { let e = null; for (const x of evs) if (x.do === verb) e = x; return e; };
@@ -38,19 +38,33 @@
     for (const z of [0.06, -0.06]) { const h = add(new THREE.Mesh(new THREE.ConeGeometry(0.022, 0.13, 8), mat), 0.43, 1.04, z, 0.25); h.rotation.x = z > 0 ? -0.45 : 0.45; const e = add(new THREE.Mesh(new THREE.SphereGeometry(1, 8, 6), mat), 0.4, 0.97, z * 1.6); e.scale.set(0.03, 0.018, 0.045); }
     for (const [x, z] of [[0.22, 0.09], [0.22, -0.09], [-0.22, 0.09], [-0.22, -0.09]]) add(new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.03, 0.46, 8), mat), x, 0.23, z);
     add(new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.018, 0.34, 6), mat), -0.4, 0.5, 0, 0.3);
-    body.position.y = lift; body.rotation.y = p.face ?? 0; g.add(body);
+    const holder = new THREE.Group(); g.add(holder);
+    body.position.y = lift; body.rotation.y = p.face ?? 0; holder.add(body);
     // the fire (cones of flame, additive) and the powder mound it leaves (32:20)
-    const flames = new THREE.Group(); const fm = new THREE.MeshBasicMaterial({ color: new THREE.Color('#FF8A2C').multiplyScalar(2.4), toneMapped: false, transparent: true, opacity: 0.9, depthWrite: false, blending: THREE.AdditiveBlending });
-    for (let i = 0; i < 9; i++) { const f = new THREE.Mesh(new THREE.ConeGeometry(0.12, 0.6, 6), fm); const a = (i / 9) * 6.283; f.position.set(Math.cos(a) * 0.32, lift + 0.3, Math.sin(a) * 0.22); f.userData.a = a; flames.add(f); }
-    flames.visible = false; g.add(flames);
-    const glow = new THREE.Sprite(new THREE.SpriteMaterial({ map: softTex('255,170,80'), color: 0xffffff, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0 })); glow.position.y = lift + 0.6; glow.scale.set(2.4, 2.4, 1); g.add(glow);
-    const mound = new THREE.Mesh(new THREE.ConeGeometry(0.42, 0.22, 18), M('#C9A24A', { roughness: 0.8, metalness: 0.2, emissive: new THREE.Color('#3A2606'), emissiveIntensity: 0.3 })); mound.position.y = lift + 0.11; mound.scale.setScalar(0.001); g.add(mound);
+    const flames = new THREE.Group(); const fm = new THREE.MeshBasicMaterial({ color: new THREE.Color('#FF7420').multiplyScalar(1.5), toneMapped: false, transparent: true, opacity: 0.7, depthWrite: false, blending: THREE.AdditiveBlending });
+    const fm2 = new THREE.MeshBasicMaterial({ color: new THREE.Color('#FFB040').multiplyScalar(1.4), toneMapped: false, transparent: true, opacity: 0.6, depthWrite: false, blending: THREE.AdditiveBlending });
+    for (let i = 0; i < 16; i++) { const f = new THREE.Mesh(new THREE.ConeGeometry(0.06 + (i % 3) * 0.02, 0.5 + (i % 4) * 0.12, 5), i % 2 ? fm : fm2); const a = (i / 16) * 6.283 + (i % 2) * 0.2; const r = 0.18 + (i % 3) * 0.08; f.position.set(Math.cos(a) * r * 1.4, lift + 0.3, Math.sin(a) * r); f.userData.a = a; flames.add(f); }
+    flames.visible = false; holder.add(flames);
+    const glow = new THREE.Sprite(new THREE.SpriteMaterial({ map: softTex('255,170,80'), color: 0xffffff, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0 })); glow.position.y = lift + 0.6; glow.scale.set(2.4, 2.4, 1); holder.add(glow);
+    const mound = new THREE.Mesh(new THREE.ConeGeometry(0.42, 0.22, 18), M('#C9A24A', { roughness: 0.8, metalness: 0.2, emissive: new THREE.Color('#3A2606'), emissiveIntensity: 0.3 })); mound.position.y = lift + 0.11; mound.scale.setScalar(0.001); holder.add(mound);
+    // the smoke of the burning (a dark column that rises and lingers after the flames; it carries the cut to the incense)
+    const smoke = [], srng = FW.rng(p.seed ?? 32);
+    for (let i = 0; i < 16; i++) { const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: softTex('168,156,146'), transparent: true, depthWrite: false, fog: false, opacity: 0 })); holder.add(sp); smoke.push({ sp, ph: i / 16, sw: srng() * 6.28, sx: (srng() - 0.5) * 0.5 }); }
     g.userData.anchorY = lift + 1.0;
     g.userData.frame = (t, evs) => {
+      // 'topple' (Ex 32:20 "he took the calf"): knocked off the plinth along `to` (default: into a fire pit to the right)
+      const tp = last(evs, 'topple'), kt = tp ? clamp((t - tp.t0) / (tp.dur ?? 0.42)) : 0, to = (tp && tp.to) || [0.95, -0.62, 0.12];
+      holder.position.set(to[0] * kt, to[1] * kt * kt, to[2] * kt); body.rotation.z = -1.25 * Math.sin(kt * Math.PI * 0.5);
       const b = last(evs, 'burn'), k = prog(t, b, 1.6);
+      const dt = b ? t - b.t0 : -1, amt = b ? clamp(dt / 0.6) * clamp(1 - (dt - (b.dur ?? 1.6) - 1.5) / 2) : 0;
+      smoke.forEach((pf) => {
+        const u = (t * 0.3 + pf.ph) % 1, y = lift + 0.5 + u * 3.2;
+        pf.sp.position.set(Math.sin(t * 0.8 + pf.sw + u * 3) * 0.25 * u + pf.sx * u, y, Math.cos(t * 0.6 + pf.sw) * 0.18 * u);
+        const sz = 0.45 + u * 1.5; pf.sp.scale.set(sz, sz, 1); pf.sp.material.opacity = Math.sin(u * Math.PI) * 0.42 * amt;
+      });
       const fl = b ? Math.sin(Math.min(1, k * 1.25) * Math.PI) : 0;           // flames rise and fall
       flames.visible = fl > 0.02; glow.material.opacity = fl * 0.8;
-      flames.children.forEach((f, i) => { const w = 0.8 + 0.25 * Math.sin(t * 17 + i * 2.1); f.scale.set(fl * w, fl * (1 + 0.35 * Math.sin(t * 13 + i)), fl * w); f.position.y = lift + 0.3 * fl + 0.12; });
+      flames.children.forEach((f, i) => { const w = 0.8 + 0.25 * Math.sin(t * 17 + i * 2.1), hy = fl * (0.8 + 0.5 * Math.abs(Math.sin(t * (9 + i % 5) + i * 1.7))); f.scale.set(fl * w, hy, fl * w); f.position.y = lift + 0.12 + 0.25 * hy; });
       const melt = eio(clamp((k - 0.25) / 0.65));                             // the calf goes; the powder mound grows
       body.scale.set(1 - melt * 0.6, Math.max(0.02, 1 - melt), 1 - melt * 0.6); body.visible = melt < 0.98;
       mound.scale.setScalar(0.001 + melt);

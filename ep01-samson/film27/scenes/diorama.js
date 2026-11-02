@@ -93,7 +93,7 @@
   const tOf = (shot, v, fb) => (typeof v === 'number' ? v : v == null ? fb : D.beat(shot, v, fb));
   function actorState(B, id, shot, t) {
     const a = B.actors[id], rest = a.rest;
-    let pos = [rest.at[0], rest.at[1]], pose = rest.pose || 'stand', visible = rest.hidden ? false : true, item = rest.item, dist = 0, look = rest.look, strike = null, kk = rest.k;
+    let pos = [rest.at[0], rest.at[1]], pose = rest.pose || 'stand', visible = rest.hidden ? false : true, item = rest.item, dist = 0, look = rest.look, strike = null, kk = rest.k, dir = rest.dir;
     // continuity: every earlier shot on the same set still counts (one set per story run), in time order
     const acts = [];
     for (const sh of S.SHOTS) if (sh.scene === 'diorama' && sh.v === shot.v && sh.t0 <= shot.t0 && sh.dio && sh.dio.act)
@@ -117,8 +117,9 @@
       if (x.show) visible = true;
       if (x.strike != null) strike = tOf(x.sh, x.strike, x.t0 + 0.4);   // a verb's key frame (e.g. the hammer lands) for poses with k
       if (x.k != null) kk = x.k;
+      if (x.dir != null) dir = x.dir;   // a pose's side (fall / shield / reach)
     }
-    return { pos, pose, visible, item, phase: dist * 4.2, look, strike, k: kk };
+    return { pos, pose, visible, item, phase: dist * 4.2, look, strike, k: kk, dir };
   }
   // prop effects: shot.dio.fx = [{ on: propId, at, do: 'hide' | 'show' | any verb the prop understands, dur, ... }]
   // Like actors, every earlier shot on the same set still counts (continuity), so a burnt calf stays burnt.
@@ -182,7 +183,7 @@
         a.bb.visible = st.visible; if (!st.visible) continue;
         a.bb.position.set(st.pos[0], 0, st.pos[1]);
         const kNow = st.strike != null ? q(Math.max(0, Math.min(1.08, D.act(t, st.strike, { pre: 0.45, dip: 0.18, rise: 0.12, over: 0.06, settle: 0.2 }).k)), 30) : st.k;
-        const draw = { pose: st.pose, phase: q(st.phase, 8), t: q(t, 12), item: st.item, look: st.look, k: kNow };
+        const draw = { pose: st.pose, phase: q(st.phase, 8), t: q(t, 12), item: st.item, look: st.look, k: kNow, dir: st.dir };
         a.bb.userData.update(JSON.stringify(draw), draw);
         a.bb.material.color.setRGB(...B.sk.tint);
         bill.push(a.bb); anchors[id] = [st.pos[0], st.pose === 'kneel' ? 1.3 : st.pose === 'sit' ? 1.15 : 2.0, st.pos[1]];   // the head, by pose
