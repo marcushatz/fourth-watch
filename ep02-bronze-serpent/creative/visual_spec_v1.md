@@ -48,6 +48,24 @@
   - faces stay small unless the shot is a close-up.
 - **Camera:** eye-level to gently elevated three-quarter; depth is stacked vertically; moves are motivated (Lintel's grammar).
 
+## Approved (Marcus, Nov 1 23:20)
+- **Character level C is the base.** Shot rule:
+  - wide and crowd shots use C;
+  - medium shots with 1–2 key characters use C plus B's dot eyes (`shot.dio.faces = 'medium'`);
+  - A is never used.
+- **Crowds are posed by story role, not by gesture.** Every figure gets one job in the scene, and repeated raised arms or repeated offering poses are avoided. Story poses added:
+  - `clutch`: sickness, hunched over the bitten leg;
+  - `slump`: too weak to kneel upright;
+  - `support`: holding someone up;
+  - `beseech`: looking up to something high;
+  - `relief`: healed, standing again;
+  - `direct`: a leader pointing the people to something;
+  - `plead`: begging someone to stop;
+  - `tablets`: Moses lifting the tablets.
+- **Staging:** the eye flows to the focal object along the figures' gestures. In frame 2, Moses' pointing arm and the looking man's raised hand both lead to the serpent.
+- **Figure cards** in paint sets are taller, so raised tools and hands are never cut off (the hammer, the tablets).
+- **Fire is drawn,** as 2D flame tongues on camera-facing cards (the same language as the people).
+
 ## Next
 1. You pick A, B or C (or a mix).
 2. The same look gets applied to the other two style frames: Moses and the golden calf, and Hezekiah destroying the serpent.

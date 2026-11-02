@@ -121,11 +121,12 @@
   // arcs), lid 0..1 (upper lid lowered), lash (outer flick), kohl (heavier upper line), side
   function eye1(ctx, x, y, rx, ry, o = {}) {
     ctx.strokeStyle = LINE; ctx.lineCap = 'round';
+    const ES = PP.simpEyes ?? SIMP();   // shot rule: wide shots C (small dots), medium shots C with B's dot eyes
     if (SIMP() >= 2) {   // a dark dot that looks where the figure looks; closed = a short arc
-      const look = o.look || [0, 0], r = SIMP() >= 3 ? 2.9 : 3.6, ix = x + look[0] * 2.4, iy = y + look[1] * 1.6 + 0.5;
+      const look = o.look || [0, 0], r = ES >= 3 ? 2.9 : 3.6, ix = x + look[0] * 2.4, iy = y + look[1] * 1.6 + 0.5;
       if (o.closed) { ctx.lineWidth = 2.2; ctx.beginPath(); ctx.moveTo(x - 4, y); ctx.quadraticCurveTo(x, y + 3, x + 4, y); ctx.stroke(); return; }
       ctx.fillStyle = '#1E120B'; ctx.beginPath(); ctx.ellipse(ix, iy, r * 0.9, r * 1.15, 0, 0, TAU); ctx.fill();
-      if (SIMP() === 2) { ctx.fillStyle = 'rgba(255,255,255,0.85)'; ctx.beginPath(); ctx.arc(ix - 0.9, iy - 1.2, 0.95, 0, TAU); ctx.fill(); }
+      if (ES === 2) { ctx.fillStyle = 'rgba(255,255,255,0.85)'; ctx.beginPath(); ctx.arc(ix - 0.9, iy - 1.2, 0.95, 0, TAU); ctx.fill(); }
       return;
     }
     if (o.closed) {
@@ -872,10 +873,10 @@
     },
     hammer(ctx, ph, W, ang, s) {   // a mallet: handle along the hand's direction, a stone/bronze head at the end
       if (ph !== 'front') return;
-      const ux = Math.cos(ang), uy = Math.sin(ang), L = 150, hx = W[0] + ux * L, hy = W[1] + uy * L, b = [W[0] - ux * 30, W[1] - uy * 30];
+      const ux = Math.cos(ang), uy = Math.sin(ang), L = 185, hx = W[0] + ux * L, hy = W[1] + uy * L, b = [W[0] - ux * 30, W[1] - uy * 30];
       ctx.lineCap = 'round'; ctx.strokeStyle = LINE; ctx.lineWidth = 13; ctx.beginPath(); ctx.moveTo(b[0], b[1]); ctx.lineTo(hx, hy); ctx.stroke();
       ctx.strokeStyle = '#7A5A3E'; ctx.lineWidth = 8; ctx.stroke();
-      ctx.save(); ctx.translate(hx, hy); ctx.rotate(ang + Math.PI / 2); const hd = P2(); hd.roundRect(-44, -22, 88, 44, 8);
+      ctx.save(); ctx.translate(hx, hy); ctx.rotate(ang + Math.PI / 2); const hd = P2(); hd.roundRect(-62, -30, 124, 60, 10);
       part(ctx, hd, '#6E6A64', { shade: '#45423E', sd: 6, rim: '#B8B2A8', rimA: 0.6, lw: 3 }); ctx.restore();
     },
     tablets(ctx, ph, W, ang, s) {   // two stone tablets with rounded tops, held up between both hands (drawn from the right hand, centred)
@@ -1412,6 +1413,41 @@
         P.kneel = 1; P.by = 150; const b = Math.sin(ph * 0.5) * 4;
         P.arms = { '1': { T: [110, -430 * hy + b], pole: [200, -300], hand: 'fist', hdir: -10, item: st.item || 'bowl' }, '-1': { T: [70, -420 * hy + b], pole: [-120, -300], hand: 'open', hdir: 10 } };
         Object.assign(P.head, { pitch: 0.1, mouth: st.look ? 'part' : 'neutral', furrow: st.look ? -0.7 : -0.2, look: st.look || [0.7, -0.3], turn: st.look ? st.look[0] * 0.25 : P.head.turn }); break;
+      }
+      case 'clutch': { // sickness: kneeling, hunched over, both hands on the bitten leg (st.dir: the side it leans to)
+        const d = st.dir ?? 1;
+        P.kneel = 1; P.by = 165; P.lean = d * 0.22; P.shUp = -8;
+        P.arms = { [d]: { T: [d * 92, -205 * hy], pole: [d * 200, -300], hand: 'open', hdir: 90 }, [-d]: { T: [d * 40, -220 * hy], pole: [-d * 120, -300], hand: 'open', hdir: 80, front: 1 } };
+        Object.assign(P.head, { pitch: 0.55, tilt: d * 0.15, turn: d * 0.2, mouth: 'grit', furrow: -0.7, look: [d * 0.4, 1] }); break;
+      }
+      case 'slump': { // too weak to kneel upright: leaning far over, one hand propped on the ground, head hanging
+        const d = st.dir ?? 1;
+        P.kneel = 1; P.by = 185; P.lean = d * 0.42; P.rot = d * 0.1; P.rotO = [0, 0]; P.shUp = -14;
+        P.arms = { [d]: { T: [d * 205, -95], pole: [d * 240, -260], hand: 'open', hdir: 95 }, [-d]: { T: [-d * 10, -230 * hy], pole: [-d * 140, -240], hand: 'open', hdir: 100 } };
+        Object.assign(P.head, { pitch: 0.65, tilt: d * 0.35, mouth: 'part', furrow: -0.6, look: [0, 1], lid: 0.6 }); break;
+      }
+      case 'support': { // helping someone: leaning toward them (st.dir), one arm reaching round their shoulders, the other under their arm
+        const d = st.dir ?? 1;
+        P.lean = d * 0.12;
+        P.arms = { [d]: { T: [d * 165, -285 * hy], pole: [d * 220, -420], hand: 'open', hdir: d > 0 ? 40 : 140 }, [-d]: { T: [d * 105, -205 * hy], pole: [-d * 60, -200], hand: 'open', hdir: d > 0 ? 30 : 150, front: 1 } };
+        P.lean = d * 0.2;
+        Object.assign(P.head, { pitch: 0.1, turn: d * 0.45, mouth: 'neutral', furrow: -0.5, look: [d * 1, 0.4] }); break;
+      }
+      case 'relief': { // healed: standing straight, hands open at the chest, face lifted toward what healed him (st.look)
+        P.lean = -0.03;
+        P.arms = { '-1': { T: [-62, -360 * hy], pole: [-190, -250], hand: 'open', hdir: -120 }, '1': { T: [62, -360 * hy], pole: [190, -250], hand: 'open', hdir: -60 } };
+        Object.assign(P.head, { pitch: -0.45, mouth: 'part', furrow: -0.3, look: st.look || [0, -1], lift: 3 }); break;
+      }
+      case 'direct': { // a leader directing a crowd: staff planted in one hand, the other arm pointing up at something (st.dir side), eyes on the people (st.look)
+        const d = st.dir ?? 1;
+        P.arms = { [d]: { T: [d * 140, -650 * hy], pole: [d * 240, -470], hand: 'point', hdir: -90 + d * 28 }, [-d]: { T: [-d * 96, -420 * hy], pole: [-d * 220, -330], hand: 'fist', hdir: -90, item: st.item || 'staff' } };
+        Object.assign(P.head, { pitch: -0.05, turn: (st.look ? st.look[0] : d) * 0.35, mouth: 'open', furrow: 0.3, look: st.look || [d, 0], lift: 2 }); break;
+      }
+      case 'plead': { // begging someone to stop: leaning toward them (st.dir), both hands held out, palms up
+        const d = st.dir ?? -1;
+        P.lean = d * 0.1;
+        P.arms = { [d]: { T: [d * 165, -400 * hy], pole: [d * 200, -260], hand: 'open', hdir: d > 0 ? -15 : -165 }, [-d]: { T: [d * 120, -360 * hy], pole: [-d * 40, -250], hand: 'open', hdir: d > 0 ? -5 : -175, front: 1 } };
+        Object.assign(P.head, { pitch: -0.1, turn: d * 0.4, mouth: 'open', furrow: -0.8, look: [d, -0.2] }); break;
       }
       case 'beseech': { // kneeling, face lifted toward something high (st.dir: -1 = up to screen left), one hand reaching to it, one on the chest
         const d = st.dir ?? -1;

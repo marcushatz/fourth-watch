@@ -94,7 +94,8 @@
     const actors = {};
     (R.people || []).forEach((p) => {
       const kind = p.kind || 'person', base = Object.assign({ v: p.v ?? 0 }, p.cast ? { cast: p.cast } : {}, p.base || {});
-      const over = kind === 'person' ? { cw: 1000, ch: 1500, footPx: 60, scale: 2.4 } : {};
+      const tall = RECIPES[name].style === 'paint';   // paint sets: a taller card, so raised tools and hands are never cut off (same pixels per metre)
+      const over = kind === 'person' ? (tall ? { cw: 1100, ch: 2000, footPx: 60, scale: 2.4, worldH: +(PP2.SIZES.person.worldH * 2000 / 1500).toFixed(4) } : { cw: 1000, ch: 1500, footPx: 60, scale: 2.4 }) : {};
       const bb = PP2.bill(kind, base, over); bb.position.set(p.at[0], 0, p.at[1]);
       scene.add(bb, bb.userData.caster); actors[p.id] = { bb, rest: p, kind };
     });
@@ -198,6 +199,7 @@
       cam = camera;
       const B = built[shot.v]; if (!B) throw new Error('diorama: set not built ' + shot.v);
       const bill = [], anchors = {};
+      if (globalThis.PP) globalThis.PP.simpEyes = shot.dio && shot.dio.faces === 'medium' ? 2 : null;   // the face rule by shot size (visual spec v1)
       const KY = shot.dio && shot.dio.key;
       if (B.key) {
         if (KY) { const sp = subjectPoint(B, shot, KY.on, t), y = KY.y ?? 1.2, fr = KY.from || [-2.5, 7, 3]; B.key.position.set(sp[0] + fr[0], fr[1], sp[2] + fr[2]); B.key.target.position.set(sp[0], y, sp[2]); B.key.target.updateMatrixWorld();
@@ -209,7 +211,7 @@
         a.bb.visible = st.visible; if (!st.visible) continue;
         a.bb.position.set(st.pos[0], 0, st.pos[1]);
         const kNow = st.strike != null ? q(Math.max(0, Math.min(1.08, D.act(t, st.strike, { pre: 0.45, dip: 0.18, rise: 0.12, over: 0.06, settle: 0.2 }).k)), 30) : st.k;
-        const draw = { pose: st.pose, phase: q(st.phase, 8), t: q(t, 12), item: st.item, look: st.look, k: kNow, dir: st.dir };
+        const draw = { pose: st.pose, phase: q(st.phase, 8), t: q(t, 12), item: st.item, look: st.look, k: kNow, dir: st.dir, fm: shot.dio && shot.dio.faces };
         a.bb.userData.update(JSON.stringify(draw), draw);
         a.bb.material.color.setRGB(...B.sk.tint);
         if (B.key) {   // paint style: a flat figure takes the light of where it stands (fires nearby, the focal pool, the set's ambient)
@@ -220,7 +222,7 @@
         bill.push(a.bb); anchors[id] = [st.pos[0], st.pose === 'kneel' ? 1.3 : st.pose === 'sit' ? 1.15 : 2.0, st.pos[1]];   // the head, by pose
       }
       B.fires.forEach((f, i) => { const core = f.userData.core; if (core) core.scale.set(1, 0.85 + 0.15 * Math.sin(t * 13 + i), 1); });
-      B.fireLights.forEach((L, i) => { L.intensity = 6 * (0.86 + 0.1 * Math.sin(t * 11 + i * 2) + 0.06 * Math.sin(t * 23 + i)); });
+      B.fireLights.forEach((L, i) => { L.intensity = (B.R.fireI ?? 6) * (0.86 + 0.1 * Math.sin(t * 11 + i * 2) + 0.06 * Math.sin(t * 23 + i)); });
       for (const [pid, o] of Object.entries(B.props)) {
         const rest = o.userData.rest || {}, show = (shot.dio && shot.dio.show) || null, hide = (shot.dio && shot.dio.hide) || [];
         if (!rest.hidden && !show && !hide.length && !o.userData.frame && !(shot.dio && shot.dio.fx)) continue;   // the common case: nothing to do
