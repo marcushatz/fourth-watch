@@ -801,6 +801,7 @@
     for (const s of [-1, 1]) { const F = (P.feet && P.feet[s]) || [s * C.footX, 0]; const d = F[0] - s * C.footX; fl[s] = (s < 0 ? Math.min(0, d) : Math.max(0, d)) * (g.long ? 0.7 : 0.4); }
     let hemY = g.hemY, hw = g.hw, hipw = g.hipw;
     if (P.kneel) { hemY = -3 - (P.by || 0); hw = g.hw * 1.2 + 14; hipw = g.hipw + 8; }
+    else if (P.crouch) { hemY = g.hemY - (P.by || 0); hw = g.hw * 1.1; }   // knees bent under the robe: the hem stays on the ground, the feet show
     if (P.seat) hemY = -12 - (P.by || 0);
     const by0 = P.by || 0;
     const body = P.seat ? blob(fm(f, [[-g.nw, g.neckY], [-g.sw * 0.78, g.shY - 3 - shUp], [-g.sw, g.shY + 16 - shUp * 0.5], [-g.cw, g.shY + 64], [-g.ww, g.waistY], [-g.hipw - 14, -128 - by0], [-g.hipw - 8, -108 - by0], [-46, -92 - by0], [-50, hemY], [0, hemY + 5], [50, hemY], [46, -92 - by0], [g.hipw + 8, -108 - by0], [g.hipw + 14, -128 - by0], [g.ww, g.waistY], [g.cw, g.shY + 64], [g.sw, g.shY + 16 - shUp * 0.5], [g.sw * 0.78, g.shY - 3 - shUp], [g.nw, g.neckY], [0, g.neckY + 10]]), 0.42) : blob(fm(f, [[-g.nw, g.neckY], [-g.sw * 0.78, g.shY - 3 - shUp], [-g.sw, g.shY + 16 - shUp * 0.5], [-g.cw, g.shY + 64], [-g.ww, g.waistY], [-hipw + fl[-1] * 0.3, g.hipY], [-hw + fl[-1], hemY], [-hw * 0.45 + fl[-1] * 0.5, hemY + 4], [0, hemY + 5], [hw * 0.45 + fl[1] * 0.5, hemY + 4], [hw + fl[1], hemY], [hipw + fl[1] * 0.3, g.hipY], [g.ww, g.waistY], [g.cw, g.shY + 64], [g.sw, g.shY + 16 - shUp * 0.5], [g.sw * 0.78, g.shY - 3 - shUp], [g.nw, g.neckY], [0, g.neckY + 10]]), 0.42);
@@ -1376,6 +1377,7 @@
     };
   };
   PP2.PERSON_VARIANTS = PV.length;
+  PP2.U_M = U_M;   // metres per design unit (scenes map world points onto a card with it)
   PP2.person = (ctx, st = {}) => {
     const v = st.v || 0, pose = st.pose || 'stand', t = st.t || 0, C = personC(v, st.cast), w = C.shX < 55;
     const ph = t * 6 + v * 1.7, P = { t, arms: {}, head: { look: st.look || [0, 0], mouth: 'neutral', turn: ((v * 37) % 7 - 3) * 0.04, tilt: (hash(v * 3.1) - 0.5) * 0.08 } };
@@ -1465,7 +1467,38 @@
         Object.assign(P.head, { pitch: lerp(0.5, -0.5, k), turn: lerp(0, -0.12, k), tilt: 0, mouth: 'neutral', furrow: lerp(-0.25, -0.45, k), closed: k < 0.4, look: [lerp(0, -0.3, k), lerp(0.8, -1, k)], lift: lerp(0, 2, k) });
         break;
       }
-      case 'heave': { // lifting a heavy pole (Num 21:9): st.k = hand height in metres (0.45 crouched .. 1.85 arms locked overhead),
+      case 'heave': if (st.hands) { // CONTACT MODE: st.hands = the two grip points on the pole, already mapped onto this card by the
+        // scene (design units, from the 3D pole); st.feet = the planted feet (same mapping); st.effort 0..1 = strain; st.rel 0..1 =
+        // letting go (hands go to the sides). The body is solved to reach the hands: crouch and lean only as much as the grip needs.
+        const d = st.dir ?? 1, rel = clamp(st.rel ?? 0), eff = clamp(st.effort ?? 0);
+        const rest = [[d * 58, -0.66 / U_M], [-d * 52, -0.66 / U_M]];   // let go: arms down at his sides
+        const relB = Math.max(rel, clamp(st.relB ?? 0));   // relB: only the far hand lets go (steadying with one hand)
+        const Hd = st.hands.map((h, i) => { const r = sm(i === 1 ? relB : rel); return [lerp(h[0], rest[i][0], r), lerp(h[1], rest[i][1], r)]; });
+        const reach = (C.l1 + C.l2) * 0.98, piv = C.pivot ?? -250;
+        let best = null;
+        for (const by of [0, 20, 40, 60, 80, 100, 120, 140, 160]) for (let li = 0; li <= 13; li++) {   // lean up to 0.9 rad: bent over the pole
+          const lean = d * li * 0.07, Ui = upperM({ pivot: piv, by, lean }).inverse();
+          let err = 0;
+          for (let k = 0; k < 2; k++) { const sd = k === 0 ? d : -d, T = tp(Ui, Hd[k]), dist = Math.hypot(T[0] - sd * C.shX, T[1] - C.shY); err += Math.max(0, dist - reach) + Math.max(0, 70 - dist) * 0.3; }
+          const cost = err * 8 + by * 0.2 + li * 0.3;   // prefer bending at the waist (reads as lifting) over sinking straight down (reads as a shorter man)
+          if (!best || cost < best.cost) best = { cost, by, lean, err };
+        }
+        const tr = Math.sin((st.t || 0) * 71) * 1.4 * eff;   // a strain tremor through the body (the hands stay on the pole)
+        P.by = best.by + 10 * eff; P.lean = best.lean + d * 0.05 * eff; P.bx = tr; P.crouch = P.by > 4 ? 1 : 0;
+        if (st.feet) { const F = st.feet.slice().sort((a, b) => a[0] - b[0]); P.feet = { '-1': F[0], '1': F[1] }; }
+        const hd = rel > 0.4 || st.open ? 'open' : 'fist';
+        // the far arm: when its hand is on the near arm's side, it passes BEHIND the body (as in a side view), never across the chest or over the head
+        const across = Hd[1][0] * d > -30 && relB < 0.5;
+        P.arms = { [d]: { Tw: Hd[0], pole: [d * 190, -290], hand: hd, hdir: -90 + d * 30 }, [-d]: { Tw: Hd[1], pole: across ? [d * 40, -140] : [-d * 150, -290], hand: hd, hdir: -90 + d * 30, behind: across ? 1 : 0 } };   // elbow low behind the torso
+        const hgt = -Math.min(Hd[0][1], Hd[1][1]) * U_M;
+        Object.assign(P.head, { pitch: rel > 0.5 ? -0.5 : lerp(0.35, -0.45, clamp((hgt - 0.4) / 1.3)), turn: d * 0.25, mouth: 'grit', look: rel > 0.5 ? [d * 0.2, -1] : [d * 0.5, lerp(0.8, -1, clamp((hgt - 0.4) / 1.3))] });
+        { const Ui = upperM({ pivot: piv, by: P.by, lean: P.lean, bx: P.bx }).inverse(); let miss = 0;   // after the strain shift: how far a hand falls short of its grip
+          for (let k = 0; k < 2; k++) { const sd = k === 0 ? d : -d, T = tp(Ui, Hd[k]); miss = Math.max(miss, Math.hypot(T[0] - sd * C.shX, T[1] - C.shY) - (C.l1 + C.l2)); }
+          globalThis.PP_LAST = { err: rel > 0.05 ? 0 : Math.max(0, miss), by: P.by, lean: +P.lean.toFixed(2), hands: Hd.map((h) => h.map(Math.round)) }; }   // design units, for the debug log (a released hand is not a miss)
+        break;
+      }
+      // fall through: the older height-driven heave (st.k = hand height)
+      case 'heaveK': { // lifting a heavy pole (Num 21:9): st.k = hand height in metres (0.45 crouched .. 1.85 arms locked overhead),
         // st.dir = the way he pushes (toward the pole's foot); st.phase (if set) steps. Low hands crouch him; high hands straighten him.
         const d = st.dir ?? 1, h = clamp(st.k ?? 0.5, 0.4, 2.0), c = clamp((1.2 - h) / 0.7), up = clamp((h - 1.25) / 0.6);
         P.kneel = c > 0.12 ? 1 : 0; P.by = c * 150;

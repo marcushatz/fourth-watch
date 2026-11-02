@@ -56,6 +56,7 @@
     head.position.copy(hp).add(V(fx * 0.05, 0.0, fz * 0.05)); head.rotation.y = -face; head.rotation.z = -0.25; head.scale.setScalar(p.headK ?? 1.35); g.add(head);
     g.userData.anchorY = top + 0.4; g.scale.setScalar(s);
     const lie = p.lie ?? 1.42, raiseOf = (t, evs) => { let e = null; for (const x of evs) if (x.do === 'raise') e = x; if (!e) return p.lying ? 0 : 1;
+      if (e.sim) return 1 - globalThis.DIRECT.raiseSim(t, e.sim).phi / lie;   // raised by people: the weighted simulation the lifters also follow
       if (e.keys) return globalThis.DIRECT.keyed(t, e.keys);   // a performed raise: [[t, r], ...] (heave, hitch, push), shared with the lifters' puppets
       const k = clamp((t - e.t0) / (e.dur ?? 1.2)); return k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; };
     g.userData.frame = (t, evs) => { g.rotation.z = (1 - raiseOf(t, evs)) * lie; };
@@ -77,6 +78,12 @@
       };
     }
     return shadowy(g);
+  });
+
+  // ---- a single low rock (a support: the lying pole rests on it). p.h = height of its top, p.w = width ----
+  DIO.prop('rock', (p) => {
+    const h = p.h ?? 0.3, w = p.w ?? 0.5, m = new THREE.Mesh(new THREE.SphereGeometry(1, 18, 12), M(p.col || '#8E7C66', { roughness: 0.95 }));
+    m.scale.set(w / 2, h, w * 0.42); m.position.y = 0; m.rotation.y = p.rot ?? 0.3; return shadowy(m);
   });
 
   // ---- a small "fiery serpent" (Num 21:6) on the ground: a desert snake in an S, raised head ----

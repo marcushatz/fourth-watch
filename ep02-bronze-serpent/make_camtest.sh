@@ -16,13 +16,18 @@ idx.write_text(t)
 s = Path(f"{D}/score.js").read_text().splitlines()
 a = next(k for k, l in enumerate(s) if "const add = (id, scene, v, t0" in l)
 b = next(k for k, l in enumerate(s) if "const END_T" in l)
-s[a + 1:b] = Path("film_src/camtest_shots.js").read_text().splitlines()
+import os
+s[a + 1:b] = Path(os.environ.get("SHOTS", "film_src/camtest_shots.js")).read_text().splitlines()
 txt = "\n".join(s) + "\n"
 import re
 txt = re.sub(r"Object\.assign\(markers, \{[\s\S]*?\}\);", "Object.assign(markers, {});", txt)
 Path(f"{D}/score.js").write_text(txt)
 PY
 (cd $D && python3 tools/make_vo.py --words ../build/voice/words.json >/dev/null)
+# DBG=1: the figures that touch things log their contact measurements (FWDBG lines in the render log)
+if [ "${DBG:-0}" = "1" ]; then
+  python3 -c "from pathlib import Path; p=Path('$D/index.html'); t=p.read_text(); i=t.index('<script'); p.write_text(t[:i]+'<script>globalThis.FW_DBG = true;</script>\\n'+t[i:])"
+fi
 # NOCAP=1: the silent review build (no captions): can the animation alone carry the story?
 if [ "${NOCAP:-0}" = "1" ]; then
   python3 -c "from pathlib import Path; p=Path('$D/index.html'); t=p.read_text(); i=t.index('<script'); p.write_text(t[:i]+'<script>globalThis.FW_NOCAP = true;</script>\n'+t[i:])"

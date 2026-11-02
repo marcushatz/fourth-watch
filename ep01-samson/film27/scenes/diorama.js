@@ -164,6 +164,16 @@
     if (on && B.props[on]) { const p = B.props[on].position; return [p.x, 0, p.z]; }
     return [0, 0, 0];
   }
+  // world point -> design units on a figure's card (the card at pos, turned as film.js turns it), along the camera ray through the
+  // point: drawn there, it covers the point exactly on screen, from any camera position
+  function cardMapper(pos) {
+    const dirV = new THREE.Vector3(); cam.getWorldDirection(dirV);
+    const lean = Math.asin(-dirV.y) * 0.5, yaw = Math.atan2(cam.position.x - pos[0], cam.position.z - pos[1]);
+    const qn = new THREE.Quaternion().setFromEuler(new THREE.Euler(-lean, yaw, 0, 'YXZ'));
+    const n = new THREE.Vector3(0, 0, 1).applyQuaternion(qn), rt = new THREE.Vector3(1, 0, 0).applyQuaternion(qn), up = new THREE.Vector3(0, 1, 0).applyQuaternion(qn);
+    const O = new THREE.Vector3(pos[0], 0, pos[1]), Cp = cam.position.clone(), UM = PP2.U_M;
+    return (P) => { const Dv = new THREE.Vector3(P[0], P[1], P[2]).sub(Cp), sR = O.clone().sub(Cp).dot(n) / Dv.dot(n), Q = Cp.clone().add(Dv.multiplyScalar(sR)).sub(O); return [Q.dot(rt) / UM, -Q.dot(up) / UM]; };
+  }
   // a point in the set: [x, y, z], or { of: actorId | propId, off: [dx, dy, dz] } (relative to where that actor is at time t)
   function setPoint(B, shot, v, t) {
     if (Array.isArray(v)) return v;
@@ -208,6 +218,7 @@
       const B = built[shot.v]; if (!B) throw new Error('diorama: set not built ' + shot.v);
       const bill = [], anchors = {};
       if (globalThis.PP) globalThis.PP.simpEyes = shot.dio && shot.dio.faces === 'medium' ? 2 : null;   // the face rule by shot size (visual spec v1)
+      const c = camFor(B, shot, t); cam.updateMatrixWorld();   // the camera first: figures that touch things are mapped through it
       const KY = shot.dio && shot.dio.key;   // the focal pool; shot.dio.keyFrom: the light arrives on a beat
       if (B.key) {
         if (KY) { const sp = subjectPoint(B, shot, KY.on, t), y = KY.y ?? 1.2, fr = KY.from || [-2.5, 7, 3]; B.key.position.set(sp[0] + fr[0], fr[1], sp[2] + fr[2]); B.key.target.position.set(sp[0], y, sp[2]); B.key.target.updateMatrixWorld();
@@ -220,8 +231,22 @@
         if (!st.visible) continue;
         a.bb.position.set(st.pos[0], 0, st.pos[1]);
         const kNow = st.strike != null ? q(Math.max(0, Math.min(1.08, D.act(t, st.strike, { pre: 0.45, dip: 0.18, rise: 0.12, over: 0.06, settle: 0.2 }).k)), 30) : st.k;
-        const draw = { pose: st.pose, phase: st.phase != null ? q(st.phase, 8) : undefined, t: q(t, 12), item: st.item, look: st.look, k: kNow != null ? q(kNow, 60) : kNow, dir: st.dir, fm: shot.dio && shot.dio.faces };
+        let hands, feet;
+        if (st.handsW || st.feetW) {   // contact: world points (on the pole, on the ground) -> this card, along the view ray, so on screen they land exactly there
+          const toCard = cardMapper(st.pos);
+          if (st.handsW) hands = st.handsW.map((P) => toCard(P).map(Math.round));
+          if (st.feetW) feet = st.feetW.map((P) => toCard(P).map(Math.round));
+        }
+        const draw = { pose: st.pose, phase: st.phase != null ? q(st.phase, 8) : undefined, t: q(t, hands ? 30 : 12), item: st.item, look: st.look, k: kNow != null ? q(kNow, 60) : kNow, dir: st.dir, fm: shot.dio && shot.dio.faces,
+          hands, feet, rel: st.rel != null ? q(st.rel, 30) : undefined, relB: st.relB != null ? q(st.relB, 30) : undefined, effort: st.effort != null ? q(st.effort, 20) : undefined, open: st.open };
+        globalThis.PP_LAST = null;
         a.bb.userData.update(JSON.stringify(draw), draw);
+        if (globalThis.PP_LAST) { a.lastErr = globalThis.PP_LAST.err; a.lastPose = globalThis.PP_LAST; }
+        if (globalThis.FW_DBG && st.handsW) {   // the proof's measurements, one line per figure per frame
+          const dirV = new THREE.Vector3(); cam.getWorldDirection(dirV);
+          const depth = new THREE.Vector3(st.pos[0], 1.2, st.pos[1]).sub(cam.position).dot(dirV), pxPerM = H / (2 * depth * Math.tan((cam.fov * Math.PI) / 360));
+          console.log('FWDBG ' + JSON.stringify({ t: +t.toFixed(3), id, err: +((a.lastErr || 0) * PP2.U_M * pxPerM).toFixed(2), feet: (st.feetW || []).map((f) => [+f[0].toFixed(4), +f[1].toFixed(4)]), phi: st.phi != null ? +st.phi.toFixed(4) : undefined, rel: st.rel, pose: a.lastPose && { by: a.lastPose.by, lean: a.lastPose.lean, hands: a.lastPose.hands } }));
+        }
         a.bb.material.color.setRGB(...B.sk.tint);
         if (B.key) {   // paint style: a flat figure takes the light of where it stands (fires nearby, the focal pool, the set's ambient)
           const amb = (B.R.actorAmb ?? 1) * (a.rest.shade ?? 1), col = a.bb.material.color; col.multiplyScalar(amb);   // rest.shade: a figure standing in shadow
@@ -246,7 +271,6 @@
         o.visible = vis;
         if (vis && o.userData.frame) o.userData.frame(t, evs, shot);
       }
-      const c = camFor(B, shot, t);
       for (const [pid, o] of Object.entries(B.props)) anchors[pid] = anchors[pid] || [o.position.x, o.userData.anchorY ?? 0.6, o.position.z];
       const out = { scene: B.scene, sun: B.sun, bill, anchors, focus: c.focus, aperture: c.ap, maxR: 6, fgScale: 1.3, exposure: 1.06, sat: 1.04, bloom: 0.12 };
       // God's light (series canon: gold from the upper left, only where the text says God acts): shot.dio.rays = { on, from, dur, amt, y }

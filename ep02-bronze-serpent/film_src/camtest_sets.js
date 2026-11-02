@@ -57,3 +57,29 @@
     ],
   });
 })();
+
+// The raise proof (Nov 2, 09:40): one action only. The pole rests on a rock; two men lift it; nothing else moves.
+(function () {
+  const D = globalThis.DIORAMA;
+  const P = (v, robe, extra) => ({ v, cast: Object.assign({ robe }, extra || {}) });
+  D.set('raise', {
+    style: 'paint', ink: { amt: 0.85, w: 1.6, thr: 0.03, col: [0.16, 0.1, 0.07] }, seed: 21, actorAmb: 0.92,
+    skyOver: { top: '#222A4C', mid: '#6E5A7C', hor: '#E6B482', fog: '#CFA486', key: '#FFCF96', keyI: 3.0, hemi: ['#9C9AC4', '#7A5A40', 0.8], sunDir: [-0.95, 0.06, -0.3], tint: [0.98, 0.92, 0.87] },
+    fog: [16, 80], sunPos: [-11, 7, -1],
+    ground: { radius: 30, cols: ['#C29C6A', '#B89262', '#CBA676', '#BC9666'], hills: 0.5, seed: 13 },
+    props: [
+      { id: 'serpent', kind: 'serpent2', at: [0, 0], h: 3.0, face: -2.9, s: 1.2, headK: 1.7, longHead: true, lying: true, lie: 1.39 },
+      { id: 'cairn', kind: 'cairn', at: [0, 0], s: 1.0 },
+      { id: 'rock', kind: 'rock', at: [-2.2, 0], h: 0.33, w: 0.5 },
+      { kind: 'scrub', at: [-4.6, 1.2], seed: 5, s: 0.18 }, { kind: 'scrub', at: [1.4, -1.4], seed: 9 },
+      { kind: 'tent2', at: [-5.0, -10], rot: 0.3, col: '#4A3A30' }, { kind: 'tent2', at: [2.5, -12], rot: -0.4, col: '#54402E' }, { kind: 'tent2', at: [-1.0, -14], rot: 0.1, col: '#4A3628' },
+      { kind: 'ridge', at: [0, -70], w: 260, h: 4.6, col: '#8E7A98', base: '#D8AE94', peak: 0.47, ph: 0.9, pw: 0.05, seed: 4 },
+      { kind: 'ridge', at: [8, -44], w: 160, h: 1.8, col: '#B08C88', base: '#D9AE8E', seed: 9 },
+    ],
+    people: [
+      { id: 'moses', at: [-1.95, 0.28], pose: 'heave', dir: 1, hires: true, cast: { old: true, beard: '#D8D2C4', hairCol: '#C8C2B4', robe: '#7A5A3E', stripe: '#C9B48E' } },
+      { id: 'h1', at: [-2.4, -0.28], pose: 'heave', dir: 1, hires: true, ...P(3, '#6A5A48') },
+      { id: 'bg1', at: [-4.3, -6.0], pose: 'stand', look: [0.3, 0], ...P(1, '#7E4E3A') }, { id: 'bg2', at: [1.9, -7.0], pose: 'stand', look: [-0.3, 0], ...P(2, '#5E4E3C') },
+    ],
+  });
+})();

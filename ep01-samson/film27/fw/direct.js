@@ -52,6 +52,44 @@
     for (let i = 0; i < keys.length - 1; i++) { const [t0, a] = keys[i], [t1, b] = keys[i + 1]; if (t <= t1) { const x = clamp((t - t0) / Math.max(1e-6, t1 - t0)); return a + (b - a) * x * x * (3 - 2 * x); } }
     return keys[keys.length - 1][1];
   };
+  // keyed with no dead stops: a monotone cubic through [[t, v], ...] (Fritsch-Carlson). Velocity is continuous through every key;
+  // it is zero only where the keys themselves level off (a plateau) and at the ends.
+  D.keyedC1 = (t, keys) => {
+    const n = keys.length; if (!n) return undefined;
+    if (t <= keys[0][0]) return keys[0][1]; if (t >= keys[n - 1][0]) return keys[n - 1][1];
+    if (!keys._m) {
+      const h = [], dl = [];
+      for (let i = 0; i < n - 1; i++) { h[i] = keys[i + 1][0] - keys[i][0]; dl[i] = (keys[i + 1][1] - keys[i][1]) / h[i]; }
+      const m = [0];
+      for (let i = 1; i < n - 1; i++) m[i] = dl[i - 1] * dl[i] <= 0 ? 0 : (3 * (h[i - 1] + h[i])) / ((2 * h[i] + h[i - 1]) / dl[i - 1] + (h[i] + 2 * h[i - 1]) / dl[i]);
+      m[n - 1] = 0; keys._m = m;
+    }
+    let i = 0; while (t > keys[i + 1][0]) i++;
+    const [t0, a] = keys[i], [t1, b] = keys[i + 1], hh = t1 - t0, x = (t - t0) / hh, m = keys._m;
+    const h00 = 2 * x ** 3 - 3 * x * x + 1, h10 = x ** 3 - 2 * x * x + x, h01 = -2 * x ** 3 + 3 * x * x, h11 = x ** 3 - x * x;
+    return h00 * a + h10 * hh * m[i] + h01 * b + h11 * hh * m[i + 1];
+  };
+  // a pole raised by people (weight, not a keyed curve): its lean from vertical (phi, rad) is pulled toward the lifters' effort
+  // target by a spring (K), damped (C), and pulled down by gravity (G sin phi): heavy when low, light near upright, so it breaks
+  // free late, lags the push, sags when they re-grip, and overshoots then settles at upright. It rests on its support (phi <= lie).
+  // sp = { t0, lie, K, C, G, keys: [[t, phiTarget], ...] }. Integrated once at 240 Hz from t0 (deterministic) and cached on sp.
+  D.raiseSim = (t, sp) => {
+    if (!sp._c) {
+      const dt = 1 / 240, tEnd = sp.keys[sp.keys.length - 1][0] + 4, arr = [];
+      let phi = sp.lie, w = 0;
+      for (let tt = sp.t0; tt <= tEnd + dt; tt += dt) {
+        arr.push([phi, w]);
+        const a = -sp.K * (phi - D.keyedC1(tt, sp.keys)) - sp.C * w + sp.G * Math.sin(phi);
+        w += a * dt; phi += w * dt;
+        if (phi > sp.lie) { phi = sp.lie; if (w > 0) w = 0; }
+      }
+      sp._c = { arr, dt };
+    }
+    const c = sp._c, x = (t - sp.t0) / c.dt;
+    if (x <= 0) return { phi: sp.lie, w: 0 };
+    const i = Math.min(c.arr.length - 2, Math.floor(x)), f = Math.min(1, x - i), A = c.arr[i], B = c.arr[i + 1];
+    return { phi: A[0] + (B[0] - A[0]) * f, w: A[1] + (B[1] - A[1]) * f };
+  };
   // a named mark, moved: push (0.08 = 8% closer along the view line), crane (metres up, look follows half), truck (metres sideways)
   D.mark = (marks, name, m = {}) => {
     const K = marks[name]; if (!K) throw new Error('DIRECT.mark: no mark ' + name);
