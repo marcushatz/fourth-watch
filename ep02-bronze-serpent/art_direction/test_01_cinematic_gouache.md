@@ -1,6 +1,6 @@
 # Test 01: Cinematic Gouache still
 
-**Status: prepared, not approved, nothing generated.**
+**Status: on hold (Marcus, Nov 2). Prepared, not run.** He wants to compare 2.5D and 3D first: `comparison_2026-11-02.md`.
 
 **Exact job:** `production/approvals/requests/2026-11-02-gouache-01.json`. Its prompt is the Cinematic Gouache prompt from `directions_v1.md`, with the shared scene block filled in.
 

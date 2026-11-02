@@ -29,7 +29,7 @@ Fourth Watch is a faceless Christian educational channel that makes cinematic bi
 
 Before a new look is used, this runs between stages 3 and 5:
 
-1. Write three different art directions for one key scene.
+1. Write the art directions to compare, using one key scene.
 2. Marcus chooses which to test first, and how many.
 3. Quote the cost of each still. Wait for approval.
 4. Generate only the approved stills, one at a time.
@@ -39,7 +39,7 @@ Before a new look is used, this runs between stages 3 and 5:
 
 Once a look is approved, later episodes reuse it and skip this gate.
 
-**Current state:** no look is approved. Cinematic Gouache is first in line, and its test is prepared in `ep02-bronze-serpent/art_direction/test_01_cinematic_gouache.md`. It runs only with Marcus's approval.
+**Current state:** no look is approved. Marcus is comparing cinematic illustrated 2.5D with premium stylized 3D, using one Bronze Serpent frame: `ep02-bronze-serpent/art_direction/comparison_2026-11-02.md`. Stills run only with his approval. This system must work with either style.
 
 ## Files
 

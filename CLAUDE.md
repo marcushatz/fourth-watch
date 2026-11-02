@@ -50,4 +50,4 @@ Never post, publish, schedule or upload to a social platform. Marcus posts.
 3. The episode folder's script and run sheet.
 4. `production/09_approved_and_rejected.md`: what has already worked and failed.
 
-Commit and push only when Marcus asks. The word "private" in older files is out of date: GitHub reports this repo as public. Keep keys, personal details and anything not meant to be public out of it.
+Commit and push only when Marcus asks. Marcus wants this repo private. Treat it as public until GitHub confirms the change. Keep keys and personal details out of it. Client testimony material never goes here.

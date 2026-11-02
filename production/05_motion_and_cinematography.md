@@ -42,7 +42,7 @@ Before asking for approval, critique each sequence, revise it, and name the hard
 ## Motion
 
 - **Meaningful movement only.** A push reveals, a pan connects, and a tilt follows a thought.
-- **Layered parallax:** separate foreground, subject, middle and far layers.
+- **Layered parallax (2.5D):** separate foreground, subject, middle and far layers.
 - **Cloth, dust, light and smoke** add life without new art.
 - **Transitions carry meaning:** match cuts, light sweeps and light floods when God acts. Keep flashes rare.
 - **Timing:** impacts land on their words. Moves ease in and settle before the cut.

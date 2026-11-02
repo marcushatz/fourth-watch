@@ -2,7 +2,7 @@
 
 **Status: NOT generated and NOT approved.** These are written proposals. No still exists yet. Nothing here runs without Marcus's explicit approval (`production/GENERATION_APPROVAL.md`).
 
-**Test order (Marcus, Nov 2):** Cinematic Gouache first, rather than spending 12.75 credits on all three. A and B wait unless he asks for them. See `test_01_cinematic_gouache.md`.
+**On hold (Marcus, Nov 2):** replaced for now by the 2.5D and 3D comparison in `comparison_2026-11-02.md`.
 
 **The test frame:** "Anyone who had been bitten could look at it and live." It tests character, setting, prop, light and metaphor in one image. Script: `../script_approved_v4.md`.
 
@@ -62,7 +62,7 @@ Prices come from Nov 2 cost checks. Re-confirm before running.
 
 | Direction | Model | Credits | Status |
 |---|---|---|---|
-| C. Cinematic Gouache | GPT Image 2.5, Flare, high, 2K | 2.75 | **First test, waiting for approval** |
+| C. Cinematic Gouache | GPT Image 2.5, Flare, high, 2K | 2.75 | On hold |
 | A. Gold Leaf Fresco | Nano Banana Pro, 2K | 2.00 | On hold |
 | B. Annotated Engraving | Recraft V4.1, standard, 2K | 8.00 | On hold |
 

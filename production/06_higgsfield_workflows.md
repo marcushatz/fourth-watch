@@ -13,7 +13,7 @@ Approved script → voice take → storyboard
 → image-to-video only for a few hero shots, if a test earns it
 ```
 
-This keeps art, script, timing, text and cost under control. It is still a hypothesis until the first paid tests are reviewed.
+This route fits a 2.5D look. A premium 3D look would rely on image-to-video for most shots. Choose the final route after the visual decision. Either way, it stays a hypothesis until paid tests are reviewed.
 
 ## Tool findings
 

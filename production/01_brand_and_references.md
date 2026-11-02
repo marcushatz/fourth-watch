@@ -28,7 +28,7 @@ Brand files are in `brand/`.
 ## Target visual system (Marcus, Nov 2)
 
 Professional art direction comes before automatic video generation. The visual system must have:
-- Sophisticated stylized 2D illustration.
+- Sophisticated stylized art. The medium is undecided: cinematic illustrated 2.5D or premium stylized 3D.
 - Cinematic compositions and controlled lighting.
 - Subtle textures.
 - Expressive silhouettes with real form inside them.

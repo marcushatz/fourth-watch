@@ -1,0 +1,26 @@
+{
+  "request_id": "2026-11-02-compare-a-25d",
+  "project": "fourth-watch",
+  "purpose": "Visual comparison: cinematic illustrated 2.5D",
+  "items": [
+    {
+      "kind": "job",
+      "tool": "generate_image",
+      "input": {
+        "params": {
+          "model": "gpt_image_2_5",
+          "prompt": "A hand-painted illustration from a prestige animated feature film, painted in gouache and oil on toned paper by a master visual development artist. Confident visible brushwork, simplified planes, rich painted shadows and soft dust in the air. The figures are elegant and adult, with the authority of classical figure painting: real structure in the hands and face, and expressive silhouettes with form and light inside them. Each depth layer has clear separation of value and edge. It looks truly painted, not like a digital filter, a comic or a cartoon. The scene is a rocky wilderness at dusk. A single bronze serpent with a wedge-shaped head and a hammered, dark-patinated surface winds twice around the top of one straight wooden pole. The pole has no crossbar. It stands in a low mound of stones on the right third of the frame, rising above a camp of low black goat-hair tents. In the near foreground at lower left, a weakened, weathered ancient Near Eastern man in a plain undyed wool robe lies on the stony ground, propped on one arm. He lifts his head and looks up at the bronze serpent, seen in three-quarter profile, with quiet, desperate hope. There are no wounds and no blood. Behind him a few small figures support one another, and some turn their faces toward the pole. Two small dark snakes slide between the stones near his hand. The camera is very low, close to the ground, with a 35mm lens looking up past the man's shoulder toward the serpent. This creates one strong diagonal from lower left to upper right. There are five depth layers: blurred foreground stones, the man, the camp, distant ridges and open sky. The camp has fallen into cool blue-umber shadow. One narrow beam of warm gold light comes from the upper left and falls only on the bronze serpent, with a faint gold reflection on the man's lifted face. Nothing else in the scene is gold. The palette is night umber, clay, ash grey and deep dusk blue, with warm gold as the only bright accent. Vertical 9:16 composition. The top quarter of the frame is calm, empty sky, with the serpent just below it. No text, letters, logos, halos or symbols.",
+          "aspect_ratio": "9:16",
+          "resolution": "2k",
+          "quality": "high",
+          "variant": "flare",
+          "count": 1
+        }
+      },
+      "intended_output": "One 2.5D still of the 'look and live' frame, 9:16",
+      "quoted_credits": 2.75,
+      "quoted_at": "2026-11-02T22:14:00+00:00",
+      "quote_source": "get_cost check, Nov 2, same model at 9:16 and 2k"
+    }
+  ]
+}

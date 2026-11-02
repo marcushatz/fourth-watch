@@ -337,3 +337,17 @@ Rules:
 - **The biblical accuracy and visual quality rules stay as they are.**
 - **Test order:** Cinematic Gouache first. Gold Leaf Fresco and Annotated Engraving wait unless he asks for them. This narrows Round 30's three-still step for this test.
 - **Testimonies are a separate preset** (`presets/christian-testimonies/`). Their creative rules never mix with Fourth Watch's.
+
+## Round 33 (Nov 2, 17:41-17:42): compare 2.5D and 3D before choosing
+His words: "I want to reconsider Fourth Watch's visual direction before we commit to anything." "Our goal is to choose a visual identity we'll be proud to use across hundreds of Fourth Watch videos. Don't rush this decision."
+
+Rules:
+- **Compare two directions on the exact same Bronze Serpent scene:** cinematic illustrated 2.5D and premium stylized 3D. One high-quality still each, only after he approves the prompts, models and costs.
+- **Premium 3D must never resemble low-budget video games or children's cartoons.**
+- **The look must be professional, reproducible with Higgsfield and financially sustainable.**
+- **Bible reels and paid Christian testimonies don't have to share an animation style.** They can share a recognizable brand identity while using different cinematic techniques.
+- **gouache-01 is on hold.** PR #1 stays available, and the system must support both styles.
+- **The repo should be private.** Future clients' personal testimony materials stay in a separate private workspace.
+- **Bronze Serpent v4 remains the approved, locked script.**
+- **No subscription changes on his behalf.**
+- **No complete episode and no new animation engine** for now. Focus on the visual decision.

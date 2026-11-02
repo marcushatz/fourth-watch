@@ -36,10 +36,10 @@ Real people's stories carry risks that an educational channel doesn't. These are
 
 ## Privacy
 
-**GitHub reports this repository as public. Never put a real person's name, story, script, photo, voice or contact details here.**
+**Never put a real person's name, story, script, photo, voice or contact details in this repository, even once it's private.**
 
-- Keep only general rules and templates in this folder.
-- Keep real testimony material somewhere private. A separate private repository is the simplest option, and it needs Marcus's setup and OK.
+- Client material belongs in a separate private workspace (Marcus, Nov 2).
+- This folder holds general rules and templates only.
 - The ledgers here use anonymous project codes only, such as `T-001`.
 
 ## Files
