@@ -1,0 +1,9 @@
+# Fresh simulated first-time viewer (AI agent, no tools), candidate_v3 before its last three clarity edits. It flags confusion; it can't measure retention or sharing.
+
+1. Question: two metal animals, one got people killed, one saved them. What's the difference? Answer: the calf was what people wanted and paid for. The serpent was God's idea, cost only a look, and pictured what was killing them, like Jesus on the cross. Clarity: 4/5. It shifts a bit: "God ordered one," then "the real difference," then another one.
+2. "That 'so' is the same Greek word as 'so must the Son of Man.'" It's a grammar lesson right when I thought the point was made. Near miss: "Centuries later, people were paying the serpent too," which felt like a side trip.
+3. "paying the serpent" (paying a statue?); "Hezekiah" (who, when?); "Then Jesus brought one of them up" (mentioned it, or lifted it?); "Son of Man"; "it looked like the killer, but had no poison" (the snake or Jesus?); "made him to be sin" (how is a person sin?); "Paul" (no context); "Just two verses after the serpent" (I'd placed the serpent back with Moses); why the snakebites? Never explained.
+4. The ending repeats "the idol they wanted" and "what was killing them" nearly word for word. "Not just how much. How." sounds like a sermon tag. "Christians have long pointed to this" felt hedgy and slow.
+5. Strongest: "The calf cost them their gold rings. The serpent cost them a look." Weakest: the Greek "so" line.
+6. That the bronze serpent existed. That people later made offerings to it. That a king smashed it. That Jesus compared himself to it. That John 3:16 comes right after, and "so" can mean "this is how."
+7. Mostly. "And the dying looked and lived" hit because it circles back to the start, though the recap before it dulled it. I'd comment: "wait, John 3:16 comes right after a snake??"

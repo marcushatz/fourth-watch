@@ -351,3 +351,18 @@ Rules:
 - **Bronze Serpent v4 remains the approved, locked script.**
 - **No subscription changes on his behalf.**
 - **No complete episode and no new animation engine** for now. Focus on the visual decision.
+
+## Round 34 (Nov 3): review of the Bronze Serpent film, script and characters reopened
+His scores: "Visual quality 8/10", "Visual storytelling 8.5/10", "Character animation 5/10". His verdict: "a strong first full production", "a near-final cut rather than publish immediately".
+
+His words: "Our characters currently feel like illustrated cutouts placed into 3D environments rather than characters genuinely inhabiting those worlds."
+
+His words: "The experimental script is decent, but it isn't as intellectually compelling as our earlier concepts." "Don't mistake dramatic wording for a compelling story."
+
+Rules:
+- **Simpler, better-designed characters:** consistent proportions, attractive silhouettes, expressive poses, convincing movement and real interaction with the environment.
+- **Prioritize motion and staging** over more illustration detail.
+- **Scripts reveal connections.** "We want to reveal fascinating details and connections within Scripture," not just tell Bible stories attractively.
+- **Review symbolic imagery** so viewers don't mistake artistic staging for recorded events.
+- **Before publishing the film:** fix character movement, visual repetition, small type and the falling bronze pieces, and verify the narration and soundtrack by listening.
+- **Higgsfield's value:** he called the character art and voice "the first convincing evidence that it added meaningful value".
