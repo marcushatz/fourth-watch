@@ -400,3 +400,14 @@ Rules:
 - **Prove improvements on Bronze Serpent, step by step.** Narration, music and paid generation wait until the next meaningful milestone. The revised script stays unlocked.
 - **Quality is judged against the channels we study,** not by whether the automation ran.
 - **Interactive fiction is a separate future skill and channel.** Fourth Watch stays grounded in biblical accuracy.
+
+## Round 38 (Nov 3, 10:41): stories must be worth staying for
+His words: "Once viewers understand the connection between the serpent and Jesus, they've received the main value. What reason do they have to stay?" "Do not assume our existing script deserves to be preserved." "Before continuing the storyboard, propose a substantially stronger narrative architecture." "Don't confuse suspense with delaying an obvious answer. Deliver genuine new information throughout the video, with the strongest discovery reserved for the ending." "I want viewers to feel that every new section rewards their attention while giving them another reason to continue." "Prioritize exceptional storytelling before animation or production."
+
+Rules:
+- **Story comes before animation or production.** No storyboard work on a story that hasn't earned it.
+- **The known connection is never the destination.** If a church-raised viewer can guess the link, it belongs at the midpoint.
+- **Every section pays and then re-hooks.** New information, then a new reason to stay.
+- **Suspense isn't delay.** Answer early, and hold back only what is really new.
+- **The strongest discovery comes last.**
+- **No script is preserved by default.** Earlier lines stay only if they serve the new chain.

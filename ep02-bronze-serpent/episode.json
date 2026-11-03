@@ -1,67 +1,80 @@
 {
-  "episode": "ep02-bronze-serpent",
-  "updated": "2026-11-03",
-  "role": "pilot for the planned /fourth-watch-create skill, which doesn't exist yet",
-  "stage": "visual direction: identity proof waiting for Marcus",
-  "scripts": {
-    "locked": [
-      "script_approved_v4.md",
-      "content_factory_script_test_2026-11-02/script_approved_experimental.md"
-    ],
-    "candidate": {
-      "file": "writer/calf_2026-11-03/candidate_r5.md",
-      "sha256": "9f8c1bea2d4f202459a1f17560802a731a5be790da1095be42aa346db00969f5",
-      "status": "unlocked, Marcus decides later",
-      "words": 224,
-      "estimated_seconds": 89,
-      "checks": "fw_check 0 fail; AI fact-check of changed lines; one AI simulated viewer; no judge panel"
-    },
-    "earlier_approved": [
-      "script_approved.md (Nov 1), replaced by v4"
-    ]
-  },
-  "visual": {
-    "brief": "visual_brief.md",
-    "identity": "production/01_brand_and_references.md",
-    "proof_sheet": "source/proof/identity_sheet_2026-11-03.jpg"
-  },
-  "deliverables": {
-    "film_review_copy": {
-      "media_id": "dbc24194-0c54-4f00-9d9c-7bca92effd07",
-      "note": "58.7 s, experimental narration, not approved for release"
-    },
-    "puppet_test": {
-      "media_id": "9845b4e3-561f-40a0-84d8-0dbe381d2c88",
-      "note": "7 s, placeholder, no credits"
-    },
-    "identity_proof": {
-      "media_id": "f7e7a344-9a00-4e1b-814d-d9b16270ae24",
-      "note": "five stills, no credits"
-    }
-  },
-  "source": {
-    "code": "source/",
-    "restore": "source/restore.sh",
-    "media_zip": "33a08729-3fde-46e7-87f9-1e185596ecd0",
-    "code_zip": "290dffb3-707a-4875-ab6d-597f12715490"
-  },
-  "credits": {
-    "balance_seen": 76.47,
-    "balance_date": "2026-11-03",
-    "spent_on_this_episode_film": 19.85,
-    "paid_jobs_approved_now": []
-  },
-  "next": [
-    "Marcus judges the identity proof and the puppet test.",
-    "Proposed milestone: a free storyboard for the opening 30 seconds. CLAUDE.md says nothing is animated until he approves a storyboard, so an animatic needs his OK first.",
-    "Narration, music and paid generation wait until after that milestone."
+ "episode": "ep02-bronze-serpent",
+ "updated": "2026-11-03",
+ "role": "pilot for the planned /fourth-watch-create skill, which doesn't exist yet",
+ "stage": "story: new narrative architecture waiting for Marcus (Round 38). Storyboard paused",
+ "scripts": {
+  "locked": [
+   "script_approved_v4.md",
+   "content_factory_script_test_2026-11-02/script_approved_experimental.md"
   ],
-  "waiting_on_marcus": [
-    "Puppet test verdict",
-    "Identity proof verdict",
-    "Candidate script: unlocked until he decides",
-    "Repo visibility: GitHub reported public on Nov 3"
+  "candidate": {
+   "file": "writer/calf_2026-11-03/candidate_r5.md",
+   "sha256": "9f8c1bea2d4f202459a1f17560802a731a5be790da1095be42aa346db00969f5",
+   "status": "unlocked, superseded in direction by the proposal if Marcus accepts it",
+   "words": 224,
+   "estimated_seconds": 89,
+   "checks": "fw_check 0 fail; AI fact-check of changed lines; one AI simulated viewer; no judge panel"
+  },
+  "earlier_approved": [
+   "script_approved.md (Nov 1), replaced by v4"
   ],
-  "rules": "CLAUDE.md, production/GENERATION_APPROVAL.md and research/feedback_rules.md win over this file.",
-  "run_sheet": "none; this file takes its place"
+  "proposal": {
+   "file": "writer/lifted_up_2026-11-03/candidate_v3.md",
+   "sha256": "59abdb1fea553b362642cbcb8a7c707d29af39300752a982ee1913f072da62a7",
+   "status": "proposal, unlocked",
+   "words": 370,
+   "estimated_seconds": {
+    "lintel_pace": 123,
+    "last_take_pace": 143
+   },
+   "checks": "fw_check 0 fail, 8 warn justified; AI fact-check plus changed lines; two AI cold reads; no judge panel",
+   "doc": "https://claude.ai/artifact/LhQhUV4ii7BT6p4HUhi3kk"
+  }
+ },
+ "visual": {
+  "brief": "visual_brief.md",
+  "identity": "production/01_brand_and_references.md",
+  "proof_sheet": "source/proof/identity_sheet_2026-11-03.jpg"
+ },
+ "deliverables": {
+  "film_review_copy": {
+   "media_id": "dbc24194-0c54-4f00-9d9c-7bca92effd07",
+   "note": "58.7 s, experimental narration, not approved for release"
+  },
+  "puppet_test": {
+   "media_id": "9845b4e3-561f-40a0-84d8-0dbe381d2c88",
+   "note": "7 s, placeholder, no credits"
+  },
+  "identity_proof": {
+   "media_id": "f7e7a344-9a00-4e1b-814d-d9b16270ae24",
+   "note": "five stills, no credits"
+  }
+ },
+ "source": {
+  "code": "source/",
+  "restore": "source/restore.sh",
+  "media_zip": "33a08729-3fde-46e7-87f9-1e185596ecd0",
+  "code_zip": "290dffb3-707a-4875-ab6d-597f12715490"
+ },
+ "credits": {
+  "balance_seen": 76.47,
+  "balance_date": "2026-11-03",
+  "spent_on_this_episode_film": 19.85,
+  "paid_jobs_approved_now": []
+ },
+ "next": [
+  "Marcus decides on the Lifted Up story: subject, spine, runtime.",
+  "If he accepts it, revise visual_brief.md, which was written for r5.",
+  "Then a free storyboard for the opening. CLAUDE.md says nothing is animated until he approves a storyboard, so an animatic needs his OK first.",
+  "Narration, music and paid generation wait until after that milestone."
+ ],
+ "waiting_on_marcus": [
+  "Story architecture and the Lifted Up proposal",
+  "Puppet test verdict",
+  "Identity proof verdict",
+  "Repo visibility: GitHub reported public on Nov 3"
+ ],
+ "rules": "CLAUDE.md, production/GENERATION_APPROVAL.md and research/feedback_rules.md win over this file.",
+ "run_sheet": "none; this file takes its place"
 }

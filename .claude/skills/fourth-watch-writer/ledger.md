@@ -27,6 +27,11 @@ Keep it short: one entry per verdict, Marcus's words quoted. Add an entry the da
 - **r3 to r5 notes:** disputed readings are not discoveries; the opening must say why people died; the last revelation lands on Jesus; speculative links and interrupting questions come out.
 - **What worked in r5, per an AI viewer only:** "Moses' serpent had become Aaron's calf." The cost line set up early and paid off with John 3:16. Not audience evidence.
 
+## Nov 3, 2026: Lifted Up proposal (not locked)
+- **Why:** Marcus's Round 38. "Once viewers understand the connection between the serpent and Jesus, they've received the main value."
+- **The new spine:** the known link moves to the midpoint. Isaiah, the seraph payoff and John's "look" come after it.
+- **What the AI reads taught us, not audience evidence:** a hook question must be answered in its own terms, not swapped for a neighbouring question. A plant needs a promise when it's planted and a meaning when it pays off.
+
 ## Lessons (standing)
 1. **Thread first.** One object, person, phrase or problem; every book on the thread.
 2. **Each discovery must change the meaning of the last.** If two could swap places, the script is a list.
@@ -36,3 +41,5 @@ Keep it short: one entry per verdict, Marcus's words quoted. Add an entry the da
 6. **Approved scripts are not rewritten** unless Marcus reopens them. Precision notes come with evidence and a minimal edit.
 7. **Insight density is the bar:** something new every 10-15 s, measured with the insight timeline at Gate 5.
 8. **Plant early and pay off on the final revelation.** Set up a simple idea in the middle that only the ending completes.
+9. **Answer the question you asked.** If the hook asks why, the ending must answer that why.
+10. **A word echo needs content.** Show what happens at the second use, or it only sounds deep.

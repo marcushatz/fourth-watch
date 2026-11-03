@@ -1,0 +1,102 @@
+{
+  "kind": "script",
+  "verdict": "PASS WITH WARNINGS",
+  "counts": {
+    "FAIL": 0,
+    "WARN": 8,
+    "PASS": 9
+  },
+  "facts": {
+    "title": "Why did Jesus compare his death to a snake on a pole?",
+    "series": "ASK THE TEXT",
+    "VO words": 371,
+    "estimated runtime": "130.9s at 170 wpm"
+  },
+  "items": [
+    {
+      "level": "PASS",
+      "check": "series",
+      "msg": "ASK THE TEXT"
+    },
+    {
+      "level": "PASS",
+      "check": "hook",
+      "msg": "first VO line equals the title"
+    },
+    {
+      "level": "PASS",
+      "check": "runtime",
+      "msg": "estimated 131s"
+    },
+    {
+      "level": "WARN",
+      "check": "overclaim",
+      "msg": "'never' — make sure the text really says this: 'John never says whether he believed. He tells us what he carried, and who it was'"
+    },
+    {
+      "level": "PASS",
+      "check": "answer",
+      "msg": "answer stated in the Turn/Landing: 'So he would be lifted up to die, and anyone dying could look and live.'"
+    },
+    {
+      "level": "PASS",
+      "check": "value",
+      "msg": "5 things the viewer learns, each with a verse and each said in the VO"
+    },
+    {
+      "level": "WARN",
+      "check": "loop",
+      "msg": "the last VO line shares no key word with the hook; the loop line should echo it"
+    },
+    {
+      "level": "WARN",
+      "check": "budget",
+      "msg": "371 spoken words; the six best Lintel Shorts use 218–414 (median 275). About 230–300 words keeps it 90–120 s"
+    },
+    {
+      "level": "WARN",
+      "check": "hook form",
+      "msg": "the hook names no Bible person, place or object; the hits name one in the question itself"
+    },
+    {
+      "level": "PASS",
+      "check": "turn",
+      "msg": "the Turn starts about 15s in (Lintel's top six turn at 14–25 s, after at most ~14 s of story)"
+    },
+    {
+      "level": "PASS",
+      "check": "story share",
+      "msg": "the Story section is 5% of the words (Marcus's cap ~40%; the hits retell 0–5%, the top six spend 0–21% on any story). Count story lines in other sections by hand"
+    },
+    {
+      "level": "WARN",
+      "check": "answer timing",
+      "msg": "the core answer starts at about 15% of the runtime (top six 33–50%; the question-video lows 59–82%)"
+    },
+    {
+      "level": "WARN",
+      "check": "echo",
+      "msg": "the hook never comes back after 70% of the runtime (43% of its key words in one line). All three hits re-ask it in its own words at 82–89%, then answer it in one line"
+    },
+    {
+      "level": "PASS",
+      "check": "you lines",
+      "msg": "0 sentences speak to 'you' outside quotes (top six 1–3; the reels with 5–9 were all lows). Never describe the viewer's conduct"
+    },
+    {
+      "level": "PASS",
+      "check": "repetition",
+      "msg": "no 3-word phrase is said 3 or more times"
+    },
+    {
+      "level": "WARN",
+      "check": "nothing new",
+      "msg": "this line adds nothing new: every key word in it was already said: 'In the wilderness, that word named what killed. At the throne, it names who carr'"
+    },
+    {
+      "level": "WARN",
+      "check": "judge",
+      "msg": "not judged: run the blind judge panel before Marcus sees it, then pass --judge <run folder> (tools/script_judge/rubric.md)"
+    }
+  ]
+}

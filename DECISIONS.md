@@ -2,7 +2,7 @@
 
 **Use this when** Marcus is back. Every open choice is here with the exact wording to approve, the evidence and a recommendation. When he decides, record it as a new round in `research/feedback_rules.md` and update the file it names.
 
-Last updated: Nov 3, 10:30 local (after Round 37).
+Last updated: Nov 3 (after Round 38).
 
 **About the evidence:**
 - **"Simulated viewers" are AI agents** role-playing a first-time viewer. They can flag confusion and slow, preachy or unclear lines. They can't tell us retention, swipes or sharing; only real posts can.
@@ -23,7 +23,7 @@ Last updated: Nov 3, 10:30 local (after Round 37).
 
 1. **Repo visibility:** GitHub still reported it as public on Nov 3. This session can't change repository settings, so Marcus has to switch it.
 2. **Puppet test and identity draft:** judge the 7 s test and `production/01_brand_and_references.md` from the proof frames.
-3. **Bronze Serpent narration:** `ep02-bronze-serpent/writer/calf_2026-11-03/candidate_r5.md`, unlocked.
+3. **Bronze Serpent story:** the proposal is `ep02-bronze-serpent/writer/lifted_up_2026-11-03/candidate_v3.md`, with the reasoning in the doc "Bronze Serpent: Story Architecture". Unlocked. The calf candidate `candidate_r5.md` stays as it was. The storyboard waits for this decision.
 
 ## Decided by Marcus (Nov 2, Round 33)
 
