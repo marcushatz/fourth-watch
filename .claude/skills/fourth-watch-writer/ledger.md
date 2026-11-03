@@ -23,6 +23,10 @@ Keep it short: one entry per verdict, Marcus's words quoted. Add an entry the da
 | Nov 1 17:33 | Direction v1 (28 shots) built before the narration was strong | "Stop refining the storyboard until the narration is stronger" | Script first. No storyboard work on a script that isn't dense enough. And no picture claims the text doesn't make (prostration; 2 Kgs 18:4 says "offerings") |
 
 
+## Nov 3, 2026: calf and serpent candidate (not locked)
+- **r3 to r5 notes:** disputed readings are not discoveries; the opening must say why people died; the last revelation lands on Jesus; speculative links and interrupting questions come out.
+- **What worked in r5, per an AI viewer only:** "Moses' serpent had become Aaron's calf." The cost line set up early and paid off with John 3:16. Not audience evidence.
+
 ## Lessons (standing)
 1. **Thread first.** One object, person, phrase or problem; every book on the thread.
 2. **Each discovery must change the meaning of the last.** If two could swap places, the script is a list.
@@ -31,3 +35,4 @@ Keep it short: one entry per verdict, Marcus's words quoted. Add an entry the da
 5. **The principle is a question or a sentence that fits every viewer,** derived from the evidence.
 6. **Approved scripts are not rewritten** unless Marcus reopens them. Precision notes come with evidence and a minimal edit.
 7. **Insight density is the bar:** something new every 10-15 s, measured with the insight timeline at Gate 5.
+8. **Plant early and pay off on the final revelation.** Set up a simple idea in the middle that only the ending completes.

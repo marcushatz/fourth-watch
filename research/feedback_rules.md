@@ -366,3 +366,37 @@ Rules:
 - **Review symbolic imagery** so viewers don't mistake artistic staging for recorded events.
 - **Before publishing the film:** fix character movement, visual repetition, small type and the falling bronze pieces, and verify the narration and soundtrack by listening.
 - **Higgsfield's value:** he called the character art and voice "the first convincing evidence that it added meaningful value".
+
+## Round 35 (Nov 3, 09:24): the calf script, and prove motion before art
+His words: "I don't want a disputed interpretation presented as a definitive discovery." "Before spending credits on a character sheet, prove the animation with a simple placeholder puppet." "Our goal is not more detailed illustrations. It's characters that feel alive inside their world."
+
+Rules:
+- **Keep the two brothers, the two metal animals and the contrast between their consequences.** Preserve "Moses' serpent had become Aaron's calf."
+- **A disputed reading is never a discovery.** The no-poison reading and the Greek "so" argument are out.
+- **Prove motion on a free placeholder before buying character art.** Walking, stopping, reaching, ground contact and a motivated camera.
+- **Don't build another animation engine.**
+
+## Round 36 (Nov 3, 09:42): the final revelation is about Jesus
+His words: "I want the final revelation to be about Jesus, not simply a callback to Aaron and Moses." "Keep the script compelling and avoid unnecessary theological explanation."
+
+Rules:
+- **The last revelation lands on Jesus,** not on a recap of the earlier characters.
+- **Say why people died.** An opening number needs its cause.
+- **No speculative links and no interrupting questions.** The Paul connection and "Why a serpent?" are out.
+- **Give the central verse room,** both intellectually and emotionally.
+
+## Round 37 (Nov 3, 10:03 to 10:12): one idea, one exceptional video
+His words: "ONE IDEA → ONE COMPLETE, PRODUCTION-READY VIDEO." "The goal is not simply to automate video rendering. It's to automate excellent creative decision-making and production." "Stop treating 2D characters inside 3D environments as our required visual style." "Think like a world-class director choosing the right visual language for each scene, rather than a programmer trying to force every scene into the same engine." "don't turn the medium-selection table into rigid rules. I want genuine creative judgment." "Our benchmark is not whether the automation works. It's whether the resulting videos can genuinely compete with the quality of the channels we're studying."
+
+Rules:
+- **Hybrid is approved.** 2D, stylized 3D, 2.5D, motion graphics, kinetic type and combinations are all available. Don't use 3D merely because it looks impressive, or 2D merely because it's easier.
+- **Creative judgment comes first.** Medium guidance is a set of starting points, never a decision table.
+- **Three priorities, in order:** creative intelligence, visual excellence, production efficiency.
+- **A recognizable identity, not a single appearance.** Videos should feel deliberately art-directed, not automatically assembled.
+- **Higgsedit is the primary assembly engine.** Other tools are allowed when they produce better results.
+- **AI-generated art isn't forbidden** when it materially improves quality. Paid generation still needs approval.
+- **Three creative approvals:** script, visual direction and final video. Work independently inside each stage.
+- **Consolidate and reuse.** Recover the source, avoid unnecessary infrastructure, and don't spend days on a theoretical system.
+- **Prove improvements on Bronze Serpent, step by step.** Narration, music and paid generation wait until the next meaningful milestone. The revised script stays unlocked.
+- **Quality is judged against the channels we study,** not by whether the automation ran.
+- **Interactive fiction is a separate future skill and channel.** Fourth Watch stays grounded in biblical accuracy.

@@ -2,7 +2,7 @@
 
 **Status:** candidate, waiting for Marcus. It replaces nothing. `../../script_approved_v4.md` and the experimental script stay locked.
 
-- `candidate_v3.md`: the script in series format.
+- `candidate_r5.md`: the current narration in series format. Not locked. Earlier versions stay beside it.
 - `dossier.md`, `angles.md`, `argument.md`: research, angle scoring and the argument map.
 - `qa/`: AI fact-check and simulated viewer and editor reads.
 - The animation strategy and the labelled script are in Marcus's doc: https://claude.ai/artifact/NY5QdiXgGo9Y7Rnb8ceNLJ
