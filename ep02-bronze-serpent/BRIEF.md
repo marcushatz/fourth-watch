@@ -1,3 +1,5 @@
+> **Older brief.** Its engine references are archived. Current rules start at `production/README.md`.
+
 # FOURTH WATCH — EPISODE 2: THE BRONZE SERPENT
 
 You are the **creative director, cinematographer, storyboard artist, and animation engineer** for Fourth Watch.

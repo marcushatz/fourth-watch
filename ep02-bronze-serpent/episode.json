@@ -1,7 +1,7 @@
 {
   "episode": "ep02-bronze-serpent",
   "updated": "2026-11-03",
-  "role": "pilot for /fourth-watch-create",
+  "role": "pilot for the planned /fourth-watch-create skill, which doesn't exist yet",
   "stage": "visual direction: identity proof waiting for Marcus",
   "scripts": {
     "locked": [
@@ -15,7 +15,10 @@
       "words": 224,
       "estimated_seconds": 89,
       "checks": "fw_check 0 fail; AI fact-check of changed lines; one AI simulated viewer; no judge panel"
-    }
+    },
+    "earlier_approved": [
+      "script_approved.md (Nov 1), replaced by v4"
+    ]
   },
   "visual": {
     "brief": "visual_brief.md",
@@ -50,13 +53,15 @@
   },
   "next": [
     "Marcus judges the identity proof and the puppet test.",
-    "Next milestone proposed: a free hybrid animatic of the opening 30 seconds with timed captions and no voice.",
+    "Proposed milestone: a free storyboard for the opening 30 seconds. CLAUDE.md says nothing is animated until he approves a storyboard, so an animatic needs his OK first.",
     "Narration, music and paid generation wait until after that milestone."
   ],
   "waiting_on_marcus": [
+    "Puppet test verdict",
     "Identity proof verdict",
-    "Candidate script: keep unlocked until he decides",
+    "Candidate script: unlocked until he decides",
     "Repo visibility: GitHub reported public on Nov 3"
   ],
-  "rules": "CLAUDE.md, production/GENERATION_APPROVAL.md and research/feedback_rules.md win over this file."
+  "rules": "CLAUDE.md, production/GENERATION_APPROVAL.md and research/feedback_rules.md win over this file.",
+  "run_sheet": "none; this file takes its place"
 }
