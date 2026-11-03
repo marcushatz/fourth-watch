@@ -4,7 +4,7 @@
 
 **His words:** "I'd approve this script with two small corrections." "Verdict: 9/10. Ready for the final Scripture check, then narration. I wouldn't keep rewriting it."
 
-**Follow-through on his first correction:** "your people" became "them", so the viewer is no longer placed in the story. Marcus should confirm this when he approves the voice request.
+**Follow-through on his first correction:** "your people" became "them", so the viewer is no longer placed in the story. Marcus confirmed "them" when he approved the voice request on 2026-11-02.
 
 **Final Scripture check:** passed Nov 2, 2026. Interpretation lines: "He's describing his own death", the looked/believes parallel, and the closing line.
 
