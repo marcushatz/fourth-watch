@@ -37,7 +37,12 @@ Keep it short: one entry per verdict, Marcus's words quoted. Add an entry the da
 - **Proofs:** Hagar (recommended), Mary Magdalene, Abraham, Lazarus.
 - **What AI reads taught us, not audience evidence:** quote a hard verse in full; never promise what the text doesn't; test grief stories on someone grieving.
 
-## Nov 3, 2026: debut script (candidate, not locked)
+## Nov 3, 2026: storm and Hagar scripts (candidates, not locked)
+- **Marcus on the Mary recommendation:** "distinguish a bad concept from a good concept that hasn't yet been executed well." The earlier drafts failed because of how they were written.
+- **What fixed the storm:** a plain detail in the text, Matthew 14:32, instead of a disputed reading.
+- **What fixed Hagar:** two names given in Genesis 16 that come true in Genesis 21.
+
+## Nov 3, 2026: debut script (superseded by the entry above)
 - **Topic:** Mary Magdalene, `ep09-mary-magdalene/writer/script_v3.md`.
 - **Why:** most moving of three in AI reads, no harmful line, and it ends on "when he came" before the end card.
 - **Lesson:** a story whose main reasons are unstated can't carry a strong revelation, however good its details.

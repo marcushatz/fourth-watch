@@ -439,3 +439,17 @@ Rules:
 - **No dramatic revelation rests on uncertain theology.**
 - **Once the script is exceptional, move decisively into production** with the existing hybrid workflow. No credits are authorized yet.
 
+## Round 41 (Nov 3, 12:31): judge the story, not the draft
+His words: "distinguish a bad concept from a good concept that hasn't yet been executed well." "Don't reject an exceptional story because your first few scripts failed to tell it exceptionally well." "Don't disguise subjective judgments as empirical findings." "Treat AI evaluations as criticism, not proof of audience response." "Every discovery must contribute meaningfully to the story. Don't add information just to meet a discovery quota." "The emotional climax can itself be the ending." "Never promise a revelation Scripture doesn't provide." "Our goal is not to manufacture a story that satisfies successful-video patterns. Our goal is to identify genuinely extraordinary stories and use those patterns to communicate them exceptionally well." "After that, we need to start making videos and learning from actual viewers."
+
+Rules:
+- **Separate the concept, the script, Scripture and production.** Judge each on its own.
+- **Label evidence honestly:** real audiences, editorial judgment, Scripture, script limits, speculation.
+- **No scoring rubrics or simulated ranking rounds.** AI readers are critics only.
+- **A hook only promises what Scripture can deliver.**
+- **Show what the person wants, fears and faces.** Don't label feelings.
+- **Choose the structure the story needs.** Lintel's is not a formula.
+- **A familiar viewer finds something worthwhile, and an unfamiliar viewer never needs a theology lesson.**
+- **Don't favor a topic because it's familiar, easy, on brand or hard to criticize.**
+- **Know when to stop analyzing and start producing.**
+

@@ -4,18 +4,19 @@
 **The person at the centre:**
 **What they stand to lose:**
 
-| Question | Answer | Evidence | Score 1-5 |
-|---|---|---|---|
-| 1. Who specifically cares? | | | |
-| 2. What will they feel? Start to destination | | | |
-| 3. What will they newly understand? Before and after | | | |
-| 4. Why is the middle as rewarding as the opening? | | | |
-| 5. Why is the ending bigger than the first discovery? | | | |
-| 6. Why would someone share it? "I'd send this to ___ because ___" | | | |
-| 7. Why would someone follow afterward? | | | |
+| Question | Answer | Evidence |
+|---|---|---|
+| 1. Who specifically cares? | | |
+| 2. What will they feel? Start to destination | | |
+| 3. What will they newly understand? Before and after | | |
+| 4. Why is the middle as rewarding as the opening? | | |
+| 5. Why is the ending bigger than the first discovery? | | |
+| 6. Why would someone share it? "I'd send this to ___ because ___" | | |
+| 7. Why would someone follow afterward? | | |
 
-**Total:** /35
-**Proceed?** 28 or more, with nothing below 3.
+**What the person wants, fears and faces:**
+**What the hook promises, and whether Scripture provides it:**
+**The concept, the script, Scripture, production:** judge each separately.
 **Risks:** accuracy, sensitivity, anything the text doesn't say.
 
 ## Two-track outline

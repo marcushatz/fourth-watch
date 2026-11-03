@@ -14,7 +14,7 @@ Curiosity or conflict gets people in. Emotion is what they remember. Comfort alo
 
 ## Step 1: the idea card
 
-Copy `templates/idea_card.md` into the episode folder. Every box needs an answer that could be checked. Score each from 1 to 5.
+Copy `templates/idea_card.md` into the episode folder. Every box needs an answer that could be checked. There are no scores. They were judgment dressed up as measurement.
 
 | Question | A real answer | A warning sign |
 |---|---|---|
@@ -26,19 +26,22 @@ Copy `templates/idea_card.md` into the episode folder. Every box needs an answer
 | 6. Why would someone share it? | "I'd send this to ___ because ___" | "People would find it cool" |
 | 7. Why would someone follow afterward? | The promise it kept, and the next video they'd want | "It's good content" |
 
-**Rule:** write the script only at 28 of 35 or more, with nothing below 3. This threshold is a starting guess. Reset it after 10 published reels.
+**Judge four things separately:** the concept, this particular script, what Scripture supports, and production feasibility. A weak draft is not a weak concept. Label what comes from real audiences, your own judgment and speculation.
 
-**Compare at least three ideas** when choosing what to make next. Keep the losers on file.
+**The hook can only promise what Scripture provides.** If the text doesn't give a motive, don't build the episode on revealing it. Separate what the text states, what it implies and what interpreters propose.
 
 ## Step 2: the two-track outline
 
+Choose the structure the story needs: several revelations, or one moment it all builds to. Lintel's structure is one option, not a formula. The climax can be the ending, so don't add explanation after it.
+
+Establish what the person wants, what they fear, what stands in the way, what happens and why it matters. The feeling should come from those events.
+
 Five to seven beats. Each beat has three columns: what they learn, what they feel, why they stay.
 
-- At most three discoveries, and each has to change the feeling.
+- No discovery quota. One surprising detail can be enough, and each one has to change the feeling.
 - One line written to be the peak.
 - One deliberate destination.
-- The ending has to pay off something planted early.
-- Answer early, so the answer creates the next problem.
+- The ending should pay off something already in the story.
 
 | Destination | Honest source | How it gets faked |
 |---|---|---|
@@ -60,11 +63,11 @@ Sadness alone lowers sharing in the one large study we have (news articles, not 
 3. **Honesty.** Read it flat, with no music. Is the feeling still there, and does the text cause it, rather than our adjectives?
 4. **Real people.** Three to five actual people hear the voice take, and say what they felt and who they'd send it to.
 
-AI readers run tests 1 and 2 and the fact-check. They can flag confusion, overclaims and insensitive lines. They never score how moving a story is.
+AI readers are critics, not an audience. Use them sparingly for confusion, overclaims and insensitive lines. Never use them to rank ideas or to prove a script works, and never cite them as evidence. Challenge your own assumptions rather than seeking agreement from more agents.
 
 ## Step 4: learn from real viewers
 
-Log every reel in `system/publish_log.csv`, including its idea card score and destination.
+Log every reel in `system/publish_log.csv`, including its emotional destination.
 
 | Signal | Where | What it decides |
 |---|---|---|
@@ -74,9 +77,13 @@ Log every reel in `system/publish_log.csv`, including its idea card score and de
 | Follows per reach | Instagram Insights | Whether question 7 was right |
 | Comment types | Read the top 50 | What they actually felt: testimony, correction, question, praise |
 
-**Every 5 reels:** compare the card scores with the results, then adjust the card. **After 10 reels:** reset the threshold. Real results outrank AI readers, these notes and Lintel's patterns.
+**Every 5 reels:** compare what we expected with what happened, then adjust how we choose. Real results outrank AI readers, these notes and Lintel's patterns.
 
 Judge trends, not single reels. Hits are rare: Bible Animations' best Short has about 35 times its median.
+
+## Knowing when to stop
+
+This is a filmmaking process, not a research project. Give an idea a serious creative effort, make a decision, name the weaknesses and produce it. Viewers teach more than another round of analysis.
 
 ## Safeguards
 

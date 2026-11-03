@@ -4,17 +4,16 @@
 **The person at the centre:** Hagar, an enslaved Egyptian woman.
 **What she stands to lose:** her dignity, then her son.
 
-| Question | Answer | Evidence | Score 1-5 |
-|---|---|---|---|
-| 1. Who specifically cares? | Anyone who has felt invisible or thrown away, especially church-raised adults who never heard this | Shorts at 129K and 99K surfaced for "who is hagar in the bible" | 4 |
-| 2. What will they feel? | Anger at injustice, then being seen, heartbreak, awe | Two of four AI readers named Hagar's story as what they felt most; a reader of an earlier version named the bowshot scene too | 5 |
-| 3. What will they newly understand? | Before: she's a footnote in Abraham's story. After: she named God, and God calls her suffering affliction | Genesis 16:11, 16:13 | 5 |
-| 4. Why is the middle as rewarding as the opening? | She names God right after the hardest command in the story | Genesis 16:9-13 | 5 |
-| 5. Why is the ending bigger than the first discovery? | The woman who named the God of seeing can't bear to look, and God opens her eyes | Genesis 21:16-19 | 5 |
-| 6. Why would someone share it? | "I'd send this to my sister who quit church, because it isn't the Bible she remembers" | AI readers only | 4 |
-| 7. Why would someone follow afterward? | Who else did I never hear about? The next video is Mary Magdalene | AI readers only | 5 |
+| Question | Answer | Evidence |
+|---|---|---|
+| 1. Who specifically cares? | Anyone who has felt invisible or thrown away, especially church-raised adults who never heard this | Shorts at 129K and 99K surfaced for "who is hagar in the bible"  |
+| 2. What will they feel? | Anger at injustice, then being seen, heartbreak, awe | Two of four AI readers named Hagar's story as what they felt most; a reader of an earlier version named the bowshot scene too  |
+| 3. What will they newly understand? | Before: she's a footnote in Abraham's story. After: she named God, and God calls her suffering affliction | Genesis 16:11, 16:13  |
+| 4. Why is the middle as rewarding as the opening? | She names God right after the hardest command in the story | Genesis 16:9-13  |
+| 5. Why is the ending bigger than the first discovery? | The woman who named the God of seeing can't bear to look, and God opens her eyes | Genesis 21:16-19  |
+| 6. Why would someone share it? | "I'd send this to my sister who quit church, because it isn't the Bible she remembers" | AI readers only  |
+| 7. Why would someone follow afterward? | Who else did I never hear about? The next video is Mary Magdalene | AI readers only  |
 
-**Total:** 33 of 35
 **Risks:** "Return to your mistress and submit to her" (Genesis 16:9); Paul's use of Hagar in Galatians 4; the boy's age, which shouldn't be pictured as a toddler; Hagar is honoured in Islam, so stay inside Genesis; "never say her name" is an absence claim.
 
 ## Two-track outline

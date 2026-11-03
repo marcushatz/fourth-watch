@@ -18,7 +18,7 @@ Fourth Watch is a faceless Christian educational channel that makes cinematic bi
 
 | # | Stage | Read | Output | Gate |
 |---|---|---|---|---|
-| 1 | Idea | `10_creative_decisions.md` | Idea card and two-track outline | Scores 28 of 35 or more. Runs automatically |
+| 1 | Idea | `10_creative_decisions.md` | Idea card and outline | Runs automatically. No scores |
 | 1b | Research | `02_biblical_accuracy.md`, `system/01` | Verified notes | Topic picked by Marcus |
 | 2 | Script | `03_script_and_narration.md`, the writer skill | Script with its one-sentence message | Checks pass |
 | 3 | Approval | `03` | `script_approved*.md` | **Marcus approves. The script locks.** |
