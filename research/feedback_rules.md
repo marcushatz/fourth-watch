@@ -429,3 +429,13 @@ Rules:
 - **Real viewer data improves these decisions once we publish.**
 - **No extra approval checkpoints or engineering complexity.**
 - **Bronze Serpent is paused** while the debut is decided. No credits.
+
+## Round 40 (Nov 3, 12:09): a focused debut round
+His words: "It must earn its place through exceptional storytelling." "Distinguish explicitly recorded facts from interpretive connections. Don't build a dramatic revelation around uncertain theology." "Don't confuse complexity with value." "I want a focused creative development round, not another enormous research report, scoring system, or production framework." "Make strong independent creative decisions. Don't repeatedly ask me to choose between minor options." "The goal isn't to create a video that explains our channel. The goal is to create an extraordinary Bible video that makes people understand why Fourth Watch is worth following."
+
+Rules:
+- **Deliver a decision, not options.** Recommendation, one script, a short rationale.
+- **Don't recommend a topic because of the name.**
+- **No dramatic revelation rests on uncertain theology.**
+- **Once the script is exceptional, move decisively into production** with the existing hybrid workflow. No credits are authorized yet.
+

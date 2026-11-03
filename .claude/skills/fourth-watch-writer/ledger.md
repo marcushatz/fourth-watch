@@ -37,6 +37,11 @@ Keep it short: one entry per verdict, Marcus's words quoted. Add an entry the da
 - **Proofs:** Hagar (recommended), Mary Magdalene, Abraham, Lazarus.
 - **What AI reads taught us, not audience evidence:** quote a hard verse in full; never promise what the text doesn't; test grief stories on someone grieving.
 
+## Nov 3, 2026: debut script (candidate, not locked)
+- **Topic:** Mary Magdalene, `ep09-mary-magdalene/writer/script_v3.md`.
+- **Why:** most moving of three in AI reads, no harmful line, and it ends on "when he came" before the end card.
+- **Lesson:** a story whose main reasons are unstated can't carry a strong revelation, however good its details.
+
 ## Lessons (standing)
 1. **Thread first.** One object, person, phrase or problem; every book on the thread.
 2. **Each discovery must change the meaning of the last.** If two could swap places, the script is a list.

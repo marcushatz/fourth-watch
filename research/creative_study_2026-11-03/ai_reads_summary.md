@@ -30,3 +30,14 @@ Hagar: "Not Jacob" removed; the angel's first spoken word to her is her name.
 
 **Not yet checked:** the two new lines about the hard verse in Hagar proof v3.
 
+## Fourth watch round (three stories, three more reads)
+
+The human script held more readers, and the mystery script had the better opening and ending. Readers without Bible knowledge left at Job. The combined script and its human-led rewrite ranked last against Hagar and Mary in both final comparisons, though one Bible-literate reader ranked the first of them highest.
+Final scores (AI panel, out of 35): Hagar 31, Mary 29, fourth watch 19. The panel still chose Mary as the best first video, because of the risk in Hagar's "submit" line.
+
+## Mary script cold read and fact-check
+
+Cold read: strongest line was the voice line, weakest was "So why her? John never says." The idle-tale line and "go to my brothers" dragged after "Mary."
+Fact-check: "She stayed" skipped that she left and came back, so it's now "She didn't." "One word" and "knew his voice" overclaimed, so both were reworded. "First" remains the one word a careful reader may challenge.
+v3 has not had a further cold read.
+
