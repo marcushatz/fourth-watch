@@ -23,12 +23,11 @@ A discovery is a true thing from the text that **changes what the viewer believe
 - **Speculation about motives or feelings** the text doesn't give ("Jacob was furious", "it was crushing her").
 - **The famous fact restated** ("Jonah was swallowed by a great fish").
 
-## Strength test (rank discoveries before arguing)
-Score each 0-2 on three things:
+## Strength test
+Answer these in words before arguing. No scores.
 
-| Score | Surprise | Load-bearing | Visual |
-|---|---|---|---|
-| **0** | Most churchgoers know it | The argument works without it | — |
-| **2** | Most churchgoers don't know it | The argument breaks without it | Can be *shown*: an object, an action, a place |
+- **Surprise:** do most churchgoers already know it?
+- **Load-bearing:** does the story break without it?
+- **Visual:** can it be shown as an object, an action or a place?
 
-The order is: first discovery 4+, the hinge discovery 5+, and drop anything at 2 or below.
+Drop anything that doesn't change the story.

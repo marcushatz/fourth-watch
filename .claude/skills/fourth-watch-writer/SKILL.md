@@ -24,7 +24,7 @@ description: Research, argue and write an original Fourth Watch Bible investigat
 | `reference/weak_vs_strong.md` | Always, before Stage 4. Why our earlier scripts failed, with their actual lines. |
 | `reference/discoveries.md` | Stage 2. What counts as a discovery, and what is trivia or a forced link. |
 | `reference/verification.md` | Stages 1, 2 and 6. The claim labels, sources and traps we have already fallen into. |
-| `reference/angle_scorecard.md` | Stage 3. How competing angles are scored and killed. |
+| `reference/angle_card.md` | Stage 3. How competing angles are judged in words. |
 | `reference/lintel_lessons.md` | Stage 4. Measured structure from the Lintel reels; their topics, to avoid. |
 | `templates.md` | Every stage. The dossier, angle card, argument map and script formats. |
 | `ledger.md` | Before Stage 1 and after Marcus's verdict. Approved scripts, rejected approaches, lessons. |
@@ -47,7 +47,7 @@ Marcus's standing rules live in `research/feedback_rules.md` (the Rounds). They 
    - forced cross-references;
    - predictable conclusions;
    - lines that only *sound* profound.
-8. **Competing angles.** Write at least 5 angles, score them, kill the weak ones, and develop only the strongest.
+8. **Competing angles.** Write several angles, judge them in words, drop the weak concepts, and develop the strongest.
 9. **Insight density and efficiency (Marcus, Nov 1 17:33).**
    - Something new every 10-15 seconds: a new discovery, a surprising comparison, or a change in how the viewer understands the text. Never just another event from the story.
    - Never re-explain what the hook already revealed.
@@ -63,7 +63,7 @@ Marcus's standing rules live in `research/feedback_rules.md` (the Rounds). They 
 
 Each stage ends at a **gate**. A script cannot move on until its gate passes. Record the gate results in the episode folder: `ep*/writer/` holds `dossier.md`, `angles.md`, `argument.md`, `drafts/`, `review.md`.
 
-**Start here (Round 39).** Before Stage 1, fill in the idea card from `production/10_creative_decisions.md`. A story starts with a person and a feeling. Where the rules below ask for more discoveries, retelling limits or a new fact every few seconds, the card and Round 39 win: at most three discoveries, each of which has to change the feeling.
+**Start here (Rounds 39 and 41).** Before Stage 1, fill in the idea card from `production/10_creative_decisions.md`. A story starts with a person and a feeling. Where the rules below ask for more discoveries, retelling limits, a fixed structure or a new fact every few seconds, the card and those Rounds win. There is no discovery quota, and each discovery has to change the feeling.
 
 ### Stage 0. Load (5 minutes, cheap)
 - Read `ledger.md`, the gold standard, and the latest 3 Rounds of `research/feedback_rules.md`.
@@ -76,11 +76,11 @@ Read the passages yourself, in the ESV: whole chapters, not proof-texts. Then se
 - **Context the text assumes** (customs, geography, a word's meaning). Only from a named source, and labeled HISTORY or INTERPRETATION.
 - **What the text does NOT say.** These are the traps: words like "forgave", "blind", "judged", motives, causes.
 
-**Gate 1 (Topic worth it?).** All must hold, or you stop and pick another topic:
+**Gate 1 (Topic worth it?).** Judge the concept, not a draft. All must hold, or you stop and pick another topic:
 - [ ] The question is about a named person, object or event, in the third person, and fits in ≤ 12 words.
 - [ ] The common answer is incomplete, wrong, or missing the part that matters.
-- [ ] At least 2 or 3 strong discoveries exist that a church-raised 25-year-old probably doesn't know.
-- [ ] They sit on ONE thread (one object, one person, one phrase or one problem), not a scatter.
+- [ ] At least one strong discovery exists that a church-raised 25-year-old probably doesn't know.
+- [ ] Every discovery sits on ONE thread (one object, one person, one phrase or one problem), not a scatter.
 - [ ] It isn't a Lintel topic (`reference/lintel_lessons.md`) and isn't in `ledger.md` as rejected.
 
 ### Stage 2. Discovery → `writer/dossier.md` (discoveries table)
@@ -101,16 +101,9 @@ Use `reference/discoveries.md` for what qualifies.
 - [ ] Each cross-reference passes the **link test**: the later text *names or quotes* the earlier one (John 3:14 names Moses' serpent), or a mainstream commentary makes the link and the script says it is a reading. "These two things look alike" fails.
 
 ### Stage 3. Angles → `writer/angles.md`
-Write **at least 5 competing angles** for the topic: different questions, different spines, different payoffs. Score each with `reference/angle_scorecard.md` on:
-- originality;
-- depth;
-- curiosity;
-- clarity;
-- shareability.
+Write competing angles for the topic: different questions, different spines, different payoffs. Judge each in words with `reference/angle_card.md`. Give no scores. Drop an angle for a flaw in the concept, never for a weak first draft.
 
-Each is scored 1-5, with a one-line reason per score. Kill any angle with a 1 or 2 anywhere, or with fewer than 3 discoveries on its thread.
-
-**Gate 3:** at most **3** angles survive, each with a 12-word question, a one-sentence answer, and its 3-5 discoveries in order. These are what Marcus sees when a choice is his (Round 27: only show options you have concluded are great). If he has already chosen, take the top-scoring one.
+**Gate 3:** at most **3** angles survive, each with a 12-word question and a one-sentence answer. These are what Marcus sees when a choice is his (Round 27: only show options you have concluded are great). If he has already chosen, take the one you would defend.
 
 ### Stage 4. Argument → `writer/argument.md`
 Before writing a single line of narration, build the argument map (template in `templates.md`):
@@ -164,7 +157,7 @@ Briefs are in `fw-script-review`. Round 20 limits: ONE fact-check on the candida
 - every quote VERIFIED;
 - every OVERCLAIM reworded;
 - the viewer restates the answer and the principle correctly in their own words;
-- the viewer lists at least 3 things they didn't know;
+- the viewer can name what they didn't know;
 - the six tests are answered "no".
 
 ### Stage 7. Revision
