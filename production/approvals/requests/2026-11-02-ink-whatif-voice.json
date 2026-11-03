@@ -1,0 +1,30 @@
+{
+  "request_id": "2026-11-02-ink-whatif-voice",
+  "project": "fourth-watch",
+  "purpose": "10-second labelled Content Factory test in Ink & Gold. Not v4 and not for release.",
+  "items": [
+    {
+      "kind": "job",
+      "tool": "generate_audio",
+      "input": {
+        "params": {
+          "model": "elevenlabs_v4",
+          "prompt": "[hushed, grave storyteller, steady pace] What if the cure God gave Israel became an idol? Centuries later, they made offerings to Moses' bronze serpent. [pause] So Hezekiah SMASHED it.",
+          "stability": 0.4,
+          "batch_size": 1,
+          "dialogue": [
+            {
+              "text": "[hushed, grave storyteller, steady pace] What if the cure God gave Israel became an idol? Centuries later, they made offerings to Moses' bronze serpent. [pause] So Hezekiah SMASHED it.",
+              "voice_id": "1ad38ba4-9cc4-4f2f-9fde-b0fefdf67ae5",
+              "voice_type": "preset"
+            }
+          ]
+        }
+      },
+      "intended_output": "One voice take, about 10 seconds, Gideon test voice",
+      "quoted_credits": 0.92,
+      "quoted_at": "2026-11-03T02:58:59+00:00",
+      "quote_source": "get_cost check"
+    }
+  ]
+}

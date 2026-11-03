@@ -1,0 +1,31 @@
+{
+  "request_id": "2026-11-03-img-moses-cost",
+  "project": "fourth-watch",
+  "purpose": "Overnight Bronze Serpent film, session authorization (production/approvals/session_2026-11-02_overnight.md)",
+  "items": [
+    {
+      "kind": "cost_check",
+      "tool": "generate_image",
+      "input": {
+        "params": {
+          "model": "gpt_image_2_5",
+          "prompt": "Character model sheet for a prestige 2D animated biblical short film. Hand-painted illustration with confident gouache brushwork, simplified planes, clean readable silhouettes and two-tone cel shading with soft painted edges. Mature and dignified. Realistic adult proportions about seven heads tall, small heads, long limbs, real hands with fingers, restrained faces shaped by light and shadow. Never cartoonish, never big eyes, not a children's book, not photorealistic, not 3D. Plain ancient Near Eastern dress in wool and linen, muted earth colors: umber, clay, ash, undyed wool. Warm low light from the left, cool blue-grey shadow on the right. Each figure is complete from head to foot and separated from the others by generous empty space, nothing overlapping, no ground, no floor shadow, no props other than those stated. Transparent background. No text, no letters, no numbers, no labels, no borders. Match the reference image exactly in painting style, brushwork, level of finish, light direction, proportions and color world. The sheet shows two men, left to right, evenly spaced. First, Moses, a very old man with a long white beard and plain undyed wool robe holding a tall plain wooden staff, three times: 1. standing in side profile facing right, staff planted, head lifted, listening. 2. in side profile facing right, one arm raised and pointing up and to the right, staff in the other hand. 3. in side profile facing right, both hands gripping a long straight wooden pole and raising it upright, leaning into the effort, the pole has no crossbar and nothing on it. Then Nicodemus, an older Jewish teacher with a trimmed grey beard, a dark blue wool mantle and a head covering, twice: 4. seated on a plain low stone block in side profile facing right, hands on his knees, leaning slightly forward, listening. 5. seated on the same stone block in side profile facing right, head lifted, gazing up and to the right in quiet astonishment, one hand raised slightly from his knee.",
+          "variant": "flare",
+          "quality": "high",
+          "resolution": "2k",
+          "aspect_ratio": "21:9",
+          "background": "transparent",
+          "count": 1,
+          "medias": [
+            {
+              "value": "aa568650-ebda-4c37-8837-e7de67d85498",
+              "role": "image_references"
+            }
+          ],
+          "get_cost": true
+        }
+      },
+      "intended_output": "Free price check: Moses and Nicodemus sheet"
+    }
+  ]
+}

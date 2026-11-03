@@ -1,0 +1,30 @@
+{
+  "request_id": "2026-11-02-cf-script-voice",
+  "project": "fourth-watch",
+  "purpose": "Voiceover for the approved experimental Content Factory Bronze Serpent script. Not v4. Test only, not for release.",
+  "items": [
+    {
+      "kind": "job",
+      "tool": "generate_audio",
+      "input": {
+        "params": {
+          "model": "elevenlabs_v4",
+          "prompt": "[clear, intelligent storyteller, curious and reverent, brisk pace] What if a king smashed something God told Moses to make? And the Bible says he did what was right. [pause] Rewind. Israel spoke against God. Fiery serpents are killing them. God tells Moses: make a fiery serpent. Set it on a pole. Bitten? Look at it, and live. Then it vanishes from Scripture for centuries. When it returns, people are making offerings to it. So King Hezekiah SMASHES it. It was called Nehushtan. The serpent is gone. [pause] End of story. [leaning in] Centuries later, Jesus brings up a serpent that no longer exists. [measured, reverent] And as Moses lifted up the serpent in the wilderness, so must the Son of Man be lifted up. He's describing his own death. Just as the dying looked and lived, whoever believes in him may have eternal life. [quiet, certain] The story doesn't end with a broken serpent. It ends with eternal life. [pause] [softer] Scripture quotations are from the ESV.",
+          "stability": 0.4,
+          "batch_size": 1,
+          "dialogue": [
+            {
+              "text": "[clear, intelligent storyteller, curious and reverent, brisk pace] What if a king smashed something God told Moses to make? And the Bible says he did what was right. [pause] Rewind. Israel spoke against God. Fiery serpents are killing them. God tells Moses: make a fiery serpent. Set it on a pole. Bitten? Look at it, and live. Then it vanishes from Scripture for centuries. When it returns, people are making offerings to it. So King Hezekiah SMASHES it. It was called Nehushtan. The serpent is gone. [pause] End of story. [leaning in] Centuries later, Jesus brings up a serpent that no longer exists. [measured, reverent] And as Moses lifted up the serpent in the wilderness, so must the Son of Man be lifted up. He's describing his own death. Just as the dying looked and lived, whoever believes in him may have eternal life. [quiet, certain] The story doesn't end with a broken serpent. It ends with eternal life. [pause] [softer] Scripture quotations are from the ESV.",
+              "voice_id": "1ad38ba4-9cc4-4f2f-9fde-b0fefdf67ae5",
+              "voice_type": "preset"
+            }
+          ]
+        }
+      },
+      "intended_output": "One voice take, about 55-60 seconds, Gideon test voice",
+      "quoted_credits": 4.6,
+      "quoted_at": "2026-11-03T05:00:31.019288+00:00",
+      "quote_source": "get_cost check"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "request_id": "2026-11-03-img-hez",
+  "project": "fourth-watch",
+  "purpose": "Overnight Bronze Serpent film, session authorization (production/approvals/session_2026-11-02_overnight.md)",
+  "items": [
+    {
+      "kind": "job",
+      "tool": "generate_image",
+      "input": {
+        "params": {
+          "model": "gpt_image_2_5",
+          "prompt": "Character model sheet for a prestige 2D animated biblical short film. Hand-painted illustration with confident gouache brushwork, simplified planes, clean readable silhouettes and two-tone cel shading with soft painted edges. Mature and dignified. Realistic adult proportions about seven heads tall, small heads, long limbs, real hands with fingers, restrained faces shaped by light and shadow. Never cartoonish, never big eyes, not a children's book, not photorealistic, not 3D. Plain ancient Near Eastern dress in wool and linen, muted earth colors: umber, clay, ash, undyed wool. Warm low light from the left, cool blue-grey shadow on the right. Each figure is complete from head to foot and separated from the others by generous empty space, nothing overlapping, no ground, no floor shadow, no props other than those stated. Transparent background. No text, no letters, no numbers, no labels, no borders. The sheet shows the same man, King Hezekiah of Judah, about forty, short dark beard, a restrained plain gold circlet, a deep ember-red wool mantle over a linen robe with a belt, leather sandals. He is in strict side profile facing left in five key animation poses of one continuous action, left to right across the sheet, evenly spaced: 1. striding forward, both hands holding a long-handled heavy iron-headed hammer low at his side. 2. planting his feet and lifting the hammer up over his right shoulder. 3. at the top of the swing, back arched, hammer raised high behind his head, mantle lifting. 4. mid-swing, body driving forward, hammer coming down at shoulder height, mantle trailing behind him. 5. the moment of impact, arms fully extended forward and low, knees bent, weight forward, mantle flying. Character, costume, colors and proportions are identical in all five poses.",
+          "variant": "flare",
+          "quality": "high",
+          "resolution": "4k",
+          "aspect_ratio": "16:9",
+          "background": "transparent",
+          "count": 1
+        }
+      },
+      "intended_output": "Hezekiah five-pose sheet for the strike animation",
+      "quoted_credits": 4.25,
+      "quoted_at": "2026-11-03T05:02:54.191591+00:00",
+      "quote_source": "get_cost check"
+    }
+  ]
+}

@@ -2,3 +2,4 @@ asset_id,type,name,source,status,approved_by,credits,reuse_notes
 d7cbabfb-8600-4a08-84c1-6b03f5782525,audio,Hezekiah test voiceover (Gideon),Higgsfield job,reference only,not approved for release,2.76,Test script only. Not script v4. Use to judge the voice. Get its URL with jobs_wait.
 2c1dae11-d173-4afa-a92f-b1a94cf44804,video,Hezekiah Content Factory test,Higgsfield media library,reference only,not approved for release,0,31.6 s code-drawn test. Keep for comparison. Do not publish.
 bda02610-6e13-427b-bfff-3b3770ae2f4a,image,Frame from the Hezekiah test,Higgsfield media library,no further use,not approved for release,0,Uploaded only as the input for video cost checks.
+070a6e7d-5a8c-4b63-ad92-b28022320869,audio,Ink & Gold test voiceover (Gideon),Higgsfield job,reference only,test only - not for release,0.92,Labelled test line. Not script v4. Get its URL with jobs_wait.
