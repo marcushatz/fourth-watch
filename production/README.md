@@ -29,6 +29,18 @@ Fourth Watch is a faceless Christian educational channel that makes cinematic bi
 | 9 | Final assembly | `06` | Full edit in Higgsedit | Rendering is free. Any new paid art needs approval |
 | 10 | Quality control | `07` | Scorecard | All seven checks pass. Then Marcus decides. **Never publish automatically** |
 
+## The three creative approvals
+
+Inside these stages, work independently and don't interrupt Marcus for routine decisions.
+
+| Approval | His question | Covers |
+|---|---|---|
+| **1. Script** | Is the story genuinely worth watching? | Stage 3 |
+| **2. Visual direction** | Do the storyboard, characters, compositions and motion meet our standard? | Stages 5 to 7 |
+| **3. Final video** | Is the finished film ready to publish? | Stage 10 |
+
+Paid jobs still need separate approval under `GENERATION_APPROVAL.md`, however they're grouped.
+
 ## Identity and the look gate
 
 Fourth Watch has one recognizable identity, not one required appearance or technique. Each scene uses the visual language that serves it best: `01_brand_and_references.md`.
