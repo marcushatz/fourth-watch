@@ -66,6 +66,7 @@ Evidence: `ep02-bronze-serpent/reference_test_2026-11-02/EVALUATION.md`.
 | Pattern | Why |
 |---|---|
 | Content Factory for episodes | Replaced the approved script and allows only code-drawn art |
+| Content Factory as a scriptwriter | It has no writer. Its story step is one line telling the session running it to follow the reference (tested Nov 3) |
 | Code-drawn characters: round heads, dot eyes, tube arms | Marcus: childish |
 | Bell-shaped crowds | Identical pawns with no acting |
 | Sun disc behind a centred subject | About 23 of 32 sampled seconds. Simplistic and repetitive |

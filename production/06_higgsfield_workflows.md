@@ -19,7 +19,7 @@ Higgsedit is the primary assembly engine (Marcus, Nov 3), and code draws as much
 
 | Tool | Finding | Status |
 |---|---|---|
-| **Content Factory** | Built for "what-if" shorts. It takes a prompt, writes its own script, and forbids generated images, so every frame is drawn in code. Its own instructions exclude narrated explainers with AI-generated scenes | **Rejected for episodes** |
+| **Content Factory** | Built for "what-if" shorts. It takes a prompt, the session running it writes the script, and it forbids generated images, so every frame is drawn in code. Its own instructions exclude narrated explainers with AI-generated scenes | **Rejected for episodes** |
 | **Higgsedit** (assembly) | 949 frames at 1080×1920 rendered in about 3 minutes in an XL sandbox, with no credit charge. Handles timed captions, verse cards, shake and flash | **Approved for assembly** |
 | **Eleven v4** (voice) | 86-word take cost 2.76 credits. Word-for-word match on the first take | **Approved for tests.** The series voice isn't chosen |
 | **Faceless Video workflow** | Keeps a pasted script word for word. Locked to Seedream 5.0 Pro stills and MiniMax H3 clips in 10 s blocks. About 240 credits of video alone for script v4, above the current balance. It is automation-first and forbids hand assembly | Script-safe, but not the default |
