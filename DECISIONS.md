@@ -21,7 +21,7 @@ Last updated: Nov 3 (after Round 41).
 
 ## Waiting on Marcus (Nov 3, 2026)
 
-0. **The debut.** The doc "Fourth Watch: Debut Script" recommends the storm, `ep10-fourth-watch/writer/script_v3.md`, with Hagar right after it, `ep06-hagar/writer/script_v4.md`. Neither is locked. The Hagar line "it isn't a rule for anyone being hurt" needs his judgment.
+0. **The debut.** Marcus rejected the storm script v3 (Round 42), so the debut is open again. A writer comparison is under way in the doc "Fourth Watch: Writer Comparison". Hagar `ep06-hagar/writer/script_v4.md` is still an unlocked candidate, and he hasn't ruled on it.
 1. **Repo visibility:** GitHub still reported it as public on Nov 3. This session can't change repository settings, so Marcus has to switch it.
 2. **Puppet test and identity draft:** judge the 7 s test and `production/01_brand_and_references.md` from the proof frames.
 3. **Bronze Serpent story (paused):** the proposal is `ep02-bronze-serpent/writer/lifted_up_2026-11-03/candidate_v3.md`, with the reasoning in the doc "Bronze Serpent: Story Architecture". Unlocked. The calf candidate `candidate_r5.md` stays as it was. The storyboard waits for this decision.

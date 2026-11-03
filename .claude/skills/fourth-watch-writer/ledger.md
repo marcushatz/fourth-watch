@@ -39,7 +39,7 @@ Keep it short: one entry per verdict, Marcus's words quoted. Add an entry the da
 
 ## Nov 3, 2026: storm and Hagar scripts (candidates, not locked)
 - **Marcus on the Mary recommendation:** "distinguish a bad concept from a good concept that hasn't yet been executed well." The earlier drafts failed because of how they were written.
-- **What fixed the storm:** a plain detail in the text, Matthew 14:32, instead of a disputed reading.
+- **Storm script v3, rejected (Round 42):** "The ending feels small because the insight is small." A plain detail is not a revelation.
 - **What fixed Hagar:** two names given in Genesis 16 that come true in Genesis 21.
 
 ## Nov 3, 2026: debut script (superseded by the entry above)
