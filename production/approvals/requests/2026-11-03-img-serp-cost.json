@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-03-img-serp-cost",
+  "project": "fourth-watch",
+  "purpose": "Overnight Bronze Serpent film, session authorization (production/approvals/session_2026-11-02_overnight.md)",
+  "items": [
+    {
+      "kind": "cost_check",
+      "tool": "generate_image",
+      "input": {
+        "params": {
+          "model": "gpt_image_2_5",
+          "prompt": "Study sheet for a prestige 2D animated biblical short film. Hand-painted illustration with confident gouache brushwork, simplified planes, clean readable silhouettes and two-tone cel shading with soft painted edges. Mature and dignified. Realistic adult proportions about seven heads tall, small heads, long limbs, real hands with fingers, restrained faces shaped by light and shadow. Never cartoonish, never big eyes, not a children's book, not photorealistic, not 3D. Plain ancient Near Eastern dress in wool and linen, muted earth colors: umber, clay, ash, undyed wool. Warm low light from the left, cool blue-grey shadow on the right. Each subject is separated from the others by generous empty space, nothing overlapping, no ground, no props other than those stated. Transparent background. No text, no letters, no numbers, no labels, no borders. Match the reference images exactly in painting style, brushwork, level of finish, faces, costumes and color world. The sheet shows four subjects, left to right, evenly spaced, nothing touching: 1. a long desert viper seen from the side, stretched out horizontally in a gentle S-curve as if sliding across the ground, head at the right end, mouth closed, ember-red and burnt-orange scales with a darker ridge and small glowing coal-gold markings along its back, thick and dangerous, never cute. 2. the same viper coiled low with its head and neck raised and drawn back to strike toward the right, mouth closed, side view. 3. an adult man from the reference, plain wool tunic, fallen on the ground in side view, facing right, propped on one arm, head thrown back in pain, his other hand gripping his calf, no blood, no wound shown. 4. an adult woman from the reference, kneeling in side view facing right, bent forward in anguish, both hands reaching down and forward, as if to someone fallen who is not shown.",
+          "variant": "flare",
+          "quality": "high",
+          "resolution": "2k",
+          "aspect_ratio": "21:9",
+          "background": "transparent",
+          "count": 1,
+          "medias": [
+            {
+              "value": "aa568650-ebda-4c37-8837-e7de67d85498",
+              "role": "image_references"
+            },
+            {
+              "value": "8fa4eb0e-e1f8-425d-af17-da451aa1bb86",
+              "role": "image_references"
+            },
+            {
+              "value": "c3aef7e5-369c-4033-9ddf-d35352a275d2",
+              "role": "image_references"
+            }
+          ],
+          "get_cost": true
+        }
+      },
+      "intended_output": "Free price check: fiery serpent and fallen figures sheet"
+    }
+  ]
+}
