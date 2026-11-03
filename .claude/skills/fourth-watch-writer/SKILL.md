@@ -63,6 +63,8 @@ Marcus's standing rules live in `research/feedback_rules.md` (the Rounds). They 
 
 Each stage ends at a **gate**. A script cannot move on until its gate passes. Record the gate results in the episode folder: `ep*/writer/` holds `dossier.md`, `angles.md`, `argument.md`, `drafts/`, `review.md`.
 
+**Start here (Round 39).** Before Stage 1, fill in the idea card from `production/10_creative_decisions.md`. A story starts with a person and a feeling. Where the rules below ask for more discoveries, retelling limits or a new fact every few seconds, the card and Round 39 win: at most three discoveries, each of which has to change the feeling.
+
 ### Stage 0. Load (5 minutes, cheap)
 - Read `ledger.md`, the gold standard, and the latest 3 Rounds of `research/feedback_rules.md`.
 - If Marcus gave a topic, write it down in his words. If he gave a script ("approved"), this skill does not rewrite it. Only flag factual errors, with the evidence (gold rule from his Bronze Serpent brief).
@@ -77,7 +79,7 @@ Read the passages yourself, in the ESV: whole chapters, not proof-texts. Then se
 **Gate 1 (Topic worth it?).** All must hold, or you stop and pick another topic:
 - [ ] The question is about a named person, object or event, in the third person, and fits in ≤ 12 words.
 - [ ] The common answer is incomplete, wrong, or missing the part that matters.
-- [ ] At least 4 candidate discoveries exist that a church-raised 25-year-old probably doesn't know.
+- [ ] At least 2 or 3 strong discoveries exist that a church-raised 25-year-old probably doesn't know.
 - [ ] They sit on ONE thread (one object, one person, one phrase or one problem), not a scatter.
 - [ ] It isn't a Lintel topic (`reference/lintel_lessons.md`) and isn't in `ledger.md` as rejected.
 

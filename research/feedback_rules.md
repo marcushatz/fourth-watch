@@ -411,3 +411,21 @@ Rules:
 - **Suspense isn't delay.** Answer early, and hold back only what is really new.
 - **The strongest discovery comes last.**
 - **No script is preserved by default.** Earlier lines stay only if they serve the new chain.
+
+## Round 39 (Nov 3, 11:09 to 11:17): emotion, value and the debut
+His words: "We're spending enormous effort finding obscure biblical details, clever comparisons, Hebrew word connections, and intellectually interesting observations. But I want every Fourth Watch video to deliver extraordinary value to the viewer, not simply interesting information." "A viewer should leave every Fourth Watch video having learned something meaningful AND experienced something worth remembering." "Our mission is not to make viewers think, 'That was an interesting Bible fact.' Our mission is to make them think, 'I never realized that. That was incredible. I want to watch another.'" "A simple story told exceptionally well can be more powerful than seven obscure biblical connections." "sharing a Hebrew word doesn't prove an intentional connection between the passages." "AI reviewers are useful, but they aren't substitutes for real audiences." "Our goal is not to replicate the surface characteristics of successful Shorts. It is to understand the creative decisions that make those stories worth watching, remembering, sharing, and returning for."
+
+Rules:
+- **Start from a meaningful human question, conflict or struggle,** not from an obscure detail.
+- **Intellectual depth serves the emotional and narrative experience.** It doesn't replace it.
+- **Every episode has a deliberate emotional destination.**
+- **Two or three discoveries that build,** not a collection of references.
+- **A shared word never carries a climax.**
+- **Don't assume longer or more complicated scripts add value.** He's comfortable with 2 minutes only if the story justifies it.
+- **Plant a character early if their return is the payoff.**
+- **Every idea passes the idea card before a script** (`production/10_creative_decisions.md`).
+- **Test: would someone who already knows the familiar point still be surprised, taught and rewarded?**
+- **Never manufacture emotion, invent details or exaggerate theological claims.**
+- **Real viewer data improves these decisions once we publish.**
+- **No extra approval checkpoints or engineering complexity.**
+- **Bronze Serpent is paused** while the debut is decided. No credits.

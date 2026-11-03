@@ -18,7 +18,8 @@ Fourth Watch is a faceless Christian educational channel that makes cinematic bi
 
 | # | Stage | Read | Output | Gate |
 |---|---|---|---|---|
-| 1 | Research | `02_biblical_accuracy.md`, `system/01` | Verified notes | Topic picked by Marcus |
+| 1 | Idea | `10_creative_decisions.md` | Idea card and two-track outline | Scores 28 of 35 or more. Runs automatically |
+| 1b | Research | `02_biblical_accuracy.md`, `system/01` | Verified notes | Topic picked by Marcus |
 | 2 | Script | `03_script_and_narration.md`, the writer skill | Script with its one-sentence message | Checks pass |
 | 3 | Approval | `03` | `script_approved*.md` | **Marcus approves. The script locks.** |
 | 4 | Voiceover | `03`, `GENERATION_APPROVAL.md` | One take, word timings | **Paid: approval first.** Take matches the script word for word |
@@ -75,6 +76,7 @@ Once a look is approved, later episodes reuse it and skip this gate.
 | `07_quality_control.md` | The seven-part scorecard |
 | `08_costs_and_assets.md` | Budgets, ledgers and reusable assets |
 | `09_approved_and_rejected.md` | What has worked and what has failed |
+| `10_creative_decisions.md` | How an idea earns production, and how real results update that |
 | `ledger/` | The generation log and the asset register |
 | `approvals/` | Exact job requests, and the temporary record the hook reads |
 
