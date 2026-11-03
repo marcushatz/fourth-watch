@@ -32,6 +32,11 @@ Keep it short: one entry per verdict, Marcus's words quoted. Add an entry the da
 - **The new spine:** the known link moves to the midpoint. Isaiah, the seraph payoff and John's "look" come after it.
 - **What the AI reads taught us, not audience evidence:** a hook question must be answered in its own terms, not swapped for a neighbouring question. A plant needs a promise when it's planted and a meaning when it pays off.
 
+## Nov 3, 2026: debut comparison (nothing approved)
+- **Why:** Round 39. Stories start with a person and a feeling.
+- **Proofs:** Hagar (recommended), Mary Magdalene, Abraham, Lazarus.
+- **What AI reads taught us, not audience evidence:** quote a hard verse in full; never promise what the text doesn't; test grief stories on someone grieving.
+
 ## Lessons (standing)
 1. **Thread first.** One object, person, phrase or problem; every book on the thread.
 2. **Each discovery must change the meaning of the last.** If two could swap places, the script is a list.
@@ -43,3 +48,4 @@ Keep it short: one entry per verdict, Marcus's words quoted. Add an entry the da
 8. **Plant early and pay off on the final revelation.** Set up a simple idea in the middle that only the ending completes.
 9. **Answer the question you asked.** If the hook asks why, the ending must answer that why.
 10. **A word echo needs content.** Show what happens at the second use, or it only sounds deep.
+11. **Choose the person before the detail.** If nobody in the story stands to lose anything, the idea isn't ready.

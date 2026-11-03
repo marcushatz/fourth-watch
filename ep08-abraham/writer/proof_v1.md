@@ -3,7 +3,7 @@ series: ASK THE TEXT
 target_seconds: 90
 answer: "Do not lay your hand on the boy." God never meant Isaac to die.
 
-<!-- Proof of concept, Nov 3 2026, for the debut comparison. Not a locked script and not approved. -->
+<!-- Proof of concept, Nov 3 2026. Not approved and not recommended for the debut. Known fixes: "in that same city" is wrong (John 19:20, near the city); quote 22:8 and 22:12 in full; Moriah identity is disputed. -->
 
 ## Hook
 VO: Why would God ask a father to kill his son? [Genesis 22:2]

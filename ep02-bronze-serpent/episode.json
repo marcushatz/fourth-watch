@@ -2,7 +2,7 @@
  "episode": "ep02-bronze-serpent",
  "updated": "2026-11-03",
  "role": "pilot for the planned /fourth-watch-create skill, which doesn't exist yet",
- "stage": "story: new narrative architecture waiting for Marcus (Round 38). Storyboard paused",
+ "stage": "paused by Marcus while the debut is decided. No production and no credits",
  "scripts": {
   "locked": [
    "script_approved_v4.md",
@@ -64,13 +64,11 @@
   "paid_jobs_approved_now": []
  },
  "next": [
-  "Marcus decides on the Lifted Up story: subject, spine, runtime.",
-  "If he accepts it, revise visual_brief.md, which was written for r5.",
-  "Then a free storyboard for the opening. CLAUDE.md says nothing is animated until he approves a storyboard, so an animatic needs his OK first.",
-  "Narration, music and paid generation wait until after that milestone."
+  "Marcus chooses the debut. See the doc \"Fourth Watch: Creative Decisions and Debut\".",
+  "If Bronze Serpent returns, start from writer/lifted_up_2026-11-03/v4_notes.md and revise visual_brief.md."
  ],
  "waiting_on_marcus": [
-  "Story architecture and the Lifted Up proposal",
+  "Debut decision",
   "Puppet test verdict",
   "Identity proof verdict",
   "Repo visibility: GitHub reported public on Nov 3"

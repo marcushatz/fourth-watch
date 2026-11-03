@@ -4,6 +4,19 @@ Add an entry after every test or episode, with its evidence. Newest first.
 
 Status words: **Approved** means Marcus accepted the result. **Keep** means it worked technically or showed promise, but he hasn't approved the final form. **Rejected** means don't repeat it.
 
+## From the debut study (Nov 3, 2026)
+
+Evidence: `research/creative_study_2026-11-03/`. AI readers aren't an audience.
+
+### Rejected
+
+| Pattern | Why |
+|---|---|
+| A word echo as the climax | Marcus: "sharing a Hebrew word doesn't prove an intentional connection" |
+| Paraphrasing a hard verse | AI readers called "He tells her to go back" dishonest, because it dropped "and submit to her" |
+| An ending that promises what the text doesn't | An AI reader playing a grieving son on Lazarus: "My dad stayed dead." |
+| Arguing with the viewer in the last 10 seconds | "Nobody inventing this story" read as smug |
+
 ## From the film and puppet test (Nov 3, 2026)
 
 Evidence: `ep02-bronze-serpent/film_2026-11-03/README.md` and `ep02-bronze-serpent/source/README.md`.

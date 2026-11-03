@@ -3,7 +3,7 @@ series: ASK THE TEXT
 target_seconds: 90
 answer: She is the one who stayed.
 
-<!-- Proof of concept, Nov 3 2026, for the debut comparison. Not a locked script and not approved. -->
+<!-- Proof of concept, Nov 3 2026. Not approved. Known fixes: John never says "first" and Mark 16:9 is in the longer ending; only the other disciple stooped to look in; Luke 24:11 is about the women as a group; John gives no reason for choosing her; cut "nobody inventing this". -->
 
 ## Hook
 VO: Why did Jesus appear first to Mary Magdalene? [John 20:14] [John 20:16]
