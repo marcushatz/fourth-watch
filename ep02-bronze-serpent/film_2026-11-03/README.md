@@ -27,6 +27,7 @@ It opens on the hammer blow, frozen with the pieces in the air. "Rewind" runs it
 
 - **Film:** Higgsfield media `dbc24194-0c54-4f00-9d9c-7bca92effd07`. 1080x1920, 30 fps, 58.7 s, 116 MB, -13.9 LUFS, -1.0 dB peak.
 - **Source:** Higgsfield file `33a08729-3fde-46e7-87f9-1e185596ecd0` (144 MB zip): edit scripts, shaders, sprites, final plate, voice, mix and fonts.
+- **Code:** now also in `../source/`, matched by SHA-256. Resume steps are in `../source/README.md`.
 
 ## Spend and time
 

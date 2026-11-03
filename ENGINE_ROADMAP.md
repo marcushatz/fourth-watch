@@ -1,3 +1,5 @@
+> **Archived Nov 3, 2026.** The current goal and plan are in `production/README.md`. This kit is a source of parts, not the path forward.
+
 # Engine roadmap: ONE prompt → a post-ready reel (Marcus, Nov 1 10:57)
 
 **The goal:** Marcus types one prompt ("make a video about why Esau is hated more than Jacob") and gets back a finished reel ready to post. The pieces below exist only to serve that.

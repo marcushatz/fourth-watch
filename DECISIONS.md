@@ -2,7 +2,7 @@
 
 **Use this when** Marcus is back. Every open choice is here with the exact wording to approve, the evidence and a recommendation. When he decides, record it as a new round in `research/feedback_rules.md` and update the file it names.
 
-Last updated: Oct 31, 23:15 local (after Round 19).
+Last updated: Nov 3, 10:30 local (after Round 37).
 
 **About the evidence:**
 - **"Simulated viewers" are AI agents** role-playing a first-time viewer. They can flag confusion and slow, preachy or unclear lines. They can't tell us retention, swipes or sharing; only real posts can.
@@ -10,6 +10,20 @@ Last updated: Oct 31, 23:15 local (after Round 19).
 - **"Judges" are AI agents** too: three per run, blind, each scoring our script beside 9 Lintel reels with known views (`tools/script_judge/rubric.md`). They agree with each other and repeat themselves, but **their scores don't predict views**: the 7.6M Lintel hit got 5/10 from all 15 judges. Read their verdict as "as well built as the best Lintel reel", never as "will perform".
 
 ---
+
+## Decided by Marcus (Nov 3, Round 37)
+
+- Phase 0 of the one-idea system is approved at no credit cost.
+- Higgsedit is the primary assembly engine, and other tools remain available.
+- The hybrid visual philosophy is approved, as creative judgment rather than rigid rules.
+- The revised Bronze Serpent script stays unlocked for now.
+- Narration, music and paid generation wait for the next meaningful production milestone.
+
+## Waiting on Marcus (Nov 3, 2026)
+
+1. **Repo visibility:** GitHub still reported it as public on Nov 3. This session can't change repository settings, so Marcus has to switch it.
+2. **Identity draft:** judge `production/01_brand_and_references.md` from the proof frames.
+3. **Bronze Serpent narration:** `ep02-bronze-serpent/writer/calf_2026-11-03/candidate_r5.md`, unlocked.
 
 ## Decided by Marcus (Nov 2, Round 33)
 
@@ -22,7 +36,6 @@ Last updated: Oct 31, 23:15 local (after Round 19).
 ## Waiting on Marcus (Nov 2, 2026)
 
 1. **Visual comparison:** two stills, 4.75 credits in total, leaving 92.49 of 97.24. Prompts: `ep02-bronze-serpent/art_direction/comparison_2026-11-02.md`. **Nothing runs without his approval.**
-2. **Repo visibility:** GitHub still reports it as public. This session can't change repository settings, so Marcus has to switch it.
 3. **Series narrator:** Gideon on Eleven v4 was only a test. Decisions 9 and 16 below are still open. Check the terms for voices made through Higgsfield before release.
 4. **Caption disclosure:** "Animation drawn in code" must change if AI art is used.
 5. **Testimony preset:** the structure exists, but its creative rules are blank until Marcus sets them. Its safeguards are proposals (`presets/christian-testimonies/PRESET.md`).

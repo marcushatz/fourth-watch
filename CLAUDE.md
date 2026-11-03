@@ -47,7 +47,7 @@ Never post, publish, schedule or upload to a social platform. Marcus posts.
 
 1. `production/README.md`: the production system.
 2. `DECISIONS.md`: what's waiting for Marcus.
-3. The episode folder's script and run sheet.
+3. The episode folder's script, run sheet and `episode.json`.
 4. `production/09_approved_and_rejected.md`: what has already worked and failed.
 
 Commit and push only when Marcus asks. Marcus wants this repo private. Treat it as public until GitHub confirms the change. Keep keys and personal details out of it. Client testimony material never goes here.

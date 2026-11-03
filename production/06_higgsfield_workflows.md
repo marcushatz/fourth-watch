@@ -13,7 +13,7 @@ Approved script → voice take → storyboard
 → image-to-video only for a few hero shots, if a test earns it
 ```
 
-This route fits a 2.5D look. A premium 3D look would rely on image-to-video for most shots. Choose the final route after the visual decision. Either way, it stays a hypothesis until paid tests are reviewed.
+Higgsedit is the primary assembly engine (Marcus, Nov 3), and code draws as much as quality allows. Generated art or video is used when it materially improves a scene, with approval. Other tools are welcome when they produce a better result.
 
 ## Tool findings
 

@@ -4,6 +4,26 @@ Add an entry after every test or episode, with its evidence. Newest first.
 
 Status words: **Approved** means Marcus accepted the result. **Keep** means it worked technically or showed promise, but he hasn't approved the final form. **Rejected** means don't repeat it.
 
+## From the film and puppet test (Nov 3, 2026)
+
+Evidence: `ep02-bronze-serpent/film_2026-11-03/README.md` and `ep02-bronze-serpent/source/README.md`.
+
+### Keep: methods
+
+| Method | Evidence |
+|---|---|
+| Separate world plates from composites | A 7 s composite rendered in 87 s after a 9 min plate |
+| Jointed puppet with feet planted by distance walked | Walk, stop, weight shifts, reach and pole grip held across 7 s |
+| Stones locked to the camera in front of and behind the figure | The figure reads as inside the world. Marcus hasn't reviewed it yet |
+| Real ground heights in the pose file | Feet follow the rise toward the pole |
+
+### Rejected
+
+| Pattern | Why |
+|---|---|
+| A rigid medium table | Marcus: "I want genuine creative judgment." |
+| Painted sprites acting by pose swaps | Marcus: "illustrated cutouts placed into 3D environments" |
+
 ## From the Bronze Serpent test (Nov 2, 2026)
 
 Evidence: `ep02-bronze-serpent/reference_test_2026-11-02/EVALUATION.md`.

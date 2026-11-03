@@ -1,5 +1,7 @@
 # Fourth Watch: the production system
 
+> **Nov 3, 2026:** start every job at `production/README.md`, the single entry point. It says which guides below are still live.
+>
 > **Nov 2, 2026:** visual production and all Higgsfield work now follow `production/README.md`. Nothing paid runs without Marcus's explicit approval (`production/GENERATION_APPROVAL.md`). Standing instructions are in `CLAUDE.md`. Where this page disagrees on visuals or order of work, those files win.
 
 **What this is:** everything needed to make a Fourth Watch reel that holds viewers, tells the story well, looks and sounds right, and is accurate to the ESV. Start here. Every stage has one file. Every file says when to use it.

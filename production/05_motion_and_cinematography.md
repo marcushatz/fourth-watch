@@ -13,6 +13,19 @@ Each scene must advance the viewer's understanding, not merely decorate narratio
 - A diagram or line that builds.
 - A change of light that carries the meaning.
 
+## Choosing the visual language
+
+Choose each moment's language the way a director would, from what the moment needs. These are starting points, not rules, and a stronger idea overrules any of them:
+
+- People acting in a place often want illustrated animation.
+- Depth, place and mood often want layered 2.5D.
+- Weight, material and light often want stylized 3D.
+- Relationships and arguments often want motion graphics.
+- Exact wording as evidence often wants kinetic type.
+- The most memorable moments often combine them.
+
+Don't use 3D merely because it looks impressive, and don't use 2D merely because it's easier. A change of language should mean something, and the shot on either side should feel connected.
+
 ## Storyboard requirements
 
 Every storyboard row needs:
@@ -27,6 +40,7 @@ Every storyboard row needs:
 | Motion | What changes, and on which word |
 | Type | Which text appears |
 | Fidelity | Text, staging or symbolic |
+| Language | The visual language chosen, and why it serves this moment |
 | Asset | Reused or new, with the cost if new |
 
 Before asking for approval, critique each sequence, revise it, and name the hardest shots.

@@ -4,7 +4,11 @@
 
 **Scope:** Fourth Watch only. Other kinds of video use `presets/`.
 
-**What it replaces:** the visual and animation stages of the older system. The `system/` guides still govern topic, script, review, publishing and growth. Where they disagree on visuals or order of work, this folder wins. `research/feedback_rules.md` wins over everything.
+**Single entry point:** start every Fourth Watch job here. Where an older guide disagrees with this folder, this folder wins. `research/feedback_rules.md` wins over everything.
+
+**The goal (Marcus, Nov 3):** one idea becomes one exceptional video through one reusable skill. The benchmark is whether the film can compete with the channels we study, not whether the automation ran.
+
+**Priorities, in order:** creative intelligence, visual excellence, production efficiency.
 
 ## The brand in one line
 
@@ -25,7 +29,9 @@ Fourth Watch is a faceless Christian educational channel that makes cinematic bi
 | 9 | Final assembly | `06` | Full edit in Higgsedit | Rendering is free. Any new paid art needs approval |
 | 10 | Quality control | `07` | Scorecard | All seven checks pass. Then Marcus decides. **Never publish automatically** |
 
-## The look gate
+## Identity and the look gate
+
+Fourth Watch has one recognizable identity, not one required appearance or technique. Each scene uses the visual language that serves it best: `01_brand_and_references.md`.
 
 Before a new look is used, this runs between stages 3 and 5:
 
@@ -39,7 +45,9 @@ Before a new look is used, this runs between stages 3 and 5:
 
 Once a look is approved, later episodes reuse it and skip this gate.
 
-**Current state:** no look is approved. Marcus is comparing cinematic illustrated 2.5D with premium stylized 3D, using one Bronze Serpent frame: `ep02-bronze-serpent/art_direction/comparison_2026-11-02.md`. Stills run only with his approval. This system must work with either style.
+**Current state (Nov 3):** the hybrid approach is approved, and the identity draft in `01` is waiting for Marcus to judge it from proof frames. Stills that cost credits run only with his approval.
+
+**Assembly:** Higgsedit is the primary engine. Other tools are welcome when they produce a better result.
 
 ## Files
 
@@ -57,6 +65,24 @@ Once a look is approved, later episodes reuse it and skip this gate.
 | `09_approved_and_rejected.md` | What has worked and what has failed |
 | `ledger/` | The generation log and the asset register |
 | `approvals/` | Exact job requests, and the temporary record the hook reads |
+
+## Episode state and source
+
+- **`<episode>/episode.json`:** where the episode stands, what's locked, the assets and the next step. Read it before resuming.
+- **`<episode>/source/`:** the code for its films and tests. Heavy media stays in Higgsfield, listed by ID in `episode.json`.
+- **Pilot:** `ep02-bronze-serpent/`. Resume steps are in `ep02-bronze-serpent/source/README.md`.
+
+## Which older guides still apply
+
+| Guides | Status |
+|---|---|
+| `system/00`, `01`, `10`; `research/`; `prompts/`; `templates/`; `tools/script_judge/`; `fw_check.py` | Live |
+| `system/02`, `03` | Live, with the writer and script review skills |
+| `system/04`, `08` | Live for craft and checks. Tool routes follow `06` |
+| `system/05`, `06`, `06b`, `06c`, `07`, `13` | Live for craft. Their film27 commands are retired |
+| `system/09` | Live for checks. Its render route is retired |
+| `system/11` | Live as history |
+| `system/12`, `ENGINE_ROADMAP.md`, `engine/`, `engine_lab/`, `ep01-samson/film27/` | Archive. Mine for parts, don't build on them |
 
 ## How this system stays current
 
