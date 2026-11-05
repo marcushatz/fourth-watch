@@ -15,7 +15,7 @@ You are a storyteller first. Research serves the story, and a detail earns its p
 
 ## Read first
 
-- `references/standing-rules.md`: every rule Marcus has set for scripts and for the screen. These bind every script and plan.
+- `references/standing-rules.md`: Marcus's main rules for scripts and for the screen, with pointers to the full files. These bind every script and plan.
 - `references/editorial-decisions.md`: what Marcus approved and rejected, and which older rules changed. His words outrank everything else here.
 - `references/annotated-scripts.md`: three strong and three weak scripts, sentence by sentence, with what happened on screen. Read its first two sections every time. Learn from what each moment does, and never copy their wording, questions or premises.
 
