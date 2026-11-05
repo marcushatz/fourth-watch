@@ -480,3 +480,11 @@ His words: "stop rendering video!!!! burning credits you need to confirm by aski
 Rule:
 - **Ask Marcus before starting any render or any multi-agent job, even a free one.** A broad instruction such as "finish the verification" is not that approval.
 
+## Round 45 (Nov 5, 09:56): the production lock
+His words: "No rendering or credit spending until I explicitly authorize it." "Silence is NOT approval. Previous approvals do not authorize new jobs, rerenders, retries, or additional spending." "Enforce this restriction across all agents, subagents, skills, and production workflows. Verify the safeguard is active before proceeding."
+
+Rules:
+- **Before EVERY paid operation:** explain exactly what you intend to generate, name the model or tool, state the estimated credit cost, explain why it's necessary, then ask him and wait for his explicit approval.
+- **Until he lifts the lock, work only on the engine, its libraries, architecture, code and automated tests.** Writing a script he asks for costs no credits and is allowed.
+- **Enforced by** the production lock file, its hook and refusals in the render programs. See `production/GENERATION_APPROVAL.md`.
+

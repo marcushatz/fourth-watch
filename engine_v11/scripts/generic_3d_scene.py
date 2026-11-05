@@ -201,6 +201,7 @@ def export(cfg,output,fps=12,width=360,height=640,contact=None):
 
 
 def main():
+    from render_lock import require_unlocked;require_unlocked()
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('source');p.add_argument('--out',required=True);p.add_argument('--contact');p.add_argument('--fps',type=int,default=12)
     a=p.parse_args();cfg=json.loads(Path(a.source).read_text());print(json.dumps(export(cfg,a.out,a.fps,contact=a.contact)))

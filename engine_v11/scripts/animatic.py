@@ -98,6 +98,7 @@ def render(shot,frame,fps,episode):
     return im
 
 def main():
+    from render_lock import require_unlocked;require_unlocked()
     p=argparse.ArgumentParser();p.add_argument('shotplan');p.add_argument('--out',default='outputs/animatic.mp4');p.add_argument('--fps',type=int,default=12);p.add_argument('--limit-s',type=float,default=None)
     args=p.parse_args();episode=load(args.shotplan);errors,warnings=inspect(episode)
     if errors:raise SystemExit('Invalid shotplan: '+'; '.join(errors))

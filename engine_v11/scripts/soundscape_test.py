@@ -55,6 +55,7 @@ def generate(plan, sample_rate=48000):
     return np.asarray(sound*32767,dtype='<i2').tobytes(),all_hits,dur,float(np.max(np.abs(sound)))
 
 def main():
+    from render_lock import require_unlocked;require_unlocked()
     p=argparse.ArgumentParser();p.add_argument('shotplan');p.add_argument('--out',required=True);p.add_argument('--cue-sheet');a=p.parse_args()
     plan=load(a.shotplan);audio,cues,duration,peak=generate(plan)
     path=Path(a.out);path.parent.mkdir(parents=True,exist_ok=True)

@@ -44,6 +44,8 @@ def main():
     p.add_argument('shotplan');p.add_argument('--out',required=True);p.add_argument('--claims');p.add_argument('--fps',type=int,default=12)
     p.add_argument('--dry-run',action='store_true')
     a=p.parse_args()
+    if not a.dry_run:
+        from render_lock import require_unlocked;require_unlocked()
     if not 6<=a.fps<=30: p.error('preview fps must be in 6..30')
     try:r=execute(a.shotplan,a.out,a.claims,a.dry_run,a.fps)
     except Exception as e:print('PREVIEW FAIL:',e,file=sys.stderr);return 2

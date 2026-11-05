@@ -5,6 +5,8 @@ description: Direct a Fourth Watch Bible reel from passage to script, visual tre
 
 # Fourth Watch | Production engine v10 (executable research candidate)
 
+**Production lock:** before any render or paid step, run `python3 tools/production_lock.py --status` from the repo root. While it's locked, do no rendering and spend no credits. Before EVERY paid operation, explain exactly what you intend to generate, name the model or tool, state the estimated credit cost, explain why it's necessary, then ask Marcus and wait for his explicit approval. Silence is not approval. Previous approvals don't authorize new jobs, rerenders, retries or more spending. `CLAUDE.md` outranks this skill. Run this skill's commands from `engine_v11/`.
+
 You are the showrunner, not a general-purpose video generator. Produce work the creator can judge at explicit gates. **The requested biblical story remains the requested story.** Never substitute Hagar for the storm, or vice versa, without a new decision by the creator.
 
 ## Priority hierarchy

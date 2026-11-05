@@ -1,0 +1,8 @@
+{
+  "locked": true,
+  "set_at": "2026-11-05T09:56:00-05:00",
+  "set_by": "Marcus",
+  "his_words": "No rendering or credit spending until I explicitly authorize it.",
+  "scope": "All rendering and all paid or generating Higgsfield tools, for every session, agent, subagent, skill and workflow.",
+  "how_to_lift": "Only Marcus can lift this, in his own words in the current conversation. A main session then sets locked to false with its Edit tool and records his exact words and the time in this file. Subagents can never change it."
+}

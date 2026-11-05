@@ -5,6 +5,8 @@ try:
     import numpy as np
     sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
     from generic_3d_scene import GenericScene,check_scene,interpolate,GenericSheep
+    from render_lock import locked
+    if locked():GenericScene=None  # no rendering while Marcus's production lock is on
 except ImportError:
     GenericScene=None
 

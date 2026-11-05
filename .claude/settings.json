@@ -2,6 +2,15 @@
   "hooks": {
     "PreToolUse": [
       {
+        "matcher": "mcp__.*[Hh]iggsfield.*|Bash|Write|Edit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/tools/production_lock.py\""
+          }
+        ]
+      },
+      {
         "matcher": "mcp__.*[Hh]iggsfield.*",
         "hooks": [
           {

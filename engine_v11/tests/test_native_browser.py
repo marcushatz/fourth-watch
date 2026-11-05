@@ -50,6 +50,10 @@ class InstalledBridge(unittest.TestCase):
         self.assertIn('score.js', html)
 
 
+from render_lock import locked
+
+
+@unittest.skipIf(locked(), "no rendering while Marcus's production lock is on")
 @unittest.skipUnless(FILM.is_dir() and Path(CHROME).exists() and shutil.which('node'), 'Chrome or film27 missing')
 class NativeRender(unittest.TestCase):
     @classmethod

@@ -26,6 +26,15 @@ const ROOT = process.cwd();
 const OUT = path.join(ROOT, 'out');
 // global flags (before score.js loads, because --format changes its layout)
 const RAW_ARGS = process.argv.slice(2);
+// Marcus's production lock. Only applies in the repo's own film27; a missing or unreadable lock file counts as locked.
+{
+  const lock = path.resolve(__dirname, '..', '..', '..', 'production', 'PRODUCTION_LOCK.json');
+  if (fs.existsSync(path.dirname(lock))) {
+    let open = false;
+    try { open = JSON.parse(fs.readFileSync(lock, 'utf8')).locked === false; } catch (e) { /* locked */ }
+    if (!open) { console.error('BLOCKED by the production lock: Marcus has stopped all rendering. Ask him first.'); process.exit(3); }
+  }
+}
 const flagVal = (name) => { const i = RAW_ARGS.indexOf(name); return i >= 0 ? RAW_ARGS[i + 1] : null; };
 if (flagVal('--format')) process.env.ANIM_FORMAT = flagVal('--format');
 if (flagVal('--style')) process.env.ANIM_STYLE = flagVal('--style');

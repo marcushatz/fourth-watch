@@ -12,6 +12,9 @@ try:
     import vtk
     sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
     from vtk_story_renderer import Render
+    from render_lock import locked
+    if locked():
+        Render = None  # no rendering while Marcus's production lock is on
 except ImportError:
     Render = None
 

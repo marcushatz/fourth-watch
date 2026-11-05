@@ -173,6 +173,7 @@ def compose(shot,t,frame,fps):
     return im
 
 def main():
+    from render_lock import require_unlocked;require_unlocked()
     p=argparse.ArgumentParser();p.add_argument('plan');p.add_argument('--out',default='outputs/storm_cinematic_test.mp4');p.add_argument('--fps',type=int,default=12);p.add_argument('--limit-s',type=float)
     a=p.parse_args();plan=load(a.plan);errors,_=inspect(plan)
     if errors:raise SystemExit('invalid plan '+repr(errors))

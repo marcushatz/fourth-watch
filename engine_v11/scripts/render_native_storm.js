@@ -39,7 +39,15 @@ const shot = (page, t, fmt, scale) => page.evaluate(([a, b, c]) => window.render
 const bytes = (url) => Buffer.from(url.slice(url.indexOf(',') + 1), 'base64');
 const opt = (name, d) => { const i = process.argv.indexOf('--' + name); return i > 0 ? Number(process.argv[i + 1]) : d; };
 
+function requireUnlocked() {
+  const lock = path.resolve(__dirname, '..', '..', 'production', 'PRODUCTION_LOCK.json');
+  let open = false;
+  try { open = JSON.parse(fs.readFileSync(lock, 'utf8')).locked === false; } catch (e) { /* missing or unreadable counts as locked */ }
+  if (!open) { console.error('BLOCKED by the production lock: Marcus has stopped all rendering. Ask him first.'); process.exit(3); }
+}
+
 async function main() {
+  requireUnlocked();
   const [mode, out, ...rest] = process.argv.slice(2), log = [];
   const srv = await serve(), port = srv.address().port, scale = opt('scale', 1);
   if (mode === 'stills' || mode === 'frames') {

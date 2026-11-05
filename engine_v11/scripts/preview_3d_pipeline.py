@@ -149,6 +149,7 @@ def build(plan_file, out_folder, claims_file=None, fps=12, existing_video=None):
 
 
 def main():
+    from render_lock import require_unlocked;require_unlocked()
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('plan');p.add_argument('--out',required=True);p.add_argument('--claims')
     p.add_argument('--fps',type=int,default=12);p.add_argument('--existing-video')

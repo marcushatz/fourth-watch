@@ -4,6 +4,12 @@
 
 This applies to every project in the repository, including Fourth Watch and any production preset.
 
+**The production lock comes first.** While `production/PRODUCTION_LOCK.json` is locked, no paid job, cost check or render can run, even with an approval on file. Marcus lifts it in his own words in the conversation. Lifting it approves nothing by itself.
+
+**Before EVERY paid operation:** explain exactly what you intend to generate, name the model or tool, state the estimated credit cost, explain why it's necessary, then ask him and wait for his explicit approval. Silence is not approval. Previous approvals don't authorize new jobs, rerenders, retries or more spending.
+
+**What enforces this:** `tools/production_lock.py` runs before tool calls, for the main session and subagents, and the render programs refuse to start while locked. It needs the hook in `.claude/settings.json`. A session started above the repo loads it only from `/home/claude/.claude/settings.json`, so test the hook at the start of a session: `node engine_v11/scripts/render_native_storm.js stills /tmp/probe 1` must report "BLOCKED by the production lock: this command renders or encodes video". The render programs' own refusal says "Ask him first" instead, which means the hook did not load.
+
 Written after the Nov 2 audit. A session ran a Content Factory test, then ran 22 free cost checks after Marcus had said to stop paid generation. Nothing was charged, but the calls looked identical to real generation. See `production/ledger/generation_log.csv`.
 
 ## The approval file is not approval

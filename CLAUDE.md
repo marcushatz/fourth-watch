@@ -4,10 +4,14 @@ These rules bind every session in this repository. Marcus's own rules in `resear
 
 ## 1. The generation gate (never cross it)
 
+**The production lock is on (Marcus, Nov 5). No rendering or credit spending until he explicitly authorizes it.** This covers every session, agent, subagent, skill and workflow. `python3 tools/production_lock.py --status` shows the state. Only his own words in the current conversation lift it. Subagents can never change it.
+
 **No Higgsfield or other paid generation without Marcus's explicit approval of that exact job in the current conversation.**
 
 - Follow `production/GENERATION_APPROVAL.md` every time.
-- Before every paid call, report the model, the intended output, the credit cost and the remaining balance. Then stop and wait.
+- Before EVERY paid operation: (1) explain exactly what you intend to generate, (2) name the model or tool, (3) state the estimated credit cost, (4) explain why it's necessary, (5) ask him and wait for his explicit approval. Include the remaining balance.
+- Silence is not approval. Previous approvals don't authorize new jobs, rerenders, retries or more spending.
+- Ask before any render or multi-agent job, even a free one.
 - A previous approval, a prompt that names a tool, or a word like "continue" is not approval.
 - **The approval file is only a record.** It never replaces Marcus's words. If he hasn't approved the job in this conversation, don't write the file and don't run the job.
 - One approval covers one exact job, once: the same model, prompt, resolution, quality, duration, count and references. Any change needs a new approval.

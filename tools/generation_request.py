@@ -16,6 +16,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from generation_gate import APPROVAL, fingerprint, normalize  # noqa: E402
+from production_lock import locked as production_locked  # noqa: E402
 
 PROJECTS = {"fourth-watch", "christian-testimonies"}
 VALID_HOURS = 1
@@ -55,11 +56,14 @@ def show(request, balance):
     print(f"\nTotal: {spend} credits")
     if balance is not None:
         print(f"Balance now: {balance}\nBalance after: {round(balance - spend, 2)}")
+    print("\nApprove this exact job? I will wait for your answer. Silence is not approval.")
 
 
 def record(request, words):
     if not words.strip():
         sys.exit("Marcus's exact words are required")
+    if production_locked():
+        sys.exit("The production lock is on. Marcus has to lift it first.")
     if APPROVAL.exists():
         sys.exit(f"{APPROVAL} already exists. Finish or delete it first.")
     now = dt.datetime.now(dt.timezone.utc)

@@ -102,6 +102,7 @@ def validate(s):
     return errs
 
 def main():
+    from render_lock import require_unlocked;require_unlocked()
     p=argparse.ArgumentParser();p.add_argument('scene');p.add_argument('--out',default='outputs/scene_player.mp4');p.add_argument('--fps',type=int,default=12)
     a=p.parse_args();s=json.loads(Path(a.scene).read_text());errors=validate(s)
     if errors:raise SystemExit('scene invalid: '+repr(errors))

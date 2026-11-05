@@ -8,6 +8,7 @@ sys.path.insert(0,str(ROOT/'scripts'))
 from export_native_three import export
 from vtk_state_bridge import StateExportRender
 from vtk_story_renderer import Render as OriginalRender
+from render_lock import locked
 
 class NativeBridgeTests(unittest.TestCase):
     @classmethod
@@ -86,6 +87,7 @@ class NativeBridgeTests(unittest.TestCase):
         self.assertEqual(self.track['frames'][f]['sea_calm'],1.0)
         self.assertLess(self.track['frames'][min(f+39,1439)]['sea_calm'],1.0)
 
+    @unittest.skipIf(locked(),"no rendering while Marcus's production lock is on")
     def test_original_vtk_render_independent_contact_and_camera_spotcheck(self):
         # Actual original VTK picture path, independent of the bridge's
         # source-transformed state-only function. Sample the fragile shots.
