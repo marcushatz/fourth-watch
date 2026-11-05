@@ -28,7 +28,7 @@ Lintel made three videos from the same garden. Its video on why God left the tre
 
 ## 1. The fix that fails
 
-From "Why didn't God remove the tree?" (7.6M, 89 s). Use it for a hard objection people already hold.
+From Lintel's tree video (7.6M, 89 s). Use it for a hard objection people already hold.
 
 | Runtime | Job | Viewer feels |
 |---|---|---|
@@ -45,7 +45,7 @@ From "Why didn't God remove the tree?" (7.6M, 89 s). Use it for a hard objection
 
 ## 2. One person, three answers, then you
 
-From "What happens to people who never heard of Jesus?" (1.6M, 138 s). Use it for a worry about someone specific.
+From Lintel's video on people who never heard (1.6M, 138 s). Use it for a worry about someone specific.
 
 | Runtime | Job | Viewer feels |
 |---|---|---|
