@@ -43,6 +43,20 @@ Write these into the storyboard's `acting` field. They apply on every route. For
 - **One readable action per decision.** Kneeling, lifting a lamp or walking away says more than a facial expression.
 - **Large enough to read.** A small gesture needs a closer shot.
 
+## Animation craft
+
+From Disney's twelve principles, the ones that matter most here:
+
+- **Anticipation:** signal an action before it happens.
+- **Slow in and slow out:** spend more frames near the start and end of a move.
+- **Arcs:** limbs move on curves, not straight lines.
+- **Follow-through:** robes, hair and loose parts lag behind the body.
+- **Secondary action:** small supporting moves that don't steal attention.
+- **Timing:** the number of frames sets weight and mood.
+- **No twins:** avoid mirrored poses. They look lifeless.
+
+**Hand-made feel:** Spider-Verse animated mostly on twos, holding each pose for two frames, while hair and cloth stayed on ones so they didn't jump. It also replaced motion blur with a sharp repeated image, and avoided soft glows. Consider this when setting the style, because smooth computer motion is part of what can make animation feel cheap.
+
 ## AI clip prompts
 
 - Lead with the style, then the scene, composition and light.

@@ -15,6 +15,14 @@ How to turn a story into shots. Full evidence is in `research/direction_rules.md
 9. **No invented events.** A picture may symbolize, but it can't claim what the text doesn't say.
 10. **Pay off the opening.** The last image answers the first.
 
+## Visual structure
+
+- **Emotion decides the cut.** Walter Murch ranks a cut's reasons as emotion, story, rhythm, eye trace, then screen position. When they conflict, give up the bottom of the list first.
+- **Contrast raises intensity, and affinity calms it.** Bruce Block's rule: plan space, line, shape, tone, colour, movement and rhythm so they rise and fall with the story. Rising conflict gets more contrast, and resolution moves toward similarity.
+- **Stage one idea at a time.** Use placement, light and camera to make the key idea clear, and remove what distracts.
+- **Plan one pause.** Miyazaki's ma is a deliberate stillness that lets people feel. Keep it quiet, and don't rush the shot.
+- **Check with the sound off.** The pictures should tell the story alone.
+
 ## Reads
 
 A read is one thing the viewer must find and understand. Give each one a start, an end and a way for the eye to get there.

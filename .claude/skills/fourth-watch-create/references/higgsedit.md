@@ -57,6 +57,10 @@ Lifetimes include the start and exclude the end, and a child must fit inside its
 
 Compose camera is simpler for flat layers. It's 2.5D parallax only, with top-level `z` values and at least two keyframes.
 
+## Organic textures
+
+Domain warping bends a pattern's coordinates with another pattern, `f(p + h(p))`, usually with layered noise for both. It makes natural, painted-looking surfaces such as water, cloud and stone, and it can animate. Inigo Quilez's articles are the reference: `https://iquilezles.org/articles/warp`.
+
 ## Limits we've hit
 
 - Each background job stops at 15 minutes, which is about 12 s of film, or 6 s in a heavy scene. Split long plates into ranges.

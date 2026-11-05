@@ -47,7 +47,7 @@ Use `references/emotional-storytelling.md`. Write the emotional progression and 
 
 ### 6. Write one script
 
-Write for the ear, in plain modern sentences, following Part 1 of `references/standing-rules.md`. Let recorded events carry the feeling. Length is whatever the story earns, and Marcus has said up to about two minutes when it's justified.
+Write for the ear, in plain modern sentences, following Part 1 of `references/standing-rules.md`. Test the draft against `references/craft.md`. Let recorded events carry the feeling. Length is whatever the story earns, and Marcus has said up to about two minutes when it's justified.
 
 ### 7. Protect the text
 
