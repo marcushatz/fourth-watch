@@ -1,0 +1,13 @@
+{
+  "status": "UNAPPROVED_3D_LAYOUT",
+  "video_sha256": "e7a5fc51a55d9a64d336b5b7c5da9d586a0a4c9a3f3e1e266dce8c883ad1584b",
+  "renderer_source_sha256": "4ff757a7f3eaf941cb029a3a946a33a3d850bdb08c6f15c8c56000ccda6b48f1",
+  "plan_data_sha256": "37fb971b7d42192658ed774df82eba89fe0824c08a6f90a50ab6a37bdfedec99",
+  "fps": 12,
+  "size": [
+    360,
+    640
+  ],
+  "duration_s": 48.0,
+  "notice": "Only applies to this exact rendered video and these exact inputs; not a release approval"
+}

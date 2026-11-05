@@ -1,0 +1,13 @@
+{
+  "status": "UNAPPROVED_NATIVE_BRIDGE_EXPORT",
+  "frames": 1440,
+  "shots": 12,
+  "duration_s": 48.0,
+  "source_plan_sha256": "e55e53911935834c1d023e6f9e22eff5b7ecda63177ebf42c1e8ae84ae2b230f",
+  "track_sha256": "8d32d74790beeb5d20bac480863c7660282f7e06a040745f907006e707cc0960",
+  "score_sha256": "fe29cf4d01980edae92d16df211594d426452baa3737ab198270fb5f2f069d91",
+  "vtk_renderer_sha256": "4ff757a7f3eaf941cb029a3a946a33a3d850bdb08c6f15c8c56000ccda6b48f1",
+  "state_bridge_sha256": "e6e74aab1a9f9b69071f148443899206537d60ee3f8334bbc8e04c917ec8c01b",
+  "native_render_verified": false,
+  "release_approved": false
+}

@@ -1,0 +1,141 @@
+{
+  "video_sha256": "952b47d3e95f59d66f15d2040de376084e56122143985fd9d583686c80d89d5a",
+  "source_plan_digest": "37fb971b7d42192658ed774df82eba89fe0824c08a6f90a50ab6a37bdfedec99",
+  "shots": [
+    {
+      "id": "S01",
+      "midpoint_s": 1.8,
+      "claim_ids": [
+        "M45"
+      ],
+      "camera_intent": "Advance toward the oars to make progress look costly; visible action must be the resisted stroke.",
+      "actual_encoded_frame_sha256": "4ffd832f0e2af2b4de476aebce983748c591e78163c92af7e8f25984eef61ec1",
+      "stage": "UNAPPROVED_3D_LAYOUT_FRAME",
+      "technical_frame_present": true
+    },
+    {
+      "id": "S02",
+      "midpoint_s": 5.5,
+      "claim_ids": [
+        "M48"
+      ],
+      "camera_intent": "Pull back to reveal the enormous separation between watching figure and boat; preserve geography.",
+      "actual_encoded_frame_sha256": "83756e9dab7d83f3efa49dfab7014023319bd9971bbe25bebb35a7591727c813",
+      "stage": "UNAPPROVED_3D_LAYOUT_FRAME",
+      "technical_frame_present": true
+    },
+    {
+      "id": "S03",
+      "midpoint_s": 9.2,
+      "claim_ids": [
+        "M48",
+        "T25"
+      ],
+      "camera_intent": "Hold a navigable clock diagram so the fourth-watch phrase can be understood, not merely admired.",
+      "actual_encoded_frame_sha256": "ab0cee521bfb3ed43f332dd7dcf82a8aed3c74dfe12044da6952c0448122f358",
+      "stage": "UNAPPROVED_3D_LAYOUT_FRAME",
+      "technical_frame_present": true
+    },
+    {
+      "id": "S04",
+      "midpoint_s": 13.0,
+      "claim_ids": [
+        "M48"
+      ],
+      "camera_intent": "Close distance on the water-walking silhouette while withholding details the disciples cannot yet see.",
+      "actual_encoded_frame_sha256": "91f391c27fc449a5b44495e078aaf0f41645422a7ecd12290d9aad6f3b8e2ac8",
+      "stage": "UNAPPROVED_3D_LAYOUT_FRAME",
+      "technical_frame_present": true
+    },
+    {
+      "id": "S05",
+      "midpoint_s": 16.75,
+      "claim_ids": [
+        "M49"
+      ],
+      "camera_intent": "Move across shoulders toward the recoiling rower; show fear as a reaction, not a generic camera shake.",
+      "actual_encoded_frame_sha256": "b7a36af9469eb5b9b8839cd05b92f7db2a35efa448b043d7a2e9fbb4841350f3",
+      "stage": "UNAPPROVED_3D_LAYOUT_FRAME",
+      "technical_frame_present": true
+    },
+    {
+      "id": "S06",
+      "midpoint_s": 20.383,
+      "claim_ids": [
+        "M50"
+      ],
+      "camera_intent": "Hold eye-level as speech resolves misrecognition; no sensational move competes with words.",
+      "actual_encoded_frame_sha256": "0a1df34929504f3fc4063a9b9f7e61bf21831f39215c1c63c0b93b133cea4ee1",
+      "stage": "UNAPPROVED_3D_LAYOUT_FRAME",
+      "technical_frame_present": true
+    },
+    {
+      "id": "S07",
+      "midpoint_s": 24.367,
+      "claim_ids": [
+        "T29"
+      ],
+      "camera_intent": "Track with Peter from gunwale toward water to keep the step physically comprehensible.",
+      "actual_encoded_frame_sha256": "faa453c476153861ae726bddb5d7f5ef7fb502bd3075c357286a3757975fad3b",
+      "stage": "UNAPPROVED_3D_LAYOUT_FRAME",
+      "technical_frame_present": true
+    },
+    {
+      "id": "S08",
+      "midpoint_s": 28.4,
+      "claim_ids": [
+        "T30"
+      ],
+      "camera_intent": "Push only as Peter loses stability so danger feels suddenly personal.",
+      "actual_encoded_frame_sha256": "9091166f0febc735ada4c8ac4aca3953b2ce059ca2cc161f244af92c214ebe6d",
+      "stage": "UNAPPROVED_3D_LAYOUT_FRAME",
+      "technical_frame_present": true
+    },
+    {
+      "id": "S09",
+      "midpoint_s": 32.167,
+      "claim_ids": [
+        "T31"
+      ],
+      "camera_intent": "Push toward the point of contact, aligning viewer attention to the rescue rather than a wide spectacle.",
+      "actual_encoded_frame_sha256": "47ab4970694601406c51bd6ee6b7155a8cffeb68373ecaa59c4cf54a1e8127ae",
+      "stage": "UNAPPROVED_3D_LAYOUT_FRAME",
+      "technical_frame_present": true
+    },
+    {
+      "id": "S10",
+      "midpoint_s": 36.083,
+      "claim_ids": [
+        "T32"
+      ],
+      "camera_intent": "Pull back to reveal the boat as both return and changed space; do not show unscripted walking on water.",
+      "actual_encoded_frame_sha256": "57600e1194a3a3e2056ab544020638a6a81a3726b70699c049e247a9d4f27fc3",
+      "stage": "UNAPPROVED_3D_LAYOUT_FRAME",
+      "technical_frame_present": true
+    },
+    {
+      "id": "S11",
+      "midpoint_s": 40.417,
+      "claim_ids": [
+        "M52"
+      ],
+      "camera_intent": "Hold close on an unresolved face/loaves motif; do not invent internal thoughts or explanatory images.",
+      "actual_encoded_frame_sha256": "607c209524a68dc92073673d3c397f538d0b019efb38ed55955dc519b2acd320",
+      "stage": "UNAPPROVED_3D_LAYOUT_FRAME",
+      "technical_frame_present": true
+    },
+    {
+      "id": "S12",
+      "midpoint_s": 45.333,
+      "claim_ids": [
+        "M52",
+        "T33"
+      ],
+      "camera_intent": "Pull out to an unresolved spatial image, preserving the unanswered interpretive question rather than feigning a revelation.",
+      "actual_encoded_frame_sha256": "327694ac4587c6471a99a9ba5b03939248d2934ccdd0f09cc66378ff934e116a",
+      "stage": "UNAPPROVED_3D_LAYOUT_FRAME",
+      "technical_frame_present": true
+    }
+  ],
+  "notice": "Shot existence and frame hashes are not a director, biblical or rights approval"
+}

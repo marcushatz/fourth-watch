@@ -1,0 +1,36 @@
+{
+  "input": "/mnt/data/fw_continuation/fourth-watch-engine-v10/outputs/v10/verified_3d_review/03_3d_camera_sound_review.mp4",
+  "bytes": 1091028,
+  "duration_s": 48.0,
+  "resolution": [
+    360,
+    640
+  ],
+  "video_fps_est": 12.0,
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "frames_reported": 576,
+  "sampled_frames": 96,
+  "near_black_samples_s": [],
+  "near_still_samples_s": [
+    22.0,
+    38.0,
+    39.0,
+    39.5,
+    40.0,
+    40.5,
+    42.5,
+    47.5
+  ],
+  "warnings": [
+    "master lower than 720x1280",
+    "8 nearly-identical frame samples; may include intentional holds"
+  ],
+  "errors": [],
+  "technical_pass": true,
+  "limitations": [
+    "Sampled-image motion is not narrative quality or freeze proof",
+    "Audio presence is not intelligibility or licensed music",
+    "Always complete a full viewing/listening review"
+  ]
+}

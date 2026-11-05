@@ -1,0 +1,40 @@
+{
+ "id":"naaman-jordan-blocking-test", "status":"UNAPPROVED_LAYOUT", "duration_s":10,
+ "biblical_reference":"2 Kings 5:10-14",
+ "source_note":"Naaman washed seven times in the Jordan, as commanded. This is a symbolic timing/layout experiment, not a representation of an actual recorded gesture or exact river location.",
+ "environment":"river",
+ "background":{"low":[0.10,0.16,0.20],"high":[0.45,0.40,0.31]},
+ "camera":[
+  {"at":0,"pos":[9,7,15],"look":[0,1,0],"fov":52,"move":"push","move_duration":3},
+  {"at":3,"pos":[5.8,2.8,8],"look":[0,1,0],"fov":48,"move":"hold"},
+  {"at":7.8,"pos":[3.8,2.4,5.2],"look":[0,1,0],"fov":48,"move":"pull","move_duration":2}
+ ],
+ "actors":[
+  {"id":"naaman","rig":"peter","keys":[
+   {"at":0,"pos":[1.0,0,1.5],"pose":"stand","sink":0},
+   {"at":2.4,"pos":[0,0,0],"pose":"walk","sink":0},
+   {"at":3.0,"pos":[0,0,0],"pose":"stand","sink":0},
+   {"at":3.25,"pos":[0,0,0],"pose":"stand","sink":1.0},
+   {"at":3.55,"pos":[0,0,0],"pose":"stand","sink":0},
+   {"at":3.85,"pos":[0,0,0],"pose":"stand","sink":1.0},
+   {"at":4.15,"pos":[0,0,0],"pose":"stand","sink":0},
+   {"at":4.45,"pos":[0,0,0],"pose":"stand","sink":1.0},
+   {"at":4.75,"pos":[0,0,0],"pose":"stand","sink":0},
+   {"at":5.05,"pos":[0,0,0],"pose":"stand","sink":1.0},
+   {"at":5.35,"pos":[0,0,0],"pose":"stand","sink":0},
+   {"at":5.65,"pos":[0,0,0],"pose":"stand","sink":1.0},
+   {"at":5.95,"pos":[0,0,0],"pose":"stand","sink":0},
+   {"at":6.25,"pos":[0,0,0],"pose":"stand","sink":1.0},
+   {"at":6.55,"pos":[0,0,0],"pose":"stand","sink":0},
+   {"at":6.85,"pos":[0,0,0],"pose":"stand","sink":1.0},
+   {"at":7.25,"pos":[0,0,0],"pose":"stand","sink":0},
+   {"at":10,"pos":[0,0,0],"pose":"stand","sink":0}
+  ]}
+ ],
+ "props":[
+  {"type":"rock","at":[-6,0,-4],"scale":1.5},
+  {"type":"bush","at":[-6,0,3],"scale":2.0},
+  {"type":"rock","at":[6,0,6],"scale":2.0},
+  {"type":"bush","at":[7,0,-3],"scale":1.3}
+ ]
+}

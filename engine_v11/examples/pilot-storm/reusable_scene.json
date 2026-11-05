@@ -1,0 +1,16 @@
+{
+  "name": "PETER STEP + REACH KEYFRAME TEST",
+  "duration_s": 8,
+  "camera": {
+    "x": 180, "y": 340, "zoom": 1,
+    "keys": [{"time": 0, "x": 160, "y": 330, "zoom": 0.95}, {"time": 4, "x": 194, "y": 340, "zoom": 1.05}, {"time": 8, "x": 210, "y": 356, "zoom": 1.35}]
+  },
+  "objects": [
+    {"id":"boat", "symbol":"boat", "z":1, "x":85, "y":418, "scale":1.0,
+       "keys":[{"time":0,"x":100,"y":419,"scale":1},{"time":8,"x":90,"y":425,"scale":1}]},
+    {"id":"peter", "symbol":"peter", "z":3, "pose":"step", "x":125,"y":412,"scale":0.95,
+       "keys":[{"time":0,"x":132,"y":411},{"time":3,"x":225,"y":409},{"time":6,"x":234,"y":455},{"time":8,"x":227,"y":445}]},
+    {"id":"jesus", "symbol":"jesus", "z":2,"pose":"reach","x":320,"y":400,"scale":1,
+       "keys":[{"time":0,"x":345,"y":398},{"time":5,"x":313,"y":402},{"time":8,"x":262,"y":414}]}
+  ]
+}

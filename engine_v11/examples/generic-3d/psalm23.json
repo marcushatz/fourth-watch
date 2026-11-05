@@ -1,0 +1,30 @@
+{
+ "id":"psalm-23-valley-symbolic-blocking", "status":"UNAPPROVED_LAYOUT", "duration_s":10,
+ "biblical_reference":"Psalm 23:1-4",
+ "source_note":"A stylized illustration of shepherding language; not a claim of a particular historical location or event.",
+ "environment":"valley",
+ "background":{"low":[0.17,0.27,0.22],"high":[0.47,0.54,0.46]},
+ "camera":[
+  {"at":0,"pos":[10,9,18],"look":[0,1,0],"fov":48,"move":"pull","move_duration":3},
+  {"at":4,"pos":[5,3.4,9],"look":[0,1,-1],"fov":50,"move":"track","travel":1.3,"move_duration":4},
+  {"at":8,"pos":[4,2.3,7],"look":[0,1,-2],"fov":50,"move":"hold"}
+ ],
+ "actors":[
+  {"id":"shepherd","rig":"jesus","keys":[
+    {"at":0,"pos":[-2,0,-3],"pose":"walk"},
+    {"at":5,"pos":[0,0,-1],"pose":"walk"},
+    {"at":10,"pos":[2,0,1],"pose":"stand"}
+  ]},
+  {"id":"follower","rig":"sheep","keys":[
+    {"at":0,"pos":[-3,0,-5],"pose":"walk"},
+    {"at":5,"pos":[-1,0,-3],"pose":"walk"},
+    {"at":10,"pos":[1,0,-1],"pose":"stand"}
+  ]}
+ ],
+ "props":[
+  {"type":"tree","at":[-7,0,-2],"scale":1.1},
+  {"type":"tree","at":[6,0,-9],"scale":1.5},
+  {"type":"bush","at":[6,0,3],"scale":1.7},
+  {"type":"rock","at":[-5,0,7],"scale":2.2}
+ ]
+}
