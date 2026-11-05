@@ -488,3 +488,12 @@ Rules:
 - **Until he lifts the lock, work only on the engine, its libraries, architecture, code and automated tests.** Writing a script he asks for costs no credits and is allowed.
 - **Enforced by** the production lock file, its hook and refusals in the render programs. See `production/GENERATION_APPROVAL.md`.
 
+## Round 46 (Nov 5, 10:20): one skill, built on emotion and extraordinary value
+His words: "we must collect and gather only info of importnatce, anything unimportant must be discarded." "we should focus on extraordinary value on each video, not diving into small details." "if im being honest i do not think the serpent story appeals to emotion."
+
+Rules:
+- **Build one skill from selected knowledge.** The more relevant information it holds, the stronger it gets. Anything unimportant is discarded.
+- **Every video aims for extraordinary value and a clear emotional response:** impressed, saddened, joyful, encouraged, motivated or genuinely educated.
+- **Choose stories for their emotional pull, not for a small textual detail.**
+- **Move forward with a clear sense of direction.**
+
