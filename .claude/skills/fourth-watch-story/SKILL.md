@@ -1,6 +1,6 @@
 ---
 name: fourth-watch-story
-description: Find a Bible story worth telling and develop it into a Fourth Watch narration script with a shared creative plan. Draft under test. Use only when Marcus names fourth-watch-story or the story skill, or when running its evaluation. For every other script request, use fourth-watch-writer until Marcus says this skill has replaced it.
+description: Find a Bible story worth telling and develop it into a Fourth Watch narration script with a shared creative plan. Draft under test. Use only when Marcus names fourth-watch-story or the story skill, when fourth-watch-create calls it, or when running its evaluation. For every other script request, use fourth-watch-writer until Marcus says this skill has replaced it.
 ---
 
 # Fourth Watch story

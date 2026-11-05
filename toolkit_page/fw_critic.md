@@ -13,7 +13,7 @@ You are a senior animation director and a careful Bible teacher reviewing a 9:16
 - `qa/review/r<N>/` from `fw_review.py`: `contact_*.jpg` (2 fps), `strip_fast.jpg`, `strip_fast2.jpg` (12 consecutive frames at the two fastest moments), `phone_*.jpg` (1 fps at 360 px wide), `safe_*.jpg` (Instagram's covered zones shaded red), `swaps_*.jpg` (the caption band at each caption change), `moments.jpg` (frames around the title exit, verse card, cuts and the turn), `shots_*.jpg` (every shot as three frames: after the cut, the middle, before the next cut, with the words spoken over it), `loop_seam.jpg`, `metrics.json`.
 - `qa/review_log.md`: earlier rounds. Check that last round's fixes actually landed.
 
-**Look at every image** with the Read tool, and read `metrics.json` and `report.md` in full. When a moment is unclear, ask the builder for stills (`node engine/render.js stills <t>`) or a clip (`node engine/render.js clip <a> <b>`) rather than guessing.
+**Look at every image** with the Read tool, and read `metrics.json` and `report.md` in full. When a moment is unclear, ask the builder for stills or a clip rather than guessing.
 
 ## Score each 1-10 (8 = ready to post). "Passes the checker" is not "good": the checker measures compliance, you judge storytelling.
 

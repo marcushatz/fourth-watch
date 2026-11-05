@@ -519,3 +519,13 @@ Rules:
 - **One universal visual style.** The first video sets it, and every later video reuses it. This narrows Round 37.
 - **No separate movement test.** Movement rules go in the plan, and Higgsfield carries them out. This replaces the placeholder step in Round 35.
 - **When he asks a question, answer it and ask before starting work.**
+
+## Round 49 (Nov 5, 12:49): the first story, and finish the skill first
+His words: "i want the first story to be about the beginning of the world, i wan tot go with: 3. Why did God call everything good, then say something was not good?" "credit budget per video im not going to set just yet, i care more about quality, but we only will be able ot deliver this quality once we are compeltely set with the skill file." "be careful with the credit usage." "once the entire skill file is odne with, i want us to create that storybaord, not the video and well tweak form there." "look for some things you odnt want to be too paranoid with, we cna decide once we have our first video."
+
+Rules:
+- **The first video is the beginning of the world:** "Why did God call everything good, then say something was not good?"
+- **Order:** finish the whole skill file, then make the storyboard for this story, then tweak it. No video yet.
+- **Decide the look, the budget and the voice later.** They wait for the first video and don't hold up the skill.
+- **Quality comes first, and credits stay careful.** Every paid job still needs his approval.
+- **Don't over-worry.** Make reasonable calls and let the first video settle the rest.

@@ -2,7 +2,7 @@
 
 **Use this when** Marcus is back. Every open choice is here with the exact wording to approve, the evidence and a recommendation. When he decides, record it as a new round in `research/feedback_rules.md` and update the file it names.
 
-Last updated: Nov 5 (after Round 47).
+Last updated: Nov 5 (after Round 49).
 
 **About the evidence:**
 - **"Simulated viewers" are AI agents** role-playing a first-time viewer. They can flag confusion and slow, preachy or unclear lines. They can't tell us retention, swipes or sharing; only real posts can.
@@ -22,8 +22,8 @@ Last updated: Nov 5 (after Round 47).
 ## Waiting on Marcus (Nov 5, 2026)
 
 - **Story skill test:** `fourth-watch-story` is a draft in `.claude/skills/fourth-watch-story/`. Its test, in `evals/test_plan.md`, compares it with `fourth-watch-writer` on four passages. It needs about eight agent runs and no credits. He needs to approve the runs or change the passages.
-- **First video:** he's choosing the story.
-- **Credit budget:** the balance is 76.47. AI video clips were about 5 credits or more per 5 seconds on Nov 2, so a full AI-animated video would pass that balance. He needs to set a budget per video.
+- **First video:** the beginning of the world, "Why did God call everything good, then say something was not good?" (Round 49). The skill comes first, then the storyboard, then tweaks. No video yet.
+- **Credit budget:** he'll set it later and cares about quality first. The balance is 76.47, and every paid job still needs his approval.
 - **Series voice:** not chosen.
 - **Lifting the lock:** Higgsedit runs in the Higgsfield sandbox, which the lock blocks. Building the first video needs his words to lift it.
 - **Storm script v4:** `ep10-fourth-watch/writer/script_v4.md` is an unlocked candidate of 327 words. It needs a verdict, and a decision on trimming.

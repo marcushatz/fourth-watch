@@ -10,6 +10,8 @@
 
 **Priorities, in order:** creative intelligence, visual excellence, production efficiency.
 
+**The skill:** `.claude/skills/fourth-watch-create/` runs this pipeline from one request.
+
 ## The brand in one line
 
 Fourth Watch is a faceless Christian educational channel that makes cinematic biblical explanations of surprising, textually supported connections within Scripture. Its strengths are intellectual depth, clarity, reverence and memorable visual storytelling.
@@ -29,6 +31,8 @@ Fourth Watch is a faceless Christian educational channel that makes cinematic bi
 | 8 | Review | `07_quality_control.md` | Notes and fixes | **Marcus watches it** |
 | 9 | Final assembly | `06` | Full edit in Higgsedit | Rendering is free. Any new paid art needs approval |
 | 10 | Quality control | `07` | Scorecard | All seven checks pass. Then Marcus decides. **Never publish automatically** |
+
+A first storyboard can come before the voice, with estimated timing, so Marcus can tweak it before anything is paid for (Round 49). It gets retimed to the real take.
 
 ## The three creative approvals
 
