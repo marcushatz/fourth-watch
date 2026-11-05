@@ -54,8 +54,18 @@ class StorySkill(unittest.TestCase):
         for name in (
             "story-discovery", "emotional-storytelling", "structure-and-payoff",
             "annotated-scripts", "editorial-decisions", "scripture-integrity", "evaluation",
+            "standing-rules",
         ):
             self.assertTrue((REFS / f"{name}.md").exists(), name)
+
+    def test_standing_rules_cover_script_and_screen(self):
+        text = (REFS / "standing-rules.md").read_text()
+        self.assertIn("## Part 1: the script", text)
+        self.assertIn("## Part 2: the screen", text)
+        self.assertIn("## Open decisions for Marcus", text)
+        core = SKILL.read_text()
+        self.assertIn("Part 1 of `references/standing-rules.md`", core)
+        self.assertIn("Part 2 of `references/standing-rules.md`", core)
 
     def test_repo_paths_exist(self):
         pattern = re.compile(r"`((?:[\w.-]+/)+[\w.-]+\.\w+)`")

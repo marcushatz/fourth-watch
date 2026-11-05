@@ -16,6 +16,7 @@ Answer these in words, with no scores.
 8. **Two viewers:** does a Bible reader get something new, and can a newcomer follow it without a theology lesson?
 9. **Send:** who would send this, to whom, and why?
 10. **Honesty:** does the feeling come from the text, or from our adjectives?
+11. **His rules:** does the script and plan follow every line of `standing-rules.md`? Name any exception.
 
 Judge these separately: the concept, this script, what Scripture supports, and production feasibility.
 

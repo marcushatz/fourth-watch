@@ -24,6 +24,7 @@ Three strong scripts and three weak ones, analyzed sentence by sentence, plus wh
 - "On screen" comes from the shot studies in `research/lintel_ref/yt/`, which give the exact timing.
 - **[O]** is observed in the script or data. **[H]** is our hypothesis about why. The Viewer column is our reading, so treat all of it as [H].
 - Views are snapshots: Instagram for Lintel, YouTube for BibleProject. Channel, age and topic are uncontrolled, so they can't be compared across channels. Popularity isn't proof of quality.
+- These are six examples, not the rulebook. Marcus's rules in `standing-rules.md` win, and the wider study of 24 videos is in `research/direction_rules.md`.
 
 ---
 
@@ -73,7 +74,7 @@ Elijah states its idea at 15% and Never heard gives its first answer at 33%. Doo
 **5. Spend the longest hold on the turn.**
 Tree gives 8.5 s to people becoming puppets, and 1.7 s and 1.5 s to war and sickness. Never heard holds 17.9 s on honest disagreement. Show himself's longest shots are its end card and a Pascal quote. Doorway gives its story's central act 3.8 s. [O]
 
-- Timing: shot length follows importance, not a clock.
+- Timing: the set can hold, but something must keep changing inside it. Tree's strings drop mid-shot, and Never heard's labels land and a beam falls during its hold. [O]
 
 **6. Retelling works when each event does a new job.**
 Elijah tells three events, and each proves the same idea at a larger scale. Doorway's sentences 2 to 10 are a summary on the way to an answer. Storm v3 retells for 23 of its 29 lines. [O]
@@ -91,13 +92,15 @@ Elijah's last line completes the first idea, with a 1.5 s logo and no ask. Tree 
 
 ### What did not separate strong from weak
 
-These appear on both sides, so don't credit them. [O]
+These appear on both sides of these six, so they can't explain the gap by themselves. [O]
 
 - **Question hooks.** Tree, Never heard, Show himself and Doorway all open with one.
-- **Fast cutting.** Doorway is the fastest in the Lintel set (median 1.9 s), and Never heard among the slowest (4.8 s).
+- **Shot length.** Doorway has the shortest shots in the Lintel set (median 1.9 s), and Never heard some of the longest (4.8 s).
 - **Camera movement.** Doorway moved in 21 of 26 shots and Never heard made 3 clear moves. Elijah always moves.
 - **Visual metaphors.** Show himself has a curtain, a candle and a lit path.
 - **Length.** A 60-second script appears on each side, and a 138-second script worked.
+
+**Don't read this as "pace doesn't matter."** The 24-video study found frequent visible change, about every 2 seconds, was the clearest difference between hits and lows on the other two channels. Shot length isn't the same as visible change, and Doorway shows that speed alone isn't enough.
 
 ---
 

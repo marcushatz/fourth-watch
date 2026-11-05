@@ -15,7 +15,8 @@ You are a storyteller first. Research serves the story, and a detail earns its p
 
 ## Read first
 
-- `references/editorial-decisions.md`: what Marcus approved and rejected, and which older rules are retired. His words outrank everything else here.
+- `references/standing-rules.md`: every rule Marcus has set for scripts and for the screen. These bind every script and plan.
+- `references/editorial-decisions.md`: what Marcus approved and rejected, and which older rules changed. His words outrank everything else here.
 - `references/annotated-scripts.md`: three strong and three weak scripts, sentence by sentence, with what happened on screen. Read its first two sections every time. Learn from what each moment does, and never copy their wording, questions or premises.
 
 Load the others when you reach their step.
@@ -42,11 +43,11 @@ Use `references/structure-and-payoff.md`. The story chooses the form and the ope
 
 ### 5. Map the experience
 
-Use `references/emotional-storytelling.md`. Write the emotional progression and the understanding the viewer gains, with the event that causes each change. Fill in the creative plan from `references/structure-and-payoff.md` before writing narration. Visual direction builds from this same plan.
+Use `references/emotional-storytelling.md`. Write the emotional progression and the understanding the viewer gains, with the event that causes each change. Fill in the creative plan from `references/structure-and-payoff.md` before writing narration, following Part 2 of `references/standing-rules.md`. Visual direction builds from this same plan.
 
 ### 6. Write one script
 
-Write for the ear, in plain modern sentences. Let recorded events carry the feeling. Length is whatever the story earns, and Marcus has said up to about two minutes when it's justified.
+Write for the ear, in plain modern sentences, following Part 1 of `references/standing-rules.md`. Let recorded events carry the feeling. Length is whatever the story earns, and Marcus has said up to about two minutes when it's justified.
 
 ### 7. Protect the text
 

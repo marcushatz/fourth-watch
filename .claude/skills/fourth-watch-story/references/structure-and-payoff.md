@@ -49,7 +49,7 @@ The middle is where weak scripts die.
 | Motif with new meaning | Something planted returns transformed | Hagar's God of seeing |
 | Role change | The viewer's position shifts | The end of Never heard |
 | Answer plus deeper truth | The question resolves into something larger | The end of Tree |
-| Honest open ending | The story states the limit and lands on what's known | "No Gospel tells us why" |
+| Honest limit | The story says what Scripture doesn't tell us, then lands on what it does. It never ends on an unanswered question | "No Gospel tells us why" |
 
 A quiet ending works only if it carries weight. Test it by asking what it means in plain words. If the meaning is small, the ending is small. A logo or a call to follow is never the payoff.
 
@@ -77,5 +77,7 @@ Writing and visual direction share this plan, so a story decision reaches the ca
 |---|---|---|---|---|---|---|---|
 
 Section 9 of `annotated-scripts.md` shows a story decision carried through these columns, and section 1 shows what strong scripts did on screen.
+
+This plan feeds the existing storyboard in `production/05_motion_and_cinematography.md`, and doesn't replace it. Once the voice is recorded, Narration becomes Words, Framing becomes Camera, Acting becomes Motion, and Timing is set from the real take.
 
 Pictures from this plan are proposals. Nothing is animated until Marcus approves the storyboard.

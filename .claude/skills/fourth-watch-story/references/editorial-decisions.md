@@ -41,17 +41,16 @@ Nothing has been approved since Bronze Serpent v4 on Nov 1. Storm v4 and the Hag
 | Leah outlines | "weird way of talking" | Plain modern speech |
 | The serpent story overall | "i do not think the serpent story appeals to emotion" | A clever connection isn't an experience |
 
-## Older rules this skill retires
+## Older rules that changed
 
-These conflict across the writer skill, `system/` guides and engine references. This skill uses the ruling on the right.
+These conflict across the writer skill, `system/` guides and engine references. Only Marcus retires a rule. Everything not listed here still stands, and `standing-rules.md` lists what's in force.
 
 | Older rule | Ruling here | Why |
 |---|---|---|
 | Every script is an investigation | The story chooses its form | Elijah works as a retelling, and Marcus asked for freedom |
 | Must start with a question | Many openings work | Elijah and "Who is Jesus?" open on a person |
-| Retelling stays under 15% | Retelling is fine if it changes something | Elijah retells throughout |
+| Retelling stays under 15% | The rule stands: keep the famous story short. The exact number is dropped, and longer retelling must change something | Round 5, and his Nov 5 note on quotas |
 | 190-245 words, or 75-95 seconds | No target. About 2 minutes if justified | Round 39, and his "duration earned" on Nov 5 |
-| Something new every 10-15 seconds | Keep each section rewarding, and hold a moment when it needs it | A fixed clock cuts into emotional peaks |
 | At least 3, 4 or 5 discoveries | No quota | Round 41 |
 | Write 5 angles and score them | Up to three options, judged in words | Round 41 |
 | One universal principle at the end | Only if the story earns it | The climax can be the end |
@@ -60,4 +59,4 @@ These conflict across the writer skill, `system/` guides and engine references. 
 | AI judges and panels | Critics at most, never evidence | Round 41 |
 | Value score of 3 or more in `fw_check.py` | Ignore for story judgment | It can't see story quality |
 
-Keep from older work: exact ESV, plain speech, real connections, no overclaiming, one clear message, and answering the viewer's next question.
+Two conflicts are still open for Marcus. They're at the end of `standing-rules.md`.
