@@ -11,7 +11,7 @@
 | Marcus's note | Change |
 |---|---|
 | The opening takes too long | Three examples in one line, and "not good" arrives by about 8 seconds |
-| Too slow, fast-forward the story | About 80 fewer spoken words, even with Genesis 3 added |
+| Too slow, fast-forward the story | 33 fewer spoken words, even with Genesis 3 added |
 | The serpent and the fruit can't be left out | The story now runs through the fall |
 | The emotional moment comes too early and interrupts | "Weak faith" is gone. The feeling comes from the events |
 | The ending explains chronology | The chronology is one beat, and the ending is God coming to find him |

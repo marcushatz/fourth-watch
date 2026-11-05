@@ -1,6 +1,6 @@
 # Why did God call everything good, then say something was not good?
 series: FOURTH WATCH
-target_seconds: 95
+target_seconds: 105
 answer: The first thing God called not good was a man alone. The first thing he did after sin was go looking for him.
 
 <!-- Nov 5 2026. Candidate only, not approved, not locked. Replaces v1 after Marcus's notes. Quotes checked against esv.org. Plan and claim table: plan_v2.md -->
