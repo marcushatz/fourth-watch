@@ -529,3 +529,21 @@ Rules:
 - **Decide the look, the budget and the voice later.** They wait for the first video and don't hold up the skill.
 - **Quality comes first, and credits stay careful.** Every paid job still needs his approval.
 - **Don't over-worry.** Make reasonable calls and let the first video settle the rest.
+
+## Round 50 (Nov 5, 13:38): notes on Genesis script v1
+His words: "you are too lsow to move with teh story, you shoudl be fastwofarding the sotyr not saying eveyr deatil there but laos moving foward to maybe more details of the sotyr." "with the serpant and the apple, that part being left out is stupid."
+
+From the critique he passed on: "an emotional insight should emerge from the events of the story, not interrupt them." "Make the audience experience Adam's solitude and the significance of Eve's arrival before explaining what it means."
+
+Verdict on v1: the discovery is excellent, but the emotion was explained rather than experienced.
+
+Rules:
+- **Emotional insight comes out of the events. It never interrupts them.**
+- **Let the viewer experience it before explaining what it means.**
+- **Fast-forward the story.** Skip minor detail, keep moving, and go further into the story.
+- **Don't stop short of the famous part.** If viewers expect it, it belongs.
+- **Two or three examples set a pattern.** Six is too many.
+- **The ending should carry human meaning, not only an explanation.**
+- **Cut lines that raise a side issue the video won't answer.** "Nobody has died" raised animal death before the fall.
+- **Don't imply that singleness is incomplete.** Genesis 2 is about Adam's counterpart.
+- **Keep clear what a verse evaluates.** "Very good" covers everything God made.

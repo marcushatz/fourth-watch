@@ -24,6 +24,7 @@ Nothing has been approved since Bronze Serpent v4 on Nov 1. Storm v4 and the Hag
 | Rejected | His words | Lesson |
 |---|---|---|
 | Storm v3, "They." | "The ending feels small because the insight is small." | Size of meaning decides, not elegance |
+| Genesis script v1 | "an emotional insight should emerge from the events of the story, not interrupt them." | Experience first, then meaning. Move faster and go further |
 | Experimental Serpent script | "decent, but it isn't as intellectually compelling as our earlier concepts" | "Don't mistake dramatic wording for a compelling story" |
 | Storm drafts in general | "thinking like a biblical researcher trying to find an overlooked detail, rather than a storyteller" | Begin with stakes |
 | Mary Magdalene recommendation | "distinguish a bad concept from a good concept that hasn't yet been executed well" | A weak draft isn't a weak story |

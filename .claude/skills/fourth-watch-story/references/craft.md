@@ -19,5 +19,6 @@ Only what changes how a script gets written. Use this as a test on every draft.
 3. Make every beat turn, linked by "but" or "therefore."
 4. Say less at the peak, and leave a pause after it.
 5. Let the viewer arrive at the meaning just before you say it.
+6. Plant something early and pay it off where nobody expects it.
 
 Reading these doesn't make a writer a master. Results do, so judge by what Marcus and real viewers feel.

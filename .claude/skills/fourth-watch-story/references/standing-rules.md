@@ -19,6 +19,9 @@ This file is a checklist. The full rules live in:
 - Intellectual depth serves the emotional experience. It doesn't replace it (39).
 - Show what the person wants, fears and faces. Don't label feelings (41).
 - Never manufacture emotion, invent details or exaggerate (39).
+- Emotional insight comes out of the events of the story. It never interrupts them (50).
+- Let the viewer experience it before explaining what it means (50).
+- The ending carries human meaning, not only an explanation (50).
 
 **Value**
 
@@ -26,6 +29,9 @@ This file is a checklist. The full rules live in:
 - Write the one-sentence message first and show it with the script. Every line serves it (26).
 - Reveal something real: a connection or detail the viewer would probably never find alone, and that the text supports (28, 34). Cool connection or cut it (13).
 - Keep the famous story short. Condense it rather than skip it (4, 5), and open a famous scene on what people don't know.
+- Fast-forward the story. Skip minor detail, keep moving, and go further into it (50).
+- Don't stop short of the famous part. If viewers expect it, it belongs (50).
+- Two or three examples set a pattern (50).
 - Deliver something new about every 10 to 15 seconds: a discovery, a comparison or a change in understanding (28). See the open decisions below.
 - No recaps, and never re-explain what the hook revealed (28).
 - Every section pays, then gives a new reason to stay (38).
@@ -73,6 +79,8 @@ This file is a checklist. The full rules live in:
 - A hard verse needs its resolution in the reel (9).
 - A disputed reading is never a discovery (35).
 - History is labeled as history, with its source (17).
+- Cut any line that raises a side issue the video won't answer (50).
+- Keep clear what a verse evaluates, and don't imply singleness is incomplete (50).
 
 **Working with Marcus**
 
