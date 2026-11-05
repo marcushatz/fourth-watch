@@ -547,3 +547,11 @@ Rules:
 - **Cut lines that raise a side issue the video won't answer.** "Nobody has died" raised animal death before the fall.
 - **Don't imply that singleness is incomplete.** Genesis 2 is about Adam's counterpart.
 - **Keep clear what a verse evaluates.** "Very good" covers everything God made.
+
+## Round 51 (Nov 5, 13:44): AI critiques of Genesis script v2
+Marcus passed on critiques from Grok and ChatGPT, which are AI readers, not an audience. Their points were checked against the text and used as criticism.
+
+Rules:
+- **Don't give God a motive the text doesn't state,** even at the emotional hinge. Let the action stand.
+- **When a story runs past its opening question, make the link between the two halves unmistakable.**
+- **Don't merge separate actions for rhythm.** Check that each compressed line still matches the text.

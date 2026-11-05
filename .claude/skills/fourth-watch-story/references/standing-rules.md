@@ -31,6 +31,7 @@ This file is a checklist. The full rules live in:
 - Keep the famous story short. Condense it rather than skip it (4, 5), and open a famous scene on what people don't know.
 - Fast-forward the story. Skip minor detail, keep moving, and go further into it (50).
 - Don't stop short of the famous part. If viewers expect it, it belongs (50).
+- When a story runs past its opening question, make the link between the two halves unmistakable (51).
 - Two or three examples set a pattern (50).
 - Deliver something new about every 10 to 15 seconds: a discovery, a comparison or a change in understanding (28). See the open decisions below.
 - No recaps, and never re-explain what the hook revealed (28).
@@ -73,7 +74,8 @@ This file is a checklist. The full rules live in:
 
 **Accuracy** (more in `scripture-integrity.md`)
 
-- Never chain facts into causes the text doesn't state (6).
+- Never chain facts into causes the text doesn't state (6), and never give God a motive the text doesn't state (51).
+- Don't merge separate actions for rhythm (51).
 - Show what the text only implies rather than stating it (13).
 - Nothing is "last" unless the text makes it last, and a count stands only if every item matches (13).
 - A hard verse needs its resolution in the reel (9).
