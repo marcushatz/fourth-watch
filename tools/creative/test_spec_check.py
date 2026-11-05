@@ -54,6 +54,36 @@ s = copy.deepcopy(BASE); s["scenes"][1]["light"]["gold"] = 0.4
 case("gold where the pack says none fails", s, with_line(PACK, "- gold allowed: none (16:19-20: the LORD had left him)"), must=["gold 0.4"])
 case("gold where the pack allows it passes", s, with_line(PACK, "- gold allowed: yes (14:6: the Spirit of the LORD rushed upon him)"), must_not=["gold 0.4"])
 
+# 5. The Round 43 engine vocabulary: the data-driven set and the three drawn transitions are real, and a typo is still a FAIL.
+UNKNOWN_SCENE, UNKNOWN_TRANS = "doesn't exist", "isn't one the engine has"
+def diorama(spec, **comp):
+    spec["scenes"][0]["set"] = {"scene": "diorama", "v": "camp"}
+    spec["scenes"][0]["comp"] = {"size": "WS", "angle": "high", "subject_y": 0.46, **comp}
+    spec["scenes"][0]["cam"] = {"move": "push", "amt": 0.05, "on": "jacob", "start": "go"}
+    return spec
+case("diorama is a scene", diorama(copy.deepcopy(BASE)), PACK, must_not=[UNKNOWN_SCENE])
+s = copy.deepcopy(BASE); s["scenes"][0]["set"] = {"scene": "dioramma", "v": "camp"}
+case("a misspelt scene still fails", s, PACK, must=[UNKNOWN_SCENE])
+for kind in ("fade", "whip", "push"):
+    s = copy.deepcopy(BASE); s["scenes"][0]["trans_out"] = {"kind": kind}
+    case(f"{kind} is a transition", s, PACK, must_not=[UNKNOWN_TRANS])
+s = copy.deepcopy(BASE); s["scenes"][0]["trans_out"] = {"kind": "wipe"}
+case("an unknown transition still fails", s, PACK, must=[UNKNOWN_TRANS])
+
+# 6. On a diorama shot the map is the vocabulary, so a shot the compiler would refuse fails here first.
+s = diorama(copy.deepcopy(BASE)); s["scenes"][0]["comp"]["size"] = "HUGE"
+case("diorama: unknown size fails", s, PACK, must=["unknown size 'HUGE'"])
+s = diorama(copy.deepcopy(BASE)); s["scenes"][0]["comp"]["angle"] = "sideways"
+case("diorama: unknown angle fails", s, PACK, must=["unknown angle 'sideways'"])
+s = diorama(copy.deepcopy(BASE)); s["scenes"][0]["cam"]["move"] = "swoop"
+case("diorama: unknown move fails", s, PACK, must=["unknown move 'swoop'"])
+s = diorama(copy.deepcopy(BASE)); s["scenes"][0]["cam"]["move"] = "whip"
+case("diorama: a camera whip fails and names the transition", s, PACK, must=["trans_out"])
+s = diorama(copy.deepcopy(BASE), subject_y=0.2)
+case("diorama: subject outside the safe band fails", s, PACK, must=["subject_y 0.2"])
+s = copy.deepcopy(BASE); s["scenes"][0]["comp"]["size"] = "HUGE"
+case("a Samson-set spec isn't held to the diorama map", s, PACK, must_not=["unknown size"])
+
 fails = 0
 for name, spec, pack, must, must_not in cases:
     out = run(spec, pack)

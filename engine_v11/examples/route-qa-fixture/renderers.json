@@ -1,0 +1,4 @@
+{
+  "film27_diorama": ["renderers/diorama.js"],
+  "higgsedit": ["renderers/higgsedit.jsx"]
+}

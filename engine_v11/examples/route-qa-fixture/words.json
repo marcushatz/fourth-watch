@@ -1,0 +1,170 @@
+{
+ "fps": 30,
+ "words": [
+  {
+   "word": "Fixture",
+   "start": 0.2,
+   "end": 0.78
+  },
+  {
+   "word": "line",
+   "start": 0.8,
+   "end": 1.38
+  },
+  {
+   "word": "one",
+   "start": 1.4,
+   "end": 1.98
+  },
+  {
+   "word": "uses",
+   "start": 2.0,
+   "end": 2.58
+  },
+  {
+   "word": "two",
+   "start": 2.6,
+   "end": 3.18
+  },
+  {
+   "word": "assets.",
+   "start": 3.2,
+   "end": 3.78
+  },
+  {
+   "word": "Fixture",
+   "start": 4.2,
+   "end": 4.613
+  },
+  {
+   "word": "line",
+   "start": 4.633,
+   "end": 5.046
+  },
+  {
+   "word": "two",
+   "start": 5.066,
+   "end": 5.479
+  },
+  {
+   "word": "shares",
+   "start": 5.499,
+   "end": 5.912
+  },
+  {
+   "word": "one",
+   "start": 5.932,
+   "end": 6.345
+  },
+  {
+   "word": "asset.",
+   "start": 6.365,
+   "end": 6.778
+  },
+  {
+   "word": "Fixture",
+   "start": 7.2,
+   "end": 7.694
+  },
+  {
+   "word": "line",
+   "start": 7.714,
+   "end": 8.208
+  },
+  {
+   "word": "three",
+   "start": 8.228,
+   "end": 8.722
+  },
+  {
+   "word": "is",
+   "start": 8.742,
+   "end": 9.236
+  },
+  {
+   "word": "the",
+   "start": 9.256,
+   "end": 9.75
+  },
+  {
+   "word": "dead",
+   "start": 9.77,
+   "end": 10.264
+  },
+  {
+   "word": "shot.",
+   "start": 10.284,
+   "end": 10.778
+  },
+  {
+   "word": "Fixture",
+   "start": 11.2,
+   "end": 11.551
+  },
+  {
+   "word": "line",
+   "start": 11.571,
+   "end": 11.922
+  },
+  {
+   "word": "four",
+   "start": 11.942,
+   "end": 12.293
+  },
+  {
+   "word": "needs",
+   "start": 12.313,
+   "end": 12.664
+  },
+  {
+   "word": "a",
+   "start": 12.684,
+   "end": 13.035
+  },
+  {
+   "word": "paid",
+   "start": 13.055,
+   "end": 13.406
+  },
+  {
+   "word": "still.",
+   "start": 13.426,
+   "end": 13.777
+  },
+  {
+   "word": "Fixture",
+   "start": 14.2,
+   "end": 14.551
+  },
+  {
+   "word": "line",
+   "start": 14.571,
+   "end": 14.922
+  },
+  {
+   "word": "five",
+   "start": 14.942,
+   "end": 15.293
+  },
+  {
+   "word": "has",
+   "start": 15.313,
+   "end": 15.664
+  },
+  {
+   "word": "no",
+   "start": 15.684,
+   "end": 16.035
+  },
+  {
+   "word": "price",
+   "start": 16.055,
+   "end": 16.406
+  },
+  {
+   "word": "yet.",
+   "start": 16.426,
+   "end": 16.777
+  }
+ ]
+}

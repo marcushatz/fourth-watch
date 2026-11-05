@@ -1,0 +1,16 @@
+[
+  {
+    "name": "sea_plate",
+    "origin": "hand-written fixture",
+    "license": "original",
+    "sha256": "3ae86c455a7d846970a62c0d9ae4db24980b09035aa45ac363744c9b6c22f609",
+    "path": "assets/sea_plate.svg"
+  },
+  {
+    "name": "boat_sprite",
+    "origin": "hand-written fixture",
+    "license": "original",
+    "sha256": "f23ff6c70cfb3272f86fb69a203a56fd40fa1e8806fe651fc94bc3e079c3b8f1",
+    "path": "assets/boat_sprite.svg"
+  }
+]

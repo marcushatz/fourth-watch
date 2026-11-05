@@ -1,5 +1,5 @@
 {
-  "_about": "What each checker must report on each fixture. must_fail / must_not_fail are check names in the report's FAIL rows; exit is the process exit code; contains are substrings the report must include. Fixtures are built by make_fixtures.py. fixture: run another fixture's script file; args: extra checker arguments ({FX} = the fixtures folder).",
+  "_about": "What each checker must report on each fixture. must_fail / must_not_fail are check names in the report's FAIL rows; exit is the process exit code; contains are substrings the report must include. Fixtures are built by make_fixtures.py. fixture: run another fixture's script or clip; args: extra checker arguments ({FX} = the fixtures folder); path (identity): lint this instead of fixtures/identity/<name> ({ROOT} = the repo); optional: skip if that path is gone.",
   "script": {
     "good": {"exit": 0, "must_not_fail": ["hook", "call to action", "fact-check", "reference", "verse", "answer", "value"], "not_contains": ["never spoken", "repeated phrase", "signpost", "adds nothing new"]},
     "bad_hook_mismatch": {"exit": 1, "must_fail": ["hook"]},
@@ -29,6 +29,27 @@
     "v_good": {"must_not_fail": ["format", "motion", "loudness"]},
     "v_wrong_size": {"must_fail": ["format"], "must_not_fail": ["motion", "loudness"]},
     "v_frozen": {"must_fail": ["motion"], "must_not_fail": ["format", "loudness"]},
-    "v_too_loud": {"must_fail": ["loudness"], "must_not_fail": ["format", "motion"]}
+    "v_too_loud": {"must_fail": ["loudness"], "must_not_fail": ["format", "motion"]},
+    "v_caption_mid": {"args": ["--subs", "{FX}/video/captions.srt"], "must_fail": ["caption placement"], "must_not_fail": ["format", "loudness"], "contains": ["Peter stepped out", "below the top third"]},
+    "v_caption_top": {"args": ["--subs", "{FX}/video/captions.srt"], "must_not_fail": ["caption placement", "format", "loudness"], "contains": ["| PASS | caption placement |"]},
+    "v_caption_mid_is_a_card": {"fixture": "v_caption_mid", "args": ["--subs", "{FX}/video/captions.srt", "--script", "{FX}/video/card_script.md"], "must_not_fail": ["caption placement"], "not_contains": ["| WARN | caption placement |"]}
+  },
+  "identity": {
+    "_note": "Fixtures plant one fault each; real_* lint repo files as they stand. real_storm FAILs on purpose and is a known result: the Inter labels are the unapproved layout test's labels, so the file is not to be edited for this. real_endcard passes with one WARN, its dead ?wm=plain branch (brand/identity.json lint.exceptions).",
+    "good": {"exit": 0, "contains": ["| PASS | font |", "| PASS | wordmark |", "| PASS | type color |"], "not_contains": ["| FAIL |", "| WARN |"]},
+    "bad_font": {"exit": 1, "must_fail": ["font"], "must_not_fail": ["wordmark"], "contains": ["Playfair Display", "Inter", "Lato", "Bebas Neue", "Oswald", "DejaVuSans.ttf", "Hershey"]},
+    "bad_wordmark": {"exit": 1, "must_fail": ["wordmark"], "must_not_fail": ["font"], "contains": ["mark.js:1", "weight 700"], "not_contains": ["tracking"]},
+    "bad_wordmark_tracking": {"exit": 1, "must_fail": ["wordmark"], "must_not_fail": ["font"], "contains": ["tracking 0.154em"], "not_contains": ["weight"]},
+    "bad_wordmark_family": {"exit": 1, "must_fail": ["wordmark"], "must_not_fail": ["font"], "contains": ["family Cormorant Garamond"]},
+    "bad_wordmark_css": {"exit": 1, "must_fail": ["wordmark"], "contains": ["tracking 0.160em"]},
+    "bad_wordmark_unreadable": {"exit": 1, "must_fail": ["wordmark"], "contains": ["can't be read"]},
+    "bad_wordmark_exception_elsewhere": {"exit": 1, "must_fail": ["wordmark"], "contains": ["weight 700", "tracking 0.153em"]},
+    "off_token_color": {"exit": 0, "must_not_fail": ["font", "wordmark", "type color"], "contains": ["| WARN | type color |", "#F0C062", "#B8AC9A"]},
+    "bad_token_file": {"path": "{FX}/identity/good", "args": ["--identity", "{FX}/identity/bad_token.json"], "exit": 2, "contains": ["no Round"]},
+    "testimonies_refused": {"path": "{ROOT}/presets/christian-testimonies", "exit": 2, "contains": ["presets"]},
+    "real_logo": {"path": "{ROOT}/ep01-samson/film27/logo.js", "exit": 1, "must_fail": ["font", "wordmark"], "contains": ["logo.js:281", "logo.js:283", "weight 700", "tracking 0.154em"]},
+    "real_storm": {"path": "{ROOT}/engine_v11/native_three/storm_native.js", "exit": 1, "must_fail": ["font", "wordmark"], "contains": ["storm_native.js:157", "storm_native.js:164"]},
+    "real_type_jsx": {"path": "{ROOT}/ep02-bronze-serpent/source/edit/type.jsx", "optional": true, "exit": 0, "must_not_fail": ["font", "wordmark", "type color"], "contains": ["| WARN | type color |", "#F4E9D2", "#F0C062", "#E5825A", "#B8AC9A"]},
+    "real_endcard": {"path": "{ROOT}/ep01-samson/film27/endcard_final.js", "exit": 0, "must_not_fail": ["font", "wordmark", "type color"], "contains": ["| WARN | wordmark |", "known exception", "2 wordmark draws pass"]}
   }
 }

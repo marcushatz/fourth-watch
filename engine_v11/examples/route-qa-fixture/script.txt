@@ -1,0 +1,5 @@
+Fixture line one uses two assets.
+Fixture line two shares one asset.
+Fixture line three is the dead shot.
+Fixture line four needs a paid still.
+Fixture line five has no price yet.

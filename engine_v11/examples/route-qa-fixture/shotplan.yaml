@@ -1,0 +1,114 @@
+# Worked fixture for the per-shot record. Not a real episode: nothing here is approved.
+schema_version: '1.0'
+episode_id: route-qa-fixture
+fps: 30
+width: 1080
+height: 1920
+approved_script_sha256: null
+approval:
+  script: false
+  treatment: false
+  animatic: false
+shots:
+- id: S01
+  start_frame: 0
+  end_frame: 120
+  narration: Fixture line one uses two assets.
+  read: Fixture picture for the first shot.
+  medium: 2_5d_parallax
+  size: WS
+  angle: eye
+  camera: {move: push, why: Fixture move., start_scale: 1.0, end_scale: 1.08}
+  visual: &free_visual
+    setting: fixture set
+    subject: fixture subject
+    action: fixture action
+    key_light: fixture light
+    mood: fixture mood
+    stage: PLACEHOLDER
+  claim_ids: []
+  beats: []
+  transition_out: hard_cut
+  route: film27_diorama
+  assets: [sea_plate, boat_sprite]
+- id: S02
+  start_frame: 120
+  end_frame: 210
+  narration: Fixture line two shares one asset.
+  read: Fixture picture for the second shot.
+  medium: 2_5d_parallax
+  size: MS
+  angle: eye
+  camera: {move: pull, why: Fixture move., start_scale: 1.08, end_scale: 1.0}
+  visual: *free_visual
+  claim_ids: []
+  beats: []
+  transition_out: hard_cut
+  route: higgsedit
+  assets: [sea_plate]
+- id: S03
+  start_frame: 210
+  end_frame: 330
+  narration: Fixture line three is the dead shot.
+  read: Fixture picture that should move and does not.
+  medium: 2_5d_parallax
+  size: CU
+  angle: low
+  camera: {move: push, why: Fixture move., start_scale: 1.0, end_scale: 1.1}
+  visual: *free_visual
+  claim_ids: []
+  beats: []
+  transition_out: hard_cut
+  route: film27_diorama
+  assets: [boat_sprite]
+- id: S04
+  start_frame: 330
+  end_frame: 420
+  narration: Fixture line four needs a paid still.
+  read: Fixture picture from a quoted paid job.
+  medium: 2d_character
+  size: MCU
+  angle: eye
+  camera: {move: locked, start_scale: 1.0, end_scale: 1.0}
+  visual: *free_visual
+  claim_ids: []
+  beats: []
+  transition_out: hard_cut
+  route: higgsfield_image
+  assets: []
+  generation:
+    intended_output: Fixture still for S04
+    quoted_credits: 2.75
+    quoted_at: '2026-11-05T09:00:00+00:00'
+    quote_source: fixture value, not a live quote
+    params:
+      model: gpt_image_2_5
+      prompt: Fixture prompt. Never run this job.
+      aspect_ratio: '9:16'
+      resolution: 2k
+      quality: high
+      count: 1
+- id: S05
+  start_frame: 420
+  end_frame: 510
+  narration: Fixture line five has no price yet.
+  read: Fixture picture from an unquoted paid job.
+  medium: 2d_character
+  size: WS
+  angle: high
+  camera: {move: locked, start_scale: 1.0, end_scale: 1.0}
+  visual: *free_visual
+  claim_ids: []
+  beats: []
+  transition_out: hard_cut
+  route: higgsfield_video
+  assets: []
+  generation:
+    intended_output: Fixture clip for S05
+    params:
+      model: kling3_0
+      prompt: Fixture prompt. Never run this job.
+      aspect_ratio: '9:16'
+      duration: 3
+      mode: std
+      count: 1

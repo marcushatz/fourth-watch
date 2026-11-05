@@ -1,0 +1,80 @@
+{
+  "S01": {
+    "mae": 5.726,
+    "ssim": 0.9624,
+    "worst_ssim": 0.9542,
+    "frames": 43
+  },
+  "S02": {
+    "mae": 4.596,
+    "ssim": 0.9735,
+    "worst_ssim": 0.9689,
+    "frames": 46
+  },
+  "S03": {
+    "mae": 7.559,
+    "ssim": 0.9217,
+    "worst_ssim": 0.9189,
+    "frames": 43
+  },
+  "S04": {
+    "mae": 4.846,
+    "ssim": 0.9733,
+    "worst_ssim": 0.968,
+    "frames": 48
+  },
+  "S05": {
+    "mae": 6.332,
+    "ssim": 0.953,
+    "worst_ssim": 0.9422,
+    "frames": 42
+  },
+  "S06": {
+    "mae": 5.572,
+    "ssim": 0.9706,
+    "worst_ssim": 0.9597,
+    "frames": 45
+  },
+  "S07": {
+    "mae": 5.595,
+    "ssim": 0.9596,
+    "worst_ssim": 0.9493,
+    "frames": 51
+  },
+  "S08": {
+    "mae": 5.592,
+    "ssim": 0.9693,
+    "worst_ssim": 0.9591,
+    "frames": 46
+  },
+  "S09": {
+    "mae": 5.132,
+    "ssim": 0.9725,
+    "worst_ssim": 0.9499,
+    "frames": 44
+  },
+  "S10": {
+    "mae": 5.135,
+    "ssim": 0.9705,
+    "worst_ssim": 0.9612,
+    "frames": 50
+  },
+  "S11": {
+    "mae": 6.415,
+    "ssim": 0.9521,
+    "worst_ssim": 0.9497,
+    "frames": 54
+  },
+  "S12": {
+    "mae": 5.288,
+    "ssim": 0.975,
+    "worst_ssim": 0.9721,
+    "frames": 64
+  },
+  "ALL": {
+    "mae": 5.628,
+    "ssim": 0.9633,
+    "worst_ssim": 0.9189,
+    "frames": 576
+  }
+}

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Build the checker test fixtures (deterministic). Run from anywhere:
-    python3 tests/checkers/make_fixtures.py
-Writes fixtures/script/*.md, fixtures/shotlist/*.js and fixtures/video/*.mp4 next to this file.
+    python3 tests/checkers/make_fixtures.py          # everything
+    python3 tests/checkers/make_fixtures.py --keep   # as above, but leaves clips that already exist (for when a render holds the CPUs)
+Writes fixtures/script/*.md, fixtures/shotlist/*.js, fixtures/identity/*/ and fixtures/video/* next to this file.
 Each fixture plants ONE known fault (or none); expected.json says what each checker must report."""
 import json, re, shutil, subprocess
 from pathlib import Path
@@ -92,10 +93,65 @@ score("bubble_only_beat", mutate="SHOTS[10].beats = {}; SHOTS[10].bubble = { tex
 score("no_bubble_beat", mutate="SHOTS[10].beats = {};")
 score("bad_jump_cuts", mutate="SHOTS.forEach((s) => { s.size = 'ms'; s.angle = 'eye'; });")
 
+# ---------- identity: source folders for `fw_check.py identity` (added Nov 5, before the check existed: Round 17, tests first) ----------
+def source(name, files):
+    d = FX / "identity" / name
+    shutil.rmtree(d, ignore_errors=True); d.mkdir(parents=True)
+    for fn, txt in files.items(): (d / fn).write_text(txt)
+# None planted: every route the lint reads, written the approved way. The comment must not count as a font.
+source("good", {
+    "card.js": """// Inter appears only in this comment, and "FOURTH WATCH" too: ctx.fillText('FOURTH WATCH') here draws nothing
+const SERIF = '"Cinzel"', ITAL = '"Cormorant Garamond"';
+const PARCH = '#F2E6CF', GOLD = '#E3B25C';
+function wordmark(ctx, fs) {
+  const track = 0.14 * fs;
+  ctx.font = `600 ${fs}px "Cinzel"`; ctx.fillStyle = PARCH;
+  spacedText(ctx, 'FOURTH WATCH', 540, 1400, track);
+}
+function wordmarkPx(ctx) { ctx.font = '600 100px "Cinzel"'; ctx.letterSpacing = '14px'; ctx.fillStyle = '#F2E6CF'; ctx.fillText('FOURTH WATCH', 540, 500); }
+function title(ctx) { ctx.font = `700 80px ${SERIF}`; ctx.fillStyle = GOLD; ctx.fillText('WHY', 540, 300); }
+function verse(ctx) { ctx.font = `600 italic 50px ${ITAL}`; ctx.fillStyle = 'rgba(242,230,207,0.9)'; ctx.fillText('He came to them', 540, 700); }
+""",
+    "outro.html": """<style>@font-face{font-family:Cinz;font-weight:600;src:url(cinzel-latin-600-normal.woff2)}
+#word{font:600 78px Cinz;letter-spacing:.14em;color:#F2E6CF}</style>
+<div id="word">FOURTH WATCH</div>
+""",
+    "type.jsx": """const GOLD="#E3B25C";
+export const Mark=()=><text fontFamily="Cinzel" fontWeight={600} fontSize={100} letterSpacing={14} color="#F2E6CF">FOURTH WATCH</text>;
+export const Word=()=><text fontFamily="Cormorant Garamond" color={GOLD}>word</text>;
+""",
+})
+# One off-list font per route the lint reads.
+source("bad_font", {
+    "canvas.js": """ctx.font = '600 40px "Playfair Display"'; ctx.fillStyle = '#F2E6CF'; ctx.fillText('label', 10, 10);\n""",
+    "constant.js": """const SANS = '"Inter"';\nctx.font = `600 30px ${SANS}`; ctx.fillStyle = '#F2E6CF'; ctx.fillText('label', 10, 10);\n""",
+    "loader.js": """const f = new FontFace('Lato', 'url(fonts/lato-700.woff2)');\n""",
+    "page.css": """.tag{font-family:"Bebas Neue",serif;color:#F2E6CF}\n""",
+    "clip.jsx": """export const T=()=><text fontFamily="Oswald" color="#F2E6CF">label</text>;\n""",
+    "animatic.py": """font = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 40)\ncv2.putText(img, 'label', (10, 10), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)\n""",
+})
+# The wordmark one clause wrong at a time: the first is the fault in ep01-samson/film27/logo.js's weight.
+source("bad_wordmark", {"mark.js": """ctx.font = '700 78px "Cinzel"'; ctx.letterSpacing = '10.92px'; ctx.fillStyle = '#F2E6CF'; ctx.fillText('FOURTH WATCH', 540, 1318);\n"""})
+source("bad_wordmark_tracking", {"mark.js": """ctx.font = '600 78px "Cinzel"'; ctx.letterSpacing = '12px'; ctx.fillStyle = '#F2E6CF'; ctx.fillText('FOURTH WATCH', 540, 1318);\n"""})
+source("bad_wordmark_family", {"mark.js": """ctx.font = '600 78px "Cormorant Garamond"'; ctx.letterSpacing = '10.92px'; ctx.fillStyle = '#F2E6CF'; ctx.fillText('FOURTH WATCH', 540, 1318);\n"""})
+source("bad_wordmark_css", {"mark.html": """<style>#word{font:600 74px Cinzel;letter-spacing:.16em;color:#F2E6CF}</style>\n<div id="word">FOURTH WATCH</div>\n"""})
+source("bad_wordmark_unreadable", {"mark.js": """drawLabel(ctx, 'FOURTH WATCH', 540, 1318);\n"""})
+# The endcard's dead branch, word for word, outside the one file its exception names: it must still FAIL.
+source("bad_wordmark_exception_elsewhere", {"mark.js": """ox.fillStyle = '#F2E6CF'; ox.font = `700 ${Math.round(72 * TS)}px "Cinzel"`;
+const [x0, x1] = spacedText(ox, 'FOURTH WATCH', OW / 2, WY + (1 - kn) * 18 * TS, 11 * TS);
+"""})
+source("off_token_color", {
+    "card.js": """const GOLD = '#F0C062';\nctx.font = '700 40px "Cinzel"'; ctx.fillStyle = GOLD; ctx.fillText('WORD', 10, 10);\n""",
+    "type.jsx": """export const T=()=><text fontFamily="Cinzel" color="#B8AC9A">word</text>;\n""",
+})
+# A token file that calls something approved with no Round behind it must not load.
+(FX / "identity/bad_token.json").write_text(json.dumps({"colors": {"gold": {"value": "#E3B25C", "status": "approved", "source": "system/00 §4"}}}, indent=1))
+
 # ---------- videos: 8 s, 1080x1920 unless the fault is the format ----------
 FF = shutil.which("ffmpeg")
 def ff(name, vf_src, af_src, extra=()):
     out = FX / f"video/{name}.mp4"
+    if "--keep" in _sys.argv and out.exists(): return
     cmd = [FF, "-v", "error", "-y", "-f", "lavfi", "-i", vf_src, "-f", "lavfi", "-i", af_src, "-t", "8",
            "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "veryfast", "-c:a", "aac", "-b:a", "128k", *extra, str(out)]
     subprocess.run(cmd, check=True)
@@ -105,4 +161,16 @@ ff("v_good", MOVING, TONE)
 ff("v_wrong_size", "testsrc2=size=720x1280:rate=30", TONE)
 ff("v_frozen", "color=c=0x2A1E16:size=1080x1920:rate=30", TONE)
 ff("v_too_loud", MOVING, "sine=frequency=220:sample_rate=48000,volume=8")
+# Captions for the placement check: the same three chunks, mid-frame (the planted fault) and inside the top third (the control).
+CAPTIONS = [(0.2, 2.6, "Peter stepped out"), (2.7, 5.2, "onto the water"), (5.3, 7.8, "toward the boat")]
+CAP_FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Italic.ttf"
+def captioned(name, y):
+    text = ",".join(f"drawtext=fontfile={CAP_FONT}:text='{c}':fontsize=64:fontcolor=0xF2E6CF:x=(w-text_w)/2:y={y}:enable='between(t,{a},{b})'" for a, b, c in CAPTIONS)
+    ff(name, f"color=c=0x14100D:size=1080x1920:rate=30,{text}", TONE)
+captioned("v_caption_mid", 900)
+captioned("v_caption_top", 420)
+stamp = lambda t: f"00:00:{int(t):02d},{int(round(t % 1 * 1000)):03d}"
+(FX / "video/captions.srt").write_text("".join(f"{i}\n{stamp(a)} --> {stamp(b)}\n{c}\n\n" for i, (a, b, c) in enumerate(CAPTIONS, 1)))
+# A verse card sits mid-frame on purpose and captions hide under it (film.js narration()): the same clip, told by the script that this text is a card.
+(FX / "video/card_script.md").write_text('# Card\n\n## Hook\nVERSE: "Peter stepped out onto the water toward the boat" — Matthew 14:29 (ESV)\n')
 print("fixtures written to", FX)
