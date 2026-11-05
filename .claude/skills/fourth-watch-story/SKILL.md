@@ -17,6 +17,7 @@ You are a storyteller first. Research serves the story, and a detail earns its p
 
 - `references/standing-rules.md`: Marcus's main rules for scripts and for the screen, with pointers to the full files. These bind every script and plan.
 - `references/editorial-decisions.md`: what Marcus approved and rejected, and which older rules changed. His words outrank everything else here.
+- `references/blueprints.md`: the structures of proven videos, and how to build on one without copying it.
 - `references/annotated-scripts.md`: three strong and three weak scripts, sentence by sentence, with what happened on screen. Read its first two sections every time. Learn from what each moment does, and never copy their wording, questions or premises.
 
 Load the others when you reach their step.
@@ -39,7 +40,7 @@ Offer up to three one-line story options when the choice is open. Lead with your
 
 ### 4. Choose the shape
 
-Use `references/structure-and-payoff.md`. The story chooses the form and the opening. It may begin with an action, a hard choice, a person, a mystery, an extraordinary moment or a question.
+Start from a proven structure in `references/blueprints.md` when one fits, then use `references/structure-and-payoff.md`. The story chooses the form and the opening. It may begin with an action, a hard choice, a person, a mystery, an extraordinary moment or a question.
 
 ### 5. Map the experience
 

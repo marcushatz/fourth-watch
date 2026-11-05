@@ -6,6 +6,7 @@ better scripts. Only the test in evals/test_plan.md can show that.
 
 Run: python3 tests/skills/test_story_skill.py
 """
+import importlib.util
 import pathlib
 import re
 import unittest
@@ -54,7 +55,7 @@ class StorySkill(unittest.TestCase):
         for name in (
             "story-discovery", "emotional-storytelling", "structure-and-payoff",
             "annotated-scripts", "editorial-decisions", "scripture-integrity", "evaluation",
-            "standing-rules",
+            "standing-rules", "blueprints", "craft",
         ):
             self.assertTrue((REFS / f"{name}.md").exists(), name)
 
@@ -89,6 +90,16 @@ class StorySkill(unittest.TestCase):
         self.assertIn("**UNTESTED.**", (SKILL_DIR / "evals/preliminary_walkthroughs.md").read_text())
         self.assertIn("not run", (SKILL_DIR / "evals/test_plan.md").read_text())
         self.assertIn("untested draft", SKILL.read_text())
+
+    def test_overlap_check_finds_copied_wording(self):
+        spec = importlib.util.spec_from_file_location("check_overlap", SKILL_DIR / "scripts/check_overlap.py")
+        tool = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(tool)
+        source = tool.words("the quick brown fox jumps over the lazy dog near the river bank")
+        copied = tool.words("today the quick brown fox jumps over a fence")
+        fresh = tool.words("a slow grey wolf walks past the sleeping hound")
+        self.assertEqual(tool.shared_runs(copied, source, 6), ["the quick brown fox jumps over"])
+        self.assertEqual(tool.shared_runs(fresh, source, 6), [])
 
     def test_no_copied_lintel_wording(self):
         source = words(TRANSCRIPTS.read_text())

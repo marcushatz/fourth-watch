@@ -19,7 +19,7 @@ Three strong scripts and three weak ones, analyzed sentence by sentence, plus wh
 
 **How to use this file**
 
-- Learn the moves. Never reuse, paraphrase or adapt these scripts, their questions or their topics.
+- Reuse the structure, using `blueprints.md`. Never reuse these scripts' sentences, questions or topics.
 - Notes say what each sentence does, not what it says. Sentence numbers follow the lines in `research/lintel_transcripts_all.md`. Elijah follows the shot table in `research/other_ref/bibleproject/rlFAnG_VR20.md`. Storm v3 is `ep10-fourth-watch/writer/script_v3.md`, numbered in reading order.
 - "On screen" comes from the shot studies in `research/lintel_ref/yt/`, which give the exact timing.
 - **[O]** is observed in the script or data. **[H]** is our hypothesis about why. The Viewer column is our reading, so treat all of it as [H].

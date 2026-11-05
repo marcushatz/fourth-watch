@@ -555,3 +555,12 @@ Rules:
 - **Don't give God a motive the text doesn't state,** even at the emotional hinge. Let the action stand.
 - **When a story runs past its opening question, make the link between the two halves unmistakable.**
 - **Don't merge separate actions for rhythm.** Check that each compressed line still matches the text.
+
+## Round 52 (Nov 5, 18:33): reverse engineer working videos
+His words: "i want us to reverse engineer working videos, not copy script word for word but get around it, come up with our own topic idea and then be able ot work around an already existing script from a succesfull vdieo."
+
+Rules:
+- **Scripts can start from a successful video's structure.** Use its beat order, timing, opening and ending.
+- **The topic, question and words are our own.** Don't reword a source's sentences one at a time.
+- **Scripture beats the blueprint.** If a beat doesn't fit the text, change the beat.
+- The method and the first three blueprints are in `.claude/skills/fourth-watch-story/references/blueprints.md`.
