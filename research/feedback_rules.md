@@ -578,3 +578,8 @@ His words: "the story we have chosen still does not succedd!"
 Rules:
 - **Script v4 is rejected at the level of the story.** A proven section order doesn't rescue a weak question.
 - **Check the question before writing.** See whether people already watch it, and whether the viewer loses something if it stays unanswered.
+
+## Round 55 (Nov 5, 18:50): new question chosen
+His words: "lets do it"
+
+He accepted the proposed question: "If God doesn't need anything, why did he make you?" It replaces the "good, then not good" question as the first video, and the story stays at the beginning of the world.
