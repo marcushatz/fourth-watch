@@ -28,18 +28,18 @@ Lintel made three videos from the same garden. Its video on why God left the tre
 
 ## 1. The fix that fails
 
-From Lintel's tree video (7.6M, 89 s). Use it for a hard objection people already hold.
+From Lintel's tree video (7.6M, 89 s). Use it for a hard objection people already hold. The reasons below are our reading, not proof.
 
-| Runtime | Job | Viewer feels |
-|---|---|---|
-| 0 to 10% | State the objection in the viewer's own words | Uneasy, taken seriously |
-| 10 to 18% | Scale it up to everything it touches | Morally uncomfortable |
-| 18 to 45% | Try the obvious fix, and test it twice on familiar examples | Curious, reasoning along |
-| 45 to 58% | Show what the fix would destroy, then the true reason | Understanding shifts, warmth |
-| 58 to 71% | Give one verse a job as evidence, and make the choice concrete | Trust |
-| 71 to 82% | Answer the comeback before it's asked, and widen the scale | Relief, awe |
-| 82 to 92% | Ask the opening question again and answer it in one line | Satisfaction |
-| 92 to 100% | One small ask and a logo | Prompted to reply |
+| Section | Runtime | Job | Why it works here |
+|---|---|---|---|
+| The question | 0 to 10% | State the objection in the viewer's own words | The people who hold this doubt stop scrolling and feel taken seriously |
+| The stakes | 10 to 18% | Scale it up to everything it touches | It stops being a puzzle and becomes everyone's problem |
+| The easy fix | 18 to 45% | Try the answer the viewer already has, and test it twice | The longest section, because the viewer reasons along. Two tests make a pattern |
+| The real reason | 45 to 58% | Show what the fix would destroy, then the true reason | The viewer reaches it just before the script says it |
+| The proof | 58 to 71% | Give one verse a job | Scripture arrives after the viewer already agrees, so it confirms |
+| The comeback | 71 to 82% | Answer the next objection, and widen the scale | Closes the last doubt, and gives new value after the answer |
+| The answer | 82 to 92% | Ask the opening question again and answer in one line | Closes the loop, and gives people a line to repeat |
+| The ask | 92 to 100% | One small ask and a logo | Turns the feeling into a reply |
 
 **The longest hold** sits on the moment the fix breaks.
 

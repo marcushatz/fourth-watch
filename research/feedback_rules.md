@@ -564,3 +564,10 @@ Rules:
 - **The topic, question and words are our own.** Don't reword a source's sentences one at a time.
 - **Scripture beats the blueprint.** If a beat doesn't fit the text, change the beat.
 - The method and the first three blueprints are in `.claude/skills/fourth-watch-story/references/blueprints.md`.
+
+## Round 53 (Nov 5, 18:37): named sections from proven scripts
+His words: "seperate the script by aprts naed sections and see hwy they were susccesufll in that order." "similar outcome based of what the sections of the proven working scripts accompplish."
+
+Rules:
+- **Break a proven script into named sections, and say why each works in that order.**
+- **Each of our sections has to accomplish the same job.** The topic, argument, examples and words stay our own.
