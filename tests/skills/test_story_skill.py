@@ -61,6 +61,7 @@ class StorySkill(unittest.TestCase):
     def test_standing_rules_cover_script_and_screen(self):
         text = (REFS / "standing-rules.md").read_text()
         self.assertIn("## Part 1: the script", text)
+        self.assertIn("**Emotion**", text)
         self.assertIn("## Part 2: the screen", text)
         self.assertIn("## Open decisions for Marcus", text)
         core = SKILL.read_text()

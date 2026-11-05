@@ -9,6 +9,17 @@ This file is a checklist. The full rules live in:
 
 ## Part 1: the script
 
+**Emotion**
+
+- Every video aims for extraordinary value and a clear emotional response: impressed, saddened, joyful, encouraged, motivated or genuinely educated (46).
+- Choose stories for their emotional pull, not for a small textual detail (46).
+- Find the human stakes in Scripture first, then let the story decide what feeling it can truly deliver. Never pick an emotion and go looking for a story (47).
+- Every episode has a deliberate emotional destination (39).
+- Plan a progression, not a category, with an event causing each change (47).
+- Intellectual depth serves the emotional experience. It doesn't replace it (39).
+- Show what the person wants, fears and faces. Don't label feelings (41).
+- Never manufacture emotion, invent details or exaggerate (39).
+
 **Value**
 
 - Start from a meaningful human question, conflict or struggle (39).
@@ -121,7 +132,7 @@ Use these when filling in framing, timing and acting.
 
 ## Open decisions for Marcus
 
-Follow the older rule until he decides.
+Until he decides, his newest words win.
 
-1. Something new every 10 to 15 seconds (28) against holding an emotional moment (41).
-2. A spoken closing question (Oct 30) against stopping at the emotional climax (41).
+1. Something new every 10 to 15 seconds (28) against holding an emotional moment (41, 46). For now, hold the moment.
+2. A spoken closing question (Oct 30) against stopping at the emotional climax (41). For now, the climax can end the video.
