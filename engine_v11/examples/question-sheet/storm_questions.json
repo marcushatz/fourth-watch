@@ -1,0 +1,20 @@
+{
+  "episode": "ep10-fourth-watch",
+  "questions": [
+    {
+      "question": "Why did Jesus send His disciples into a storm, and wait until the fourth watch to come to them?",
+      "tag": "open",
+      "source": "Marcus's own question for the storm. The Nov 3 writer test dropped its fourth-watch half (ep10-fourth-watch/writer/writer_test_2026-11-03/A_angles.md, Angle 3)."
+    },
+    {
+      "question": "Why would Jesus walk past His own disciples?",
+      "tag": "open",
+      "source": "Nov 3 writer test: the question all three arms chose (A_angles.md, Angle 1)."
+    },
+    {
+      "question": "Peter walked on water, then sank. So how did he get back to the boat?",
+      "tag": "inference",
+      "source": "Earlier storm hook (ep10-fourth-watch/writer/script_v3.md), rejected; see engine_v11/research/editorial_failure_registry.md, F01."
+    }
+  ]
+}
