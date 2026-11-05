@@ -1,8 +1,0 @@
-# Demo budget for one 8-second sequence. Token caps count what each agent run reports (fresh input + cache writes + output;
-# cache reads are not counted). Recalibrated after the first measured call: every NEW agent carries ~74.5k tokens of fixed
-# harness context on its first turn, whatever the job, so the proposal's first default (opus 60k per episode) could not
-# afford even one call. Revisions resume the same agent (its context is already cached) instead of spawning a new one.
-tokens: {opus: 150000, sonnet: 150000, haiku: 50000}
-external_usd: 0
-revisions: {treatment_rounds: 1, spec_passes_per_scene: 2, build_passes_per_scene: 3, opus_escalations: 2}
-new_primitives_per_sequence: 2

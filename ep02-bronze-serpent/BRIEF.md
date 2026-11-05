@@ -16,7 +16,6 @@ Inspect the repository, particularly:
 - `system/13_story_director.md`
 - `creative/library/INDEX.md`
 - `creative/AUDIT.md`
-- `ep01-samson/film27/`
 - `ep01-samson/creative/sd_pillars/RESULT.md`
 - Existing script, directing, rendering, and QA tools
 

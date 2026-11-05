@@ -54,7 +54,6 @@
 |---|---|---|
 | **`PRE`** | The 0.08 s lead: a cut lands just before its word | `05` §3 |
 | **`fw_check.py`** | The checker: `script` mode lints a script, `video` mode checks a render | `README.md` |
-| **`shotlist_check.js`** | The shot-list linter: speech rate, rhythm, beats, verse holds, tail, angles | `tools/shotlist_check.js` |
 | **WARN / FAIL** | Checker results. A FAIL must be fixed; a WARN must be fixed or explained in one line | `09` §2 |
 | **Draft / HQ** | Render quality flags: `--draft` is half resolution for quick looks; `--hq` is final | `09` §1 |
 

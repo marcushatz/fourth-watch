@@ -48,7 +48,6 @@ The pipeline, stages and gates are in `production/README.md`. Start there.
 | Tool | Does |
 |---|---|
 | `fw_check.py` | The checker. Script mode: structure, accuracy flags, the hit structure. Video mode: format, loudness, captions, voice, safe areas, verse cards, shot rhythm, visual beat clock, hook, tail. Fingerprint on the toolkit page |
-| `tools/shotlist_check.js` | The shot-list gate: rhythm, the planned beat clock, picture-per-clause fields, camera jobs, hook, verse holds, tail |
 | `toolkit_page/fw_review.py` | The review pack: contact sheets, phone test, safe zones, caption swaps, shot strips |
 | `toolkit_page/fw_critic.md` | The critic brief: 9 scores with caps, 23 failure modes |
 | `tools/reference_study/` | Measure any reel: `fw_shot_probe.js` (in the browser), `shotstats.py`, `strips.py`, `beatclock.py`, `audiostudy.py` |
@@ -56,7 +55,6 @@ The pipeline, stages and gates are in `production/README.md`. Start there.
 | `templates/` | The episode script, shot list, run sheet (gates per episode) and 7-day post-mortem templates |
 | `system/publish_log.csv` | The post log: one row per episode per platform (header only until the first post) |
 | `system/glossary.md` | Every term the system uses, with where it's defined |
-| `tools/make_manifest.py` | The release manifest: every file in a release with its hash, the tool fingerprints, the environment, and consistency checks (script = `vo.js`, score loads, `song.js`/`music.wav` are the declared ones). Specs: `ep*/release_vNN.json` |
 | `tools/check_env.py`, `ENVIRONMENT.md`, `requirements.txt` | The pinned tool versions, and a check of this machine against them |
 | `tests/checkers/` | Checker test clips with planted faults (`run_tests.py`); must pass before any checker change ships |
 
@@ -71,11 +69,10 @@ The pipeline, stages and gates are in `production/README.md`. Start there.
 - **Ep 2 is Jonah** (Marcus, Oct 31): `ep02-jonah/episode_v5_draft.md` waits for his approval of the script. The rest of this entry is history: Ep 2 was not picked before then. `research/episode_bank.md` has 20 researched questions (top three: Jonah, the forty years, Uzzah). Earlier Judas drafts are in `ep02-judas/` (Judas is also a Lintel topic). Decision 12 in `DECISIONS.md`.
 - **Ep 2 Jonah (worked example, not picked):** `ep02-jonah/` runs the bank's #1 through the script stage of the system (checker, ESV fact-check, simulated AI viewer, saved replies in `qa/round*/`). It shows the system working end to end on a new topic.
 
-**Backups:** files replaced during an edit keep a version suffix beside them (`_v1`, `_pre_…`) or go to `backups/<date>_<reason>/`.
+**Backups:** files replaced during an edit keep a version suffix beside them (`_v1`, `_pre_…`).
 
 ## Where copies live
 
-- **The Fourth Watch Toolkit page** (claude.ai artifact): the checker and every system file at these same paths, with fingerprints. A fresh session restores from there.
 - **The Fourth Watch playbook doc** (claude.ai doc): the human-readable summary.
 - **The skills** `fourth-watch-showrunner` and `fw-script-review` run the loops.
 - **The engine and episode media** live only in this workspace. A private GitHub repo would protect them; it needs Marcus's OK.

@@ -32,9 +32,8 @@ def study(name, path, t1):
     print(f"  bed level in pauses relative to speech voice band: {med(tot,gi)-med(voice,sp):+.1f} dB;  low band in pauses vs speech voice band {med(low,gi)-med(voice,sp):+.1f} dB")
     print(f"  sharp onsets (top 3% flux) per minute: overall {onset.sum()/ (len(onset)*0.05/60):.0f}, inside pauses {onset[gi].sum()/max(1e-6,total_gap/60):.0f}")
 study('LINTEL suffering', '/home/claude/fourth-watch/research/lintel_ref/ref2.mov', 113)
-study('FW ep1 v57', '/home/claude/fourth-watch/ep01-samson/film27/out/fourth-watch-ep1-samson-v57-final.mp4', 143)
 print('--- floor between words (percentiles of 50 ms levels, dB relative to the 90th percentile of the voice band)')
-for name,path,t1 in [('LINTEL suffering','/home/claude/fourth-watch/research/lintel_ref/ref2.mov',113),('FW ep1 v57','/home/claude/fourth-watch/ep01-samson/film27/out/fourth-watch-ep1-samson-v57-final.mp4',143)]:
+for name,path,t1 in [('LINTEL suffering','/home/claude/fourth-watch/research/lintel_ref/ref2.mov',113)]:
     a=load(path,0,t1); sr=16000; n=800; fr=a[:len(a)//n*n].reshape(-1,n); S=np.abs(np.fft.rfft(fr*np.hanning(n),axis=1))**2; f=np.fft.rfftfreq(n,1/sr)
     b=lambda lo,hi: 10*np.log10(S[:,(f>=lo)&(f<hi)].sum(1)+1e-12)
     v=b(300,3400); tot=10*np.log10(S.sum(1)+1e-12); low=b(30,180); ref=np.percentile(v,90)

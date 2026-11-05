@@ -2,7 +2,7 @@
 """Check this machine against the pinned environment (ENVIRONMENT.md). Prints one line per item.
 Exit 0 = everything matches; 1 = a pinned item differs or is missing (renders and checker results may differ).
     python3 tools/check_env.py            # human-readable
-    python3 tools/check_env.py --json     # for the release manifest"""
+    python3 tools/check_env.py --json     # machine-readable"""
 import hashlib, importlib, json, os, re, shutil, subprocess, sys
 from pathlib import Path
 
@@ -15,7 +15,6 @@ PINS = {
 FILES = {   # exact bytes the engine and checkers depend on: sha256 prefix (16 hex)
     "brand/logo/source/lib/three.min.js": "3b3a1c97de3ce65e",           # three.js r158
     "fw_check.py": "edaaabdd79cda102",
-    "tools/shotlist_check.js": "67d3a26665317697",
     "tools/script_judge/make_packet.py": "c631ec92ed12cc11",
     "tools/script_judge/aggregate.py": "31d351b731a073e0",
     "tools/script_judge/judge_prompt.md": "e45419b9c36953e1",

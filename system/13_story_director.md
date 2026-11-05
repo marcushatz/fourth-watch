@@ -6,7 +6,7 @@
 
 **Why it exists:**
 - Marcus's brief of Nov 1: "think visually, not simply animate instructions".
-- The audit (`creative/AUDIT.md`): no stage asked what the story needs before shots were drawn, and the plans couldn't drive the engine.
+- The Nov 1 audit: no stage asked what the story needs before shots were drawn, and the plans couldn't drive the engine.
 
 **Proof of concept:** `ep01-samson/creative/sd_pillars/`: the pillars, Judges 16:28-30, built and rendered.
 
@@ -16,7 +16,7 @@
 
 | Stage | Load | Don't load |
 |---|---|---|
-| All | This file; `creative/library/INDEX.md`; the narration and word times for the window, the canon digest, the reads model, the motifs and accuracy notes | `research/` (the digests already carry what matters), other episodes, the full system folder |
+| All | This file; the narration and word times for the window, the canon digest, the reads model, the motifs and accuracy notes | `research/` (the digests already carry what matters), other episodes, the full system folder |
 | B-D | The 1-3 recipe cards the INDEX points to for this window's jobs | All other cards |
 | F | The scene code being changed | Other scenes |
 | QA | `09` §2; the storyboard's reads table | The scripts and research |

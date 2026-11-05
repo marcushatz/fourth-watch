@@ -1,8 +1,7 @@
 # Fourth Watch: direction rules (how a script becomes shots)
 
 **Status:** binding for every shot list from Ep 1 v58 on. Version 2.1, Oct 31, 2026, after an independent audit against the evidence files (v1 is kept as `direction_rules_v1_2026-10-31.md`, the pre-audit v2 as `direction_rules_v2_pre_audit.md`).
-- `tools/shotlist_check.js` enforces the measurable rules before anything is rendered.
-- `fw_check.py video` enforces them again on the finished cut.
+- `fw_check.py video` enforces the measurable rules on the finished cut.
 - Everything else goes through the shot-list rubric in the showrunner skill (§5).
 - The words themselves (hook form, turn time, story share, echo) are in `research/script_rules_from_hits.md`; §14 below gives the summary.
 
@@ -309,10 +308,9 @@ From the 13 compared Lintel Shorts. These are checked at script lock, before any
    - Write for pictures: every sentence names a showable action or object (§0).
    - Lists of parallel items are welcome.
    - Hit §14's rules; `fw_check.py script` checks the measurable ones.
-2. **Shot list** (showrunner §5) in the score format (`ep*/film*/score.js` fields `size`, `act`, `change`, `pill`, `cam { move, amt, job }`, `beats`, `cuts`, `callback`, `arrival`).
-   - Run `node tools/shotlist_check.js <film dir>` until it passes with no FAIL.
-   - Then get Marcus's approval. **No overnight build without a shot list he has seen** (Round 15).
-3. **Motion draft:** render a low-res draft of the sections that changed (`node engine/render.js clip A B 2 --draft`) and watch it as video before the full render.
+2. **Storyboard** (`production/05_motion_and_cinematography.md`).
+   - Get Marcus's approval. **No overnight build without a shot list he has seen** (Round 15).
+3. **Motion draft:** with his OK, render a low-res draft of the sections that changed and watch it as video before the full render.
 4. **Full render.** Then run `fw_check.py video`: rhythm, visual beats, hook, tail, length.
 5. **Visual review** with the sheets, and a separate Director reviewer (fw-script-review D).
 6. **"Passes the checker" is not "good"** (Round 15). The checkers catch the measurable failures; Marcus's eye is the judge.

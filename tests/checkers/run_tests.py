@@ -2,7 +2,7 @@
 """Run the checker test clips. Exit 0 only if every expectation in expected.json holds.
     python3 tests/checkers/run_tests.py            # all (the video part takes ~1-2 min)
     python3 tests/checkers/run_tests.py --fast     # script + shot list only
-Run this BEFORE shipping any change to fw_check.py or tools/shotlist_check.js (Round 17), and put the result in the release manifest."""
+Run this BEFORE shipping any change to fw_check.py (Round 17), and put the result in the release manifest."""
 import json, re, subprocess, sys, tempfile
 from pathlib import Path
 
@@ -37,10 +37,6 @@ with tempfile.TemporaryDirectory() as tmp:
         extra = [a.replace("{FX}", str(FX)) for a in exp.get("args", [])]
         p = subprocess.run([sys.executable, str(ROOT / "fw_check.py"), "script", str(FX / f"script/{exp.get('fixture', name)}.md"), "--out", str(out)] + extra, capture_output=True, text=True)
         judge("script", name, exp, p.returncode, (out / "report.md").read_text() if (out / "report.md").exists() else p.stdout + p.stderr)
-    for name, exp in EXP["shotlist"].items():
-        out = Path(tmp) / f"sl_{name}.md"
-        p = subprocess.run(["node", str(ROOT / "tools/shotlist_check.js"), str(FX / "shotlist"), "--score", f"{name}.js", "--out", str(out)], capture_output=True, text=True)
-        judge("shotlist", name, exp, p.returncode, out.read_text() if out.exists() else p.stdout + p.stderr)
     if not fast:
         for name, exp in EXP["video"].items():
             if name.startswith("_"): continue

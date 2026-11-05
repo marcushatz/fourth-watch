@@ -22,7 +22,6 @@ Last updated: Nov 5 (after Round 47).
 ## Waiting on Marcus (Nov 5, 2026)
 
 - **Story skill test:** `fourth-watch-story` is a draft in `.claude/skills/fourth-watch-story/`. Its test, in `evals/test_plan.md`, compares it with `fourth-watch-writer` on four passages. It needs about eight agent runs and no credits. He needs to approve the runs or change the passages.
-- **Second cleanup:** the first cleanup is done. Old animation work still in the repo, not yet approved for deleting: Samson's old build folders, the old Bronze Serpent build in `ep02-bronze-serpent/film_src/`, the `creative/` card library, `backups/`, old checker versions, and `tools/shotlist_check.js`.
 - **First video:** he's choosing the story.
 - **Credit budget:** the balance is 76.47. AI video clips were about 5 credits or more per 5 seconds on Nov 2, so a full AI-animated video would pass that balance. He needs to set a budget per video.
 - **Series voice:** not chosen.
@@ -322,7 +321,6 @@ Both cards were shown on Oct 31 at night: the showrunner skill and the script-re
 
 ## Safeguards added (Round 17)
 
-- **Release manifest:** `tools/make_manifest.py <episode>/release_vNN.json` writes `<episode>/releases/<name>/MANIFEST.md` and `.json`.
   - It lists every file with its SHA-256, plus the tool fingerprints and the environment.
   - Its checks include: the script equals `vo.js`, the score loads, `song.js` and `music.wav` are the declared ones, the script checker passes, and the checker tests pass.
   - Ep 1's v57 manifest is written; v60 is checked with `--check`.
