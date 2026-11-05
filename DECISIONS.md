@@ -2,7 +2,7 @@
 
 **Use this when** Marcus is back. Every open choice is here with the exact wording to approve, the evidence and a recommendation. When he decides, record it as a new round in `research/feedback_rules.md` and update the file it names.
 
-Last updated: Nov 3 (after Round 41).
+Last updated: Nov 5 (after Round 47).
 
 **About the evidence:**
 - **"Simulated viewers" are AI agents** role-playing a first-time viewer. They can flag confusion and slow, preachy or unclear lines. They can't tell us retention, swipes or sharing; only real posts can.
@@ -18,6 +18,11 @@ Last updated: Nov 3 (after Round 41).
 - The hybrid visual philosophy is approved, as creative judgment rather than rigid rules.
 - The revised Bronze Serpent script stays unlocked for now.
 - Narration, music and paid generation wait for the next meaningful production milestone.
+
+## Waiting on Marcus (Nov 5, 2026)
+
+- **Story skill test:** `fourth-watch-story` is a draft in `.claude/skills/fourth-watch-story/`. Its test, in `evals/test_plan.md`, compares it with `fourth-watch-writer` on four passages. It needs about eight agent runs and no credits. He needs to approve the runs or change the passages.
+- **Storm script v4:** `ep10-fourth-watch/writer/script_v4.md` is an unlocked candidate of 327 words. It needs a verdict, and a decision on trimming.
 
 ## Waiting on Marcus (Nov 3, 2026)
 

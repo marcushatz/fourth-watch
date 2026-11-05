@@ -497,3 +497,16 @@ Rules:
 - **Choose stories for their emotional pull, not for a small textual detail.**
 - **Move forward with a clear sense of direction.**
 
+## Round 47 (Nov 5, 10:33 to 10:35): the story skill, built from demonstrated decisions
+His words: "Don't make the engine choose an emotion and then find a Bible story to fit it. It should discover compelling human stakes within Scripture and determine what emotional experience the story can genuinely deliver." "Research deeply, but collect only evidence that materially changes how the engine selects stories, builds emotional engagement, or writes scripts." "Do not equate popularity with storytelling quality or copy creators' scripts." "Do not replace the existing writer until the new skill demonstrates an improvement." "The most important missing ingredient is a library of demonstrated creative decisions." "The new skill should earn its place by consistently producing better scripts—not by containing more research or passing more automated checks." "The key is to make the engine a better storyteller, not merely a more disciplined scriptwriter."
+
+Rules:
+- **Discover the human stakes in Scripture first.** The feeling comes out of the story, never the other way round.
+- **Study failures and average videos alongside successes.** Separate observations from hypotheses.
+- **Keep several story forms.** Emotional value and intellectual value are different, and both count.
+- **Plan an emotional progression, not a category.** Example: helplessness, unexpected intervention, relief, gratitude.
+- **Writing and visuals share one creative plan.** Story decisions carry through to narration, camera framing, timing and acting.
+- **Start from worked examples, not generic advice.** Three strong and three weak scripts, sentence by sentence.
+- **`fourth-watch-story` is a draft under test.** `fourth-watch-writer` stays until the new skill wins the test in `.claude/skills/fourth-watch-story/evals/test_plan.md`.
+- **No agents without his approval,** including for that test.
+
