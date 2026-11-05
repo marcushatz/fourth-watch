@@ -8,7 +8,7 @@
 
 Why did Jesus send his disciples into a storm, and wait until the fourth watch of the night to come to them?
 
-That same day, those men had passed out bread to five thousand. They'd carried twelve baskets of leftovers in their own hands. Then Mark says, "Immediately he made his disciples get into the boat."
+That day, those men had passed out bread to five thousand and carried twelve baskets of leftovers in their own hands. Then Mark says, "Immediately he made his disciples get into the boat."
 
 So they left without him.
 
@@ -16,13 +16,19 @@ Then it got dark. John writes, "Jesus had not yet come to them." The wind turned
 
 Here's the hard part. Mark says Jesus "saw that they were making headway painfully." He saw them. And then, "about the fourth watch of the night," the last hours before dawn, he came.
 
-No Gospel tells us why it took until then. But look at what happens when he gets there.
+No Gospel tells us why. But look at what happens when he gets there.
 
 They don't cheer. They cry out in fear. "It is a ghost!"
 
 "Take heart; it is I. Do not be afraid."
 
-Peter climbs out, walks toward him, sees the wind, and sinks. "Lord, save me." And Jesus "immediately reached out his hand."
+Then Matthew tells us something the others leave out. Peter answers, "Lord, if it is you." Even Peter says "if." And he doesn't ask Jesus to stop the wind. He says, "command me to come to you on the water."
+
+"Come."
+
+So a fisherman steps out of a boat, in the dark, in that same wind. And he "walked on the water and came to Jesus."
+
+Nothing around him had calmed down. Then, "when he saw the wind, he was afraid." The wind hadn't changed. He began to sink. "Lord, save me." And Jesus "immediately reached out his hand."
 
 It took until the fourth watch to reach the boat. It took no time at all to reach Peter.
 
@@ -44,6 +50,9 @@ And he got into the boat with them anyway.
 |---|---|
 | The bread, twelve baskets, the order to board, "not yet come", the miles, "he saw", the fourth watch, the ghost, Peter, the hand, the loaves, hardened hearts | Stated. Mark 6, Matthew 14 and John 6 are each named where it matters |
 | Why it took until the fourth watch | Not stated, and the script says so. The hook's "wait" comes from Mark's order: he saw them, then he came |
+| Peter's "if" | Stated in the ESV. Some interpreters read it closer to "since", so the script reports the word and doesn't say he doubted there |
+| "That same wind" and "The wind hadn't changed" | Implied. Matthew says it ceased only when they got into the boat |
+| "A fisherman" | Stated in Matthew 4:18, not in this passage |
 | "Mark doesn't blame the wind. He blames the bread." | Implied by Mark's "for": they were astounded because they did not understand the loaves |
 | "The wind was never the real problem" | Our reading, marked "Mark seems to be saying" |
 | What they should have understood about the loaves | Not stated. Mark doesn't spell it out, so the script doesn't either |
