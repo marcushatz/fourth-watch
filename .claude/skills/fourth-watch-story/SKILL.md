@@ -36,6 +36,8 @@ Read the whole passage, its surroundings and any parallel accounts. Find the fou
 
 Use `references/story-discovery.md`. Find the human stakes or the question people already carry, then work out what experience the text can genuinely deliver. Never pick an emotion first and go looking for a passage to fit it.
 
+**Check the question before writing (Round 54).** Search it on YouTube, list the views of the Shorts it surfaces, and compare it with at least two other questions from the same passage. Then ask whether the viewer loses something if it stays unanswered. If the audience isn't there or the answer costs nothing, change the question. Don't try to fix it with wording.
+
 Offer up to three one-line story options when the choice is open. Lead with your recommendation. Fill in `templates/idea_card.md` for the one you recommend. If the story is already chosen, fill in the card and move on.
 
 ### 4. Choose the shape

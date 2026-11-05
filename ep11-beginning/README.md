@@ -4,6 +4,6 @@
 
 **Passages to read first:** Genesis 1 and 2. Genesis 1:31 and Genesis 2:18 hold the two statements.
 
-**Status:** script v4 is waiting for Marcus (`writer/script_v4.md`). This is the first video and the test case for `fourth-watch-create`.
+**Status:** Marcus rejected the story at script v4 (Round 54). A replacement question is waiting for his decision (`writer/question_check_2026-11-05.md`). This is the first video and the test case for `fourth-watch-create`.
 
 **Order (Round 49):** finish the skill, write the script, make the storyboard, tweak it. No video yet.

@@ -43,6 +43,8 @@ From Lintel's tree video (7.6M, 89 s). Use it for a hard objection people alread
 
 **The longest hold** sits on the moment the fix breaks.
 
+**Don't force it (Round 54).** Our fourth Genesis script matched these section jobs, and Marcus still rejected the story. The question was a puzzle about two words, not an objection people hold, so the script had to invent its stakes.
+
 ## 2. One person, three answers, then you
 
 From Lintel's video on people who never heard (1.6M, 138 s). Use it for a worry about someone specific.

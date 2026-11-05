@@ -571,3 +571,10 @@ His words: "seperate the script by aprts naed sections and see hwy they were sus
 Rules:
 - **Break a proven script into named sections, and say why each works in that order.**
 - **Each of our sections has to accomplish the same job.** The topic, argument, examples and words stay our own.
+
+## Round 54 (Nov 5, 18:46): the story still fails
+His words: "the story we have chosen still does not succedd!"
+
+Rules:
+- **Script v4 is rejected at the level of the story.** A proven section order doesn't rescue a weak question.
+- **Check the question before writing.** See whether people already watch it, and whether the viewer loses something if it stays unanswered.
