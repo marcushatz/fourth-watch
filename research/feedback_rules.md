@@ -462,3 +462,15 @@ His direction for the storm: "It's a story about men witnessing extraordinary th
 
 He also asked for a test of Content Factory against our writer: "Do not build another framework or add more writing rules yet." So this Round adds no new rules. "Our objective is the best possible storytelling, not proving that the system we've spent time building was worth building."
 
+## Round 43 (Nov 5, 09:30): the objective is the whole filmmaking engine
+His words: "Our objective is NOT to keep improving the storm renderer indefinitely." "We are building the complete Fourth Watch AI filmmaking engine, using our existing code, Higgsfield integration, and reusable creative intelligence." "Higgsfield is already part of our workflow. Three.js is a tool within the engine, not the project itself." "Our goal isn't to perfect one storm video. It's to build a filmmaking system capable of producing hundreds of distinct, high-quality videos."
+
+The five libraries: scriptwriting intelligence, visual direction, animation mechanics, visual identity, production orchestration.
+
+Rules:
+- **Finish the current renderer verification, then move on.** Don't polish the storm further.
+- **Audit first, and preserve what works.** Identify the gaps, then "implement them incrementally rather than creating another standalone prototype."
+- **"Every new technique must include working implementation or a clear execution route, examples, and validation tests."**
+- **The acceptance test:** the engine can "transform a new biblical idea into an original, coherent, professionally directed cinematic video with minimal manual intervention."
+- **"Do not spend Higgsfield credits without my explicit approval."**
+
