@@ -12,31 +12,29 @@ That day, those men had passed out bread to five thousand and carried twelve bas
 
 So they left without him.
 
-Then it got dark. John writes, "Jesus had not yet come to them." The wind turned against them. They rowed for hours and made about three or four miles.
+It got dark. John writes, "Jesus had not yet come to them." The wind turned against them. They rowed for hours and made about three or four miles.
 
-Here's the hard part. Mark says Jesus "saw that they were making headway painfully." He saw them. And then, "about the fourth watch of the night," the last hours before dawn, he came.
+Mark says Jesus "saw that they were making headway painfully." He saw them. And then, "about the fourth watch of the night," the last hours before dawn, he came.
 
-No Gospel tells us why. But look at what happens when he gets there.
-
-They don't cheer. They cry out in fear. "It is a ghost!"
+No Gospel tells us why. And when he gets there, they cry out in fear. "It is a ghost!"
 
 "Take heart; it is I. Do not be afraid."
 
-Then Matthew tells us something the others leave out. Peter answers, "Lord, if it is you." Even Peter says "if." And he doesn't ask Jesus to stop the wind. He says, "command me to come to you on the water."
+In Matthew, Peter answers, "Lord, if it is you." Even Peter says "if." And he doesn't ask Jesus to stop the wind. He says, "command me to come to you on the water."
 
 "Come."
 
-So a fisherman steps out of a boat, in the dark, in that same wind. And he "walked on the water and came to Jesus."
+So a fisherman steps out of a boat, in the dark, in that same wind, and he "walked on the water and came to Jesus."
 
-Nothing around him had calmed down. Then, "when he saw the wind, he was afraid." The wind hadn't changed. He began to sink. "Lord, save me." And Jesus "immediately reached out his hand."
+Then, "when he saw the wind, he was afraid." The wind hadn't changed. He began to sink. "Lord, save me." And Jesus "immediately reached out his hand."
 
 It took until the fourth watch to reach the boat. It took no time at all to reach Peter.
 
-Then he gets in, and the wind stops. You'd think Mark would end on the storm. He ends on the bread: "they did not understand about the loaves, but their hearts were hardened."
+Then he gets in, and the wind stops. But Mark ends on the bread: "they did not understand about the loaves, but their hearts were hardened."
 
 Mark doesn't blame the wind. He blames the bread.
 
-Hours earlier, they'd held the miracle in their hands. Mark seems to be saying the wind was never the real problem. They could stand this close to him and not know who he was.
+Hours earlier, they'd held the miracle in their hands. Mark seems to say the wind was never the real problem. They could stand this close to him and not know who he was.
 
 And he got into the boat with them anyway.
 
