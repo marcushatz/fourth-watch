@@ -42,7 +42,7 @@ Our characters (`lintel/PP2_API.md`) have dot eyes and **no controllable facial 
 - **Ease everything:** cubic in-out for moves; ease-out on arrival after a cut. Nothing moves at constant speed except dust and walking.
 - **Holds:** after a big action, hold 6–10 frames before the next thing. The eye needs to read the change.
 - **Stagger crowds:** in a group, each figure starts 2–4 frames after the last, never all at once.
-- **Motion blur on fast things:** whooshes, impacts and falls. The engine has no sub-frame blur yet; fake it with 2–3 trailing copies at falling opacity or a `post()` smear (`12_engine_guide.md` §7).
+- **Motion blur on fast things:** whooshes, impacts and falls.
 - **Secondary motion:** dust on impact, the cloth hem settling, hair or rope ends swinging, small debris after the roof falls, motes in light shafts.
 
 ## 4. The beat menu (pick one every ~2 s)
@@ -77,7 +77,7 @@ Our characters (`lintel/PP2_API.md`) have dot eyes and **no controllable facial 
 
 ## 7. The motion draft (before any full render)
 
-1. Render the changed range at half resolution: `node engine/render.js clip A B 2 --draft`.
+1. Render the changed range at low resolution, with Marcus's OK.
 2. Watch it as video (Marcus too). Stills cannot judge motion.
 3. Check:
    - Does every verb land on its word?

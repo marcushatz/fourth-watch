@@ -27,19 +27,7 @@
 
 ## The pipeline
 
-| # | Stage | Read | Tools | Gate |
-|---|---|---|---|---|
-| 0 | Know the channel | `system/00_series_canon.md` | — | — |
-| 1 | Pick the question | `system/01_topic_selection.md`, `research/episode_bank.md` | Web search (demand check) | Marcus picks from the top 3 |
-| 2 | Write the script | `system/02_story_and_script.md`, `templates/episode_template.md` | `python3 fw_check.py script episode.md` | 0 FAIL; hit-structure and value WARNs read (Value items spoken, repetition, signposts, lines with nothing new) |
-| 3 | Review it | `system/03_script_review.md`, `prompts/A–D` (+F for a decision), `tools/script_judge/rubric.md` | The `fw-script-review` skill, then the blind judge panel and `fw_check.py script episode.md --judge <run>` | A simulated (AI) viewer restates the answer at ≥ 4/5; the judge panel says GOOD ENOUGH (craft, not a forecast of views); Marcus approves |
-| 3b | Direct the story (new, Nov 1) | `system/13_story_director.md`, `creative/library/INDEX.md` (load only the cards you need), `prompts/H_story_director.md` | `tools/creative/pack.py`, `spec_check.py`, `compile_spec.py`, `budget.py` | Marcus picks one of three treatments; `spec_check` 0 FAIL; picture fact-check; stills + the muted test before any full render |
-| 4 | Plan the shots | `system/05_shot_list.md`, `system/06_camera_and_angles.md`, `system/06b_frames_light_and_sets.md`, `system/06c_shot_recipes.md`, `system/07_motion_and_acting.md`, `templates/shotlist_template.md`, `prompts/E` | `node tools/shotlist_check.js` | 0 FAIL; the angle pass; picture fact-check; Marcus approves |
-| 5 | The motion draft | `system/07_motion_and_acting.md` §7 | `node engine/render.js clip 0 30 2 --draft`; `tools/reference_study/beatclock.py` | Marcus watches it |
-| 6 | Record the voice | `system/04_voice.md` | ElevenLabs (Marcus); `film27/tools/words_from_voice.py`, `make_vo.py` | Pace 2.7–3.0 words/s; `vo.js` from real word times; the shot list re-timed and re-checked |
-| 7 | Sound | `system/08_sound.md` | `song.js`, `engine/tools/levels.js`, `tools/reference_study/audiostudy.py` | −14 LUFS; full low bed; a sound on every beat; Marcus listens |
-| 8 | Render and QA | `system/09_render_and_qa.md` | `fw_check.py video`, `toolkit_page/fw_review.py`, `toolkit_page/fw_critic.md` | 0 FAIL; critic ≥ 8 on all 9 criteria; ≥ 3 rounds |
-| 9 | Publish and learn | `system/10_publish_and_growth.md`, `system/11_lessons_log.md` | Instagram / YouTube / TikTok (Marcus posts) | The publishing checklist; the post log filled in |
+The pipeline, stages and gates are in `production/README.md`. Start there.
 
 ## The rules (binding, in order of authority)
 
@@ -71,8 +59,6 @@
 | `tools/make_manifest.py` | The release manifest: every file in a release with its hash, the tool fingerprints, the environment, and consistency checks (script = `vo.js`, score loads, `song.js`/`music.wav` are the declared ones). Specs: `ep*/release_vNN.json` |
 | `tools/check_env.py`, `ENVIRONMENT.md`, `requirements.txt` | The pinned tool versions, and a check of this machine against them |
 | `tests/checkers/` | Checker test clips with planted faults (`run_tests.py`); must pass before any checker change ships |
-| `system/12_engine_guide.md` | How the animation engine works and how to start a new episode in it |
-| `ep01-samson/film27/` | The animation engine (scenes, cards, rig, score, song). Contract: `scenes/_API.md`; rig: `lintel/PP2_API.md` |
 
 ## Episodes
 

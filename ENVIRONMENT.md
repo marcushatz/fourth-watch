@@ -11,7 +11,7 @@
 | ffmpeg / ffprobe | 6.1.1 (Ubuntu 6.1.1-3ubuntu5) | `apt` |
 | tesseract (OCR for the verse-card and caption checks) | 5.3.4 | `apt install tesseract-ocr` |
 | Headless Chrome (renderer) | Chrome for Testing 153.0.8010.12, at `/opt/pw-browsers/chromium-1243/chrome-linux64/chrome` (`CHROME_PATH`) | Pre-installed with Playwright; don't reinstall Playwright |
-| three.js | r158, vendored as `ep01-samson/film27/lib/three.min.js` (sha256 starts `3b3a1c97de3ce65e`) | In the repo; never swap it |
+| three.js | r158, vendored as `brand/logo/source/lib/three.min.js`, for the approved logo scene (sha256 starts `3b3a1c97de3ce65e`) | In the repo; never swap it |
 | Python packages | `requirements.txt`: sherpa-onnx 2.0.1, onnxruntime 1.29.0, opencv-python-headless 5.0.0.93, numpy 2.5.3, pillow 12.3.0 | `pip install --break-system-packages -r requirements.txt` |
 | Speech model (the checker's hearing check) | `sherpa-onnx-zipformer-small-en-2023-06-26`, in `~/.cache/fourth-watch/asr` | `fw_check.py` downloads it on the first video check; if the download is blocked, the hearing check runs limited |
 | Checkers | `fw_check.py` sha256 `9db74d36…`; `tools/shotlist_check.js` sha256 `67d3a266…` (Oct 31, with the bubble-beat fix) | The toolkit page; the full fingerprints are in the showrunner skill |

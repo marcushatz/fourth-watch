@@ -13,7 +13,7 @@ Approved script → voice take → storyboard
 → image-to-video only for a few hero shots, if a test earns it
 ```
 
-Higgsedit is the primary assembly engine (Marcus, Nov 3), and code draws as much as quality allows. Generated art or video is used when it materially improves a scene, with approval. Other tools are welcome when they produce a better result.
+Every video is built with Higgsedit (Marcus, Nov 5), and code draws as much as quality allows. Generated art or video is used when it materially improves a scene, with approval. Other tools are welcome when they produce a better result.
 
 ## Tool findings
 

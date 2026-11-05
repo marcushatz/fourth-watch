@@ -5,7 +5,7 @@ The backup of the whole project (GitHub reported it as **public** on Nov 2, 2026
 **What's in it:**
 - `README.md`, `DECISIONS.md`, `system/`, `prompts/`, `templates/`, `research/` (study notes only);
 - `fw_check.py`, `tools/` (the shot-list gate, the script judge, the environment and manifest tools), `tests/checkers/`;
-- the episodes, with the Ep 1 engine in `ep01-samson/film27/` and the recorded Ep 1 voice take (`ep01-samson/voice_lab/take1/voice_edit.wav`);
+- the episodes, with the recorded Ep 1 voice take (`ep01-samson/voice_lab/take1/voice_edit.wav`);
 - the final logo and outro images in `brand/`.
 
 **What's left out** (`.gitignore`):

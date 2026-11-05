@@ -93,7 +93,7 @@ Use these when filling in framing, timing and acting.
 - Every scene advances understanding. If a picture only repeats the words, redesign it (29, 30).
 - Show relationships with comparisons, match cuts, spatial relationships and symbolic transitions (29).
 - No figure just standing (Oct 29, 15). No repetitive movement, needless establishing shots or long static scenes (29).
-- Choose the visual language each moment needs, with no rigid table (37).
+- One universal style, set by the first video (48). Inside it, choose what each moment needs (37).
 - A symbolic picture must not read as a recorded event (34).
 - Bright enough to read on a phone (Oct 29).
 - No photorealism, gore or door imagery, and no text inside generated images.
@@ -127,7 +127,8 @@ Use these when filling in framing, timing and acting.
 
 - The plan becomes the storyboard in `production/05_motion_and_cinematography.md` after the voice is recorded.
 - Nothing is animated until he approves the storyboard (30).
-- Prove motion on a free placeholder before buying character art (35).
+- Every video is built in Higgsfield with Higgsedit (48).
+- Movement rules go in the plan and Higgsfield carries them out. There is no separate movement test (48).
 - Judge motion from low-res video drafts, not stills (15), and only render with his approval.
 
 ## Open decisions for Marcus

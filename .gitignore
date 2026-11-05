@@ -35,10 +35,6 @@ engine/models/
 !brand/outro_mark/mark_A.png
 !research/beat_clock_compare.png
 ep01-samson/creative/sd_pillars/film/
-engine_lab/film/
 ep02-bronze-serpent/film/
 # the live approval file is temporary
 production/approvals/current.json
-# engine v11: its v9 and v10 reference outputs are part of the verified package
-!engine_v11/outputs/v9/**
-!engine_v11/outputs/v10/**

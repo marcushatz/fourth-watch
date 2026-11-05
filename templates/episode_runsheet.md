@@ -59,19 +59,18 @@ Rules for using it:
 **Pass when:** all of the above, and the approved text is saved as `episode.md` (older drafts keep their version suffix).
 
 ## 4. The shot list (`system/05`, `06`, `06b`, `07`, `templates/shotlist_template.md`, `prompts/E`)
-- [ ] Word times estimated: `python3 film*/tools/make_vo.py` (writes `vo.js` from `episode.md`).
+- [ ] Word timings taken from the real voice take.
 - [ ] A row for every clause: the act on its word, a change about every 2 s, size + angle + reason.
 - [ ] The angle pass (06 §8): ≤ 60% plain eye-level MS/WS; ≥ 3 CU; ≥ 3 inserts; ≥ 2 low; ≥ 2 high; no jump cuts; runs on one set use ≥ 3 positions.
 - [ ] The colour script (06b §4) and the rhymes (hook ↔ ending, `callback: true`).
 - [ ] Picture fact-check: every VISUAL claim checked against the text (prompt A with the VISUAL lines).
 - [ ] E: a fresh shot-plan reviewer has read it; top fixes applied.
-- [ ] `node tools/shotlist_check.js ep[NN]-[slug]/film[NN] --score score.js --out ep[NN]-[slug]/qa/shotlist.md`: 0 FAIL, every WARN explained.
 - [ ] **(Marcus)** has seen the table and the open decisions, and approved it.
 
 **Pass when:** 0 FAIL, the angle pass done, Marcus approved. **No overnight build before this line is ticked** (Round 15).
 
 ## 5. The motion draft (`system/07_motion_and_acting.md` §7)
-- [ ] The first 30 s rendered at half resolution: `cd film[NN] && CHROME_PATH=/opt/pw-browsers/chromium-1243/chrome-linux64/chrome node engine/render.js clip 0 30 2 --draft`.
+- [ ] The first 30 s rendered at low resolution in Higgsedit, with **(Marcus)**'s OK.
 - [ ] Beat clock run on it: `python3 tools/reference_study/beatclock.py <clip.mp4>`. A beat about every 2 s; under 30% of the time in gaps over 4 s (Lintel's hits: about 20%); no gap over 6 s except one planned hold.
 - [ ] Looked at 4–6 frames per shot (not only the contact sheet).
 - [ ] **(Marcus)** watched it.
@@ -81,19 +80,19 @@ Rules for using it:
 ## 6. The voice (`system/04_voice.md`)
 - [ ] **(Marcus)** recorded the take in ElevenLabs with the locked voice and settings, or approved a recording session. Plan noted (decision 9 in `DECISIONS.md`).
 - [ ] Pace 2.7–3.0 words/s over the voice; no time-stretching (Oct 29 rule).
-- [ ] Real word times: speech recognition on the take (`python3 ep01-samson/voice_lab/take1/align_take.py <episode.md> <voice.wav> <dir>/words.json`; compare its `heard.txt` with the script), then `python3 film[NN]/tools/words_from_voice.py ep[NN]-[slug]/episode.md <dir>/words.json <dir>/flat.json`, then `python3 film[NN]/tools/make_vo.py --words <dir>/flat.json`.
-- [ ] The score re-timed from `vo.js`; `tools/shotlist_check.js` re-run with 0 FAIL.
+- [ ] Real word times: speech recognition on the take, compared with the script word for word.
+- [ ] Captions, cuts and sound cues timed from the real take.
 
-**Pass when:** `vo.js` comes from the real take and the shot list still passes.
+**Pass when:** every timing comes from the real take.
 
 ## 7. Sound (`system/08_sound.md`)
 - [ ] A soft, steady, even bed (LRA about 3 LU): a dip at the turn, never silence.
 - [ ] A sound planned for every beat; impacts only where something hits.
-- [ ] Loudness −14 LUFS integrated, true peak ≤ −1 dBTP: `node engine/tools/levels.js out/music.wav`.
+- [ ] Loudness −14 LUFS integrated, true peak ≤ −1 dBTP.
 - [ ] **(Marcus)** listened.
 
 ## 8. Render and QA (`system/09_render_and_qa.md`)
-- [ ] Full render in parts of ≤ 30 s, one background job each (`tools/render_part.sh NAME FROM TO`; ~0.2 frames/s with `--hq`, so about 6 h for a 2-minute reel), then join them (`12_engine_guide.md` §9). `node song.js` puts the soundtrack in `out/music.wav`; then `mux`.
+- [ ] Full render in Higgsedit with **(Marcus)**'s OK, then the mix added to the picture.
 - [ ] `python3 fw_check.py video --video out/<ep>.mp4 --script episode.md --subs out/<ep>.srt --out qa/video`: 0 FAIL.
 - [ ] Looked at `qa/video/sheet.png`, `issues.png`, `firstlast.png`.
 - [ ] The critic (`toolkit_page/fw_critic.md`, `fw_review.py`): ≥ 8 on all 9 criteria, at least 3 rounds.

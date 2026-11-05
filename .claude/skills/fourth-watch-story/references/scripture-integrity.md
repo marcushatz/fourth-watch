@@ -4,8 +4,6 @@ Biblical accuracy is non-negotiable. It doesn't mean avoiding interpretation or 
 
 ## Label every consequential claim
 
-These are the engine's labels (`engine_v11/.claude/skills/fourth-watch-engine/references/scripture-proof.md`), so the claim table carries into production unchanged.
-
 | Label | Meaning | How the script may say it |
 |---|---|---|
 | TEXT | The passage says it | Plainly, naming the book when it matters |
@@ -46,4 +44,4 @@ Don't skip a hard verse to keep a story clean. Quote it, keep it in the story, a
 | Naaman | "Leprosy" covers various skin diseases. The servant girl's captivity isn't a happy setup |
 | Naomi | Her grief is real. Don't say she didn't appreciate Ruth |
 
-More traps are in `.claude/skills/fourth-watch-writer/reference/verification.md` and `engine_v11/research/curated_archive/04_scripture_story_dossiers.md`.
+More traps are in `.claude/skills/fourth-watch-writer/reference/verification.md` and `research/curated_archive/04_scripture_story_dossiers.md`.

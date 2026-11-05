@@ -1,8 +1,8 @@
-// Render the Fourth Watch logo scene (film27/logo.html) to PNG with headless Chromium (software WebGL).
+// Render the Fourth Watch logo scene (source/logo.html) to PNG with headless Chromium (software WebGL).
 // usage: node render_logo.js <out.png> "<query string>"     e.g. node render_logo.js a.png "mode=square&size=1024"
 const http = require('http'), fs = require('fs'), path = require('path');
 const { chromium } = require('playwright');
-const ROOT = '/home/claude/fourth-watch/ep01-samson/film27';
+const ROOT = path.join(__dirname, 'source');
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.woff2': 'font/woff2', '.png': 'image/png' };
 (async () => {
   const [out, qs] = process.argv.slice(2);

@@ -71,18 +71,10 @@ Check each new name in the take: ElevenLabs sometimes stresses Bible names oddly
 ## 6. From the take to word times (every cut is timed from these)
 
 1. Save the take as `ep*/voice_lab/take*/voice_edit.wav`. Keep the raw file too.
-2. Get the word timings: speech recognition on the take, then one time per script token:
-   ```
-   python3 ep01-samson/voice_lab/take1/align_take.py episode.md voice_edit.wav words.json   # sherpa-onnx; writes heard.txt to compare with the script
-   python3 film27/tools/words_from_voice.py episode.md words.json out_flat.json
-   ```
-3. Build `vo.js` and the captions from the script plus those timings:
-   ```
-   python3 film27/tools/make_vo.py --words out_flat.json
-   ```
-   This writes `vo.js` and `out/captions.srt`.
-4. **Everything re-times itself:** score.js, the cards, the captions and the music cues read only from `vo.js`.
-5. Re-run `node tools/shotlist_check.js` (cuts on words, the beat clock, the tail).
+2. Get the word timings: run speech recognition on the take and give each script word one time. `ep01-samson/voice_lab/take1/align_take.py` is the working example.
+3. **Everything times itself from those word timings:** captions, cuts, pop-ups and sound cues. Never type a time by hand.
+4. Check that the take matches the script word for word.
+5. Recheck the storyboard's timing against the real take.
 6. **Pick-ups:** generate 3 takes, pick the closest in pitch and pace, and splice at a breath or a consonant. Check the join by ear and with a waveform. Then re-run steps 2–5.
 
 ## 7. Rights and labels (decide before the first post; details in `10_publish_and_growth.md` §7)
@@ -101,5 +93,5 @@ Check each new name in the take: ElevenLabs sometimes stresses Bible names oddly
 3. Is the pace 2.7–3.0 words/s over the voice?
 4. Do questions rise, answers fall, and the turn sit slower?
 5. Is the pronunciation list followed?
-6. Has `vo.js` been regenerated from the real word timings, and has the shot list been re-checked?
+6. Have the captions and cuts been timed from the real word timings, and has the storyboard been rechecked?
 7. Is the take recorded on the ElevenLabs plan Marcus chose, and will the AI label be turned on when posting?

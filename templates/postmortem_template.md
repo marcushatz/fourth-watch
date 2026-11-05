@@ -28,7 +28,7 @@ Ratios (compute from the Instagram row):
 
 - **Retention at 3 s, at the middle, at the end:**
 - **The biggest drop (time):**
-- **What was on screen and said at that moment** (look it up in `score.js` and `vo.js`, not from memory):
+- **What was on screen and said at that moment** (look it up in the storyboard and word timings, not from memory):
 - **Is it the same structural beat as a drop in an earlier reel?** (the hook, the famous-story stretch, a verse card, the turn, the re-ask, the ending)
 
 Read it with the beat sheet in `system/02_story_and_script.md` §2 beside you. A cliff in the first 3 s is the hook (words or first frame). A slow slide through the middle is pace or a retold famous story. A drop at the end card means the ending ran long.

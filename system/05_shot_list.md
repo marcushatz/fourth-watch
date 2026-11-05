@@ -1,8 +1,8 @@
 # 05 · The shot list: from approved script to a plan Marcus can see
 
-**Since Nov 1:** the Story Director (`13_story_director.md`) comes first. It produces the analysis, the treatments, the storyboard with timed reads and the implementation spec. Then `tools/creative/compile_spec.py` turns that spec into the score, and this file's linting and checklist apply. The manual procedure below is the fallback for a single line or a quick fix.
+**Since Nov 1:** the Story Director (`13_story_director.md`) comes first. It produces the analysis, the treatments, the storyboard with timed reads and the implementation spec. Then the storyboard is built in Higgsedit.
 
-**Use this when** the script is approved. Nothing is animated until the shot list passes `tools/shotlist_check.js` **and Marcus has seen it** (Round 15: no overnight build without a shot list he has seen).
+**Use this when** the script is approved. Nothing is animated until **Marcus has approved the storyboard** (Round 15: no overnight build without a shot list he has seen).
 
 Read first:
 - `research/direction_rules.md`: the rules, tagged [ALL], [2 CH], [THIN] or [HOUSE];
@@ -15,11 +15,10 @@ Read first:
 ## 1. The two forms of the shot list
 
 1. **For Marcus:** a readable table, `ep*/shotlist_vNN.md`. Columns: shot · time · words spoken · what happens on screen · size + angle + move · text on screen · new engine work. The open decisions go at the top.
-2. **For the engine:** `ep*/film*/score_vNN.js`, with one `add()` per shot carrying the direction fields. The linter and the renderer read this form, so the two must say the same thing.
 
 ## 2. The procedure
 
-1. **Time the words.** Marcus's Oct 28 order of work was script → video → voice last. Since the Ep 1 take, shots are timed to the recorded voice. Before a take exists, `make_vo.py` estimates word times from the script, so the shot list can be planned and checked first and re-timed when the take arrives. After the voice is recorded, `tools/make_vo.py` writes `vo.js` (word start and end times). Every cut lands within 0.15 s before the word it cuts on (`cue(line, 'word') - PRE`). Never hard-code a time.
+1. **Time the words.** The voice comes first, and shots are timed to the real take. Every cut lands within 0.15 s before the word it cuts on (`cue(line, 'word') - PRE`). Never hard-code a time.
 2. **The picture comes from the director's storyboard** (13 §3), not one illustration per sentence. Split on clauses: three verbs = three beats, each shown happening on its word.
 3. **For each clause write:**
    - `act`: the verb, performed on its word, using a pose the rig has (`lintel/PP2_API.md`).
@@ -36,28 +35,8 @@ Read first:
    - his strength left at the shave (16:19);
    - there was no inner-room ambush at 16:20;
    - a "young man" led him, not a boy.
-9. **Lint:** `node tools/shotlist_check.js <film dir> --score score_vNN.js --out qa/shotlist.md`. Fix every FAIL; explain every WARN in one line.
+9. **Check it** against `research/direction_rules.md`, and explain every exception in one line.
 10. **Show Marcus** the table, the open decisions and the beat-clock chart. Then make a **half-resolution motion draft** of the first 30 s before any full render.
-
-## 3. The direction fields (score.js)
-
-```js
-L('G1', 'sorek', 'seized', st(6) - PRE, {
-  size: 'ms', angle: 'high',                                  // 'eye' | 'low' | 'high' | 'top' | 'ots' | 'pov'
-  act: 'Samson stands, unaware; the Philistines close in and seize him on contact (16:21; no struggle is described)',
-  change: 'slow push +8%; the 16:20 card lands over the struggle',
-  pill: 'THE LORD HAD LEFT HIM',
-  cam: { move: 'push', amt: 8, job: 'reveal' },              // moves of 15% or more need a job
-  beats: { left: cue(6, 'left'), seize: cue(6, 'him') },     // every visible change, on its word
-  card: 'verse', verse: 0, verseAt: st(6),                    // card values: 'verse', 'label' (+ Ep 1 cards); counter, tally, stamp and bubble are their own shot fields
-  long: 'set',                                                // only for shots past 6 s: 'verse' | 'travel' | 'diagram' | 'set'
-  callback: false, arrival: false, list: false, flashIn: false,
-});
-```
-
-All fields are documented in `ep01-samson/film27/scenes/_API.md`. `angle` is new (Oct 31): the linter doesn't read it yet, but the angle pass does.
-
-**Which score has these fields:** `L()`, the direction fields and verse `marks` exist in **`score_v58.js`** (the v58 plan), not in the rendered v57 `score.js`, which uses plain `add()`. Plan fields (`size`, `angle`, `act`, `change`, `name`, `cam`, `cuts`, `long`, `list`, `callback`, `arrival`) are read only by the linter; the renderer ignores them. The `name:` field is **not drawn**: name pills come from the scene module's returned `tags`. A `bubble.beat` counts toward the beat clock only if it's also listed in `beats`. Full map: `system/12_engine_guide.md` §4.
 
 ## 4. The device menu (what can change on screen)
 
@@ -91,5 +70,4 @@ All fields are documented in `ep01-samson/film27/scenes/_API.md`. `angle` is new
 11. Has every picture been checked against the text (the fact-check agent)?
 12. Does nothing depend on facial expressions (the rig has none: use poses, props, bubbles, light)?
 13. Does every beat have a sound planned (`08_sound.md`)?
-14. Do `node tools/shotlist_check.js` 0 FAIL and the WARNs have explanations?
 15. Does the reel end ≤4.5 s after the last spoken word?

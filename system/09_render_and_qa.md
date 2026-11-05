@@ -6,28 +6,18 @@
 
 ## 1. Order of work
 
-1. **The motion draft** (half resolution, the first 30 s, then any changed section):
-   ```
-   export CHROME_PATH=/opt/pw-browsers/chromium-1243/chrome-linux64/chrome
-   cd ep*/film*
-   node engine/render.js clip 0 30 2 --draft
-   ```
-   Watch it, measure it (`python3 ../../tools/reference_study/beatclock.py out/<clip>.mp4`), and send it to Marcus. He judges motion from video, never from stills.
-2. **Stills for fixes:** `node engine/render.js stills 12.3 15.8`. Use them only to check one frame (composition, text, safe areas).
-3. **The full render, in parts** (one part per command, because background jobs are capped at 2 h):
-   ```
-   node engine/render.js clip A B 2 --hq      # → out/clip_A-B.mp4; tools/render_part.sh NAME A B moves it to out/parts/NAME.mp4
-   ```
-   Then join the parts (Ep 1: `tools/assemble57b.py`; see `12_engine_guide.md` §9). About 0.17–0.33 frames/s on this machine, so a 120 s reel takes several hours: plan it, and render overnight only after approval.
-4. **The soundtrack:** `VOICE=<voice wav> node song.js` with the approved voice. It writes the soundtrack and copies it to `out/music.wav`, which `clip` and `mux` read (fixed Oct 31).
-5. **Captions:** `out/<ep>.srt` comes from the VO text plus word times. Never retype it.
+1. **Frames to check:** `higgsedit frame <composition> <seconds> --out $PWD/check.png` in the Higgsfield sandbox. Use them to check composition, text and safe areas.
+2. **The motion draft:** a short low-resolution render, only with Marcus's OK. He judges motion from video, never from stills.
+3. **The full render:** `higgsedit render <composition> --out $PWD/film.mp4 --workers 4 --bitrate 16M`, only with his OK. Keep each background job under 15 minutes. Working commands are in `ep02-bronze-serpent/source/README.md`.
+4. **The soundtrack:** mix the approved voice, music and effects, then add them to the picture.
+5. **Captions:** built from the real word timings. Never retype them.
 
 ## 1b. Before the full render (Story Director, `13` §4)
 
 1. **Stills at every read's start** → a contact sheet: is each read's subject where the eye lands, inside 22-60% of the height and clear of the caption band?
 2. **The muted test:** a fresh agent with vision gets only the contact sheet (no words) and writes what happens. A missed read fails its shot.
 3. **The motion clip of the window:** watch it as video.
-4. **Name the three most serious visual problems; revise only those shots.** Shots that passed keep their cache keys and aren't re-rendered.
+4. **Name the three most serious visual problems; revise only those shots.** Shots that passed aren't re-rendered.
 
 ## 2. The QA loop (after every render)
 

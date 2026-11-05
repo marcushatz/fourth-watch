@@ -24,15 +24,5 @@ Read `system/05_shot_list.md` and `system/06_camera_and_angles.md` first. One ro
   - ≥ 3 positions on any run of 4+ shots on one set.
 - **The planned beat clock:** a change about every 2 s; at most one gap over 6 s.
 - **The picture fact-check** (prompt A): every picture where and when the text puts it.
-- **`node tools/shotlist_check.js <film dir> --score score_vNN.js`:** 0 FAIL, and every WARN explained.
 - **The final image** calls back the hook; the reel ends ≤ 4.5 s after the last word.
 
-## score.js row (copy per shot)
-```js
-L('ID', 'scene', 'v', cue(line, 'Word') - PRE, {
-  size: 'ms', angle: 'eye',            // 'eye' | 'low' | 'high' | 'top' | 'ots' | 'pov'
-  act: '', change: '', pill: '',
-  cam: { move: 'drift', amt: 3 },      // ≥ 15% needs job: 'hook-reveal' | 'travel' | 'follow' | 'reveal'
-  beats: { word: cue(line, 'word') },
-});
-```

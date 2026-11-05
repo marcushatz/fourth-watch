@@ -90,9 +90,9 @@ Long runs on one set are fine when the camera changes position. The v58 plan's D
 | Transition | Use | Engine |
 |---|---|---|
 | Hard cut on the first word of the new clause | Default | Shot t0 = the word time minus 0.08 s (`PRE`) |
-| Whoosh (the subject exits fast with motion blur and the next enters) | Entrances, lists, energy | Figure position over 0.25 s. Sub-frame motion blur is **not built** (fake it with trailing copies; `12_engine_guide.md` §7) |
-| Graphic match / morph (a shape becomes the next scene) | Symbolic links: gate posts → pillars; locks of hair on the floor → chains | Match the shape's screen position across the cut. The 0.3 s dissolve is **not built** yet (film.js has only `dip` and `flashIn`) |
-| Crossfade 0.2–0.3 s | Soft time jump | **Not built** yet: film.js has only `dip` and `flashIn` (`12_engine_guide.md` §7) |
+| Whoosh (the subject exits fast with motion blur and the next enters) | Entrances, lists, energy | Figure position over 0.25 s, with motion blur |
+| Graphic match / morph (a shape becomes the next scene) | Symbolic links: gate posts → pillars; locks of hair on the floor → chains | Match the shape's screen position across the cut |
+| Crossfade 0.2–0.3 s | Soft time jump | A short dissolve |
 | Light sweep | Time jump (day → night) | Animate the key light across the cut |
 | Dip to dark 0.3–0.5 s | A loss; before the end card | `dark: 0..1` on the frame |
 | Cream flash 0.2 s (`flashIn`) | Only a real jump in place or time | On Bible Animations, flash cuts showed up in the lows |
@@ -124,7 +124,6 @@ cam.setViewOffset(W, H, 0, -shift * H, W, H);                    // vertical fra
 - **Close-up:** move closer rather than narrowing the fov below ~30°, which flattens our low-poly figures; use `focus`/`aperture` for a soft background.
 - **OTS:** put a foreground billboard (spears, a lord's shoulder) between the camera and the subject; it blurs with depth of field (`fgScale`).
 - **Moves:** interpolate the position and look-at with `FW.ease.inOut(k)` where `k = (t − beat) / dur`; start at `shot.beats.word`.
-- **Billboard limit:** characters are flat billboards that turn to the camera. Keep the camera within about ±35° of their front, or they read as cardboard. For high and top-down angles, rely on the automatic back-lean (film.js leans each card back by half the camera's pitch) or use the lying poses ('sleep'). `bb.userData.tilt` rolls the card in the picture plane (for falls); it does not tip it back.
 
 ## 8. The angle pass (do this on every shot list)
 
@@ -135,7 +134,7 @@ Before the shot list goes to Marcus:
 4. Find two rhymes (hook ↔ end, warning ↔ consequence) and plan the match cuts.
 5. Check every neighbouring pair for a jump cut (same size, same angle).
 6. On any run of 4+ shots on one set, check that at least 3 different camera positions are used.
-7. Run `node tools/shotlist_check.js` (rhythm, beats, verse holds, tail).
+7. Check rhythm, beats, verse holds and the tail against the storyboard.
 
 ## 9. Ep 1 angle plan (applied to v59; see `ep01-samson/shotlist_v59.md`)
 

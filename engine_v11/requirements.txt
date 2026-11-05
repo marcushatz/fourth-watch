@@ -1,4 +1,0 @@
-# Fourth Watch engine v11, on top of the repo's own requirements.txt. Install in a virtual environment
-# so the repo's pinned packages stay as they are.
-vtk==9.7.2
-pyyaml==6.0.3

@@ -22,6 +22,11 @@ Last updated: Nov 5 (after Round 47).
 ## Waiting on Marcus (Nov 5, 2026)
 
 - **Story skill test:** `fourth-watch-story` is a draft in `.claude/skills/fourth-watch-story/`. Its test, in `evals/test_plan.md`, compares it with `fourth-watch-writer` on four passages. It needs about eight agent runs and no credits. He needs to approve the runs or change the passages.
+- **Second cleanup:** the first cleanup is done. Old animation work still in the repo, not yet approved for deleting: Samson's old build folders, the old Bronze Serpent build in `ep02-bronze-serpent/film_src/`, the `creative/` card library, `backups/`, old checker versions, and `tools/shotlist_check.js`.
+- **First video:** he's choosing the story.
+- **Credit budget:** the balance is 76.47. AI video clips were about 5 credits or more per 5 seconds on Nov 2, so a full AI-animated video would pass that balance. He needs to set a budget per video.
+- **Series voice:** not chosen.
+- **Lifting the lock:** Higgsedit runs in the Higgsfield sandbox, which the lock blocks. Building the first video needs his words to lift it.
 - **Storm script v4:** `ep10-fourth-watch/writer/script_v4.md` is an unlocked candidate of 327 words. It needs a verdict, and a decision on trimming.
 
 ## Waiting on Marcus (Nov 3, 2026)
@@ -217,7 +222,7 @@ So the animation alone wouldn't need it; the AI narrator does. The label goes on
 
 ### 13. The private GitHub repo: approved (Round 19); waiting on your GitHub
 
-The engine (`ep01-samson/film27/`) and the voice takes exist only in this workspace, which is wiped after a stretch of inactivity.
+The voice takes exist only in this workspace, which is wiped after a stretch of inactivity.
 
 **Ready:** the repo is built locally:
 - the system, the scripts, the engine code and the Ep 1 voice take;

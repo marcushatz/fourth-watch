@@ -358,7 +358,7 @@ Our own example from storm v4, showing a story decision carried through to the s
 
 ## 10. Wider library
 
-Use these when relevant. Fuller notes are in `engine_v11/research/curated_archive/02_comparative_case_studies.md`. Comment notes are in `research/creative_study_2026-11-03/findings.md`.
+Use these when relevant. Fuller notes are in `research/curated_archive/02_comparative_case_studies.md`. Comment notes are in `research/creative_study_2026-11-03/findings.md`.
 
 | Video | Views | Tier | Lesson |
 |---|---|---|---|

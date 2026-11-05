@@ -37,7 +37,7 @@ Numbers are **measured** (probe, shot detector, beat clock, captions, view count
   - Bible Animations: a crown pops on "is God", a brain on "intelligent".
 - The lows break it: BibleProject's two lows play "rescued from evil and death" and "brings the throne up" over still pictures.
 
-**Ep 1 v57** broke it most often: Samson or Delilah standing and facing the camera while the voice says what they did. The rig already had most of the actions (§11). The failure was in the shot list, not the engine.
+**Ep 1 v57** broke it most often: Samson or Delilah standing and facing the camera while the voice says what they did. The failure was in the shot list.
 
 ## 1. The beat clock: something changes about every 2 s [ALL in direction; thresholds calibrated on Lintel]
 
@@ -228,31 +228,31 @@ Measured with `tools/reference_study/audiostudy.py`: 50 ms levels against the 90
 - **Every visual beat gets a sound:** a whoosh on an entrance, a snap on a burst, coins on a counter tick, a thud on a stamp. The beat clock (§1) is also a sound clock.
 - **Caveat:** one reel, from a screen recording. Confirm on more reels before treating the numbers as targets. Until then, keep the music 9–10 dB under the voice in the voice band. Marcus judges by ear.
 
-## 11. Device library: what the hits use, against our engine
+## 11. Device library: what the hits use
 
-| Device | Seen on | Our engine (film27) | Status |
-| --- | --- | --- | --- |
-| Character actions | all | PP2.samson poses: stand, walk, carry, point, lean, sleep, wake, strain, burst (rope / bowstring / loom), grind, lookup, pray, push. Plus Delilah (stand, turn, call, sit, beckon), barber (shave), lord (stand, laugh, fall), boy (lead), crowd (stand, raise, hold, kneel, cheer, fall), angel, lion | exists, under-used in v57 |
-| Walking across a set | Lintel, BibleProject | billboard position animation per shot | exists (write per shot) |
-| **Whoosh-in on a name** (enter with motion blur, leave when the line moves on) | Bible Animations | — | **build**: per-figure `enter: { beat, from: 'left' / 'right' / 'top', blur }`, `exit: { beat }` |
-| **Blank-faced viewer figure ("YOU")**, who voices the doubt, reacts, and is labelled YOU at the end | Bible Animations (all 3 hits, neither low) | — | **build**: one faceless figure with a "?" bubble, reaction poses, label. Mind Marcus's rule: the figure **asks**, it never stands for someone who strayed |
-| Speech bubble | Bible Animations | shot `bubble: { text, beat, x, y, tx, ty }` (cards.js `C.bubble`) | **exists (Oct 31)**; beside the head, tail to the mouth, never over a face; hide the caption while it repeats the same words |
-| Name pill | Lintel | scene `tags` (text, sub, point, reveal) | exists |
-| Label pill / stamp / shout | Lintel, Bible Animations | cards `label`, `pill`, `shout`; shot `stamp: { text, beat, color, rot, y }` | exists (stamp since Oct 31) |
-| Verse card | Lintel | cards `verse` | exists |
-| **Verse acted on** (a phrase turns gold, a hand points, a phrase lifts out) | Bible Animations | `VERSES[i].marks: [{ phrase, at, kind: 'gold' }]` (cards.js verse card) | **exists (Oct 31)** for gold + underline sweep; 'point' and 'lift' still to build |
-| God's light | Lintel, BibleProject | scene `rays` (amt, target) | exists |
-| Flash transition | Lintel | shot `flashIn: true` (0.2 s cream flash on the cut) | exists; use for real scene jumps only (§7.4) |
-| **Graphic morph** (a shape becomes the next scene) | BibleProject | — | **build later**: a shot-level `morph: { from: 'shape', to: 'scene', dur }` |
-| Counter (coins, numbers) | Lintel | shot `counter: { from, to, beat, dur, label, sub, y }` | exists (Oct 31) |
-| Tally with a red X | Lintel | shot `tally: { items: [{ label, mark, beat }], xBeat, y }` | exists (Oct 31) |
-| "?" silhouette labelled later | Bible Animations | — | **build**: a faceless silhouette prop with a `?` that resolves to a name pill on a beat |
-| Subtraction (objects vanish) | Lintel | — | **build**: per-scene prop fade or scale-out keyed to a beat |
-| Diagram (timeline, two groups, a list building) | all | — | **build**: cards `diagram` |
-| Comic-panel inset (a second action in the same shot) | BibleProject | — | optional |
-| Search bar / comment bubbles | Lintel | cards `cta` typing field | partly (reuse for a search bar) |
-| Hook pull-out camera | Lintel | per-scene camera | template: start medium on the subject, pull out 40–60% over 1.2–2 s, landing on the key clause |
-| Arrival image + hook callback | all | — | plan it in the shot list (reuse the hook set) |
+| Device | Seen on |
+| --- | --- |
+| Character actions | all |
+| Walking across a set | Lintel, BibleProject |
+| **Whoosh-in on a name** (enter with motion blur, leave when the line moves on) | Bible Animations |
+| **Blank-faced viewer figure ("YOU")**, who voices the doubt, reacts, and is labelled YOU at the end | Bible Animations (all 3 hits, neither low) |
+| Speech bubble | Bible Animations |
+| Name pill | Lintel |
+| Label pill / stamp / shout | Lintel, Bible Animations |
+| Verse card | Lintel |
+| **Verse acted on** (a phrase turns gold, a hand points, a phrase lifts out) | Bible Animations |
+| God's light | Lintel, BibleProject |
+| Flash transition | Lintel |
+| **Graphic morph** (a shape becomes the next scene) | BibleProject |
+| Counter (coins, numbers) | Lintel |
+| Tally with a red X | Lintel |
+| "?" silhouette labelled later | Bible Animations |
+| Subtraction (objects vanish) | Lintel |
+| Diagram (timeline, two groups, a list building) | all |
+| Comic-panel inset (a second action in the same shot) | BibleProject |
+| Search bar / comment bubbles | Lintel |
+| Hook pull-out camera | Lintel |
+| Arrival image + hook callback | all |
 
 ## 12. What did not separate hits from lows (on any channel)
 

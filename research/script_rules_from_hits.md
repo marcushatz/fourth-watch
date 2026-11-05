@@ -27,7 +27,7 @@ Where a finding below conflicts with one of his rules, his rule wins, and the co
   - Words that never built on screen are shown in [brackets] and are not counted.
   - Methuselah's first 4 s show a counter with no caption, so its first spoken words are unknown. Its word count is a few words low.
   - Both scripts are given in full in the appendix.
-- **Ep 1 v57:** exact word timings from `ep01-samson/film27/vo.js`, generated from `episode.md` v57.
+- **Ep 1 v57:** exact word timings from the v57 take, generated from `episode.md` v57.
   - The final render runs **149.92 s**.
   - The voice ends at 143.02 s, then a 1.3 s hold, then the 5.6 s outro.
 
@@ -346,7 +346,7 @@ Every rule is checked at script lock, before any shot list. **Measured** marks a
 
 ## 4. Check: our Ep 1 v57
 
-Source: `ep01-samson/episode.md` (v57) for the lines; `film27/vo.js` for the timings; the final render runs 149.92 s.
+Source: `ep01-samson/episode.md` (v57) for the lines; the v57 take for the timings; the final render runs 149.92 s.
 
 | Measure | Ep 1 v57 | Hits | Verdict |
 |---|---|---|---|

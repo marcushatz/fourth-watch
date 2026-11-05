@@ -510,3 +510,12 @@ Rules:
 - **`fourth-watch-story` is a draft under test.** `fourth-watch-writer` stays until the new skill wins the test in `.claude/skills/fourth-watch-story/evals/test_plan.md`.
 - **No agents without his approval,** including for that test.
 
+## Round 48 (Nov 5, 12:20 to 12:31): one route, one style, no old code
+His words: "it sboaut creating this sucessfull skill file that is difficult for someone else to create, so that it is good enough that upon request we can use it to create a high quality animation coded video, to srcipt it, voice it, addd captions, the full package." "what else did we purchase the higgsfiled subscription for, yes we need one universal type of visaul style, once we create our first video we will use that style, dont do anythign before asking my question." "yea we need to delete anything thats poiting at our old code, old aniamtion style, before we introduced higgsfiled to the table." "i see no profitable reason for proving the movement, we dont need to prove it if we set the rule sin the script, andthen let higgsfiled work the magic."
+
+Rules:
+- **The goal is one skill that makes the full package on request:** script, voice, captions and animation.
+- **Every video is built in Higgsfield with Higgsedit.** The old engines and their tools are deleted, and stay on the branch `archive/pre-cleanup-2026-11-05`.
+- **One universal visual style.** The first video sets it, and every later video reuses it. This narrows Round 37.
+- **No separate movement test.** Movement rules go in the plan, and Higgsfield carries them out. This replaces the placeholder step in Round 35.
+- **When he asks a question, answer it and ask before starting work.**

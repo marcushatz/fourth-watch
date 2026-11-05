@@ -7,14 +7,13 @@ import hashlib, importlib, json, os, re, shutil, subprocess, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-FILM = ROOT / "ep01-samson/film27"
 PINS = {
     "python": "3.13", "node": "v22.23", "ffmpeg": "6.1.1", "tesseract": "5.3.4",
     "chrome": "153.0.8010.12",
     "pkg:sherpa_onnx": "2.0.1", "pkg:onnxruntime": "1.29.0", "pkg:cv2": "5.0.0", "pkg:numpy": "2.5.3", "pkg:PIL": "12.3.0",
 }
 FILES = {   # exact bytes the engine and checkers depend on: sha256 prefix (16 hex)
-    "ep01-samson/film27/lib/three.min.js": "3b3a1c97de3ce65e",           # three.js r158
+    "brand/logo/source/lib/three.min.js": "3b3a1c97de3ce65e",           # three.js r158
     "fw_check.py": "edaaabdd79cda102",
     "tools/shotlist_check.js": "67d3a26665317697",
     "tools/script_judge/make_packet.py": "c631ec92ed12cc11",

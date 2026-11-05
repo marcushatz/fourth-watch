@@ -1,8 +1,8 @@
-// Render frames of film27/endcard_anim.html with headless Chromium (software WebGL); the scene is built once.
+// Render frames of source/endcard_anim.html with headless Chromium (software WebGL); the scene is built once.
 // usage: node render_endcard.js <outdir> "<query>" <times>   times: "0.5,1.6,3,5.5" or "from:to:fps" (frame files f_0000.png...)
 const http = require('http'), fs = require('fs'), path = require('path');
 const { chromium } = require('playwright');
-const ROOT = '/home/claude/fourth-watch/ep01-samson/film27';
+const ROOT = path.join(__dirname, 'source');
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.woff2': 'font/woff2', '.png': 'image/png' };
 (async () => {
   const [outdir, qs, spec, startIdx] = process.argv.slice(2);

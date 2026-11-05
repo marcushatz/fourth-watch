@@ -66,7 +66,7 @@ Marcus requires the idea card (`templates/idea_card.md`, explained in `productio
 - Don't favor a story because it's familiar, easy, hard to criticize or tied to the channel's name.
 - An open question can lead a video. The script must say plainly what Scripture doesn't tell us.
 - Search and comment data show interest, not quality. Use them to check that people care.
-- For a blind reaction, use question mode in `engine_v11/scripts/build_cold_review.py`.
+- For a blind reaction, use question mode in `tools/build_cold_review.py`.
 
 ## Discard
 

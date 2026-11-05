@@ -44,7 +44,7 @@ Paid jobs still need separate approval under `GENERATION_APPROVAL.md`, however t
 
 ## Identity and the look gate
 
-Fourth Watch has one recognizable identity, not one required appearance or technique. Each scene uses the visual language that serves it best: `01_brand_and_references.md`.
+Fourth Watch uses one universal visual style. The first video sets it, and every later video reuses it (Marcus, Nov 5). Details: `01_brand_and_references.md`.
 
 Before a new look is used, this runs between stages 3 and 5:
 
@@ -58,9 +58,9 @@ Before a new look is used, this runs between stages 3 and 5:
 
 Once a look is approved, later episodes reuse it and skip this gate.
 
-**Current state (Nov 3):** the hybrid approach is approved, and the identity draft in `01` is waiting for Marcus to judge it from proof frames. Stills that cost credits run only with his approval.
+**Current state (Nov 5):** no style is set yet. The first video's approved still sets it. Stills that cost credits run only with his approval.
 
-**Assembly:** Higgsedit is the primary engine. Other tools are welcome when they produce a better result.
+**Building:** every video is built in Higgsfield with Higgsedit (Marcus, Nov 5). The working example is `ep02-bronze-serpent/source/`.
 
 ## Files
 
@@ -93,10 +93,11 @@ Once a look is approved, later episodes reuse it and skip this gate.
 | `system/00`, `01`, `10`; `research/`; `prompts/`; `templates/`; `tools/script_judge/`; `fw_check.py` | Live |
 | `system/02`, `03` | Live, with the writer and script review skills |
 | `system/04`, `08` | Live for craft and checks. Tool routes follow `06` |
-| `system/05`, `06`, `06b`, `06c`, `07`, `13` | Live for craft. Their film27 commands are retired |
+| `system/05`, `06`, `06b`, `06c`, `07`, `13` | Live for craft only |
 | `system/09` | Live for checks. Its render route is retired |
 | `system/11` | Live as history |
-| `system/12`, `ENGINE_ROADMAP.md`, `engine/`, `engine_lab/`, `ep01-samson/film27/` | Archive. Mine for parts, don't build on them |
+
+**Deleted on Nov 5:** the old engines and their tools. Everything is on the GitHub branch `archive/pre-cleanup-2026-11-05`. The research moved to `research/curated_archive/`, and the approved logo source moved to `brand/logo/source/`.
 
 ## How this system stays current
 

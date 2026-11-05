@@ -40,7 +40,7 @@
 | **Colour script** | The planned colour and light of every section before any shot is built | `06b` §4 |
 | **Two lights** | Gold from the upper left only where the text says God acted; ember for people's own choices | `00_series_canon.md`, `07` §6 |
 | **Verse card** | An ESV quote on screen with its reference. Holds 3.5–5 s, or longer only with marks | `05` §4 |
-| **Marks** | Phrases in a held verse card that turn gold or ember on their spoken word | `VERSES[i].marks` in `score.js` |
+| **Marks** | Phrases in a held verse card that turn gold or ember on their spoken word | The storyboard |
 | **Pill / tag** | A small name label with a one-line frame ("GAZA · A PHILISTINE CITY") | `05` §4 |
 | **Counter, tally, stamp, bubble** | Card devices: a number that counts; ✓ ✓ ✓ ✗; a verdict stamp; a speech bubble on the speaker | `05` §4 |
 | **Motion draft** | A half-resolution render of the first 30 s, shown to Marcus before any full render | `07` §7 |
@@ -52,10 +52,6 @@
 
 | Term | Meaning | Where |
 |---|---|---|
-| **film27** | The animation engine folder for Ep 1 (`ep01-samson/film27/`). Copy it for a new episode | `system/12_engine_guide.md` |
-| **`score.js`** | The timeline: every shot (`add`/`L`), and the verse cards. Ep 1's rendered `score.js` is v57 (plain `add()`); the direction fields and marks live in `score_v58.js`, the plan | `05` §3, `12` §4 |
-| **`vo.js`** | Word start and end times, from the script (estimated) or the recorded take (real) | `04_voice.md` |
-| **`cue(line, word, nth)`** | Looks up a word's time in `vo.js` so cuts land on words | `05` §3 |
 | **`PRE`** | The 0.08 s lead: a cut lands just before its word | `05` §3 |
 | **`fw_check.py`** | The checker: `script` mode lints a script, `video` mode checks a render | `README.md` |
 | **`shotlist_check.js`** | The shot-list linter: speech rate, rhythm, beats, verse holds, tail, angles | `tools/shotlist_check.js` |

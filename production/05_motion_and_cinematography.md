@@ -15,7 +15,7 @@ Each scene must advance the viewer's understanding, not merely decorate narratio
 
 ## Choosing the visual language
 
-Choose each moment's language the way a director would, from what the moment needs. These are starting points, not rules, and a stronger idea overrules any of them:
+All of this happens inside the one universal style. Choose each moment's language the way a director would, from what the moment needs. These are starting points, not rules, and a stronger idea overrules any of them:
 
 - People acting in a place often want illustrated animation.
 - Depth, place and mood often want layered 2.5D.

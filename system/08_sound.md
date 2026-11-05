@@ -1,6 +1,6 @@
 # 08 · Sound: the bed, the hits, the voice
 
-**Use this when** you build or revise any soundtrack (`ep*/film*/song*.js`).
+**Use this when** you build or revise any soundtrack.
 
 Marcus listed audio among what the successful channels do well ("proper visual storytelling, camera angles, pacing, audio").
 
@@ -31,7 +31,6 @@ Levels are relative to the voice band (300–3400 Hz, its 90th percentile):
    - a sustained low drone or pad: cello or bass an octave below the pad, a sub at 40–80 Hz, warm strings;
    - minor in the story, opening to major at the turn's answer and at the dawn ending.
    - Volume: about 9–10 dB under the voice in the voice band, fuller in the lows.
-   - Engine: `pad`, `str`, `low` buses in `song.js`. Raise `low` first.
 2. **The hits** (one per visual beat): every beat in the shot list gets a sound on its frame (§3). "The beat clock is also a sound clock." Hits sit 6–8 dB under the voice and are ducked lightly (depth 0.25).
 3. **The voice:** on top, clear, never fighting a hit on the same word. If a hit lands on a stressed word, move the hit 1–2 frames before the word or soften it.
 
@@ -55,10 +54,8 @@ Levels are relative to the voice band (300–3400 Hz, its 90th percentile):
 
 ## 4. Mix targets
 
-- **Loudness:** −14 LUFS (−16 to −12), true peak ≤ −1 dBTP. For Ep 1, `song.js` is now the current soundtrack script (the same as `song_v57.js`; fixed Oct 31; the old v46 text is kept in `song_v46.js`): `VOICE=../voice_lab/take1/voice_edit.wav node song.js` → `out/soundtrack_v57.wav`, −14 LUFS by default with a voice.
-- **`out/music.wav`:** `render.js clip` and `mux` take sound only from `out/music.wav`. The soundtrack script now copies its output there itself (fixed Oct 31; a 1 s test clip came out with an audio stream).
+- **Loudness:** −14 LUFS (−16 to −12), true peak ≤ −1 dBTP.
 - **Ducking:** the music ducks under the voice (`MIX.duck`, depth 0.55, attack 0.02 s, release 0.35 s); effects duck lightly (0.25).
-- **Stems:** check with `STEMS=1 node song.js && node engine/tools/levels.js out/music.wav out/stem-*.wav`.
 - **Compare against the reference:** `python3 tools/reference_study/audiostudy.py` on the render and a reference recording. Aim for bass median within ~5 dB of the reference and a floor between words of −8 to −10 dB.
 - **Phone check:** listen on a phone speaker (no bass) and on earbuds. The voice must be clear on the phone; the bed should be felt on earbuds.
 

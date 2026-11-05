@@ -89,6 +89,6 @@ Each card also carries:
 | Ep 8 | Moses and the Promised Land | 19 | Pairs with Ep 4's world, reusing its desert sets |
 | Holy Week | The temple curtain (Good Friday) | 18 | Easter 2027 |
 
-**Reuse matters for speed:** episodes that share a world share sets, props and costumes in the engine. Ep 4 and Ep 8 share the wilderness (and Moses); Jonah and Peter share boats and the sea. `system/12_engine_guide.md` lists what is Samson-specific and what can be reused.
+**Reuse matters for speed:** episodes that share a world share sets, props and costumes. Ep 4 and Ep 8 share the wilderness (and Moses); Jonah and Peter share boats and the sea.
 
 This is a proposal only: Marcus picks every topic (decision 12 in `DECISIONS.md`).
