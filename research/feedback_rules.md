@@ -474,3 +474,9 @@ Rules:
 - **The acceptance test:** the engine can "transform a new biblical idea into an original, coherent, professionally directed cinematic video with minimal manual intervention."
 - **"Do not spend Higgsfield credits without my explicit approval."**
 
+## Round 44 (Nov 5, 09:55): ask before rendering
+His words: "stop rendering video!!!! burning credits you need to confirm by asking me"
+
+Rule:
+- **Ask Marcus before starting any render or any multi-agent job, even a free one.** A broad instruction such as "finish the verification" is not that approval.
+
