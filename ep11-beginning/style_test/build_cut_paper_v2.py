@@ -114,14 +114,15 @@ class Stage:
 
 
 def mass(seed, cx, cy, rx, ry, lobes=9):
-    """A big grouped foliage shape, not lots of small leaves."""
+    """A big grouped foliage shape with an uneven, natural edge."""
     r = np.random.default_rng(seed)
+    ph = r.uniform(0, 6.28, 4)
     pts = []
-    for i in range(lobes * 2):
-        a = i / (lobes * 2) * 2 * np.pi
-        k = 1 + (.16 if i % 2 else -.05) + r.uniform(-.07, .07)
+    for i in range(30):
+        a = i / 30 * 2 * np.pi
+        k = 1 + .13 * np.sin(2 * a + ph[0]) + .1 * np.sin(3 * a + ph[1]) + .06 * np.sin(5 * a + ph[2]) + .035 * np.sin(8 * a + ph[3])
         pts.append((cx + rx * k * np.cos(a), cy + ry * k * np.sin(a)))
-    return fill(spline(pts))
+    return fill(spline(pts, n=4))
 
 
 def big_leaves(seed, boxes, n, size):
@@ -246,7 +247,7 @@ def puppet(st, x, y, u, pose, skin, hair, kind="adam", flip=False, eyes="shut", 
     leg(p["hip_f"], p["kn_f"], 1.0)
     add(piece(NECK, neck), skin, t=.9)
     add(h(HEAD), skin, l=lift + 1)
-    add(h(HAIR_A if kind == "adam" else HAIR_E), hair, "matte")
+    add(h(HAIR_E if kind == "eve" else HAIR_A), hair, "matte")
     if kind == "adam":
         add(h(BEARD), hair, "matte")
     ex, ey = hd([(.655, .365)])[0] if False else apply(head @ np.diag([S_HEAD, S_HEAD, 1]).astype(np.float32) @ move(-HEAD_PIVOT[0], -HEAD_PIVOT[1]), [(.655, .365)])[0]

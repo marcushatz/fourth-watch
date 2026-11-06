@@ -3,15 +3,18 @@
 
     python3 storyboard_page.py <storyboard.json> --out storyboard.html
 
-Each frame uses, in order: frames/<id>.png, frames/<id>.svg (see sketch.py), or a rough sketch of the framing.
+Each frame uses, in order: frames/<id>.png, frames/<id>.jpg, frames/<id>.svg (see sketch.py), or a rough sketch of the framing.
 The page opens with the whole film at a glance, then goes shot by shot, grouped by each shot's `section`.
 """
 import argparse
 import base64
 import html
+import io
 import json
 import re
 from pathlib import Path
+
+from PIL import Image
 
 W, H = 270, 480
 HEIGHTS = {"extreme-wide": 0.05, "wide": 0.14, "medium": 0.42, "close": 0.8, "extreme-close": 1.3, "insert": 0.8}
@@ -36,10 +39,13 @@ def rough(s):
 
 def frame_markup(s, folder):
     sid = str(s.get("id"))
-    png, svg = folder / "frames" / f"{sid}.png", folder / "frames" / f"{sid}.svg"
-    if png.exists():
-        data = base64.b64encode(png.read_bytes()).decode()
-        return f'<image href="data:image/png;base64,{data}" width="{W}" height="{H}" preserveAspectRatio="xMidYMid slice"/>'
+    png, jpg, svg = folder / "frames" / f"{sid}.png", folder / "frames" / f"{sid}.jpg", folder / "frames" / f"{sid}.svg"
+    if png.exists() or jpg.exists():
+        source = png if png.exists() else jpg
+        buffer = io.BytesIO()
+        Image.open(source).convert("RGB").resize((540, 960), Image.LANCZOS).save(buffer, "JPEG", quality=80, optimize=True)
+        data = base64.b64encode(buffer.getvalue()).decode()
+        return f'<image href="data:image/jpeg;base64,{data}" width="{W}" height="{H}" preserveAspectRatio="xMidYMid slice"/>'
     if svg.exists():
         inner = re.sub(r"^<svg[^>]*>|</svg>\s*$", "", svg.read_text().strip())
         first = inner.find("/>") + 2
@@ -116,7 +122,7 @@ h2{font:700 25px/1.15 var(--display);margin:0;letter-spacing:.01em}
 .section-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;border-top:2px solid var(--fg);padding-top:10px}
 .section-head p{margin:0;color:var(--muted);font-size:16px;flex:1 1 280px;min-width:0}
 .section-head span{font:400 13px/1.3 var(--mono);color:var(--muted)}
-article{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:18px;background:var(--sheet);border:1px solid var(--line);border-radius:4px;padding:14px}
+article{display:grid;grid-template-columns:minmax(0,250px) minmax(0,1fr);gap:18px;background:var(--sheet);border:1px solid var(--line);border-radius:4px;padding:14px}
 .anchor{display:block;grid-column:1/-1;height:0;margin-top:-14px;scroll-margin-top:12px}
 .frame svg{display:block;width:100%;height:auto;border-radius:3px;outline:1px solid var(--line)}
 .notes{min-width:0}
@@ -192,7 +198,7 @@ def main():
         else:
             rows.append(f'<section class="section">{body}</section>')
 
-    key = [f"<li><strong>Rough sketches.</strong> They show the shots, framing and timing. They aren't the final look.</li>",
+    key = [f"<li><strong>Planning frames.</strong> They show the shots, framing and timing, not finished art.</li>",
            "<li><strong>Gold</strong> appears only where God acts, or where we use it to stand for that.</li>",
            "<li><strong>Timing is estimated.</strong> It changes once the voice is recorded.</li>"] if board.get("timing") != "real" else []
     out = (PAGE.replace("__NAME__", html.escape(board.get("name", board.get("title", "Storyboard"))))

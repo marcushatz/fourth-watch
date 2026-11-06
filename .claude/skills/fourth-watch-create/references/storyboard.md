@@ -62,7 +62,7 @@ Before the voice exists, assume 2.7 words per second, and add a short pause at e
 
 ## Pictures
 
-Marcus should see the film, not placeholder figures. Draw every shot with `scripts/sketch.py`, saved as `frames/<id>.svg`. It's free and needs no lock lifted. Keep the sketches rough, so they plan the shot without setting the look. `ep11-beginning/build_storyboard.py` is a working example.
+Marcus should see the film, not placeholder figures. Draw every shot in code, saved as `frames/<id>.jpg` or `frames/<id>.svg`. It's free and needs no lock lifted. `ep11-beginning/build_storyboard_v2.py` is a working example in the Cut Paper style, and `scripts/sketch.py` is a simple pencil kit.
 
 If a shot has no frame, the page falls back to a rough sketch of its size and angle. Real frames can come from two places:
 

@@ -660,3 +660,8 @@ His words: "dont reate a video show me visually how it could owrk." He then shar
 Rules:
 - **Don't make a video for this test.** Show the style in still frames.
 - AI advice is opinion. It doesn't override his rules. Dot eyes stay banned, and "at last" isn't in the locked script.
+
+## Round 67 (Nov 5, 23:30): full storyboard in Cut Paper
+His words: "i opened its eyes that we first care baout hte visual priority." He shared Grok's and Gemini's advice to rebuild all 34 shots.
+
+The storyboard is rebuilt in Cut Paper as still frames, with no credits and no video. The chalk shots became paper ideas hung on threads, because one film needs one visual world.
