@@ -696,3 +696,16 @@ Rules:
 - This work is stills only: no video, no paid tools, and no subagents that add cost.
 
 Done: `visual_style_exploration/` holds 22 styles on the same shots, eight finalists, four refined styles and a review gallery. Nothing is approved yet.
+
+## Round 71 (Nov 6, 09:30): explore ten mature stickman looks
+He sent a brief for a stickman style exploration: ten distinct looks, each drawn for the same three Genesis scenes (awe under the night sky, Eve offering the fruit, Adam hiding in the forest), shown in an interactive gallery. His words: "These must be fundamentally different visual treatments, not one drawing with 10 filters." And: "We will choose the most promising artistic direction only after reviewing the images."
+
+Rules:
+- Figures must read as stickmen and stay adult: no oversized heads, goofy faces, whiteboard doodles or corporate explainer characters. Emotion comes from posture, head position, limbs, spacing and composition.
+- Keep the same narrative and framing across styles so the comparison is fair.
+- Each style is built its own way. No recolouring, filters or texture overlays standing in for a style.
+- Label any style the tools can't achieve convincingly.
+- Static art only: no video, no paid generation, no Higgsfield credits, no paid calls, no subagents that add cost, and no change to the approved script or storyboard.
+- The choice of direction is his. Never declare a winner.
+
+Done: `stickman_style_exploration/` holds 30 frames (10 styles by 3 scenes), the gallery, and `reports/assessment.md`. Nothing is approved yet.
