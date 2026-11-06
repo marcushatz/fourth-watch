@@ -613,3 +613,10 @@ Rules:
 - **Back every major claim about God with Scripture.** The narrator names the passage, and the exact verse is on screen.
 - **Never speak a verse whose wording needs explaining.** Say it in plain words, and show the exact verse.
 - **State what a first-time viewer doesn't know before relying on it.**
+
+## Round 59 (Nov 5, 21:46): build the end on the best line
+His words: "the ask doe snot tie to wha the message is about gods first words were where are you this is amazing, capitalize on this for the END!!!!"
+
+Rules:
+- **The ask must grow out of the message.**
+- **Build the ending around the video's best line.** Hold it back if you can, so it lands there for the first time.

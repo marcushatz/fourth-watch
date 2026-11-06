@@ -39,7 +39,7 @@ From Lintel's tree video (7.6M, 89 s). Use it for a hard objection people alread
 | The proof | 58 to 71% | Give one verse a job | Scripture arrives after the viewer already agrees, so it confirms |
 | The comeback | 71 to 82% | Answer the next objection, and widen the scale | Closes the last doubt, and gives new value after the answer |
 | The answer | 82 to 92% | Ask the opening question again and answer in one line | Closes the loop, and gives people a line to repeat |
-| The ask | 92 to 100% | One small ask and a logo | Turns the feeling into a reply |
+| The ask | 92 to 100% | One small ask and a logo. Ours must grow from the video's strongest line (Round 59) | Turns the feeling into a reply |
 
 **The longest hold** sits on the moment the fix breaks.
 

@@ -57,6 +57,8 @@ This file is a checklist. The full rules live in:
 - The emotional climax can be the ending (41).
 - A hope line fits every viewer and uses "we" (14).
 - No follow or community ask at the end (`research/direction_rules.md`, section 9).
+- The ask must grow out of the message, not sit beside it (59).
+- If one line is the best in the video, build the ending around it. Hold it back if you can, so it lands there for the first time (59).
 
 **Language**
 
