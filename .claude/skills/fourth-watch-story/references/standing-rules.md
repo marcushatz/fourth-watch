@@ -59,6 +59,8 @@ This file is a checklist. The full rules live in:
 - No follow or community ask at the end (`research/direction_rules.md`, section 9).
 - The ask must grow out of the message, not sit beside it (59).
 - If one line is the best in the video, build the ending around it. Hold it back if you can, so it lands there for the first time (59).
+- After the key moment, explain what it means, say how it applies to our lives, then conclude (60).
+- A closing question must leave the viewer happy and encouraged. It can't make anyone feel judged, exposed or put on the spot. The best one has only one answer, and that answer is good news (60).
 
 **Language**
 
@@ -157,4 +159,4 @@ Use these when filling in framing, timing and acting.
 Until he decides, his newest words win.
 
 1. Something new every 10 to 15 seconds (28) against holding an emotional moment (41, 46). For now, hold the moment.
-2. A spoken closing question (Oct 30) against stopping at the emotional climax (41). For now, the climax can end the video.
+2. A spoken closing question (Oct 30) against stopping at the emotional climax (41). His newest note (60) asks for meaning, application, a conclusion and an encouraging question after the key moment, so use that unless he says otherwise.

@@ -620,3 +620,10 @@ His words: "the ask doe snot tie to wha the message is about gods first words we
 Rules:
 - **The ask must grow out of the message.**
 - **Build the ending around the video's best line.** Hold it back if you can, so it lands there for the first time.
+
+## Round 60 (Nov 5, 21:59): explain, apply, conclude, then encourage
+His words: "exaplnd on what this actually means exaplin, then say how it applies in our lives, and then final conclusion, the quesiton at the end should never ponteitlaly cause ht eperoson to feel negative like they would form this quesiton instead they shoudl feel happy encouraged so ask a better question"
+
+Rules:
+- **After the key moment, explain what it means, say how it applies to our lives, then conclude.**
+- **A closing question must leave the viewer happy and encouraged.** It can never make someone feel judged or exposed.
