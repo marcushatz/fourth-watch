@@ -604,3 +604,12 @@ Rules:
 - **When two verses say the same thing, use the one people already know.**
 - **If the Bible says something that will sound strange, quote it word for word and name the book.**
 - **Use the names people know.**
+
+## Round 58 (Nov 5, 20:42): clarity comes first
+His words: "this is so damn unclear." "claiming he doesnt need it, must be backed by scripture, so visually the scripture vers emust be showed and as aprt of the script hte narrator could say somethign like as passage so and so says in sirpture." "overlal there is alot of unclearness, and your choice or wording to convey hte message is not the best choice and will leave the viewr and audinece confused, you must avoid this way of scripwriting."
+
+Rules:
+- **Clear beats clever.** Every line must make sense on one listen to someone who has never opened a Bible.
+- **Back every major claim about God with Scripture.** The narrator names the passage, and the exact verse is on screen.
+- **Never speak a verse whose wording needs explaining.** Say it in plain words, and show the exact verse.
+- **State what a first-time viewer doesn't know before relying on it.**

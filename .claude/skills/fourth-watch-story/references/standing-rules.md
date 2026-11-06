@@ -63,7 +63,11 @@ This file is a checklist. The full rules live in:
 - Plain spoken words. Say what a phrase means (13).
 - Read every line aloud. If it sounds like an essay or a clever note, rewrite it. Check that no word carries a slang meaning you don't intend (57).
 - When two verses say the same thing, use the one people already know (57).
-- If the Bible says something that will sound strange, quote it word for word and name the book, so it comes from Scripture and not from us (57).
+- If the Bible says something that will sound strange, name the passage aloud and show it on screen, so it comes from Scripture and not from us (57, 58).
+- Clear beats clever. Every line must make sense on one listen to someone who has never opened a Bible (58).
+- Never speak a verse whose wording needs explaining. Say it in plain words, and put the exact verse on screen (58).
+- Every major claim about God is backed by Scripture: the narrator names the passage, and the exact verse is on screen (58).
+- State what a first-time viewer doesn't know before relying on it (58).
 - Use the names people know, such as Adam and Eve (57).
 - Write for pictures: a person doing something, or an object something happens to. One clause, one picture (`system/02_story_and_script.md`).
 - Follow a quote with a plain line saying what it proves (`system/02_story_and_script.md`).
@@ -111,6 +115,7 @@ Use these when filling in framing, timing and acting.
 - A symbolic picture must not read as a recorded event (34).
 - Bright enough to read on a phone (Oct 29).
 - No photorealism, gore or door imagery, and no text inside generated images.
+- A verse card shows the exact ESV words and reference at the moment the narrator names the passage, and stays up long enough to read (58).
 
 **Pace**
 

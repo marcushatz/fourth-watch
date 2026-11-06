@@ -38,7 +38,7 @@ Set `timing` to `estimated` before the voice exists, and `real` after it. `last_
 | `why` | The story reason for this framing and move |
 | `acting` | What each person does, and on which word |
 | `beats` | Seconds when something visibly changes, such as `[1.2, 3.1]` |
-| `text` | Text on screen, one element at a time |
+| `text` | Text on screen, one element at a time. When the narrator names a passage, this is the exact ESV verse and its reference, timed to that line and held long enough to read (Round 58) |
 | `fidelity` | `TEXT`, `INFERRED`, `INTERPRETATION`, `HISTORICAL` or `VISUAL_SYMBOL` |
 | `route` | How the shot gets made: `code`, `still`, `ai-clip` or `reused` |
 | `credits` | Estimated cost of new paid work, or `0` |

@@ -52,6 +52,13 @@ Use `references/emotional-storytelling.md`. Write the emotional progression and 
 
 Write for the ear, in plain modern sentences, following Part 1 of `references/standing-rules.md`. Test the draft against `references/craft.md`. Let recorded events carry the feeling. Length is whatever the story earns, and Marcus has said up to about two minutes when it's justified.
 
+**Run the one-listen test on every line (Round 58).** Picture someone who has never opened a Bible, hearing this once at full speed.
+
+- Would they know what the line means, and who "he" or "they" is?
+- Do they have the fact the line depends on? State it if not.
+- Is the line clear before it's clever? Clear always wins.
+- Does a quoted verse need explaining? Then say it in plain words, name the passage, and put the exact verse on screen.
+
 ### 7. Protect the text
 
 Use `references/scripture-integrity.md`. Label every consequential claim, check every quotation against the ESV, and separate what the text says from what we conclude. Fix the line or the claim, and keep the story.
