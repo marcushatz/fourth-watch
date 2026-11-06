@@ -638,3 +638,8 @@ Rule:
 His words: "good now work on visual storyboard"
 
 Script v11 is approved and locked as `ep11-beginning/script_approved.md`. The storyboard is free planning work, and nothing is animated until he approves it.
+
+## Round 63 (Nov 5, 22:53): storyboard visuals rejected
+His words: "i dont approave of this visual desing"
+
+He rejected the look of the first storyboard and shared three AI critiques. AI critiques are opinions, not audience evidence. The approved script stays locked.
