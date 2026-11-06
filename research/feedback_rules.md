@@ -648,3 +648,8 @@ He rejected the look of the first storyboard and shared three AI critiques. AI c
 His words: "not sure lets test it out, give me few different storybaord design types and lets compare nad contrast"
 
 Four styles were drawn in code for free on the same five moments: Charcoal, Cut Paper, Painted and Engraving. AI 1's black silhouettes were left out because he rejected black rim-lit cut-out figures on Nov 3. He hasn't chosen a style yet.
+
+## Round 65 (Nov 5, 23:08): Cut Paper leads
+His words: "cut papaer clearly wins but htis owuld be 2d not 3d, is this what we are going for?"
+
+Cut Paper is his leading style. It isn't approved as the universal style until it's proven in motion. He asked whether 2D is the right direction.
