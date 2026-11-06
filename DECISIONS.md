@@ -2,7 +2,7 @@
 
 **Use this when** Marcus is back. Every open choice is here with the exact wording to approve, the evidence and a recommendation. When he decides, record it as a new round in `research/feedback_rules.md` and update the file it names.
 
-Last updated: Nov 6 (after Round 72).
+Last updated: Nov 6 (after Round 73).
 
 **About the evidence:**
 - **"Simulated viewers" are AI agents** role-playing a first-time viewer. They can flag confusion and slow, preachy or unclear lines. They can't tell us retention, swipes or sharing; only real posts can.
@@ -18,6 +18,12 @@ Last updated: Nov 6 (after Round 72).
 - The hybrid visual philosophy is approved, as creative judgment rather than rigid rules.
 - The revised Bronze Serpent script stays unlocked for now.
 - Narration, music and paid generation wait for the next meaningful production milestone.
+
+## Waiting on Marcus (Nov 6, 2026, Round 73)
+
+- **First clip:** request `production/approvals/requests/2026-11-06-s13-clip.json`. Shot 13, Kling 3.0 Omni Frames, Pro, 5 s, 9:16, sound off, 6.25 credits. It needs his approval, credits in the account (the balance read 0 at 18:50) and the two frames uploaded.
+- **Uploads:** this workspace can't reach `upload.higgsfield.ai`. Either he allows it in Settings > Capabilities, or he uploads the frames himself.
+- **Narration voice:** still not chosen. It's a paid job and sets the final timing. The plan is in `ep11-beginning/film/PLAN.md`.
 
 ## Waiting on Marcus (Nov 5, 2026)
 

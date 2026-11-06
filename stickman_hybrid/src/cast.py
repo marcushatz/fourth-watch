@@ -180,9 +180,10 @@ def figure_parts(pose, ox, gy, u, scale=1.0):
             q = [wrist + (p[0] * fx + p[1] * fy) * sc for p in path]
             out.append(tube(q, [w0 * sc, w1 * sc], far=key.endswith("_f"), smooth=len(q) > 2, tag="hand"))
         fruit = None
-        if h["t"] == "offer":
-            c = wrist + (.22 * fx + .27 * fy) * sc
-            fruit = dict(kind="fruit", c=pl.p(c), r=.25 * k * sc)
+        if h["t"] == "offer" or h.get("fruit"):
+            # `fruit_at` places it at a point of the pose; otherwise it sits in the cupped hand.
+            c = np.asarray(h["fruit_at"], float) if "fruit_at" in h else wrist + (.22 * fx + .27 * fy) * sc
+            fruit = dict(kind="fruit", c=pl.p(c), r=.25 * k * sc, bite=h.get("bite"))
         return out, fruit
 
     arm_w = [.13, .106, .084] if not fem else [.116, .096, .076]
@@ -429,7 +430,10 @@ class Canvas:
         occ = None
         if occ_full is not None:
             occ = occ_full[y0:y1, x0:x1]
+        rim0 = s.L.get("rim", .8)
+        s.L = dict(s.L, rim=rim0 * (.25 if s.st["cel"] else 1.0))
         col = s.shade(pal["hair"], nx, ny, nz, occ)
+        s.L = dict(s.L, rim=rim0)
         s.put(al, col, None, box)
         for i, (poly, c, ww, nrm) in enumerate(cents):
             for k, off in enumerate((-.25, .18)):
@@ -514,7 +518,7 @@ class Canvas:
             side = smoothstep(-.5, -.62, xl) * smoothstep(.2, .05, yl) * smoothstep(.7, .8, rr) * smoothstep(-.32, -.2, yl)
             cap = np.maximum(cap, np.maximum(beard, side) * .92)
         ha = inside * cap
-        s.L = dict(s.L, rim=rim0 * .22)
+        s.L = dict(s.L, rim=rim0 * (.07 if s.st["cel"] else .22))  # a cel rim is a solid band, so keep it faint on hair
         hcol = s.shade(pal["hair"], nx * .9, ny * .9, np.maximum(nzz, .25), occ)
         s.L = dict(s.L, rim=rim0)
         s.put(ha, hcol, None, box)
@@ -548,7 +552,8 @@ class Canvas:
         nx, ny = (xx - c[0]) / r, (yy - c[1]) / r
         rr = np.clip(nx * nx + ny * ny, 0, 1)
         nz = np.sqrt(1 - rr)
-        col = s.shade(pal["fruit"], nx, ny, nz)
+        occ = occ_full[y0:y1, x0:x1] if occ_full is not None else None
+        col = s.shade(pal["fruit"], nx, ny, nz, occ)
         l = np.array(s.L["dir"], np.float32)
         l /= np.linalg.norm(l)
         h = (l + [0, 0, 1])
@@ -556,8 +561,19 @@ class Canvas:
         spec = np.clip(nx * h[0] + ny * h[1] + nz * h[2], 0, 1) ** (60 if s.style == "B" else 30)
         if s.style == "B":
             spec = smoothstep(.45, .55, spec)
-        col = col + spec[..., None] * np.array(s.L["col"], np.float32) * .55
-        s.put(m.astype(np.float32) / 255, col, None, box)
+        col = col + spec[..., None] * np.array(s.L["col"], np.float32) * .55 * (1 if occ is None else occ[..., None])
+        al = m.astype(np.float32) / 255
+        if part.get("bite") is not None:
+            # One bite taken out of the rim (Genesis 3:6: she ate, then gave some to him), with pale flesh inside the cut.
+            b = np.deg2rad(part["bite"])
+            bc = c + np.array([np.cos(b), -np.sin(b)]) * r * 1.02
+            db = np.hypot(xx - bc[0], yy - bc[1])
+            cut = smoothstep(r * .44, r * .40, db)
+            flesh = smoothstep(r * .58, r * .52, db) * (1 - cut)
+            fc = s.shade(np.array(pal.get("flesh", hexc("#d9c08a")), np.float32), nx, ny, nz, occ)
+            col = col * (1 - flesh[..., None]) + fc * flesh[..., None]
+            al = al * (1 - cut)
+        s.put(al, col, None, box)
         top = part["c"] + np.array([0, -part["r"] * .95])
         s.tube(dict(ctrl=[top, top + [part["r"] * .12, -part["r"] * .42]], w=np.array([.12, .08]) * part["r"], smooth=False), pal["stem"], flat=True)
         lf = top + [part["r"] * .1, -part["r"] * .3]

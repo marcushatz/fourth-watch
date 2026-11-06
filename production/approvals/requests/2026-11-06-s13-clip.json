@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-06-s13-clip",
+  "project": "fourth-watch",
+  "purpose": "First production clip for ep11 shot 13 (Genesis 3:6): test whether Higgsfield keeps the hand-drawn stickman style",
+  "items": [
+    {
+      "kind": "job",
+      "tool": "generate_video",
+      "input": {
+        "params": {
+          "model": "kling_o3_flf",
+          "prompt": "Hand-drawn 2D animation. Keep the exact look of the first and last frames: flat painted colour, clean dark ink outlines, thin stick-figure bodies, simple faces, the painted tree and the warm low sun. Locked camera, no zoom, no camera movement. Slow, deliberate movement. The woman on the left holds the bitten red fruit out to the man. He hesitates, then his open hand reaches into the light, closes around the fruit and takes it from her hand. She draws her empty hand back. He lifts the fruit to his mouth and bites, his head bowing over it. Only the two people move; the tree, grass and sky stay still. Their bodies, limbs and faces keep the same shape and thickness throughout. No new objects, no second fruit, no text.",
+          "aspect_ratio": "9:16",
+          "duration": 5,
+          "mode": "pro",
+          "sound": "off",
+          "medias": [
+            {
+              "role": "start_image",
+              "value": "<s13_start.png once uploaded>"
+            },
+            {
+              "role": "end_image",
+              "value": "<s13_end.png once uploaded>"
+            }
+          ]
+        }
+      },
+      "frames": {
+        "start": "ep11-beginning/film/frames/s13_start.png sha256 19c39318060157b2",
+        "end": "ep11-beginning/film/frames/s13_end.png sha256 97a3251b674ddd2c"
+      },
+      "intended_output": "One 5 s silent 9:16 clip: Eve gives Adam the bitten fruit and he eats",
+      "quoted_credits": 6.25,
+      "quoted_at": "2026-11-06T23:48:29+00:00",
+      "quote_source": "get_cost check, priced on the settings and prompt before the frames were uploaded"
+    }
+  ]
+}

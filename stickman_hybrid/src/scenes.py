@@ -183,7 +183,7 @@ def tree_polys(v, sd):
     return polys, twigs
 
 
-def tension(v, keep=None):
+def tension(v, keep=None, shot=None):
     sd = dict(A=21, B=22, C=23)[v]
     sx, sy = 112, 1224
     d = np.hypot(X - sx, (Y - sy) * 1.15)
@@ -275,9 +275,12 @@ def tension(v, keep=None):
     else:
         cols = {"A": ("#0a0f08", "#24301a", "#c89040"), "C": ("#15301f", "#2f5a34", "#d6dc7a")}[v]
         rim = {"A": "#ffc060", "C": "#f8f0a8"}[v]
-        rgb, ca = dabs(CANOPY, sd + 53, (-.9, -.35), cols, rim, (13, 28) if v == "A" else (8, 16), .55 if v == "A" else 2.0,
-                       soft=.8 if v == "A" else 0, rim_k=.8 if v == "A" else .6, elong=.66 if v == "A" else .5, dark_bias=.02 if v == "A" else -.25,
-                       tex=.1 * streak(sd + 55, 40, 22, 1.2) if v == "A" else None)
+        kw = dict(soft=.8 if v == "A" else 0, rim_k=.8 if v == "A" else .6, elong=.66 if v == "A" else .5, dark_bias=.02 if v == "A" else -.25,
+                  tex=.1 * streak(sd + 55, 40, 22, 1.2) if v == "A" else None)
+        cv_ = (shot or {}).get("canopy", {})
+        kw.update({k_: x_ for k_, x_ in cv_.items() if k_ in kw})
+        rgb, ca = dabs(CANOPY, sd + 53, (-.9, -.35), cols, cv_.get("rim", rim), cv_.get("size", (13, 28) if v == "A" else (8, 16)),
+                       cv_.get("dens", .55 if v == "A" else 2.0), **kw)
         rgb, ca = treat(rgb, ca, v, sd + 54, 30, .5, edge=False)
     S.add(rgb, ca, "canopy")
     # Fruit on the tree.
@@ -298,24 +301,27 @@ def tension(v, keep=None):
         rr = gb(rays(src, (sx, sy), 30, .975, .02), 3)
         S.glow(hexc({"A": "#ffb060", "C": "#ffe0a0"}[v]), rr * (.55 if v == "A" else .6))
     # Cast shadows of the two figures, long and to the right.
-    figs = [(K.EVE_TENSION, 292, 1580, 101, .94, pal(v, "eve")), (K.ADAM_TENSION, 752, 1580, 101, 1, pal(v, "adam"))]
+    # A production shot can replace the cast, its drawing style, the light and the edge of the shade (`shot`).
+    shot = shot or {}
+    gy = shot.get("ground", 1580)
+    figs = shot.get("figs") or [(K.EVE_TENSION, 292, 1580, 101, .94, pal(v, "eve")), (K.ADAM_TENSION, 752, 1580, 101, 1, pal(v, "adam"))]
     occ = np.ones((H, W), np.float32)
     dap = smoothstep(.42, .58, fbm((H, W), 34, sd + 60, 3))
-    occ = occ * (1 - smoothstep(644, 676, X) * (1 - .45 * dap) * .85)
-    if v == "B":
+    s0, s1 = shot.get("shade", (644, 676))
+    occ = occ * (1 - smoothstep(s0, s1, X) * (1 - .45 * dap) * .85)
+    if v == "B" and not shot:
         occ = 1 - smoothstep(652, 660, X) * .8
-    light = dict(dir=(-.92, -.3, dict(A=-.32, B=.1, C=-.2)[v]), col=dict(A=(1.0, .7, .4), B=(1.0, .86, .66), C=(1.0, .8, .52))[v], k=dict(A=1.0, B=.9, C=1.0)[v],
-                 amb=dict(A=(.08, .06, .05), B=(.2, .18, .16), C=(.14, .12, .12))[v], rim=dict(A=2.4, B=1.4, C=2.0)[v],
-                 fill=dict(dir=(.1, -.25, 1), col=dict(A=(.13, .09, .065), B=(.06, .06, .07), C=(.17, .13, .11))[v]))
-    rgb, fa = K.draw(figs, v, light, occ=occ, seed=sd)
-    sh = np.zeros((H, W), np.float32)
-    M = np.float32([[1, -1.55, 1.55 * 1580], [0, -.14, 1.14 * 1580]])
-    sh = cv2.warpAffine(fa, M, (W, H), flags=cv2.WARP_INVERSE_MAP if False else cv2.INTER_LINEAR)
-    Mi = cv2.invertAffineTransform(M)
+    light = shot.get("light") or dict(
+        dir=(-.92, -.3, dict(A=-.32, B=.1, C=-.2)[v]), col=dict(A=(1.0, .7, .4), B=(1.0, .86, .66), C=(1.0, .8, .52))[v], k=dict(A=1.0, B=.9, C=1.0)[v],
+        amb=dict(A=(.08, .06, .05), B=(.2, .18, .16), C=(.14, .12, .12))[v], rim=dict(A=2.4, B=1.4, C=2.0)[v],
+        fill=dict(dir=(.1, -.25, 1), col=dict(A=(.13, .09, .065), B=(.06, .06, .07), C=(.17, .13, .11))[v]))
+    rgb, fa = K.draw(figs, shot.get("cast", v), light, occ=occ, seed=sd)
+    M = np.float32([[1, -1.55, 1.55 * gy], [0, -.14, 1.14 * gy]])
     sh = cv2.warpAffine(fa, M, (W, H))
     sh = gb(sh, 6 if v != "B" else 3)
-    contact = np.exp(-(((X - 324) / 100) ** 2 + ((Y - 1581) / 6) ** 2)) + np.exp(-(((X - 754) / 110) ** 2 + ((Y - 1581) / 6) ** 2))
-    S.shade(np.clip(sh * (.55 if v != "B" else .4) * (Y > 1560) + contact * .55, 0, .8))
+    feet = shot.get("contacts", [(324, 100), (754, 110)])
+    contact = sum(np.exp(-(((X - x) / w) ** 2 + ((Y - gy - 1) / 6) ** 2)) for x, w in feet)
+    S.shade(np.clip(sh * (.55 if v != "B" else .4) * (Y > gy - 20) + contact * .55, 0, .8))
     S.add(rgb, fa, "figures", premult=True)
     # Foreground.
     if v == "B":
@@ -343,7 +349,7 @@ def tension(v, keep=None):
             x, y = r.uniform(0, 700), r.uniform(800, 1500)
             cv2.circle(mo, (int(x), int(y)), int(r.integers(1, 3)), float(r.uniform(.3, 1)), -1, cv2.LINE_AA)
         S.glow(hexc("#fff0c0"), gb(mo, .8) * np.exp(-(d / 700) ** 2) * 1.4)
-    return finish(S.img, v, sd, vign=dict(A=.55, B=.12, C=.3)[v], bloom=dict(A=.3, B=.05, C=.4)[v], grain_k=dict(A=.018, B=.014, C=0)[v],
+    return finish(S.img, v, sd, vign=dict(A=.55, B=.12, C=.3)[v], bloom=dict(A=.3, B=.05, C=.4)[v], grain_k=shot.get("grain", dict(A=.018, B=.014, C=0)[v]),
                   warm=hexc("#f0d8b0") ** (1 / 2.2) if v == "C" else None, bth=.7, protect=gb(fa, 6))
 
 

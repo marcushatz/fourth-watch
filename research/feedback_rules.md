@@ -722,3 +722,16 @@ Rules:
 - Static images only: no video, no paid tools, no Higgsfield, no rewriting the script, and not the 34 shots yet.
 
 Done: `stickman_hybrid/` holds the nine frames with their layers, the comparison page and `reports/assessment.md`. The assessment names B as the best balance of beauty, maturity and feasibility, A as the most emotional and C as the most at risk of looking childish. Nothing is approved, and nothing has been tested in motion.
+
+## Round 73 (Nov 6, 18:38): begin actual video production
+He moved the project from exploration into production. His words: "We are officially moving from visual exploration into VIDEO PRODUCTION." He has bought a Higgsfield subscription and wants the first complete Fourth Watch video from the approved script v11 ("If God doesn't need anything, why did he make you?"), with the 34-shot storyboard as the foundation.
+
+Rules:
+- **The production lock is lifted** by these words. Every paid job still needs his approval of that exact job: "Do not spend credits until I approve that specific operation." No automatic retries.
+- The look: "The clear character designs from Editorial Elegant (B)" with "The atmospheric lighting, depth, and emotion from Painterly Cinematic (A)", expressive poses, believable movement and cinematic compositions. "Do not spend another development cycle creating multiple style variants."
+- Higgsfield image-to-video for the shots that need it: Adam and Eve interacting, the fruit exchange, the hiding, Adam's reaction to God's call, environmental movement, the climax. Don't pick the most expensive model by default. Deliberate movement, little camera movement, a consistent cast.
+- Assemble with Claude Code and Remotion: clips, code-animated shots, transitions, narration sync, captions, colour and restrained sound. One vertical 9:16 video. This supersedes Higgsedit as the assembly tool for this film.
+- Before the first generation: confirm credits and subscription, name the model and settings, show the exact prompt and the displayed cost, then ask. After the first clip, show him the moving result before continuing.
+- Don't rewrite the script. No more static style comparisons, no new research report, no storyboard rebuild. "Do not abandon the project because the initial movement isn't perfect."
+
+Done: shot 13 start and end frames in the combined look (`ep11-beginning/film/`), the plan for which shots move in Higgsfield, and one approved price check (6.25 credits). The balance is 0, and this workspace can't upload to Higgsfield yet.
