@@ -676,3 +676,11 @@ Rules:
 - The AIs reviewed code-drawn art. Their notes judge this execution as much as the style. Test the style and the drawing route separately.
 - These are AI opinions, not audience evidence. Nobody has shown audience numbers for this style in Reels or Shorts.
 - Still no video. Motion tests wait for his words.
+
+## Round 69 (Nov 6, 00:03): run the side-by-side test
+He said yes to the test on shots 2, 13 and 26, with GPT's, Gemini's and Grok's notes. The test is one shared brief, made in code and in ChatGPT, then shown blind to about five strangers.
+
+Rules:
+- Both versions aim at the same style and composition, so the test is of the style, not the tool.
+- Stills only: no animation, no Higgsfield.
+- The brief, fairness rules and decision rule are in `ep11-beginning/style_test/side_by_side/BRIEF.md`.
