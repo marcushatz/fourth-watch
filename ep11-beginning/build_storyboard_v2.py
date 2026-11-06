@@ -326,15 +326,28 @@ def s09():
 
 
 def s10():
-    st = Stage((120, -60), "#8d976c", "#7f8d62", .9, .22, 1000, "#fff0cf", 20)
-    for i, (x, y, r) in enumerate(((60, 90, 150), (360, 40, 130), (650, 110, 150), (690, 440, 130), (40, 460, 120), (60, 1020, 150), (690, 980, 150), (370, 1220, 150))):
-        st.add(mass(200 + i, x, y, r, r * .92), "#5d6e50" if i % 2 else "#6b7c5c", 12, "matte", tear=5, band="near")
-    st.add(mass(209, 360, 640, 120, 112), "#3a4a36", 14, "matte", tear=5, band="subject")
-    st.contact(250, 882, 18, 5, .4).contact(290, 888, 18, 5, .4)
-    puppet(st, 250, 836, 20, STAND, EDEN["adam"], EDEN["adam_hair"], "adam", eyes="open", lift=1.2)
-    puppet(st, 292, 842, 19, STAND, EDEN["eve"], EDEN["eve_hair"], "eve", eyes="open", lift=1.2)
-    for r in (210, 280, 350):
-        st.gold(arc(360, -100, r, 60, 120, 2.4), 2, 0)
+    st = Stage((120, -60), "#e4dbc2", "#d3d4b4", .84, .26, 1000, "#fff0cf", 20)
+    st.add(mass(201, 34, 500, 170, 150), "#c6ceb4", 6, "matte", tear=5, band="far")
+    st.add(mass(202, 690, 480, 180, 160), "#c0caae", 6, "matte", tear=5, band="far")
+    st.haze("#e8dfc8", .3, 300, 760, 1)
+    st.add(fill(spline([(-40, 1320), (-40, 660), (240, 640), (520, 650), (760, 630), (760, 1320)])), "#8d976c", 9, "fiber", band="mid")
+    st.add(fill(ellipse(360, 806, 262, 66)), "#b9b78e", 3, "fiber", tear=4, band="mid")
+    st.contact(360, 806, 110, 13, .5)
+    wood = [ribbon([(360, 810), (350, 690), (362, 570), (356, 470)], [50, 38, 30, 22]),
+            ribbon([(356, 570), (270, 490), (160, 452)], [20, 13, 6]), ribbon([(360, 545), (452, 476), (566, 442)], [20, 13, 6]),
+            ribbon([(358, 505), (306, 420), (244, 386)], [15, 10, 5]), ribbon([(358, 495), (424, 414), (496, 378)], [15, 10, 5])]
+    st.add(np.maximum.reduce(wood), "#3c3026", 11, "fiber", tear=1.4, band="subject")
+    st.add(mass(204, 360, 346, 286, 122), "#2f4032", 13, "matte", tear=5, band="subject")
+    for x, y in ((214, 402), (288, 438), (360, 416), (432, 440), (506, 404), (262, 352), (456, 350)):
+        st.add(fill(ellipse(x, y, 12, 15, 8)), "#8a4238", 3, "smooth", tear=.6)
+    st.contact(196, 896, 20, 4, .55).contact(246, 902, 20, 4, .55)
+    look = dict(STAND, neck=-4, head=-10, torso=-1)
+    puppet(st, 196, 830, 26, look, EDEN["adam"], EDEN["adam_hair"], "adam", eyes="open", lift=1.4)
+    puppet(st, 246, 836, 25, look, EDEN["eve"], EDEN["eve_hair"], "eve", eyes="open", lift=1.4)
+    for r in (150, 214):
+        st.gold(arc(360, -40, r, 66, 114, 2.4), 2, 0)
+    st.add(mass(205, 30, 1250, 300, 150), "#54694f", 14, "matte", tear=5, band="near")
+    st.add(mass(206, 700, 1240, 260, 150), "#4b614a", 14, "matte", tear=5, band="near")
     tag(st, "Genesis 2:17")
     return st
 
@@ -398,12 +411,13 @@ def fig_leaf(x, y, s, a):
 
 def s14():
     st = Stage((-120, 300), "#8a9390", "#6f7a78", .8, .3, 900, "#cfdcf2", 24)
-    st.add(mass(241, 360, 300, 480, 330), "#5b6a68", 6, "matte", tear=5, band="far")
-    st.add(fig_leaf(236, 520, 4.6, -22), "#3f5044", 9, "matte", tear=1.5)
-    st.add(fig_leaf(476, 600, 5.0, 18), "#37483d", 10, "matte", tear=1.5)
-    st.add(ribbon([(300, 560), (340, 590), (380, 566), (416, 600)], [3, 3, 3, 3]), "#e8e0cf", 2, "smooth", 0, 0)
-    hand(st, 190, 890, 108, 26, "#8f8d90", "#8f8d90", curl=.62, spread=3, reach=7)
-    hand(st, 530, 910, 108, -28, "#8a898c", "#8a898c", curl=.62, spread=3, reach=7)
+    st.add(mass(241, 360, 220, 480, 290), "#5b6a68", 6, "matte", tear=5, band="far")
+    st.add(fig_leaf(392, 660, 4.8, -66), "#42544a", 9, "matte", tear=1.5)
+    st.add(fig_leaf(330, 680, 4.8, 66), "#364840", 11, "matte", tear=1.5)
+    st.add(ribbon([(348, 520), (378, 556), (346, 594), (378, 632), (346, 670), (376, 708)], [3.4] * 6), "#e8e0cf", 2, "smooth", 0, 0)
+    st.add(stroke((348, 520), (530, 344), 2.6), "#e8e0cf", 2, "smooth", 0, 0)
+    hand(st, 170, 900, 108, 26, "#8f8d90", "#8f8d90", curl=.62, spread=3, reach=7)
+    hand(st, 606, 566, 100, -18, "#8a898c", "#8a898c", curl=.56, spread=3, reach=9)
     return st
 
 
@@ -530,13 +544,33 @@ def s22():
     return st
 
 
+def big_earth(st, sea, land, seed=33):
+    """A vast curved Earth below us: paper sea, torn land, cloud sheets and a thin atmosphere."""
+    d = np.sqrt((X - 360) ** 2 + (Y - 1120) ** 2)
+    st.img = np.clip(st.img + np.exp(-((d - 716) / 40) ** 2)[..., None] * hexc("#6f8fc4") * .46, 0, 1)
+    disc = circle(360, 1120, 700)
+    st.add(disc, sea, 12, "matte", tear=2, band="mid")
+    masks = [mass(seed + 1, 170, 700, 230, 96), mass(seed + 2, 590, 830, 220, 120), mass(seed + 3, 300, 980, 300, 110)]
+    ground = np.maximum.reduce(masks) * disc
+    st.add(ground, land, 4, "matte", tear=3, band="mid")
+    return ground, disc
+
+
+def clouds(st, color="#cdd5df"):
+    for r, a0, a1, w in ((640, 236, 292, 16), (586, 262, 322, 13), (530, 214, 262, 12)):
+        st.add(arc(360, 1120, r, a0, a1, w), color, 14, "matte", tear=4, band="near", tone=.92)
+
+
 def s23():
-    st = Stage((360, -240), "#0f1526", "#1a2238", .84, .34, 1100, "#dfe8ff", 33)
-    stars(st, 540, H, 13)
-    earth_at(st, 360, 520, 250, lift=12)
-    st.gold(circle(420, 500, 8), 2, 0)
-    st.gold(arc(420, 500, 34, 0, 359, 1.8), 2, 0)
-    card(st, "For God so loved the world,", "John 3:16", 900)
+    st = Stage((120, -240), "#0f1526", "#1a2238", .84, .34, 1100, "#dfe8ff", 33)
+    stars(st, 420, 640, 13)
+    ground, disc = big_earth(st, "#2f4a70", "#6b7c5c")
+    clouds(st)
+    shade = np.clip((X - 300) / 520, 0, 1) * disc
+    st.img = st.img * (1 - shade[..., None] * .62)
+    st.gold(circle(430, 690, 6), 2, 0)
+    st.gold(arc(430, 690, 30, 0, 359, 1.6), 2, 0)
+    card(st, "For God so loved the world,", "John 3:16", 1050)
     return st
 
 
@@ -587,14 +621,12 @@ def s28():
 
 
 def s29():
-    st = Stage((360, -80), "#1c2638", "#1a2333", .6, .9, 680, "#ffd98f", 39)
+    st = Stage((360, -160), "#1c2638", "#1a2333", .62, .46, 680, "#ffd98f", 39)
     forest(st, 1500)
-    st.img = np.clip(st.img + np.exp(-(((X - 360) / 300) ** 2 + ((Y + 40) / 440) ** 2))[..., None] * GOLD * .42, 0, 1)
-    p = dict(POSES["open"], torso=0, neck=-2, head=-12)
-    puppet(st, 104, 1560, 214, p, "#a18a76", "#1a1c24", "adam", eyes="open", lift=5, arms=False, cloak="#39473f")
-    puppet(st, 612, 1590, 200, p, "#b09a86", "#1f2230", "eve", flip=True, eyes="open", lift=5, arms=False, cloak="#39473f")
-    for r in (250, 330):
-        st.gold(arc(360, -110, r, 62, 118, 2.2), 2, 0)
+    st.img = np.clip(st.img + np.exp(-(((X - 360) / 240) ** 2 + ((Y + 60) / 340) ** 2))[..., None] * GOLD * .2, 0, 1)
+    puppet(st, 104, 1560, 214, dict(POSES["open"], torso=4, neck=4, head=3), "#958a80", "#1a1c24", "adam", eyes="open", lift=5, arms=False, cloak="#39473f")
+    puppet(st, 612, 1590, 200, dict(POSES["open"], torso=6, neck=6, head=9), "#a3988e", "#1f2230", "eve", flip=True, eyes="open", lift=5, arms=False, cloak="#39473f")
+    st.gold(arc(360, -110, 300, 66, 114, 2.0), 2, 0)
     return st
 
 
@@ -617,14 +649,15 @@ def s31():
 
 def s32():
     st = Stage((360, -240), "#0f1526", "#141c30", .78, .24, 1100, "#dfe8ff", 42)
-    stars(st, 500, H, 21)
-    land = earth_at(st, 360, 640, 300, sea="#1b2438", land="#2c3440", seed=8, lift=12)
+    stars(st, 420, 640, 21)
+    ground, disc = big_earth(st, "#1b2438", "#2c3440", 42)
     r = np.random.default_rng(5)
     dots = np.zeros((H, W), np.float32)
-    ys, xs = np.nonzero(land > .5)
-    for i in r.choice(len(xs), 420):
+    ys, xs = np.nonzero(ground > .5)
+    for i in r.choice(len(xs), 520):
         cv2.circle(dots, (int(xs[i]), int(ys[i])), int(r.choice((1, 2, 2, 3))), 1.0, -1, cv2.LINE_AA)
     st.gold(dots, 1, 0)
+    clouds(st, "#3a4458")
     return st
 
 
@@ -658,14 +691,17 @@ PATCH = {
     "S07": dict(picture="A paper crowd with raised hands and the word WORSHIP? hang on threads. Another thread snaps.", why="The same device, so the two failed ideas read as a pair. Pulling back shows how small the crowd is, without mocking it", acting="The crowd lowers on 'worship'. The thread snaps on 'need'", text="WORSHIP? (paper letters)", tone="night"),
     "S08": dict(picture="Thin gold light opens in the dark, and sea, land, a tree and birds rise into place.", acting="Each thing rises on 'created' and 'everything'"),
     "S09": dict(picture="The light settles into a muted green garden. Adam and Eve walk together, and a tree's shadow slides across them."),
+    "S10": dict(picture="One garden and one tree: a dark, wide tree alone in a clearing, with every other tree pale and far away. Adam and Eve look up at it.", why="It must read at a glance: one garden, one tree, one rule", acting="A gold ripple comes down on 'told'. Both look up at the tree on 'one'"),
+    "S14": dict(picture="Two fig leaves pulled together. One hand grips a leaf, and the other pulls the thread tight.", acting="Color drains on 'realize'. The thread pulls tight on 'sew', and the fingers close on 'together'", why="Stay on hands, so the shame reads without showing bodies. The pulled thread makes the covering feel active"),
     "S16": dict(picture="From high above the trees. Through one gap, the two of them are plainly visible.", angle="high"),
     "S17": dict(picture="Back to back on the ground in the dark trees. They don't move, and the moving leaves have stopped.", acting="Only a slow breath moves. Her arms tighten on 'leave'"),
-    "S18": dict(picture="A line of gold leaves moves through the trees toward them. Adam's head turns. Then the whole frame freezes.", acting="His head turns on 'calls'. Everything freezes on 'We'll'"),
-    "S25": dict(picture="Back to the frozen frame, darker. The music cuts out, and the gold leaves start moving again."),
+    "S18": dict(picture="A line of gold leaves moves through the trees toward them. Adam's head turns. Then everything nearly stops.", acting="His head turns on 'calls' and stops on 'We'll'. The gold slows almost to a stop. A faint breath continues", why="We hold back his words so they land at the end. Near-stillness should feel like creation holding its breath, not a paused video"),
+    "S23": dict(picture="A vast paper Earth curves below us, with layers of cloud and one small gold point.", why="The story opens out from Eden to the whole world"),
+    "S25": dict(picture="Back to the same held moment, darker. The music cuts out, and the gold leaves start moving again.", why="The held moment from shot 18 pays off", acting="The gold starts moving again on 'said'"),
     "S26": dict(picture="Adam's bowed head in the dark leaves. His eyes are shut, and his shoulders are high.", acting="He pulls in tighter on 'How'. Nothing else moves"),
     "S27": dict(picture="The whole dark forest, huge. Adam and Eve are small on either side of one thin gold line that runs down from the words to a small pool of light.", acting="Almost nothing moves. His shoulders drop slightly, his head lifts, and his slit eyes open. One slow breath in the silence", why="The longest hold in the film. The question itself reaches them"),
     "S28": dict(picture="The same high view as shot 16, now with one thin gold ring around them.", angle="high"),
-    "S29": dict(picture="Both faces lift toward warm light. Their slit eyes are open.", acting="Heads lift on 'answer'. The light reaches them on 'wanted'"),
+    "S29": dict(picture="Both faces lift only a little. Their eyes are open, but nothing is resolved. The light reaches them gently.", feel="Stunned mercy", acting="Heads lift slightly on 'answer'. No smile. The light reaches them on 'wanted'", why="This isn't relief yet. They're still exposed, and they're being met by mercy"),
     "S30": dict(picture="Match cut: Adam's face becomes the face of the person from the opening, in the same spot, in a dim room. They lower their hand and look toward the window."),
     "S33": dict(picture="Sunrise on the dry land. Adam and Eve walk on in their clothes of skin, with gold light on their shoulders."),
 }

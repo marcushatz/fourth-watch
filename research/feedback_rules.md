@@ -665,3 +665,14 @@ Rules:
 His words: "i opened its eyes that we first care baout hte visual priority." He shared Grok's and Gemini's advice to rebuild all 34 shots.
 
 The storyboard is rebuilt in Cut Paper as still frames, with no credits and no video. The chalk shots became paper ideas hung on threads, because one film needs one visual world.
+
+## Round 68 (Nov 5, 23:49 to 23:52): revise five shots, and don't lock the style yet
+He shared GPT's and Grok's reviews of the 34 shots, then their replies and Gemini's on whether Cut Paper can really succeed. GPT asked for changes to shots 10, 14, 18, 23 and 29. It then said the look is a promising identity, not yet a competitive standard, and that Eden still resembles a children's picture book.
+
+Done: shot 10 now has one dark tree alone in a clearing. Shot 14 shows two leaves and a taut thread. Shot 18 is near-stillness, not a hard freeze. Shot 23 is a larger curved Earth. Shot 29 is stunned mercy.
+
+Rules:
+- **Cut Paper stays the leading candidate. It isn't locked.** He hasn't approved the style or the storyboard.
+- The AIs reviewed code-drawn art. Their notes judge this execution as much as the style. Test the style and the drawing route separately.
+- These are AI opinions, not audience evidence. Nobody has shown audience numbers for this style in Reels or Shorts.
+- Still no video. Motion tests wait for his words.
