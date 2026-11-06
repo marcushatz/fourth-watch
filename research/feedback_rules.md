@@ -709,3 +709,16 @@ Rules:
 - The choice of direction is his. Never declare a winner.
 
 Done: `stickman_style_exploration/` holds 30 frames (10 styles by 3 scenes), the gallery, and `reports/assessment.md`. Nothing is approved yet.
+
+## Round 72 (Nov 6, 17:45): refine the one winning direction
+He narrowed the stickman work to one direction. His words: "colored hand-drawn stickman characters inside atmospheric cinematic 2.5D environments." He likes the 2.5D depth, layering and atmosphere, and the hand-drawn feel. He doesn't want colourless ink-only characters: they need "more identity, beauty, and emotional presence." It must feel adult, cinematic and emotionally serious, "minimal, but not generic", with "a real artistic identity, not a placeholder."
+
+Rules:
+- Coloured hand-drawn figures with controlled, muted colour, expressive posture and silhouette, simple but elegant faces, inside layered, atmospheric worlds with cinematic light, built so the planes can move for parallax.
+- Not monochrome ink-only, whiteboard, childish cartoon, goofy meme stickmen, corporate explainer or flat generic vector.
+- Three versions of this one direction: A Painterly Cinematic, B Editorial Elegant, C Atmospheric Storybook. The same three scenes (awe under the night sky, Eve offering the fruit, Adam hiding in the forest), so nine images.
+- Focus on character design, silhouette, posture, hands, face simplicity, emotional readability and colour.
+- "This round is about refining the actual winning direction, not broad exploration." Don't go back to many unrelated styles.
+- Static images only: no video, no paid tools, no Higgsfield, no rewriting the script, and not the 34 shots yet.
+
+Done: `stickman_hybrid/` holds the nine frames with their layers, the comparison page and `reports/assessment.md`. The assessment names B as the best balance of beauty, maturity and feasibility, A as the most emotional and C as the most at risk of looking childish. Nothing is approved, and nothing has been tested in motion.
