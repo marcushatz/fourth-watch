@@ -166,6 +166,19 @@ class StoryboardCheck(unittest.TestCase):
             self.assertEqual(page.count("<article>"), 3)
             self.assertIn("<svg", page)
 
+    def test_page_uses_a_drawn_sketch_when_one_exists(self):
+        sys.path.insert(0, str(SKILL_DIR / "scripts"))
+        from sketch import Frame
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = pathlib.Path(tmp)
+            board = folder / "storyboard.json"
+            board.write_text(EXAMPLE.read_text())
+            Frame("night").stars(5).word("drawn frame", 135, 200).write(folder / "frames/S01.svg")
+            out = folder / "board.html"
+            run = subprocess.run([sys.executable, str(SKILL_DIR / "scripts/storyboard_page.py"), str(board), "--out", str(out)], capture_output=True, text=True)
+            self.assertEqual(run.returncode, 0, run.stderr)
+            self.assertIn("drawn frame", out.read_text())
+
 
 class Motion(unittest.TestCase):
     def test_a_point_on_the_camera_line_lands_at_the_centre(self):

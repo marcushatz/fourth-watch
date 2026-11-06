@@ -22,8 +22,8 @@ Last updated: Nov 5 (after Round 49).
 ## Waiting on Marcus (Nov 5, 2026)
 
 - **Story skill test:** `fourth-watch-story` is a draft in `.claude/skills/fourth-watch-story/`. Its test, in `evals/test_plan.md`, compares it with `fourth-watch-writer` on four passages. It needs about eight agent runs and no credits. He needs to approve the runs or change the passages.
-- **First video:** the beginning of the world. He rejected the story at script v4 (Round 54) and chose a new question: "If God doesn't need anything, why did he make you?" (Round 55). Script v11 is waiting for his approval (`ep11-beginning/writer/script_v11.md`). The storyboard comes next, then tweaks. No video yet.
-- **Credit budget:** he'll set it later and cares about quality first. The balance is 76.47, and every paid job still needs his approval.
+- **First video:** the beginning of the world. He rejected the story at script v4 (Round 54) and chose a new question: "If God doesn't need anything, why did he make you?" (Round 55). Script v11 is approved and locked (`ep11-beginning/script_approved.md`). The storyboard is waiting for his tweaks and approval (`ep11-beginning/storyboard.html`). No video yet.
+- **Credit budget:** he'll set it later and cares about quality first. The balance is 0: a "Subscription Credits Reset" removed the 76.47 on Nov 5 at 21:38 UTC. Nothing was generated. Every paid job still needs his approval.
 - **Series voice:** not chosen.
 - **Lifting the lock:** Higgsedit runs in the Higgsfield sandbox, which the lock blocks. Building the first video needs his words to lift it.
 - **Storm script v4:** `ep10-fourth-watch/writer/script_v4.md` is an unlocked candidate of 327 words. It needs a verdict, and a decision on trimming.

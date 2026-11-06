@@ -9,7 +9,7 @@ Higgsfield's `transactions` is the source of truth for charges.
 
 ## Current balance
 
-Check with `balance`. On Nov 2, 2026 it was 97.24 credits after one 2.76-credit voiceover.
+Check with `balance`. On Nov 2, 2026 it was 97.24 credits after one 2.76-credit voiceover. On Nov 5 at 21:38 UTC a "Subscription Credits Reset" removed the remaining 76.47, leaving 0. It wasn't a generation job.
 
 ## Spending order
 

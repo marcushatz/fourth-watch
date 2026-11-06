@@ -633,3 +633,8 @@ His words: "after the moment u introduce new ideas!!!!!! chilll"
 
 Rule:
 - **Add no new verse, fact or idea after the key moment.** Keep what follows short, and plant anything it needs before the moment.
+
+## Round 62 (Nov 5, 22:06): script approved, storyboard next
+His words: "good now work on visual storyboard"
+
+Script v11 is approved and locked as `ep11-beginning/script_approved.md`. The storyboard is free planning work, and nothing is animated until he approves it.

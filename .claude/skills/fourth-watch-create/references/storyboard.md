@@ -20,6 +20,8 @@ It starts from the creative plan in the story skill. Each row of that plan becom
 
 Set `timing` to `estimated` before the voice exists, and `real` after it. `last_word_end` is when the narration ends.
 
+Optional fields: `name` is the page's short title, `sections` maps each section name to one line about its job, and each shot can carry a `section` and a `tone` (`night`, `dusk`, `day`, `cold`, `chalk` or `gold`). The page uses these for its groups and its strip of light across the film.
+
 ## One row per shot
 
 | Field | Meaning |
@@ -60,7 +62,9 @@ Before the voice exists, assume 2.7 words per second, and add a short pause at e
 
 ## Pictures
 
-The page shows a rough sketch of each frame's size and angle until real frames exist. Real frames can come from two places:
+Marcus should see the film, not placeholder figures. Draw every shot with `scripts/sketch.py`, saved as `frames/<id>.svg`. It's free and needs no lock lifted. Keep the sketches rough, so they plan the shot without setting the look. `ep11-beginning/build_storyboard.py` is a working example.
+
+If a shot has no frame, the page falls back to a rough sketch of its size and angle. Real frames can come from two places:
 
 - `higgsedit frame`, which costs no credits but needs the lock lifted. Save each frame as `frames/<id>.png` beside `storyboard.json`.
 - A generated still, which costs credits and needs approval.
