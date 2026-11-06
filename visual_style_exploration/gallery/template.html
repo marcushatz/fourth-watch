@@ -1,0 +1,253 @@
+<meta charset="utf-8">
+<title>Fourth Watch Style Study</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Alegreya+Sans:wght@400;500;700&family=Cormorant+Garamond:ital,wght@1,500&display=swap">
+<style>
+/* A dark screening room built from the brand palette, so every frame is judged against the same neutral ground.
+   Layout: tabs across the top, a frame wall for browsing, and a large side-by-side stage for comparing. */
+:root {
+  color-scheme: dark;
+  --night: #14100d; --umber: #211812; --panel: #2a1e16; --line: #4a382a;
+  --ash: #b3a797; --parch: #f2e6cf; --gold: #e3b25c; --ember: #d0653f;
+  --display: "Cinzel", "Times New Roman", serif;
+  --body: "Alegreya Sans", "Trebuchet MS", sans-serif;
+  --verse: "Cormorant Garamond", Georgia, serif;
+}
+*{box-sizing:border-box}
+html,body{height:auto}
+body{background:var(--night);color:var(--parch);font-family:var(--body);font-size:16px;line-height:1.45;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--night)}
+button,select,input{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+a{color:var(--gold)}
+header.top{padding-block:28px 12px;max-width:1500px;margin-inline:auto}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(26px,4vw,40px);letter-spacing:.04em;margin:0;text-wrap:balance}
+.lede{font-family:var(--verse);font-style:italic;font-size:clamp(19px,2.4vw,24px);color:var(--ash);margin:6px 0 0;max-width:62ch}
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--night);border-bottom:1px solid var(--line);margin-inline:auto;max-width:1500px;display:flex;gap:4px;flex-wrap:wrap;padding-block:8px}
+nav.tabs button{background:none;border:0;padding:8px 13px;color:var(--ash);font-weight:500;border-radius:4px}
+nav.tabs button[aria-selected=true]{color:var(--night);background:var(--gold)}
+main{max-width:1500px;margin-inline:auto;padding-top:20px}
+section[hidden]{display:none}
+h2{font-family:var(--display);font-weight:500;font-size:22px;letter-spacing:.03em;margin:30px 0 10px;text-wrap:balance}
+h2:first-child{margin-top:4px}
+h3{font-size:17px;margin:18px 0 4px;font-weight:700}
+p{max-width:72ch;margin:8px 0}
+.note{color:var(--ash);font-size:15px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.seg{display:inline-flex;flex-wrap:wrap;max-width:100%;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.seg button{background:none;border:0;padding:7px 13px;color:var(--ash)}
+.seg button[aria-pressed=true]{background:var(--parch);color:var(--night);font-weight:700}
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(172px,44vw),1fr));gap:18px 14px}
+.card{min-width:0;display:flex;flex-direction:column;gap:6px}
+.frame{position:relative;aspect-ratio:9/16;background:var(--umber);border:0;padding:0;display:block;width:100%;overflow:hidden;border-radius:3px}
+.frame img{width:100%;height:100%;object-fit:cover;display:block}
+.frame .tag{position:absolute;left:6px;bottom:6px;background:rgba(20,16,13,.82);color:var(--parch);font-size:12px;padding:2px 6px;border-radius:3px}
+.card h3{margin:2px 0 0;font-size:16px;line-height:1.2}
+.card .cap{color:var(--ash);font-size:14px;line-height:1.3}
+.row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:space-between;min-width:0}
+.chip{font-size:12px;padding:1px 7px;border-radius:99px;border:1px solid var(--line);color:var(--ash)}
+.chip.high{border-color:#6e9a6a;color:#a9d3a4}.chip.med{border-color:#a98b4e;color:#e3c37f}.chip.low{border-color:#a8604a;color:#e79a80}
+.fav{background:none;border:0;font-size:20px;line-height:1;color:var(--ash);padding:2px}
+.fav[aria-pressed=true]{color:var(--gold)}
+.link{background:none;border:0;padding:0;color:var(--gold);text-decoration:underline;font-size:14px}
+.stage{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(230px,1fr);gap:12px;overflow-x:auto;padding-bottom:10px}
+.stage figure{margin:0;min-width:0}
+.stage figcaption{font-size:14px;padding-top:4px;color:var(--parch)}
+.pick{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.pick button{background:none;border:1px solid var(--line);color:var(--ash);border-radius:99px;padding:3px 10px;font-size:14px}
+.pick button[aria-pressed=true]{background:var(--panel);color:var(--parch);border-color:var(--gold)}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:left;vertical-align:top;padding:7px 10px;border-bottom:1px solid var(--line)}
+th{color:var(--ash);font-weight:500;font-size:14px;white-space:nowrap}
+td.num{font-variant-numeric:tabular-nums}
+#viewer{position:fixed;inset:0;z-index:30;background:#0a0807;display:flex;flex-direction:column;padding:calc(env(safe-area-inset-top,0px) + 8px) max(10px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 8px) max(10px,env(safe-area-inset-left,0px))}
+#viewer[hidden]{display:none}
+#viewer .head{display:flex;gap:10px;align-items:center;justify-content:space-between;color:var(--parch);padding-bottom:6px}
+#viewer .pane{flex:1;min-height:0;overflow:auto;display:flex;justify-content:center;align-items:flex-start}
+#viewer img{height:100%;width:auto;max-width:100%;object-fit:contain;margin:auto}
+#viewer.zoom img{height:auto;width:1080px;max-width:none;margin:0 auto}
+#viewer button{background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:5px 11px}
+dialog{background:var(--umber);color:var(--parch);border:1px solid var(--line);border-radius:8px;max-width:min(860px,calc(100vw - 24px));width:100%;padding:20px;max-height:calc(100vh - 32px)}
+dialog::backdrop{background:rgba(5,4,3,.75)}
+.dframes{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin:10px 0}
+.rate{display:grid;grid-template-columns:minmax(120px,1fr) auto;gap:6px 12px;align-items:center;max-width:430px}
+.dots{display:flex;gap:4px}
+.dots button{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--ash);font-size:14px;padding:0}
+.dots button[aria-pressed=true]{background:var(--gold);color:var(--night);border-color:var(--gold)}
+.tech dt{font-weight:700;margin-top:10px}.tech dd{margin:2px 0 0;color:var(--ash)}
+.prov{font-size:13px;color:var(--ash)}
+ul.tight{margin:6px 0;padding-left:20px;max-width:72ch}ul.tight li{margin:4px 0}
+.status{font-size:13px;color:var(--ash)}
+@media (max-width:520px){.wall{grid-template-columns:repeat(2,minmax(0,1fr))}.stage{grid-auto-columns:minmax(46vw,1fr)}}
+@media (prefers-reduced-motion:no-preference){.frame img{transition:transform .25s ease}.frame:hover img{transform:scale(1.015)}}
+</style>
+
+<header class="top">
+  <h1>Fourth Watch Style Study</h1>
+  <p class="lede">One moment from the approved Genesis script, drawn in every way we could make honestly with free tools. The choice is yours.</p>
+</header>
+<nav class="tabs" role="tablist" id="tabs"></nav>
+<main>
+  <section id="view-gallery"></section>
+  <section id="view-compare" hidden></section>
+  <section id="view-refined" hidden></section>
+  <section id="view-ratings" hidden></section>
+  <section id="view-judgment" hidden></section>
+  <section id="view-research" hidden></section>
+</main>
+<div id="viewer" hidden>
+  <div class="head"><span id="vtitle"></span><span class="bar" style="margin:0">
+    <button id="vprev" aria-label="Previous frame">Prev</button><button id="vnext" aria-label="Next frame">Next</button><button id="vzoom">Full size</button><button id="vclose">Close</button></span></div>
+  <div class="pane"><img id="vimg" alt=""></div>
+</div>
+<dialog id="detail"></dialog>
+
+<script>
+const DATA = /*DATA*/null;
+const SHOTS = {s26:"Fear", s13:"Human interaction", s02:"Awe"};
+const CRIT = [["beauty","Visual beauty"],["emotion","Emotional impact"],["cinema","Cinematic quality"],["character","Character quality"],["distinct","Distinctiveness"],["scale","Production scalability"]];
+const $ = (s,e=document)=>e.querySelector(s);
+const el = (t,a={},...k)=>{const n=document.createElement(t);for(const[x,v]of Object.entries(a)){if(x==="class")n.className=v;else if(x.startsWith("on"))n.addEventListener(x.slice(2),v);else if(v!==false&&v!=null)n.setAttribute(x,v===true?"":v)}for(const c of k.flat())if(c!=null)n.append(c);return n};
+const st = {shot:"s26", filter:"all", picks:new Set(DATA.finalists), rate:{}, db:null};
+const byId = Object.fromEntries(DATA.styles.map(s=>[s.id,s]));
+const frameOf = (s,shot,stage)=>s.frames.find(f=>f.shot===shot&&(!stage||f.stage===stage)) ;
+const best = (s,shot)=>{const m=s.frames.filter(f=>f.shot===shot);return m.find(f=>f.stage==="C")||m[0]};
+const feasClass = f=>f.startsWith("High")?"high":f.startsWith("Medium")?"med":"low";
+
+/* Ratings live in the artifact's data store, so Claude can read them back. Browser storage covers signed-out viewing. */
+function localLoad(){try{return JSON.parse(localStorage.getItem("fw-style-rate")||"{}")}catch(e){return{}}}
+function localSave(){try{localStorage.setItem("fw-style-rate",JSON.stringify(st.rate))}catch(e){}}
+async function storeInit(){
+  st.rate = localLoad();
+  try{
+    if(!window.claude||!claude.use)return;
+    const db = await claude.use("db");
+    if(!db)return;
+    st.db = db;
+    const snap = await db.collection("ratings").get();
+    snap.docs.forEach(d=>{st.rate[d.id]={...(st.rate[d.id]||{}),...d.data()}});
+    renderAll();
+  }catch(e){}
+}
+function saveRate(id){
+  localSave();
+  if(st.db){try{st.db.doc("ratings/"+id).set(st.rate[id]).catch(()=>{})}catch(e){}}
+}
+function setFav(id,on){(st.rate[id]=st.rate[id]||{}).favorite=on;saveRate(id);renderAll()}
+
+function favBtn(s){const on=!!(st.rate[s.id]||{}).favorite;return el("button",{class:"fav","aria-pressed":on?"true":"false","aria-label":(on?"Remove ":"Mark ")+s.name+" as favorite",onclick:e=>{e.stopPropagation();setFav(s.id,!on)}},on?"\u2605":"\u2606")}
+function thumb(s,f,list){
+  const b = el("button",{class:"frame","aria-label":"Enlarge "+s.name+", "+SHOTS[f.shot],onclick:()=>openViewer(list||[{s,f}],list?list.findIndex(x=>x.f===f):0)});
+  b.append(el("img",{src:f.thumb,alt:s.name+", "+SHOTS[f.shot],loading:"lazy"}));
+  return b;
+}
+function renderGallery(){
+  const v=$("#view-gallery");v.replaceChildren();
+  const shots=el("div",{class:"seg",role:"group","aria-label":"Shot"},Object.entries(SHOTS).map(([k,n])=>el("button",{"aria-pressed":st.shot===k?"true":"false",onclick:()=>{st.shot=k;renderGallery()}},n)));
+  const filt=el("div",{class:"seg",role:"group","aria-label":"Which styles"},[["all","All styles"],["finalists","Eight finalists"],["refined","Refined four"],["fav","My favorites"]].map(([k,n])=>el("button",{"aria-pressed":st.filter===k?"true":"false",onclick:()=>{st.filter=k;renderGallery()}},n)));
+  v.append(el("div",{class:"bar"},shots,filt));
+  let L=DATA.styles;
+  if(st.filter==="finalists")L=L.filter(s=>DATA.finalists.includes(s.id)||s.id==="20");
+  if(st.filter==="refined")L=L.filter(s=>DATA.refined.includes(s.id));
+  if(st.filter==="fav")L=L.filter(s=>(st.rate[s.id]||{}).favorite);
+  const list=L.map(s=>({s,f:best(s,st.shot)})).filter(x=>x.f);
+  const noshot=L.filter(s=>!best(s,st.shot));
+  const wall=el("div",{class:"wall"});
+  list.forEach(({s,f})=>wall.append(el("article",{class:"card"},thumb(s,f,list),
+    el("div",{class:"row"},el("h3",{},s.name),favBtn(s)),
+    el("div",{class:"cap"},s.short),
+    el("div",{class:"row"},el("span",{class:"chip "+feasClass(s.feasibility)},"Production: "+s.feasibility.split(".")[0]),el("button",{class:"link",onclick:()=>openDetail(s)},"Details")))));
+  v.append(wall);
+  if(!list.length)v.append(el("p",{class:"note"},st.filter==="fav"?"No favorites yet. Tap the star under any frame.":"No frames match."));
+  if(noshot.length)v.append(el("p",{class:"note"},"Only the eight finalists have this shot. Not shown: "+noshot.map(s=>s.name).join(", ")+"."));
+}
+function renderCompare(){
+  const v=$("#view-compare");v.replaceChildren();
+  v.append(el("h2",{},"Same moment, side by side"));
+  v.append(el("div",{class:"bar"},el("div",{class:"seg",role:"group","aria-label":"Shot"},Object.entries(SHOTS).map(([k,n])=>el("button",{"aria-pressed":st.shot===k?"true":"false",onclick:()=>{st.shot=k;renderCompare()}},n)))));
+  const avail=DATA.styles.filter(s=>best(s,st.shot));
+  v.append(el("div",{class:"pick"},avail.map(s=>el("button",{"aria-pressed":st.picks.has(s.id)?"true":"false",onclick:()=>{st.picks.has(s.id)?st.picks.delete(s.id):st.picks.add(s.id);renderCompare()}},s.name))));
+  const list=avail.filter(s=>st.picks.has(s.id)).map(s=>({s,f:best(s,st.shot)}));
+  const stg=el("div",{class:"stage"});
+  list.forEach(({s,f})=>stg.append(el("figure",{},thumb(s,f,list),el("figcaption",{},s.name))));
+  v.append(stg);
+  if(!list.length)v.append(el("p",{class:"note"},"Pick two or more styles above."));
+}
+function renderRefined(){
+  const v=$("#view-refined");v.replaceChildren();
+  v.append(el("h2",{},"The four refined styles"),el("p",{class:"note"},"Each row shows awe, human interaction and fear after a further pass on character, light, environment and materials."));
+  DATA.refined.forEach(id=>{const s=byId[id];
+    v.append(el("div",{class:"row",style:"margin-top:18px;max-width:900px"},el("h3",{},s.name),favBtn(s)));
+    const fr=["s02","s13","s26"].map(k=>({s,f:s.frames.find(x=>x.shot===k&&x.stage==="C")||best(s,k)})).filter(x=>x.f);
+    const g=el("div",{class:"stage",style:"grid-auto-columns:minmax(200px,300px)"});
+    fr.forEach(({s,f})=>g.append(el("figure",{},thumb(s,f,fr),el("figcaption",{},SHOTS[f.shot]))));
+    v.append(g);
+    if(s.refine)v.append(el("p",{class:"note"},s.refine));
+  });
+}
+function renderRatings(){
+  const v=$("#view-ratings");v.replaceChildren();
+  v.append(el("h2",{},"Your ratings"));
+  v.append(el("p",{class:"status"},st.db?"Saved to this page, so Claude can read them when you ask.":"Saved in this browser only. Open the page signed in to keep them with the page."));
+  const avg=s=>{const r=st.rate[s.id]||{},a=CRIT.map(c=>r[c[0]]).filter(Boolean);return a.length?a.reduce((x,y)=>x+y,0)/a.length:0};
+  const rows=[...DATA.styles].sort((a,b)=>avg(b)-avg(a));
+  const t=el("table",{},el("thead",{},el("tr",{},el("th",{},"Style"),CRIT.map(c=>el("th",{},c[1])),el("th",{},"Average"))),
+    el("tbody",{},rows.map(s=>{const r=st.rate[s.id]||{};return el("tr",{},el("td",{},el("button",{class:"link",onclick:()=>openDetail(s)},s.name)),CRIT.map(c=>el("td",{class:"num"},r[c[0]]||"–")),el("td",{class:"num"},avg(s)?avg(s).toFixed(1):"–"))})));
+  v.append(el("div",{class:"scroll"},t));
+}
+function renderJudgment(){
+  const v=$("#view-judgment");v.replaceChildren();
+  v.append(el("h2",{},"Four separate judgments"),el("p",{class:"note"},DATA.judgmentNote));
+  const t=el("table",{},el("thead",{},el("tr",{},["Style","Artistic ceiling","Current execution","Production feasibility","Audience evidence"].map(h=>el("th",{},h)))),
+    el("tbody",{},DATA.styles.map(s=>el("tr",{},el("td",{},el("button",{class:"link",onclick:()=>openDetail(s)},s.name)),el("td",{},s.ceiling),el("td",{},s.current),el("td",{},s.feasibility),el("td",{},s.audience)))));
+  v.append(el("div",{class:"scroll"},t));
+  v.append(el("h2",{},"Across many episodes"));
+  const q=el("table",{},el("thead",{},el("tr",{},el("th",{},"Test"),DATA.stress.cols.map(c=>el("th",{},c)))),el("tbody",{},DATA.stress.rows.map(r=>el("tr",{},el("td",{},r[0]),r.slice(1).map(x=>el("td",{},x))))));
+  v.append(el("div",{class:"scroll"},q));
+  v.append(el("h2",{},"Reasoned ranking"),el("p",{class:"note"},"This orders the evidence. It doesn't decide. The choice is yours."));
+  v.append(el("ol",{class:"tight"},DATA.ranking.map(r=>el("li",{},el("strong",{},r[0]),": "+r[1]))));
+  v.append(el("h2",{},"Worth animation testing next"),el("ul",{class:"tight"},DATA.nextTests.map(x=>el("li",{},x))));
+  v.append(el("h2",{},"Still unresolved"),el("ul",{class:"tight"},DATA.open.map(x=>el("li",{},x))));
+}
+function renderResearch(){
+  const v=$("#view-research");v.replaceChildren();
+  v.append(el("h2",{},"What the research supports"),el("ul",{class:"tight"},DATA.findings.map(x=>el("li",{},x))));
+  v.append(el("p",{class:"note"},DATA.researchNote));
+  const t=el("table",{},el("thead",{},el("tr",{},["Creator or work","Style","Audience or result","Status","Could we reproduce it?","Biblical gravity?"].map(h=>el("th",{},h)))),
+    el("tbody",{},DATA.research.map(r=>el("tr",{},el("td",{},r.url?el("a",{href:r.url,target:"_blank",rel:"noopener"},r.name):r.name),el("td",{},r.style),el("td",{},r.result),el("td",{},r.status),el("td",{},r.repro),el("td",{},r.gravity)))));
+  v.append(el("div",{class:"scroll"},t));
+}
+function openDetail(s){
+  const d=$("#detail");d.replaceChildren();
+  d.append(el("div",{class:"row"},el("h2",{style:"margin:0"},s.name),el("span",{class:"bar",style:"margin:0"},favBtn(s),el("button",{class:"link",onclick:()=>d.close()},"Close"))));
+  d.append(el("p",{},s.desc));
+  if(s.why)d.append(el("p",{class:"note"},s.why));
+  if(s.refs.length)d.append(el("p",{class:"note"},"Reference creators: ",s.refs.map((r,i)=>[i?", ":"",r.url?el("a",{href:r.url,target:"_blank",rel:"noopener"},r.name):r.name]).flat()));
+  const list=s.frames.map(f=>({s,f}));
+  d.append(el("div",{class:"dframes"},list.map(({s,f})=>el("div",{},thumb(s,f,list),el("div",{class:"prov"},SHOTS[f.shot]+(f.stage==="C"?", refined":"")+". "+f.prov)))));
+  const rate=el("div",{class:"rate"});
+  CRIT.forEach(([k,n])=>{const cur=(st.rate[s.id]||{})[k]||0;rate.append(el("span",{},n),el("span",{class:"dots",role:"group","aria-label":n},[1,2,3,4,5].map(i=>el("button",{"aria-pressed":cur===i?"true":"false","aria-label":n+" "+i,onclick:()=>{(st.rate[s.id]=st.rate[s.id]||{})[k]=i;saveRate(s.id);openDetail(s);renderRatings()}},i))))});
+  d.append(el("h3",{},"Rate this style"),rate);
+  d.append(el("h3",{},"Technical breakdown"),el("dl",{class:"tech"},[["How it was made",s.build],["What can be reused",s.reuse],["How characters would move",s.animate],["Camera and parallax",s.camera],["Turning, walking, reaching, feeling",s.acting],["Where generated assets might help",s.generated],["Main risks",s.risks]].map(([a,b])=>[el("dt",{},a),el("dd",{},b)]).flat()));
+  if(!d.open)d.showModal();
+}
+let vlist=[],vi=0;
+function showV(){const {s,f}=vlist[vi];$("#vimg").src=f.full;$("#vimg").alt=s.name+", "+SHOTS[f.shot];$("#vtitle").textContent=s.name+" · "+SHOTS[f.shot]+" · "+f.prov}
+function openViewer(list,i){if($("#detail").open)$("#detail").close();vlist=list;vi=Math.max(i,0);$("#viewer").hidden=false;$("#viewer").classList.remove("zoom");$("#vzoom").textContent="Full size";showV()}
+$("#vclose").onclick=()=>$("#viewer").hidden=true;
+$("#vprev").onclick=()=>{vi=(vi-1+vlist.length)%vlist.length;showV()};
+$("#vnext").onclick=()=>{vi=(vi+1)%vlist.length;showV()};
+$("#vzoom").onclick=()=>{const z=$("#viewer").classList.toggle("zoom");$("#vzoom").textContent=z?"Fit":"Full size"};
+document.addEventListener("keydown",e=>{if($("#viewer").hidden)return;if(e.key==="Escape")$("#vclose").click();if(e.key==="ArrowLeft")$("#vprev").click();if(e.key==="ArrowRight")$("#vnext").click()});
+const TABS=[["gallery","Style gallery"],["compare","Compare"],["refined","Refined four"],["ratings","My ratings"],["judgment","Judgments"],["research","Research"]];
+function go(k){TABS.forEach(([t])=>{$("#view-"+t).hidden=t!==k;$("#tab-"+t).setAttribute("aria-selected",t===k)});if(location.hash.slice(1)!==k)location.hash=k}
+TABS.forEach(([k,n])=>$("#tabs").append(el("button",{id:"tab-"+k,role:"tab","aria-selected":"false",onclick:()=>go(k)},n)));
+function renderAll(){renderGallery();renderCompare();renderRefined();renderRatings();renderJudgment();renderResearch()}
+renderAll();
+go(TABS.some(t=>t[0]===location.hash.slice(1))?location.hash.slice(1):"gallery");
+addEventListener("hashchange",()=>{const k=location.hash.slice(1);if(TABS.some(t=>t[0]===k))go(k)});
+storeInit();
+</script>

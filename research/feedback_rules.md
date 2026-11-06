@@ -684,3 +684,15 @@ Rules:
 - Both versions aim at the same style and composition, so the test is of the style, not the tool.
 - Stills only: no animation, no Higgsfield.
 - The brief, fairness rules and decision rule are in `ep11-beginning/style_test/side_by_side/BRIEF.md`.
+
+## Round 70 (Nov 6, 00:45): find the look before polishing it
+He sent a full brief for a visual style exploration. His words: "We selected cut-paper partly because it was relatively easy to construct with code." And: "**Do not repeat this mistake.**"
+
+Rules:
+- Artistic quality, storytelling, emotion and long-term identity come first. Feasibility matters, but it's no excuse for mediocre art.
+- Judge artistic ceiling, current execution, production feasibility and audience evidence separately.
+- A poor code drawing doesn't disqualify a style. A beautiful still doesn't prove it can be produced.
+- The decision on the final style is his. Never declare a winner.
+- This work is stills only: no video, no paid tools, and no subagents that add cost.
+
+Done: `visual_style_exploration/` holds 22 styles on the same shots, eight finalists, four refined styles and a review gallery. Nothing is approved yet.
