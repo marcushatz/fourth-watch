@@ -643,3 +643,8 @@ Script v11 is approved and locked as `ep11-beginning/script_approved.md`. The st
 His words: "i dont approave of this visual desing"
 
 He rejected the look of the first storyboard and shared three AI critiques. AI critiques are opinions, not audience evidence. The approved script stays locked.
+
+## Round 64 (Nov 5, 22:56): test the styles
+His words: "not sure lets test it out, give me few different storybaord design types and lets compare nad contrast"
+
+Four styles were drawn in code for free on the same five moments: Charcoal, Cut Paper, Painted and Engraving. AI 1's black silhouettes were left out because he rejected black rim-lit cut-out figures on Nov 3. He hasn't chosen a style yet.

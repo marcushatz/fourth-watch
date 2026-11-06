@@ -38,3 +38,5 @@ ep01-samson/creative/sd_pillars/film/
 ep02-bronze-serpent/film/
 # the live approval file is temporary
 production/approvals/current.json
+# rebuilt by ep11-beginning/style_test/build_page.py
+ep11-beginning/style_test/style_test.html
