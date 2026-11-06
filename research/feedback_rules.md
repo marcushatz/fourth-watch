@@ -583,3 +583,15 @@ Rules:
 His words: "lets do it"
 
 He accepted the proposed question: "If God doesn't need anything, why did he make you?" It replaces the "good, then not good" question as the first video, and the story stays at the beginning of the world.
+
+## Round 56 (Nov 5, 19:10): fix the weak points and check the Scripture
+His words: "fixe the weakest points so that there are none, then think if thisis actually scripturally accurate"
+
+The check found that v5 reversed Genesis 3:8, claimed "one reason" when Scripture gives several purposes, left out death, implied one day, and cut Mark 10:45 before "ransom." All are fixed in v6.
+
+Rules:
+- **Check the order of events verse by verse.**
+- **Before ruling out an answer, search the whole Bible for verses that give it.**
+- **If a story shows mercy, it also states what the sin cost.**
+- **A shortened quote must keep the verse's point.**
+- **Figures of speech can claim a time the text doesn't give.**

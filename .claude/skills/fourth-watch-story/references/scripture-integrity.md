@@ -27,6 +27,11 @@ Keep this as a table beside the script.
 - **Confidence on screen can't exceed the support.** A dramatic verse card can make a guess look proven.
 - **Pictures make claims too.** Staging can imply events the text never says happened. Flag this in the creative plan.
 - **Never promise what the text doesn't promise.** Be careful with lines implying that crying out guarantees rescue.
+- **Check the order of events verse by verse (Round 56).** A retelling that reverses two actions is an error, even when each action is true.
+- **Never say "the only reason" without checking the whole Bible (Round 56).** Before ruling out an answer, search for verses that give it. Say what isn't needed, not what isn't true.
+- **Keep the judgment in (Round 56).** If a story shows mercy, it also states what the sin cost.
+- **Don't let a quote stop before its point (Round 56).** A shortened quote must keep what the verse is saying.
+- **A figure of speech can still claim a time (Round 56).** "That day" implies one day. Don't use it unless the text gives one.
 
 ## Hard passages
 
@@ -43,5 +48,7 @@ Don't skip a hard verse to keep a story clean. Quote it, keep it in the story, a
 | Peter's charcoal fires | Both are in John, but no text says Jesus chose the fire to remind him. The word-for-love switch is disputed |
 | Naaman | "Leprosy" covers various skin diseases. The servant girl's captivity isn't a happy setup |
 | Naomi | Her grief is real. Don't say she didn't appreciate Ruth |
+| Genesis 3 | They hear God, then hide (3:8). The fruit isn't called an apple. "Where are you?" is also where judgment begins, so don't present it as only tender. The clothes (3:21) come before they're sent out (3:23) |
+| Why God made people | Scripture gives more than one purpose: his glory (Isaiah 43:7), "for him" (Colossians 1:16), and ruling and filling the earth (Genesis 1:28). "By your will" is Revelation 4:11. Saying he didn't need us doesn't deny these |
 
 More traps are in `.claude/skills/fourth-watch-writer/reference/verification.md` and `research/curated_archive/04_scripture_story_dossiers.md`.
