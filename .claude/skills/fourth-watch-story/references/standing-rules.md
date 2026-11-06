@@ -59,7 +59,7 @@ This file is a checklist. The full rules live in:
 - No follow or community ask at the end (`research/direction_rules.md`, section 9).
 - The ask must grow out of the message, not sit beside it (59).
 - If one line is the best in the video, build the ending around it. Hold it back if you can, so it lands there for the first time (59).
-- After the key moment, explain what it means, say how it applies to our lives, then conclude (60).
+- After the key moment, explain what it means, say how it applies to our lives, then conclude (60). Keep it short, and add no new verse, fact or idea after that moment. Anything the ending needs must be planted before it (61).
 - A closing question must leave the viewer happy and encouraged. It can't make anyone feel judged, exposed or put on the spot. The best one has only one answer, and that answer is good news (60).
 
 **Language**

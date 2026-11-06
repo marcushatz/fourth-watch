@@ -627,3 +627,9 @@ His words: "exaplnd on what this actually means exaplin, then say how it applies
 Rules:
 - **After the key moment, explain what it means, say how it applies to our lives, then conclude.**
 - **A closing question must leave the viewer happy and encouraged.** It can never make someone feel judged or exposed.
+
+## Round 61 (Nov 5, 22:03): nothing new after the moment
+His words: "after the moment u introduce new ideas!!!!!! chilll"
+
+Rule:
+- **Add no new verse, fact or idea after the key moment.** Keep what follows short, and plant anything it needs before the moment.
