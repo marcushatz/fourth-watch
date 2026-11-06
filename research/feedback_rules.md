@@ -653,3 +653,10 @@ Four styles were drawn in code for free on the same five moments: Charcoal, Cut 
 His words: "cut papaer clearly wins but htis owuld be 2d not 3d, is this what we are going for?"
 
 Cut Paper is his leading style. It isn't approved as the universal style until it's proven in motion. He asked whether 2D is the right direction.
+
+## Round 66 (Nov 5, 23:12 to 23:15): show it in stills, no video
+His words: "dont reate a video show me visually how it could owrk." He then shared advice on Cut Paper from Gemini, Grok and ChatGPT.
+
+Rules:
+- **Don't make a video for this test.** Show the style in still frames.
+- AI advice is opinion. It doesn't override his rules. Dot eyes stay banned, and "at last" isn't in the locked script.
