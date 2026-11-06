@@ -61,6 +61,10 @@ This file is a checklist. The full rules live in:
 **Language**
 
 - Plain spoken words. Say what a phrase means (13).
+- Read every line aloud. If it sounds like an essay or a clever note, rewrite it. Check that no word carries a slang meaning you don't intend (57).
+- When two verses say the same thing, use the one people already know (57).
+- If the Bible says something that will sound strange, quote it word for word and name the book, so it comes from Scripture and not from us (57).
+- Use the names people know, such as Adam and Eve (57).
 - Write for pictures: a person doing something, or an object something happens to. One clause, one picture (`system/02_story_and_script.md`).
 - Follow a quote with a plain line saying what it proves (`system/02_story_and_script.md`).
 - Name the iconic detail in the narration, not only the picture (Samson viewer tests).

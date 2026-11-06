@@ -595,3 +595,12 @@ Rules:
 - **If a story shows mercy, it also states what the sin cost.**
 - **A shortened quote must keep the verse's point.**
 - **Figures of speech can claim a time the text doesn't give.**
+
+## Round 57 (Nov 5, 20:33): plainer words, better-known verses
+His words: "some of the wording here is weird, and good be repalced wiht soethign better." "you mentioneing stuff such as god waswalking in the garden is rcazy to the average viewer so might need osme scriptural backing." "phrases ushc as to give his life as ransom for many could be repalced with aphrase that gives the same meaning but is much more well known and allows hte viewer to connect better to."
+
+Rules:
+- **Read every line aloud, and rewrite anything that sounds like an essay or a clever note.**
+- **When two verses say the same thing, use the one people already know.**
+- **If the Bible says something that will sound strange, quote it word for word and name the book.**
+- **Use the names people know.**
