@@ -1,0 +1,54 @@
+{
+  "request_id": "2026-11-07-price-checks",
+  "project": "fourth-watch",
+  "purpose": "Free price checks Marcus OK'd on Nov 7 (narration voice, one sound effect, one shot 13 clip) before proposing Higgsfield jobs for the Genesis episode",
+  "items": [
+    {
+      "kind": "cost_check",
+      "tool": "generate_audio",
+      "input": {
+        "params": {
+          "model": "elevenlabs_v4",
+          "prompt": "Fourth Watch Genesis narration (price check)",
+          "stability": 0.45,
+          "batch_size": 1,
+          "dialogue": [
+            {
+              "text": "If God doesn't need anything, why did he make you? The Bible says in Acts 17:25 that God doesn't need anything from us. But we all want to feel needed. So do we even matter to him? Maybe he was lonely. But that would mean he needed us. Maybe he wanted our worship. He deserves it, but he doesn't need it. So what's the real reason? Revelation 4:11 says he created everything because he chose to. But would he still want us if we turned against him? In Genesis, God told Adam and Eve not to eat from one tree. But the serpent tells Eve she'll \"be like God\" if she does. She eats the fruit. She gives some to Adam, and he eats. They realize they're naked, and they sew fig leaves together. Genesis 3:8 says they hear God walking in the garden, and they hide. Hebrews 4:13 says no one is hidden from God. God doesn't need them. He could just leave them there. But he calls out to them. We'll come back to what he said. There are consequences. They will die, and God sends them out of the garden. But before they leave, Genesis 3:21 says God makes them clothes. They turned against him, and he's still taking care of them. And he never stopped. John 3:16 says, \"For God so loved the world, that he gave his only Son.\" Here's what he said. God's first words to them aren't \"How could you?\" They're \"Where are you?\" He already knew where they were. He didn't need an answer. He wanted them. So when we fail, we don't have to hide from him. He didn't make us because he needed us. He made us because he wanted us. If he still wanted Adam and Eve after all that, why would he ever stop wanting you?",
+              "voice_type": "preset",
+              "voice_id": "1ad38ba4-9cc4-4f2f-9fde-b0fefdf67ae5"
+            }
+          ]
+        }
+      },
+      "intended_output": "Price of the full 308-word narration in the Gideon voice (no job)"
+    },
+    {
+      "kind": "cost_check",
+      "tool": "generate_audio",
+      "input": {
+        "params": {
+          "model": "mirelo_text_to_audio",
+          "prompt": "Soft rustle of tall grass bending in a slow wave across a quiet night garden, gentle, no voices, no music",
+          "duration": 4
+        }
+      },
+      "intended_output": "Price of one 4 s sound effect (no job)"
+    },
+    {
+      "kind": "cost_check",
+      "tool": "generate_video",
+      "input": {
+        "params": {
+          "model": "kling_o3_flf",
+          "prompt": "Cinematic 2.5D paper-cut animation. Keep the exact look of the first and last frames: layered cut-paper sheets with soft drop shadows, paper texture, flat warm colour, the same two paper puppets. Slow gentle push-in. The woman on the left holds the bitten red fruit out to the man; his hand reaches, takes it, and he lifts it to his mouth. Leaves sway slightly, light motes drift. Only their arms and heads move; bodies keep the same shape. No new objects, no text.",
+          "aspect_ratio": "9:16",
+          "duration": 5,
+          "mode": "pro",
+          "sound": "off"
+        }
+      },
+      "intended_output": "Price of one 5 s shot 13 clip (no job)"
+    }
+  ]
+}
