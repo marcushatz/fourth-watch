@@ -27,6 +27,25 @@ variant("bad_pending_factcheck", "| Closing question | Jonah 3:5, 4:1 | rounds 1
 variant("bad_no_reference", "VO: And the people of Nineveh believed God. [Jonah 3:5]", "VO: And the people of Nineveh believed God.")
 variant("bad_no_verse_card", 'VERSE: "That is why I made haste to flee to Tarshish; for I knew that you are a gracious God and merciful," — Jonah 4:2 (ESV)\n', "")
 
+# ---------- FOURTH WATCH format (Round 74, EDITORIAL.md): free sections, the story contract, writing checks ----------
+fw_good = (HERE / "sources/fourth_watch_good.md").read_text()
+(FX / "script/fw_good.md").write_text(fw_good)
+def fw_variant(name, old, new):
+    assert fw_good.count(old) == 1, (name, old)
+    (FX / f"script/{name}.md").write_text(fw_good.replace(old, new))
+fw_variant("fw_missing_relate", "relate: Falling apart right after doing something hard, and feeling like the only one left.\n", "")
+import re as _re
+(FX / "script/fw_no_refs.md").write_text(_re.sub(r"(?m)^(VO: .*?) \[[^\]]+\]$", r"\1", fw_good))
+fw_variant("fw_questions", "VO: Before any task, God gave him sleep and food. [1 Kings 19:5-8]",
+           "VO: Why food? Why sleep? Why not a sermon? Why not a rebuke? Before any task, God gave him sleep and food. [1 Kings 19:5-8]")
+fw_variant("fw_empty_phrase", "VO: Before any task, God gave him sleep and food. [1 Kings 19:5-8]",
+           "VO: Before any task, God gave him sleep and food. This changes everything. [1 Kings 19:5-8]")
+fw_variant("fw_ending_question", "VO: When we're worn out, God starts by caring for us. And he tells us the truth about being alone. [1 Kings 19:7, 19:18]",
+           "VO: When we're worn out, God starts by caring for us. So what is he telling you about being alone? [1 Kings 19:7, 19:18]")
+fw_variant("fw_cta", "VO: And he named the prophet who would take his place: Elisha. [1 Kings 19:16]",
+           "VO: And he named the prophet who would take his place: Elisha. Follow for part two. [1 Kings 19:16]")
+# ---------- end FOURTH WATCH
+
 # ---------- value and judge checks (added Oct 31, before the checks existed: Round 17, tests first) ----------
 # A Value item the viewer never hears doesn't count: its quote must be in the VO, or most of its key words must be in two neighbouring lines.
 variant("value_one_unspoken", '- The book ends on God\'s unanswered question about 120,000 persons "and also much cattle" [Jonah 4:11]',

@@ -1,5 +1,7 @@
 # 01 · Topic selection: choosing a question that can win
 
+**Older guide (Round 74).** Kept as research. `EDITORIAL.md` and the `fourth-watch-writer` skill now define how Fourth Watch writes. Where this file disagrees, they win. The settled conflicts are in `.claude/skills/fourth-watch-writer/reference/retired_rules.md`.
+
 **Use this when** you plan the next episode. The candidate list lives in `research/episode_bank.md` (researched and scored). This file is how to choose from it, and how to add to it.
 
 **Why it matters:** the step from about 500K views to millions on the model channel was mostly **topic and hook**, not wording *(inferred, `research/script_rules_from_hits.md` §2c)*.

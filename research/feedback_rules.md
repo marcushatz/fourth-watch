@@ -735,3 +735,20 @@ Rules:
 - Don't rewrite the script. No more static style comparisons, no new research report, no storyboard rebuild. "Do not abandon the project because the initial movement isn't perfect."
 
 Done: shot 13 start and end frames in the combined look (`ep11-beginning/film/`), the plan for which shots move in Higgsfield, and one approved price check (6.25 credits). The balance is 0, and this workspace can't upload to Higgsfield yet.
+
+## Round 74 (Nov 6, 19:01): Relate → Reveal → Transform becomes the foundation
+He redefined the content strategy and asked for the whole editorial system to be rebuilt around it. His words: "Fourth Watch will focus on Bible storytelling that connects Scripture to the real struggles people experience in their everyday lives." And: "The human struggle is our entry point. Scripture is our foundation. Understanding God is our ultimate purpose."
+
+Rules:
+- Every episode aims to **Relate** ("I've experienced that."), **Reveal** ("I never noticed that.") and **Transform** ("That changes how I think or live."). "It is not a rigid formula that every script must follow mechanically. The story should feel natural, not manufactured."
+- The audience is Christians, people exploring Christianity, and people who don't normally watch religious content. "The audience should feel understood without feeling manipulated."
+- Value means new understanding, not good feelings. Use his nine kinds of value. "Do not manufacture revelations. Do not present speculation as biblical truth." "If the most valuable insight is already obvious, go deeper into the text."
+- Six content pillars: identity, failure and restoration, anxiety and fear, relationships and betrayal, temptation, and waiting. They are starting points: "Don't force a story into a category when the text points somewhere else."
+- "We prefer storytelling over lecturing." A strong episode has a concrete opening, the actual narrative, an earned discovery, a connection to everyday life ("without pretending that modern circumstances are identical") and a conclusion that grows out of the story.
+- Scriptural integrity is nonnegotiable: read the whole narrative, verify every detail and quote, separate text from interpretation, no invented dialogue, no unsupported claims about private thoughts or God's motives. "Interesting storytelling must never come at the expense of truth." His example: Genesis 3:9-10 can be investigated, but the text must stay separate from why God asked.
+- Writing: specific, emotionally meaningful, educational, accessible, thought-provoking, concise, faithful. "Don't use repetitive rhetorical questions, empty inspirational phrases, or exaggerated descriptions of every moment." "Don't constantly tell viewers how they should feel."
+- Each idea is developed on the nine fields, and weak ideas are rejected "even if their titles sound appealing."
+- Every script is judged on nine questions (relatability, curiosity, narrative, discovery, clarity, emotional impact, application, biblical accuracy, originality). "A script must not pass simply because it follows a structure or meets a word count."
+- "Do not modify or unlock existing approved scripts without explicit authorization."
+
+Done: `EDITORIAL.md` (the philosophy, listed in `CLAUDE.md`); the `fourth-watch-writer` skill rebuilt as one process; the nine-field idea card; one set of claim labels; `reference/retired_rules.md` (every settled conflict); `fw_check.py` taught the FOURTH WATCH format; older guides marked as research. The test of five concepts and the review of the Genesis episode are in `research/editorial_system_2026-11-06.md`. Elijah (1 Kings 19) is recommended for development. Script v11 is unchanged.

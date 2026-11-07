@@ -60,4 +60,4 @@ These conflict across the writer skill, `system/` guides and engine references. 
 | AI judges and panels | Critics at most, never evidence | Round 41 |
 | Value score of 3 or more in `fw_check.py` | Ignore for story judgment | It can't see story quality |
 
-Two conflicts are still open for Marcus. They're at the end of `standing-rules.md`.
+Round 74 (Nov 6) settled the rest: the full table of changed rules is now `.claude/skills/fourth-watch-writer/reference/retired_rules.md`, and `EDITORIAL.md` is the foundation.

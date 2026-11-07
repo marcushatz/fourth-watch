@@ -1,5 +1,7 @@
 # Reviewer prompts (copy, fill the {{slots}}, launch as fresh agents)
 
+**Since Round 74:** every launch is a multi-agent job, so ask Marcus first (`CLAUDE.md`). For a Fourth Watch script, A (fact-check) and B (first-time viewer) are the default. C's hit-structure brief describes the ASK THE TEXT investigation format only. Judge scripts by the approval questions in `EDITORIAL.md`. AI reviewers are critics, never audience evidence.
+
 These are the exact briefs used on Ep 1 on Oct 31, with what they taught us folded in. Each reviewer must be a **fresh agent that has never seen a draft**. Give it only what its prompt lists, so its read isn't anchored on ours.
 
 | File | Reviewer | Tools | When |

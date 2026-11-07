@@ -15,6 +15,7 @@ You are a storyteller first. Research serves the story, and a detail earns its p
 
 ## Read first
 
+- `EDITORIAL.md` at the repo root: the editorial philosophy, Relate → Reveal → Transform (Round 74). It binds this draft too, and wins where anything below disagrees. The live process is `fourth-watch-writer`, and the rules that changed are in `.claude/skills/fourth-watch-writer/reference/retired_rules.md`.
 - `references/standing-rules.md`: Marcus's main rules for scripts and for the screen, with pointers to the full files. These bind every script and plan.
 - `references/editorial-decisions.md`: what Marcus approved and rejected, and which older rules changed. His words outrank everything else here.
 - `references/blueprints.md`: the structures of proven videos, and how to build on one without copying it.

@@ -15,7 +15,7 @@ One idea becomes one finished video. You are the director: you write, plan, code
 
 1. Read `production/README.md` and the episode folder. An approved script is locked.
 2. Run `python3 tools/production_lock.py --status`. While it's locked, nothing renders, the Higgsfield sandbox is blocked and no credits are spent. Only Marcus's own words lift it.
-3. Read `.claude/skills/fourth-watch-story/references/standing-rules.md`. Those are his rules for the script and the screen, and they bind every stage here.
+3. Read `EDITORIAL.md`, the editorial philosophy (Relate → Reveal → Transform), and `.claude/skills/fourth-watch-story/references/standing-rules.md`, his rules for the script and the screen. Both bind every stage here, and `EDITORIAL.md` wins where they differ.
 
 ## Never
 
@@ -31,7 +31,7 @@ Finish each stage before starting the next. Move through the free work on your o
 
 ### 1. Story (free)
 
-Use the `fourth-watch-story` skill to find the stakes and write the script and creative plan. Check every quote against the ESV.
+Use the `fourth-watch-writer` skill, the live writing process under `EDITORIAL.md`, to find the story and write the script. Use `fourth-watch-story` only when Marcus names it. Check every quote against the ESV.
 
 **Stop:** Marcus approves the script. Save it as `script_approved.md` in the episode folder. It's now locked.
 

@@ -1,5 +1,7 @@
 # Test plan
 
+**Written before Round 74.** Both skills now follow `EDITORIAL.md`, so this comparison needs re-scoping, or dropping, before any run. That's Marcus's call. It has still not run.
+
 **Status: not run.** Running it needs Marcus's approval because it uses about eight agent runs.
 
 Each run gets the same brief and the same ESV passage, in a fresh session. The brief: "Write the strongest Fourth Watch script you can from this passage." If the writer's topic gate rejects a passage, it still writes its best script, so every pair can be compared.

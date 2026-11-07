@@ -14,7 +14,7 @@
 
 ## The brand in one line
 
-Fourth Watch is a faceless Christian educational channel that makes cinematic biblical explanations of surprising, textually supported connections within Scripture. Its strengths are intellectual depth, clarity, reverence and memorable visual storytelling.
+Fourth Watch tells Bible stories that help people recognize their own struggles, discover meaningful truths in Scripture, and understand God more deeply (Round 74, `EDITORIAL.md`). Its strengths are the quality of its insights, clarity, reverence and memorable storytelling.
 
 ## The pipeline
 
@@ -22,7 +22,7 @@ Fourth Watch is a faceless Christian educational channel that makes cinematic bi
 |---|---|---|---|---|
 | 1 | Idea | `10_creative_decisions.md` | Idea card and outline | Runs automatically. No scores |
 | 1b | Research | `02_biblical_accuracy.md`, `system/01` | Verified notes | Topic picked by Marcus |
-| 2 | Script | `03_script_and_narration.md`, the writer skill | Script with its one-sentence message | Checks pass |
+| 2 | Script | `EDITORIAL.md`, `03_script_and_narration.md`, the writer skill | Script with its message and Relate, Reveal and Transform | Checks pass and the nine approval questions are answered |
 | 3 | Approval | `03` | `script_approved*.md` | **Marcus approves. The script locks.** |
 | 4 | Voiceover | `03`, `GENERATION_APPROVAL.md` | One take, word timings | **Paid: approval first.** Take matches the script word for word |
 | 5 | Storyboard | `05_motion_and_cinematography.md` | Timed storyboard tied to the take | **Marcus approves** |

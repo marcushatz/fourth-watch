@@ -1,103 +1,106 @@
-# Templates
+# Templates: the file each step leaves behind
 
-## 1. `writer/dossier.md` (Stages 1-2)
+All of these go in the episode's `writer/` folder.
+
+## 1. `ideas.md` (step 1)
+
+Up to five idea cards from `templates/idea_card.md`, then:
+
 ```
-# <Topic>: research dossier (<date>)
+Recommendation: <one card>, because <one sentence>
+Dropped: <card>: <the concept flaw>
+```
 
-## The question people ask
-- Wording(s) found: <search or autocomplete evidence, Q&A pages>
-- The common answer: <what people usually say, with a source>
+## 2. `claims.md` (step 2)
 
-## Passages read in full (ESV)
-- <book chapter> (why it matters)
+```
+# <Episode>: claims (<date>)
 
-## Every other place Scripture touches this thread
-- <reference>: <what it adds> (names/quotes the earlier text? y/n)
+## Passages read in full (ESV, fetched this session)
+- <book chapter>: why it matters
 
-## Discoveries
-| # | Claim | Label | ESV words (fetched) / source | Before (viewer thinks) | After | Surprise/Load/Visual (0-2 each) |
-|---|---|---|---|---|---|---|
+## The common answer people give
+- <what people usually say, with a source>
 
-## Traps: what the text does NOT say
+## What the text does NOT say
 - <e.g. "Genesis 33 never says 'forgave'">
+
+## Claim table
+| # | Claim as the script says it | Label | ESV words or source | Checked |
+|---|---|---|---|---|
 
 ## Pages fetched
 - <url>
 ```
 
-## 2. `writer/argument.md` (Stage 4)
+## 3. `story_map.md` (step 4)
+
 ```
-Question (hook, word for word):
-Answer (one sentence, by 50%):
-Thread:
+Message (one sentence):
+Relate:     <the struggle the viewer recognizes>
+Reveal:     <what Scripture shows them that they hadn't noticed>
+Transform:  <what they understand about God, and what they could consider or do>
 
-Chain:
-  D1 <discovery> → the viewer now asks: <Q>
-  D2 <discovery> answers it → and raises: <Q>
-  D3 …
-  Re-read: <an earlier discovery seen in a new light>
-Principle (one sentence):
-Screenshot line:
+| Beat | What happens (with its reference) | What the viewer recognizes or learns | What they feel |
+|---|---|---|---|
 
-Viewer's next questions → the line that answers each:
-  - <Q> → <line>
-
-Gate 4: a stranger can restate the argument from the chain alone? y/n · each step transforms the last? y/n · principle impossible before the research? y/n
+Turning point: <the event, and why the feeling changes there>
+Ending: <the insight, question or application, and what it pays off>
+Questions the opening raises → the beat that answers each:
+  - <Q> → <beat>
+Gate: reveal earned by the story? y/n · every feeling caused by an event? y/n · application specific? y/n · story starts before any lecture? y/n
 ```
 
-## 3. The script (Stage 5): the series format `fw_check.py` reads
+## 4. The script (step 5), in the format `fw_check.py` reads
+
 ```
-# <Question, exactly as spoken in line 1>
-series: ASK THE TEXT
+# <Title>
+series: FOURTH WATCH
+message: <one sentence>
+relate: <one line>
+reveal: <one line>
+transform: <one line>
+claims: writer/claims.md
 target_seconds: <words ÷ 2.6 + 3, rounded>
-answer: <one sentence>
 
-<!-- version, date, what changed and why; the question chain; care notes -->
+<!-- version, date, what changed and why -->
 
-## Hook
-VO: <the question>
-ON-SCREEN: <THE QUESTION IN CAPS>
+## <section name of your choice>
+VO: <narration> [Book ch:v]
+ON-SCREEN: <optional text>
+VERSE: "<exact ESV words>" — Book ch:v (ESV)      (optional verse card)
 
-## Stakes
-VO: <the sharpening fact(s)> [Book ch:v]
-
-## Story
-VO: <the familiar story, entered at the discovery: 1-2 lines> [Book ch:v]
-
-## Turn
-VO: <the hinge + the core answer by 35-50%> [Book ch:v]
-VERSE: "<exact ESV words>" — Book ch:v (ESV)
-
-## Landing
-VO: <the later evidence / re-reading / principle; echo the hook> [Book ch:v]
-
-## Question            (optional: one closing question, same subject, ≤ 17 words, accuses no one)
-VO: <question> [Book ch:v]
-
-## Value
-- <discovery 1> [ref]   (≥ 3, each actually spoken in the VO)
+## <next section>
+VO: ...
 
 ## Caption
-<one line + "Read it yourself: …" + the ESV credit line>
+<one line, "Read it yourself: ..." and the ESV credit line>
 
 ## References
 - <passages>
-
-## Fact-check log
-| Claim | Verse | Checked against | Status |
 ```
 
-## 4. `writer/review.md` (Stage 6)
+Section names are free. Every VO line that tells a biblical event or quotes Scripture carries its `[Book ch:v]`. The claim table lives in `claims.md`. A `## Fact-check log` table in the script also works.
+
+The older series (ASK THE TEXT, MOST PEOPLE MISS, STRANGE BUT TRUE, MISQUOTED) still use their fixed `## Hook`, `## Stakes`, `## Story`, `## Turn` and `## Landing` sections, an `answer:` line and `## Value`.
+
+## 5. `review.md` (step 6)
+
 ```
-Six rejection tests (yes = rewrite):
-  1 Ordinary retelling?        y/n: <evidence>
-  2 Superficial trivia?        y/n
-  3 Forced cross-reference?    y/n
-  4 Predictable conclusion?    y/n
-  5 Merely sounds profound?    y/n: <each aphorism paraphrased plainly>
-  6 Unanswered next question?  y/n
-Retelling words: __ / __ (__%)   Words: __   Runtime est.: __ s
-Fact-check (AI agent): VERIFIED __ · CORRECTION __ · OVERCLAIM __ → fixes applied: …
-First-time viewer (AI, no tools): answer restated? y/n · principle restated? y/n · new things: __ · confusions: …
-Verdict: PASS / REVISE (what changes in the spine)
+Checker: <FAILs fixed> · WARNs: <each fixed or justified in one line>
+
+The approval questions (EDITORIAL.md), each answered with the line that proves it:
+  Relatability:       <answer> — "<line>"
+  Curiosity:          ...
+  Narrative:          ...
+  Discovery:          ...
+  Clarity:            ...
+  Emotional impact:   ...
+  Application:        ...
+  Biblical accuracy:  ...
+  Originality:        ...
+
+Integrity pass: every line matches its claim label? y/n · invented dialogue, motive or thought? none / <line> · order of events checked? y/n
+Independent reads (only with Marcus's OK): fact-check VERIFIED __ · CORRECTION __ · OVERCLAIM __ → fixes · first-time viewer (AI) restated the message? y/n · confusions: ...
+Verdict: HAND OFF / REVISE (what changes in the story map)
 ```

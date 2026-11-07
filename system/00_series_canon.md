@@ -6,14 +6,15 @@ The fixed identity of the channel. Change it only when Marcus says so. The sourc
 
 - **Name:** Fourth Watch. It comes from Matthew 14:25 (ESV): "And in the fourth watch of the night he came to them, walking on the sea."
 - **Handles:** @fourthwatchgospel on Instagram (secured Oct 30, 2026). The same handle is to be claimed on TikTok, YouTube and Facebook. Display name: "Fourth Watch | Bible Stories". The bios are in `brand/handles.md`.
-- **The promise:** Bible stories and questions answered exactly as the text says, ESV only.
+- **The promise (Round 74):** Bible stories that help people recognize their own struggles, discover meaningful truths in Scripture, and understand God more deeply. ESV only, exactly as the text says. The philosophy is `EDITORIAL.md`.
 - **Form:** faceless, 9:16, 1080×1920, 30 fps. No photoreal images. **Under review (Round 30):** the code-animated look is no longer accepted, and the replacement art direction isn't approved yet. See `production/README.md`.
-- **Model:** The Lintel Network's structure, never its topics, labels or door imagery (we copy the structure, not the identity).
+- **Model:** our own editorial philosophy (`EDITORIAL.md`). The Lintel Network's structure is one option, for the investigation format only, never its topics, labels or door imagery.
 
 ## 2. Series
 
 | Label (exact) | What | Length |
 |---|---|---|
+| FOURTH WATCH | The main format since Round 74: a Bible story that meets a real struggle (Relate → Reveal → Transform) | Earned: usually 60–120 s, about 2 min when justified |
 | ASK THE TEXT | A searched Bible puzzle, answered from the text | 90–120 s (cap 135; hard 150) |
 | MOST PEOPLE MISS | One overlooked detail that changes a famous story | 30–60 s |
 | STRANGE BUT TRUE | One strange fact in the text, explained | 30–60 s |

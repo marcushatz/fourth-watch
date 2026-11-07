@@ -1,17 +1,16 @@
 # 03 · Script structure and narration
 
-Full craft guides: `system/02_story_and_script.md`, `system/03_script_review.md` and the `fourth-watch-writer` skill. This file holds the standing requirements.
+The editorial philosophy is `EDITORIAL.md` (Round 74), and the process is the `fourth-watch-writer` skill. `system/02` and `03` are older craft guides, and `EDITORIAL.md` wins where they disagree. This file holds the standing requirements.
 
 ## Script requirements
 
-- **Message first:** one sentence, shown with the script. Every line serves it.
-- **Question chain:** each line answers the question the last line raised.
-- **Value:** answer the viewer's next questions. Something new every 10–15 seconds.
-- **Connections:** a real connection the viewer would probably never have found alone.
-- **Few books:** about three, plus one passing fact.
-- **Story:** tell the famous part quickly, and include a line people would repeat.
-- **Ending:** a clear conclusion, never an unanswered question.
-- **Length:** 75–95 s by default. Go longer only if the research earns it.
+- **Relate, Reveal, Transform:** the script's header states each in one line, along with the one-sentence message. Every line serves the message.
+- **Story over lecture:** open on a concrete struggle, question or event, and bring viewers into what actually happened.
+- **A genuine reveal:** something the text supports that the viewer probably missed. Never manufactured.
+- **Integrity:** every claim is labeled and every quote checked against the ESV. Interpretation is said as interpretation.
+- **Ending:** a specific insight, a thoughtful question or a practical application that grows out of the story.
+- **Length:** earned. Usually 60–120 s, and about two minutes when the story needs it.
+- **Approval:** the nine questions in `EDITORIAL.md` are answered in words. A script never passes on structure or word count alone.
 
 ## Locked scripts
 

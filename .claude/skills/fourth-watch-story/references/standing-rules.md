@@ -1,6 +1,6 @@
 # Marcus's standing rules
 
-These bind every script and every plan. Numbers are Rounds in `research/feedback_rules.md`, and his newest words win. Evidence from other creators never overrides this file.
+These bind every script and every plan. Numbers are Rounds in `research/feedback_rules.md`, and his newest words win. Evidence from other creators never overrides this file. Round 74 made `EDITORIAL.md` the foundation (Relate → Reveal → Transform), and it wins where a line below disagrees.
 
 This file is a checklist. The full rules live in:
 
@@ -33,7 +33,7 @@ This file is a checklist. The full rules live in:
 - Don't stop short of the famous part. If viewers expect it, it belongs (50).
 - When a story runs past its opening question, make the link between the two halves unmistakable (51).
 - Two or three examples set a pattern (50).
-- Deliver something new about every 10 to 15 seconds: a discovery, a comparison or a change in understanding (28). See the open decisions below.
+- Be concise without losing necessary context. Value is judged by the approval questions in `EDITORIAL.md`, not by a fixed interval (74; this replaces the 10-to-15-second rule from 28).
 - No recaps, and never re-explain what the hook revealed (28).
 - Every section pays, then gives a new reason to stay (38).
 - List the questions the hook raises before drafting, and answer every one (21).
@@ -41,7 +41,7 @@ This file is a checklist. The full rules live in:
 
 **Structure**
 
-- Each line answers the question the last one raised. Ask them out loud where it helps (26).
+- Each line answers the question the last one raised (26). Ask few questions aloud, and no repetitive rhetorical questions (74).
 - Stay on the subject, with no side characters or tangents (6). Use about three books plus one passing fact (26).
 - A question hook must be one people actually ask (4, 12).
 - An opening number needs its cause, and the central verse gets room (36).
@@ -52,7 +52,7 @@ This file is a checklist. The full rules live in:
 
 - A lesson comes from the passage, adds something the answer didn't say, and gives the why (Oct 28, 8).
 - Use at most two lessons, with no numbered sermon outline (Samson viewer tests).
-- Never end on an unanswered question (Oct 28). If Scripture leaves something open, say so and land on what it does tell us (42).
+- End on a specific insight, a thoughtful question or a practical application that grows out of the story (74). If Scripture leaves something open, say so and land on what it does tell us (42).
 - Bring back the hook's own words and answer in one line (12, 14).
 - The emotional climax can be the ending (41).
 - A hope line fits every viewer and uses "we" (14).
@@ -81,8 +81,8 @@ This file is a checklist. The full rules live in:
 - Name New Testament sources both ways: "In the New Testament, Hebrews 11" (Samson viewer tests).
 - Never mention something the video doesn't show (13).
 - Never assume the viewer's spiritual state. No churchy stock phrases (12, 13).
-- At most three "you" lines (`system/02_story_and_script.md`).
-- A modern example is optional (12).
+- Relating to the viewer is the point, but never tell them what they feel or describe their spiritual state (74; this replaces the three-"you"-line count).
+- Connect the struggle to everyday life without pretending modern circumstances are identical to the biblical event (74; this replaces "a modern example is optional").
 
 **Accuracy** (more in `scripture-integrity.md`)
 
@@ -158,5 +158,5 @@ Use these when filling in framing, timing and acting.
 
 Until he decides, his newest words win.
 
-1. Something new every 10 to 15 seconds (28) against holding an emotional moment (41, 46). For now, hold the moment.
+1. Settled by Round 74: concise, but hold an emotional moment when the story earns it. There is no fixed interval.
 2. A spoken closing question (Oct 30) against stopping at the emotional climax (41). His newest note (60) asks for meaning, application, a conclusion and an encouraging question after the key moment, so use that unless he says otherwise.

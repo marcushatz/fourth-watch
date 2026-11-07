@@ -2,7 +2,7 @@
 
 **Use this when** Marcus is back. Every open choice is here with the exact wording to approve, the evidence and a recommendation. When he decides, record it as a new round in `research/feedback_rules.md` and update the file it names.
 
-Last updated: Nov 6 (after Round 73).
+Last updated: Nov 6 (after Round 74).
 
 **About the evidence:**
 - **"Simulated viewers" are AI agents** role-playing a first-time viewer. They can flag confusion and slow, preachy or unclear lines. They can't tell us retention, swipes or sharing; only real posts can.
@@ -18,6 +18,13 @@ Last updated: Nov 6 (after Round 73).
 - The hybrid visual philosophy is approved, as creative judgment rather than rigid rules.
 - The revised Bronze Serpent script stays unlocked for now.
 - Narration, music and paid generation wait for the next meaningful production milestone.
+
+## Waiting on Marcus (Nov 6, 2026, Round 74)
+
+- **Next episode to develop:** Elijah, 1 Kings 19, "the collapse after the win", is recommended from the five-concept test. Joseph is the runner-up. Details are in `research/editorial_system_2026-11-06.md`. He needs to say go, or pick another.
+- **Genesis v11 (locked):** two accuracy fixes are proposed. "Calls out to them" and "first words to them" become "to Adam" (Genesis 3:9 says "called to the man"), and "He wanted them" is attributed as our reading rather than stated as God's motive. They need his authorization before the voice is recorded. Rebuilding it toward Relate-first is a bigger, optional change.
+- **Story skill test:** the plan predates Round 74 and needs re-scoping, or dropping.
+- **Account skills:** updated copies of `fourth-watch-writer` and `fw-script-review` were proposed for him to save.
 
 ## Waiting on Marcus (Nov 6, 2026, Round 73)
 

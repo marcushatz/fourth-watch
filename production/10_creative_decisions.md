@@ -2,6 +2,8 @@
 
 **Use this before any script.** It decides whether an idea deserves production. It runs inside the script stage and adds no approval.
 
+**Since Round 74,** `EDITORIAL.md` is the foundation and the idea card has the nine fields from Marcus's Nov 6 brief. The steps below still apply: the destinations table, the four tests and learning from real viewers. Where they differ from `EDITORIAL.md`, it wins.
+
 **Why it exists (Marcus, Round 39):** "Our mission is not to make viewers think, 'That was an interesting Bible fact.' Our mission is to make them think, 'I never realized that. That was incredible. I want to watch another.'"
 
 **Evidence:** `research/creative_study_2026-11-03/findings.md`. It's small. Our own results replace it as soon as we have them.
@@ -14,7 +16,7 @@ Curiosity or conflict gets people in. Emotion is what they remember. Comfort alo
 
 ## Step 1: the idea card
 
-Copy `templates/idea_card.md` into the episode folder. Every box needs an answer that could be checked. There are no scores. They were judgment dressed up as measurement.
+Copy `templates/idea_card.md` into the episode folder, one card per candidate. It now has the nine fields from Round 74, plus the sharing question below. Every box needs an answer that could be checked. There are no scores. They were judgment dressed up as measurement.
 
 | Question | A real answer | A warning sign |
 |---|---|---|

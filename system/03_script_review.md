@@ -1,5 +1,7 @@
 # 03 · Script review: the loop every script goes through before Marcus sees it
 
+**Older guide (Round 74).** Kept as research. `EDITORIAL.md` and the `fourth-watch-writer` skill now define how Fourth Watch writes. Where this file disagrees, they win. The settled conflicts are in `.claude/skills/fourth-watch-writer/reference/retired_rules.md`.
+
 **Use this when** any script revision is ready (and whenever Marcus says "check the script"). The `fw-script-review` skill runs this loop; this file is the reference version.
 
 ## 1. The loop

@@ -47,11 +47,21 @@ Never post, publish, schedule or upload to a social platform. Marcus posts.
 - If a request doesn't say which project it's for, ask.
 - Details: `presets/README.md`.
 
-## 6. Start here
+## 6. What every episode is for
 
-1. `production/README.md`: the production system.
-2. `DECISIONS.md`: what's waiting for Marcus.
-3. The episode folder's script, run sheet and `episode.json`.
-4. `production/09_approved_and_rejected.md`: what has already worked and failed.
+**Fourth Watch tells Bible stories that help people recognize their own struggles, discover meaningful truths in Scripture, and understand God more deeply** (Marcus, Nov 6, Round 74).
+
+- Every episode aims to **Relate** ("I've experienced that"), **Reveal** ("I never noticed that") and **Transform** ("That changes how I think or live"). It's a philosophy, not a formula.
+- The human struggle is the entry point, Scripture is the foundation, and understanding God is the purpose.
+- Storytelling over lecturing. Never manufacture a revelation, present speculation as Scripture, or state a motive the text doesn't give.
+- `EDITORIAL.md` is the full philosophy, and the `fourth-watch-writer` skill is the process. Together they outrank every older writing guide.
+
+## 7. Start here
+
+1. `EDITORIAL.md`: the editorial philosophy, before any idea or script.
+2. `production/README.md`: the production system.
+3. `DECISIONS.md`: what's waiting for Marcus.
+4. The episode folder's script, run sheet and `episode.json`.
+5. `production/09_approved_and_rejected.md`: what has already worked and failed.
 
 Commit and push only when Marcus asks. Marcus wants this repo private. Treat it as public until GitHub confirms the change. Keep keys and personal details out of it. Client testimony material never goes here.

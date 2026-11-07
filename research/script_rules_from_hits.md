@@ -1,5 +1,7 @@
 # Script rules from the Lintel hits (words: structure, timing, phrasing)
 
+**Older guide (Round 74).** Kept as research. `EDITORIAL.md` and the `fourth-watch-writer` skill now define how Fourth Watch writes. Where this file disagrees, they win. The settled conflicts are in `.claude/skills/fourth-watch-writer/reference/retired_rules.md`.
+
 **Date:** Oct 31, 2026.
 **Scope:** the narration only. Shots, camera and on-screen devices are covered in `research/lintel_ref/yt/_patterns.md` and `research/direction_rules.md`; this file does not repeat them.
 **Binding over everything here:** Marcus's rules in `research/feedback_rules.md`:

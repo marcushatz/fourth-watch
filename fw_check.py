@@ -16,7 +16,11 @@ import argparse, difflib, hashlib, json, os, re, shutil, subprocess, sys, tempfi
 from pathlib import Path
 
 # ----------------------------------------------------------------------------------------------- config
-SERIES = ["MOST PEOPLE MISS", "ASK THE TEXT", "STRANGE BUT TRUE", "MISQUOTED"]  # HERO OR VILLAIN? retired 2026-10-28: a verdict is an opinion
+SERIES = ["FOURTH WATCH", "MOST PEOPLE MISS", "ASK THE TEXT", "STRANGE BUT TRUE", "MISQUOTED"]  # HERO OR VILLAIN? retired 2026-10-28: a verdict is an opinion
+# FOURTH WATCH (Round 74, EDITORIAL.md): a story that meets a real struggle. Free sections, no fixed hook form, no Value quota;
+# the writer must state the message and Relate / Reveal / Transform. The other four keep their older fixed formats.
+FLEX_SERIES = {"FOURTH WATCH"}
+NON_VO_SECTIONS = {"caption", "references", "value", "factcheck"}
 SECTIONS = ["hook", "stakes", "story", "turn", "landing"]
 REF_REQUIRED = {"story", "turn"}                     # every VO line here must carry [Book c:v]
 RUNTIME_HARD = (30, 60)                              # seconds: outside = FAIL (default, unknown series)
@@ -24,6 +28,7 @@ RUNTIME_TARGET = (35, 55)                            # seconds: outside = WARN (
 # Per-series limits, from the Oct 28, 2026 reel study: hard-question explainers that answer from Scripture
 # ran 84-137 s on The Lintel Network (174K-7.4M views); short list/fact formats ran 22-75 s.
 SERIES_LIMITS = {
+    "FOURTH WATCH":     {"hard": (40, 150), "target": (60, 125), "cards": 4},   # Round 74: length earned, about 2 min when justified
     "ASK THE TEXT":     {"hard": (45, 150), "target": (85, 135), "cards": 4},   # Oct 31 study: hits ran 84-137 s
     "MOST PEOPLE MISS": {"hard": (25, 75),  "target": (30, 60),  "cards": 3},
     "STRANGE BUT TRUE": {"hard": (20, 75),  "target": (25, 60),  "cards": 2},
@@ -34,7 +39,7 @@ SERIES_LIMITS = {
 # and still He left the tree ... standing in the middle of EDEN").
 # Oct 31 study (research/direction_rules.md): the three hits read 2.6-3.0 words/s (156-180 wpm); the two slowest
 # videos (1.75-1.8 words/s) were both low performers. 170 wpm is the planning pace.
-SERIES_STYLE = {"ASK THE TEXT": {"wpm": 170, "sentence": 25}}
+SERIES_STYLE = {"ASK THE TEXT": {"wpm": 170, "sentence": 25}, "FOURTH WATCH": {"wpm": 160, "sentence": 25}}
 def style(series):
     d = SERIES_STYLE.get((series or "").strip().upper(), {})
     return d.get("wpm", 150), d.get("sentence", MAX_SENTENCE_WORDS)
@@ -58,6 +63,14 @@ CTA = [r"\bfollow\b", r"\bsubscribe\b", r"\blike (and|&) share\b", r"\bcomment (
        r"\bpart (two|2)\b", r"\bsmash\b", r"\bturn on notifications\b"]
 OVERCLAIM = ["always", "never", "every", "everyone", "all", "only", "proves", "proof", "proven", "definitely", "certainly",
              "scientists", "historians", "scholars", "secret", "hidden", "banned", "forbidden", "they don't want you"]
+# Round 74 (EDITORIAL.md, "How we write"): empty inspirational phrases, telling viewers what to feel, and stock church phrases.
+EMPTY_PHRASES = [r"\bchanges everything\b", r"\bblow your mind\b", r"\bmind[- ]blowing\b", r"\byou won'?t believe\b", r"\bwill (?:shock|surprise) you\b",
+                 r"\bmore than you (?:think|realize)\b", r"\bthe truth is\b", r"\blife[- ]changing\b", r"\bnever be the same\b", r"\bpowerful truth\b",
+                 r"\bgame[- ]changer\b", r"\bplot twist\b", r"\bit gets (?:better|worse)\b"]
+FEELING_TELLS = [r"\byou (?:should|will|must|might) feel\b", r"\bimagine how (?:he|she|they) (?:felt|must have felt)\b", r"\bisn'?t that (?:amazing|incredible|beautiful)\b",
+                 r"\bhow (?:amazing|incredible|beautiful|powerful) is that\b", r"\blet that sink in\b"]
+STOCK_CHURCH = [r"\bcalling you back\b", r"\bgod has a plan for your life\b", r"\blet go and let god\b", r"\bgod is calling you\b", r"\bget right with god\b"]
+MAX_QUESTIONS = 3                                    # spoken questions outside quotes before it reads as repetitive
 OUTSIDE = ["enoch", "jasher", "jubilees", "apocrypha", "talmud", "josephus", "legend", "tradition says", "midrash", "gnostic"]
 TRANSLATIONS = ["niv", "kjv", "nlt", "nkjv", "nasb", "msg", "csb", "nrsv", "amp", "tpt"]
 ASR_URL = "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-zipformer-small-en-2023-06-26.tar.bz2"
@@ -136,11 +149,13 @@ def sentences(s):
 
 # ----------------------------------------------------------------------------------------------- script parsing
 def parse_script(path):
-    """Fourth Watch script format (see SKILL.md): '# Title', 'series:', 'answer:', '## Hook' ... sections with
+    """Fourth Watch script format (the writer skill's templates.md). FOURTH WATCH scripts: '# Title', 'series:', 'message:',
+    'relate:', 'reveal:', 'transform:', optional 'claims:', then sections with any names. Older series: 'answer:', '## Hook' ... sections with
     'VO:' / 'VERSE:' / 'ON-SCREEN:' / 'VISUAL:' lines, '## Value' list, '## Caption', '## References',
     '## Fact-check log' table."""
     text = Path(path).read_text()
-    ep = {"title": None, "series": None, "target_seconds": None, "answer": None, "sections": {}, "vo": [], "verses": [],
+    ep = {"title": None, "series": None, "target_seconds": None, "answer": None, "message": None, "relate": None, "reveal": None,
+          "transform": None, "claims": None, "sections": {}, "vo": [], "verses": [],
           "onscreen": [], "visuals": [], "value": [], "caption": "", "references": [], "factcheck": [], "raw": text}
     cur = None
     for raw in text.splitlines():
@@ -148,7 +163,7 @@ def parse_script(path):
         if not line: continue
         if line.startswith("# ") and ep["title"] is None:
             ep["title"] = line[2:].strip(); continue
-        m = re.match(r"^(series|target_seconds|answer)\s*:\s*(.+)$", line, re.I)
+        m = re.match(r"^(series|target_seconds|answer|message|relate|reveal|transform|claims)\s*:\s*(.+)$", line, re.I)
         if m and cur is None:
             ep[m.group(1).lower()] = m.group(2).strip(); continue
         if line.startswith("## "):
@@ -158,7 +173,8 @@ def parse_script(path):
         if cur is None: continue
         ep["sections"][cur].append(line)
         m = re.match(r"^(VO|VERSE|ON-SCREEN|ONSCREEN|VISUAL)\s*:\s*(.*)$", line, re.I)
-        if m and (cur in SECTIONS or cur == "question"):  # "## Question": an optional closing question to viewers, after the answer
+        flex = (ep["series"] or "").strip().upper() in FLEX_SERIES
+        if m and (cur in SECTIONS or cur == "question" or (flex and cur not in NON_VO_SECTIONS)):  # "## Question": an optional closing question
             k, v = m.group(1).upper().replace("ONSCREEN", "ON-SCREEN"), m.group(2).strip()
             item = {"section": cur, "text": v}
             {"VO": ep["vo"], "VERSE": ep["verses"], "ON-SCREEN": ep["onscreen"], "VISUAL": ep["visuals"]}[k].append(item)
@@ -190,9 +206,14 @@ def lint_script(path, wpm=None):
     series = (ep["series"] or "").upper()
     if series not in SERIES: R.fail("series", f"series is '{ep['series']}', must be one of: {', '.join(SERIES)}")
     else: R.ok("series", series)
-    for s in SECTIONS:
+    flex = series in FLEX_SERIES
+    locked = Path(path).name.startswith("script_approved")
+    if flex:
+        story_contract(R, ep, path, locked)
+    for s in ([] if flex else SECTIONS):
         if not any(v["section"] == s for v in ep["vo"]): R.fail("structure", f"section '{s}' has no VO line")
-    if ep["vo"] and ep["title"]:
+    if flex and not ep["vo"]: R.fail("structure", "no VO lines")
+    if ep["vo"] and ep["title"] and not flex:
         if tokens(strip_refs(ep["vo"][0]["text"])) != tokens(ep["title"]):
             R.fail("hook", f"first VO line must equal the title word for word: '{strip_refs(ep['vo'][0]['text'])}' vs '{ep['title']}'")
         else: R.ok("hook", "first VO line equals the title")
@@ -210,7 +231,7 @@ def lint_script(path, wpm=None):
     for v in ep["vo"]:
         t, sec = v["text"], v["section"]
         plain = strip_refs(t)
-        if sec in REF_REQUIRED and not re.search(r"\[[^\]]*\d+:\d+[^\]]*\]", t):
+        if not flex and sec in REF_REQUIRED and not re.search(r"\[[^\]]*\d+:\d+[^\]]*\]", t):
             R.fail("reference", f"{sec} line has no [Book chapter:verse]: '{plain[:70]}'")
         verse_toks = [" ".join(tokens(v["text"].split("—")[0])) for v in ep["verses"]]
         for s in sentences(plain):
@@ -231,8 +252,11 @@ def lint_script(path, wpm=None):
                 R.warn("outside source", f"'{w}' — must be labeled as outside the Bible: '{plain[:80]}'")
         if '"' in clean_text(plain) and not re.search(r"\[[^\]]*\d+:\d+", t):
             R.warn("dialogue", f"quoted words with no reference (invented dialogue?): '{plain[:80]}'")
+    if flex and ep["vo"] and not any(re.search(r"\[[^\]]*\d+:\d+", v["text"]) for v in ep["vo"]):
+        R.fail("reference", "no VO line carries a [Book chapter:verse]: every biblical event or quote needs its reference")
     # verses
-    if not ep["verses"]: R.fail("verse", "no VERSE: line (one ESV quote with reference is required)")
+    if not ep["verses"]:
+        (R.warn if flex else R.fail)("verse", "no VERSE: line" + (" (verse cards can live in the plan; check they're exact ESV)" if flex else " (one ESV quote with reference is required)"))
     for v in ep["verses"]:
         t = v["text"]
         if "esv" not in t.lower(): R.fail("verse", f"VERSE must be marked (ESV): '{t[:80]}'")
@@ -243,14 +267,19 @@ def lint_script(path, wpm=None):
     _h, _t, max_cards = limits(ep.get("series"))
     if len(ep["verses"]) > max_cards: R.warn("verse", f"{len(ep['verses'])} verse cards; the playbook allows up to {max_cards} for {ep.get('series')}")
     # the episode answers its own question
-    if not ep.get("answer"):
+    if flex:
+        pass  # story_contract() checked the message line
+    elif not ep.get("answer"):
         R.fail("answer", "no 'answer:' line: write the one-sentence answer this episode gives to its title question")
     if ep["vo"]:
         body = [v for v in ep["vo"] if v["section"] != "question"] or ep["vo"]
         last = (sentences(strip_refs(body[-1]["text"])) or [""])[-1]
         if last.rstrip().endswith("?"):
-            R.fail("answer", f"the episode ends on a question ('{last}'); the landing must state the answer")
-    if ep.get("answer"):
+            if flex:
+                R.warn("ending", f"ends on a question ('{last[:70]}'): fine if the story has already answered what it raised and nobody feels accused (EDITORIAL.md)")
+            else:
+                R.fail("answer", f"the episode ends on a question ('{last}'); the landing must state the answer")
+    if ep.get("answer") and not flex:
         key = {w for w in tokens(ep["answer"]) if w not in STOP and len(w) > 2}
         late = {w for v in ep["vo"] if v["section"] in ("turn", "landing") for w in tokens(strip_refs(v["text"]))}
         hit = len(key & late) / max(1, len(key))
@@ -259,7 +288,9 @@ def lint_script(path, wpm=None):
         else: R.ok("answer", f"answer stated in the Turn/Landing: '{ep['answer']}'")
     # the viewer learns something
     vals = ep.get("value", [])
-    if len(vals) < 3:
+    if flex:
+        pass  # no quota (Rounds 41 and 74); any Value items listed must still be spoken
+    elif len(vals) < 3:
         R.fail("value", f"## Value lists {len(vals)} thing(s) the viewer learns; at least 3 are required, each with a verse")
     for item in vals:
         if not re.search(r"\[[^\]]*\d+:\d+[^\]]*\]", item):
@@ -269,30 +300,53 @@ def lint_script(path, wpm=None):
     for item in vals:
         if item not in spoken:
             R.warn("value", f"this Value item is never spoken in the VO, so the viewer never learns it: '{strip_refs(item)[:80]}'")
-    if len(vals) >= 3 and len(spoken) < 3:
+    if not flex and len(vals) >= 3 and len(spoken) < 3:
         R.fail("value", f"only {len(spoken)} of the {len(vals)} Value items are actually said in the VO; at least 3 must be")
     if len(spoken) >= 3 and all(re.search(r"\[[^\]]*\d+:\d+[^\]]*\]", i) for i in vals):
         R.ok("value", f"{len(spoken)} things the viewer learns, each with a verse and each said in the VO")
     # landing echoes the hook
     land = [strip_refs(v["text"]) for v in ep["vo"] if v["section"] == "landing"]
-    if land and ep["title"]:
+    if land and ep["title"] and not flex:
         a = {w for w in tokens(land[-1]) if w not in STOP}
         b = {w for w in tokens(ep["title"]) if w not in STOP}
         if not a & b: R.warn("loop", "the last VO line shares no key word with the hook; the loop line should echo it")
         else: R.ok("loop", "landing echoes the hook")
     # structure measured on 13 Lintel Shorts (research/script_rules_from_hits.md, Oct 31): estimates from word position
-    if ep["vo"]:
+    if ep["vo"] and not flex:
         script_shape(R, ep, secs)
+    elif ep["vo"]:
+        lines = [(v["section"], strip_refs(v["text"])) for v in ep["vo"]]
+        counts = [len(tokens(t_, spell_numbers=True)) for _, t_ in lines]
+        total = max(1, sum(counts)); starts = [sum(counts[:i]) / total for i in range(len(lines))]
+        kw = lambda t_: {w for w in tokens(t_) if w not in STOP and len(w) > 2}
+        value_density(R, ep, lines, starts, kw(lines[0][1]), kw)
+        msg = ep.get("message") or ep.get("answer")
+        if msg:
+            mk = kw(msg); late = {w for (_, t_), st in zip(lines, starts) if st >= 0.6 for w in kw(t_)}
+            hit = len(mk & late) / max(1, len(mk))
+            (R.ok if hit >= 0.5 else R.warn)("message", f"{hit:.0%} of the message's key words are said in the last 40% of the narration" +
+                                             ("" if hit >= 0.5 else ": make sure the ending lands the message"))
+    if ep["vo"]:
+        writing_checks(R, ep)
     # references + fact-check log
     cited = set(re.findall(r"\[([^\]]+)\]", " ".join(v["text"] for v in ep["vo"])))
-    if not ep["references"]: R.fail("references", "## References is empty")
-    if not ep["factcheck"]: R.fail("fact-check", "## Fact-check log is empty: every claim needs a row")
+    if not ep["references"]:
+        (R.warn if flex else R.fail)("references", "## References is empty" + (" (the VO references stand in for it)" if flex else ""))
+    claims_file = None
+    if ep.get("claims"):
+        for base in (Path(path).parent, Path(path).parent.parent, Path(__file__).resolve().parent):
+            if (base / ep["claims"]).exists(): claims_file = base / ep["claims"]; break
+    if not ep["factcheck"] and claims_file:
+        R.ok("fact-check", f"claims are in {ep['claims']}: check every row is verified")
+    elif not ep["factcheck"] and flex and locked:
+        R.warn("fact-check", "no ## Fact-check log or claims: file (a locked script: record the claims beside it, never edit the narration)")
+    elif not ep["factcheck"]: R.fail("fact-check", "## Fact-check log is empty and no claims: file is named: every claim needs a row")
     for row in ep["factcheck"]:
         status = (row[-1] if row else "").lower()
         if not re.search(r"verified|checked|✓|pass", status):
             R.fail("fact-check", f"claim not verified: '{row[0][:70]}' (status: '{row[-1] if row else ''}')")
     logged = " ".join(" ".join(r) for r in ep["factcheck"]).lower()
-    for c in cited:
+    for c in (cited if ep["factcheck"] else []):
         book_ref = re.sub(r"\s+", " ", c.strip().lower())
         if book_ref and book_ref not in logged:
             R.warn("fact-check", f"[{c}] is cited in the VO but not in the fact-check log")
@@ -301,6 +355,38 @@ def lint_script(path, wpm=None):
     if not ep["caption"].strip(): R.warn("caption", "## Caption is empty")
     if not R.failed and not [i for i in R.items if i["level"] == "WARN"]: R.ok("script", "all checks passed")
     return R, ep
+
+
+def story_contract(R, ep, path, locked):
+    """FOURTH WATCH (Round 74): the writer states the message and Relate / Reveal / Transform in one line each. The checker can
+    only see that they exist. Whether they're true of the script is the approval questions' job (EDITORIAL.md)."""
+    missing = [k for k in ("message", "relate", "reveal", "transform") if not ep.get(k)]
+    if ep.get("answer") and "message" in missing: missing.remove("message")
+    if missing:
+        msg = f"missing header line(s): {', '.join(k + ':' for k in missing)} (EDITORIAL.md: say in one line each what the viewer recognizes, discovers and takes away)"
+        if locked: R.warn("story", msg + ". This is a locked script: add them beside it, never edit its narration")
+        else: R.fail("story", msg)
+    else: R.ok("story", "message, relate, reveal and transform are stated")
+
+
+def writing_checks(R, ep):
+    """Round 74, "How we write": few rhetorical questions, no empty inspirational phrases, no telling the viewer what to feel."""
+    def unq(t_): return re.sub(r'["\u201c][^"\u201d]*["\u201d]', " ", clean_text(t_))
+    qs = [s for v in ep["vo"] for s in sentences(unq(strip_refs(v["text"]))) if s.rstrip().endswith("?")]
+    (R.ok if len(qs) <= MAX_QUESTIONS else R.warn)("questions", f"{len(qs)} spoken questions outside quotes" +
+        ("" if len(qs) <= MAX_QUESTIONS else f" (more than {MAX_QUESTIONS}): avoid repetitive rhetorical questions; keep the ones that open the story or turn it"))
+    found = False
+    for v in ep["vo"]:
+        low = unq(strip_refs(v["text"])).lower()
+        for pats, name, why in ((EMPTY_PHRASES, "empty phrase", "says it's profound instead of showing it"),
+                                (FEELING_TELLS, "telling feelings", "let the events create the emotion"),
+                                (STOCK_CHURCH, "stock phrase", "a churchy stock phrase, or it assumes the viewer's spiritual state")):
+            for pat in pats:
+                m = re.search(pat, low)
+                if m:
+                    found = True
+                    R.warn(name, f"'{m.group(0)}': {why}: '{strip_refs(v['text'])[:80]}'")
+    if not found: R.ok("phrasing", "no empty phrases, feeling-tells or stock phrases found")
 
 
 GOD_WORDS = {"god", "he", "his", "him", "lord", "jesus", "christ", "bible", "if", "the", "i"}
@@ -1080,7 +1166,8 @@ def main():
             R, ep = lint_script(a.script, a.wpm)
             if ep is not None:
                 if a.judge: judge_gate(R, ep, a.judge, a.script)
-                else: R.warn("judge", "not judged: run the blind judge panel before Marcus sees it, then pass --judge <run folder> (tools/script_judge/rubric.md)")
+                elif (ep.get("series") or "").strip().upper() not in FLEX_SERIES:
+                    R.warn("judge", "not judged: the blind AI panel is optional and needs Marcus's OK (agents). AI judges are critics, never evidence (Round 41)")
         else:
             R = video_qa(a)
     except Exception as e:

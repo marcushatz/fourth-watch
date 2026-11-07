@@ -1,5 +1,7 @@
 # The gold standard (structure) and its critique (insight density): "Why Did God Command Something That Later Had to Be Destroyed?" (approved by Marcus, Nov 1 2026)
 
+**Read it as a model of Reveal (Round 74).** Its reveals are real and well chained, but Marcus later said "the serpent story doesn't appeal to emotion", and it has no Relate: no struggle the viewer recognizes. Under `EDITORIAL.md`, learn how it builds and verifies discoveries, not its shape as a whole.
+
 This is the positive model. The source text is `ep02-bronze-serpent/script_approved.md`. **Do not edit it.** It is reproduced here with annotations. It runs 263 words, about 100 s.
 
 ## Why it works, in one paragraph

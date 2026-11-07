@@ -1,4 +1,6 @@
 # Master short-form scriptwriting: working notes (Oct 29)
+
+**Older guide (Round 74).** Kept as research. `EDITORIAL.md` and the `fourth-watch-writer` skill now define how Fourth Watch writes. Where this file disagrees, they win. The settled conflicts are in `.claude/skills/fourth-watch-writer/reference/retired_rules.md`.
 Internal. Sources: the short-form-video-script, hook-writer, storytelling and viral-reverse-engineering skills; Kallaway's hook framework (https://sozai.app/transcript/create-irresistible-hooks-blow-content/) and his rhythm/rehook notes (https://www.castmagic.io/de/podcast/rhythm-hooks-and-a-billion-views-kane-kallaways-short-form-video-content-secrets); George Blackman's payoff notes (https://chaindesk.ai/tools/youtube-summarizer/the-you-tube-scriptwriter-getting-millions-of-views-5xvHonICNl8); faceless emotional templates (https://scour.ing/p/https://threadreaderapp.com/thread/1985228774204408198.html); our own Lintel and viral-shorts transcripts (transcripts.md).
 
 ## 1. The job

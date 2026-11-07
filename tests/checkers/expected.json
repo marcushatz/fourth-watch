@@ -124,6 +124,68 @@
       "contains": [
         "changed since"
       ]
+    },
+    "fw_good": {
+      "exit": 0,
+      "must_not_fail": [
+        "story",
+        "reference",
+        "fact-check",
+        "call to action",
+        "structure",
+        "hook",
+        "value",
+        "answer"
+      ],
+      "contains": [
+        "| PASS | story |",
+        "| PASS | phrasing |"
+      ],
+      "not_contains": [
+        "(more than 3)",
+        "| WARN | empty phrase",
+        "ends on a question"
+      ]
+    },
+    "fw_missing_relate": {
+      "exit": 1,
+      "must_fail": [
+        "story"
+      ],
+      "contains": [
+        "relate:"
+      ]
+    },
+    "fw_no_refs": {
+      "exit": 1,
+      "must_fail": [
+        "reference"
+      ]
+    },
+    "fw_questions": {
+      "exit": 0,
+      "contains": [
+        "(more than 3)"
+      ]
+    },
+    "fw_empty_phrase": {
+      "exit": 0,
+      "contains": [
+        "empty phrase",
+        "changes everything"
+      ]
+    },
+    "fw_ending_question": {
+      "exit": 0,
+      "contains": [
+        "ends on a question"
+      ]
+    },
+    "fw_cta": {
+      "exit": 1,
+      "must_fail": [
+        "call to action"
+      ]
     }
   },
   "video": {

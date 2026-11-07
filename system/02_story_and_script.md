@@ -1,5 +1,7 @@
 # 02 · Story and script: how a Fourth Watch reel earns every second
 
+**Older guide (Round 74).** Kept as research. `EDITORIAL.md` and the `fourth-watch-writer` skill now define how Fourth Watch writes. Where this file disagrees, they win. The settled conflicts are in `.claude/skills/fourth-watch-writer/reference/retired_rules.md`.
+
 **Use this when** you write or revise any script. It comes first because Marcus's priority (Round 16, Oct 31) is that the story is good enough for the viewer and never feels slow.
 
 **Sources:**
