@@ -752,3 +752,14 @@ Rules:
 - "Do not modify or unlock existing approved scripts without explicit authorization."
 
 Done: `EDITORIAL.md` (the philosophy, listed in `CLAUDE.md`); the `fourth-watch-writer` skill rebuilt as one process; the nine-field idea card; one set of claim labels; `reference/retired_rules.md` (every settled conflict); `fw_check.py` taught the FOURTH WATCH format; older guides marked as research. The test of five concepts and the review of the Genesis episode are in `research/editorial_system_2026-11-06.md`. Elijah (1 Kings 19) is recommended for development. Script v11 is unchanged.
+
+## Round 75 (Nov 6, 19:18): a visual identity prototype from the Genesis episode
+He asked for a prototype of what an actual Fourth Watch episode looks like, before anything is spent on animation. It is four static frames on God's question in Genesis 3:9: RELATE (a modern young adult alone with his guilt), REVEAL (Adam and Eve hiding among the trees), UNDERSTAND (Genesis 3:9 as designed Scripture typography, with the verse kept apart from our interpretation) and TRANSFORM (the same modern character reflecting on how it applies). His words: "Mature, expressive, stylized human characters—not elongated stick figures." And: "Do not prioritize visual beauty at the expense of production feasibility."
+
+Rules:
+- Cinematic illustrated 2D with atmospheric 2.5D depth; consistent anatomy and recognizable designs; rich but restrained colour; professional light; clear foreground, middle ground and background; one identity across biblical and modern settings; 9:16 and readable on a phone.
+- The identity must be reproducible across dozens of episodes. Judge whether it can be made with our image tools and animated through Higgsfield or code.
+- A reference image is inspiration, not an approved style. "Do not copy the reference image blindly."
+- No video or animation yet, no paid Higgsfield generations, no credits without his explicit approval, no rewriting the locked script, and no collection of unrelated styles.
+
+Done: `visual_identity/` holds the four frames, the comparison sheet, the source, `prompts.md` and `assessment.md`. Nothing is approved. The reference image he attached never arrived, so the work follows his written brief.

@@ -2,7 +2,7 @@
 
 **Use this when** Marcus is back. Every open choice is here with the exact wording to approve, the evidence and a recommendation. When he decides, record it as a new round in `research/feedback_rules.md` and update the file it names.
 
-Last updated: Nov 6 (after Round 74).
+Last updated: Nov 6 (after Round 75).
 
 **About the evidence:**
 - **"Simulated viewers" are AI agents** role-playing a first-time viewer. They can flag confusion and slow, preachy or unclear lines. They can't tell us retention, swipes or sharing; only real posts can.
@@ -18,6 +18,12 @@ Last updated: Nov 6 (after Round 74).
 - The hybrid visual philosophy is approved, as creative judgment rather than rigid rules.
 - The revised Bronze Serpent script stays unlocked for now.
 - Narration, music and paid generation wait for the next meaningful production milestone.
+
+## Waiting on Marcus (Nov 6, 2026, Round 75)
+
+- **Visual identity:** `visual_identity/` has the four-frame prototype (Relate, Reveal, Understand, Transform) with human characters, the sheet, the prompts and the assessment. He needs to judge it, and to re-send the reference image, which never arrived.
+- **The shot 13 clip request** (Round 73) was drawn in the stickman look. Round 75 asks for human characters instead, so it is probably outdated. It stays unapproved and unrun until he says whether to withdraw it or redraw it in the new look.
+- **The first motion test** in the new look: one start-and-end-frame clip from frame 2 or 4, which needs his approval and credits.
 
 ## Waiting on Marcus (Nov 6, 2026, Round 74)
 
