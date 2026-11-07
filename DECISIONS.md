@@ -2,7 +2,7 @@
 
 **Use this when** Marcus is back. Every open choice is here with the exact wording to approve, the evidence and a recommendation. When he decides, record it as a new round in `research/feedback_rules.md` and update the file it names.
 
-Last updated: Nov 6 (after Round 75).
+Last updated: Nov 7 (after Round 78).
 
 **About the evidence:**
 - **"Simulated viewers" are AI agents** role-playing a first-time viewer. They can flag confusion and slow, preachy or unclear lines. They can't tell us retention, swipes or sharing; only real posts can.
@@ -18,6 +18,14 @@ Last updated: Nov 6 (after Round 75).
 - The hybrid visual philosophy is approved, as creative judgment rather than rigid rules.
 - The revised Bronze Serpent script stays unlocked for now.
 - Narration, music and paid generation wait for the next meaningful production milestone.
+
+## Waiting on Marcus (Nov 7, 2026, Round 78)
+
+- **The Genesis first cut** is done: `ep11-beginning/film/out/Fourth_Watch_Genesis_first_cut.mp4` (2:04, 1080 x 1920, free, no credits). Source is `ep11-beginning/film/` (see its README). He needs to watch it and say what to change.
+- **The narration in it is temporary** (Kokoro am_michael, free and offline). The real narrator is a paid job that needs his approval. The film re-times itself to the real take.
+- **Shot 24:** the cross is shown on a far hill in gold light with no figure, to keep "God is never shown as a person". The storyboard described Jesus lit and in colour. He decides which.
+- **Not committed:** the film code is in the working tree only. He asked for commits only when he says so.
+- The Round 74 script accuracy fixes are still open; the film uses the locked words.
 
 ## Waiting on Marcus (Nov 6, 2026, Round 75)
 

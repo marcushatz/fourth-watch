@@ -763,3 +763,31 @@ Rules:
 - No video or animation yet, no paid Higgsfield generations, no credits without his explicit approval, no rewriting the locked script, and no collection of unrelated styles.
 
 Done: `visual_identity/` holds the four frames, the comparison sheet, the source, `prompts.md` and `assessment.md`. Nothing is approved. The reference image he attached never arrived, so the work follows his written brief.
+
+## Round 76 (Nov 6, 22:17-22:38): simplify the characters, then storyboard before any animation
+He sent a style board (Relate / Reveal / Understand / Transform panels) as inspiration. At 22:34 he asked for simplified characters ("Simplify the characters, not their movement") and a 5-second animation test; at 22:38 he withdrew that: "I do not want animation yet. I want a static visual storyboard first."
+
+Rules:
+- "God is never shown as a person; gold/light only appears where God acts or is symbolized."
+- "Adam and Eve must remain modestly framed; Scripture must remain clear and reverent."
+- A reference image is inspiration, not a style to copy (the board shows God as a robed figure; we never do).
+
+## Round 77 (Nov 6, 23:22-23:24): the paper-cut direction is recovered and approved
+"FINAL VISUAL DIRECTION": cinematic 2.5D paper-cut. He asked us to recover the original paper-cut experiments from before the stickman and 3D work, with exact filenames and sources. Then: "We've recovered the correct paper-cut visual style. I'm approving this direction. Proceed with producing the full Genesis episode."
+
+Rules:
+- "The existing artwork is a foundation, not the final quality standard. I want you to improve and polish it throughout production."
+- "Do not redesign the style or return to 3D humans or stickmen."
+- "actual, continuous animation—not a slideshow": walking, turning, reaching, reacting, hiding; articulated 2D rigs, layered environments, parallax, camera movement, purposeful transitions.
+- "Do not stop after making another storyboard or a few sample frames. The deliverable is the complete video." "Our goal is to publish Fourth Watch's first episode, not continue developing prototypes indefinitely."
+- "If narration audio is unavailable, use a temporary voice track or timing reference and clearly identify it."
+- "Do not pause for approval on ordinary free development steps after the relevant phase is approved. If a technical obstacle appears, investigate practical alternatives instead of restarting visual exploration."
+- No paid Higgsfield generations or external API charges without separate approval.
+
+## Round 78 (Nov 6, 23:33): which recovered work to build on
+"Use the 34-shot Cut Paper storyboard (Row 3) as our production foundation. Cut Paper v2 (Row 2) for its reusable paper-puppet character system and articulated joints. The Side-by-side and Refined Cut Paper studies (Rows 4–5) as visual-quality references."
+
+Rules:
+- "Do not simply reproduce the existing 34 frames. They need visual improvement. However, do not make the characters so complex that they become impractical to animate."
+- Priorities, in order: consistent attractive characters in every scene; expressive character animation, "not just moving backgrounds"; environmental depth and cinematic framing; clean transitions and engaging pacing; beautiful but restrained light and paper texture; clear Scripture typography and captions; efficient code-based rendering.
+- "Render a complete watchable first cut, then inspect the result and improve the weakest scenes."
