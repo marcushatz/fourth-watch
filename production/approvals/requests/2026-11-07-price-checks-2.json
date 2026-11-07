@@ -1,0 +1,41 @@
+{
+  "request_id": "2026-11-07-price-checks-2",
+  "project": "fourth-watch",
+  "purpose": "Two more free price checks Marcus OK'd on Nov 7: the narration with verse numbers spelled out, and a 2:04 instrumental music track",
+  "items": [
+    {
+      "kind": "cost_check",
+      "tool": "generate_audio",
+      "input": {
+        "params": {
+          "model": "elevenlabs_v4",
+          "prompt": "Fourth Watch Genesis narration",
+          "stability": 0.45,
+          "batch_size": 1,
+          "dialogue": [
+            {
+              "text": "If God doesn't need anything, why did he make you? The Bible says in Acts seventeen twenty-five that God doesn't need anything from us. But we all want to feel needed. So do we even matter to him? Maybe he was lonely. But that would mean he needed us. Maybe he wanted our worship. He deserves it, but he doesn't need it. So what's the real reason? Revelation four eleven says he created everything because he chose to. But would he still want us if we turned against him? In Genesis, God told Adam and Eve not to eat from one tree. But the serpent tells Eve she'll \"be like God\" if she does. She eats the fruit. She gives some to Adam, and he eats. They realize they're naked, and they sew fig leaves together. Genesis three eight says they hear God walking in the garden, and they hide. Hebrews four thirteen says no one is hidden from God. God doesn't need them. He could just leave them there. But he calls out to them. We'll come back to what he said. There are consequences. They will die, and God sends them out of the garden. But before they leave, Genesis three twenty-one says God makes them clothes. They turned against him, and he's still taking care of them. And he never stopped. John three sixteen says, \"For God so loved the world, that he gave his only Son.\" Here's what he said. God's first words to them aren't \"How could you?\" They're \"Where are you?\" He already knew where they were. He didn't need an answer. He wanted them. So when we fail, we don't have to hide from him. He didn't make us because he needed us. He made us because he wanted us. If he still wanted Adam and Eve after all that, why would he ever stop wanting you?",
+              "voice_type": "preset",
+              "voice_id": "1ad38ba4-9cc4-4f2f-9fde-b0fefdf67ae5"
+            }
+          ]
+        }
+      },
+      "intended_output": "Price of the full narration with verse numbers spelled out (no job)"
+    },
+    {
+      "kind": "cost_check",
+      "tool": "generate_audio",
+      "input": {
+        "params": {
+          "model": "elevenlabs_music_v2_5",
+          "prompt": "Reverent cinematic instrumental score for a two-minute Bible story short. Soft strings and felt piano in D minor. Opens with quiet wonder, grows warm and gentle, thins to a hush with a low drone in the middle, then near silence, then a slow warm swell that resolves to a hopeful F major ending. Intimate and restrained, no vocals, no drums, no percussion.",
+          "duration": 124,
+          "force_instrumental": true,
+          "batch_size": 1
+        }
+      },
+      "intended_output": "Price of a 124 s instrumental score (no job)"
+    }
+  ]
+}

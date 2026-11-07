@@ -1,0 +1,30 @@
+{
+  "request_id": "2026-11-07-narration",
+  "project": "fourth-watch",
+  "purpose": "Replace the temporary Kokoro narration of the Genesis first cut with a real voice take. The film re-times to it for free.",
+  "items": [
+    {
+      "kind": "job",
+      "tool": "generate_audio",
+      "input": {
+        "params": {
+          "model": "elevenlabs_v4",
+          "prompt": "Fourth Watch Genesis narration",
+          "stability": 0.45,
+          "batch_size": 1,
+          "dialogue": [
+            {
+              "text": "If God doesn't need anything, why did he make you? The Bible says in Acts seventeen twenty-five that God doesn't need anything from us. But we all want to feel needed. So do we even matter to him? Maybe he was lonely. But that would mean he needed us. Maybe he wanted our worship. He deserves it, but he doesn't need it. So what's the real reason? Revelation four eleven says he created everything because he chose to. But would he still want us if we turned against him? In Genesis, God told Adam and Eve not to eat from one tree. But the serpent tells Eve she'll \"be like God\" if she does. She eats the fruit. She gives some to Adam, and he eats. They realize they're naked, and they sew fig leaves together. Genesis three eight says they hear God walking in the garden, and they hide. Hebrews four thirteen says no one is hidden from God. God doesn't need them. He could just leave them there. But he calls out to them. We'll come back to what he said. There are consequences. They will die, and God sends them out of the garden. But before they leave, Genesis three twenty-one says God makes them clothes. They turned against him, and he's still taking care of them. And he never stopped. John three sixteen says, \"For God so loved the world, that he gave his only Son.\" Here's what he said. God's first words to them aren't \"How could you?\" They're \"Where are you?\" He already knew where they were. He didn't need an answer. He wanted them. So when we fail, we don't have to hide from him. He didn't make us because he needed us. He made us because he wanted us. If he still wanted Adam and Eve after all that, why would he ever stop wanting you?",
+              "voice_type": "preset",
+              "voice_id": "1ad38ba4-9cc4-4f2f-9fde-b0fefdf67ae5"
+            }
+          ]
+        }
+      },
+      "intended_output": "One narration take of the locked v11 script (about 2 minutes), Gideon voice, for the Genesis episode",
+      "quoted_credits": 7.82,
+      "quoted_at": "2026-11-07T13:38:26+00:00",
+      "quote_source": "get_cost check"
+    }
+  ]
+}
