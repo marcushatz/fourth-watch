@@ -23,9 +23,8 @@ VOICE, SPEED, SR = "am_michael", 0.96, 24000
 SPOKEN = {"17:25": "seventeen twenty-five", "4:11": "four eleven", "3:8": "three eight", "4:13": "four thirteen",
           "3:21": "three twenty-one", "3:16": "three sixteen"}
 # Extra silence after a shot, in seconds, where the film needs room to breathe.
-HOLD = {"S02": .55, "S05": .45, "S08": .35, "S09": .55, "S16": .3, "S18": .55, "S22": .3, "S24": .75, "S25": .55,
-        "S26": .25, "S27": 1.35, "S29": .5, "S30": .5, "S32": .5, "S34": 3.2}
-LEAD = .55   # silence before the first word
+HOLD = {"S02": .3, "S05": .25, "S09": .3, "S18": .35, "S24": .5, "S25": .35, "S27": 1.1, "S29": .3, "S30": .3, "S34": 2.6}
+LEAD = .08   # the hook starts at once
 
 
 def spoken(text):
@@ -91,7 +90,7 @@ def main():
         words = s["words"].split()
         wt = word_times(words, audio, t)
         dur = len(audio) / SR
-        gap = .1 if s["words"].rstrip()[-1] == "," else .32
+        gap = .06 if s["words"].rstrip()[-1] == "," else .2
         hold = HOLD.get(s["id"], 0)
         shots.append(dict(id=s["id"], start=round(t, 3), voice_end=round(t + dur, 3), end=round(t + dur + gap + hold, 3), words=wt))
         track += [audio, np.zeros(int((gap + hold) * SR), np.float32)]

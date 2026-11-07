@@ -9,13 +9,14 @@ from pathlib import Path
 
 import numpy as np
 
+import pacing
 import paper as P
 import rig as R
 from paper import DEPTH, DH, DW, RH, RW, S
 
 HERE = Path(__file__).resolve().parent
 TIMING = json.load(open(HERE / "timing.json"))
-FPS = 24
+FPS = 30
 
 
 class Words:
@@ -174,6 +175,7 @@ def compose(shot, t, frame_no):
     R.NOW[0] = t
     fr = shot.frame(t)
     cx, cy, z = fr.get("cam", (DW / 2, DH / 2, 1.0))
+    z *= pacing.camera(shot.id, t)          # automatic pacing: a new framing per sentence, a punch-in every 2 s
     # keep the view inside the designed frame (sheets past its edges are only a small margin)
     lim = 1 - 1 / max(z, 1.0)
     cx = DW / 2 + float(np.clip(cx - DW / 2, -DW / 2 * lim * .92, DW / 2 * lim * .92))

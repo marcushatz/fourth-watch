@@ -45,6 +45,22 @@ The picture for a named thing lands within 0.15 s of its word.
 - A set can hold 10 to 12 seconds if things keep changing inside it.
 - Spend the longest hold on the turn.
 
+### What the engine does automatically
+
+The checker measured all of these on the Genesis first cut. `film/pacing.py` and `film/assemble.py` now apply them, so nobody has to remember:
+
+| Rule | Target | How it's applied |
+|---|---|---|
+| The hook | The opening question is readable in frame one, and the voice starts at once | The hook question is a title from frame 0, and the narration lead is 0.08 s |
+| New picture per sentence | About 1 per spoken sentence (Lintel 1.02) | A shot carrying two sentences cuts to a tighter framing on the second |
+| A beat every 2 s | No 2 s stretch with nothing new | A camera punch-in (6%, 0.28 s) on the clause's stressed word, the last content word |
+| No dead stretch | Under 20% of the runtime in gaps over 4 s; none over 6 s | Hard cuts between similar dark scenes; dissolves only at section turns |
+| Captions | At most 4 words, never a flash under 0.5 s, inside the margins | The caption chunker caps chunks at 4 words and merges short ones |
+| Silence | 0.2 s between sentences, 0.06 s at commas; longer only on a marked beat | `HOLD` in `voice.py` lists the few beats allowed to breathe |
+| Frame rate | 30 fps | `FPS` in `core.py` and `assemble.py` |
+
+Pacing is planned, not patched. Read the beat map before rendering and fix gaps in the storyboard. A punch-in rescues a stretch, but an action timed to the word is better.
+
 ## Camera
 
 Camera amount didn't separate hits from lows, but every big move has one of five jobs:

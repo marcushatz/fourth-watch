@@ -56,9 +56,15 @@ Read `references/voice-captions-sound.md`. Get one approved take, check it word 
 
 The first video sets the one universal style. Propose stills from a key scene, one job at a time. Once he approves one, write it into `production/01_brand_and_references.md`, and every later video reuses it. Read `references/characters.md`. After the first video, this stage only adds new people and sets.
 
-### 5. Build in Higgsedit (needs the lock lifted)
+### 5. Build (free in code; Higgsfield shots only with approval)
 
-Read `references/higgsedit.md`, then start from `templates/`. Build shot by shot from the storyboard. Check frames as you go, using `higgsedit frame` and `higgsedit sheet`. Use `references/characters.md` for anything that moves.
+There are two routes:
+- **The paper-cut engine** in `ep11-beginning/film/`. Its README explains it. Copy it for a new episode. It draws and animates every shot in code, for free.
+- **Higgsedit.** Read `references/higgsedit.md` and start from `templates/`.
+
+Build shot by shot from the storyboard and look at frames as you go. Use `references/characters.md` for anything that moves.
+
+**Pacing is automatic, so plan it before rendering.** Run `python3 film/pacing.py` to print the beat map. Every shot gets a new framing on each new sentence and a camera punch-in wherever 2 seconds pass with nothing new. Shots whose own action carries the beat are listed in `OWN_MOTION`. Fix any long gap in the storyboard, not after the render. The rules are under "Pace" in `references/directing.md`.
 
 ### 6. Sound (free unless a paid model is approved)
 
@@ -66,7 +72,7 @@ Build the score and effects, then mix under the voice. See `references/voice-cap
 
 ### 7. Check and fix
 
-Read `references/quality-check.md`. Look at the frames, watch the motion, and fix what you can without spending credits. Name the three worst problems honestly.
+Read `references/quality-check.md`. `film/assemble.py` runs the quality gate (`fw_check.py video`) on every film it writes. **Never show Marcus a cut with a FAIL**, and clear the pacing and caption warnings first. Then look at the frames, watch the motion, and fix what you can without spending credits. Name the three worst problems honestly.
 
 **Stop:** Marcus watches the final video. Ask before any render he hasn't approved.
 

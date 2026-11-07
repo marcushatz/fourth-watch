@@ -21,6 +21,13 @@ python3 tools/reference_study/beatclock.py <film.mp4>
 
 `fw_check.py video` covers format, loudness, captions, rhythm, visual beats and stillness. `toolkit_page/fw_review.py` builds a visual review pack.
 
+**It runs by itself.** `film/assemble.py` writes the captions as an SRT, runs `fw_check.py video` on every film, and prints the FAIL and WARN count. A cut with a FAIL isn't ready to show. Nov 7 lesson: the Genesis first cut went to Marcus unchecked, and the checker then found 2 FAILs and 70 WARNs:
+- the opening question wasn't readable in frame one;
+- a caption crossed the safe margin;
+- captions ran 5 to 7 words;
+- dark scenes ran 8 to 15 seconds with no hard visual change;
+- there were 0.68 pictures per sentence (hits average about 1).
+
 ## The scorecard
 
 | Area | Pass means |

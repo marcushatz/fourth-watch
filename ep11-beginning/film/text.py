@@ -25,7 +25,7 @@ def F(kind, size):
 
 # Captions --------------------------------------------------------------------------------------------
 
-def chunks(words, max_chars=22):
+def chunks(words, max_chars=22, max_words=4, min_secs=.5):
     """Group (word, start, end) into caption lines that break at punctuation or length.
     A book and its chapter and verse ("Acts 17:25") always stay on one line."""
     joined = []
@@ -39,15 +39,16 @@ def chunks(words, max_chars=22):
     for w in words:
         cur.append(w)
         text = " ".join(x[0] for x in cur)
-        if w[0][-1] in ".?!," and len(text) > 8 or len(text) >= max_chars:
+        if w[0][-1] in ".?!," and len(text) > 8 or len(text) >= max_chars or len(cur) >= max_words:
             out.append(cur)
             cur = []
     if cur:
         out.append(cur)
-    # never leave a lone short word on its own line
+    # never flash a word: a chunk shorter than min_secs joins its neighbour when the pair still fits
     merged = []
     for c in out:
-        if merged and len(" ".join(x[0] for x in c)) <= 6 and len(" ".join(x[0] for x in merged[-1] + c)) <= max_chars + 6:
+        short = c[-1][2] - c[0][1] < min_secs or len(" ".join(x[0] for x in c)) <= 6
+        if merged and short and len(merged[-1]) + len(c) <= max_words and merged[-1][-1][0][-1] not in ".?!":
             merged[-1] = merged[-1] + c
         else:
             merged.append(c)
@@ -246,3 +247,21 @@ def place_card(frame_img, card, cx, cy, t, t_in, t_out, rise=46, rot0=-1.4):
         c = c.copy()
         c.putalpha(c.getchannel("A").point(lambda v: int(v * alpha)))
     frame_img.alpha_composite(c, (int(cx - c.width / 2), int(cy - c.height / 2 + dy)))
+
+
+def hook_title(lines, size=96):
+    """The opening question, readable from frame one (the checker fails a hook that isn't)."""
+    im = Image.new("RGBA", (W, 520), (0, 0, 0, 0))
+    f = F("italic", size)
+    band = Image.new("L", (W, 520), 0)
+    bd = ImageDraw.Draw(band)
+    for i, line in enumerate(lines):
+        bd.text((W / 2, 150 + i * (size + 22)), line, font=f, fill=255, anchor="mm", stroke_width=12)
+    sh = band.filter(ImageFilter.GaussianBlur(20)).point(lambda v: int(min(255, v * .8)))
+    scrim = Image.new("RGBA", (W, 520), (6, 6, 10, 0))
+    scrim.putalpha(sh)
+    im.alpha_composite(scrim)
+    d = ImageDraw.Draw(im)
+    for i, line in enumerate(lines):
+        d.text((W / 2, 150 + i * (size + 22)), line, font=f, fill=CREAM + (255,), anchor="mm", stroke_width=2, stroke_fill=(14, 11, 9, 230))
+    return im

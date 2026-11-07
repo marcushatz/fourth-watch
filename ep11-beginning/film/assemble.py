@@ -19,7 +19,7 @@ import edit  # noqa: E402
 import text as T  # noqa: E402
 
 OUT = HERE / "out"
-FPS = 24
+FPS = 30
 W, H = 1080, 1920
 TIMING = json.load(open(HERE / "timing.json"))
 SHOTS = TIMING["shots"]
@@ -99,6 +99,7 @@ def main():
     a.add_argument("--from", dest="t0", type=float, default=0.0)
     a.add_argument("--to", dest="t1", type=float, default=None)
     a.add_argument("--audio", default=str(OUT / "mix.wav"))
+    a.add_argument("--no-check", action="store_true", help="skip the quality gate")
     a.add_argument("--frames", default="", help="write these frame numbers as JPEGs to out/check instead of a video")
     o = a.parse_args()
     total = TIMING["duration"]
@@ -109,6 +110,8 @@ def main():
         cards[sid] = T.verse_card(verse, ref, seed=hash(ref) % 1000)
     tags = {sid: T.ref_tag(txt) for sid, txt in edit.TAGS.items()}
     big = T.big_words("Where are you?", "Genesis 3:9")
+    hook = T.hook_title(["If God doesn't", "need anything,", "why did he make you?"])
+    hook_end = END[IDS[1]]
     logo = T.logo()
     clips = {}
     want = set(int(x) for x in o.frames.split(",") if x) if o.frames else None
@@ -171,6 +174,12 @@ def main():
                 l2 = logo.copy()
                 l2.putalpha(l2.getchannel("A").point(lambda v: int(v * al)))
                 pic.alpha_composite(l2, (0, int(H * .80 - 150)))
+        if t < hook_end + .3:
+            al = float(np.clip((hook_end + .3 - t) / .3, 0, 1))
+            h2 = hook if al >= .999 else hook.copy()
+            if al < .999:
+                h2.putalpha(h2.getchannel("A").point(lambda v: int(v * al)))
+            pic.alpha_composite(h2, (0, int(H * .12)))
         caps.draw(pic, t, H * edit.CAPTION_Y[sid] if sid in edit.CAPTION_Y else None)
         out = np.asarray(pic.convert("RGB"))
         if want is not None:
@@ -182,6 +191,28 @@ def main():
         ff.stdin.close()
         ff.wait()
         print("wrote", o.out)
+        if not o.no_check:
+            gate(o.out, caps)
+
+
+def gate(video, caps):
+    """Run the series checker on the finished film. A FAIL means it isn't ready to show."""
+    root = HERE.parent.parent
+    srt = Path(video).with_suffix(".srt")
+
+    def ts(x):
+        return f"{int(x // 3600):02d}:{int(x % 3600 // 60):02d}:{int(x % 60):02d},{int(round((x % 1) * 1000)) % 1000:03d}"
+    srt.write_text("\n".join(f"{i}\n{ts(L['words'][0][1])} --> {ts(L['words'][-1][2])}\n{' '.join(w[0] for w in L['words'])}\n"
+                             for i, L in enumerate(caps.lines, 1)))
+    qa = Path(video).with_name(Path(video).stem + "_qa")
+    subprocess.run([sys.executable, str(root / "fw_check.py"), "video", "--video", str(video), "--script", str(HERE.parent / "script_approved.md"),
+                    "--subs", str(srt), "--out", str(qa), "--no-asr"], capture_output=True, text=True)
+    rep = (qa / "report.md").read_text() if (qa / "report.md").exists() else ""
+    fails = [l for l in rep.splitlines() if l.startswith("| FAIL")]
+    warns = [l for l in rep.splitlines() if l.startswith("| WARN")]
+    print(f"quality gate: {len(fails)} FAIL, {len(warns)} WARN (report: {qa / 'report.md'})")
+    for l in fails:
+        print("  ", l[:180])
 
 
 if __name__ == "__main__":

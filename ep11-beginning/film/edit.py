@@ -10,7 +10,6 @@ TRANSITIONS = {
     "S09": ("dissolve", .9),     # the light settles into the garden
     "S10": ("paper", .55),       # the story
     "S14": ("dissolve", .6),     # colour drains
-    "S17": ("dissolve", .7),
     "S19": ("paper", .55),       # the comeback
     "S21": ("dissolve", .6),
     "S23": ("dissolve", .8),
@@ -40,7 +39,7 @@ TAGS = {"S10": "Genesis 2:17", "S11": "Genesis 3:5", "S19": "Genesis 3:19", "S20
 CARD_Y = {"S15": .31, "S21": .80, "S22": .80}
 
 # Captions: hidden where the words are already on screen as the picture itself.
-NO_CAPTION = {"S27"}
+NO_CAPTION = {"S27", "S01", "S02"}      # S01-S02: the opening question is on screen as the title from frame one
 # Gold in the captions only where God acts.
 GOLD_WORDS = {("S08", "chose"), ("S18", "calls"), ("S21", "makes"), ("S21", "clothes"), ("S22", "taking"), ("S22", "care"),
               ("S23", "loved"), ("S24", "gave"), ("S29", "wanted"), ("S32", "wanted"), ("S33", "wanted"), ("S34", "wanting")}
